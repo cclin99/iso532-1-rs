@@ -41,7 +41,7 @@
 - Python 版的跨時間 mask 向量化（`_calc_slopes`、`_nl_loudness`）是遷就 numpy 的扭曲寫法（含 `round(x, 8)` 補丁），不作為 Rust 藍本；Rust 回歸 ISO C 參考程式的逐 frame 結構。
 - IIR 在時間軸有遞迴相依，SIMD 的正確平行軸是「跨頻帶」：28 頻帶 = 7 個 f64×4 AVX2 向量。
 - sdist 未附測試資料；ISO Annex B 測試 wav 與參考 csv/xlsx 需自 MoSQITo GitHub repo `tests/input/` 下載。
-- 需在 Rust 重現的 scipy 元件：`butter`（帶通、SOS）、`sosfilt`、`decimate`（Cheby1+filtfilt，僅 zwst 低頻帶）、`lfilter`（一階）。
+- 需在 Rust 重現的 scipy 元件：`sosfilt`、`sosfiltfilt`（含 odd padding 與 steady-state 初值）、`lfilter`（一階）。濾波器「設計」（`butter`、`cheby1`）不在 Rust 重現：因 fs 固定 48 kHz，所有 zwst 濾波器係數由 `tools/gen_tables.py` 以 scipy 生成後烘焙為 Rust 常數，與 scipy 位元級一致。
 
 ## Crate 架構
 
@@ -52,11 +52,12 @@ iso532/
 │   ├── lib.rs            # 公開 API
 │   ├── error.rs          # thiserror 錯誤型別
 │   ├── tables.rs         # 全部 ISO 常數表（A.1/A.2 係數、rap/dll/ltq/a0/ddf/dcb/zup/rns/usl、filter_gain）
+│   ├── tables_noct.rs    # tools/gen_tables.py 以 scipy 生成：zwst 28 頻帶 Butterworth SOS
+│   │                     #   + Cheby1 降採樣 SOS（fs 固定 48 kHz，故全為常數；
+│   │                     #   免除在 Rust 重現 scipy 濾波器設計/零極點配對的數值風險）
 │   ├── dsp/
-│   │   ├── butter.rs     # Butterworth 帶通設計（雙線性）
-│   │   ├── sos.rs        # SOS biquad 串接濾波（scalar + avx2）
-│   │   ├── decimate.rs   # Cheby1 8 階 + filtfilt 降採樣
-│   │   └── onepole.rs    # 一階低通（平滑、lowpass_intp）
+│   │   ├── sos.rs        # SOS biquad 串接濾波 + 一階低通（scalar + avx2）
+│   │   └── filtfilt.rs   # sosfiltfilt（odd padding）+ decimate
 │   ├── core/
 │   │   ├── main_loudness.rs   # 逐 frame scalar
 │   │   └── calc_slopes.rs     # 逐 frame scalar（照 ISO C 參考邏輯）
