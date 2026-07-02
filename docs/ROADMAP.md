@@ -33,6 +33,32 @@
 - **Python**：pyo3 + maturin，回傳 numpy array；驗證直接複用 golden（Python 端跑 mosqito 與 Rust binding 互比）。
 - 錯誤處理：`Iso532Error` 已是可枚舉的具名錯誤，FFI 映射為錯誤碼即可。
 
+## 5. 跨平台：Linux (Ubuntu) 與 Apple M 系列
+
+**現行計畫已可直接編譯執行於兩個平台**，不需改動：
+
+- 純 Rust + 純 Rust 依賴（thiserror、hound、criterion），無平台專屬系統呼叫。
+- AVX2 kernel 與 dispatch 呼叫點都在 `#[cfg(target_arch = "x86_64")]` 之內；`avx2_available()` 在非 x86_64 編譯期回 `false`。aarch64（Apple M）上整個 AVX 模組不參與編譯，自動走 scalar 路徑。
+- golden `.bin` 為 f64 little-endian——x86-64 與 Apple M（aarch64）皆為 LE，測試資料跨平台共用。
+- 工具鏈腳本（`setup_env.sh`、`gen_golden.py`、`gen_tables.py`）為 bash/Python，Linux/macOS 原生可跑。
+- 後續 C-ABI（cdylib）與 VST（nih-plug 支援 Win/macOS/Linux）在三平台皆成立。
+
+**各平台狀態：**
+
+| 平台 | 編譯/正確性 | SIMD 加速 |
+|---|---|---|
+| Windows / Linux x86-64 | ✅ | AVX2+FMA（runtime 偵測） |
+| Linux aarch64、Apple M 系列 | ✅（scalar） | 待補 NEON kernel（見下） |
+
+**Apple M 系列 NEON kernel（未來工作，非現行 5 phases 範圍）：**
+
+- NEON 是 128-bit：`f64x2`，28 頻帶 = 14 個向量（vs AVX2 的 7 個）；FMA 用 `vfmaq_f64`，分支消除用 `vmaxq_f64`/`vminq_f64`/`vbslq_f64`，與 AVX2 kernel 一一對應，移植是機械性工作。
+- aarch64 上 NEON 是 baseline feature——**不需 runtime 偵測**，`#[cfg(target_arch = "aarch64")]` 直接編入即可，dispatch 比 x86 端更簡單。
+- 前置條件：Phase 4 的 AVX2 kernel 定案後照抄結構；`simd_parity` 測試同樣直接複用（scalar vs NEON）。
+- 注意：`simd_parity` 在無 AVX2 的機器上會 skip——在 M 系列機器上跑 `cargo test` 全綠只代表 scalar 正確，不代表驗過 SIMD。
+
+**CI 建議（屆時）：** GitHub Actions 三 job——`windows-latest`、`ubuntu-latest`（x86-64，驗 AVX2 路徑）、`macos-latest`（M 系列 runner，驗 aarch64 scalar/NEON）。
+
 ## 執行順序建議
 
 1. 現行 5 phases（Codex 實作）
