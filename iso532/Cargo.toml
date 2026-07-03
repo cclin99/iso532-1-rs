@@ -1,0 +1,17 @@
+[package]
+name = "iso532"
+version = "0.1.0"
+edition = "2021"
+description = "ISO 532-1:2017 Zwicker loudness (stationary + time-varying) with AVX2 acceleration"
+license = "Apache-2.0"
+
+[dependencies]
+thiserror = "1"
+
+[dev-dependencies]
+criterion = "0.5"
+hound = "3.5"
+
+[[bench]]
+name = "loudness"
+harness = false
