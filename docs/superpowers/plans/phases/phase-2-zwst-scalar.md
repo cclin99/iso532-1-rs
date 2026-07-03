@@ -16,7 +16,7 @@
 ## 前置條件
 
 - Phase 1 完成：`data/golden/` 與 `data/annexb/` 存在、`tables_noct.rs` 已生成、`cargo test` 綠。
-- **Phase 1 勘誤補完（開工前必做）**：`tools/gen_golden.py` 的 Test signal 3 檔名改為 `Test signal 3 (1 kHz 60 dB)_44100Hz.wav`（主計畫 Task 2 已更正；mosqito `load()` 會重採樣到 48 kHz），重跑 `.venv/Scripts/python tools/gen_golden.py`，確認 `data/golden/annexb_sig3/` 產出且 `N.bin` ≈ 4.2——Task 9 的 golden/Annex B 測試依賴它。
+- **Phase 1 勘誤補完（開工前必做）**：`tools/gen_golden.py` 的 Test signal 3 檔名改為 `Test signal 3 (1 kHz 60 dB)_44100Hz.wav`（主計畫 Task 2 已更正；mosqito `load()` 會重採樣到 48 kHz），重跑 `.venv/Scripts/python tools/gen_golden.py`，確認 `data/golden/annexb_sig3/` 產出且 `N.bin` ≈ 4.05（實測 4.052；ISO 參考值 4.019）——Task 9 的 golden/Annex B 測試依賴它。
 
 ## 驗收
 
