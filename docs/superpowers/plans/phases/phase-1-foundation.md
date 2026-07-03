@@ -24,7 +24,9 @@ bash tools/setup_env.sh                      # data/annexb/ 有 wav+csv+xlsx
 cd iso532 && cargo test                      # 含 tables spot-check 全過
 ```
 
-抽查：`data/golden/sine_1k_60/N.bin` 值約 4.2（sone）；`tables_noct.rs` 的 `NOCT_DECIM_Q` 前 10 帶 >1。
+抽查：`data/golden/sine_1k_60/N.bin` ≈ 4.09（sone，4 量級即合理）；`tables_noct.rs` 的 `NOCT_DECIM_Q` 前 10 帶 >1。
+
+**勘誤（2026-07-03 審查時發現）：** MoSQITo v1.2.1 repo 的 Test signal 3 只有 `_44100Hz` 版（mosqito `load()` 會自動重採樣到 48 kHz）。主計畫 gen_golden.py 原寫的 48 kHz 檔名不存在，導致 `data/golden/annexb_sig3/` 被靜默跳過——Phase 2 開工前須把 `tools/gen_golden.py` 的檔名改為 `Test signal 3 (1 kHz 60 dB)_44100Hz.wav`（主計畫已更正）並重跑 `gen_golden.py`，確認 `annexb_sig3/` 產出。
 
 ## 注意事項
 
