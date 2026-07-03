@@ -57,15 +57,16 @@ def make_signals():
     sigs["step_60_80"] = s
     # Annex B wav files (loaded exactly as mosqito tests do)
     for wav, key in [
-        ("Test signal 3 (1 kHz 60 dB).wav", "annexb_sig3"),
+        ("Test signal 3 (1 kHz 60 dB)_44100Hz.wav", "annexb_sig3"),
         ("Test signal 5 (pinknoise 60 dB).wav", "annexb_sig5"),
         ("Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav", "annexb_sig10"),
     ]:
         path = ROOT / "data" / "annexb" / wav
-        if path.exists():
-            sig, fs = load(str(path), wav_calib=2 * 2**0.5)
-            assert fs == FS, f"{wav}: fs={fs}"
-            sigs[key] = sig
+        if not path.exists():
+            raise FileNotFoundError(f"missing Annex B input for {key}: {path}")
+        sig, fs = load(str(path), wav_calib=2 * 2**0.5)
+        assert fs == FS, f"{wav}: fs={fs}"
+        sigs[key] = sig
     return sigs
 
 
