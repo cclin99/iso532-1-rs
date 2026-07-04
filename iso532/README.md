@@ -74,8 +74,8 @@ The Phase 5 benchmark groups are `filter_bank_10s` and `zwtv_10s`, each comparin
 
 | Benchmark | Scalar median | AVX2 median | Speedup |
 |---|---:|---:|---:|
-| `filter_bank_10s` | 244.37 ms | 19.854 ms | 12.31x |
-| `zwtv_10s` | 574.51 ms | 258.79 ms | 2.22x |
+| `filter_bank_10s` | 241.87 ms | 19.993 ms | 12.10x |
+| `zwtv_10s` | 388.55 ms | 77.583 ms | 5.01x |
 
 ## Non-goals
 

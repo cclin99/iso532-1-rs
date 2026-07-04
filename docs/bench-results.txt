@@ -1,61 +1,37 @@
-   Compiling iso532 v0.1.0 (D:\ISO532\iso532)
-    Finished `bench` profile [optimized] target(s) in 2.74s
-     Running unittests src\lib.rs (target\release\deps\iso532-002b711030008a4b.exe)
+# ISO532 Criterion benchmark results
 
-running 1 test
-test tables::tests::table_shapes_and_spot_values ... ignored
+Command: cargo bench --bench loudness
+Date: 2026-07-04
+Host note: Criterion reported "Gnuplot not found, using plotters backend".
 
-test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
-     Running benches\loudness.rs (target\release\deps\loudness-2cd223e6783ab03a.exe)
-Gnuplot not found, using plotters backend
-Benchmarking filter_bank_10s/scalar/480000
-Benchmarking filter_bank_10s/scalar/480000: Warming up for 3.0000 s
-Benchmarking filter_bank_10s/scalar/480000: Collecting 10 samples in estimated 7.3199 s (30 iterations)
-Benchmarking filter_bank_10s/scalar/480000: Analyzing
 filter_bank_10s/scalar/480000
-                        time:   [242.69 ms 244.37 ms 246.03 ms]
-                        thrpt:  [1.9510 Melem/s 1.9642 Melem/s 1.9778 Melem/s]
+                        time:   [239.44 ms 241.87 ms 245.74 ms]
+                        thrpt:  [1.9533 Melem/s 1.9845 Melem/s 2.0047 Melem/s]
                  change:
-                        time:   [-2.7129% -0.4049% +1.3852%] (p = 0.75 > 0.05)
-                        thrpt:  [-1.3663% +0.4066% +2.7885%]
+                        time:   [-1.9651% +0.0759% +2.3717%] (p = 0.96 > 0.05)
+                        thrpt:  [-2.3168% -0.0759% +2.0045%]
                         No change in performance detected.
-Benchmarking filter_bank_10s/avx2/480000
-Benchmarking filter_bank_10s/avx2/480000: Warming up for 3.0000 s
-Benchmarking filter_bank_10s/avx2/480000: Collecting 10 samples in estimated 6.6000 s (330 iterations)
-Benchmarking filter_bank_10s/avx2/480000: Analyzing
+
 filter_bank_10s/avx2/480000
-                        time:   [19.818 ms 19.854 ms 19.943 ms]
-                        thrpt:  [24.069 Melem/s 24.176 Melem/s 24.220 Melem/s]
+                        time:   [19.981 ms 19.993 ms 20.013 ms]
+                        thrpt:  [23.985 Melem/s 24.008 Melem/s 24.023 Melem/s]
                  change:
-                        time:   [-0.3709% +0.7771% +2.4577%] (p = 0.43 > 0.05)
-                        thrpt:  [-2.3987% -0.7711% +0.3722%]
-                        No change in performance detected.
-Found 1 outliers among 10 measurements (10.00%)
-  1 (10.00%) high severe
-
-Benchmarking zwtv_10s/scalar/480000
-Benchmarking zwtv_10s/scalar/480000: Warming up for 3.0000 s
-Benchmarking zwtv_10s/scalar/480000: Collecting 10 samples in estimated 11.261 s (20 iterations)
-Benchmarking zwtv_10s/scalar/480000: Analyzing
-zwtv_10s/scalar/480000  time:   [572.31 ms 574.51 ms 576.70 ms]
-                        thrpt:  [849.45 Kelem/s 852.54 Kelem/s 855.03 Kelem/s]
-                 change:
-                        time:   [-3.5028% -2.6150% -1.7786%] (p = 0.00 < 0.05)
-                        thrpt:  [+1.8108% +2.6852% +3.6299%]
+                        time:   [-2.9472% -2.0706% -1.2826%] (p = 0.00 < 0.05)
+                        thrpt:  [+1.2993% +2.1144% +3.0367%]
                         Performance has improved.
-Found 1 outliers among 10 measurements (10.00%)
-  1 (10.00%) high mild
-Benchmarking zwtv_10s/avx2/480000
-Benchmarking zwtv_10s/avx2/480000: Warming up for 3.0000 s
-Benchmarking zwtv_10s/avx2/480000: Collecting 10 samples in estimated 7.7296 s (30 iterations)
-Benchmarking zwtv_10s/avx2/480000: Analyzing
-zwtv_10s/avx2/480000    time:   [257.44 ms 258.79 ms 260.22 ms]
-                        thrpt:  [1.8380 Melem/s 1.8493 Melem/s 1.8589 Melem/s]
-                 change:
-                        time:   [-33.189% -32.682% -32.157%] (p = 0.00 < 0.05)
-                        thrpt:  [+47.400% +48.548% +49.677%]
-                        Performance has improved.
-Found 2 outliers among 10 measurements (20.00%)
-  2 (20.00%) high mild
 
+zwtv_10s/scalar/480000
+                        time:   [386.47 ms 388.55 ms 390.55 ms]
+                        thrpt:  [1.2290 Melem/s 1.2354 Melem/s 1.2420 Melem/s]
+                 change:
+                        time:   [-33.071% -32.513% -31.974%] (p = 0.00 < 0.05)
+                        thrpt:  [+47.003% +48.178% +49.412%]
+                        Performance has improved.
+
+zwtv_10s/avx2/480000
+                        time:   [77.363 ms 77.583 ms 77.756 ms]
+                        thrpt:  [6.1732 Melem/s 6.1869 Melem/s 6.2045 Melem/s]
+                 change:
+                        time:   [-70.165% -70.001% -69.829%] (p = 0.00 < 0.05)
+                        thrpt:  [+231.45% +233.34% +235.18%]
+                        Performance has improved.

@@ -1,15 +1,33 @@
 use crate::tables::{RNS, USL, ZUP};
 
 pub fn calc_slopes(nm: &[f64; 21]) -> (f64, [f64; 240]) {
-    let zup_ea = zup_indices();
     let mut n_specific = [0.0; 240];
+    let total = calc_slopes_into(nm, &mut n_specific);
+    (total, n_specific)
+}
 
-    for i in 0..21 {
-        for item in &mut n_specific[prev_zup_index(&zup_ea, i)..zup_ea[i]] {
-            *item = nm[i];
+pub fn calc_slopes_into(nm: &[f64; 21], n_specific: &mut [f64]) -> f64 {
+    assert_eq!(
+        n_specific.len(),
+        240,
+        "calc_slopes_into expects 240 Bark steps"
+    );
+    calc_slopes_impl(nm, Some(n_specific))
+}
+
+pub fn calc_slopes_n_only(nm: &[f64; 21]) -> f64 {
+    calc_slopes_impl(nm, None)
+}
+
+fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
+    let zup_ea = zup_indices();
+    if let Some(spec) = n_specific.as_mut() {
+        for i in 0..21 {
+            for item in &mut spec[prev_zup_index(&zup_ea, i)..zup_ea[i]] {
+                *item = nm[i];
+            }
         }
     }
-
     let mut n2 = [1.0; 240];
     let mut z2 = [1.0; 240];
     let mut usl = [1.0; 240];
@@ -97,18 +115,24 @@ pub fn calc_slopes(nm: &[f64; 21]) -> (f64, [f64; 240]) {
                         dz[j] = z2[j] - z1_aux;
                         n2[j] = n1_aux - dz[j] * usl[j];
                         total += dz[j] * (n1_aux + n2[j]) / 2.0;
-                        n_specific[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                        if let Some(spec) = n_specific.as_mut() {
+                            spec[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                        }
                     }
 
                     if !mask_z_bigger_z2_1 {
-                        n_specific[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                        if let Some(spec) = n_specific.as_mut() {
+                            spec[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                        }
                     }
                     z_array += 0.1;
                     if mask_z_bigger_z2_1 {
                         mask_n1_bigger_nm = false;
                     }
                 } else {
-                    n_specific[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                    if let Some(spec) = n_specific.as_mut() {
+                        spec[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                    }
                     z_array += 0.1;
                 }
 
@@ -140,7 +164,7 @@ pub fn calc_slopes(nm: &[f64; 21]) -> (f64, [f64; 240]) {
         total = (total * 100.0 + 0.5).floor() / 100.0;
     }
 
-    (total, n_specific)
+    total
 }
 
 fn zup_indices() -> [usize; 21] {
@@ -185,4 +209,39 @@ fn usl_value(rns_idx: usize, band_idx: usize) -> f64 {
 
 fn r8(value: f64) -> f64 {
     (value * 100_000_000.0).round() / 100_000_000.0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{calc_slopes, calc_slopes_into, calc_slopes_n_only};
+
+    #[test]
+    fn n_only_matches_full_calc_slopes_total() {
+        let nm = sample_main_loudness();
+
+        let (full_n, _) = calc_slopes(&nm);
+        let n_only = calc_slopes_n_only(&nm);
+
+        assert_eq!(n_only, full_n);
+    }
+
+    #[test]
+    fn calc_slopes_into_writes_same_specific_loudness() {
+        let nm = sample_main_loudness();
+        let (full_n, full_spec) = calc_slopes(&nm);
+        let mut spec = [f64::NAN; 240];
+
+        let n = calc_slopes_into(&nm, &mut spec);
+
+        assert_eq!(n, full_n);
+        assert_eq!(spec, full_spec);
+    }
+
+    fn sample_main_loudness() -> [f64; 21] {
+        let mut nm = [0.0; 21];
+        for (band, value) in nm.iter_mut().enumerate() {
+            *value = ((band as f64 + 1.0) * 0.07).sin().abs() * 2.5;
+        }
+        nm
+    }
 }

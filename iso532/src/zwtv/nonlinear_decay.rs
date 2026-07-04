@@ -177,9 +177,7 @@ unsafe fn nl_loudness_process4(
     let mut prev_uo = _mm256_fmadd_pd(last_delta, _mm256_set1_pd((NL_ITER - 1) as f64), last_row);
     let mut prev_u2 = _mm256_setzero_pd();
 
-    for col in 0..(n_time * NL_ITER) {
-        let t = col / NL_ITER;
-        let k = col % NL_ITER;
+    for t in 0..n_time {
         let row = nl_loudness_load4(core, n_time, band, t);
         let next = if t + 1 < n_time {
             nl_loudness_load4(core, n_time, band, t + 1)
@@ -187,54 +185,57 @@ unsafe fn nl_loudness_process4(
             _mm256_setzero_pd()
         };
         let delta = _mm256_mul_pd(_mm256_sub_pd(next, row), inv_iter);
-        let ui = _mm256_fmadd_pd(delta, _mm256_set1_pd(k as f64), row);
 
-        let mut uo = ui;
-        let uo2_fast = _mm256_fnmadd_pd(prev_u2, b3, _mm256_mul_pd(prev_uo, b2));
-        let mask_fast = _mm256_and_pd(
-            _mm256_cmp_pd(prev_uo, prev_u2, _CMP_GT_OQ),
-            _mm256_cmp_pd(uo2_fast, ui, _CMP_GE_OQ),
-        );
-        uo = _mm256_blendv_pd(uo, uo2_fast, mask_fast);
+        for k in 0..NL_ITER {
+            let ui = _mm256_fmadd_pd(delta, _mm256_set1_pd(k as f64), row);
 
-        let uo2_slow = _mm256_mul_pd(prev_uo, b4);
-        let mask_slow = _mm256_and_pd(
-            _mm256_cmp_pd(prev_uo, prev_u2, _CMP_LE_OQ),
-            _mm256_cmp_pd(uo2_slow, ui, _CMP_GE_OQ),
-        );
-        uo = _mm256_blendv_pd(uo, uo2_slow, mask_slow);
-
-        let mut u2 = uo;
-        let u22 = _mm256_fnmadd_pd(prev_u2, b1, _mm256_mul_pd(prev_uo, b0));
-        let mask_u22 = _mm256_and_pd(
-            _mm256_and_pd(
-                _mm256_cmp_pd(ui, prev_uo, _CMP_LT_OQ),
+            let mut uo = ui;
+            let uo2_fast = _mm256_fnmadd_pd(prev_u2, b3, _mm256_mul_pd(prev_uo, b2));
+            let mask_fast = _mm256_and_pd(
                 _mm256_cmp_pd(prev_uo, prev_u2, _CMP_GT_OQ),
-            ),
-            _mm256_cmp_pd(u22, uo, _CMP_LE_OQ),
-        );
-        u2 = _mm256_blendv_pd(u2, u22, mask_u22);
+                _mm256_cmp_pd(uo2_fast, ui, _CMP_GE_OQ),
+            );
+            uo = _mm256_blendv_pd(uo, uo2_fast, mask_fast);
 
-        let u2_2 = _mm256_fmadd_pd(_mm256_sub_pd(prev_u2, ui), b5, ui);
-        let diff_abs = _mm256_andnot_pd(_mm256_set1_pd(-0.0), _mm256_sub_pd(ui, prev_uo));
-        let near_and_not_higher = _mm256_and_pd(
-            _mm256_cmp_pd(diff_abs, eps, _CMP_LT_OQ),
-            _mm256_cmp_pd(uo, prev_u2, _CMP_LE_OQ),
-        );
-        let mask_u2_2 =
-            _mm256_andnot_pd(near_and_not_higher, _mm256_cmp_pd(ui, prev_uo, _CMP_GE_OQ));
-        u2 = _mm256_blendv_pd(u2, u2_2, mask_u2_2);
+            let uo2_slow = _mm256_mul_pd(prev_uo, b4);
+            let mask_slow = _mm256_and_pd(
+                _mm256_cmp_pd(prev_uo, prev_u2, _CMP_LE_OQ),
+                _mm256_cmp_pd(uo2_slow, ui, _CMP_GE_OQ),
+            );
+            uo = _mm256_blendv_pd(uo, uo2_slow, mask_slow);
 
-        if k == 0 {
-            let mut lanes = [0.0; 4];
-            _mm256_storeu_pd(lanes.as_mut_ptr(), uo);
-            for lane in 0..4 {
-                out[(band + lane) * n_time + t] = lanes[lane];
+            let mut u2 = uo;
+            let u22 = _mm256_fnmadd_pd(prev_u2, b1, _mm256_mul_pd(prev_uo, b0));
+            let mask_u22 = _mm256_and_pd(
+                _mm256_and_pd(
+                    _mm256_cmp_pd(ui, prev_uo, _CMP_LT_OQ),
+                    _mm256_cmp_pd(prev_uo, prev_u2, _CMP_GT_OQ),
+                ),
+                _mm256_cmp_pd(u22, uo, _CMP_LE_OQ),
+            );
+            u2 = _mm256_blendv_pd(u2, u22, mask_u22);
+
+            let u2_2 = _mm256_fmadd_pd(_mm256_sub_pd(prev_u2, ui), b5, ui);
+            let diff_abs = _mm256_andnot_pd(_mm256_set1_pd(-0.0), _mm256_sub_pd(ui, prev_uo));
+            let near_and_not_higher = _mm256_and_pd(
+                _mm256_cmp_pd(diff_abs, eps, _CMP_LT_OQ),
+                _mm256_cmp_pd(uo, prev_u2, _CMP_LE_OQ),
+            );
+            let mask_u2_2 =
+                _mm256_andnot_pd(near_and_not_higher, _mm256_cmp_pd(ui, prev_uo, _CMP_GE_OQ));
+            u2 = _mm256_blendv_pd(u2, u2_2, mask_u2_2);
+
+            if k == 0 {
+                let mut lanes = [0.0; 4];
+                _mm256_storeu_pd(lanes.as_mut_ptr(), uo);
+                for lane in 0..4 {
+                    out[(band + lane) * n_time + t] = lanes[lane];
+                }
             }
-        }
 
-        prev_uo = uo;
-        prev_u2 = u2;
+            prev_uo = uo;
+            prev_u2 = u2;
+        }
     }
 }
 

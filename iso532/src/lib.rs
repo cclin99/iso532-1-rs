@@ -48,7 +48,7 @@ pub mod zwtv;
 
 pub use error::Iso532Error;
 pub use zwst::loudness_zwst;
-pub use zwtv::loudness_zwtv;
+pub use zwtv::{loudness_zwtv, ZwtvProcessor};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum FieldType {
