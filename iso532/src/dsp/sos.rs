@@ -51,7 +51,7 @@ pub fn sosfilt_zi(sections: &[Sos]) -> Vec<[f64; 2]> {
         .collect()
 }
 
-/// First-order lowpass y[n] = b0*x[n] + a1*y[n-1], in place.
+/// First-order lowpass `y[n] = b0*x[n] + a1*y[n-1]`, in place.
 pub fn onepole(b0: f64, a1: f64, x: &mut [f64]) {
     let mut y = 0.0f64;
     for v in x.iter_mut() {

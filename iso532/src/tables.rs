@@ -57,7 +57,7 @@ pub const DCB: [f64; 20] = [
     0.0, -0.5,
 ];
 
-/// Upper limits of approximated critical bands [Bark] (ZUP)
+/// Upper limits of approximated critical bands, in Bark (ZUP)
 pub const ZUP: [f64; 21] = [
     0.9, 1.8, 2.8, 3.5, 4.4, 5.4, 6.6, 7.9, 9.2, 10.6, 12.3, 13.8, 15.2, 16.7, 18.1, 19.3, 20.6,
     21.8, 22.7, 23.6, 24.0,
@@ -93,7 +93,7 @@ pub const USL: [[f64; 8]; 18] = [
 
 /// ISO 532-1 Table A.2: per-band per-section (delta_a1, delta_a2) relative to
 /// the reference filter of Table A.1. Actual coefficients:
-/// b(sec0)=[1,2,1], b(sec1)=[1,0,-1], b(sec2)=[1,-2,1];
+/// `b(sec0)=[1,2,1]`, `b(sec1)=[1,0,-1]`, `b(sec2)=[1,-2,1]`;
 /// a1 = -2 - d1, a2 = 1 - d2.
 pub const TOB_DELTA: [[[f64; 2]; 3]; 28] = [
     [

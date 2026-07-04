@@ -71,8 +71,10 @@ def main():
         sos = butter(3, (w1, w2), "bandpass", output="sos")
         qs.append(q)
         all_sos.append(sos)
+    lines.append("#[rustfmt::skip]")
     lines.append(f"pub const NOCT_DECIM_Q: [usize; 28] = {qs!r};".replace("'", ""))
     lines.append("")
+    lines.append("#[rustfmt::skip]")
     lines.append("pub const NOCT_SOS: [[Sos; 3]; 28] = [")
     for sos in all_sos:
         lines.append("  [")
@@ -81,7 +83,9 @@ def main():
     lines.append("];")
     lines.append("")
     uq = sorted(set(q for q in qs if q > 1))
+    lines.append("#[rustfmt::skip]")
     lines.append(f"pub const CHEBY_QS: [usize; {len(uq)}] = {uq!r};")
+    lines.append("#[rustfmt::skip]")
     lines.append(f"pub const CHEBY_SOS: [[Sos; 4]; {len(uq)}] = [")
     for q in uq:
         sos = cheby1(8, 0.05, 0.8 / q, output="sos")

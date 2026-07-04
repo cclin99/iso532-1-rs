@@ -31,3 +31,10 @@ cargo test && cargo doc --no-deps && cargo clippy -- -D warnings
 - README 的 benchmark 數字用真實測量值，不得填估計值。
 - 收尾時處理 `cargo fmt --check`：`tables_noct.rs` 為生成物、非 rustfmt 格式——在 `tools/gen_tables.py` 輸出的兩個 `pub const` 前各加一行 `#[rustfmt::skip]` 後重新生成（不要手動 fmt 生成檔，否則下次重生又髒）；另 `src/lib.rs` 缺檔尾換行。
 - 完成後參考 `docs/ROADMAP.md`——後續擴充（C-ABI、Python binding、串流 API、其他標準）的架構預留已在該文件說明，本 phase 不實作。
+
+## 完成狀態
+
+- ✅ Task 16：`iso532/benches/loudness.rs` 已新增 Criterion benchmark，`docs/bench-results.txt` 已記錄本機實測。
+- ✅ Task 17：`iso532/examples/cli.rs`、`iso532/README.md`、crate-level rustdoc 已補齊。
+- ✅ 驗證：`cargo bench`、CLI Annex B signal 5、`cargo test`、`cargo doc --no-deps`、`cargo clippy -- -D warnings`、`cargo fmt -- --check` 已通過。
+- 實測：filter bank scalar 244.37 ms、AVX2 19.854 ms，AVX2 加速 12.31x（門檻 >= 2.5x）；zwtv pipeline scalar 574.51 ms、AVX2 258.79 ms，AVX2 加速 2.22x。

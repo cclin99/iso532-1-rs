@@ -2,8 +2,10 @@
 //! scipy-exact SOS for the zwst noct_spectrum filter bank at fs=48kHz.
 use crate::dsp::sos::Sos;
 
+#[rustfmt::skip]
 pub const NOCT_DECIM_Q: [usize; 28] = [10, 8, 7, 5, 4, 4, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
+#[rustfmt::skip]
 pub const NOCT_SOS: [[Sos; 3]; 28] = [
   [
     Sos { b: [4.769770615497433e-08, 9.539541230994867e-08, 4.769770615497433e-08], a: [-1.9916784246246344, 0.992755544594883] },
@@ -147,7 +149,9 @@ pub const NOCT_SOS: [[Sos; 3]; 28] = [
   ],
 ];
 
+#[rustfmt::skip]
 pub const CHEBY_QS: [usize; 7] = [2, 3, 4, 5, 7, 8, 10];
+#[rustfmt::skip]
 pub const CHEBY_SOS: [[Sos; 4]; 7] = [
   [
     Sos { b: [0.0006987370772841419, 0.0013974741545682838, 0.0006987370772841419], a: [-1.114073993825653, 0.3449050495101952] },
