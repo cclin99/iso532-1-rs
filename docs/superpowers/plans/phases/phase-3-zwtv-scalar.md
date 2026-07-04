@@ -23,6 +23,14 @@ cargo test --test annexb         # 加上 signal 10 時變測試
 cargo test                       # 全綠
 ```
 
+## 完成狀態（2026-07-04）
+
+- Task 10 完成：`third_octave_levels_scalar` 對 `third_octave_level.bin` golden 通過，涵蓋 `sine_1k_60`、`pulse_1k_70`、`step_60_80`、`white_60`。
+- Task 11 完成：`nl_loudness_scalar` 對 `nl_loudness.bin` golden 通過；實作明確復刻 mosqito `col-1` wraparound 初始狀態與 mask 順序，供 Phase 4 AVX kernel 對齊。
+- Task 12 完成：`temporal_weighting`、`loudness_zwtv`、`LoudnessTimeVarying`、Annex B signal 10 mosqito parity 與 API error-path tests 已加入。
+- 驗證：`cargo test --test golden_zwtv`、`cargo test --test annexb`、`cargo test --test api_errors`、`cargo test`、`cargo clippy -- -D warnings` 皆通過。
+- 已實作 xlsx `tv_time.bin`/`tv_nref.bin` 轉換；Annex B signal 10 同時驗證 mosqito `N_time.bin` parity、ISO xlsx time axis 與 ISO xlsx `N(t)` 5%/0.1 容差。
+
 ## 注意事項
 
 - **Task 11 是本 phase 數值風險最高的模組**：主計畫列了三個已知差異點（初始狀態的 mosqito 環繞行為 `uo_last = core[last]/24`、比較運算子等號方向、uo 衰減 mask 不含 `ui < uo_last` 檢查），失敗時照順序處置；`pulse_1k_70` 與 `step_60_80` 兩個訊號最能暴露問題。

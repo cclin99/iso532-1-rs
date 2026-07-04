@@ -101,6 +101,38 @@ def golden_zwtv(d, sig, meta):
     meta["time_axis"] = dump(d, "time_axis", time_axis[::4])
 
 
+def golden_zwtv_reference(d, meta):
+    """Convert ISO Annex B time-varying signal 10 reference curve from xlsx."""
+    from openpyxl import load_workbook
+
+    path = ROOT / "data" / "annexb" / "Results and tests for synthetic signals (time varying loudness).xlsx"
+    if not path.exists():
+        raise FileNotFoundError(f"missing Annex B time-varying reference workbook: {path}")
+    wb = load_workbook(path, data_only=True, read_only=True)
+    ws = wb["Test signal 10"]
+    time = []
+    n_ref = []
+    n_min_5 = []
+    n_max_5 = []
+    n_spec_8p5 = []
+    for row in ws.iter_rows(min_row=11, values_only=True):
+        if row[0] is None or row[1] is None:
+            continue
+        if not isinstance(row[0], (int, float)) or not isinstance(row[1], (int, float)):
+            continue
+        time.append(float(row[0]))
+        n_ref.append(float(row[1]))
+        n_min_5.append(float(row[2]))
+        n_max_5.append(float(row[3]))
+        n_spec_8p5.append(float(row[11]))
+    meta["tv_time"] = dump(d, "tv_time", np.asarray(time))
+    meta["tv_nref"] = dump(d, "tv_nref", np.asarray(n_ref))
+    meta["tv_nmin_5pct"] = dump(d, "tv_nmin_5pct", np.asarray(n_min_5))
+    meta["tv_nmax_5pct"] = dump(d, "tv_nmax_5pct", np.asarray(n_max_5))
+    meta["tv_nspec_8p5"] = dump(d, "tv_nspec_8p5", np.asarray(n_spec_8p5))
+    wb.close()
+
+
 def golden_dsp(d, meta):
     """Unit-level DSP goldens: sosfilt / sosfiltfilt / decimate on a fixed input."""
     rng = np.random.default_rng(1)
@@ -130,6 +162,8 @@ def main():
         meta["sig"] = dump(d, "sig", sig)
         golden_zwst(d, sig, meta)
         golden_zwtv(d, sig, meta)
+        if name == "annexb_sig10":
+            golden_zwtv_reference(d, meta)
         (d / "meta.json").write_text(json.dumps(meta))
         print("done", name)
 
