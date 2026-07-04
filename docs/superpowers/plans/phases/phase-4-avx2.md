@@ -23,6 +23,14 @@ cargo test --test simd_parity    # AVX2 vs scalar：filter bank rtol 1e-10、nl 
 cargo test                       # 全綠（golden 測試此時走 AVX 路徑 = 雙重驗證）
 ```
 
+
+## 完成狀態（2026-07-04）
+
+- Task 13 完成：`simd/mod.rs` 提供 AVX2+FMA runtime detection、`set_force_scalar` 與 `use_avx2`，`simd_dispatch` 測試通過。
+- Task 14 完成：`third_octave_levels_avx2` 以 7 x f64x4 處理 28 頻帶，dispatch 只在 `use_avx2()` 為真時進入；`simd_parity` filter-bank 測試通過。
+- Task 15 完成：`nl_loudness_avx2` 以 6 x f64x4 處理 21 頻帶，最終 band 以 scalar fallback 對齊 Phase 3 MoSQITo mask/wraparound 語意；`simd_parity` nonlinear 測試通過。
+- 驗證：`cargo test --test simd_parity`、`cargo test`、`cargo clippy -- -D warnings`、`cargo fmt` 皆通過。
+
 ## 注意事項
 
 - unsafe 邊界：kernel 函式標 `#[target_feature(enable = "avx2,fma")]` 並文件化 Safety 條件；呼叫點只在 `use_avx2()` 為真時進入。

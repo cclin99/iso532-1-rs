@@ -1,6 +1,7 @@
 pub mod core;
 pub mod dsp;
 pub mod error;
+pub mod simd;
 pub mod tables;
 pub mod tables_noct;
 pub mod zwst;
