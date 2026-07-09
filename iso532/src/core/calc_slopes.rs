@@ -216,6 +216,54 @@ mod tests {
     use super::{calc_slopes, calc_slopes_into, calc_slopes_n_only};
 
     #[test]
+    fn n_only_matches_into_for_edge_and_random_frames() {
+        let mut frames: Vec<[f64; 21]> = vec![
+            [0.0; 21],
+            spike(0, 8.0),
+            spike(10, 8.0),
+            spike(20, 8.0),
+            ramp(0.0, 10.0),
+            ramp(10.0, 0.0),
+            alternating(6.0, 0.05),
+        ];
+        let mut state = 0x1234_5678_9abc_def0_u64;
+        for _ in 0..200 {
+            let mut frame = [0.0; 21];
+            for value in frame.iter_mut() {
+                state = state
+                    .wrapping_mul(6364136223846793005)
+                    .wrapping_add(1442695040888963407);
+                *value = (state >> 11) as f64 / (1u64 << 53) as f64 * 12.0;
+            }
+            frames.push(frame);
+        }
+
+        for (idx, nm) in frames.iter().enumerate() {
+            let mut spec = [f64::NAN; 240];
+            let with_spec = calc_slopes_into(nm, &mut spec);
+            let n_only = calc_slopes_n_only(nm);
+            assert_eq!(
+                n_only.to_bits(),
+                with_spec.to_bits(),
+                "frame {idx}: n_only={n_only} with_spec={with_spec}"
+            );
+        }
+    }
+
+    fn spike(band: usize, value: f64) -> [f64; 21] {
+        let mut frame = [0.0; 21];
+        frame[band] = value;
+        frame
+    }
+
+    fn ramp(from: f64, to: f64) -> [f64; 21] {
+        std::array::from_fn(|i| from + (to - from) * i as f64 / 20.0)
+    }
+
+    fn alternating(high: f64, low: f64) -> [f64; 21] {
+        std::array::from_fn(|i| if i % 2 == 0 { high } else { low })
+    }
+    #[test]
     fn n_only_matches_full_calc_slopes_total() {
         let nm = sample_main_loudness();
 
