@@ -61,3 +61,28 @@ fn zwtv_end_to_end_matches_mosqito() {
         );
     }
 }
+#[test]
+#[ignore = "manual helper: bitwise output snapshot for refactor verification"]
+fn dump_zwtv_output_hashes() {
+    for sig in ["sine_1k_60", "pulse_1k_70", "step_60_80", "annexb_sig10"] {
+        let x = read_bin(sig, "sig.bin");
+        let r = loudness_zwtv(&x, 48000.0, FieldType::Free).unwrap();
+        println!(
+            "{sig}: n={:016x} spec={:016x} time={:016x}",
+            fnv1a_f64(&r.n),
+            fnv1a_f64(&r.n_specific),
+            fnv1a_f64(&r.time_axis),
+        );
+    }
+}
+
+fn fnv1a_f64(values: &[f64]) -> u64 {
+    let mut hash = 0xcbf2_9ce4_8422_2325_u64;
+    for value in values {
+        for byte in value.to_le_bytes() {
+            hash ^= u64::from(byte);
+            hash = hash.wrapping_mul(0x0000_0100_0000_01b3);
+        }
+    }
+    hash
+}
