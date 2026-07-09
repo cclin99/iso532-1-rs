@@ -49,24 +49,22 @@ impl ZwtvProcessor {
         main_loudness_frames_into(&self.third_octave_frames, n_time, field, &mut self.core)?;
 
         let nl = nonlinear_decay::nl_loudness(&self.core, n_time);
-        self.loudness.resize(n_time, 0.0);
-        self.loudness
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(t, loudness)| {
-                let frame: [f64; 21] = std::array::from_fn(|band| nl[band * n_time + t]);
-                *loudness = calc_slopes_n_only(&frame);
-            });
-
         let n_out = n_time.div_ceil(4);
+        self.loudness.resize(n_time, 0.0);
         self.spec_time_major.resize(240 * n_out, 0.0);
-        self.spec_time_major
-            .par_chunks_mut(240)
+        self.loudness
+            .par_chunks_mut(4)
+            .zip_eq(self.spec_time_major.par_chunks_mut(240))
             .enumerate()
-            .for_each(|(out_idx, spec)| {
-                let t = out_idx * 4;
-                let frame: [f64; 21] = std::array::from_fn(|band| nl[band * n_time + t]);
-                calc_slopes_into(&frame, spec);
+            .for_each(|(out_idx, (loudness_chunk, spec))| {
+                let t0 = out_idx * 4;
+                let frame: [f64; 21] = std::array::from_fn(|band| nl[band * n_time + t0]);
+                loudness_chunk[0] = calc_slopes_into(&frame, spec);
+                for (offset, loudness) in loudness_chunk.iter_mut().enumerate().skip(1) {
+                    let frame: [f64; 21] =
+                        std::array::from_fn(|band| nl[band * n_time + (t0 + offset)]);
+                    *loudness = calc_slopes_n_only(&frame);
+                }
             });
 
         let filt = temporal_weighting::temporal_weighting(&self.loudness);
