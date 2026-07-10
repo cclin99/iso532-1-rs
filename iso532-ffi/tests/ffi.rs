@@ -119,26 +119,54 @@ fn null_pointers_return_err_null() {
     // signal 為 NULL
     let code = unsafe {
         iso532_loudness_zwtv(
-            std::ptr::null(), signal.len(), FS, 0,
-            n.as_mut_ptr(), spec.as_mut_ptr(), bark.as_mut_ptr(), time.as_mut_ptr(),
+            std::ptr::null(),
+            signal.len(),
+            FS,
+            0,
+            n.as_mut_ptr(),
+            spec.as_mut_ptr(),
+            bark.as_mut_ptr(),
+            time.as_mut_ptr(),
         )
     };
     assert_eq!(code, ISO532_ERR_NULL_POINTER);
     // 每個輸出指標各自為 NULL
     for hole in 0..4 {
-        let ptrs: Vec<*mut f64> = vec![n.as_mut_ptr(), spec.as_mut_ptr(), bark.as_mut_ptr(), time.as_mut_ptr()]
-            .into_iter()
-            .enumerate()
-            .map(|(i, p)| if i == hole { std::ptr::null_mut() } else { p })
-            .collect();
+        let ptrs: Vec<*mut f64> = vec![
+            n.as_mut_ptr(),
+            spec.as_mut_ptr(),
+            bark.as_mut_ptr(),
+            time.as_mut_ptr(),
+        ]
+        .into_iter()
+        .enumerate()
+        .map(|(i, p)| if i == hole { std::ptr::null_mut() } else { p })
+        .collect();
         let code = unsafe {
-            iso532_loudness_zwtv(signal.as_ptr(), signal.len(), FS, 0, ptrs[0], ptrs[1], ptrs[2], ptrs[3])
+            iso532_loudness_zwtv(
+                signal.as_ptr(),
+                signal.len(),
+                FS,
+                0,
+                ptrs[0],
+                ptrs[1],
+                ptrs[2],
+                ptrs[3],
+            )
         };
         assert_eq!(code, ISO532_ERR_NULL_POINTER, "hole={hole}");
     }
     // zwst: signal NULL
     let code = unsafe {
-        iso532_loudness_zwst(std::ptr::null(), 48_000, FS, 0, &mut 0.0, spec.as_mut_ptr(), bark.as_mut_ptr())
+        iso532_loudness_zwst(
+            std::ptr::null(),
+            48_000,
+            FS,
+            0,
+            &mut 0.0,
+            spec.as_mut_ptr(),
+            bark.as_mut_ptr(),
+        )
     };
     assert_eq!(code, ISO532_ERR_NULL_POINTER);
 }
