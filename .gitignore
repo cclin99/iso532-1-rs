@@ -3,4 +3,7 @@
 mosqito-1.2.1/
 .venv/
 target/
+target-bench-*/
 data/
+AGENTS.md
+.claude/

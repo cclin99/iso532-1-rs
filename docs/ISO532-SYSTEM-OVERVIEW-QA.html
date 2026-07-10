@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISO532 系統架構與 Q&A 單頁說明</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #5c6975;
+      --line: #d7dde3;
+      --panel: #ffffff;
+      --soft: #f5f7fa;
+      --blue: #2563a8;
+      --teal: #137c75;
+      --gold: #b7791f;
+      --red: #b83232;
+      --green: #2f7d48;
+      --shadow: 0 10px 28px rgba(23, 32, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #eef2f5;
+      font-family: "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 24px auto;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    header {
+      padding: 28px 34px 24px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: #344250;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    main {
+      padding: 26px 34px 34px;
+    }
+
+    section {
+      margin-top: 26px;
+    }
+
+    section:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    code {
+      font-family: Consolas, "Cascadia Mono", monospace;
+      background: #eef3f8;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 0.94em;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 16px;
+    }
+
+    .note {
+      border-left: 4px solid var(--blue);
+      background: #f2f7fc;
+      padding: 12px 14px;
+      color: #233546;
+    }
+
+    .diagram {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 18px;
+      overflow-x: auto;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 10px;
+      align-items: stretch;
+      min-width: 820px;
+    }
+
+    .node {
+      position: relative;
+      min-height: 86px;
+      border: 1px solid #b9c5cf;
+      background: #fff;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .node:not(:last-child)::after {
+      content: ">";
+      position: absolute;
+      right: -11px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #70808f;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .node strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .node span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .blue {
+      border-top: 4px solid var(--blue);
+    }
+
+    .teal {
+      border-top: 4px solid var(--teal);
+    }
+
+    .gold {
+      border-top: 4px solid var(--gold);
+    }
+
+    .green {
+      border-top: 4px solid var(--green);
+    }
+
+    .red {
+      border-top: 4px solid var(--red);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 14px;
+    }
+
+    .mini-flow {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mini-flow .node {
+      min-height: auto;
+      padding: 10px 12px;
+    }
+
+    .mini-flow .node::after {
+      display: none;
+    }
+
+    .module-map {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .module {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 12px;
+      min-height: 92px;
+    }
+
+    .module .path {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f6f9;
+      color: #263442;
+      font-weight: 650;
+    }
+
+    td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .qa {
+      display: grid;
+      gap: 12px;
+    }
+
+    .qa-item {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 14px 16px;
+    }
+
+    .qa-item .q {
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #1f344a;
+    }
+
+    .sources {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 650;
+      color: #fff;
+      margin-right: 6px;
+    }
+
+    .badge.blue {
+      background: var(--blue);
+      border: 0;
+    }
+
+    .badge.teal {
+      background: var(--teal);
+      border: 0;
+    }
+
+    .badge.gold {
+      background: var(--gold);
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        width: 100%;
+        margin: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      header,
+      main {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .grid.two,
+      .grid.three,
+      .split,
+      .module-map {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border: 0;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <h1>ISO532 系統架構與 Q&amp;A 單頁說明</h1>
+      <p class="subtitle">本頁整理目前 `iso532` crate 的 Zwicker ISO 532-1 響度計算架構、`zwst` / `zwtv` 管線差異、核心元件責任，以及前述對話中的誤差與精度比較說明。</p>
+      <div class="meta">
+        <span class="pill">輸入：校準後 48 kHz pressure signal</span>
+        <span class="pill">輸出：sone / sone per Bark</span>
+        <span class="pill">基準：Mosqito golden + ISO Annex B</span>
+        <span class="pill">SIMD：AVX2+FMA dispatch</span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>1. 系統總覽</h2>
+        <div class="diagram" aria-label="ISO532 system architecture diagram">
+          <div class="flow">
+            <div class="node blue">
+              <strong>Public API</strong>
+              <span>`loudness_zwst`<br>`loudness_zwtv`<br>`ZwtvProcessor`</span>
+            </div>
+            <div class="node teal">
+              <strong>Input Guard</strong>
+              <span>48 kHz only<br>signal >= 0.1 s<br>field type</span>
+            </div>
+            <div class="node gold">
+              <strong>Frontend</strong>
+              <span>zwst: Mosqito noct spectrum<br>zwtv: ISO third-octave filter bank</span>
+            </div>
+            <div class="node blue">
+              <strong>Zwicker Core</strong>
+              <span>`main_loudness`<br>`calc_slopes`<br>Bark 240 grid</span>
+            </div>
+            <div class="node green">
+              <strong>Optimization</strong>
+              <span>AVX2+FMA kernels<br>rayon frame parallelism<br>scratch reuse</span>
+            </div>
+            <div class="node teal">
+              <strong>Result</strong>
+              <span>`N` or `N(t)`<br>`N_specific`<br>time / Bark axes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. `zwst` 與 `zwtv` 管線差異</h2>
+        <div class="grid two">
+          <div class="panel">
+            <h3><span class="badge blue">zwst</span>Zwicker Stationary</h3>
+            <div class="mini-flow">
+              <div class="node blue"><strong>整段訊號</strong><span>假設分析期間近似穩態</span></div>
+              <div class="node gold"><strong>`noct_spectrum_rms`</strong><span>28 band RMS，復刻 Mosqito / scipy 路徑</span></div>
+              <div class="node blue"><strong>`main_loudness`</strong><span>28 bands 轉 21 critical bands</span></div>
+              <div class="node teal"><strong>`calc_slopes`</strong><span>輸出單一 `N` 與 240 點 `N_specific`</span></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3><span class="badge teal">zwtv</span>Zwicker Time-Varying</h3>
+            <div class="mini-flow">
+              <div class="node teal"><strong>時間序列訊號</strong><span>處理瞬態、語音、音樂、變動工況</span></div>
+              <div class="node gold"><strong>`third_octave_levels`</strong><span>ISO 參考濾波器組，28 bands x time</span></div>
+              <div class="node blue"><strong>`main_loudness_frames_into`</strong><span>逐幀轉換為 core loudness</span></div>
+              <div class="node red"><strong>`nl_loudness`</strong><span>非線性時間響應，AVX2 kernel 可用</span></div>
+              <div class="node teal"><strong>`temporal_weighting`</strong><span>時間加權後輸出 `N(t)` 與 `N_specific(t)`</span></div>
+            </div>
+          </div>
+        </div>
+
+        <table style="margin-top: 14px">
+          <thead>
+            <tr>
+              <th>比較項</th>
+              <th>`zwst`</th>
+              <th>`zwtv`</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>問題定義</td>
+              <td>這段穩定聲音有多吵？</td>
+              <td>這個聲音每個時間點有多吵、如何變化？</td>
+            </tr>
+            <tr>
+              <td>主要輸出</td>
+              <td>單一總響度 `N`</td>
+              <td>響度時間序列 `N(t)`</td>
+            </tr>
+            <tr>
+              <td>Specific loudness</td>
+              <td>240 Bark 點分布</td>
+              <td>240 Bark x time 的矩陣</td>
+            </tr>
+            <tr>
+              <td>前端來源</td>
+              <td>Mosqito 通用三分之一倍頻程分析路徑</td>
+              <td>ISO Annex A 參考濾波器組語意</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>3. 元件圖</h2>
+        <div class="module-map" aria-label="component diagram">
+          <div class="module">
+            <h3>API / Types</h3>
+            <p>`FieldType`、`LoudnessStationary`、`LoudnessTimeVarying`、`Iso532Error`。</p>
+            <div class="path">iso532/src/lib.rs, error.rs</div>
+          </div>
+          <div class="module">
+            <h3>Stationary Pipeline</h3>
+            <p>`loudness_zwst`、`noct_spectrum_rms`、`spec_to_db`，對齊 Mosqito stationary 路徑。</p>
+            <div class="path">iso532/src/zwst/mod.rs</div>
+          </div>
+          <div class="module">
+            <h3>Time-Varying Pipeline</h3>
+            <p>`ZwtvProcessor` 管理 scratch buffer，輸出 2 ms 網格的 `N(t)`。</p>
+            <div class="path">iso532/src/zwtv/mod.rs</div>
+          </div>
+          <div class="module">
+            <h3>Core Math</h3>
+            <p>`main_loudness`、`calc_slopes`，負責 Zwicker 響度主轉換與 Bark 斜率展開。</p>
+            <div class="path">iso532/src/core/</div>
+          </div>
+          <div class="module">
+            <h3>DSP Primitives</h3>
+            <p>SOS filter、filtfilt、decimate；支撐 stationary 前端與 golden parity。</p>
+            <div class="path">iso532/src/dsp/</div>
+          </div>
+          <div class="module">
+            <h3>SIMD / Validation</h3>
+            <p>AVX2+FMA dispatch；測試用 golden、Annex B、SIMD parity 鎖住數值行為。</p>
+            <div class="path">iso532/src/simd, iso532/tests/</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. 誤差與精度如何比較</h2>
+        <div class="note">
+          測試誤差不是「聲音品質差多少」，而是「本系統輸出與參考輸出差多少」。比較時要先指定參考基準：Mosqito golden 用於日常回歸與相容性；ISO Annex B 用於合規檢查。
+        </div>
+
+        <div class="split" style="margin-top: 14px">
+          <div class="panel">
+            <h3>公式</h3>
+            <p>絕對誤差：<code>abs(ours - reference)</code></p>
+            <p>相對誤差：<code>abs(ours - reference) / abs(reference)</code></p>
+            <p>`zwtv` 是時間序列，因此通常取所有時間點、所有 Bark 點中的最大值。</p>
+          </div>
+
+          <div class="panel">
+            <h3>判讀順序</h3>
+            <p>1. 先看總響度 `N` 或 `N(t)`。</p>
+            <p>2. 再看 `N_specific` 的最大絕對誤差。</p>
+            <p>3. 同時檢查相對誤差，避免 near-zero 區域被放大誤讀。</p>
+            <p>4. 最後確認是否低於工程 tolerance 或 ISO tolerance。</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 16px">系統 vs Mosqito golden</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>輸出</th>
+              <th>最大絕對誤差</th>
+              <th>最大相對誤差</th>
+              <th>解讀</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`zwst` total loudness `N`</td>
+              <td class="num">0</td>
+              <td class="num">0</td>
+              <td>總響度捨入後逐位一致。</td>
+            </tr>
+            <tr>
+              <td>`zwst` `N_specific`</td>
+              <td class="num">8.2e-14</td>
+              <td class="num">2.9e-12</td>
+              <td>浮點雜訊層級。</td>
+            </tr>
+            <tr>
+              <td>`zwtv` `N(t)`</td>
+              <td class="num">1.6e-14</td>
+              <td class="num">3.8e-15</td>
+              <td>接近 double precision noise floor。</td>
+            </tr>
+            <tr>
+              <td>`zwtv` `N_specific(t)`</td>
+              <td class="num">1.3e-9</td>
+              <td class="num">3.0e-9</td>
+              <td>最差案例在 step signal 的 `r8()` 分支邊界。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top: 16px">Mosqito-compatible 路徑 vs ISO Annex B</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>案例</th>
+              <th>ISO 參考</th>
+              <th>Mosqito / Rust 預設</th>
+              <th>對 ISO 偏差</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>`zwst` Signal 3</td>
+              <td class="num">4.019</td>
+              <td class="num">4.052</td>
+              <td>+0.033 sone，約 +0.82%</td>
+            </tr>
+            <tr>
+              <td>`zwst` Signal 5</td>
+              <td class="num">10.498</td>
+              <td class="num">10.418</td>
+              <td>-0.080 sone，約 -0.76%</td>
+            </tr>
+            <tr>
+              <td>`zwtv` Signal 10</td>
+              <td>官方曲線</td>
+              <td>幾乎重合</td>
+              <td>max abs 約 2e-4 sone；0/500 點超出 +/-5% 帶</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top: 16px">若新增 `zwst` ISO reference mode 的潛在優化</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>案例</th>
+              <th>Mosqito 路徑</th>
+              <th>ISO 濾波器組路徑</th>
+              <th>誤差優化</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Signal 3</td>
+              <td>+0.82%</td>
+              <td>+0.025%</td>
+              <td>約 32.8x 縮小；絕對誤差約改善 97%</td>
+            </tr>
+            <tr>
+              <td>Signal 5</td>
+              <td>-0.76%</td>
+              <td>0.000%</td>
+              <td>幾乎完全消除</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>5. Q&amp;A 摘要</h2>
+        <div class="qa">
+          <div class="qa-item">
+            <div class="q">Q1. `zwst`、`zwtv` 分別代表什麼？</div>
+            <p>`zwst` 是 Zwicker stationary loudness，輸出單一穩態響度；`zwtv` 是 Zwicker time-varying loudness，輸出隨時間變化的響度曲線。</p>
+          </div>
+
+          <div class="qa-item">
+            <div class="q">Q2. 兩者最大的差異在哪？</div>
+            <p>`zwst` 假設聲音穩定，重點是整段訊號的一個代表值；`zwtv` 保留時間軸，重點是瞬態與變化過程，因此多了時間濾波、非線性衰減與時間加權。</p>
+          </div>
+
+          <div class="qa-item">
+            <div class="q">Q3. 測試中的誤差值代表什麼？</div>
+            <p>它代表本系統輸出和參考輸出的數值差距。參考可以是 Mosqito golden，也可以是 ISO Annex B 官方值；兩種比較回答的是不同問題。</p>
+          </div>
+
+          <div class="qa-item">
+            <div class="q">Q4. 如何判斷誤差大不大？</div>
+            <p>先看絕對誤差是否有感知或顯示意義，再看相對誤差是否因 near-zero 參考值被放大，最後看是否低於工程 tolerance 或 ISO 的 +/-5% / 0.1 sone 合規容差。</p>
+          </div>
+
+          <div class="qa-item">
+            <div class="q">Q5. Rust 系統是否比 Mosqito 精度更高？</div>
+            <p>不是。Rust 與 Python/numpy 都使用 f64；目前系統是對 Mosqito 做數值相容復刻。更高的是驗證密度、速度與決定性，不是單次浮點精度。</p>
+          </div>
+
+          <div class="qa-item">
+            <div class="q">Q6. 誤差優化多少？</div>
+            <p>對 Mosqito golden 沒有要「優化」誤差，而是保持幾乎一致。真正可優化的是 `zwst` 對 ISO 官方基準的偏差：實驗顯示改用 ISO reference filter bank 後，Signal 3 可由 +0.82% 降到 +0.025%，Signal 5 可由 -0.76% 降到 0.000%。</p>
+          </div>
+
+          <div class="qa-item">
+            <div class="q">Q7. 為什麼預設仍保留 Mosqito-compatible 路徑？</div>
+            <p>因為 golden 測試、逐階段除錯與使用者遷移一致性都依賴 Mosqito-compatible 行為。ISO reference mode 適合做成選配，而不是直接破壞預設相容性。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>6. 結論</h2>
+        <div class="grid three">
+          <div class="panel">
+            <h3>相容性</h3>
+            <p>目前 Rust/AVX2 結果與 Mosqito golden 幾乎等價，端到端差異落在 1e-14 到 1e-9 的範圍。</p>
+          </div>
+          <div class="panel">
+            <h3>合規性</h3>
+            <p>對 ISO Annex B 的可見差異主要繼承自 Mosqito 的 stationary 前端選擇，仍在 ISO 容差內。</p>
+          </div>
+          <div class="panel">
+            <h3>後續優化</h3>
+            <p>若需要更貼近 ISO 官方 stationary 基準，可新增 `ZwstMode::IsoReference`，重用 `zwtv` 的 ISO 濾波器組。</p>
+          </div>
+        </div>
+
+        <p class="sources">依據：`docs/DESIGN-DEVELOPMENT-2026-07-04.md`、`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`、`docs/MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md`、`docs/SYSTEM-DESIGN-QA-2026-07-06.md`、`iso532/src/*`。</p>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
