@@ -30,3 +30,14 @@ pub fn assert_close(got: &[f64], want: &[f64], rtol: f64, atol: f64, ctx: &str) 
         );
     }
 }
+#[allow(dead_code)]
+pub fn fnv1a_f64(values: &[f64]) -> u64 {
+    let mut hash = 0xcbf2_9ce4_8422_2325_u64;
+    for value in values {
+        for byte in value.to_le_bytes() {
+            hash ^= u64::from(byte);
+            hash = hash.wrapping_mul(0x0000_0100_0000_01b3);
+        }
+    }
+    hash
+}

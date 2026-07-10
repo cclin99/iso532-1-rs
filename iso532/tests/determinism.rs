@@ -1,0 +1,92 @@
+#[allow(dead_code)]
+mod common;
+
+use iso532::zwtv::nonlinear_decay::nl_loudness_with_mode;
+use iso532::zwtv::third_octave_levels::third_octave_levels_with_mode;
+use iso532::zwtv::ParMode;
+use iso532::{loudness_zwtv, simd, FieldType};
+
+const FS: f64 = 48_000.0;
+
+fn synth_signal() -> Vec<f64> {
+    (0..48_000)
+        .map(|i| {
+            let t = i as f64 / FS;
+            0.25 * (2.0 * std::f64::consts::PI * 440.0 * t).sin()
+                + 0.10 * (2.0 * std::f64::consts::PI * 1_760.0 * t).sin()
+                + 0.04 * (2.0 * std::f64::consts::PI * 6_400.0 * t).sin()
+        })
+        .collect()
+}
+
+fn synth_core(n_time: usize) -> Vec<f64> {
+    let mut core = vec![0.0; 21 * n_time];
+    for band in 0..21 {
+        for t in 0..n_time {
+            let phase = (t as f64 / 40.0 + band as f64).sin();
+            core[band * n_time + t] = (phase * 0.6 + 0.5).max(0.0);
+        }
+    }
+    core
+}
+
+fn assert_tol_modes_bitwise_equal(signal: &[f64]) {
+    let (r, n_r) = third_octave_levels_with_mode(signal, ParMode::Rayon);
+    let (s, n_s) = third_octave_levels_with_mode(signal, ParMode::Sequential);
+    assert_eq!(n_r, n_s, "tol n_time");
+    assert_eq!(r.len(), s.len(), "tol len");
+    for (i, (a, b)) in r.iter().zip(&s).enumerate() {
+        assert_eq!(
+            a.to_bits(),
+            b.to_bits(),
+            "tol[{i}]: Rayon={a:e} Sequential={b:e}"
+        );
+    }
+}
+
+fn assert_nl_modes_bitwise_equal() {
+    let n_time = 500;
+    let core = synth_core(n_time);
+    let r = nl_loudness_with_mode(&core, n_time, ParMode::Rayon);
+    let s = nl_loudness_with_mode(&core, n_time, ParMode::Sequential);
+    for (i, (a, b)) in r.iter().zip(&s).enumerate() {
+        assert_eq!(
+            a.to_bits(),
+            b.to_bits(),
+            "nl[{i}]: Rayon={a:e} Sequential={b:e}"
+        );
+    }
+}
+
+fn run_hashes(signal: &[f64]) -> (u64, u64, u64) {
+    let r = loudness_zwtv(signal, FS, FieldType::Free).unwrap();
+    (
+        common::fnv1a_f64(&r.n),
+        common::fnv1a_f64(&r.n_specific),
+        common::fnv1a_f64(&r.time_axis),
+    )
+}
+
+fn assert_20_runs_identical(signal: &[f64], ctx: &str) {
+    let first = run_hashes(signal);
+    for run in 1..20 {
+        assert_eq!(run_hashes(signal), first, "{ctx}: run {run} diverged");
+    }
+}
+
+// FORCE_SCALAR is process-global. Keep this integration test file to one
+// #[test] so flag changes cannot race another test in this binary.
+#[test]
+fn zwtv_output_is_bitwise_deterministic_over_20_runs() {
+    let signal = synth_signal();
+
+    assert_tol_modes_bitwise_equal(&signal);
+    assert_nl_modes_bitwise_equal();
+    assert_20_runs_identical(&signal, "auto dispatch");
+
+    simd::set_force_scalar(true);
+    assert_tol_modes_bitwise_equal(&signal);
+    assert_nl_modes_bitwise_equal();
+    assert_20_runs_identical(&signal, "forced scalar");
+    simd::set_force_scalar(false);
+}
