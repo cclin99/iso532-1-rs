@@ -47,6 +47,6 @@ fn nl_loudness_avx2_matches_scalar() {
     }
 
     let scalar = nl_loudness_scalar(&core, n_time);
-    let avx2 = unsafe { nl_loudness_avx2(&core, n_time) };
+    let avx2 = unsafe { nl_loudness_avx2(&core, n_time, ParMode::Sequential) };
     assert_close(&avx2, &scalar, 1e-12, 1e-14, "nl avx2 vs scalar");
 }

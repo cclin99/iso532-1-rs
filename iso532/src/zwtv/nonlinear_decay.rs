@@ -1,3 +1,6 @@
+use super::{use_rayon, ParMode};
+use rayon::prelude::*;
+
 const NL_ITER: usize = 24;
 const SAMPLE_RATE: f64 = 2000.0;
 
@@ -25,6 +28,10 @@ pub fn nl_coeffs() -> [f64; 6] {
 }
 
 pub fn nl_loudness_scalar(core: &[f64], n_time: usize) -> Vec<f64> {
+    nl_loudness_scalar_impl(core, n_time, ParMode::Sequential)
+}
+
+fn nl_loudness_scalar_impl(core: &[f64], n_time: usize, mode: ParMode) -> Vec<f64> {
     assert_eq!(
         core.len(),
         21 * n_time,
@@ -33,11 +40,20 @@ pub fn nl_loudness_scalar(core: &[f64], n_time: usize) -> Vec<f64> {
 
     let b = nl_coeffs();
     let mut out = vec![0.0; core.len()];
+    if n_time == 0 {
+        return out;
+    }
 
-    for band in 0..21 {
-        let row = &core[band * n_time..(band + 1) * n_time];
-        let out_row = &mut out[band * n_time..(band + 1) * n_time];
-        nl_loudness_band_scalar(row, out_row, &b);
+    if use_rayon(mode) {
+        out.par_chunks_mut(n_time)
+            .enumerate()
+            .for_each(|(band, out_row)| {
+                nl_loudness_band_scalar(&core[band * n_time..(band + 1) * n_time], out_row, &b);
+            });
+    } else {
+        for (band, out_row) in out.chunks_mut(n_time).enumerate() {
+            nl_loudness_band_scalar(&core[band * n_time..(band + 1) * n_time], out_row, &b);
+        }
     }
 
     out
@@ -105,8 +121,7 @@ fn nl_loudness_band_scalar(row: &[f64], out: &mut [f64], b: &[f64; 6]) {
 /// # Safety
 /// Caller must ensure AVX2 and FMA are available before calling.
 #[cfg(target_arch = "x86_64")]
-#[target_feature(enable = "avx2,fma")]
-pub unsafe fn nl_loudness_avx2(core: &[f64], n_time: usize) -> Vec<f64> {
+pub unsafe fn nl_loudness_avx2(core: &[f64], n_time: usize, mode: ParMode) -> Vec<f64> {
     assert_eq!(
         core.len(),
         21 * n_time,
@@ -119,17 +134,36 @@ pub unsafe fn nl_loudness_avx2(core: &[f64], n_time: usize) -> Vec<f64> {
     let b = nl_coeffs();
     let mut out = vec![0.0; core.len()];
 
-    for band in (0..20).step_by(4) {
-        nl_loudness_process4(core, &mut out, n_time, band, b);
+    if use_rayon(mode) {
+        out.par_chunks_mut(4 * n_time)
+            .enumerate()
+            .for_each(|(g, group)| {
+                // SAFETY: dispatch has already verified AVX2+FMA availability.
+                unsafe { nl_group_avx2(core, group, n_time, 4 * g, b) };
+            });
+    } else {
+        for (g, group) in out.chunks_mut(4 * n_time).enumerate() {
+            // SAFETY: caller has verified AVX2+FMA availability.
+            unsafe { nl_group_avx2(core, group, n_time, 4 * g, b) };
+        }
     }
 
-    nl_loudness_band_scalar(
-        &core[20 * n_time..21 * n_time],
-        &mut out[20 * n_time..21 * n_time],
-        &b,
-    );
-
     out
+}
+
+/// Dispatch one output group: full 4-band groups use AVX2, the final single-band
+/// tail uses scalar processing.
+///
+/// # Safety
+/// Caller must ensure AVX2 and FMA are available before calling.
+#[cfg(target_arch = "x86_64")]
+unsafe fn nl_group_avx2(core: &[f64], group: &mut [f64], n_time: usize, band: usize, b: [f64; 6]) {
+    if group.len() == 4 * n_time {
+        // SAFETY: caller has verified AVX2+FMA availability.
+        unsafe { nl_loudness_process4(core, group, n_time, band, b) };
+    } else {
+        nl_loudness_band_scalar(&core[band * n_time..(band + 1) * n_time], group, &b);
+    }
 }
 
 #[cfg(target_arch = "x86_64")]
@@ -155,12 +189,14 @@ unsafe fn nl_loudness_load4(
 #[target_feature(enable = "avx2,fma")]
 unsafe fn nl_loudness_process4(
     core: &[f64],
-    out: &mut [f64],
+    out_group: &mut [f64],
     n_time: usize,
     band: usize,
     b: [f64; 6],
 ) {
     use std::arch::x86_64::*;
+
+    debug_assert_eq!(out_group.len(), 4 * n_time);
 
     let b0 = _mm256_set1_pd(b[0]);
     let b1 = _mm256_set1_pd(b[1]);
@@ -229,7 +265,7 @@ unsafe fn nl_loudness_process4(
                 let mut lanes = [0.0; 4];
                 _mm256_storeu_pd(lanes.as_mut_ptr(), uo);
                 for lane in 0..4 {
-                    out[(band + lane) * n_time + t] = lanes[lane];
+                    out_group[lane * n_time + t] = lanes[lane];
                 }
             }
 
@@ -239,12 +275,16 @@ unsafe fn nl_loudness_process4(
     }
 }
 
-pub fn nl_loudness(core: &[f64], n_time: usize) -> Vec<f64> {
+pub fn nl_loudness_with_mode(core: &[f64], n_time: usize, mode: ParMode) -> Vec<f64> {
     #[cfg(target_arch = "x86_64")]
     {
         if crate::simd::use_avx2() {
-            return unsafe { nl_loudness_avx2(core, n_time) };
+            return unsafe { nl_loudness_avx2(core, n_time, mode) };
         }
     }
-    nl_loudness_scalar(core, n_time)
+    nl_loudness_scalar_impl(core, n_time, mode)
+}
+
+pub fn nl_loudness(core: &[f64], n_time: usize) -> Vec<f64> {
+    nl_loudness_with_mode(core, n_time, ParMode::Rayon)
 }
