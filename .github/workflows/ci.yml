@@ -42,3 +42,40 @@ jobs:
           --test determinism
           --test api_errors
           --test hash_gate
+
+  ffi:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: iso532-ffi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: iso532-ffi
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets --all-features -- -D warnings
+      # 一般測試 + panic 注入(test-panic feature 打開時兩者都跑)
+      - run: cargo test --features test-panic
+      - run: cargo build --release
+      - name: C smoke (gcc)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          gcc -Wall -Wextra -Iinclude tests/smoke.c -Ltarget/release -liso532_ffi -lm -o smoke
+          LD_LIBRARY_PATH=target/release ./smoke
+      - uses: ilammy/msvc-dev-cmd@v1
+        if: matrix.os == 'windows-latest'
+      - name: C smoke (MSVC)
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: |
+          cl /nologo /W3 /Iinclude tests\smoke.c /link /LIBPATH:target\release iso532_ffi.dll.lib
+          copy target\release\iso532_ffi.dll . >NUL
+          smoke.exe
