@@ -166,7 +166,7 @@ iso532.loudness_zwst(signal, fs, field_type="free")
 | ffi property | 200 組隨機長度(取樣範圍 4800..=48_000,涵蓋 `SignalTooShort` 下限與各降採樣餘數):`iso532_zwtv_out_frames()` == 實際輸出長度(對照直接呼叫 Rust API 的 `n.len()`);另對 0..4800 抽驗查詢函式本身不 panic | 本機 + CI |
 | C smoke | 小 .c 程式對已 commit 的 header 編譯連結(ubuntu gcc + windows MSVC),餵 4800 樣本正弦,驗回傳 0 且輸出為有限值 | CI |
 | pytest parity(迴歸傘) | 9 組訊號 zwtv + zwst vs mosqito 直跑:容差沿用 golden 端對端實證值 **rtol 1e-6 / atol 1e-9**(roadmap 原訂 atol 1e-12,P3 實測若可達則單向收緊,不放寬) | 本機(venv 有 mosqito) |
-| pytest bitwise | hash-gate 合成訊號的 `n`/`time_axis` FNV-1a hash == 凍結常數(`0xf3215787aaa48fbe` / `0xf076bcb342595537`,已實證跨平台跨 backend 穩定) | 本機 + CI(wheel 測試內) |
+| pytest bitwise | 純整數演算訊號(`s[i]=((i·2654435761) mod 96001)/96000·0.02−0.01`,無 libm,Python/Rust 可生成逐位相同輸入;hash-gate 的 sin 合成訊號**不可用**——numpy 與 Rust libm 的 sin 差 ULP)的 `n`/`time_axis` FNV-1a hash == 凍結常數(由 Rust 端 dump 測試實測凍結;`n`/`time_axis` 已實證跨平台跨 backend 穩定) | 本機 + CI(wheel 測試內) |
 | wheel 安裝 | maturin build → 乾淨 venv 安裝 → import + 小訊號呼叫 | CI(雙平台) |
 | golden manifest | `--verify` 全符 | 本機 |
 
