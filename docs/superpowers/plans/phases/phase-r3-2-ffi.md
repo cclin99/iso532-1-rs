@@ -741,3 +741,14 @@ Expected: 本 phase 期間 `iso532/src/` 無任何變更。
 git add docs/superpowers/plans/phases/phase-r3-2-ffi.md
 git commit -m "docs: R3-P2 closeout — C ABI v0 landed" && git push
 ```
+
+---
+## 收尾註記(2026-07-10)
+- CI run:尚未執行;本階段依任務指示未 push。`ffi` job 的 Windows/Ubuntu 結果待主代理審查並 push 後確認,不得視為已綠。
+- 本機:`cargo test`、`cargo test --features test-panic`、`cargo fmt --check`、`cargo clippy --all-targets --all-features -- -D warnings` 全過;panic 注入含 direct 與 Rayon worker 兩路。
+- property test:200 組確實跑完;單測 body 7.89 秒,wall 8.130 秒。
+- R3-P3 bitwise freeze:`n=0x44e6822074554786`,`time=0xf076bcb342595537`,`frames=500`。
+- header:cbindgen 0.29.4 重生成零 diff;3 個 ABI 函式、7 個錯誤碼常數、0 個 `test_panic`。
+- C smoke:本機 VS 2022 Community x64 MSVC 真實編譯、連結與執行成功:`smoke ok: frames=500 zwtv_n0=3.779000`。編譯因 cp950 無法表示 UTF-8 註解而有 C4819 warning,不影響 ABI 或執行;CI 的 gcc/MSVC 尚待執行。
+- `iso532/src/`:相對本階段起點 `3c4086b` 零 diff。
+- 偏差:plan 未列 `iso532-ffi/Cargo.lock`,但此 crate 交付 cdylib/staticlib,為可重現交付而納入版本控制;Task 1 測試經 `cargo fmt` 的機械排版一併收入 Task 2 commit。
