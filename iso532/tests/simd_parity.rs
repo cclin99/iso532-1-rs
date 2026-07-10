@@ -8,8 +8,7 @@ use iso532::zwtv::ParMode;
 
 #[test]
 fn filter_bank_avx2_matches_scalar() {
-    if !iso532::simd::avx2_available() {
-        eprintln!("AVX2 not available; skipping");
+    if !common::require_avx2_or_skip("filter_bank_avx2_matches_scalar") {
         return;
     }
 
@@ -32,8 +31,7 @@ fn filter_bank_avx2_matches_scalar() {
 
 #[test]
 fn nl_loudness_avx2_matches_scalar() {
-    if !iso532::simd::avx2_available() {
-        eprintln!("AVX2 not available; skipping");
+    if !common::require_avx2_or_skip("nl_loudness_avx2_matches_scalar") {
         return;
     }
 
