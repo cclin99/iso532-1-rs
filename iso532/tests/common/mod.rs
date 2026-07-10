@@ -41,3 +41,18 @@ pub fn fnv1a_f64(values: &[f64]) -> u64 {
     }
     hash
 }
+/// Returns true when AVX2 is available. When it is not: fails hard if the
+/// REQUIRE_AVX2 env var is set (CI anti-silent-skip gate), otherwise logs
+/// and returns false so the caller can skip.
+#[allow(dead_code)]
+pub fn require_avx2_or_skip(ctx: &str) -> bool {
+    if iso532::simd::avx2_available() {
+        return true;
+    }
+    assert!(
+        std::env::var_os("REQUIRE_AVX2").is_none(),
+        "{ctx}: REQUIRE_AVX2 is set but AVX2 is unavailable on this runner"
+    );
+    eprintln!("{ctx}: AVX2 not available; skipping");
+    false
+}

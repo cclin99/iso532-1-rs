@@ -61,6 +61,59 @@ fn zwtv_end_to_end_matches_mosqito() {
         );
     }
 }
+/// Bitwise output snapshot recorded after R4 (commit e96dffa) on the AVX2
+/// auto-dispatch path. Rayon/Sequential are bitwise-equal (see determinism
+/// tests), so these values do not depend on thread count. Regenerate with
+/// `cargo test --test golden_zwtv dump_zwtv_output_hashes -- --ignored --nocapture`.
+const R4_SNAPSHOT_AVX2: [(&str, u64, u64, u64); 4] = [
+    (
+        "sine_1k_60",
+        0x0b10971021634b4e,
+        0x62496b610f7c223d,
+        0xf076bcb342595537,
+    ),
+    (
+        "pulse_1k_70",
+        0xb92a2b970de3067f,
+        0xbdab430b961720f0,
+        0xf076bcb342595537,
+    ),
+    (
+        "step_60_80",
+        0x40ac75b0dcaed5a8,
+        0x2fdc839b4f702621,
+        0xf076bcb342595537,
+    ),
+    (
+        "annexb_sig10",
+        0x83da1e1c06d5296c,
+        0x3c2b914686402b54,
+        0xf076bcb342595537,
+    ),
+];
+
+#[test]
+fn zwtv_output_hashes_match_r4_snapshot() {
+    if !require_avx2_or_skip("zwtv_output_hashes_match_r4_snapshot") {
+        return;
+    }
+    for (sig, want_n, want_spec, want_time) in R4_SNAPSHOT_AVX2 {
+        let x = read_bin(sig, "sig.bin");
+        let r = loudness_zwtv(&x, 48000.0, FieldType::Free).unwrap();
+        assert_eq!(fnv1a_f64(&r.n), want_n, "{sig}: N hash drifted");
+        assert_eq!(
+            fnv1a_f64(&r.n_specific),
+            want_spec,
+            "{sig}: N_specific hash drifted"
+        );
+        assert_eq!(
+            fnv1a_f64(&r.time_axis),
+            want_time,
+            "{sig}: time hash drifted"
+        );
+    }
+}
+
 #[test]
 #[ignore = "manual helper: bitwise output snapshot for refactor verification"]
 fn dump_zwtv_output_hashes() {
