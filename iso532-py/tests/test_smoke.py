@@ -11,8 +11,8 @@ FS = 48000.0
 # n/time_axis are bitwise-stable across platforms and backends (see
 # docs/CI-HASH-GATE-DEBUG-2026-07-10.md). Values MUST come from an actual
 # dump run — never invented, never copied from another signal.
-N_HASH = 0x0     # 凍結步驟(Task 3)以實測值取代
-TIME_HASH = 0x0  # 凍結步驟(Task 3)以實測值取代
+N_HASH = 0x44E6822074554786
+TIME_HASH = 0xF076BCB342595537
 
 
 def py_contract_signal():
