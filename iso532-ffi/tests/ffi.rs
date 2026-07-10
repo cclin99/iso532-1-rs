@@ -1,0 +1,219 @@
+use iso532_ffi::*;
+
+const FS: f64 = 48_000.0;
+
+/// 100 Hz 鋸齒,±0.01 Pa(~54 dB SPL)——內容不重要、不觸發任何錯誤路徑,
+/// 且不經 libm(property test 每輪重算,要快)。
+fn quiet_signal(len: usize) -> Vec<f64> {
+    (0..len)
+        .map(|i| (i % 480) as f64 / 480.0 * 0.02 - 0.01)
+        .collect()
+}
+
+/// 100 Hz 正弦、振幅 2000 Pa(~160 dB SPL):300 Hz 以下頻帶必超 120 dB。
+fn loud_low_signal() -> Vec<f64> {
+    (0..48_000)
+        .map(|i| 2.0e3 * (2.0 * std::f64::consts::PI * 100.0 * i as f64 / FS).sin())
+        .collect()
+}
+
+struct ZwtvOut {
+    n: Vec<f64>,
+    spec: Vec<f64>,
+    bark: Vec<f64>,
+    time: Vec<f64>,
+}
+
+fn call_zwtv(signal: &[f64], fs: f64, field: i32) -> (i32, ZwtvOut) {
+    let frames = iso532_zwtv_out_frames(signal.len());
+    let mut out = ZwtvOut {
+        n: vec![0.0; frames],
+        spec: vec![0.0; 240 * frames],
+        bark: vec![0.0; 240],
+        time: vec![0.0; frames],
+    };
+    let code = unsafe {
+        iso532_loudness_zwtv(
+            signal.as_ptr(),
+            signal.len(),
+            fs,
+            field,
+            out.n.as_mut_ptr(),
+            out.spec.as_mut_ptr(),
+            out.bark.as_mut_ptr(),
+            out.time.as_mut_ptr(),
+        )
+    };
+    (code, out)
+}
+
+#[test]
+fn zwtv_happy_path_matches_rust_api_bitwise() {
+    let signal = quiet_signal(48_000);
+    let (code, out) = call_zwtv(&signal, FS, 0);
+    assert_eq!(code, ISO532_OK);
+    let want = iso532::loudness_zwtv(&signal, FS, iso532::FieldType::Free).unwrap();
+    assert_eq!(out.n, want.n);
+    assert_eq!(out.spec, want.n_specific);
+    assert_eq!(out.bark, want.bark_axis);
+    assert_eq!(out.time, want.time_axis);
+}
+
+#[test]
+fn zwtv_diffuse_field_matches_rust_api() {
+    let signal = quiet_signal(9_600);
+    let (code, out) = call_zwtv(&signal, FS, 1);
+    assert_eq!(code, ISO532_OK);
+    let want = iso532::loudness_zwtv(&signal, FS, iso532::FieldType::Diffuse).unwrap();
+    assert_eq!(out.n, want.n);
+}
+
+#[test]
+fn zwst_happy_path_matches_rust_api_bitwise() {
+    let signal = quiet_signal(48_000);
+    let mut n = 0.0_f64;
+    let mut spec = vec![0.0_f64; 240];
+    let mut bark = vec![0.0_f64; 240];
+    let code = unsafe {
+        iso532_loudness_zwst(
+            signal.as_ptr(),
+            signal.len(),
+            FS,
+            0,
+            &mut n,
+            spec.as_mut_ptr(),
+            bark.as_mut_ptr(),
+        )
+    };
+    assert_eq!(code, ISO532_OK);
+    let want = iso532::loudness_zwst(&signal, FS, iso532::FieldType::Free).unwrap();
+    assert_eq!(n, want.n);
+    assert_eq!(spec, want.n_specific);
+    assert_eq!(bark, want.bark_axis);
+}
+
+#[test]
+fn error_mapping_matches_spec_table() {
+    // 2: SignalTooShort(< 4800 樣本)
+    let (code, _) = call_zwtv(&quiet_signal(100), FS, 0);
+    assert_eq!(code, ISO532_ERR_SIGNAL_TOO_SHORT);
+    // 3: UnsupportedSampleRate
+    let (code, _) = call_zwtv(&quiet_signal(48_000), 44_100.0, 0);
+    assert_eq!(code, ISO532_ERR_UNSUPPORTED_SAMPLE_RATE);
+    // 1: LevelExceeds120dB
+    let (code, _) = call_zwtv(&loud_low_signal(), FS, 0);
+    assert_eq!(code, ISO532_ERR_LEVEL_EXCEEDS_120DB);
+    // -3: field_type 非 0/1
+    let (code, _) = call_zwtv(&quiet_signal(48_000), FS, 2);
+    assert_eq!(code, ISO532_ERR_INVALID_FIELD_TYPE);
+}
+
+#[test]
+fn null_pointers_return_err_null() {
+    let signal = quiet_signal(4_800);
+    let frames = iso532_zwtv_out_frames(signal.len());
+    let mut n = vec![0.0; frames];
+    let mut spec = vec![0.0; 240 * frames];
+    let mut bark = vec![0.0; 240];
+    let mut time = vec![0.0; frames];
+    // signal 為 NULL
+    let code = unsafe {
+        iso532_loudness_zwtv(
+            std::ptr::null(), signal.len(), FS, 0,
+            n.as_mut_ptr(), spec.as_mut_ptr(), bark.as_mut_ptr(), time.as_mut_ptr(),
+        )
+    };
+    assert_eq!(code, ISO532_ERR_NULL_POINTER);
+    // 每個輸出指標各自為 NULL
+    for hole in 0..4 {
+        let ptrs: Vec<*mut f64> = vec![n.as_mut_ptr(), spec.as_mut_ptr(), bark.as_mut_ptr(), time.as_mut_ptr()]
+            .into_iter()
+            .enumerate()
+            .map(|(i, p)| if i == hole { std::ptr::null_mut() } else { p })
+            .collect();
+        let code = unsafe {
+            iso532_loudness_zwtv(signal.as_ptr(), signal.len(), FS, 0, ptrs[0], ptrs[1], ptrs[2], ptrs[3])
+        };
+        assert_eq!(code, ISO532_ERR_NULL_POINTER, "hole={hole}");
+    }
+    // zwst: signal NULL
+    let code = unsafe {
+        iso532_loudness_zwst(std::ptr::null(), 48_000, FS, 0, &mut 0.0, spec.as_mut_ptr(), bark.as_mut_ptr())
+    };
+    assert_eq!(code, ISO532_ERR_NULL_POINTER);
+}
+
+/// spec §9:200 組隨機有效長度(4800..=48000),查詢值 == 實際輸出長度。
+/// 約 15–90 秒(每輪跑完整 pipeline)。
+#[test]
+fn out_frames_query_matches_actual_for_random_valid_lengths() {
+    let mut state = 0x5321_u64;
+    for round in 0..200 {
+        state = state
+            .wrapping_mul(6364136223846793005)
+            .wrapping_add(1442695040888963407);
+        let len = 4800 + ((state >> 33) % (48_000 - 4800 + 1)) as usize;
+        let want = iso532::loudness_zwtv(&quiet_signal(len), FS, iso532::FieldType::Free)
+            .unwrap()
+            .n
+            .len();
+        assert_eq!(iso532_zwtv_out_frames(len), want, "round={round} len={len}");
+    }
+}
+
+/// 查詢函式對 0..4800(無效長度區)必須不 panic(純函數契約)。
+#[test]
+fn out_frames_query_never_panics_below_min_length() {
+    for len in 0..4800 {
+        let _ = iso532_zwtv_out_frames(len);
+    }
+}
+
+// ---- panic 注入(spec §9;cargo test --features test-panic)----
+
+#[cfg(feature = "test-panic")]
+#[test]
+fn injected_panic_returns_err_panic_not_abort() {
+    assert_eq!(iso532__test_panic(), ISO532_ERR_PANIC);
+}
+
+/// rayon 工作項 panic 會在 join 點 resume——證實被 guarded() 接住(不假設)。
+#[cfg(feature = "test-panic")]
+#[test]
+fn rayon_worker_panic_is_caught_at_ffi_boundary() {
+    assert_eq!(iso532__test_panic_rayon(), ISO532_ERR_PANIC);
+}
+
+// ---- R3-P3 跨語言 bitwise 契約的凍結工具(手動執行)----
+
+/// 與 iso532-py/tests/test_smoke.py 的訊號完全一致:純整數演算,
+/// 無 libm,Python/Rust 逐位相同(sin 合成會因 libm ULP 差異炸 hash)。
+fn py_contract_signal() -> Vec<f64> {
+    (0..48_000_u64)
+        .map(|i| ((i * 2_654_435_761) % 96_001) as f64 / 96_000.0 * 0.02 - 0.01)
+        .collect()
+}
+
+fn fnv1a_f64(values: &[f64]) -> u64 {
+    // 複製自 iso532/tests/common/mod.rs(跨 crate 無法共用測試模組)
+    let mut hash = 0xcbf2_9ce4_8422_2325_u64;
+    for value in values {
+        for byte in value.to_le_bytes() {
+            hash ^= u64::from(byte);
+            hash = hash.wrapping_mul(0x0000_0100_0000_01b3);
+        }
+    }
+    hash
+}
+
+#[test]
+#[ignore = "manual: freeze constants for iso532-py/tests/test_smoke.py (R3-P3)"]
+fn dump_py_bitwise_contract_hashes() {
+    let r = iso532::loudness_zwtv(&py_contract_signal(), FS, iso532::FieldType::Free).unwrap();
+    eprintln!(
+        "py-contract: n={:#018x} time={:#018x} frames={}",
+        fnv1a_f64(&r.n),
+        fnv1a_f64(&r.time_axis),
+        r.n.len()
+    );
+}

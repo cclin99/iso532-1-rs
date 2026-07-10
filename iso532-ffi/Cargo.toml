@@ -1,0 +1,17 @@
+[package]
+name = "iso532-ffi"
+version = "0.1.0"
+edition = "2021"
+description = "C ABI (v0) for the iso532 crate"
+license = "Apache-2.0"
+
+[lib]
+name = "iso532_ffi"
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+iso532 = { path = "../iso532" }
+rayon = { version = "1.12", optional = true }
+
+[features]
+test-panic = ["dep:rayon"]
