@@ -1,0 +1,13 @@
+[build-system]
+requires = ["maturin>=1.7,<2"]
+build-backend = "maturin"
+
+[project]
+name = "iso532"
+description = "ISO 532-1:2017 Zwicker loudness (Rust iso532 crate bindings)"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.24"]
+dynamic = ["version"]
+
+[tool.maturin]
+module-name = "iso532"

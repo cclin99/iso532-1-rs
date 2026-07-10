@@ -1,0 +1,15 @@
+[package]
+name = "iso532-py"
+version = "0.1.0"
+edition = "2021"
+description = "Python bindings for the iso532 crate (ISO 532-1:2017 Zwicker loudness)"
+license = "Apache-2.0"
+
+[lib]
+name = "iso532"
+crate-type = ["cdylib"]
+
+[dependencies]
+iso532_core = { package = "iso532", path = "../iso532" }
+pyo3 = { version = "0.23", features = ["abi3-py39", "extension-module"] }
+numpy = "0.23"
