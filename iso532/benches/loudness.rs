@@ -27,9 +27,13 @@ fn auto_dispatch_label() -> &'static str {
     }
 }
 
+fn thread_suffix() -> String {
+    format!("t{}", rayon::current_num_threads())
+}
+
 fn bench_third_octave_filter_bank(c: &mut Criterion) {
     let signal = bench_signal();
-    let mut group = c.benchmark_group("filter_bank_10s");
+    let mut group = c.benchmark_group(format!("filter_bank_10s_{}", thread_suffix()));
     group.sample_size(10);
     group.measurement_time(Duration::from_secs(6));
     group.throughput(Throughput::Elements(signal.len() as u64));
@@ -57,7 +61,7 @@ fn bench_third_octave_filter_bank(c: &mut Criterion) {
 
 fn bench_zwtv_pipeline(c: &mut Criterion) {
     let signal = bench_signal();
-    let mut group = c.benchmark_group("zwtv_10s");
+    let mut group = c.benchmark_group(format!("zwtv_10s_{}", thread_suffix()));
     group.sample_size(10);
     group.measurement_time(Duration::from_secs(6));
     group.throughput(Throughput::Elements(signal.len() as u64));
