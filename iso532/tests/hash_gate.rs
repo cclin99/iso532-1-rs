@@ -7,9 +7,17 @@ const FS: f64 = 48_000.0;
 
 // Frozen bitwise snapshots of (fnv1a(n), fnv1a(n_specific), fnv1a(time_axis))
 // for the synthetic signal below, one per backend and OS. Scalar and AVX2
-// differ in ULP because FMA rounds once; Windows CRT and glibc libm
-// (sin/powf/log10) differ in ULP as well. Each path must stay bitwise-stable
-// against its own snapshot (refactor invariance, see risk report §8.4).
+// differ in ULP because FMA rounds once; libm (sin/powf/log10) differs in ULP
+// across platforms as well. Each path must stay bitwise-stable against its
+// own snapshot (refactor invariance, see risk report §8.4).
+//
+// Scope of the contract: n and time_axis have proven bitwise-identical across
+// every environment tested; only n_specific carries libm ULP noise. glibc
+// values are stable across machines (frozen from ubuntu:24.04, matches GitHub
+// runners). Windows UCRT dispatches libm by CPU and varies by OS build, so
+// the windows constants only hold on the machine that froze them — windows CI
+// therefore runs dump-only via HASH_GATE_DUMP_ONLY=1 (see .github/workflows/
+// ci.yml); a different dev machine should re-freeze locally.
 // Regenerate: set the pair to (0, 0, 0), run
 // `cargo test --test hash_gate -- --nocapture`, copy the printed values.
 #[cfg(target_os = "windows")]
@@ -77,8 +85,10 @@ fn zwtv_backend_hashes_match_frozen_snapshot() {
         None
     };
 
-    if EXPECTED_SCALAR == (0, 0, 0) {
-        eprintln!("no frozen snapshot for this OS; dump-only run");
+    let dump_only = EXPECTED_SCALAR == (0, 0, 0)
+        || std::env::var("HASH_GATE_DUMP_ONLY").is_ok_and(|v| v == "1");
+    if dump_only {
+        eprintln!("hash gate: dump-only run (no frozen snapshot for this environment)");
         return;
     }
     assert_eq!(scalar, EXPECTED_SCALAR, "scalar backend hash drifted");

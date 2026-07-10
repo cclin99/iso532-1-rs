@@ -14,6 +14,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       REQUIRE_AVX2: "1"
+      # Windows UCRT libm dispatches by CPU and varies by OS build, so frozen
+      # hash constants only hold on the machine that recorded them: assert on
+      # linux (glibc stable across runners), dump-only on windows CI.
+      HASH_GATE_DUMP_ONLY: ${{ matrix.os == 'windows-latest' && '1' || '0' }}
     defaults:
       run:
         working-directory: iso532
