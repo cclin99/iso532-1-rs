@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      REQUIRE_AVX2: "1"
+    defaults:
+      run:
+        working-directory: iso532
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: iso532
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo test --lib
+      - run: cargo test --doc
+      # golden_* / annexb tests need data/ (164 MB, not in repo) and stay
+      # local-only until R3 hardens the golden regeneration chain (R-14).
+      - run: >
+          cargo test
+          --test simd_parity
+          --test simd_dispatch
+          --test determinism
+          --test api_errors
+          --test hash_gate
