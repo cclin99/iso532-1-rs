@@ -402,3 +402,9 @@ rm -rf data/golden.bak .venv-check
 git add docs/superpowers/plans/phases/phase-r3-1-golden-chain.md
 git commit -m "docs: R3-P1 closeout — golden chain rebuild verified (R-14)"
 ```
+
+---
+## 收尾註記(執行完成後填)
+- Exit Gate 實測:乾淨 venv 重生 → `verify OK: 175 files match`;golden 測試 20 passed(另 1 ignored 的手動 hash dump helper)。
+- manifest 檔數:175;環境:`# env: Windows-10-10.0.19045-SP0 / AMD64 / python 3.11.9 / numpy 2.4.6, scipy 1.17.1`。
+- 偏差(若有):sandbox 內第一次 lock 安裝無法連線套件來源;取得網路核准後以同一份 lock 成功安裝,版本與預期一致。`gen_golden.py` 實測 9 組全數完成,耗時 67.2 秒。
