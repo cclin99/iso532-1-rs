@@ -8,3 +8,6 @@ target-bench-*/
 data/
 AGENTS.md
 .claude/
+iso532-py/dist/
+.pytest_cache/
+__pycache__/
