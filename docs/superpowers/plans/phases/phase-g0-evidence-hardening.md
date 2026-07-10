@@ -561,3 +561,23 @@ const EXPECTED_AVX2: (u64, u64, u64) = (0, 0, 0);
 5. 未動任何 `iso532/src/` 檔案(本計畫是純測試/基礎設施工作;`git diff <start>..HEAD --stat -- iso532/src` 應為空)。
 
 完成後主計畫依 2026-07-10 風險報告 §11 推進 R3(C-ABI + Python binding),golden 再生鏈固化(R-14)併入 R3 第一個 phase。
+
+---
+
+## 收尾註記(2026-07-10)
+
+**G0' 已完成,Exit Gate 5/5 達成。** Task 1–7 對應 commit `07aed08`…`249f0dd`,
+CI 上線後經三輪迭代全綠(`e49de49`/`d67c5e6`/`fa728e7`)。
+
+與計畫的偏差:
+
+1. Task 7 Step 5 的「ubuntu libm 差異」如預期發生,但處置比計畫更進一步:改用本機
+   Docker `ubuntu:24.04` 直接取值凍結(不走 CI log 來回),並重構測試為「先印全部
+   backend 再 assert」。
+2. **計畫外發現**:GitHub windows runner 的 UCRT libm 按 CPU/OS build 分派,連 scalar
+   hash 都與開發機不同——「per-OS 凍結」假設在 Windows 不成立。處置:Linux CI 硬
+   assert、Windows CI 以 `HASH_GATE_DUMP_ONLY=1` 降級為 dump-only、本機維持硬 assert。
+3. 正面發現:`n` 與 `time_axis` 跨全部環境 bitwise 相同,libm 噪音只存在於
+   `n_specific`。R3 跨平台驗收可據此對主輸出用 bitwise 比對。
+
+完整除錯紀錄:`docs/CI-HASH-GATE-DEBUG-2026-07-10.md`。
