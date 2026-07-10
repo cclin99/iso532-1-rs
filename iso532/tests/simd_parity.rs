@@ -4,6 +4,7 @@ mod common;
 use common::assert_close;
 use iso532::zwtv::nonlinear_decay::{nl_loudness_avx2, nl_loudness_scalar};
 use iso532::zwtv::third_octave_levels::{third_octave_levels_avx2, third_octave_levels_scalar};
+use iso532::zwtv::ParMode;
 
 #[test]
 fn filter_bank_avx2_matches_scalar() {
@@ -23,7 +24,7 @@ fn filter_bank_avx2_matches_scalar() {
         .collect();
 
     let (scalar, scalar_n_time) = third_octave_levels_scalar(&sig);
-    let (avx2, avx2_n_time) = unsafe { third_octave_levels_avx2(&sig) };
+    let (avx2, avx2_n_time) = unsafe { third_octave_levels_avx2(&sig, ParMode::Sequential) };
 
     assert_eq!(avx2_n_time, scalar_n_time);
     assert_close(&avx2, &scalar, 1e-10, 1e-12, "avx2 vs scalar");
