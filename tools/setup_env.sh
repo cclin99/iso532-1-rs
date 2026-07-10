@@ -25,7 +25,8 @@ else
   exit 1
 fi
 $PY -m pip install --quiet --upgrade pip
-$PY -m pip install --quiet ./mosqito-1.2.1.tar.gz openpyxl matplotlib
+$PY -m pip install --quiet -r tools/requirements.lock
+$PY -m pip install --quiet --no-deps ./mosqito-1.2.1.tar.gz
 $PY -c "import mosqito, scipy, numpy; print('mosqito OK, scipy', scipy.__version__, 'numpy', numpy.__version__)"
 
 # Annex B test data from the MoSQITo repo (not shipped in the sdist)

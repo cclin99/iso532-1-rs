@@ -2,6 +2,7 @@
 *.tar.gz
 mosqito-1.2.1/
 .venv/
+.venv*/
 target/
 target-bench-*/
 data/
