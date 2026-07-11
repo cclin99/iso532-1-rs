@@ -48,12 +48,56 @@ pub mod zwtv;
 
 pub use error::Iso532Error;
 pub use zwst::loudness_zwst;
-pub use zwtv::{loudness_zwtv, ZwtvProcessor};
+pub use zwtv::{loudness_zwtv, zwtv_out_frames, ZwtvProcessor};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum FieldType {
     Free,
     Diffuse,
+}
+
+impl TryFrom<i32> for FieldType {
+    type Error = i32;
+
+    fn try_from(value: i32) -> Result<Self, Self::Error> {
+        match value {
+            0 => Ok(Self::Free),
+            1 => Ok(Self::Diffuse),
+            other => Err(other),
+        }
+    }
+}
+
+impl std::str::FromStr for FieldType {
+    type Err = ();
+
+    fn from_str(value: &str) -> Result<Self, Self::Err> {
+        match value {
+            "free" => Ok(Self::Free),
+            "diffuse" => Ok(Self::Diffuse),
+            _ => Err(()),
+        }
+    }
+}
+
+#[cfg(test)]
+mod field_type_tests {
+    use crate::FieldType;
+
+    #[test]
+    fn try_from_i32_matches_abi_table() {
+        assert_eq!(FieldType::try_from(0), Ok(FieldType::Free));
+        assert_eq!(FieldType::try_from(1), Ok(FieldType::Diffuse));
+        assert_eq!(FieldType::try_from(2), Err(2));
+        assert_eq!(FieldType::try_from(-1), Err(-1));
+    }
+
+    #[test]
+    fn from_str_matches_py_vocabulary() {
+        assert_eq!("free".parse(), Ok(FieldType::Free));
+        assert_eq!("diffuse".parse(), Ok(FieldType::Diffuse));
+        assert!("FREE".parse::<FieldType>().is_err());
+    }
 }
 
 #[derive(Debug, Clone)]

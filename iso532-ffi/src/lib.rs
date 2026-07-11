@@ -11,25 +11,15 @@ pub const ISO532_ERR_UNSUPPORTED_SAMPLE_RATE: i32 = 3;
 pub const ISO532_ERR_NULL_POINTER: i32 = -1;
 pub const ISO532_ERR_PANIC: i32 = -2;
 pub const ISO532_ERR_INVALID_FIELD_TYPE: i32 = -3;
+/// 程式庫內部不變量被打破；輸出緩衝未被寫入。
+pub const ISO532_ERR_INTERNAL: i32 = -4;
+/// field_type 合法值：自由場。
+pub const ISO532_FIELD_FREE: i32 = 0;
+/// field_type 合法值：擴散場。
+pub const ISO532_FIELD_DIFFUSE: i32 = 1;
 use std::panic::{catch_unwind, AssertUnwindSafe};
 
-use iso532::{loudness_zwst, loudness_zwtv, FieldType, Iso532Error};
-
-fn error_code(e: &Iso532Error) -> i32 {
-    match e {
-        Iso532Error::LevelExceeds120dB => ISO532_ERR_LEVEL_EXCEEDS_120DB,
-        Iso532Error::SignalTooShort { .. } => ISO532_ERR_SIGNAL_TOO_SHORT,
-        Iso532Error::UnsupportedSampleRate(_) => ISO532_ERR_UNSUPPORTED_SAMPLE_RATE,
-    }
-}
-
-fn field_from(v: i32) -> Option<FieldType> {
-    match v {
-        0 => Some(FieldType::Free),
-        1 => Some(FieldType::Diffuse),
-        _ => None,
-    }
-}
+use iso532::{loudness_zwst, loudness_zwtv, FieldType};
 
 /// 統一 panic 邊界:所有 extern fn 的函式體都必須整體通過這裡。
 fn guarded(f: impl FnOnce() -> i32) -> i32 {
@@ -37,11 +27,11 @@ fn guarded(f: impl FnOnce() -> i32) -> i32 {
 }
 
 /// Number of output frames `iso532_loudness_zwtv` will write for a signal of
-/// `signal_len` samples: ceil(ceil(signal_len/24)/4). Pure; does not validate
-/// (validation happens in the main call).
+/// `signal_len` samples, on the ISO 2 ms output grid. Pure; does not validate
+/// (validation happens in the main call). Forwards `iso532::zwtv_out_frames`.
 #[no_mangle]
 pub extern "C" fn iso532_zwtv_out_frames(signal_len: usize) -> usize {
-    signal_len.div_ceil(24).div_ceil(4)
+    iso532::zwtv_out_frames(signal_len)
 }
 
 /// Time-varying (zwtv) loudness. Caller allocates every buffer:
@@ -51,8 +41,11 @@ pub extern "C" fn iso532_zwtv_out_frames(signal_len: usize) -> usize {
 /// pool (rayon).
 ///
 /// # Safety
-/// `signal` must be valid for `signal_len` reads; each out pointer must be
-/// valid for the writes documented above.
+/// `signal` must be non-null, 8-byte aligned (a valid `double*`), and valid
+/// for `signal_len` reads; each out pointer must be valid (and 8-byte
+/// aligned) for the writes documented above. `field_type` must be
+/// ISO532_FIELD_FREE (0) or ISO532_FIELD_DIFFUSE (1); other values return
+/// ISO532_ERR_INVALID_FIELD_TYPE.
 #[no_mangle]
 pub unsafe extern "C" fn iso532_loudness_zwtv(
     signal: *const f64,
@@ -73,7 +66,7 @@ pub unsafe extern "C" fn iso532_loudness_zwtv(
         {
             return ISO532_ERR_NULL_POINTER;
         }
-        let Some(field) = field_from(field_type) else {
+        let Ok(field) = FieldType::try_from(field_type) else {
             return ISO532_ERR_INVALID_FIELD_TYPE;
         };
         // SAFETY: 呼叫端契約(見函式 Safety 註解);closure 不繼承 unsafe fn
@@ -82,7 +75,13 @@ pub unsafe extern "C" fn iso532_loudness_zwtv(
         match loudness_zwtv(signal, fs, field) {
             Ok(r) => {
                 let frames = r.n.len();
-                debug_assert_eq!(frames, iso532_zwtv_out_frames(signal_len));
+                if frames != iso532::zwtv_out_frames(signal_len)
+                    || r.n_specific.len() != 240 * frames
+                    || r.bark_axis.len() != 240
+                    || r.time_axis.len() != frames
+                {
+                    return ISO532_ERR_INTERNAL;
+                }
                 // SAFETY: 呼叫端契約——各緩衝大小如上;來源為剛建構的 Vec。
                 unsafe {
                     std::ptr::copy_nonoverlapping(r.n.as_ptr(), out_n, frames);
@@ -96,7 +95,7 @@ pub unsafe extern "C" fn iso532_loudness_zwtv(
                 }
                 ISO532_OK
             }
-            Err(e) => error_code(&e),
+            Err(e) => e.code(),
         }
     })
 }
@@ -105,8 +104,11 @@ pub unsafe extern "C" fn iso532_loudness_zwtv(
 /// out_n_specific[240], out_bark[240]. Returns 0 on success.
 ///
 /// # Safety
-/// `signal` must be valid for `signal_len` reads; each out pointer must be
-/// valid for the writes documented above.
+/// `signal` must be non-null, 8-byte aligned (a valid `double*`), and valid
+/// for `signal_len` reads; each out pointer must be valid (and 8-byte
+/// aligned) for the writes documented above. `field_type` must be
+/// ISO532_FIELD_FREE (0) or ISO532_FIELD_DIFFUSE (1); other values return
+/// ISO532_ERR_INVALID_FIELD_TYPE.
 #[no_mangle]
 pub unsafe extern "C" fn iso532_loudness_zwst(
     signal: *const f64,
@@ -121,13 +123,16 @@ pub unsafe extern "C" fn iso532_loudness_zwst(
         if signal.is_null() || out_n.is_null() || out_n_specific.is_null() || out_bark.is_null() {
             return ISO532_ERR_NULL_POINTER;
         }
-        let Some(field) = field_from(field_type) else {
+        let Ok(field) = FieldType::try_from(field_type) else {
             return ISO532_ERR_INVALID_FIELD_TYPE;
         };
         // SAFETY: 呼叫端契約(見函式 Safety 註解)。
         let signal = unsafe { std::slice::from_raw_parts(signal, signal_len) };
         match loudness_zwst(signal, fs, field) {
             Ok(r) => {
+                if r.n_specific.len() != 240 || r.bark_axis.len() != 240 {
+                    return ISO532_ERR_INTERNAL;
+                }
                 // SAFETY: 呼叫端契約——out_n 1 個、spec/bark 各 240 個 f64。
                 unsafe {
                     *out_n = r.n;
@@ -136,7 +141,7 @@ pub unsafe extern "C" fn iso532_loudness_zwst(
                 }
                 ISO532_OK
             }
-            Err(e) => error_code(&e),
+            Err(e) => e.code(),
         }
     })
 }

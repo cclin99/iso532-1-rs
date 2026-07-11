@@ -1,6 +1,8 @@
 //! Python bindings for the `iso532` crate. Batch API only (R3); the
-//! streaming API arrives with R5. GIL is released during computation;
-//! outputs are moved into numpy arrays without an extra copy.
+//! streaming API arrives with R5. The input is copied to an owned buffer
+//! before the GIL is released (soundness: other Python threads may mutate
+//! the ndarray mid-computation); outputs are moved into numpy arrays
+//! without an extra copy.
 
 use numpy::ndarray::Array2;
 use numpy::{IntoPyArray, PyArray1, PyArray2, PyReadonlyArray1};
@@ -15,13 +17,11 @@ type ZwtvOutput<'py> = (
 );
 type ZwstOutput<'py> = (f64, Bound<'py, PyArray1<f64>>, Bound<'py, PyArray1<f64>>);
 fn parse_field(s: &str) -> PyResult<iso532_core::FieldType> {
-    match s {
-        "free" => Ok(iso532_core::FieldType::Free),
-        "diffuse" => Ok(iso532_core::FieldType::Diffuse),
-        other => Err(PyValueError::new_err(format!(
-            "field_type must be \"free\" or \"diffuse\", got {other:?}"
-        ))),
-    }
+    s.parse().map_err(|_| {
+        PyValueError::new_err(format!(
+            "field_type must be \"free\" or \"diffuse\", got {s:?}"
+        ))
+    })
 }
 
 fn contiguous<'py, 'a>(signal: &'a PyReadonlyArray1<'py, f64>) -> PyResult<&'a [f64]> {
@@ -41,9 +41,9 @@ fn loudness_zwtv<'py>(
     field_type: &str,
 ) -> PyResult<ZwtvOutput<'py>> {
     let field = parse_field(field_type)?;
-    let slice = contiguous(&signal)?;
+    let owned = contiguous(&signal)?.to_vec();
     let r = py
-        .allow_threads(|| iso532_core::loudness_zwtv(slice, fs, field))
+        .allow_threads(move || iso532_core::loudness_zwtv(&owned, fs, field))
         .map_err(|e| PyValueError::new_err(e.to_string()))?;
     let frames = r.n.len();
     let spec = Array2::from_shape_vec((240, frames), r.n_specific)
@@ -68,9 +68,9 @@ fn loudness_zwst<'py>(
     field_type: &str,
 ) -> PyResult<ZwstOutput<'py>> {
     let field = parse_field(field_type)?;
-    let slice = contiguous(&signal)?;
+    let owned = contiguous(&signal)?.to_vec();
     let r = py
-        .allow_threads(|| iso532_core::loudness_zwst(slice, fs, field))
+        .allow_threads(move || iso532_core::loudness_zwst(&owned, fs, field))
         .map_err(|e| PyValueError::new_err(e.to_string()))?;
     Ok((
         r.n,

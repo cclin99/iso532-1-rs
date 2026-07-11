@@ -17,6 +17,12 @@ import platform
 import sys
 from pathlib import Path
 
+if sys.version_info < (3, 11):
+    sys.exit(
+        "golden_manifest.py needs Python >= 3.11 (hashlib.file_digest); "
+        "run it with the tools venv per docs/GOLDEN-REGEN-SOP.md"
+    )
+
 ROOT = Path(__file__).resolve().parent.parent
 PATTERNS = ("golden/**/*.bin", "golden/**/meta.json", "annexb/*")
 

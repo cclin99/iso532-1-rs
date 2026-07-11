@@ -1,6 +1,7 @@
 /* C smoke test for the committed include/iso532.h (spec §9).
- * Compiled by CI with gcc (ubuntu) and MSVC cl (windows) against the
- * cdylib; any signature drift in the committed header fails compilation. */
+ * Compiled by CI with gcc (ubuntu) and MSVC cl (windows) against the cdylib.
+ * 注意:C 連結不檢查簽名——header 與 Rust 的同步由 CI 的 cbindgen 再生
+ * 比對步驟把關;本檔案負責呼叫慣例與行為煙霧測試。 */
 #include <math.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -32,7 +33,7 @@ int main(void) {
         return 1;
     }
 
-    code = iso532_loudness_zwtv(signal, LEN, 48000.0, 0, out_n, out_spec,
+    code = iso532_loudness_zwtv(signal, LEN, 48000.0, ISO532_FIELD_FREE, out_n, out_spec,
                                 out_bark, out_time);
     if (code != 0) {
         fprintf(stderr, "zwtv: code %d\n", (int)code);
@@ -50,7 +51,7 @@ int main(void) {
         return 1;
     }
 
-    code = iso532_loudness_zwst(signal, LEN, 48000.0, 0, out_n, out_spec,
+    code = iso532_loudness_zwst(signal, LEN, 48000.0, ISO532_FIELD_FREE, out_n, out_spec,
                                 out_bark);
     if (code != 0) {
         fprintf(stderr, "zwst: code %d\n", (int)code);

@@ -42,6 +42,7 @@ jobs:
           --test determinism
           --test api_errors
           --test hash_gate
+          --test py_contract_dump
 
   ffi:
     strategy:
@@ -60,8 +61,17 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: iso532-ffi
+      - uses: taiki-e/install-action@v2
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          tool: cbindgen@0.29.4
       - run: cargo fmt --check
       - run: cargo clippy --all-targets --all-features -- -D warnings
+      - name: header up-to-date (cbindgen regen + diff)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          cbindgen --config cbindgen.toml --crate iso532-ffi --output include/iso532.h
+          git diff --exit-code include/iso532.h
       # 一般測試 + panic 注入(test-panic feature 打開時兩者都跑)
       - run: cargo test --features test-panic
       - run: cargo build --release

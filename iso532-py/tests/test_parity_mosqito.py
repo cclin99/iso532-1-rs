@@ -15,7 +15,7 @@ import pytest
 pytest.importorskip("mosqito")
 from mosqito.sq_metrics import loudness_zwst, loudness_zwtv  # noqa: E402
 
-import iso532  # noqa: E402
+iso532 = pytest.importorskip("iso532")
 
 ROOT = Path(__file__).resolve().parents[2]
 if not (ROOT / "data" / "annexb").is_dir():

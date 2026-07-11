@@ -8,6 +8,17 @@ use crate::zwst::bark_axis;
 use crate::{FieldType, Iso532Error, LoudnessTimeVarying};
 use rayon::prelude::*;
 
+/// 輸出格線相對 third-octave 框架的再抽取因子(2 ms 格線)。
+pub(crate) const OUT_DECIM: usize = 4;
+
+/// `loudness_zwtv` 對 `signal_len` 樣本輸入的輸出框架數。
+/// 純函數、不驗證輸入；binding 必須轉發本函式，勿手抄公式。
+pub fn zwtv_out_frames(signal_len: usize) -> usize {
+    signal_len
+        .div_ceil(third_octave_levels::DEC_FACTOR)
+        .div_ceil(OUT_DECIM)
+}
+
 /// 頻帶平行階段的排程模式。離線批次走 `Rayon`;
 /// R5 串流路徑必須選 `Sequential`(音訊路徑不得觸發 thread pool)。
 /// 注意:scalar 後備路徑在 `Rayon` 模式下的暫態配置隨執行緒數放大
@@ -63,15 +74,15 @@ impl ZwtvProcessor {
         main_loudness_frames_into(&self.third_octave_frames, n_time, field, &mut self.core)?;
 
         let nl = nonlinear_decay::nl_loudness(&self.core, n_time);
-        let n_out = n_time.div_ceil(4);
+        let n_out = n_time.div_ceil(OUT_DECIM);
         self.loudness.resize(n_time, 0.0);
         self.spec_time_major.resize(240 * n_out, 0.0);
         self.loudness
-            .par_chunks_mut(4)
+            .par_chunks_mut(OUT_DECIM)
             .zip_eq(self.spec_time_major.par_chunks_mut(240))
             .enumerate()
             .for_each(|(out_idx, (loudness_chunk, spec))| {
-                let t0 = out_idx * 4;
+                let t0 = out_idx * OUT_DECIM;
                 let frame: [f64; 21] = std::array::from_fn(|band| nl[band * n_time + t0]);
                 loudness_chunk[0] = calc_slopes_into(&frame, spec);
                 for (offset, loudness) in loudness_chunk.iter_mut().enumerate().skip(1) {
@@ -85,7 +96,7 @@ impl ZwtvProcessor {
         let time_axis = third_octave_levels::time_axis(signal.len(), n_time);
         let mut n = Vec::with_capacity(n_out);
         let mut out_time = Vec::with_capacity(n_out);
-        for t in (0..n_time).step_by(4) {
+        for t in (0..n_time).step_by(OUT_DECIM) {
             n.push(filt[t]);
             out_time.push(time_axis[t]);
         }
@@ -127,6 +138,20 @@ pub fn loudness_zwtv(
 mod tests {
     use super::{loudness_zwtv, ZwtvProcessor};
     use crate::FieldType;
+
+    #[test]
+    fn zwtv_out_frames_matches_pipeline_output() {
+        let signal: Vec<f64> = (0..48_000)
+            .map(|i| (i % 480) as f64 / 480.0 * 0.02 - 0.01)
+            .collect();
+        for len in [4800usize, 4801, 4823, 4824, 4895, 4896, 4897, 48_000] {
+            let n = loudness_zwtv(&signal[..len], 48_000.0, FieldType::Free)
+                .unwrap()
+                .n
+                .len();
+            assert_eq!(super::zwtv_out_frames(len), n, "len={len}");
+        }
+    }
 
     #[test]
     fn processor_matches_free_function_and_reuses_scratch_capacity() {

@@ -37,3 +37,4 @@ requirements.lock 是否被動過、mosqito tarball sha256)。
 | Annex B wav/xlsx | SHA256 在 `tools/golden.sha256`;來源是 MoSQITo GitHub repo tag v1.2.1(setup_env.sh) |
 | Python 小版本 | 3.11(lock 標頭註記) |
 | golden 位元組 | `tools/golden.sha256`(per-環境) |
+| 契約執行 | `setup_env.sh` 腳本守衛:Python == 3.11、tarball SHA256、sanity import 含 openpyxl/pyuff |

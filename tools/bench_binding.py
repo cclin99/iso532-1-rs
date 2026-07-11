@@ -3,20 +3,17 @@
 Compare against a same-day ``cargo bench`` zwtv number on this machine.
 """
 
+import sys
 import time
+from pathlib import Path
 
-import numpy as np
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from iso532_testkit import contract_signal
 
 import iso532
 
 FS = 48000
-i = np.arange(10 * FS, dtype=np.uint64)
-sig = (
-    ((i * np.uint64(2654435761)) % np.uint64(96001)).astype(np.float64)
-    / 96000.0
-    * 0.02
-    - 0.01
-)
+sig = contract_signal(10 * FS)
 
 iso532.loudness_zwtv(sig, float(FS))
 best = float("inf")

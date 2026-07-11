@@ -1,0 +1,4 @@
+interface:
+  display_name: "ISO532 R3 Verification"
+  short_description: "Verify R3 ABI, Python, golden, and hash contracts"
+  default_prompt: "Use $iso532-r3-verification to run the ISO532 R3 contract verification gates."

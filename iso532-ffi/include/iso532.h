@@ -25,14 +25,29 @@
 
 #define ISO532_ERR_INVALID_FIELD_TYPE -3
 
+/**
+ * 程式庫內部不變量被打破；輸出緩衝未被寫入。
+ */
+#define ISO532_ERR_INTERNAL -4
+
+/**
+ * field_type 合法值：自由場。
+ */
+#define ISO532_FIELD_FREE 0
+
+/**
+ * field_type 合法值：擴散場。
+ */
+#define ISO532_FIELD_DIFFUSE 1
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
 
 /**
  * Number of output frames `iso532_loudness_zwtv` will write for a signal of
- * `signal_len` samples: ceil(ceil(signal_len/24)/4). Pure; does not validate
- * (validation happens in the main call).
+ * `signal_len` samples, on the ISO 2 ms output grid. Pure; does not validate
+ * (validation happens in the main call). Forwards `iso532::zwtv_out_frames`.
  */
 size_t iso532_zwtv_out_frames(size_t signal_len);
 
@@ -44,8 +59,11 @@ size_t iso532_zwtv_out_frames(size_t signal_len);
  * pool (rayon).
  *
  * # Safety
- * `signal` must be valid for `signal_len` reads; each out pointer must be
- * valid for the writes documented above.
+ * `signal` must be non-null, 8-byte aligned (a valid `double*`), and valid
+ * for `signal_len` reads; each out pointer must be valid (and 8-byte
+ * aligned) for the writes documented above. `field_type` must be
+ * ISO532_FIELD_FREE (0) or ISO532_FIELD_DIFFUSE (1); other values return
+ * ISO532_ERR_INVALID_FIELD_TYPE.
  */
 int32_t iso532_loudness_zwtv(const double *signal,
                              size_t signal_len,
@@ -61,8 +79,11 @@ int32_t iso532_loudness_zwtv(const double *signal,
  * out_n_specific[240], out_bark[240]. Returns 0 on success.
  *
  * # Safety
- * `signal` must be valid for `signal_len` reads; each out pointer must be
- * valid for the writes documented above.
+ * `signal` must be non-null, 8-byte aligned (a valid `double*`), and valid
+ * for `signal_len` reads; each out pointer must be valid (and 8-byte
+ * aligned) for the writes documented above. `field_type` must be
+ * ISO532_FIELD_FREE (0) or ISO532_FIELD_DIFFUSE (1); other values return
+ * ISO532_ERR_INVALID_FIELD_TYPE.
  */
 int32_t iso532_loudness_zwst(const double *signal,
                              size_t signal_len,
