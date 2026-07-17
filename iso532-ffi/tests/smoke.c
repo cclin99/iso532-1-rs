@@ -16,6 +16,7 @@ static double out_n[FRAMES];
 static double out_spec[240 * FRAMES];
 static double out_bark[240];
 static double out_time[FRAMES];
+static Iso532StreamFrame stream_out[8];
 
 int main(void) {
     size_t frames;
@@ -60,6 +61,49 @@ int main(void) {
     if (!isfinite(out_n[0]) || out_n[0] <= 0.0) {
         fprintf(stderr, "zwst: n = %f\n", out_n[0]);
         return 1;
+    }
+
+    {
+        Iso532Stream *stream = iso532_stream_new(ISO532_FIELD_FREE);
+        size_t offset = 0;
+        size_t total_written = 0;
+        size_t printed = 0;
+        if (iso532_stream_max_frames(480) > 8) {
+            fprintf(stderr, "stream_max_frames(480) exceeds static capacity\n");
+            return 1;
+        }
+        if (stream == NULL) {
+            fprintf(stderr, "stream_new returned NULL\n");
+            return 1;
+        }
+        while (offset < LEN) {
+            size_t chunk_len = LEN - offset < 480 ? LEN - offset : 480;
+            size_t written = 0;
+            code = iso532_stream_push(stream, signal + offset, chunk_len, stream_out, 8,
+                                      &written);
+            if (code != ISO532_OK) {
+                fprintf(stderr, "stream_push: code %d\n", (int)code);
+                iso532_stream_free(stream);
+                return 1;
+            }
+            for (i = 0; i < written && printed < 3; i++, printed++) {
+                printf("stream[%zu]: t=%llu n=%f phon=%f flags=%u\n", printed,
+                       (unsigned long long)stream_out[i].t_frame_index, stream_out[i].n,
+                       stream_out[i].n_phon, (unsigned)stream_out[i].flags);
+            }
+            total_written += written;
+            offset += chunk_len;
+        }
+        {
+            size_t written = 0;
+            code = iso532_stream_flush(stream, stream_out, 8, &written);
+            total_written += written;
+        }
+        iso532_stream_free(stream);
+        if (code != ISO532_OK || total_written != FRAMES) {
+            fprintf(stderr, "stream: code=%d frames=%zu\n", (int)code, total_written);
+            return 1;
+        }
     }
 
     /* 錯誤碼 smoke:fs 不支援 → 3(字面值,不依賴 #define) */

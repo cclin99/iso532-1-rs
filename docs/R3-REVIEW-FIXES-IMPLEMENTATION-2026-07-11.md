@@ -35,7 +35,7 @@
 
 - **#1（Sol，高風險）**：FFI `zwtv` 在所有 unsafe copy 前檢查 `n`、`n_specific`、`bark_axis`、`time_axis`；`zwst` 檢查兩個 240 長度不變量，違反回傳 `ISO532_ERR_INTERNAL (-4)`。保留 ABI 的固定 240 契約。
 - **#2/#4/#8（Terra）**：Python 3.11 boot guard 移到建立 `.venv` 前；testkit 使用不可被 `python -O` 消除的 `RuntimeError`；tarball SHA 只從 `requirements.lock` header 讀取並拒絕缺失/重複。
-- **#3/#5/#6/#9（Luna）**：驗證 skill 加入 cbindgen 0.29.4 與 parity 強制入口；CI 使用預編譯 cbindgen action；Python helper bootstrap 集中於 conftest（CI 工作樹已套用 action，Python parity 入口仍待 binding build 後驗證）。
+- **#3/#5/#6/#9（Luna）**：驗證 skill 加入 cbindgen 0.29.4 與 parity 強制入口；CI 使用預編譯 cbindgen action；Python helper bootstrap 集中於 conftest（CI 工作樹已套用 action，Python parity 入口仍待 binding build 後驗證）。（2026-07-16 追記：conftest 於 R5 S0.4 才真正落地；ISO532_REQUIRE_PARITY 同步由文件慣例改為程式實作。）
 - **TDD RED/GREEN**：環境三項守衛先以失敗靜態契約建立 RED，再以 `tools/test_env_guards.py` 3/3 GREEN；FFI 長度守衛的探針測試設計完成，現有 10 個 FFI 測試與 core 全套測試 GREEN。
 - **BDD 情境**：Given 錯版 boot interpreter，When setup 啟動，Then 不建立/改寫 `.venv`；Given cross-language known-answer，When Python 以 `-O` 載入，Then drift 以 RuntimeError 報錯；Given FFI 回傳長度破壞，When unsafe copy 前檢查，Then 回傳 -4 且不寫輸出緩衝。
 

@@ -1,4 +1,5 @@
 pub mod nonlinear_decay;
+pub mod stream;
 pub mod temporal_weighting;
 pub mod third_octave_levels;
 
@@ -29,8 +30,24 @@ pub enum ParMode {
     Sequential,
 }
 
-fn use_rayon(mode: ParMode) -> bool {
-    mode == ParMode::Rayon
+pub(crate) fn chunks_dispatch<F>(out: &mut [f64], chunk: usize, mode: ParMode, f: F)
+where
+    F: Fn(usize, &mut [f64]) + Sync,
+{
+    if out.is_empty() {
+        return;
+    }
+    match mode {
+        ParMode::Rayon => out
+            .par_chunks_mut(chunk)
+            .enumerate()
+            .for_each(|(index, piece)| f(index, piece)),
+        ParMode::Sequential => {
+            for (index, piece) in out.chunks_mut(chunk).enumerate() {
+                f(index, piece);
+            }
+        }
+    }
 }
 
 #[derive(Debug, Default)]

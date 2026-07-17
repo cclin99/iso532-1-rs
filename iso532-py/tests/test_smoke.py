@@ -1,11 +1,7 @@
 """Smoke + cross-language bitwise contract tests (no mosqito; runs in CI)."""
-import sys
-from pathlib import Path
-
 import numpy as np
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
 from iso532_testkit import contract_signal, fnv1a_f64  # noqa: E402
 
 import iso532  # noqa: E402
@@ -66,3 +62,16 @@ def test_strict_input_contract():
         iso532.loudness_zwtv(sig.astype(np.float32), FS)
     with pytest.raises(TypeError):
         iso532.loudness_zwtv(sig[::2], FS)
+
+
+def test_sone2phon_matches_frozen_formula():
+    n = np.arange(0.0, 20.0001, 0.02)
+    expected = np.empty_like(n)
+    high = n >= 1.0
+    expected[high] = 40.0 + 10.0 * np.log2(n[high])
+    expected[~high] = 40.0 * np.power(n[~high] + 0.0005, 0.35)
+    got = np.array([iso532.sone2phon(float(value)) for value in n])
+    np.testing.assert_allclose(got, expected, rtol=0.0, atol=1e-12)
+    assert iso532.sone2phon(1.0) == pytest.approx(40.0, abs=1e-12)
+    assert iso532.sone2phon(2.0) == pytest.approx(50.0, abs=1e-12)
+    assert iso532.sone2phon(4.0) == pytest.approx(60.0, abs=1e-12)

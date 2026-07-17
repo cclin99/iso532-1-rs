@@ -1,8 +1,7 @@
-//! C ABI (v0) for the `iso532` crate. Batch API only; the streaming handle
-//! API arrives with R5 (`iso532_stream_*`), which also freezes v1.
+//! C ABI v1 for the iso532 crate: batch and stateful streaming APIs.
 //!
-//! Every extern fn body is wrapped in `catch_unwind` (panic -> -2); this
-//! crate must never be built with `panic = "abort"`.
+//! Every extern fn that can panic is wrapped in `catch_unwind` (panic -> -2);
+//! this crate must never be built with `panic = "abort"`.
 
 pub const ISO532_OK: i32 = 0;
 pub const ISO532_ERR_LEVEL_EXCEEDS_120DB: i32 = 1;
@@ -11,12 +10,16 @@ pub const ISO532_ERR_UNSUPPORTED_SAMPLE_RATE: i32 = 3;
 pub const ISO532_ERR_NULL_POINTER: i32 = -1;
 pub const ISO532_ERR_PANIC: i32 = -2;
 pub const ISO532_ERR_INVALID_FIELD_TYPE: i32 = -3;
-/// 程式庫內部不變量被打破；輸出緩衝未被寫入。
+/// An internal invariant was broken. Stream push/flush also use this code to
+/// reject an insufficient out_cap without writing a partial result.
 pub const ISO532_ERR_INTERNAL: i32 = -4;
 /// field_type 合法值：自由場。
 pub const ISO532_FIELD_FREE: i32 = 0;
 /// field_type 合法值：擴散場。
 pub const ISO532_FIELD_DIFFUSE: i32 = 1;
+pub const ISO532_STREAM_FLAG_CLAMPED_120DB: u32 = 1;
+pub const ISO532_STREAM_FLAG_NONFINITE_INPUT: u32 = 2;
+pub const ISO532_STREAM_FLAG_WARMUP: u32 = 4;
 use std::panic::{catch_unwind, AssertUnwindSafe};
 
 use iso532::{loudness_zwst, loudness_zwtv, FieldType};
@@ -24,6 +27,147 @@ use iso532::{loudness_zwst, loudness_zwtv, FieldType};
 /// 統一 panic 邊界:所有 extern fn 的函式體都必須整體通過這裡。
 fn guarded(f: impl FnOnce() -> i32) -> i32 {
     catch_unwind(AssertUnwindSafe(f)).unwrap_or(ISO532_ERR_PANIC)
+}
+
+#[repr(C)]
+#[derive(Clone, Copy, Debug, Default)]
+/// One 2 ms stream output frame.
+///
+/// `flags` uses bit 1 for CLAMPED_120DB, bit 2 for NONFINITE_INPUT, and bit 4
+/// for WARMUP. WARMUP is set while `t_frame_index < 580`.
+pub struct Iso532StreamFrame {
+    pub t_frame_index: u64,
+    pub n: f64,
+    pub n_phon: f64,
+    pub flags: u32,
+    pub _reserved: u32,
+}
+
+/// Opaque stream handle allocated by iso532_stream_new and released by
+/// iso532_stream_free. A handle has no internal lock and must not be called
+/// concurrently from multiple threads.
+pub struct Iso532Stream {
+    inner: iso532::ZwtvStream,
+}
+
+const _: () = {
+    assert!(std::mem::size_of::<Iso532StreamFrame>() == std::mem::size_of::<iso532::StreamFrame>());
+    assert!(
+        std::mem::align_of::<Iso532StreamFrame>() == std::mem::align_of::<iso532::StreamFrame>()
+    );
+};
+
+#[no_mangle]
+/// Allocate a baked-in 48 kHz stream with 24 samples (one internal frame) of
+/// latency. An invalid field_type returns NULL.
+pub extern "C" fn iso532_stream_new(field_type: i32) -> *mut Iso532Stream {
+    let Ok(field) = FieldType::try_from(field_type) else {
+        return std::ptr::null_mut();
+    };
+    catch_unwind(AssertUnwindSafe(|| {
+        Box::into_raw(Box::new(Iso532Stream {
+            inner: iso532::ZwtvStream::new(field),
+        }))
+    }))
+    .unwrap_or(std::ptr::null_mut())
+}
+
+#[no_mangle]
+pub extern "C" fn iso532_stream_max_frames(chunk_len: usize) -> usize {
+    iso532::ZwtvStream::max_frames_for_chunk(chunk_len)
+}
+
+/// Push a 48 kHz signal chunk into a stream handle.
+///
+/// `out` must hold at least `iso532_stream_max_frames(chunk_len)` frames. An
+/// insufficient out_cap returns -4, sets `*out_written` to zero, and writes no
+/// partial result. A panic returns -2 and poisons the handle; only
+/// iso532_stream_free may be called afterward. A push after flush also returns
+/// -2 through the internal assertion and has the same poisoned-handle rule.
+///
+/// # Safety
+/// The handle must be live, chunk must contain chunk_len readable doubles,
+/// out must contain out_cap writable frames, and out_written must be writable.
+#[no_mangle]
+pub unsafe extern "C" fn iso532_stream_push(
+    handle: *mut Iso532Stream,
+    chunk: *const f64,
+    chunk_len: usize,
+    out: *mut Iso532StreamFrame,
+    out_cap: usize,
+    out_written: *mut usize,
+) -> i32 {
+    guarded(|| {
+        if out_written.is_null() {
+            return ISO532_ERR_NULL_POINTER;
+        }
+        unsafe { *out_written = 0 };
+        if handle.is_null() || (chunk.is_null() && chunk_len > 0) || out.is_null() {
+            return ISO532_ERR_NULL_POINTER;
+        }
+        if out_cap < iso532_stream_max_frames(chunk_len) {
+            return ISO532_ERR_INTERNAL;
+        }
+        let chunk = if chunk_len == 0 {
+            &[]
+        } else {
+            unsafe { std::slice::from_raw_parts(chunk, chunk_len) }
+        };
+        let stream = unsafe { &mut (*handle).inner };
+        let out =
+            unsafe { std::slice::from_raw_parts_mut(out.cast::<iso532::StreamFrame>(), out_cap) };
+        let written = stream.push(chunk, out);
+        unsafe { *out_written = written };
+        ISO532_OK
+    })
+}
+
+/// Flush the final lookahead frame. out_cap must be at least one. After flush,
+/// only iso532_stream_free may be called through the C API.
+///
+/// # Safety
+/// The handle must be live, out must contain at least one writable frame,
+/// and out_written must be writable.
+#[no_mangle]
+pub unsafe extern "C" fn iso532_stream_flush(
+    handle: *mut Iso532Stream,
+    out: *mut Iso532StreamFrame,
+    out_cap: usize,
+    out_written: *mut usize,
+) -> i32 {
+    guarded(|| {
+        if out_written.is_null() {
+            return ISO532_ERR_NULL_POINTER;
+        }
+        unsafe { *out_written = 0 };
+        if handle.is_null() || out.is_null() {
+            return ISO532_ERR_NULL_POINTER;
+        }
+        if out_cap < 1 {
+            return ISO532_ERR_INTERNAL;
+        }
+        let stream = unsafe { &mut (*handle).inner };
+        let out =
+            unsafe { std::slice::from_raw_parts_mut(out.cast::<iso532::StreamFrame>(), out_cap) };
+        let written = stream.flush(out);
+        unsafe { *out_written = written };
+        ISO532_OK
+    })
+}
+
+/// Free a stream handle. A null handle is accepted.
+///
+/// # Safety
+/// A non-null handle must have been returned by iso532_stream_new and not
+/// previously freed.
+#[no_mangle]
+pub unsafe extern "C" fn iso532_stream_free(handle: *mut Iso532Stream) {
+    if handle.is_null() {
+        return;
+    }
+    let _ = catch_unwind(AssertUnwindSafe(|| unsafe {
+        drop(Box::from_raw(handle));
+    }));
 }
 
 /// Number of output frames `iso532_loudness_zwtv` will write for a signal of
@@ -167,5 +311,14 @@ pub extern "C" fn iso532__test_panic_rayon() -> i32 {
             }
         });
         ISO532_OK
+    })
+}
+
+#[cfg(feature = "test-panic")]
+#[no_mangle]
+pub extern "C" fn iso532__test_panic_stream() -> i32 {
+    guarded(|| {
+        let _stream = iso532::ZwtvStream::new(FieldType::Free);
+        panic!("test-panic: stream path")
     })
 }

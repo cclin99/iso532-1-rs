@@ -6,22 +6,27 @@ phase after R3 — do not weaken tolerances to make a change pass.
 Expected runtime: ~5-10 min (mosqito zwtv is ~0.45x realtime).
 """
 
-import sys
 from pathlib import Path
 
 import numpy as np
 import pytest
 
-pytest.importorskip("mosqito")
-from mosqito.sq_metrics import loudness_zwst, loudness_zwtv  # noqa: E402
+from conftest import REQUIRE_PARITY
 
-iso532 = pytest.importorskip("iso532")
+if REQUIRE_PARITY:
+    import mosqito  # noqa: F401
+    import iso532
+else:
+    pytest.importorskip("mosqito")
+    iso532 = pytest.importorskip("iso532")
+from mosqito.sq_metrics import loudness_zwst, loudness_zwtv  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 if not (ROOT / "data" / "annexb").is_dir():
+    if REQUIRE_PARITY:
+        raise RuntimeError("ISO532_REQUIRE_PARITY=1 but data/annexb missing")
     pytest.skip("data/annexb missing — run tools/setup_env.sh", allow_module_level=True)
 
-sys.path.insert(0, str(ROOT / "tools"))
 from gen_golden import FS, make_signals  # noqa: E402
 
 NAMES = [

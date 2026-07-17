@@ -208,6 +208,8 @@ impl ZwtvStream {
 5. 單幀成本 ≤ 60 µs(單執行緒,對照 DESIGN §4.4 預算 200 µs)。
 6. sone2phon 對 mosqito golden atol 1e-12。
 
+> **R5 實作回填（2026-07-16）：** ZwtvStream、sone2phon、P0 硬化、零配置/無 Rayon 看守與 iso532_stream_* C ABI v1 均已落地。Chunk {1,7,24,64,480,4096,LCG} 對 ZeroState 參考逐位一致；scalar/AVX2 兩路皆通過。原 phase 計畫的 N_warmup=363 在實測 frame 363 仍有 1.7133437069e-7 差值，第一個持續 ≤1e-9 的 frame 為 544，因此依 8τ_var + 8τ_slow 修正為 **580 frames**（36-frame margin），未放寬 1e-9 容差。Criterion 10 s/5000 frames median：AVX2 241.78 ms = 48.36 µs/frame，scalar 355.48 ms = 71.10 µs/frame，兩者均達預算。Python smoke 6/6、formal parity 18/18（0 skipped）、FFI Rust tests 13/13；cbindgen 0.29.4 已重生 v1 header。決策細節與偏差證據見 phases/phase-r5-stream-api.md 的實作紀錄。
+
 ### 風險與陷阱
 
 | # | 風險 | 機率 | 影響 | 緩解 |

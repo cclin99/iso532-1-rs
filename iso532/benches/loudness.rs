@@ -2,7 +2,7 @@ use std::time::Duration;
 
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
 use iso532::zwtv::third_octave_levels::third_octave_levels;
-use iso532::{loudness_zwtv, simd, FieldType};
+use iso532::{loudness_zwtv, simd, FieldType, StreamFrame, ZwtvStream};
 
 const FS: f64 = 48_000.0;
 const BENCH_SECS: usize = 10;
@@ -89,5 +89,41 @@ fn bench_zwtv_pipeline(c: &mut Criterion) {
     group.finish();
 }
 
-criterion_group!(benches, bench_third_octave_filter_bank, bench_zwtv_pipeline);
+fn bench_stream_push(c: &mut Criterion) {
+    let signal = bench_signal();
+    let mut group = c.benchmark_group("stream_push_10s_480chunk");
+    group.sample_size(10);
+    group.measurement_time(Duration::from_secs(6));
+    group.bench_function("scalar", |b| {
+        simd::set_force_scalar(true);
+        b.iter(|| {
+            let mut stream = ZwtvStream::new(FieldType::Free);
+            let mut out = [StreamFrame::default(); 64];
+            for chunk in signal.chunks(480) {
+                black_box(stream.push(black_box(chunk), &mut out));
+            }
+            black_box(stream.flush(&mut out))
+        })
+    });
+    simd::set_force_scalar(false);
+    group.bench_function(auto_dispatch_label(), |b| {
+        b.iter(|| {
+            simd::set_force_scalar(false);
+            let mut stream = ZwtvStream::new(FieldType::Free);
+            let mut out = [StreamFrame::default(); 64];
+            for chunk in signal.chunks(480) {
+                black_box(stream.push(black_box(chunk), &mut out));
+            }
+            black_box(stream.flush(&mut out))
+        })
+    });
+    group.finish();
+}
+
+criterion_group!(
+    benches,
+    bench_third_octave_filter_bank,
+    bench_zwtv_pipeline,
+    bench_stream_push
+);
 criterion_main!(benches);

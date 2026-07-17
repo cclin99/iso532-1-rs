@@ -2,7 +2,7 @@
 name = "iso532-ffi"
 version = "0.1.0"
 edition = "2021"
-description = "C ABI (v0) for the iso532 crate"
+description = "C ABI v1 for the iso532 crate"
 license = "Apache-2.0"
 
 [lib]

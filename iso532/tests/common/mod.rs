@@ -1,5 +1,33 @@
 use std::path::PathBuf;
 
+#[allow(dead_code)]
+const FS: f64 = 48_000.0;
+
+#[allow(dead_code)]
+pub fn synth_signal() -> Vec<f64> {
+    (0..48_000)
+        .map(|i| {
+            let t = i as f64 / FS;
+            0.25 * (2.0 * std::f64::consts::PI * 440.0 * t).sin()
+                + 0.10 * (2.0 * std::f64::consts::PI * 1_760.0 * t).sin()
+                + 0.04 * (2.0 * std::f64::consts::PI * 6_400.0 * t).sin()
+        })
+        .collect()
+}
+
+#[allow(dead_code)]
+pub fn synth_core(n_time: usize) -> Vec<f64> {
+    let mut core = vec![0.0; 21 * n_time];
+    for band in 0..21 {
+        for t in 0..n_time {
+            let phase = (t as f64 / 40.0 + band as f64).sin();
+            core[band * n_time + t] = (phase * 0.6 + 0.5).max(0.0);
+        }
+    }
+    core
+}
+
+#[allow(dead_code)]
 pub fn golden_dir(name: &str) -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -8,6 +36,7 @@ pub fn golden_dir(name: &str) -> PathBuf {
         .join(name)
 }
 
+#[allow(dead_code)]
 pub fn read_bin(name: &str, file: &str) -> Vec<f64> {
     let path = golden_dir(name).join(file);
     let bytes = std::fs::read(&path)

@@ -38,17 +38,6 @@ const EXPECTED_SCALAR: (u64, u64, u64) = (0, 0, 0);
 #[cfg(not(any(target_os = "windows", target_os = "linux")))]
 const EXPECTED_AVX2: (u64, u64, u64) = (0, 0, 0);
 
-fn synth_signal() -> Vec<f64> {
-    (0..48_000)
-        .map(|i| {
-            let t = i as f64 / FS;
-            0.25 * (2.0 * std::f64::consts::PI * 440.0 * t).sin()
-                + 0.10 * (2.0 * std::f64::consts::PI * 1_760.0 * t).sin()
-                + 0.04 * (2.0 * std::f64::consts::PI * 6_400.0 * t).sin()
-        })
-        .collect()
-}
-
 fn run_hashes(signal: &[f64]) -> (u64, u64, u64) {
     let r = loudness_zwtv(signal, FS, FieldType::Free).unwrap();
     (
@@ -62,7 +51,7 @@ fn run_hashes(signal: &[f64]) -> (u64, u64, u64) {
 // #[test] so flag changes cannot race another test in this binary.
 #[test]
 fn zwtv_backend_hashes_match_frozen_snapshot() {
-    let signal = synth_signal();
+    let signal = common::synth_signal();
 
     // Compute and print both backends before asserting so a single failing
     // run (e.g. a new OS) still reveals every value needed to freeze.

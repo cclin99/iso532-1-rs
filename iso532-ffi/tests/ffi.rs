@@ -194,6 +194,152 @@ fn out_frames_query_never_panics_below_min_length() {
     }
 }
 
+#[test]
+fn stream_matches_rust_stream_bitwise() {
+    let signal = quiet_signal(48_000);
+    let mut rust = iso532::ZwtvStream::new(iso532::FieldType::Free);
+    let mut rust_out = vec![iso532::StreamFrame::default(); 64];
+    let mut rust_frames = Vec::new();
+    for chunk in signal.chunks(480) {
+        let n = rust.push(chunk, &mut rust_out);
+        rust_frames.extend_from_slice(&rust_out[..n]);
+    }
+    let n = rust.flush(&mut rust_out);
+    rust_frames.extend_from_slice(&rust_out[..n]);
+
+    let handle = iso532_stream_new(ISO532_FIELD_FREE);
+    assert!(!handle.is_null());
+    let mut c_out = vec![Iso532StreamFrame::default(); 64];
+    let mut c_frames = Vec::new();
+    for chunk in signal.chunks(480) {
+        let mut written = 0;
+        let code = unsafe {
+            iso532_stream_push(
+                handle,
+                chunk.as_ptr(),
+                chunk.len(),
+                c_out.as_mut_ptr(),
+                c_out.len(),
+                &mut written,
+            )
+        };
+        assert_eq!(code, ISO532_OK);
+        c_frames.extend_from_slice(&c_out[..written]);
+    }
+    let mut written = 0;
+    assert_eq!(
+        unsafe { iso532_stream_flush(handle, c_out.as_mut_ptr(), c_out.len(), &mut written) },
+        ISO532_OK
+    );
+    c_frames.extend_from_slice(&c_out[..written]);
+    unsafe { iso532_stream_free(handle) };
+
+    assert_eq!(rust_frames.len(), c_frames.len());
+    for (rust, c) in rust_frames.iter().zip(&c_frames) {
+        assert_eq!(rust.t_frame_index, c.t_frame_index);
+        assert_eq!(rust.n.to_bits(), c.n.to_bits());
+        assert_eq!(rust.n_phon.to_bits(), c.n_phon.to_bits());
+        assert_eq!(rust.flags.bits(), c.flags);
+    }
+}
+
+#[test]
+fn stream_rejects_small_output_without_consuming_input() {
+    let signal = quiet_signal(480);
+    let handle = iso532_stream_new(ISO532_FIELD_FREE);
+    assert!(!handle.is_null());
+    let mut too_small = [Iso532StreamFrame::default(); 1];
+    let mut written = usize::MAX;
+    assert_eq!(
+        unsafe {
+            iso532_stream_push(
+                handle,
+                signal.as_ptr(),
+                signal.len(),
+                too_small.as_mut_ptr(),
+                too_small.len(),
+                &mut written,
+            )
+        },
+        ISO532_ERR_INTERNAL
+    );
+    assert_eq!(written, 0);
+    let mut enough = vec![Iso532StreamFrame::default(); iso532_stream_max_frames(signal.len())];
+    assert_eq!(
+        unsafe {
+            iso532_stream_push(
+                handle,
+                signal.as_ptr(),
+                signal.len(),
+                enough.as_mut_ptr(),
+                enough.len(),
+                &mut written,
+            )
+        },
+        ISO532_OK
+    );
+    assert!(written > 0);
+    unsafe { iso532_stream_free(handle) };
+}
+
+#[test]
+fn stream_max_frames_forwards_rust_contract() {
+    for chunk_len in [0, 1, 24, 480, 4096] {
+        assert_eq!(
+            iso532_stream_max_frames(chunk_len),
+            iso532::ZwtvStream::max_frames_for_chunk(chunk_len)
+        );
+    }
+}
+
+#[test]
+fn stream_layout_flags_and_null_paths_are_frozen() {
+    assert_eq!(
+        std::mem::size_of::<Iso532StreamFrame>(),
+        std::mem::size_of::<iso532::StreamFrame>()
+    );
+    assert_eq!(
+        std::mem::offset_of!(Iso532StreamFrame, t_frame_index),
+        std::mem::offset_of!(iso532::StreamFrame, t_frame_index)
+    );
+    assert_eq!(
+        std::mem::offset_of!(Iso532StreamFrame, n),
+        std::mem::offset_of!(iso532::StreamFrame, n)
+    );
+    assert_eq!(
+        std::mem::offset_of!(Iso532StreamFrame, n_phon),
+        std::mem::offset_of!(iso532::StreamFrame, n_phon)
+    );
+    assert_eq!(
+        std::mem::offset_of!(Iso532StreamFrame, flags),
+        std::mem::offset_of!(iso532::StreamFrame, flags)
+    );
+    assert_eq!(
+        std::mem::offset_of!(Iso532StreamFrame, _reserved),
+        std::mem::offset_of!(iso532::StreamFrame, _reserved)
+    );
+    assert_eq!(ISO532_STREAM_FLAG_CLAMPED_120DB, 1);
+    assert_eq!(ISO532_STREAM_FLAG_NONFINITE_INPUT, 2);
+    assert_eq!(ISO532_STREAM_FLAG_WARMUP, 4);
+    assert!(iso532_stream_new(2).is_null());
+    let mut written = 1;
+    assert_eq!(
+        unsafe {
+            iso532_stream_push(
+                std::ptr::null_mut(),
+                std::ptr::null(),
+                0,
+                std::ptr::null_mut(),
+                0,
+                &mut written,
+            )
+        },
+        ISO532_ERR_NULL_POINTER
+    );
+    assert_eq!(written, 0);
+    unsafe { iso532_stream_free(std::ptr::null_mut()) };
+}
+
 // ---- panic 注入(spec §9;cargo test --features test-panic)----
 
 #[cfg(feature = "test-panic")]
@@ -207,4 +353,10 @@ fn injected_panic_returns_err_panic_not_abort() {
 #[test]
 fn rayon_worker_panic_is_caught_at_ffi_boundary() {
     assert_eq!(iso532__test_panic_rayon(), ISO532_ERR_PANIC);
+}
+
+#[cfg(feature = "test-panic")]
+#[test]
+fn stream_path_panic_is_caught_at_ffi_boundary() {
+    assert_eq!(iso532__test_panic_stream(), ISO532_ERR_PANIC);
 }

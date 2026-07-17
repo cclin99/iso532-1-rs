@@ -15,6 +15,7 @@ Preserve numerical and ABI contracts while validating R3 changes. Run from the s
 
 ```powershell
 cargo test
+cargo test --test stream --test stream_scalar --test stream_alloc --test stream_no_rayon
 cargo test --test golden_zwtv dump_zwtv_output_hashes -- --ignored --nocapture
 cargo test --test py_contract_dump -- --ignored --nocapture
 cargo fmt --check

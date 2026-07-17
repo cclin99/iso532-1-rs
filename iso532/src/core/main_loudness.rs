@@ -12,7 +12,10 @@ pub fn main_loudness(spec_third: &[f64], field: FieldType) -> Result<[f64; 21], 
     if spec_third[..11].iter().any(|&level| level > 120.0) {
         return Err(Iso532Error::LevelExceeds120dB);
     }
+    Ok(main_loudness_unchecked(spec_third, field))
+}
 
+fn main_loudness_unchecked(spec_third: &[f64], field: FieldType) -> [f64; 21] {
     let mut ti = [0.0; 11];
     for band in 0..11 {
         let mut dll_result = DLL[0][band];
@@ -70,7 +73,19 @@ pub fn main_loudness(spec_third: &[f64], field: FieldType) -> Result<[f64; 21], 
         nm[0] *= korry;
     }
 
-    Ok(nm)
+    nm
+}
+
+pub(crate) fn main_loudness_clamped(spec_third: &[f64; 28], field: FieldType) -> ([f64; 21], bool) {
+    let mut frame = *spec_third;
+    let mut clamped = false;
+    for level in &mut frame[..11] {
+        if *level > 120.0 {
+            *level = 120.0;
+            clamped = true;
+        }
+    }
+    (main_loudness_unchecked(&frame, field), clamped)
 }
 pub fn main_loudness_frames_into(
     frames: &[f64],
@@ -104,7 +119,7 @@ pub fn main_loudness_frames_into(
 }
 #[cfg(test)]
 mod tests {
-    use super::{main_loudness, main_loudness_frames_into};
+    use super::{main_loudness, main_loudness_clamped, main_loudness_frames_into};
     use crate::FieldType;
 
     #[test]
@@ -130,5 +145,18 @@ mod tests {
                 );
             }
         }
+    }
+
+    #[test]
+    fn clamped_variant_flags_and_matches_at_120() {
+        let mut frame = [60.0; 28];
+        frame[3] = 130.0;
+        let (nm, clamped) = main_loudness_clamped(&frame, FieldType::Free);
+        assert!(clamped);
+        let mut at_limit = frame;
+        at_limit[3] = 120.0;
+        assert_eq!(nm, main_loudness(&at_limit, FieldType::Free).unwrap());
+        let (_, ok) = main_loudness_clamped(&[60.0; 28], FieldType::Free);
+        assert!(!ok);
     }
 }
