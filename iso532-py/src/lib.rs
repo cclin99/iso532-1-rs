@@ -81,8 +81,11 @@ fn loudness_zwst<'py>(
 
 /// Convert loudness in sone to loudness level in phon using the frozen R5 formula.
 #[pyfunction]
-fn sone2phon(n: f64) -> f64 {
-    iso532_core::sone2phon(n)
+fn sone2phon(n: f64) -> PyResult<f64> {
+    if !n.is_finite() || n < 0.0 {
+        return Err(PyValueError::new_err("sone must be non-negative"));
+    }
+    Ok(iso532_core::sone2phon(n))
 }
 
 #[pymodule]

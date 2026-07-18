@@ -53,6 +53,11 @@ impl TolBandState {
         }
     }
 
+    pub(crate) fn reset(&mut self) {
+        self.z = [[0.0; 2]; 3];
+        self.sm = [0.0; 3];
+    }
+
     #[inline]
     pub(crate) fn advance(&mut self, sample: f64) -> f64 {
         let mut v = sample * self.gain;
@@ -167,6 +172,16 @@ impl TolGroupState {
 
     /// # Safety
     /// Caller must ensure AVX2 and FMA are available.
+    #[target_feature(enable = "avx2,fma")]
+    pub(crate) unsafe fn reset(&mut self) {
+        use std::arch::x86_64::_mm256_setzero_pd;
+        self.z0 = [_mm256_setzero_pd(); 3];
+        self.z1 = [_mm256_setzero_pd(); 3];
+        self.sm = [_mm256_setzero_pd(); 3];
+    }
+
+    /// # Safety
+    /// Caller must ensure AVX2 and FMA are available.
     #[inline]
     #[target_feature(enable = "avx2,fma")]
     pub(crate) unsafe fn advance(&mut self, sample: f64) -> std::arch::x86_64::__m256d {
@@ -236,12 +251,22 @@ pub unsafe fn third_octave_levels_avx2(sig: &[f64], mode: ParMode) -> (Vec<f64>,
     (out, n_time)
 }
 
-pub fn third_octave_levels_with_mode(sig: &[f64], mode: ParMode) -> (Vec<f64>, usize) {
+pub(crate) fn third_octave_levels_with_mode_and_backend(
+    sig: &[f64],
+    mode: ParMode,
+    avx2: bool,
+) -> (Vec<f64>, usize) {
+    #[cfg(not(target_arch = "x86_64"))]
+    let _ = avx2;
     #[cfg(target_arch = "x86_64")]
-    if crate::simd::use_avx2() {
+    if avx2 {
         return unsafe { third_octave_levels_avx2(sig, mode) };
     }
     third_octave_levels_scalar_impl(sig, mode)
+}
+
+pub fn third_octave_levels_with_mode(sig: &[f64], mode: ParMode) -> (Vec<f64>, usize) {
+    third_octave_levels_with_mode_and_backend(sig, mode, crate::simd::use_avx2())
 }
 
 pub fn third_octave_levels(sig: &[f64]) -> (Vec<f64>, usize) {

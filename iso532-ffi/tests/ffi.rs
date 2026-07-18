@@ -293,6 +293,44 @@ fn stream_max_frames_forwards_rust_contract() {
 }
 
 #[test]
+fn stream_tail_nonfinite_is_exposed_as_residual_flag() {
+    let mut signal = vec![0.0; 48_048];
+    signal[48_030] = f64::NAN;
+    let handle = iso532_stream_new(ISO532_FIELD_FREE);
+    assert!(!handle.is_null());
+    let mut out = vec![Iso532StreamFrame::default(); iso532_stream_max_frames(signal.len())];
+    let mut written = 0;
+    assert_eq!(
+        unsafe {
+            iso532_stream_push(
+                handle,
+                signal.as_ptr(),
+                signal.len(),
+                out.as_mut_ptr(),
+                out.len(),
+                &mut written,
+            )
+        },
+        ISO532_OK
+    );
+    assert_eq!(
+        unsafe { iso532_stream_flush(handle, out.as_mut_ptr(), out.len(), &mut written) },
+        ISO532_OK
+    );
+    assert_eq!(written, 0);
+    assert_ne!(
+        unsafe { iso532_stream_residual_flags(handle) } & ISO532_STREAM_FLAG_NONFINITE_INPUT,
+        0
+    );
+    unsafe { iso532_stream_free(handle) };
+}
+
+#[test]
+fn stream_residual_flags_null_handle_returns_zero() {
+    assert_eq!(unsafe { iso532_stream_residual_flags(std::ptr::null()) }, 0);
+}
+
+#[test]
 fn stream_layout_flags_and_null_paths_are_frozen() {
     assert_eq!(
         std::mem::size_of::<Iso532StreamFrame>(),

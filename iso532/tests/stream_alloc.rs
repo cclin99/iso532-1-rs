@@ -1,3 +1,5 @@
+mod common;
+
 use std::alloc::{GlobalAlloc, Layout, System};
 use std::sync::atomic::{AtomicU64, Ordering};
 
@@ -19,9 +21,7 @@ static ALLOCATOR: Counting = Counting;
 
 #[test]
 fn push_and_flush_do_not_allocate() {
-    let signal: Vec<f64> = (0..48_000)
-        .map(|i| (2.0 * std::f64::consts::PI * 1000.0 * i as f64 / 48_000.0).sin() * 0.02)
-        .collect();
+    let signal = common::synth_signal();
     let mut stream = iso532::ZwtvStream::new(iso532::FieldType::Free);
     let mut out = vec![iso532::StreamFrame::default(); 64];
     let before = ALLOCS.load(Ordering::Relaxed);
@@ -29,5 +29,6 @@ fn push_and_flush_do_not_allocate() {
         stream.push(chunk, &mut out);
     }
     stream.flush(&mut out);
+    stream.reset();
     assert_eq!(ALLOCS.load(Ordering::Relaxed), before);
 }

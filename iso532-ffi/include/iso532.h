@@ -81,6 +81,18 @@ struct Iso532Stream *iso532_stream_new(int32_t field_type);
 size_t iso532_stream_max_frames(size_t chunk_len);
 
 /**
+ * Return pending flags observed after the most recent output frame. Before
+ * flush the value is provisional and will be attached to the next output
+ * frame. Only after flush does it represent undelivered tail events. A null
+ * handle returns zero. After a prior push or flush returned -2, the value is
+ * undefined and only iso532_stream_free may be called.
+ *
+ * # Safety
+ * A non-null handle must be live and must not be accessed concurrently.
+ */
+uint32_t iso532_stream_residual_flags(const struct Iso532Stream *handle);
+
+/**
  * Push a 48 kHz signal chunk into a stream handle.
  *
  * `out` must hold at least `iso532_stream_max_frames(chunk_len)` frames. An
@@ -101,8 +113,10 @@ int32_t iso532_stream_push(struct Iso532Stream *handle,
                            size_t *out_written);
 
 /**
- * Flush the final lookahead frame. out_cap must be at least one. After flush,
- * only iso532_stream_free may be called through the C API.
+ * Flush the final lookahead frame. out_cap must be at least one. *out_written
+ * is zero or one: one frame is written only when the final internal frame is
+ * on the 2 ms output grid; zero is not an error. After flush, only
+ * iso532_stream_residual_flags and iso532_stream_free may be called.
  *
  * # Safety
  * The handle must be live, out must contain at least one writable frame,

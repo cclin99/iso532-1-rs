@@ -16,6 +16,32 @@ pub fn synth_signal() -> Vec<f64> {
 }
 
 #[allow(dead_code)]
+pub fn run_chunked(
+    signal: &[f64],
+    chunks: impl Iterator<Item = usize>,
+) -> Vec<iso532::StreamFrame> {
+    let mut stream = iso532::ZwtvStream::new(iso532::FieldType::Free);
+    let mut out = vec![
+        iso532::StreamFrame::default();
+        iso532::ZwtvStream::max_frames_for_chunk(signal.len())
+    ];
+    let mut got = Vec::new();
+    let mut pos = 0;
+    for size in chunks.chain(std::iter::repeat(480)) {
+        if pos >= signal.len() {
+            break;
+        }
+        let end = (pos + size).min(signal.len());
+        let n = stream.push(&signal[pos..end], &mut out);
+        got.extend_from_slice(&out[..n]);
+        pos = end;
+    }
+    let n = stream.flush(&mut out);
+    got.extend_from_slice(&out[..n]);
+    got
+}
+
+#[allow(dead_code)]
 pub fn synth_core(n_time: usize) -> Vec<f64> {
     let mut core = vec![0.0; 21 * n_time];
     for band in 0..21 {

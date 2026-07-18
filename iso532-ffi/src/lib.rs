@@ -25,8 +25,12 @@ use std::panic::{catch_unwind, AssertUnwindSafe};
 use iso532::{loudness_zwst, loudness_zwtv, FieldType};
 
 /// 統一 panic 邊界:所有 extern fn 的函式體都必須整體通過這裡。
+fn guarded_or<T>(default: T, f: impl FnOnce() -> T) -> T {
+    catch_unwind(AssertUnwindSafe(f)).unwrap_or(default)
+}
+
 fn guarded(f: impl FnOnce() -> i32) -> i32 {
-    catch_unwind(AssertUnwindSafe(f)).unwrap_or(ISO532_ERR_PANIC)
+    guarded_or(ISO532_ERR_PANIC, f)
 }
 
 #[repr(C)]
@@ -55,6 +59,28 @@ const _: () = {
     assert!(
         std::mem::align_of::<Iso532StreamFrame>() == std::mem::align_of::<iso532::StreamFrame>()
     );
+    assert!(
+        std::mem::offset_of!(Iso532StreamFrame, t_frame_index)
+            == std::mem::offset_of!(iso532::StreamFrame, t_frame_index)
+    );
+    assert!(
+        std::mem::offset_of!(Iso532StreamFrame, n) == std::mem::offset_of!(iso532::StreamFrame, n)
+    );
+    assert!(
+        std::mem::offset_of!(Iso532StreamFrame, n_phon)
+            == std::mem::offset_of!(iso532::StreamFrame, n_phon)
+    );
+    assert!(
+        std::mem::offset_of!(Iso532StreamFrame, flags)
+            == std::mem::offset_of!(iso532::StreamFrame, flags)
+    );
+    assert!(
+        std::mem::offset_of!(Iso532StreamFrame, _reserved)
+            == std::mem::offset_of!(iso532::StreamFrame, _reserved)
+    );
+    assert!(ISO532_STREAM_FLAG_CLAMPED_120DB == iso532::FrameFlags::CLAMPED_120DB.bits());
+    assert!(ISO532_STREAM_FLAG_NONFINITE_INPUT == iso532::FrameFlags::NONFINITE_INPUT.bits());
+    assert!(ISO532_STREAM_FLAG_WARMUP == iso532::FrameFlags::WARMUP.bits());
 };
 
 #[no_mangle]
@@ -64,17 +90,34 @@ pub extern "C" fn iso532_stream_new(field_type: i32) -> *mut Iso532Stream {
     let Ok(field) = FieldType::try_from(field_type) else {
         return std::ptr::null_mut();
     };
-    catch_unwind(AssertUnwindSafe(|| {
+    guarded_or(std::ptr::null_mut(), || {
         Box::into_raw(Box::new(Iso532Stream {
             inner: iso532::ZwtvStream::new(field),
         }))
-    }))
-    .unwrap_or(std::ptr::null_mut())
+    })
 }
 
 #[no_mangle]
 pub extern "C" fn iso532_stream_max_frames(chunk_len: usize) -> usize {
     iso532::ZwtvStream::max_frames_for_chunk(chunk_len)
+}
+
+/// Return pending flags observed after the most recent output frame. Before
+/// flush the value is provisional and will be attached to the next output
+/// frame. Only after flush does it represent undelivered tail events. A null
+/// handle returns zero. After a prior push or flush returned -2, the value is
+/// undefined and only iso532_stream_free may be called.
+///
+/// # Safety
+/// A non-null handle must be live and must not be accessed concurrently.
+#[no_mangle]
+pub unsafe extern "C" fn iso532_stream_residual_flags(handle: *const Iso532Stream) -> u32 {
+    guarded_or(0, || {
+        if handle.is_null() {
+            return 0;
+        }
+        unsafe { (*handle).inner.residual_flags().bits() }
+    })
 }
 
 /// Push a 48 kHz signal chunk into a stream handle.
@@ -122,8 +165,10 @@ pub unsafe extern "C" fn iso532_stream_push(
     })
 }
 
-/// Flush the final lookahead frame. out_cap must be at least one. After flush,
-/// only iso532_stream_free may be called through the C API.
+/// Flush the final lookahead frame. out_cap must be at least one. *out_written
+/// is zero or one: one frame is written only when the final internal frame is
+/// on the 2 ms output grid; zero is not an error. After flush, only
+/// iso532_stream_residual_flags and iso532_stream_free may be called.
 ///
 /// # Safety
 /// The handle must be live, out must contain at least one writable frame,
@@ -165,9 +210,9 @@ pub unsafe extern "C" fn iso532_stream_free(handle: *mut Iso532Stream) {
     if handle.is_null() {
         return;
     }
-    let _ = catch_unwind(AssertUnwindSafe(|| unsafe {
+    guarded_or((), || unsafe {
         drop(Box::from_raw(handle));
-    }));
+    });
 }
 
 /// Number of output frames `iso532_loudness_zwtv` will write for a signal of

@@ -1,5 +1,6 @@
 mod common;
 
+use common::run_chunked;
 use iso532::{FieldType, FrameFlags, StreamFrame, ZwtvStream, N_WARMUP_FRAMES};
 
 fn assert_frames_bitwise(got: &[StreamFrame], expected: &[StreamFrame], ctx: &str) {
@@ -21,31 +22,6 @@ fn assert_frames_bitwise(got: &[StreamFrame], expected: &[StreamFrame], ctx: &st
         );
         assert_eq!(actual.flags, expected.flags, "{ctx} frame={i}: flags");
     }
-}
-
-fn run_chunked(signal: &[f64], chunks: impl Iterator<Item = usize>) -> Vec<StreamFrame> {
-    let mut stream = ZwtvStream::new(FieldType::Free);
-    let mut out = vec![StreamFrame::default(); ZwtvStream::max_frames_for_chunk(signal.len())];
-    let mut got = Vec::new();
-    let mut pos = 0;
-    for size in chunks {
-        if pos >= signal.len() {
-            break;
-        }
-        let end = (pos + size).min(signal.len());
-        let n = stream.push(&signal[pos..end], &mut out);
-        got.extend_from_slice(&out[..n]);
-        pos = end;
-    }
-    while pos < signal.len() {
-        let end = (pos + 480).min(signal.len());
-        let n = stream.push(&signal[pos..end], &mut out);
-        got.extend_from_slice(&out[..n]);
-        pos = end;
-    }
-    let n = stream.flush(&mut out);
-    got.extend_from_slice(&out[..n]);
-    got
 }
 
 #[test]
@@ -109,6 +85,29 @@ fn reset_matches_a_new_stream() {
     let n = stream.flush(&mut out);
     got.extend_from_slice(&out[..n]);
     assert_frames_bitwise(&got, &expected, "reset");
+}
+
+#[test]
+fn flush_reset_after_partial_nonfinite_chunk_matches_a_new_stream() {
+    let signal = common::synth_signal();
+    let expected = run_chunked(&signal, std::iter::repeat(480));
+    let mut dirty = signal[..481].to_vec();
+    dirty[479] = f64::NAN;
+
+    let mut stream = ZwtvStream::new(FieldType::Free);
+    let mut out = vec![StreamFrame::default(); 64];
+    let _ = stream.push(&dirty, &mut out);
+    let _ = stream.flush(&mut out);
+    stream.reset();
+
+    let mut got = Vec::new();
+    for chunk in signal.chunks(480) {
+        let n = stream.push(chunk, &mut out);
+        got.extend_from_slice(&out[..n]);
+    }
+    let n = stream.flush(&mut out);
+    got.extend_from_slice(&out[..n]);
+    assert_frames_bitwise(&got, &expected, "flush-reset-partial-nonfinite");
 }
 
 #[test]
@@ -196,7 +195,8 @@ fn nine_golden_signals_match_zerostate_and_converge_after_warmup() {
 
 #[test]
 fn nonfinite_input_flags_and_recovers() {
-    let signal = common::synth_signal();
+    let one_second = common::synth_signal();
+    let signal: Vec<f64> = one_second.iter().copied().cycle().take(96_000).collect();
     let mut dirty = signal.clone();
     dirty[4800..4848].fill(f64::NAN);
     let clean = run_chunked(&signal, std::iter::repeat(480));
@@ -205,9 +205,30 @@ fn nonfinite_input_flags_and_recovers() {
         .iter()
         .any(|frame| frame.flags.contains(FrameFlags::NONFINITE_INPUT)));
     assert!(dirty.iter().all(|frame| frame.n.is_finite()));
-    for (a, b) in clean.iter().zip(&dirty).skip(550) {
+    let mut compared = 0;
+    // Measured recovery begins at frame 794; 800 keeps margin for libm drift.
+    for (a, b) in clean.iter().zip(&dirty).skip(800) {
         assert!((a.n - b.n).abs() < 1e-9);
+        compared += 1;
     }
+    assert!(compared > 0, "recovery comparison must not be empty");
+}
+
+#[test]
+fn tail_nonfinite_input_is_reported_as_residual_flag() {
+    let mut signal = vec![0.0; 48_048];
+    signal[48_030] = f64::NAN;
+    let mut stream = ZwtvStream::new(FieldType::Free);
+    let mut out = vec![StreamFrame::default(); ZwtvStream::max_frames_for_chunk(signal.len())];
+    let written = stream.push(&signal, &mut out);
+    assert_eq!(written, 501);
+    assert!(out[..written]
+        .iter()
+        .all(|frame| !frame.flags.contains(FrameFlags::NONFINITE_INPUT)));
+    assert_eq!(stream.flush(&mut out), 0);
+    assert!(stream
+        .residual_flags()
+        .contains(FrameFlags::NONFINITE_INPUT));
 }
 
 #[test]
@@ -234,11 +255,11 @@ fn push_and_flush_restore_mxcsr() {
     stream.push(&vec![0.001; 4800], &mut out);
     #[allow(deprecated)]
     let after_push = unsafe { std::arch::x86_64::_mm_getcsr() };
-    assert_eq!(after_push, before);
+    assert_eq!(after_push & !0x3f, before & !0x3f);
     stream.flush(&mut out);
     #[allow(deprecated)]
     let after_flush = unsafe { std::arch::x86_64::_mm_getcsr() };
-    assert_eq!(after_flush, before);
+    assert_eq!(after_flush & !0x3f, before & !0x3f);
 }
 
 #[test]

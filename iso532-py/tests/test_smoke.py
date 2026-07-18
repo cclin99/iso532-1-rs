@@ -75,3 +75,14 @@ def test_sone2phon_matches_frozen_formula():
     assert iso532.sone2phon(1.0) == pytest.approx(40.0, abs=1e-12)
     assert iso532.sone2phon(2.0) == pytest.approx(50.0, abs=1e-12)
     assert iso532.sone2phon(4.0) == pytest.approx(60.0, abs=1e-12)
+
+
+def test_sone2phon_rejects_negative_sone():
+    with pytest.raises(ValueError, match="sone must be non-negative"):
+        iso532.sone2phon(-0.001)
+
+
+@pytest.mark.parametrize("value", [float("nan"), float("inf")])
+def test_sone2phon_rejects_nonfinite_sone(value):
+    with pytest.raises(ValueError, match="sone must be non-negative"):
+        iso532.sone2phon(value)

@@ -27,6 +27,13 @@ impl TwState {
         }
     }
 
+    pub(crate) fn reset(&mut self) {
+        self.y_fast = 0.0;
+        self.y_slow = 0.0;
+        self.prev = 0.0;
+        self.has_prev = false;
+    }
+
     #[inline]
     pub(crate) fn advance(&mut self, loud_t: f64) -> f64 {
         if self.has_prev {

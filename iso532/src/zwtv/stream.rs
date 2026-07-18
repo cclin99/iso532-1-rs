@@ -91,18 +91,24 @@ enum TolStage {
 }
 
 enum NlStage {
-    Scalar([NlBandState; 21]),
+    Scalar {
+        states: [NlBandState; 21],
+        b: [f64; 6],
+    },
     #[cfg(target_arch = "x86_64")]
     Avx2 {
         groups: Box<[super::nonlinear_decay::NlGroupState; 5]>,
         consts: super::nonlinear_decay::NlConsts,
         tail: NlBandState,
+        b: [f64; 6],
     },
 }
 
-fn new_tol_stage() -> TolStage {
+fn new_tol_stage(avx2: bool) -> TolStage {
+    #[cfg(not(target_arch = "x86_64"))]
+    let _ = avx2;
     #[cfg(target_arch = "x86_64")]
-    if crate::simd::use_avx2() {
+    if avx2 {
         return TolStage::Avx2(Box::new(std::array::from_fn(|group| unsafe {
             super::third_octave_levels::TolGroupState::new(group)
         })));
@@ -110,9 +116,11 @@ fn new_tol_stage() -> TolStage {
     TolStage::Scalar(Box::new(std::array::from_fn(TolBandState::new)))
 }
 
-fn new_nl_stage(b: [f64; 6]) -> NlStage {
+fn new_nl_stage(b: [f64; 6], avx2: bool) -> NlStage {
+    #[cfg(not(target_arch = "x86_64"))]
+    let _ = avx2;
     #[cfg(target_arch = "x86_64")]
-    if crate::simd::use_avx2() {
+    if avx2 {
         return unsafe {
             NlStage::Avx2 {
                 groups: Box::new(std::array::from_fn(|_| {
@@ -120,21 +128,20 @@ fn new_nl_stage(b: [f64; 6]) -> NlStage {
                 })),
                 consts: super::nonlinear_decay::NlConsts::new(b),
                 tail: NlBandState::default(),
+                b,
             }
         };
     }
-    NlStage::Scalar([NlBandState::default(); 21])
+    NlStage::Scalar {
+        states: [NlBandState::default(); 21],
+        b,
+    }
 }
 
-fn advance_nl_stage(
-    stage: &mut NlStage,
-    b: &[f64; 6],
-    held: &[f64; 21],
-    next: &[f64; 21],
-) -> [f64; 21] {
+fn advance_nl_stage(stage: &mut NlStage, held: &[f64; 21], next: &[f64; 21]) -> [f64; 21] {
     let mut out = [0.0; 21];
     match stage {
-        NlStage::Scalar(states) => {
+        NlStage::Scalar { states, b } => {
             for band in 0..21 {
                 out[band] = states[band].advance_frame(held[band], next[band], b);
             }
@@ -144,21 +151,117 @@ fn advance_nl_stage(
             groups,
             consts,
             tail,
-        } => {
-            use std::arch::x86_64::{_mm256_loadu_pd, _mm256_storeu_pd};
-            for (group, state) in groups.iter_mut().enumerate() {
-                let band = group * 4;
-                unsafe {
-                    let row = _mm256_loadu_pd(held[band..].as_ptr());
-                    let next_row = _mm256_loadu_pd(next[band..].as_ptr());
-                    let value = state.advance_frame(row, next_row, consts);
-                    _mm256_storeu_pd(out[band..].as_mut_ptr(), value);
-                }
-            }
-            out[20] = tail.advance_frame(held[20], next[20], b);
-        }
+            b,
+        } => unsafe { advance_nl_avx2(groups, consts, tail, b, held, next, &mut out) },
     }
     out
+}
+
+#[cfg(target_arch = "x86_64")]
+#[target_feature(enable = "avx2,fma")]
+unsafe fn advance_nl_avx2(
+    groups: &mut [super::nonlinear_decay::NlGroupState; 5],
+    consts: &super::nonlinear_decay::NlConsts,
+    tail: &mut NlBandState,
+    b: &[f64; 6],
+    held: &[f64; 21],
+    next: &[f64; 21],
+    out: &mut [f64; 21],
+) {
+    use std::arch::x86_64::{_mm256_loadu_pd, _mm256_storeu_pd};
+    for (group, state) in groups.iter_mut().enumerate() {
+        let band = group * 4;
+        let row = _mm256_loadu_pd(held[band..].as_ptr());
+        let next_row = _mm256_loadu_pd(next[band..].as_ptr());
+        let value = state.advance_frame(row, next_row, consts);
+        _mm256_storeu_pd(out[band..].as_mut_ptr(), value);
+    }
+    out[20] = tail.advance_frame(held[20], next[20], b);
+}
+
+#[inline(always)]
+fn advance_tol_chunk(
+    chunk: &[f64],
+    sample_phase: &mut usize,
+    mut advance: impl FnMut(f64, bool) -> Option<[f64; 28]>,
+    mut on_frame: impl FnMut([f64; 28], bool),
+) -> bool {
+    let mut saw_nonfinite = false;
+    for &raw in chunk {
+        let sample = if raw.is_finite() {
+            raw
+        } else {
+            saw_nonfinite = true;
+            0.0
+        };
+        let emit = *sample_phase == 0;
+        if let Some(frame) = advance(sample, emit) {
+            on_frame(frame, saw_nonfinite);
+            saw_nonfinite = false;
+        }
+        *sample_phase = (*sample_phase + 1) % DEC_FACTOR;
+    }
+    saw_nonfinite
+}
+
+fn advance_tol_scalar_chunk(
+    states: &mut [TolBandState; 28],
+    chunk: &[f64],
+    sample_phase: &mut usize,
+    on_frame: impl FnMut([f64; 28], bool),
+) -> bool {
+    advance_tol_chunk(
+        chunk,
+        sample_phase,
+        |sample, emit| {
+            if !emit {
+                for state in states.iter_mut() {
+                    state.advance(sample);
+                }
+                return None;
+            }
+            let mut frame = [0.0; 28];
+            for (band, state) in states.iter_mut().enumerate() {
+                frame[band] = intensity_to_db(state.advance(sample));
+            }
+            Some(frame)
+        },
+        on_frame,
+    )
+}
+
+#[cfg(target_arch = "x86_64")]
+#[target_feature(enable = "avx2,fma")]
+unsafe fn advance_tol_avx2_chunk(
+    groups: &mut [super::third_octave_levels::TolGroupState; 7],
+    chunk: &[f64],
+    sample_phase: &mut usize,
+    on_frame: impl FnMut([f64; 28], bool),
+) -> bool {
+    use std::arch::x86_64::_mm256_storeu_pd;
+    advance_tol_chunk(
+        chunk,
+        sample_phase,
+        |sample, emit| {
+            if !emit {
+                for state in groups.iter_mut() {
+                    state.advance(sample);
+                }
+                return None;
+            }
+            let mut frame = [0.0; 28];
+            for (group, state) in groups.iter_mut().enumerate() {
+                let intensity = state.advance(sample);
+                let mut lanes = [0.0; 4];
+                _mm256_storeu_pd(lanes.as_mut_ptr(), intensity);
+                for lane in 0..4 {
+                    frame[group * 4 + lane] = intensity_to_db(lanes[lane]);
+                }
+            }
+            Some(frame)
+        },
+        on_frame,
+    )
 }
 
 /// Stateful 48 kHz ISO 532-1 time-varying loudness processor.
@@ -168,13 +271,11 @@ fn advance_nl_stage(
 pub struct ZwtvStream {
     field: FieldType,
     tol: TolStage,
-    nl_b: [f64; 6],
     nl: NlStage,
     tw: TwState,
     held_core: [f64; 21],
     has_held: bool,
     sample_phase: usize,
-    t_internal: u64,
     emitted_internal: u64,
     pending: FrameFlags,
     flushed: bool,
@@ -182,18 +283,16 @@ pub struct ZwtvStream {
 
 impl ZwtvStream {
     pub fn new(field: FieldType) -> Self {
-        let _guard = DenormalGuard::new();
+        let avx2 = crate::simd::use_avx2();
         let nl_b = nl_coeffs();
         Self {
             field,
-            tol: new_tol_stage(),
-            nl_b,
-            nl: new_nl_stage(nl_b),
+            tol: new_tol_stage(avx2),
+            nl: new_nl_stage(nl_b, avx2),
             tw: TwState::new(),
             held_core: [0.0; 21],
             has_held: false,
             sample_phase: 0,
-            t_internal: 0,
             emitted_internal: 0,
             pending: FrameFlags::default(),
             flushed: false,
@@ -201,7 +300,49 @@ impl ZwtvStream {
     }
 
     pub fn reset(&mut self) {
-        *self = Self::new(self.field);
+        let Self {
+            field: _,
+            tol,
+            nl,
+            tw,
+            held_core,
+            has_held,
+            sample_phase,
+            emitted_internal,
+            pending,
+            flushed,
+        } = self;
+        match tol {
+            TolStage::Scalar(states) => states.iter_mut().for_each(TolBandState::reset),
+            #[cfg(target_arch = "x86_64")]
+            TolStage::Avx2(groups) => {
+                for state in groups.iter_mut() {
+                    unsafe { state.reset() };
+                }
+            }
+        }
+        match nl {
+            NlStage::Scalar { states, b: _ } => states.fill(NlBandState::default()),
+            #[cfg(target_arch = "x86_64")]
+            NlStage::Avx2 {
+                groups,
+                consts: _,
+                tail,
+                b: _,
+            } => {
+                for state in groups.iter_mut() {
+                    *state = unsafe { super::nonlinear_decay::NlGroupState::zero() };
+                }
+                *tail = NlBandState::default();
+            }
+        }
+        tw.reset();
+        *held_core = [0.0; 21];
+        *has_held = false;
+        *sample_phase = 0;
+        *emitted_internal = 0;
+        *pending = FrameFlags::default();
+        *flushed = false;
     }
     pub const fn latency_samples() -> usize {
         DEC_FACTOR
@@ -214,20 +355,46 @@ impl ZwtvStream {
         assert!(!self.flushed, "push after flush requires reset");
         assert!(out.len() >= Self::max_frames_for_chunk(chunk.len()));
         let _guard = DenormalGuard::new();
+        let Self {
+            field,
+            tol,
+            nl,
+            tw,
+            held_core,
+            has_held,
+            sample_phase,
+            emitted_internal,
+            pending,
+            flushed: _,
+        } = self;
         let mut written = 0;
-        for &raw in chunk {
-            let sample = if raw.is_finite() {
-                raw
-            } else {
-                self.pending.insert(FrameFlags::NONFINITE_INPUT);
-                0.0
-            };
-            let emit = self.sample_phase == 0;
-            let tol_frame = self.advance_tol(sample, emit);
-            self.sample_phase = (self.sample_phase + 1) % DEC_FACTOR;
-            if let Some(frame) = tol_frame {
-                written += self.on_internal_frame(frame, &mut out[written..]);
+        let mut on_frame = |frame, saw_nonfinite| {
+            if saw_nonfinite {
+                pending.insert(FrameFlags::NONFINITE_INPUT);
             }
+            written += Self::on_internal_frame(
+                *field,
+                nl,
+                tw,
+                held_core,
+                has_held,
+                emitted_internal,
+                pending,
+                frame,
+                &mut out[written..],
+            );
+        };
+        let residual_nonfinite = match tol {
+            TolStage::Scalar(states) => {
+                advance_tol_scalar_chunk(states, chunk, sample_phase, &mut on_frame)
+            }
+            #[cfg(target_arch = "x86_64")]
+            TolStage::Avx2(groups) => unsafe {
+                advance_tol_avx2_chunk(groups, chunk, sample_phase, &mut on_frame)
+            },
+        };
+        if residual_nonfinite {
+            pending.insert(FrameFlags::NONFINITE_INPUT);
         }
         written
     }
@@ -242,70 +409,69 @@ impl ZwtvStream {
         self.flushed = true;
         self.has_held = false;
         let held = self.held_core;
-        self.emit_loudness(&held, &[0.0; 21], out)
+        Self::emit_loudness(
+            &mut self.nl,
+            &mut self.tw,
+            &mut self.emitted_internal,
+            &mut self.pending,
+            &held,
+            &[0.0; 21],
+            out,
+        )
     }
 
-    fn advance_tol(&mut self, sample: f64, emit: bool) -> Option<[f64; 28]> {
-        let mut frame = [0.0; 28];
-        match &mut self.tol {
-            TolStage::Scalar(states) => {
-                for (band, state) in states.iter_mut().enumerate() {
-                    let intensity = state.advance(sample);
-                    if emit {
-                        frame[band] = intensity_to_db(intensity);
-                    }
-                }
-            }
-            #[cfg(target_arch = "x86_64")]
-            TolStage::Avx2(groups) => {
-                use std::arch::x86_64::_mm256_storeu_pd;
-                for (group, state) in groups.iter_mut().enumerate() {
-                    let intensity = unsafe { state.advance(sample) };
-                    if emit {
-                        let mut lanes = [0.0; 4];
-                        unsafe { _mm256_storeu_pd(lanes.as_mut_ptr(), intensity) };
-                        for lane in 0..4 {
-                            frame[group * 4 + lane] = intensity_to_db(lanes[lane]);
-                        }
-                    }
-                }
-            }
-        }
-        emit.then_some(frame)
+    /// Return pending flags observed after the most recent output frame.
+    /// Before flush the value is provisional and will be attached to the next
+    /// output frame. Only after flush does it represent undelivered tail events.
+    pub const fn residual_flags(&self) -> FrameFlags {
+        self.pending
     }
 
-    fn on_internal_frame(&mut self, tol_db: [f64; 28], out: &mut [StreamFrame]) -> usize {
-        let (core, clamped) = main_loudness_clamped(&tol_db, self.field);
+    #[allow(clippy::too_many_arguments)]
+    fn on_internal_frame(
+        field: FieldType,
+        nl: &mut NlStage,
+        tw: &mut TwState,
+        held_core: &mut [f64; 21],
+        has_held: &mut bool,
+        emitted_internal: &mut u64,
+        pending: &mut FrameFlags,
+        tol_db: [f64; 28],
+        out: &mut [StreamFrame],
+    ) -> usize {
+        let (core, clamped) = main_loudness_clamped(&tol_db, field);
         if clamped {
-            self.pending.insert(FrameFlags::CLAMPED_120DB);
+            pending.insert(FrameFlags::CLAMPED_120DB);
         }
-        let wrote = if self.has_held {
-            let held = self.held_core;
-            self.emit_loudness(&held, &core, out)
+        let wrote = if *has_held {
+            let held = *held_core;
+            Self::emit_loudness(nl, tw, emitted_internal, pending, &held, &core, out)
         } else {
             0
         };
-        self.held_core = core;
-        self.has_held = true;
-        self.t_internal += 1;
+        *held_core = core;
+        *has_held = true;
         wrote
     }
 
     fn emit_loudness(
-        &mut self,
+        nl: &mut NlStage,
+        tw: &mut TwState,
+        emitted_internal: &mut u64,
+        pending: &mut FrameFlags,
         held: &[f64; 21],
         next: &[f64; 21],
         out: &mut [StreamFrame],
     ) -> usize {
-        let nl = advance_nl_stage(&mut self.nl, &self.nl_b, held, next);
-        let n = self.tw.advance(calc_slopes_n_only(&nl));
-        let internal = self.emitted_internal;
-        self.emitted_internal += 1;
+        let nl = advance_nl_stage(nl, held, next);
+        let n = tw.advance(calc_slopes_n_only(&nl));
+        let internal = *emitted_internal;
+        *emitted_internal += 1;
         if !internal.is_multiple_of(OUT_DECIM as u64) {
             return 0;
         }
         let index = internal / OUT_DECIM as u64;
-        let mut flags = self.pending.take();
+        let mut flags = pending.take();
         if index < N_WARMUP_FRAMES {
             flags.insert(FrameFlags::WARMUP);
         }
@@ -323,9 +489,11 @@ impl ZwtvStream {
 #[doc(hidden)]
 pub fn zwtv_reference_zerostate(signal: &[f64], field: FieldType) -> Vec<f64> {
     let _guard = DenormalGuard::new();
-    let (tol, n_time) = super::third_octave_levels::third_octave_levels_with_mode(
+    let avx2 = crate::simd::use_avx2();
+    let (tol, n_time) = super::third_octave_levels::third_octave_levels_with_mode_and_backend(
         signal,
         super::ParMode::Sequential,
+        avx2,
     );
     let mut core = vec![[0.0; 21]; n_time];
     for t in 0..n_time {
@@ -333,7 +501,7 @@ pub fn zwtv_reference_zerostate(signal: &[f64], field: FieldType) -> Vec<f64> {
         core[t] = main_loudness_clamped(&frame, field).0;
     }
     let b = nl_coeffs();
-    let mut nl = new_nl_stage(b);
+    let mut nl = new_nl_stage(b, avx2);
     let mut tw = TwState::new();
     let mut out = Vec::with_capacity(n_time.div_ceil(OUT_DECIM));
     for t in 0..n_time {
@@ -342,7 +510,7 @@ pub fn zwtv_reference_zerostate(signal: &[f64], field: FieldType) -> Vec<f64> {
         } else {
             [0.0; 21]
         };
-        let nl_frame = advance_nl_stage(&mut nl, &b, &core[t], &next);
+        let nl_frame = advance_nl_stage(&mut nl, &core[t], &next);
         let n = tw.advance(calc_slopes_n_only(&nl_frame));
         if t % OUT_DECIM == 0 {
             out.push(n);
