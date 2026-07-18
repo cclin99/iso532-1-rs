@@ -120,7 +120,7 @@ jobs:
           python -m venv sv
           if [ -x sv/bin/python ]; then VP=sv/bin/python; else VP=sv/Scripts/python.exe; fi
           "$VP" -m pip install --quiet dist/*.whl pytest
-          "$VP" -m pytest tests/test_smoke.py -v
+          "$VP" -m pytest tests/test_smoke.py tests/test_stream.py -v
       - uses: actions/upload-artifact@v6
         with:
           name: wheel-${{ matrix.os }}
