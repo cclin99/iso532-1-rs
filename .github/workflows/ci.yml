@@ -28,7 +28,7 @@ jobs:
           components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: iso532
+          workspaces: .
       - run: cargo fmt --check
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo test --lib
@@ -60,7 +60,7 @@ jobs:
           components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: iso532-ffi
+          workspaces: .
       - uses: taiki-e/install-action@v2
         if: matrix.os == 'ubuntu-latest'
         with:
@@ -108,7 +108,7 @@ jobs:
           components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: iso532-py
+          workspaces: .
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"

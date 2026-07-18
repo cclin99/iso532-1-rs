@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["iso532", "iso532-ffi", "iso532-py"]
+# iso532-py is a cdylib-only pyo3 extension module: `cargo test` cannot link
+# it (no Python symbols at test-link time); it is tested via maturin + pytest.
+default-members = ["iso532", "iso532-ffi"]
