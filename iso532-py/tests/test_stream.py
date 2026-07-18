@@ -57,13 +57,16 @@ def test_chunk_invariance_bitwise():
 
 
 def test_stream_matches_batch_after_warmup():
-    sig = py_contract_signal()
+    # 3 s (1500 frames): 1 s has only 500 frames, below N_WARMUP_FRAMES.
+    sig = np.tile(py_contract_signal(), 3)
     batch_n, _, _, _ = iso532.loudness_zwtv(sig, FS)
     n, n_phon, t_idx, flags = run_chunked(sig, CHUNK)
-    assert len(n) == len(batch_n)  # 500
+    assert len(n) == len(batch_n) == 1500
     assert np.array_equal(t_idx, np.arange(len(n), dtype=np.uint64))
     w = iso532.N_WARMUP_FRAMES
-    assert np.max(np.abs(n[w:] - batch_n[w:])) <= 1e-9
+    compared = n[w:]
+    assert len(compared) > 0
+    assert np.max(np.abs(compared - batch_n[w:])) <= 1e-9
     assert np.array_equal((flags & iso532.FLAG_WARMUP) != 0, t_idx < w)
     for v, s in zip(n[w : w + 8], n_phon[w : w + 8]):
         assert s == iso532.sone2phon(float(v))
