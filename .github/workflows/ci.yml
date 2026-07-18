@@ -78,8 +78,8 @@ jobs:
       - name: C smoke (gcc)
         if: matrix.os == 'ubuntu-latest'
         run: |
-          gcc -Wall -Wextra -Iinclude tests/smoke.c -Ltarget/release -liso532_ffi -lm -o smoke
-          LD_LIBRARY_PATH=target/release ./smoke
+          gcc -Wall -Wextra -Iinclude tests/smoke.c -L../target/release -liso532_ffi -lm -o smoke
+          LD_LIBRARY_PATH=../target/release ./smoke
       - uses: TheMrMilchmann/setup-msvc-dev@v4
         if: matrix.os == 'windows-latest'
         with:
@@ -88,8 +88,8 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: |
-          cl /nologo /W3 /Iinclude tests\smoke.c /link /LIBPATH:target\release iso532_ffi.dll.lib
-          copy target\release\iso532_ffi.dll . >NUL
+          cl /nologo /W3 /Iinclude tests\smoke.c /link /LIBPATH:..\target\release iso532_ffi.dll.lib
+          copy ..\target\release\iso532_ffi.dll . >NUL
           smoke.exe
   py:
     strategy:
