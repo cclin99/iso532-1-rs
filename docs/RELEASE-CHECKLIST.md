@@ -7,4 +7,7 @@ Run this checklist immediately before publishing a release or making the README 
 - [ ] Run the commands under "Reproduce the evidence" / "重現驗證" from a locally regenerated golden environment.
 - [ ] Confirm that `docs/GOLDEN-REGEN-SOP.md` still describes every prerequisite needed by a fresh clone.
 - [ ] Check every capability and boundary statement against the tagged source and public artifacts.
+- [ ] Review `THIRD_PARTY_NOTICES.md`, `CITATION.cff`, `SECURITY.md`, and community templates against the release tag and current repository settings.
+- [ ] With the normal antivirus protection enabled, build and scan the release DLL/static library, wheel, and any plug-in bundle; record any detection by product, version, artifact hash, and exact build command. Do not treat a disabled-antivirus build as release evidence.
+- [ ] Generate and publish SHA-256 checksums for every release artifact; verify downloaded artifacts against those checksums before smoke testing.
 - [ ] Confirm that local-only files, archives, generated `data/`, credentials, and machine-specific paths are not staged.

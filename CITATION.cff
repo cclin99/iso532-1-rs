@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use ISO532, please cite this software and the MoSQITo reference implementation."
+title: "ISO532: an ISO 532-1 Zwicker loudness engine in Rust"
+type: software
+authors:
+  - name: "cclin99"
+version: 0.1.0
+date-released: "2026-07-19"
+url: "https://github.com/cclin99/iso532-1-rs"
+repository-code: "https://github.com/cclin99/iso532-1-rs"
+license: Apache-2.0
+keywords:
+  - ISO 532-1
+  - Zwicker loudness
+  - psychoacoustics
+  - Rust
+  - sone
+  - phon
+references:
+  - type: software
+    title: "MoSQITo"
+    authors:
+      - name: "MoSQITo Developers"
+    version: "1.2.1"
+    url: "https://github.com/Eomys/MoSQITo"
+    doi: "10.5281/zenodo.10629475"

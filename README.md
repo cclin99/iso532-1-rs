@@ -375,6 +375,12 @@ Constructive review is especially welcome in these areas:
 
 When reporting a result, please include the input provenance, calibration chain, sample rate, field type, CPU/OS, exact commit, and the command used. A disagreement backed by a reproducible fixture is more valuable than a reassuring but untestable claim.
 
+Before contributing, read [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[Code of Conduct](CODE_OF_CONDUCT.md). Security-sensitive reports belong in the
+private path described by [SECURITY.md](SECURITY.md). Release history and
+third-party attribution are recorded in [CHANGELOG.md](CHANGELOG.md) and
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 ## License
 
 This repository is licensed under [Apache License 2.0](LICENSE). Third-party names, publications, standards, test data, and software remain subject to their respective rights and licenses.

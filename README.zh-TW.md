@@ -375,6 +375,12 @@ Remove-Item Env:ISO532_REQUIRE_PARITY
 
 回報結果時，請盡量附上輸入來源、校準鏈、取樣率、field type、CPU／OS、確切 commit 與執行命令。帶有可重現 fixture 的反例，遠比無法驗證的安心說法更有價值。
 
+參與前請先閱讀 [CONTRIBUTING.md](CONTRIBUTING.md) 與
+[Code of Conduct](CODE_OF_CONDUCT.md)。安全性問題請依
+[SECURITY.md](SECURITY.md) 使用私密管道回報。版本紀錄與第三方來源聲明分別見
+[CHANGELOG.md](CHANGELOG.md) 與
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
 ## 授權
 
 本 repository 使用 [Apache License 2.0](LICENSE)。第三方名稱、論文、標準、測試資料與軟體仍分別受其權利與授權條款約束。
