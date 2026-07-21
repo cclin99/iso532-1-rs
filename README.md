@@ -4,7 +4,6 @@
 
 An AI-assisted Rust engine for ISO 532-1:2017 Zwicker loudness, built to add a perceptual-loudness view alongside dBFS, LUFS, and dB SPL monitoring.
 
-> **Review draft — not yet announced as a public release.** The repository is tagged `v0.1.0`, but this README is being reviewed before publication. Measurements below describe specific checked-in tests and local hardware; they are not universal performance guarantees or a substitute for independent acoustics review.
 
 ## Why this project exists
 
