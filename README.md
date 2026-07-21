@@ -243,13 +243,24 @@ Reproduce both the timing and the direct numerical comparison with the checked-i
 
 ### Native Criterion measurements
 
-Checked-in Criterion artifacts from the same 12-logical-processor host:
+Criterion measurements from the same 12-logical-processor host are shown below. A
+10-second input produces 5,000 loudness frames, so the per-frame columns mean one
+2 ms output frame, not one input sample.
 
-| 10 s / 480,000-sample workload | Forced scalar median | AVX2 median | AVX2 speedup |
-|---|---:|---:|---:|
-| ZWTV batch, 12 Rayon threads (2026-07-10) | 142.224 ms | 47.461 ms | 3.00x |
-| ZWTV batch, 1 Rayon thread (2026-07-10) | 561.563 ms | 253.210 ms | 2.22x |
-| ZWTV stream, 480-sample chunks (2026-07-17) | 353.346 ms | 226.921 ms | 1.56x |
+| 10 s / 480,000-sample workload | Forced scalar median | Scalar / output frame | AVX2 median | AVX2 / output frame | AVX2 speedup |
+|---|---:|---:|---:|---:|---:|
+| ZWTV batch, 12 Rayon threads (2026-07-10) | 142.224 ms | 28.445 us | 47.461 ms | 9.492 us | 3.00x |
+| ZWTV batch, 1 Rayon thread (2026-07-21) | 351.460 ms | 70.292 us | 275.410 ms | 55.082 us | 1.28x |
+| ZWTV stream, 480-sample chunks (2026-07-21) | 360.930 ms | 72.186 us | 233.420 ms | 46.684 us | 1.55x |
+
+Against the previous README baselines, single-thread batch scalar improved from
+561.563 ms to 351.460 ms (37.4% less time). Batch AVX2 moved from 253.210 ms to
+275.410 ms (8.8% more time), while stream scalar and AVX2 moved by +2.1% and
++2.9% respectively. The current single-core AVX2 reduction is 21.6% for batch
+and 35.3% for stream. The stream run reported two high-side outliers among ten
+measurements, so these are a local snapshot rather than a cross-machine guarantee.
+The 2026-07-21 rows were measured from engine commit `8fde6b6` with
+`RAYON_NUM_THREADS=1`.
 
 Re-run on your target machine:
 
@@ -257,6 +268,7 @@ Re-run on your target machine:
 cargo bench -p iso532 --bench loudness
 $env:RAYON_NUM_THREADS='1'
 cargo bench -p iso532 --bench loudness -- zwtv_10s
+cargo bench -p iso532 --bench loudness -- stream_push_10s_480chunk
 Remove-Item Env:RAYON_NUM_THREADS
 ```
 

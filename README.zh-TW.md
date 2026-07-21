@@ -243,13 +243,21 @@ cargo run -p iso532 --example cli -- path\to\mono-48k.wav --calib 0.632455532
 
 ### Native Criterion 量測
 
-同一台 12 logical processors 主機上保留的 Criterion artifacts：
+同一台 12 logical processors 主機上的 Criterion 量測如下。10 秒輸入會產生
+5,000 個響度 frame，因此「單幀」指一個 2 ms 輸出 frame，不是單一輸入 sample。
 
-| 10 秒／480,000 samples 工作量 | Forced scalar 中位數 | AVX2 中位數 | AVX2 加速 |
-|---|---:|---:|---:|
-| ZWTV batch，12 Rayon threads（2026-07-10） | 142.224 ms | 47.461 ms | 3.00x |
-| ZWTV batch，1 Rayon thread（2026-07-10） | 561.563 ms | 253.210 ms | 2.22x |
-| ZWTV stream，480-sample chunks（2026-07-17） | 353.346 ms | 226.921 ms | 1.56x |
+| 10 秒／480,000 samples 工作量 | Forced scalar 中位數 | Scalar／輸出 frame | AVX2 中位數 | AVX2／輸出 frame | AVX2 加速 |
+|---|---:|---:|---:|---:|---:|
+| ZWTV batch，12 Rayon threads（2026-07-10） | 142.224 ms | 28.445 us | 47.461 ms | 9.492 us | 3.00x |
+| ZWTV batch，1 Rayon thread（2026-07-21） | 351.460 ms | 70.292 us | 275.410 ms | 55.082 us | 1.28x |
+| ZWTV stream，480-sample chunks（2026-07-21） | 360.930 ms | 72.186 us | 233.420 ms | 46.684 us | 1.55x |
+
+相較 README 前一版基線，單核 batch scalar 從 561.563 ms 降到 351.460 ms，
+耗時減少 37.4%；batch AVX2 則從 253.210 ms 增至 275.410 ms，耗時增加
+8.8%。Stream scalar 與 AVX2 分別增加 2.1% 與 2.9%。目前單核 AVX2 相對
+scalar 的耗時降幅為 batch 21.6%、stream 35.3%。Stream 本輪十筆量測中有
+兩筆高側 outlier，因此這些數字是本機快照，不是跨硬體保證。
+2026-07-21 兩列以 engine commit `8fde6b6`、`RAYON_NUM_THREADS=1` 量測。
 
 在目標機器重跑：
 
@@ -257,6 +265,7 @@ cargo run -p iso532 --example cli -- path\to\mono-48k.wav --calib 0.632455532
 cargo bench -p iso532 --bench loudness
 $env:RAYON_NUM_THREADS='1'
 cargo bench -p iso532 --bench loudness -- zwtv_10s
+cargo bench -p iso532 --bench loudness -- stream_push_10s_480chunk
 Remove-Item Env:RAYON_NUM_THREADS
 ```
 
