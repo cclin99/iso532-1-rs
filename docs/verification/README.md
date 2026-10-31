@@ -19,6 +19,9 @@ below before unpacking it into a new, empty directory.
 | 2026-10-31 audit, Annex B deep analysis, `docs/修正報告.md` §11 | same | `AnnexB深入分析證據.zip` | 7.7 MB | `2014a3a7644dbe7b11594d0451dbd380ef6a28aded19867d7f773e77afbef232` | link pending |
 | 2026-10-31 post-F-01 verification, `docs/修正後獨立驗證報告.md` | `3dc420c`, `6aea8b3` | `修正後獨立驗證證據-6aea8b3.zip` | 282 MB | `9872f0e6b6e176684a8e1f80494a90159e088e27e963a51fb7cf37fdc46ea104` | link pending |
 | 2026-10-31 F-02 verification, [`2026-10-31-F02-5450d39/`](2026-10-31-F02-5450d39/) | `5450d39` | `F02獨立驗證證據-5450d39.zip` | 335 MB | `9f777b6c9f717a57f6045a1a0c5f37d9ec65c7073d099fd8f9af9ae2c392add0` | link pending |
+| 2026-10-31 F-03 sensitivity probe, [`2026-10-31-F03-sensitivity-d623d32/`](2026-10-31-F03-sensitivity-d623d32/) | `d623d32` | text-only delivery (report, scripts, `summary.json`, `run.log`); binary run outputs stay in the auditor's `tmp/`, not archived | – | – | n/a |
+| 2026-10-31 F-03 authority trace, [`2026-10-31-F03-authority-d623d32/`](2026-10-31-F03-authority-d623d32/) | `d623d32` | text-only delivery (report, sources, acquisition checklist, literature follow-up) | – | – | n/a |
+| 2026-10-31 F-03 SQAT source check, [`2026-10-31-F03-SQAT-d623d32/`](2026-10-31-F03-SQAT-d623d32/) | `d623d32` | text-only delivery (report, sources) | – | – | n/a |
 
 Fill the download column with the cloud-drive link once the archive is uploaded.
 A link alone is not evidence; the hash is what ties the download to the report.

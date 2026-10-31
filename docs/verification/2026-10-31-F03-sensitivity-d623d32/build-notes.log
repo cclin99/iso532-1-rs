@@ -1,0 +1,25 @@
+Selected build/run tool-result records (not a complete shell transcript)
+
+rustc --version
+rustc 1.99.1 (58cf8f9c3 2026-10-13)
+
+cargo build --release --offline --manifest-path tmp/f03-sensitivity-probe/Cargo.toml
+Compiling iso532 v0.3.0 (<REPO>/iso532)
+Compiling f03-sensitivity-probe v0.0.0 (<REPO>/tmp/f03-sensitivity-probe)
+Finished release profile [optimized] target(s) in 1m 43s
+exit code: 0
+
+C build: vcvars64.bat, followed by
+cl /nologo /O2 /fp:precise /LD /I. ISO_532-1.c /link /OUT:slopes.dll /EXPORT:f_calc_slopes
+warning from environment setup: 'vswhere.exe' is not recognized as an internal or external command
+[vcvarsall.bat] Environment initialized for: 'x64'
+ISO_532-1.c
+exit code: 0
+The resulting slopes.dll was loaded and exercised with guarded buffers.
+
+python tmp/f03-sensitivity-probe/analyze.py --prior-work <PRIOR_WORK> --probe-root tmp/f03-sensitivity-probe --out tmp/f03-sensitivity-probe/run2
+stdout/stderr redirected to run2.log, delivered as run.log
+exit code: 0
+
+git diff -- iso532/src
+empty
