@@ -285,9 +285,10 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 | 全段 RMS 包含 filter startup，沒有另丟棄 settling window | 通用 spectrum tool 的簡化與可重用語意 | ZWST 結果包含較小、會受訊號長度影響的暫態成分 |
 | Signal 3 參照鏈包含 MoSQITo 的 44.1-to-48 kHz FFT resampling | Python toolbox 的便利性選擇 | 該 Annex B 比對保留小幅 residual；ISO532 公開 API 則要求呼叫端先提供 48 kHz |
 | ZWTV 保留 reference-style 逐 sample 遞迴濾波 | ISO 532-1 對時變前端的規定較明確 | Python/NumPy 無法同樣有效地整段向量化，所以 MoSQITo ZWTV 較慢；這不是數值缺陷 |
-| Batch parity 保留 `r8()` rounding 與 MoSQITo-compatible nonlinear-decay initialization／look-ahead 語意 | 讓逐階段與端對端 golden comparison 能精確定位回歸 | 因果 stream 改用 zero state 與明確 latency，並把前 580 個輸出 frames 標記為 warm-up |
+| Batch parity 保留 `r8()` rounding 與 nonlinear-decay 對下一 frame 的 look-ahead 語意 | 讓逐階段與端對端 golden comparison 能精確定位回歸 | 因果 stream 改用明確 latency，並把前 580 個輸出 frames 標記為 warm-up |
 | MoSQITo 1.2.1 使用包含終點、依 duration 改變間距的時間軸 | 延續既有 Python API 的輸出建立方式 | ISO532 改回精確 2 ms grid，響度 parity 與 time-axis identity 分開驗證 |
 | **分歧（發現 F-01，2026-10-31）：** Annex A 低頻 RAP/DLL 修正會選到表格最後一列；MoSQITo 1.2.1 的向量化迴圈（`arange(1, 7)`）不會走到該列 | 與官方 ISO 532-1 Annex A C 程式比對時發現。目前判斷：依 Annex A，這也是本專案與 MoSQITo 共同引用的參考；MoSQITo 上游 master 至 2026-10-31 仍為同一迴圈 | 低頻帶超過第七門檻（例如 25 Hz > 118 dB）現在依 Annex A：反例由 154.93 sone 改為 52.51。其他輸入逐位元不變。看守測試：`tests/low_freq_correction.rs`；證據：[`docs/F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md`](docs/F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md) |
+| **分歧（發現 F-02，2026-10-31）：** 批次非線性時間衰減從零狀態起算；MoSQITo 1.2.1 因向量化後第一欄讀到第 `-1` 欄，每個頻帶都以最後一幀（`core[-1] / 24`）作為初始值 | 與官方 Annex A C 程式比對時發現，該程式的 `UoLast`／`U2Last` 由零起算。目前判斷：依 Annex A，使訊號前段的結果不受後段樣本影響；MoSQITo 的初始值仍可經 `NlInit::MosqitoTail`（Python `nl_init="mosqito_tail"`）取得，供 parity 比對 | 批次結果前 0.05–0.5 s 改變（稽核反例 0.11 sone → 0）；尾端靜音的訊號逐位元不變；批次自第 0 幀起與因果 stream 逐位元相同。Gate：`tests/nl_zero_init.rs`；證據：[`docs/F02-NL-ZERO-INIT-2026-10-31.md`](docs/F02-NL-ZERO-INIT-2026-10-31.md) |
 
 詳細證據，以及「相容性 parity」與「ISO compliance」的區別，請見 [`docs/MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md`](docs/MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md)。
 
