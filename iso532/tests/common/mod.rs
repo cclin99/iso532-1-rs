@@ -67,10 +67,13 @@ pub fn read_bin(name: &str, file: &str) -> Vec<f64> {
     let path = golden_dir(name).join(file);
     let bytes = std::fs::read(&path)
         .unwrap_or_else(|e| panic!("missing golden {path:?} (run tools/gen_golden.py): {e}"));
-    bytes
-        .chunks_exact(8)
-        .map(|c| f64::from_le_bytes(c.try_into().unwrap()))
-        .collect()
+    let (words, rest) = bytes.as_chunks::<8>();
+    assert!(
+        rest.is_empty(),
+        "golden {path:?}: {} trailing bytes, not a whole number of f64",
+        rest.len()
+    );
+    words.iter().map(|c| f64::from_le_bytes(*c)).collect()
 }
 
 #[allow(dead_code)]

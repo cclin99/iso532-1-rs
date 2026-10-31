@@ -5,7 +5,12 @@ use iso532::dsp::sos::{sosfilt, Sos};
 
 fn cheby_sos_from_golden() -> Vec<Sos> {
     let raw = read_bin("_dsp", "dsp_cheby_sos.bin");
-    raw.chunks_exact(6)
+    let (rows, rest) = raw.as_chunks::<6>();
+    assert!(
+        rest.is_empty(),
+        "dsp_cheby_sos.bin is not a whole number of 6-value SOS rows"
+    );
+    rows.iter()
         .map(|c| Sos {
             b: [c[0], c[1], c[2]],
             a: [c[4], c[5]],
