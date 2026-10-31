@@ -51,7 +51,7 @@ pub use error::Iso532Error;
 pub use sone2phon::sone2phon;
 pub use zwst::loudness_zwst;
 pub use zwtv::stream::{FrameFlags, StreamFrame, ZwtvStream, N_WARMUP_FRAMES};
-pub use zwtv::{loudness_zwtv, zwtv_out_frames, ZwtvProcessor};
+pub use zwtv::{loudness_zwtv, zwtv_out_frames, NlInit, ZwtvProcessor};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum FieldType {

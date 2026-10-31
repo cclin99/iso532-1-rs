@@ -2,8 +2,9 @@
 mod common;
 
 use common::assert_close;
-use iso532::zwtv::nonlinear_decay::{nl_loudness_avx2, nl_loudness_scalar};
+use iso532::zwtv::nonlinear_decay::{nl_loudness_avx2, nl_loudness_scalar_with};
 use iso532::zwtv::third_octave_levels::{third_octave_levels_avx2, third_octave_levels_scalar};
+use iso532::zwtv::NlInit;
 use iso532::zwtv::ParMode;
 
 #[test]
@@ -44,7 +45,15 @@ fn nl_loudness_avx2_matches_scalar() {
         }
     }
 
-    let scalar = nl_loudness_scalar(&core, n_time);
-    let avx2 = unsafe { nl_loudness_avx2(&core, n_time, ParMode::Sequential) };
-    assert_close(&avx2, &scalar, 1e-12, 1e-14, "nl avx2 vs scalar");
+    for init in [NlInit::Zero, NlInit::MosqitoTail] {
+        let scalar = nl_loudness_scalar_with(&core, n_time, init);
+        let avx2 = unsafe { nl_loudness_avx2(&core, n_time, ParMode::Sequential, init) };
+        assert_close(
+            &avx2,
+            &scalar,
+            1e-12,
+            1e-14,
+            &format!("nl avx2 vs scalar ({init:?})"),
+        );
+    }
 }

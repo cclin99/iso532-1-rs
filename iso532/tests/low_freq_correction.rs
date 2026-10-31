@@ -124,23 +124,16 @@ fn stream_25hz_119db_sine_matches_batch_and_is_not_clamped() {
         within_iso(n_max, C_REF_ZWTV_MAX_25HZ_119DB),
         "stream max N = {n_max} sone, Annex A C reference {C_REF_ZWTV_MAX_25HZ_119DB}"
     );
-    // After warm-up the stream must track batch frame by frame; the batch
-    // onset overshoot before warm-up is intentionally not compared. The
-    // MoSQITo-compatible batch seed (F-02) decays more slowly on this signal
-    // than on the synth signal that froze N_WARMUP_FRAMES (<= 1e-9 only from
-    // frame 597, <= 1e-6 from frame 356), so this gate uses 1e-6 (2e-8
-    // relative) rather than the 1e-9 of stream.rs.
+    // Since F-02 the batch path starts the nonlinear decay from zero state
+    // like the stream, so the two must agree bitwise from frame 0 (before
+    // F-02 the MoSQITo tail seed made this signal converge to <= 1e-9 only
+    // from frame 597).
     let batch = loudness_zwtv(&signal, FS, FieldType::Free).unwrap();
     assert_eq!(batch.n.len(), frames.len());
-    for (i, (b, f)) in batch
-        .n
-        .iter()
-        .zip(&frames)
-        .enumerate()
-        .skip(N_WARMUP_FRAMES as usize)
-    {
-        assert!(
-            (b - f.n).abs() <= 1e-6,
+    for (i, (b, f)) in batch.n.iter().zip(&frames).enumerate() {
+        assert_eq!(
+            b.to_bits(),
+            f.n.to_bits(),
             "frame {i}: batch={b} stream={}",
             f.n
         );

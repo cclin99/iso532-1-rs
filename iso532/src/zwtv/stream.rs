@@ -7,10 +7,17 @@ use crate::zwtv::third_octave_levels::{intensity_to_db, TolBandState, DEC_FACTOR
 use crate::zwtv::OUT_DECIM;
 use crate::FieldType;
 
-/// Conservative convergence window: ceil((8*75 ms + 8*70 ms) / 2 ms).
+/// Frozen v1 contract: output frames with `t_frame_index < 580` carry
+/// `FrameFlags::WARMUP`. Derived as ceil((8*75 ms + 8*70 ms) / 2 ms) and
+/// calibrated in July 2026 so that the stream had converged to the then
+/// MoSQITo-seeded batch result within 1e-9 (first sustained frame 544 on the
+/// synthetic gate; the 5-tau estimate of 363 was not enough).
 ///
-/// The original 5-tau-per-stage estimate did not satisfy the 1e-9 contract:
-/// the synthetic gate first remains below 1e-9 at frame 544.
+/// Since F-02 (2026-10-31) the batch path also starts the nonlinear decay from
+/// zero state and equals the stream bitwise from frame 0, so the flag no
+/// longer marks a batch/stream difference. It remains a conservative
+/// filter-bank settling marker and is unchanged for stream API / C ABI v1
+/// stability.
 pub const N_WARMUP_FRAMES: u64 = 580;
 
 #[repr(transparent)]

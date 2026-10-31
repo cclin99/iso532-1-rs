@@ -111,7 +111,12 @@ fn flush_reset_after_partial_nonfinite_chunk_matches_a_new_stream() {
 }
 
 #[test]
-fn zerostate_and_stream_converge_to_batch_after_warmup() {
+fn batch_zerostate_reference_and_stream_are_bitwise_identical_from_frame_zero() {
+    // Before F-02 the batch path was seeded from the last frame and only
+    // converged to the stream after N_WARMUP_FRAMES (<= 1e-9). Both now start
+    // from zero state, so the three paths must agree bitwise from frame 0; the
+    // WARMUP flag is kept as a frozen v1 contract and no longer marks a
+    // batch/stream difference.
     let one_second = common::synth_signal();
     let signal: Vec<f64> = one_second.iter().copied().cycle().take(144_000).collect();
     let batch = iso532::loudness_zwtv(&signal, 48_000.0, FieldType::Free).unwrap();
@@ -119,34 +124,30 @@ fn zerostate_and_stream_converge_to_batch_after_warmup() {
     let stream = run_chunked(&signal, std::iter::repeat(480));
     assert_eq!(batch.n.len(), zero.len());
     assert_eq!(batch.n.len(), stream.len());
-    let first_sustained = (0..batch.n.len()).find(|&start| {
-        batch.n[start..]
-            .iter()
-            .zip(&zero[start..])
-            .all(|(a, b)| (a - b).abs() <= 1e-9)
-    });
-    eprintln!("first sustained <=1e-9: {first_sustained:?}");
-    assert!(first_sustained.is_some_and(|frame| frame <= N_WARMUP_FRAMES as usize));
-    for i in N_WARMUP_FRAMES as usize..batch.n.len() {
-        assert!(
-            (batch.n[i] - zero[i]).abs() <= 1e-9,
-            "zero frame {i}: batch={} zero={} diff={}",
+    for i in 0..batch.n.len() {
+        assert_eq!(
+            batch.n[i].to_bits(),
+            zero[i].to_bits(),
+            "zero frame {i}: batch={} zero={}",
             batch.n[i],
-            zero[i],
-            (batch.n[i] - zero[i]).abs()
+            zero[i]
         );
-        assert!(
-            (batch.n[i] - stream[i].n).abs() <= 1e-9,
-            "stream frame {i}: batch={} stream={} diff={}",
+        assert_eq!(
+            batch.n[i].to_bits(),
+            stream[i].n.to_bits(),
+            "stream frame {i}: batch={} stream={}",
             batch.n[i],
-            stream[i].n,
-            (batch.n[i] - stream[i].n).abs()
+            stream[i].n
         );
     }
+    assert!(stream[0].flags.contains(FrameFlags::WARMUP));
+    assert!(!stream[N_WARMUP_FRAMES as usize]
+        .flags
+        .contains(FrameFlags::WARMUP));
 }
 
 #[test]
-fn nine_golden_signals_match_zerostate_and_converge_after_warmup() {
+fn nine_golden_signals_match_zerostate_and_batch_bitwise() {
     const NAMES: [&str; 9] = [
         "sine_1k_60",
         "sine_250_80",
@@ -177,17 +178,13 @@ fn nine_golden_signals_match_zerostate_and_converge_after_warmup() {
             );
         }
         let batch = iso532::loudness_zwtv(&signal, 48_000.0, FieldType::Free).unwrap();
-        for (index, (batch_n, frame)) in batch
-            .n
-            .iter()
-            .zip(&frames)
-            .enumerate()
-            .skip(N_WARMUP_FRAMES as usize)
-        {
-            assert!(
-                (batch_n - frame.n).abs() <= 1e-9,
-                "{name} E3 frame {index}: diff={}",
-                (batch_n - frame.n).abs()
+        assert_eq!(batch.n.len(), frames.len(), "{name}");
+        for (index, (batch_n, frame)) in batch.n.iter().zip(&frames).enumerate() {
+            assert_eq!(
+                batch_n.to_bits(),
+                frame.n.to_bits(),
+                "{name} E3 frame {index}: batch={batch_n} stream={}",
+                frame.n
             );
         }
     }

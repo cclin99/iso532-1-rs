@@ -1,4 +1,5 @@
 pub mod nonlinear_decay;
+pub use nonlinear_decay::NlInit;
 pub mod stream;
 pub mod temporal_weighting;
 pub mod third_octave_levels;
@@ -63,11 +64,26 @@ impl ZwtvProcessor {
         Self::default()
     }
 
+    /// Batch time-varying loudness with the nonlinear decay started from zero
+    /// state (`NlInit::Zero`, ISO 532-1 Annex A). Same as `loudness_zwtv`.
     pub fn process(
         &mut self,
         signal: &[f64],
         fs: f64,
         field: FieldType,
+    ) -> Result<LoudnessTimeVarying, Iso532Error> {
+        self.process_with(signal, fs, field, NlInit::Zero)
+    }
+
+    /// Batch time-varying loudness with an explicit nonlinear-decay initial
+    /// state. `NlInit::MosqitoTail` reproduces MoSQITo 1.2.1 and exists for
+    /// golden comparisons; see `NlInit`.
+    pub fn process_with(
+        &mut self,
+        signal: &[f64],
+        fs: f64,
+        field: FieldType,
+        nl_init: NlInit,
     ) -> Result<LoudnessTimeVarying, Iso532Error> {
         if fs != 48000.0 {
             return Err(Iso532Error::UnsupportedSampleRate(fs));
@@ -90,7 +106,7 @@ impl ZwtvProcessor {
         self.core.resize(21 * n_time, 0.0);
         main_loudness_frames_into(&self.third_octave_frames, n_time, field, &mut self.core)?;
 
-        let nl = nonlinear_decay::nl_loudness(&self.core, n_time);
+        let nl = nonlinear_decay::nl_loudness_with(&self.core, n_time, ParMode::Rayon, nl_init);
         let n_out = n_time.div_ceil(OUT_DECIM);
         self.loudness.resize(n_time, 0.0);
         self.spec_time_major.resize(240 * n_out, 0.0);
