@@ -287,6 +287,7 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 | ZWTV 保留 reference-style 逐 sample 遞迴濾波 | ISO 532-1 對時變前端的規定較明確 | Python/NumPy 無法同樣有效地整段向量化，所以 MoSQITo ZWTV 較慢；這不是數值缺陷 |
 | Batch parity 保留 `r8()` rounding 與 MoSQITo-compatible nonlinear-decay initialization／look-ahead 語意 | 讓逐階段與端對端 golden comparison 能精確定位回歸 | 因果 stream 改用 zero state 與明確 latency，並把前 580 個輸出 frames 標記為 warm-up |
 | MoSQITo 1.2.1 使用包含終點、依 duration 改變間距的時間軸 | 延續既有 Python API 的輸出建立方式 | ISO532 改回精確 2 ms grid，響度 parity 與 time-axis identity 分開驗證 |
+| **刻意分歧：** Annex A 低頻 RAP/DLL 修正會選到表格最後一列；MoSQITo 1.2.1（`arange(1, 7)`）永遠選不到 | MoSQITo 向量化迴圈漏掉第八列，是相對於它自己引用的 Zwicker BASIC／Annex A C 程式的實作失誤；上游至 2026-10-31 仍未修 | 低頻帶超過第七門檻（例如 25 Hz > 118 dB）現在依 Annex A：反例由 154.93 sone 改為 52.51。其他輸入逐位元不變。看守測試：`tests/low_freq_correction.rs`；證據：[`docs/F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md`](docs/F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md) |
 
 詳細證據，以及「相容性 parity」與「ISO compliance」的區別，請見 [`docs/MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md`](docs/MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md)。
 

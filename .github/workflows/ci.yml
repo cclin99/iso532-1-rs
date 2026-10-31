@@ -43,6 +43,7 @@ jobs:
           --test api_errors
           --test hash_gate
           --test py_contract_dump
+          --test low_freq_correction
 
   ffi:
     strategy:
