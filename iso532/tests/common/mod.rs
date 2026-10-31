@@ -1,4 +1,6 @@
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
+
+pub mod annexb_check;
 
 #[allow(dead_code)]
 const FS: f64 = 48_000.0;
@@ -64,8 +66,14 @@ pub fn golden_dir(name: &str) -> PathBuf {
 
 #[allow(dead_code)]
 pub fn read_bin(name: &str, file: &str) -> Vec<f64> {
-    let path = golden_dir(name).join(file);
-    let bytes = std::fs::read(&path)
+    read_bin_path(&golden_dir(name).join(file))
+}
+
+/// Little-endian f64 reader. The file must be a whole number of 8-byte words;
+/// any trailing bytes are a hard failure (not truncated silently).
+#[allow(dead_code)]
+pub fn read_bin_path(path: &Path) -> Vec<f64> {
+    let bytes = std::fs::read(path)
         .unwrap_or_else(|e| panic!("missing golden {path:?} (run tools/gen_golden.py): {e}"));
     let (words, rest) = bytes.as_chunks::<8>();
     assert!(

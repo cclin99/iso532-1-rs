@@ -333,7 +333,7 @@ The time-axis comparison is intentional: MoSQITo 1.2.1 uses a duration-dependent
 
 The fresh-run rows and the performance table were produced by `.venv\Scripts\python.exe tools\compare_mosqito.py` (add `--nl-init mosqito_tail` for the compatibility rows; the performance table keeps the quiet-machine 2026-07-20 measurement, see `docs/RELEASE-0.3.0-2026-10-31.md` for the release-time snapshot). The script uses `tools.iso532_testkit.contract_signal(3 * 48_000)`, warms up both implementations once, runs each 30 consecutive times, and reports arithmetic mean, sample SD, min/max, and the maximum absolute `N(t)` and `N_specific(t)` differences.
 
-ISO Annex B uses the much broader acceptance expression `abs(error) <= 0.1 + 0.05 * abs(reference)`. For detailed signal 3/5/10 results and the distinction between implementation parity and Annex B compliance, see [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md).
+ISO Annex B uses a much broader per-point acceptance expression, `abs(error) <= max(0.1, 0.05 * abs(reference))`; this is the formula read from the official Annex B workbook (V-01, 2026-10-31), not a clause-by-clause check of the standard text, and `tests/annexb.rs` applies it with zero exceptions allowed and fail-closed handling of invalid data. For detailed signal 3/5/10 results and the distinction between implementation parity and Annex B compliance, see [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md).
 
 ### Reproduce the evidence
 

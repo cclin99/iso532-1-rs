@@ -330,7 +330,7 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 
 上面的直接比對列與效能表均由 `.venv\Scripts\python.exe tools\compare_mosqito.py` 產生（相容性列加 `--nl-init mosqito_tail`；效能表維持 2026-07-20 安靜機器量測，發版當時快照見 `docs/RELEASE-0.3.0-2026-10-31.md`）。腳本使用 `tools.iso532_testkit.contract_signal(3 * 48_000)`，先各 warm up 一次，再各連續量測 30 次，輸出算術平均、sample SD、min／max，以及 `N(t)` 與 `N_specific(t)` 的最大絕對差異。
 
-ISO Annex B 使用寬得多的接受式：`abs(error) <= 0.1 + 0.05 * abs(reference)`。Signal 3／5／10 的詳細數據，以及「實作 parity」與「Annex B compliance」的差異，請見 [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md)。
+ISO Annex B 使用寬得多的逐點接受式：`abs(error) <= max(0.1, 0.05 * abs(reference))`；此公式直接讀自官方 Annex B 工作簿（V-01，2026-10-31），不是標準條文逐條核對；`tests/annexb.rs` 以零例外、對無效資料 fail-closed 的方式套用。Signal 3／5／10 的詳細數據，以及「實作 parity」與「Annex B compliance」的差異，請見 [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md)。
 
 ### 重現驗證
 

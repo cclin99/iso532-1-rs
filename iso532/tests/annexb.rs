@@ -1,29 +1,18 @@
 mod common;
+use common::annexb_check::{annexb_csv, annexb_verdict, Verdict};
 use common::*;
 use iso532::{loudness_zwst, loudness_zwtv, FieldType};
 
-/// ISO 532-1 section 5.1 compliance: within 5% relative or 0.1 absolute,
-/// same criterion as mosqito's tests (isclose rtol=0.05, atol=0.1).
-fn isoclose(got: &[f64], want: &[f64]) -> bool {
-    got.len() == want.len()
-        && got
-            .iter()
-            .zip(want)
-            .all(|(g, w)| (g - w).abs() <= 0.1 + 0.05 * w.abs())
-}
-
-fn annexb_csv(file: &str) -> Vec<f64> {
-    let path = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"))
-        .parent()
-        .unwrap()
-        .join("data/annexb")
-        .join(file);
-    let txt = std::fs::read_to_string(&path)
-        .unwrap_or_else(|e| panic!("missing {path:?} (run tools/setup_env.sh): {e}"));
-    txt.lines()
-        .skip(1)
-        .filter_map(|line| line.trim().parse().ok())
-        .collect()
+/// ISO 532-1 Annex B acceptance per point: `|got - ref| <= max(0.1, 0.05 * |ref|)`,
+/// the rule of the official Annex B workbook (V-01, `docs/修正報告2.md` §11.5).
+/// Fail-closed: invalid data (empty, length mismatch, NaN/Inf, negative
+/// reference) is reported as `Invalid`, never as a pass. Strict 0 exceptions.
+fn assert_annexb(got: &[f64], reference: &[f64], ctx: &str) {
+    let verdict = annexb_verdict(got, reference);
+    assert!(
+        matches!(verdict, Verdict::Pass { .. }),
+        "{ctx}: Annex B verdict {verdict:?}"
+    );
 }
 
 #[test]
@@ -32,8 +21,8 @@ fn annexb_stationary_signal3_1khz_60db() {
     let want_spec = annexb_csv("test_signal_3.csv");
     assert_eq!(want_spec.len(), 240);
     let r = loudness_zwst(&sig, 48000.0, FieldType::Free).unwrap();
-    assert!(isoclose(&[r.n], &[4.019]), "N = {}", r.n);
-    assert!(isoclose(&r.n_specific, &want_spec));
+    assert_annexb(&[r.n], &[4.019], "sig3 N");
+    assert_annexb(&r.n_specific, &want_spec, "sig3 N_specific vs ISO csv");
 }
 
 #[test]
@@ -42,8 +31,8 @@ fn annexb_stationary_signal5_pinknoise_60db() {
     let want_spec = annexb_csv("test_signal_5.csv");
     assert_eq!(want_spec.len(), 240);
     let r = loudness_zwst(&sig, 48000.0, FieldType::Free).unwrap();
-    assert!(isoclose(&[r.n], &[10.498]), "N = {}", r.n);
-    assert!(isoclose(&r.n_specific, &want_spec));
+    assert_annexb(&[r.n], &[10.498], "sig5 N");
+    assert_annexb(&r.n_specific, &want_spec, "sig5 N_specific vs ISO csv");
 }
 
 #[test]
@@ -61,5 +50,7 @@ fn annexb_timevarying_signal10() {
         1e-12,
         "sig10 time axis vs ISO xlsx",
     );
-    assert!(isoclose(&r.n, &iso_ref), "sig10 N(t) vs ISO xlsx reference");
+    // `annexb_verdict` also rejects a negative or non-finite `tv_nref.bin`
+    // (Invalid), which would be a fixture finding rather than a numeric failure.
+    assert_annexb(&r.n, &iso_ref, "sig10 N(t) vs ISO xlsx reference");
 }

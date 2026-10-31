@@ -19,6 +19,8 @@ Rust+AVX2 adds only a tiny residual error relative to Python/mosqito:
 
 These residuals are many orders of magnitude smaller than ISO Annex B compliance tolerance, which is `abs(error) <= 0.1 + 0.05 * abs(reference)`.
 
+> Correction 2026-10-31 (V-01): the official Annex B workbook applies the max rule `abs(error) <= max(0.1, 0.05 * abs(reference))`, which is never looser than the additive expression quoted above. The numbers in this document are unchanged; the repository tests were switched to the max rule in V-01.
+
 ## ISO Annex B Total Loudness
 
 | Case | ISO reference | Python/mosqito golden | Rust+AVX2 | Absolute delta vs ISO | Relative delta vs ISO |

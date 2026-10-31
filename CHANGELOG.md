@@ -5,7 +5,17 @@ All notable changes to this project will be documented here. The project follows
 
 ## Unreleased
 
-Nothing yet.
+### Changed
+
+- Annex B tests (`tests/annexb.rs`) use the per-point tolerance of the official
+  Annex B workbook, `max(0.1, 0.05 * |reference|)`, instead of the additive
+  `0.1 + 0.05 * |reference|` (V-01). The verdict is fail-closed: empty curves,
+  length mismatch, NaN/Inf on either side and negative reference values are
+  `Invalid`, never a pass; the CSV reader no longer drops unparsable or blank
+  rows silently. New `tests/annexb_validator.rs` pins the rule (including the
+  10.55-vs-10.0 control that separates the two formulas), the invalid cases
+  and the corrupted-file negatives on temp copies. Test-only change; no
+  numeric or API effect. All existing Annex B tests pass under the max rule.
 
 ## 0.3.0 - 2026-10-31
 
