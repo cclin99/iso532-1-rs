@@ -322,14 +322,16 @@ The time-axis comparison is intentional: MoSQITo 1.2.1 uses a duration-dependent
 |---|---:|---|
 | ZWST total `N` vs MoSQITo golden | 0 sone | Exact after the shared total-loudness quantization |
 | ZWST `N_specific` vs MoSQITo golden | `8.2e-14` sone/Bark | Floating-point noise scale |
-| ZWTV `N(t)` vs MoSQITo golden | `1.6e-14` sone | Floating-point noise scale |
-| ZWTV `N_specific(t)` vs MoSQITo golden | `1.3e-9` sone/Bark | Worst case near a slope/rounding branch boundary |
+| ZWTV `N(t)` vs MoSQITo golden (`NlInit::MosqitoTail`) | `1.6e-14` sone | Floating-point noise scale |
+| ZWTV `N_specific(t)` vs MoSQITo golden (`NlInit::MosqitoTail`) | `1.3e-9` sone/Bark | Worst case near a slope/rounding branch boundary |
 | AVX2 vs Rust scalar `N(t)` | 0 | Bit-identical on the measured golden set |
 | AVX2 vs Rust scalar `N_specific(t)` | `1.4e-9` sone/Bark | Expected FMA/rounding residue, test-guarded |
-| Fresh 2026-07-20 3 s direct run, `N(t)` | `2.66e-15` sone | Same signal used for the performance comparison |
-| Fresh 2026-07-20 3 s direct run, `N_specific(t)` | `3.46e-15` sone/Bark | Same signal used for the performance comparison |
+| Fresh 2026-10-31 3 s direct run, default `nl_init="zero"`, `N(t)` | `5.83e-3` sone | Same signal used for the performance comparison; the difference is the F-02 initialisation and sits at t = 2 ms |
+| Fresh 2026-10-31 3 s direct run, default `nl_init="zero"`, `N_specific(t)` | `3.25e-2` sone/Bark | Same cause; the signal starts without silence, so the MoSQITo seed is non-zero |
+| Fresh 2026-10-31 3 s direct run, `nl_init="mosqito_tail"`, `N(t)` | `2.66e-15` sone | Identical to the 2026-07-20 value: the shared loop is unchanged |
+| Fresh 2026-10-31 3 s direct run, `nl_init="mosqito_tail"`, `N_specific(t)` | `3.46e-15` sone/Bark | Identical to the 2026-07-20 value |
 
-The two fresh-run rows and the performance table were produced by `.venv\Scripts\python.exe tools\compare_mosqito.py`. The script uses `tools.iso532_testkit.contract_signal(3 * 48_000)`, warms up both implementations once, runs each 30 consecutive times, and reports arithmetic mean, sample SD, min/max, and the maximum absolute `N(t)` and `N_specific(t)` differences.
+The fresh-run rows and the performance table were produced by `.venv\Scripts\python.exe tools\compare_mosqito.py` (add `--nl-init mosqito_tail` for the compatibility rows; the performance table keeps the quiet-machine 2026-07-20 measurement, see `docs/RELEASE-0.3.0-2026-10-31.md` for the release-time snapshot). The script uses `tools.iso532_testkit.contract_signal(3 * 48_000)`, warms up both implementations once, runs each 30 consecutive times, and reports arithmetic mean, sample SD, min/max, and the maximum absolute `N(t)` and `N_specific(t)` differences.
 
 ISO Annex B uses the much broader acceptance expression `abs(error) <= 0.1 + 0.05 * abs(reference)`. For detailed signal 3/5/10 results and the distinction between implementation parity and Annex B compliance, see [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md).
 

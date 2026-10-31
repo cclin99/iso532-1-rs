@@ -5,6 +5,10 @@ All notable changes to this project will be documented here. The project follows
 
 ## Unreleased
 
+Nothing yet.
+
+## 0.3.0 - 2026-10-31
+
 Numeric behaviour change at the start of every time-varying result (finding
 F-02, see Changed). Public Rust API gains `NlInit` and
 `ZwtvProcessor::process_with`; the Python `loudness_zwtv` gains an `nl_init`
@@ -27,6 +31,10 @@ keyword; C ABI v1 is unchanged and follows the new default.
   zero.
 - `tests/golden_zwtv.rs`: zero-state convergence on the 10 s Annex B fixtures
   and a second frozen snapshot table for the default path.
+- `tools/compare_mosqito.py --nl-init {zero,mosqito_tail}`; the README
+  direct-comparison rows are re-measured for both initialisations (the
+  default now differs from MoSQITo by 5.83e-3 sone at t = 2 ms on the 3 s
+  contract signal; `mosqito_tail` reproduces the 2.66e-15 sone value).
 
 ### Changed
 
@@ -108,6 +116,7 @@ API, C ABI v1, and Python interfaces are unchanged.
 - MoSQITo 1.2.1 golden-generation, hash, Annex B, FFI, and Python verification
   workflows.
 
-[Unreleased]: https://github.com/cclin99/iso532-1-rs/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/cclin99/iso532-1-rs/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/cclin99/iso532-1-rs/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/cclin99/iso532-1-rs/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/cclin99/iso532-1-rs/releases/tag/v0.1.0

@@ -43,13 +43,23 @@ def print_timing(label, durations, duration_s):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--iterations", type=int, default=30)
+    parser.add_argument(
+        "--nl-init",
+        choices=("zero", "mosqito_tail"),
+        default="zero",
+        help="batch nonlinear-decay initialisation passed to iso532.loudness_zwtv "
+        "(zero: ISO 532-1 Annex A default; mosqito_tail: MoSQITo 1.2.1 seed)",
+    )
     args = parser.parse_args()
     if args.iterations < 1:
         parser.error("--iterations must be at least 1")
 
     duration_s = 3
     signal = np.ascontiguousarray(contract_signal(duration_s * FS), dtype=np.float64)
-    rust_runs, rust = measured_runs(iso532.loudness_zwtv, signal, args.iterations)
+    def rust_zwtv(x, fs):
+        return iso532.loudness_zwtv(x, fs, nl_init=args.nl_init)
+
+    rust_runs, rust = measured_runs(rust_zwtv, signal, args.iterations)
     mosqito_runs, reference = measured_runs(
         mosqito_loudness_zwtv, signal, args.iterations
     )
@@ -65,6 +75,7 @@ def main():
     print(f"python: {platform.python_version()}; numpy: {np.__version__}")
     print(f"signal: contract_signal({duration_s * FS}), float64 contiguous, {FS} Hz")
     print(f"iterations per implementation: {args.iterations} (after one warm-up)")
+    print(f"iso532 nl_init: {args.nl_init}")
     rust_s = print_timing("ISO532 Rust binding", rust_runs, duration_s)
     mosqito_s = print_timing("MoSQITo", mosqito_runs, duration_s)
     print(f"relative speed from arithmetic means: {mosqito_s / rust_s:.2f}x")
