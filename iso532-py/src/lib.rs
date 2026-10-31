@@ -46,6 +46,16 @@ fn parse_field(s: &str) -> PyResult<iso532_core::FieldType> {
     })
 }
 
+fn parse_nl_init(s: &str) -> PyResult<iso532_core::NlInit> {
+    match s {
+        "zero" => Ok(iso532_core::NlInit::Zero),
+        "mosqito_tail" => Ok(iso532_core::NlInit::MosqitoTail),
+        other => Err(PyValueError::new_err(format!(
+            "nl_init must be \"zero\" or \"mosqito_tail\", got {other:?}"
+        ))),
+    }
+}
+
 fn contiguous<'py, 'a>(signal: &'a PyReadonlyArray1<'py, f64>) -> PyResult<&'a [f64]> {
     signal
         .as_slice()
@@ -54,18 +64,27 @@ fn contiguous<'py, 'a>(signal: &'a PyReadonlyArray1<'py, f64>) -> PyResult<&'a [
 
 /// Time-varying loudness (ISO 532-1 zwtv).
 /// Returns (n[frames], n_specific[240, frames], bark_axis[240], time_axis[frames]).
+///
+/// `nl_init` selects the initial state of the nonlinear temporal decay:
+/// `"zero"` (default, ISO 532-1 Annex A: the result for a signal prefix does
+/// not depend on later samples) or `"mosqito_tail"` (MoSQITo 1.2.1 behaviour,
+/// seeded from the last frame; for parity comparisons only).
 #[pyfunction]
-#[pyo3(signature = (signal, fs, field_type = "free"))]
+#[pyo3(signature = (signal, fs, field_type = "free", nl_init = "zero"))]
 fn loudness_zwtv<'py>(
     py: Python<'py>,
     signal: PyReadonlyArray1<'py, f64>,
     fs: f64,
     field_type: &str,
+    nl_init: &str,
 ) -> PyResult<ZwtvOutput<'py>> {
     let field = parse_field(field_type)?;
+    let init = parse_nl_init(nl_init)?;
     let owned = contiguous(&signal)?.to_vec();
     let r = py
-        .allow_threads(move || iso532_core::loudness_zwtv(&owned, fs, field))
+        .allow_threads(move || {
+            iso532_core::ZwtvProcessor::new().process_with(&owned, fs, field, init)
+        })
         .map_err(|e| PyValueError::new_err(e.to_string()))?;
     let frames = r.n.len();
     let spec = Array2::from_shape_vec((240, frames), r.n_specific)

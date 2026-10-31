@@ -51,9 +51,11 @@ def signals():
 
 @pytest.mark.parametrize("name", NAMES)
 def test_zwtv_parity(signals, name):
+    # MoSQITo seeds its nonlinear decay from the last frame (F-02); the exact
+    # comparison therefore runs the binding with nl_init="mosqito_tail".
     sig = np.ascontiguousarray(signals[name], dtype=np.float64)
     want = loudness_zwtv(sig, float(FS))
-    got = iso532.loudness_zwtv(sig, float(FS))
+    got = iso532.loudness_zwtv(sig, float(FS), nl_init="mosqito_tail")
     for label, g, w in zip(("N", "N_specific", "bark"), got[:3], want[:3]):
         np.testing.assert_allclose(
             g,
@@ -73,6 +75,40 @@ def test_zwtv_parity(signals, name):
         np.arange(got_time.size, dtype=np.uint64) * np.uint64(96)
     ).astype(np.float64) / float(FS)
     np.testing.assert_array_equal(got_time, iso_time)
+
+
+# 0.5 s of trailing silence drives every band's core loudness to exactly zero
+# (measured: at most 0.177 s needed on these fixtures), which makes MoSQITo's
+# last-frame seed exactly zero.
+SILENT_TAIL = np.zeros(FS // 2, dtype=np.float64)
+
+
+@pytest.mark.parametrize("name", NAMES)
+def test_zwtv_default_matches_mosqito_given_a_silent_tail(signals, name):
+    """Cross-check of the F-02 default against MoSQITo's own arithmetic.
+
+    Appending silence to MoSQITo's input zeroes its seed, so MoSQITo on
+    (signal + silence) must equal the zero-state default on (signal) for every
+    output frame that only depends on the original samples: all frames of the
+    unpadded result, because the last third-octave frame (whose look-ahead
+    differs) is not an output frame of the decimated grid.
+    """
+    sig = np.ascontiguousarray(signals[name], dtype=np.float64)
+    padded = np.concatenate([sig, SILENT_TAIL])
+    want = loudness_zwtv(padded, float(FS))
+    got = iso532.loudness_zwtv(sig, float(FS))
+    frames = got[0].shape[0]
+    # last output frame k=frames-1 reads nl frame 4(k); nl frames 0..n-2 are
+    # tail-independent (frame n-1 looks ahead into the padding)
+    assert (frames - 1) * 4 <= sig.shape[0] // 24 - 2
+    np.testing.assert_allclose(
+        got[0], np.asarray(want[0], dtype=np.float64)[:frames],
+        rtol=RTOL, atol=ATOL, err_msg=f"{name}/N default",
+    )
+    np.testing.assert_allclose(
+        got[1], np.asarray(want[1], dtype=np.float64)[:, :frames],
+        rtol=RTOL, atol=ATOL, err_msg=f"{name}/N_specific default",
+    )
 
 
 @pytest.mark.parametrize("name", NAMES)

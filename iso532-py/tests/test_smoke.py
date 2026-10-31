@@ -13,7 +13,10 @@ FS = 48000.0
 # n/time_axis are bitwise-stable across platforms and backends (see
 # docs/CI-HASH-GATE-DEBUG-2026-07-10.md). Values MUST come from an actual
 # dump run — never invented, never copied from another signal.
-N_HASH = 0x44E6822074554786
+# F-02 (2026-10-31): the default nonlinear-decay initialisation moved from the
+# MoSQITo tail seed to zero state. The old N hash is kept for nl_init="mosqito_tail".
+N_HASH = 0x9C0B638BFB7758D6
+N_HASH_MOSQITO_TAIL = 0x44E6822074554786
 TIME_HASH = 0xF076BCB342595537
 
 
@@ -44,6 +47,26 @@ def test_bitwise_contract_n_and_time_axis():
     n, _spec, _bark, time = iso532.loudness_zwtv(contract_signal(), FS)
     assert hex(fnv1a_f64(n)) == hex(N_HASH)
     assert hex(fnv1a_f64(time)) == hex(TIME_HASH)
+
+
+def test_bitwise_contract_mosqito_tail_init():
+    n, _spec, _bark, time = iso532.loudness_zwtv(
+        contract_signal(), FS, nl_init="mosqito_tail"
+    )
+    assert hex(fnv1a_f64(n)) == hex(N_HASH_MOSQITO_TAIL)
+    assert hex(fnv1a_f64(time)) == hex(TIME_HASH)
+    n_zero, *_ = iso532.loudness_zwtv(contract_signal(), FS, nl_init="zero")
+    assert hex(fnv1a_f64(n_zero)) == hex(N_HASH)
+    # the two initialisations differ at the start and converge later
+    assert n_zero[0] == 0.0 and n[0] > 0.0
+    assert abs(n_zero[-1] - n[-1]) < 1e-9
+
+
+def test_nl_init_rejects_unknown_value():
+    import pytest
+
+    with pytest.raises(ValueError, match="nl_init"):
+        iso532.loudness_zwtv(contract_signal(), FS, nl_init="last_frame")
 
 
 def test_error_mapping():
