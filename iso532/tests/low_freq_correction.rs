@@ -3,9 +3,10 @@
 //! Annex A (`corr_third_octave_intensities`) walks the eight RAP ranges with
 //! `while (j < 7 && level > RAP[j] - DLL[j][band]) j++;` so a level above the
 //! seventh threshold receives the last DLL row. MoSQITo 1.2.1 (and upstream
-//! master as of 2026-10-31) vectorises that loop as `arange(1, 7)` and drops
-//! the last row, leaving a 0 dB correction instead of DLL[7]. This crate
-//! follows Annex A; the tests below pin that divergence against values from
+//! master as of 2026-10-31) vectorises that loop as `arange(1, 7)` and does
+//! not reach the last row, leaving a 0 dB correction instead of DLL[7].
+//! Finding F-01; this crate's current judgment is to follow Annex A. The
+//! tests below pin that divergence against values from
 //! the official ISO 532-1 Annex A C program (see
 //! docs/F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md for provenance).
 //!

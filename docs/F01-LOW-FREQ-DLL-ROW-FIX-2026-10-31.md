@@ -4,10 +4,13 @@
 - Scope: `iso532/src/core/main_loudness.rs` (`main_loudness_unchecked`), shared by
   batch ZWST, batch ZWTV, and `ZwtvStream` (via `main_loudness_clamped`)
 - Origin: finding F-01 of `docs/修正報告.md` (independent audit against the official
-  ISO 532-1 Annex A C program), verified and fixed in this change
+  ISO 532-1 Annex A C program), verified and fixed in this change; post-fix independent
+  verification in `docs/修正後獨立驗證報告.md`
 - Status: fixed; numeric behaviour change on a bounded input domain
+- Framing: the MoSQITo comparison below is a finding made during verification plus this
+  project's current judgment; it is not a verdict on MoSQITo
 
-## Defect
+## Finding
 
 ISO 532-1 Annex A (`corr_third_octave_intensities`, identical to the Zwicker/Fastl
 1991 BASIC program) selects the RAP range for each of the 11 low bands with
@@ -21,10 +24,10 @@ corrected = level + DLL[j][band];
 so any level above the seventh threshold receives the last row, `DLL[7]`.
 
 The Rust port mirrored MoSQITo 1.2.1, whose vectorised replacement of that loop iterates
-`for i in arange(1, dll_mat.shape[0] - 1)` and therefore never reaches row 7. Above the
-seventh threshold the pre-set value `0` survived as the correction. The same loop is
-still on MoSQITo upstream `master` (checked 2026-10-31; last upstream commit
-2024-04-22).
+`for i in arange(1, dll_mat.shape[0] - 1)` and therefore does not reach row 7. Above the
+seventh threshold the pre-set value `0` remained as the correction. The same loop is
+present on MoSQITo upstream `master` (checked 2026-10-31; last upstream commit
+2024-04-22). Current judgment: follow Annex A, the reference both projects cite.
 
 Affected domain (level strictly above `RAP[6] - DLL[6][band]`, up to the 120 dB
 validity limit):

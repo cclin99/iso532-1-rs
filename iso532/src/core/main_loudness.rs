@@ -20,10 +20,10 @@ pub fn main_loudness(spec_third: &[f64], field: FieldType) -> Result<[f64; 21], 
 /// saturating at the last row. The comparison is strict, so a level exactly on
 /// a threshold stays in the lower row.
 ///
-/// MoSQITo 1.2.1 vectorises this loop as `arange(1, 7)` and never reaches the
+/// MoSQITo 1.2.1 vectorises this loop as `arange(1, 7)` and does not reach the
 /// last row, which leaves a 0 dB correction above the seventh threshold (for
-/// example > 118 dB on the 25 Hz band). That is an upstream implementation
-/// slip, not a design choice; this crate follows Annex A (F-01, see
+/// example > 118 dB on the 25 Hz band). Finding F-01, 2026-10-31; current
+/// judgment is to follow Annex A, the reference both projects cite (see
 /// docs/F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md).
 #[inline]
 pub(crate) fn low_freq_dll_row(level: f64, band: usize) -> usize {

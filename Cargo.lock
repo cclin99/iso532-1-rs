@@ -247,7 +247,7 @@ dependencies = [
 
 [[package]]
 name = "iso532"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "criterion",
  "hound",
@@ -257,7 +257,7 @@ dependencies = [
 
 [[package]]
 name = "iso532-ffi"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "iso532",
  "rayon",
@@ -265,7 +265,7 @@ dependencies = [
 
 [[package]]
 name = "iso532-py"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "iso532",
  "numpy",

@@ -44,6 +44,9 @@ jobs:
           --test hash_gate
           --test py_contract_dump
           --test low_freq_correction
+          --test stream_alloc
+          --test stream_no_rayon
+          --test stream_scalar
 
   ffi:
     strategy:
