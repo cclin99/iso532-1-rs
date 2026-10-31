@@ -5,6 +5,18 @@ All notable changes to this project will be documented here. The project follows
 
 ## Unreleased
 
+### Added
+
+- `Iso532Error::NonFiniteInput { idx }` (stable code 4, C ABI
+  `ISO532_ERR_NONFINITE_INPUT`): `loudness_zwst`, `loudness_zwtv` and
+  `ZwtvProcessor::process*` now reject a NaN or infinite sample after the
+  sample-rate and length checks and before any computation; `idx` is the first
+  offending sample. Python raises `ValueError`. Previously the batch path
+  returned `Ok` with zero loudness (audit finding C-02). The stream path is
+  unchanged: it zeroes the sample and raises `FrameFlags::NONFINITE_INPUT`.
+  Subnormal, zero and large finite samples remain valid input. The C ABI
+  change is additive (new positive code); `iso532.h` regenerated with cbindgen.
+
 ### Changed
 
 - Annex B tests (`tests/annexb.rs`) use the per-point tolerance of the official

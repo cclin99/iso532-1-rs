@@ -176,7 +176,7 @@ n, n_phon, frame_index, flags = stream.push(pressure_pa[:480])
 tail = stream.flush()
 ```
 
-The Python input contract is contiguous `float64`. Streaming non-finite samples are zeroed and reported through flags; the batch and stream error semantics are deliberately different.
+The Python input contract is contiguous `float64`. Batch functions (`loudness_zwst`, `loudness_zwtv`) reject a NaN or infinite sample with `ValueError` (core error `NonFiniteInput`, C ABI code `ISO532_ERR_NONFINITE_INPUT` = 4) and write nothing; the stream zeroes the sample and reports it through the `NONFINITE_INPUT` flag because it must never fail on the audio thread. The two semantics are deliberately different (C-02, 2026-11-01).
 
 ### C ABI
 

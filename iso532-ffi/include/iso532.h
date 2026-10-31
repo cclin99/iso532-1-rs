@@ -19,6 +19,14 @@
 
 #define ISO532_ERR_UNSUPPORTED_SAMPLE_RATE 3
 
+/**
+ * A batch input (`iso532_loudness_zwst`, `iso532_loudness_zwtv`) contains a
+ * NaN or infinite sample; nothing is written to the output buffers. The
+ * stream functions never return this code: they zero the sample and set
+ * ISO532_STREAM_FLAG_NONFINITE_INPUT instead.
+ */
+#define ISO532_ERR_NONFINITE_INPUT 4
+
 #define ISO532_ERR_NULL_POINTER -1
 
 #define ISO532_ERR_PANIC -2

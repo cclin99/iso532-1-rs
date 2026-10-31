@@ -176,7 +176,7 @@ n, n_phon, frame_index, flags = stream.push(pressure_pa[:480])
 tail = stream.flush()
 ```
 
-Python 輸入契約為 contiguous `float64`。串流遇到非有限值時會將該 sample 歸零並透過 flags 回報；batch 與 stream 的錯誤語意是刻意分開設計的。
+Python 輸入契約為 contiguous `float64`。批次函式（`loudness_zwst`、`loudness_zwtv`）遇到 NaN 或無限大 sample 會拒絕並丟出 `ValueError`（核心錯誤 `NonFiniteInput`，C ABI 錯誤碼 `ISO532_ERR_NONFINITE_INPUT` = 4），不寫任何輸出；串流則將該 sample 歸零並以 `NONFINITE_INPUT` flag 回報，因為音訊執行緒上不能失敗。兩種語意是刻意分開設計的（C-02，2026-11-01）。
 
 ### C ABI
 

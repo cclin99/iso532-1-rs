@@ -94,6 +94,7 @@ impl ZwtvProcessor {
                 need: 4800,
             });
         }
+        Iso532Error::check_finite(signal)?;
 
         let (tol, n_time) = third_octave_levels::third_octave_levels(signal);
         self.third_octave_frames.resize(28 * n_time, 0.0);

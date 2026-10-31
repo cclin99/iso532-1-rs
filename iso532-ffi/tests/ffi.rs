@@ -106,6 +106,30 @@ fn error_mapping_matches_spec_table() {
     // -3: field_type 非 0/1
     let (code, _) = call_zwtv(&quiet_signal(48_000), FS, 2);
     assert_eq!(code, ISO532_ERR_INVALID_FIELD_TYPE);
+    // 4: NonFiniteInput (C-02); nothing is written to the output buffers.
+    let mut bad = quiet_signal(48_000);
+    bad[123] = f64::NAN;
+    let (code, out) = call_zwtv(&bad, FS, ISO532_FIELD_FREE);
+    assert_eq!(code, ISO532_ERR_NONFINITE_INPUT);
+    assert!(out.n.iter().all(|v| *v == 0.0) && out.time.iter().all(|v| *v == 0.0));
+    bad[123] = f64::NEG_INFINITY;
+    let mut n = 0.0;
+    let mut spec = vec![0.0; 240];
+    let mut bark = vec![0.0; 240];
+    let code = unsafe {
+        iso532_loudness_zwst(
+            bad.as_ptr(),
+            bad.len(),
+            FS,
+            ISO532_FIELD_FREE,
+            &mut n,
+            spec.as_mut_ptr(),
+            bark.as_mut_ptr(),
+        )
+    };
+    assert_eq!(code, ISO532_ERR_NONFINITE_INPUT);
+    assert_eq!(n, 0.0);
+    assert!(spec.iter().all(|v| *v == 0.0) && bark.iter().all(|v| *v == 0.0));
 }
 
 #[test]
@@ -113,6 +137,7 @@ fn field_constants_are_frozen() {
     assert_eq!(ISO532_FIELD_FREE, 0);
     assert_eq!(ISO532_FIELD_DIFFUSE, 1);
     assert_eq!(ISO532_ERR_INTERNAL, -4);
+    assert_eq!(ISO532_ERR_NONFINITE_INPUT, 4);
 }
 
 #[test]

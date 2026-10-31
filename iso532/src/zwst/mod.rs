@@ -47,6 +47,7 @@ pub fn loudness_zwst(
             need: 4800,
         });
     }
+    Iso532Error::check_finite(signal)?;
     let spec = noct_spectrum_rms(signal);
     let spec_db = spec_to_db(&spec);
     let nm = main_loudness(&spec_db, field)?;

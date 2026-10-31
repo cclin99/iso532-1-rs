@@ -79,6 +79,19 @@ def test_error_mapping():
         iso532.loudness_zwtv(sig, FS, "FREE")
 
 
+@pytest.mark.parametrize("value", [float("nan"), float("inf"), float("-inf")])
+@pytest.mark.parametrize("idx", [0, 24_000, 47_999])
+def test_batch_rejects_nonfinite_input(value, idx):
+    # C-02: batch functions reject NaN/Inf (core error code 4 -> ValueError);
+    # the stream path keeps flagging instead (see test_stream.py).
+    sig = contract_signal()
+    sig[idx] = value
+    with pytest.raises(ValueError, match=f"non-finite sample.*index {idx}"):
+        iso532.loudness_zwtv(sig, FS)
+    with pytest.raises(ValueError, match=f"non-finite sample.*index {idx}"):
+        iso532.loudness_zwst(sig, FS)
+
+
 def test_strict_input_contract():
     sig = contract_signal()
     with pytest.raises(TypeError):

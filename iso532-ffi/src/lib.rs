@@ -7,6 +7,11 @@ pub const ISO532_OK: i32 = 0;
 pub const ISO532_ERR_LEVEL_EXCEEDS_120DB: i32 = 1;
 pub const ISO532_ERR_SIGNAL_TOO_SHORT: i32 = 2;
 pub const ISO532_ERR_UNSUPPORTED_SAMPLE_RATE: i32 = 3;
+/// A batch input (`iso532_loudness_zwst`, `iso532_loudness_zwtv`) contains a
+/// NaN or infinite sample; nothing is written to the output buffers. The
+/// stream functions never return this code: they zero the sample and set
+/// ISO532_STREAM_FLAG_NONFINITE_INPUT instead.
+pub const ISO532_ERR_NONFINITE_INPUT: i32 = 4;
 pub const ISO532_ERR_NULL_POINTER: i32 = -1;
 pub const ISO532_ERR_PANIC: i32 = -2;
 pub const ISO532_ERR_INVALID_FIELD_TYPE: i32 = -3;
