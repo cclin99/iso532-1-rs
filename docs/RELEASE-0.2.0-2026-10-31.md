@@ -1,5 +1,7 @@
 # Release record: v0.2.0 (2026-10-31)
 
+> 對照／Pair: [中文版](RELEASE-0.2.0-2026-10-31.zh-TW.md) · source: en · synced 2026-11-01
+
 Scope of this release: finding F-01 (ISO 532-1 Annex A low-frequency RAP/DLL
 correction now selects the last table row). Public Rust API, C ABI v1, and the
 Python interface are unchanged. Numeric output changes only for low-band levels

@@ -1,5 +1,7 @@
 # Release record: v0.3.0 (2026-10-31)
 
+> 對照／Pair: [中文版](RELEASE-0.3.0-2026-10-31.zh-TW.md) · source: en · synced 2026-11-01
+
 Scope of this release: finding F-02 (the batch nonlinear temporal decay starts from
 zero state, as in the ISO 532-1 Annex A C program, instead of the MoSQITo 1.2.1
 last-frame seed). Numeric output changes at the start of every time-varying batch

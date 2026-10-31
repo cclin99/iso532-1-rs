@@ -5,6 +5,19 @@ with a self-contained report (scope, versions, method, results, limits, evidence
 locations). A new round never appends to an earlier report; it links to it. Checks
 that were not re-run are marked as historical evidence.
 
+## Briefs to the auditor
+
+Round briefs handed to the independent auditor live under `briefs/` as
+`<date>-<topic>.md` with a Traditional-Chinese counterpart `<date>-<topic>.zh-TW.md`
+(policy: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`). Since 2026-10-31 every delivery
+folder contains both `report.md` (Chinese) and `report.en.md` (English), written by
+the auditor. Deliveries before that date are Chinese only; this index carries their
+English summary.
+
+| brief | issued | status |
+|---|---|---|
+| [`briefs/2026-11-01-F03-B-aarae-lineage.md`](briefs/2026-11-01-F03-B-aarae-lineage.md) | 2026-11-01 | open: lineage of the `USL[12][4]` value 0.24 through AARAE 2015 and the 2014 C program |
+
 ## Evidence archives
 
 Full evidence packages (frozen source archive, official ISO material, C builds,

@@ -1,5 +1,7 @@
 # F-01: Annex A low-frequency correction skipped the last DLL row
 
+> 對照／Pair: [中文版](F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.zh-TW.md) · source: en · synced 2026-11-01
+
 - Date: 2026-10-31
 - Scope: `iso532/src/core/main_loudness.rs` (`main_loudness_unchecked`), shared by
   batch ZWST, batch ZWTV, and `ZwtvStream` (via `main_loudness_clamped`)

@@ -1,41 +1,42 @@
-# 架構評估：三種交付方案與 repo 切分（2026-07-18）
+# Architecture evaluation: three delivery options and the repo split (2026-07-18)
+> 對照／Pair: [中文版](ARCH-EVAL-REPO-SPLIT-2026-07-18.zh-TW.md) · source: zh · synced 2026-11-01
 
-> 評估問題:同時提供三種方案給使用者，目前架構是否可行？分 3 個 repo 還是 2 個？
+> Question under evaluation: if all three options are offered to users at the same time, is the current architecture viable? Split into 3 repos or 2?
 >
-> 1. 靜態計算 + C-ABI + Python 對接
-> 2. 動態引擎 + C-ABI + Python 接口
-> 3. 動態引擎 + 顯示面板（GUI / VST）
+> 1. Stationary computation + C-ABI + Python bindings
+> 2. Time-varying engine + C-ABI + Python interface
+> 3. Time-varying engine + display panel (GUI / VST)
 
-## 結論
+## Conclusion
 
-**目前架構可行，不需為了同時出三種方案而重構。分 2 個 repo**：現有 <REPO> 作為「引擎 repo」同時承載方案 1+2；顯示面板另開「應用 repo」。分 3 個是錯誤方向。
+**The current architecture is viable; no refactor is needed to ship the three options together. Split into 2 repos**: the existing <REPO> becomes the "engine repo" and carries options 1+2; the display panel gets a separate "application repo". Splitting into 3 is the wrong direction.
 
-## 現況盤點
+## Current state
 
-`iso532-ffi` 與 `iso532-py` 皆以 `path = "../iso532"` 直接依賴同一核心 crate；核心內靜態（zwst）與動態（zwtv batch + `ZwtvStream`）共用同一套 filterbank/loudness kernel。
+`iso532-ffi` and `iso532-py` both depend directly on the same core crate via `path = "../iso532"`; inside the core, the stationary path (zwst) and the time-varying path (zwtv batch + `ZwtvStream`) share the same filterbank/loudness kernels.
 
-| 交付面 | 靜態（方案1） | 動態（方案2） |
+| Delivery surface | Stationary (option 1) | Time-varying (option 2) |
 |---|---|---|
 | Rust core | ✅ | ✅ |
-| C-ABI（iso532.h） | ✅ | ✅ `iso532_stream_*`（v1 已凍結） |
-| Python | ✅ `loudness_zwst` | ⚠️ 僅 batch `loudness_zwtv`；`ZwtvStream` 尚未綁 pyclass（純加法補齊，非結構問題） |
+| C-ABI (iso532.h) | ✅ | ✅ `iso532_stream_*` (v1 frozen) |
+| Python | ✅ `loudness_zwst` | ⚠️ batch `loudness_zwtv` only; `ZwtvStream` not yet bound as a pyclass (purely additive gap, not a structural problem) |
 
-## 為何方案 1、2 不拆開（反對 3 repo）
+## Why options 1 and 2 are not separated (against 3 repos)
 
-- 兩者共用同一核心 crate 的 kernel，拆開等於複製 DSP 或引入脆弱的跨 repo 核心依賴。
-- **v1 凍結的 header 是單一 artifact，同時涵蓋靜態與串流函式**——拆 repo 會把一個凍結面切成兩半各自演化。
-- hash gate 12/12、parity 18/18 等 CI 關卡是共用的，拆開必須複製整套關卡，零收益。
+- Both share the kernels of the same core crate. Separating them means either duplicating the DSP or introducing a fragile cross-repo core dependency.
+- **The v1-frozen header is a single artifact that covers both the stationary and the streaming functions.** Splitting the repo would cut one frozen surface into two halves that evolve independently.
+- CI gates such as hash gate 12/12 and parity 18/18 are shared. Splitting would require duplicating the whole gate set, for zero benefit.
 
-## 為何面板獨立成第二個 repo
+## Why the panel becomes a second repo
 
-方案 3 本質是**應用程式**，不是程式庫：
+Option 3 is by nature an **application**, not a library:
 
-- **依賴重量**：GUI 框架（egui/iced，VST 路線則 JUCE/nih-plug）會拖大量依賴進 lockfile，污染引擎的確定性建置環境，CI 時間翻倍。
-- **發版節奏**：引擎走「凍結 + 逐位確定性」紀律，改動慢、每次過 hash gate；面板是 UI 迭代，改動快、不需逐位關卡。混在一起互相拖累。
-- **消費方式乾淨**：面板透過已凍結 C-ABI（或 git tag 依賴 Rust crate）消費引擎，正好是 v1 凍結面的第一個真實用戶，反向驗證 ABI 設計。
-- **授權隔離**：VST 路線若用 JUCE（GPL/商業雙授權），獨立 repo 避免污染引擎授權。
+- **Dependency weight**: a GUI framework (egui/iced, or JUCE/nih-plug on the VST route) drags a large number of dependencies into the lockfile, pollutes the engine's deterministic build environment, and doubles CI time.
+- **Release cadence**: the engine follows a "frozen + bit-exact determinism" discipline: slow changes, every change through the hash gate. The panel is UI iteration: fast changes, no bit-exact gate. Mixing them makes each hold the other back.
+- **Clean consumption**: the panel consumes the engine through the frozen C-ABI (or a git-tag dependency on the Rust crate). It is exactly the first real user of the v1 frozen surface and validates the ABI design from the other side.
+- **Licence isolation**: if the VST route uses JUCE (GPL / commercial dual licence), a separate repo keeps the engine licence clean.
 
-## 最終形態
+## Final shape
 
 ```
 repo A（現有 <REPO>）— 引擎
@@ -47,9 +48,9 @@ repo B（新開）— 面板/VST
   依賴 repo A 的 tagged release（C-ABI binary 或 crates.io/git dep）
 ```
 
-repo A 一次 CI 產出全部函式庫 artifact（crate、header+dll、wheel），三種方案使用者各取所需。
+One CI run of repo A produces every library artifact (crate, header+dll, wheel); users of the three options take what they need.
 
-## 待辦（不急）
+## To do (not urgent)
 
-- repo A 三個 crate 為兄弟目錄、無 root workspace `Cargo.toml`——開面板前補一個，統一 `cargo test --workspace`。
-- 方案 2 的 py 串流接口（`ZwtvStream` 綁 pyclass）為純加法，可排入下一輪 Codex 工作。
+- The three crates in repo A are sibling directories with no root workspace `Cargo.toml`. Add one before the panel work starts, so that `cargo test --workspace` covers everything.
+- The Python streaming interface for option 2 (`ZwtvStream` bound as a pyclass) is purely additive and can be scheduled for the next Codex round.

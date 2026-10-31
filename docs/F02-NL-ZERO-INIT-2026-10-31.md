@@ -1,5 +1,7 @@
 # F-02: batch nonlinear temporal decay starts from zero state
 
+> 對照／Pair: [中文版](F02-NL-ZERO-INIT-2026-10-31.zh-TW.md) · source: en · synced 2026-11-01
+
 - Date: 2026-10-31
 - Scope: `iso532::zwtv` batch path (`loudness_zwtv`, `ZwtvProcessor`), both
   backends (scalar, AVX2+FMA), both field types. The stream path already started
@@ -35,15 +37,15 @@ that come after it.
 | case | before (tail seed) | after (zero state) | C program / stream |
 |---|---:|---:|---:|
 | silence 0.5 s + 1 kHz 80 dB: N at frame 0 | 0.001623810180 sone | 0 | 0 |
-| same, max |dN| over the first 0.25 s vs all-silent signal | 0.113550559256 sone | 0 | 0 |
-| same, max |dN'| over 240 Bark, first 0.25 s | 0.1677 sone/Bark | 0 | 0 |
+| same, max \|dN\| over the first 0.25 s vs all-silent signal | 0.113550559256 sone | 0 | 0 |
+| same, max \|dN'\| over 240 Bark, first 0.25 s | 0.1677 sone/Bark | 0 | 0 |
 | synth gate signal x3: first frame at which batch == stream to 1e-9 | 544 (`N_WARMUP_FRAMES` = 580) | 0 (bitwise) | - |
 
 Measured size of the seed effect on the golden fixtures (default dispatch, batch
 before vs after; "last differing frame" is the last third-octave frame at which any
 of the 21 nonlinear-decay outputs differs bitwise, at 2000 frames/s):
 
-| fixture | seed max (sone) | nl stage: frames differing / last differing | end-to-end max |dN| (sone) |
+| fixture | seed max (sone) | nl stage: frames differing / last differing | end-to-end max \|dN\| (sone) |
 |---|---:|---:|---:|
 | sine_1k_60 | 0.0511 | 88 / 100 | 0.0118 |
 | sine_250_80 | 0.1909 | 151 / 161 | 0.0650 |

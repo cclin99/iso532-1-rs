@@ -1,158 +1,159 @@
-# 系統設計解析 Q&A:SIMD、精度、快取、記憶體、平行化
+# System design Q&A: SIMD, precision, cache, memory, parallelisation
+> 對照／Pair: [中文版](SYSTEM-DESIGN-QA-2026-07-06.zh-TW.md) · source: zh · synced 2026-11-01
 
-**日期:** 2026-07-06
-**性質:** 參考文件(系統解析,七問七答)
-**證據來源:** `iso532/src/`(逐檔核對)、`tests/`(容差實測)、`DESIGN-DEVELOPMENT-2026-07-04.md` §3–§7、`2026-07-05-roadmap-master-plan.md` 風險登記
-**基準硬體:** Ryzen 5 3600(Zen 2,6C/12T,L1d 32 KB/核、L2 512 KB/核、L3 32 MB)
-
----
-
-## Q1. 為何 AVX+FMA 可以做到「多核心的連續積分」?關鍵難度在哪裡突破?
-
-### 1.1 先修正一個概念:AVX+FMA 與多核心是兩條互相獨立的軸
-
-| 軸 | 機制 | 本專案的用法 |
-|---|---|---|
-| **SIMD(單核心內)** | AVX2 一條指令同時算 4 個 f64;FMA 把乘加融合成單指令、單次捨入 | 濾波器組與 nl 非線性衰減——**遞迴的部分** |
-| **多核心(rayon)** | 工作竊取執行緒池,fork-join 資料平行 | main_loudness 與 calc_slopes——**逐幀獨立的部分** |
-
-「連續積分」(IIR 遞迴狀態逐樣本推進)**從未被多核心化**——它在數學上就不可分割:第 n 個樣本的狀態依賴第 n−1 個,任何跨核心切割都會斷開狀態鏈。實測 profile 也如實反映:filter_bank(25%)與 nl(22%)是單執行緒序列段,構成 Amdahl 天花板(12 執行緒只得 3.6× 而非 12×)。
-
-### 1.2 真正的突破:換一個維度向量化
-
-遞迴沿**時間軸**不可平行,但 ISO 532-1 有 28 個頻帶、每個頻帶是**互相獨立的遞迴系統**。所以向量化沿**頻帶軸**做:
-
-- **濾波器組**(`third_octave_levels.rs:64`):28 頻帶 = 7 組 f64x4。每讀入一個樣本,`_mm256_set1_pd` 廣播到所有 lane,7 組向量各自推進 3 段 biquad(transposed direct-form II 狀態 `z0/z1`)+ 3 級平滑,**一趟訊號掃完 28 個頻帶**。訊號只從記憶體流過一次,濾波器狀態全程留在暫存器/L1。
-- **nl 非線性衰減**(`nonlinear_decay.rs:109`):21 頻帶 = 5 組 f64x4 + 1 個標量尾帶(band 20)。
-
-### 1.3 三個具體難點與解法
-
-1. **時間依賴不可切** → 上述維度轉換(頻帶並排),這是整個設計的支點。
-2. **nl 的資料相依分支**:mosqito 的 nl 核心是 4 條 if/else 決策鏈(快衰減/慢衰減/u2 更新/追蹤),每 lane 走的分支可能不同,SIMD 無法各走各的分支 → 改寫成**無分支遮罩形式**:每個條件用 `_mm256_cmp_pd` 算成全 1/全 0 遮罩,`_mm256_blendv_pd` 按 lane 選值(`nonlinear_decay.rs:193-226`)。四條路徑全部都算、再按遮罩取捨——SIMD 下「多算但不分歧」比「少算但分歧」快。
-3. **FMA 改變捨入**:`_mm256_fmadd_pd` 乘加只捨入一次,與標量兩次捨入的結果差在 ulp 級 → 不迴避,改用 **simd_parity 測試**鎖住上限(濾波器組 rtol 1e-10、nl rtol 1e-12,`tests/simd_parity.rs`),且回歸基準永遠是 mosqito golden(端到端 8.2e-14),證明 FMA 差異不會放大。
-
-另有一個容易忽略的正確性細節:nl 的 wraparound 初始化(mosqito 語意是 col=0 讀「上一列」即最後一個虛擬子步)在 AVX2 版用 `prev_uo` 預算最後一幀的第 23 子步復刻(`nonlinear_decay.rs:174-178`),這是 parity 能過 1e-12 的前提之一。
+**Date:** 2026-07-06
+**Nature:** reference document (system analysis, seven questions and answers)
+**Evidence sources:** `iso532/src/` (checked file by file), `tests/` (measured tolerances), `DESIGN-DEVELOPMENT-2026-07-04.md` §3–§7, risk register of `2026-07-05-roadmap-master-plan.md`
+**Reference hardware:** Ryzen 5 3600 (Zen 2, 6C/12T, L1d 32 KB/core, L2 512 KB/core, L3 32 MB)
 
 ---
 
-## Q2. 測試裡的 1e-12 是哪裡規定的?精度比 Python 高多少?
+## Q1. Why can AVX+FMA achieve "multi-core continuous integration"? Where was the key difficulty broken through?
 
-### 2.1 出處:沒有任何標準規定 1e-12——它是本專案自訂的工程門檻
+### 1.1 First correct a concept: AVX+FMA and multi-core are two independent axes
 
-兩套容差並存,層級完全不同:
-
-| 層 | 容差 | 出處 |
+| Axis | Mechanism | Use in this project |
 |---|---|---|
-| **合規層** | 相對 ±5% 或絕對 0.1 sone | ISO 532-1 §5.1 明文規定;`tests/annexb.rs:7` 的 `isoclose`,與 mosqito 自家測試同準則 |
-| **parity 層** | 各級 1e-6 ~ 1e-15 | **本專案自訂**,寫死在各 golden 測試的 `assert_close(got, want, rtol, atol)` 呼叫參數裡(`tests/common/mod.rs:22`),依「該級實測最大偏差 × 安全餘裕」逐級設定 |
+| **SIMD (inside one core)** | One AVX2 instruction computes 4 f64 at once; FMA fuses multiply-add into a single instruction with a single rounding | Filter bank and nl nonlinear temporal decay: **the recursive parts** |
+| **Multi-core (rayon)** | Work-stealing thread pool, fork-join data parallelism | main_loudness and calc_slopes: **the frame-independent parts** |
 
-各級實際門檻(判準為 `|diff| ≤ atol + rtol·|want|`):
+"Continuous integration" (advancing IIR recursive state sample by sample) **was never made multi-core**. It is mathematically indivisible: the state at sample n depends on sample n−1, and any cut across cores would break the state chain. The measured profile reflects this faithfully: filter_bank (25%) and nl (22%) are single-threaded sequential segments and form the Amdahl ceiling (12 threads yield 3.6×, not 12×).
 
-| 階段 | rtol | atol | 為什麼是這個量級 |
+### 1.2 The real breakthrough: vectorise along a different dimension
+
+Recursion along the **time axis** cannot be parallelised, but ISO 532-1 has 28 bands and each band is an **independent recursive system**. So vectorisation runs along the **band axis**:
+
+- **Filter bank** (`third_octave_levels.rs:64`): 28 bands = 7 groups of f64x4. For each incoming sample, `_mm256_set1_pd` broadcasts it to all lanes, and the 7 vector groups each advance 3 biquad sections (transposed direct-form II state `z0/z1`) + 3 smoothing stages, so **one pass over the signal covers all 28 bands**. The signal streams from memory only once; the filter state stays in registers/L1 throughout.
+- **nl nonlinear temporal decay** (`nonlinear_decay.rs:109`): 21 bands = 5 groups of f64x4 + 1 scalar tail band (band 20).
+
+### 1.3 Three concrete difficulties and their solutions
+
+1. **The time dependency cannot be cut** → the dimension change above (bands side by side); this is the pivot of the whole design.
+2. **Data-dependent branches in nl**: the mosqito nl kernel is a chain of 4 if/else decisions (fast decay / slow decay / u2 update / tracking); each lane may take a different branch, and SIMD cannot let lanes diverge → rewritten in **branchless mask form**: each condition becomes an all-ones/all-zeros mask via `_mm256_cmp_pd`, and `_mm256_blendv_pd` selects per lane (`nonlinear_decay.rs:193-226`). All four paths are computed and then selected by mask. Under SIMD, "compute more without diverging" beats "compute less with divergence".
+3. **FMA changes rounding**: `_mm256_fmadd_pd` rounds the multiply-add once, differing from the scalar double rounding at ULP level → not avoided; instead the **simd_parity tests** lock an upper bound (filter bank rtol 1e-10, nl rtol 1e-12, `tests/simd_parity.rs`), and the regression baseline is always the mosqito golden data (end-to-end 8.2e-14), proving that the FMA difference does not amplify.
+
+One easily overlooked correctness detail: the nl wraparound initialisation (mosqito semantics: at col=0 read the "previous column", i.e. the last virtual sub-step) is replicated in the AVX2 version by precomputing the 23rd sub-step of the last frame into `prev_uo` (`nonlinear_decay.rs:174-178`). This is one of the preconditions for parity passing at 1e-12.
+
+---
+
+## Q2. Where is the 1e-12 in the tests specified? How much higher is the precision than Python?
+
+### 2.1 Origin: no standard specifies 1e-12. It is an engineering threshold set by this project
+
+Two tolerance systems coexist at completely different levels:
+
+| Layer | Tolerance | Origin |
+|---|---|---|
+| **Compliance layer** | relative ±5% or absolute 0.1 sone | Specified explicitly in ISO 532-1 §5.1; `isoclose` in `tests/annexb.rs:7`, same criterion as mosqito's own tests |
+| **Parity layer** | 1e-6 to 1e-15 per stage | **Set by this project**, hard-coded in the `assert_close(got, want, rtol, atol)` call parameters of each golden test (`tests/common/mod.rs:22`), chosen per stage as "measured maximum deviation of that stage × safety margin" |
+
+Actual thresholds per stage (criterion `|diff| ≤ atol + rtol·|want|`):
+
+| Stage | rtol | atol | Why this magnitude |
 |---|---|---|---|
-| sosfilt(DSP 原語) | 1e-12 | 1e-15 | 純線性遞迴,逐運算等序復刻,差異僅指令排程捨入 |
-| main_loudness(nm) | 1e-9 | 1e-15 | powf/log10 的 libm 實作差(Rust vs numpy) |
-| 濾波器組(28 頻帶位準) | 1e-7 | 1e-12 | 數萬樣本遞迴累積 + dB 轉換 |
-| nl_loudness | 1e-6 | 1e-9 | 分支決策鏈對 ulp 級差異敏感(臨界點翻邊),誤差上限最寬 |
-| 端到端 N(t) | 1e-6 | 1e-9 | 上游累積 |
-| SIMD vs 標量 | 1e-10 / 1e-12 | 1e-12 / 1e-14 | 只隔 FMA 捨入,無演算法差異,所以比對 Python 更嚴 |
+| sosfilt (DSP primitive) | 1e-12 | 1e-15 | Pure linear recursion, replicated operation by operation in the same order; differences only from instruction-scheduling rounding |
+| main_loudness (nm) | 1e-9 | 1e-15 | libm implementation differences of powf/log10 (Rust vs numpy) |
+| Filter bank (28 third-octave band levels) | 1e-7 | 1e-12 | Recursive accumulation over tens of thousands of samples + dB conversion |
+| nl_loudness | 1e-6 | 1e-9 | The branch decision chain is sensitive to ULP-level differences (flipping at critical points); widest error bound |
+| End-to-end N(t) | 1e-6 | 1e-9 | Upstream accumulation |
+| SIMD vs scalar | 1e-10 / 1e-12 | 1e-12 / 1e-14 | Only FMA rounding apart, no algorithmic difference, so stricter than the comparison against Python |
 
-### 2.2 「比 Python 精度高多少」——正確的說法是:精度相同,驗證密度高十個數量級
+### 2.2 "How much more precise than Python": the correct statement is same precision, verification density ten orders of magnitude higher
 
-必須誠實:Rust 與 Python(numpy)都是 IEEE 754 double,**單次運算精度一模一樣**,不存在「Rust 算得比較準」。實際的關係是:
+To be honest: Rust and Python (numpy) are both IEEE 754 double, and **single-operation precision is identical**. There is no "Rust computes more accurately". The actual relationship is:
 
-- 對 mosqito 的端到端偏差 **8.2e-14(相對)**——即本實作與 Python 參考在 double 可表達的極限附近一致;
-- 本專案的回歸門檻(1e-6~1e-12)比 ISO 合規容差(5e-2)**嚴格 4~10 個數量級**——這才是真正的差異:mosqito 自己只驗到 ±5%,我們驗到 ulp 鄰域;
-- 比 Python 高的不是精度,是**速度(283×)與決定性**(見 Q3.3:執行緒數不影響結果位元)。
-
----
-
-## Q3. L1/L2 快取命中是否達到硬體極限?單核/多核有無犧牲精度或效能?
-
-### 3.1 誠實回答:未量測,不能宣稱「達到極限」
-
-專案至今**沒有任何硬體效能計數器數據**(perf / AMD uProf 的 L1d/L2 命中率、IPC、記憶體頻寬)。已有的只有牆鐘時間與 profile 佔比。「是否達到硬體最大極限」目前無法回答,只能給出設計層面的推理:
-
-- **濾波器組**:狀態(7 組 × 9 個 ymm 向量)超出 16 個實體 ymm 暫存器會部分溢出到堆疊,但溢出槽全程駐留 L1;訊號本體嚴格順序讀一次(硬體預取器最友善的模式)。此段幾乎必然是**計算瓶頸而非快取瓶頸**。
-- **nl**:band-major 佈局下每 4 頻帶組要跨 4 條間距 `n_time×8 bytes` 的列做 gather 式載入(`_mm256_set_pd`,`nonlinear_decay.rs:146`)。10 秒訊號 n_time=20,000 → 每列 160 KB,4 列工作集 640 KB **超出 L2(512 KB)**,但每時間步只碰 8 個純量、順序前進,預取可跟上;真正的成本在每步 24 子步 × 4 條遮罩鏈的計算。
-- 判斷:目前是 compute-bound 不是 memory-bound,快取「夠用」但**「極限」未經證實**。若要證實,量測項目:`perf stat -e L1-dcache-load-misses,l2_cache_misses` 或 uProf 等價項,對 filter_bank 與 nl 分段量。這可列入 R4(頻帶平行化)動工前的基線量測——R4 的 false-sharing 風險本來就需要同一套工具。
-
-### 3.2 多核是否犧牲效能?——沒有犧牲,但有 Amdahl 上限
-
-12 執行緒 79.1 ms vs 單執行緒 285.9 ms = 3.6×。不是平行化做壞了,是**只有逐幀獨立的階段被平行化**(main_loudness、calc_slopes、N(t)),遞迴階段(filter_bank 25% + nl 22%)在單執行緒序列段。R4 的頻帶平行化(28 頻帶切給多核,每核內仍 SIMD)就是針對這個上限,預估 19.6→~4 ms / 17.4→~4 ms。
-
-### 3.3 多核是否犧牲精度?——零犧牲,位元級決定性,這是刻意設計
-
-三個 rayon 平行點(`zwtv/mod.rs:54,64`、`main_loudness.rs:93`)全部是**純 map**:每幀讀自己的輸入、寫自己的不相交輸出切片(`par_chunks_mut`),**沒有任何平行歸約(reduction)**。浮點加法不可結合,平行歸約的求和順序隨執行緒數改變會導致結果飄移——本設計裡不存在這種點,所以:
-
-> **執行緒數 1、6、12、任意,輸出位元完全相同;同輸入重跑一萬次,位元完全相同。**
-
-`zwtv/mod.rs:135-139` 的測試用 `assert_eq!`(位元相等,非容差)驗證重複執行一致性。這個性質對「以 golden parity 為驗證主軸」的專案是根基:如果結果隨執行緒數變,1e-12 級的 parity 測試根本無法存在。
+- end-to-end deviation from mosqito **8.2e-14 (relative)**: this implementation agrees with the Python reference near the limit of what double can express;
+- the regression thresholds of this project (1e-6 to 1e-12) are **4 to 10 orders of magnitude stricter** than the ISO compliance tolerance (5e-2). That is the real difference: mosqito verifies itself only to ±5%; we verify to the ULP neighbourhood;
+- what is higher than Python is not precision but **speed (283×) and determinism** (see Q3.3: thread count does not affect the result bits).
 
 ---
 
-## Q4. 記憶體控制上做到了哪些有效設計?
+## Q3. Do L1/L2 cache hits reach the hardware limit? Does single-core / multi-core sacrifice precision or performance?
 
-1. **Scratch 重用**(`ZwtvProcessor`,`zwtv/mod.rs:12-17`):四塊工作緩衝掛在處理器結構上,重複呼叫只 `resize` 不重配;測試斷言第二次呼叫後 capacity 不變(`zwtv/mod.rs:135`)。批次 API `loudness_zwtv` 是它的一次性外殼。
-2. **佈局跟著存取模式轉置**:同一份資料在管線中被刻意轉置三次——濾波器組輸出 band-major(每頻帶順序寫)→ 轉 frame-major `t*28+band` 餵 main_loudness(每幀連續 28 值,一個 cache line 級)→ 轉回 band-major 餵 nl(每頻帶沿時間順序遞迴)→ calc_slopes 輸出 time-major 240-chunk(每幀一塊連續記憶體給 `par_chunks_mut`,天然避開 false sharing)→ 最後轉 bark-major 交付公開 API。轉置成本是 O(n) 順序拷貝,換來每個計算階段內部**零跨距存取**。
-3. **輸出降材化**:240 點 specific loudness 只在每 4 幀(2 ms 輸出格點)materialize 一次(`n_out = n_time.div_ceil(4)`),中間幀只算純量 N(`calc_slopes_n_only`)——省掉 75% 的 240 點計算與儲存。R1 的 dedup(−37 ms)是同一思路的下一步。
-4. **扁平 row-major `Vec<f64>`**:所有多維資料一律單塊連續配置(無巢狀 Vec、無指標追逐),這是 ROADMAP 明文鎖定的決策——同時服務快取行為與 R3 C-ABI(FFI 直接傳指標+步長,零拷貝)。
-5. **已登記的債(P1)**:熱路徑仍有配置——nl 每次呼叫配 `out`,標量帶還配 `ui_delta`/`uo`/`u2`;temporal_weighting 配 `fast`/`slow`;標量濾波路徑每頻帶拷貝整段訊號。批次模式下無感(每次呼叫一次性),但 R5 串流模式必須清零(push 路徑零配置是 R5 驗收準則)。
-6. **計算層無環形緩衝區**(前次分析結論):狀態是遞迴濾波器係數級的 struct + 1 幀延遲 + <24 樣本進位緩衝,環形緩衝只屬於 VST 的 audio→GUI SPSC 通道。
+### 3.1 Honest answer: not measured, so we cannot claim "at the limit"
+
+The project has **no hardware performance counter data** so far (perf / AMD uProf L1d/L2 hit rates, IPC, memory bandwidth). What exists is wall-clock time and profile percentages. "Whether the hardware limit is reached" cannot be answered at present; only design-level reasoning can be given:
+
+- **Filter bank**: the state (7 groups × 9 ymm vectors) exceeds the 16 physical ymm registers, so part of it spills to the stack, but the spill slots stay in L1 throughout; the signal body is read strictly sequentially, once (the friendliest pattern for the hardware prefetcher). This segment is almost certainly **compute-bound, not cache-bound**.
+- **nl**: in the band-major layout each group of 4 bands does gather-style loads across 4 rows spaced `n_time×8 bytes` apart (`_mm256_set_pd`, `nonlinear_decay.rs:146`). For a 10 s signal n_time=20,000 → 160 KB per row, a 4-row working set of 640 KB **exceeds L2 (512 KB)**, but each time step touches only 8 scalars and advances sequentially, so the prefetcher keeps up; the real cost is the computation of 24 sub-steps × 4 mask chains per step.
+- Judgment: currently compute-bound, not memory-bound; the cache is "sufficient" but **"at the limit" is unproven**. To prove it, measure `perf stat -e L1-dcache-load-misses,l2_cache_misses` or the uProf equivalent, segmented for filter_bank and nl. This can be scheduled as the baseline measurement before R4 (band-level parallelisation) starts; the false-sharing risk of R4 needs the same tools anyway.
+
+### 3.2 Does multi-core sacrifice performance? No, but there is an Amdahl ceiling
+
+12 threads 79.1 ms vs single thread 285.9 ms = 3.6×. The parallelisation is not done badly; **only the frame-independent stages were parallelised** (main_loudness, calc_slopes, N(t)), while the recursive stages (filter_bank 25% + nl 22%) are single-threaded sequential segments. The band-level parallelisation of R4 (28 bands distributed over cores, still SIMD inside each core) targets exactly this ceiling; estimate 19.6→~4 ms / 17.4→~4 ms.
+
+### 3.3 Does multi-core sacrifice precision? Zero sacrifice, bit-level determinism, by deliberate design
+
+The three rayon parallel points (`zwtv/mod.rs:54,64`, `main_loudness.rs:93`) are all **pure maps**: each frame reads its own input and writes its own disjoint output slice (`par_chunks_mut`); **there is no parallel reduction anywhere**. Floating-point addition is not associative, and a parallel reduction whose summation order changes with thread count would make results drift. No such point exists in this design, so:
+
+> **With 1, 6, 12 or any number of threads the output bits are identical; the same input run ten thousand times gives identical bits.**
+
+The test at `zwtv/mod.rs:135-139` verifies repeat-run consistency with `assert_eq!` (bit equality, not tolerance). This property is foundational for a project whose verification axis is golden parity: if results changed with thread count, 1e-12-level parity tests could not exist at all.
 
 ---
 
-## Q5. 系統擴展是否有隱藏未知的風險?
+## Q4. Which effective designs were made for memory control?
 
-有,且大多已顯性登記(DESIGN §7 + 主計畫風險登記)。按「擴展時才會引爆」排序:
+1. **Scratch reuse** (`ZwtvProcessor`, `zwtv/mod.rs:12-17`): four working buffers hang on the processor struct; repeated calls only `resize` without reallocating; the test asserts that capacity is unchanged after the second call (`zwtv/mod.rs:135`). The batch API `loudness_zwtv` is its one-shot shell.
+2. **Layout follows the access pattern through transposes**: the same data is deliberately transposed three times in the pipeline: filter bank output band-major (each band written sequentially) → transposed to frame-major `t*28+band` for main_loudness (28 contiguous values per frame, cache-line scale) → back to band-major for nl (each band recurses along time sequentially) → calc_slopes outputs time-major 240-chunks (one contiguous block per frame for `par_chunks_mut`, naturally avoiding false sharing) → finally transposed to bark-major for the public API. The transpose cost is an O(n) sequential copy, bought in exchange for **zero strided access** inside each computation stage.
+3. **Output de-materialisation**: the 240-point specific loudness is materialised only every 4th frame (the 2 ms output grid points) (`n_out = n_time.div_ceil(4)`); intermediate frames compute only the scalar N (`calc_slopes_n_only`), saving 75% of the 240-point computation and storage. The R1 dedup (−37 ms) is the next step of the same idea.
+4. **Flat row-major `Vec<f64>`**: all multi-dimensional data is one contiguous allocation (no nested Vec, no pointer chasing). This is a decision locked explicitly in the ROADMAP; it serves cache behaviour and the R3 C-ABI at the same time (FFI passes pointer + stride directly, zero copy).
+5. **Registered debt (P1)**: the hot path still allocates: nl allocates `out` per call and the scalar band also allocates `ui_delta`/`uo`/`u2`; temporal_weighting allocates `fast`/`slow`; the scalar filter path copies the whole signal per band. Unnoticeable in batch mode (once per call), but R5 streaming mode must bring it to zero (a zero-allocation push path is an R5 acceptance criterion).
+6. **No ring buffer in the computation layer** (conclusion of a previous analysis): the state is a struct at the level of recursive filter coefficients + 1 frame of delay + a carry buffer of <24 samples; ring buffers belong only to the VST audio→GUI SPSC channel.
 
-| 風險 | 引爆場景 | 狀態 |
+---
+
+## Q5. Are there hidden, unknown risks in scaling the system?
+
+Yes, and most are already explicitly registered (DESIGN §7 + master plan risk register). Ordered by "only detonates on scaling":
+
+| Risk | Trigger scenario | Status |
 |---|---|---|
-| **Denormal 失速** | 串流/VST 遇到靜音段,遞迴濾波器狀態衰減進 denormal 區,Zen 2 每運算罰 ~100 週期,即時預算瞬間爆掉 | P0 已知,R5 以 MXCSR FTZ/DAZ(RAII guard)處理;**FTZ 會讓串流輸出與批次參考差 ulp 級,「位元一致」的驗收定義必須在 R5 動工前決定**,否則寫到一半返工 |
-| **NaN/Inf 狀態毒化** | 長駐處理器吃到一個壞樣本,遞迴狀態永久污染,之後全部輸出 NaN 且不自癒 | P0 已知,R5 需入口檢查或狀態哨兵 |
-| **48 kHz 烘焙係數** | VST 宿主給 44.1 kHz(多數 session),目前只能拒絕 | R6a 原型必答題 |
-| **非因果殘留** | 1 幀 lookahead + nl wraparound 初始化,批次無感,串流下是語意問題(R5 以 1 幀延遲 + `latency_samples()=24` 契約處理) | 已入 R5 計畫 |
-| **rayon 全域池** | 被宿主行程(DAW)載入時,全域執行緒池與宿主搶核、或多實例互搶;程式庫做為 lib 被嵌入時同理 | P1 已知,R5「無 rayon 路徑」是驗收項 |
-| **panic 穿越 C-ABI = UB** | R3 之後任何內部 assert 觸發即未定義行為 | R3 以 `ffi_guard!`(catch_unwind → 錯誤碼 −2)處理 |
-| **golden 再生鏈斷裂** | golden 依賴 mosqito 1.2.1 + 特定 scipy;環境亡佚則整套 1e-12 級驗證體系不可再生 | X1:鎖 requirements + golden SHA256 清單入庫(R7) |
-| **simd_parity 靜默跳過** | 非 AVX2 機器(含未來 ARM CI)上 parity 測試印一行就 return,綠燈是假的 | R7 需改為顯式 skip 標記 |
-| **真正「未知」的一塊** | 對病態輸入無系統性測試:NaN/Inf/±huge/直流/削波訊號進 API 的行為從未被 fuzz 或 property-based 測試覆蓋;輸入驗證只有 fs、長度、120 dB 三項 | **未登記過,本文件新增**——建議入 R5 phase 計畫(串流入口是天然的收口點) |
+| **Denormal stall** | Streaming/VST hits a silent segment; recursive filter state decays into the denormal range; Zen 2 pays ~100 cycles per operation and the real-time budget blows up instantly | P0 known; R5 handles it with MXCSR FTZ/DAZ (RAII guard). **FTZ makes the streaming output differ from the batch reference at ULP level; the acceptance definition of "bit-identical" must be decided before R5 starts**, otherwise rework mid-way |
+| **NaN/Inf state poisoning** | A long-lived processor receives one bad sample; the recursive state is permanently contaminated and all subsequent output is NaN with no self-healing | P0 known; R5 needs entry checks or state sentinels |
+| **Coefficients baked for 48 kHz** | The VST host supplies 44.1 kHz (most sessions); currently we can only reject | Must be answered by the R6a prototype |
+| **Non-causal residue** | 1-frame lookahead + nl wraparound initialisation; unnoticeable in batch, a semantic problem in streaming (R5 handles it with a 1-frame delay + `latency_samples()=24` contract) | Already in the R5 plan |
+| **rayon global pool** | When loaded by a host process (DAW), the global thread pool competes with the host for cores, or multiple instances compete with each other; the same applies when the library is embedded as a lib | P1 known; the R5 "no-rayon path" is an acceptance item |
+| **panic across the C-ABI = UB** | After R3, any internal assert firing is undefined behaviour | R3 handles it with `ffi_guard!` (catch_unwind → error code −2) |
+| **Golden regeneration chain breaks** | Golden data depends on mosqito 1.2.1 + a specific scipy; if the environment is lost, the whole 1e-12-level verification system cannot be regenerated | X1: lock requirements + check the golden SHA256 manifest into the repo (R7) |
+| **simd_parity silently skips** | On non-AVX2 machines (including future ARM CI) the parity test prints one line and returns; the green light is fake | R7 must change it to an explicit skip marker |
+| **The truly "unknown" piece** | No systematic testing of pathological input: the behaviour of NaN/Inf/±huge/DC/clipped signals entering the API has never been covered by fuzz or property-based tests; input validation covers only fs, length and 120 dB | **Never registered before; added by this document.** Recommended for the R5 phase plan (the streaming entry point is the natural choke point) |
 
 ---
 
-## Q6. 多核心運作的死鎖問題如何解決?
+## Q6. How is the deadlock problem of multi-core operation solved?
 
-**答:不是「解決」死鎖,是以結構讓死鎖不可能形成。**
+**Answer: deadlock is not "solved"; the structure makes it impossible to form.**
 
-1. **全 crate 沒有鎖**。grep 可證:無 `Mutex`、無 `RwLock`、無 `condvar`、無通道。唯一的同步原語是一個 `AtomicBool`(`simd/mod.rs:3` 的 `FORCE_SCALAR`,Relaxed,測試用開關)——單一原子變數無等待語意,不可能參與循環等待。死鎖四要件裡「持有並等待」與「循環等待」在本 crate 結構上不存在。
-2. **rayon fork-join 是無循環的**:`par_iter_mut`/`par_chunks_mut` 把不相交的可變切片分給工作竊取池,join 點是唯一的等待,等待圖是一棵樹不是環。Rust 借用檢查器在**編譯期**保證切片不相交、無共享可變狀態——資料競爭(死鎖的常見前奏)被型別系統排除,不靠紀律。
-3. **無巢狀阻塞**:目前沒有「rayon 任務內再等另一個 rayon 任務」或「平行區內做阻塞 I/O」的模式——這是 rayon 下唯一實際可能餓死/類死鎖的形態,列為 code review 紅線即可。
-4. **未來會引入等待語意的地方與對策**(死鎖風險是隨擴展才進場的):
-   - **VST audio↔GUI**(R6):音訊執行緒絕不取鎖是即時音訊鐵律,設計已定為 wait-free SPSC 環形緩衝(rtrb 候選)——滿了丟幀,不阻塞;
-   - **宿主內多實例聚合**(R6c):行程內 registry 若用鎖保護,音訊執行緒只能 try_lock-or-skip,不可等待;
-   - **C-ABI 多執行緒呼叫**(R3):API 設計為呼叫者各持有各的 handle(`ZwtvProcessor` 非 `Sync`,不共享),文件明載「一 handle 一執行緒」,不提供內部鎖。
-
----
-
-## Q7. 未被問到、但屬於系統特色或必須考量的點
-
-1. **決定性是產品級特徵,不只是實作細節**。同輸入 → 位元級同輸出,與執行緒數、重跑次數無關(Q3.3)。這在聲學量測領域是賣點(報告可重現、可稽核),也是整套 1e-12 驗證體系得以存在的前提。任何未來改動(尤其 R4 頻帶平行化)若引入平行歸約,會**無聲地摧毀**這個性質——建議把「thread-count invariance」寫成常駐測試而不是默契。
-2. **golden 體系本身是最大資產,也是最脆弱的單點**。逐級 golden(.bin,f64 LE)+ 分級二分定位是這專案 5 個 phase 的核心方法論;但它的再生完全繫於 mosqito 1.2.1 + scipy 版本鏈(Q5 X1)。資產與風險是同一件事的兩面。
-3. **雙基準策略已有成文決策**(`MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md`):mosqito golden 為日常唯一基準,ISO 官方值管合規宣告;parity 的忠誠上限是「合規的 mosqito」。新讀者應先讀該文件再讀測試,否則會誤以為 1e-12 是對 ISO 的承諾(不是,對 ISO 只承諾 ±5%)。
-4. **相容性債登記制度**:mosqito 的純實作痕跡(r8 捨入、nl wraparound、u2[0] 初始化這種被覆寫的死碼)是「復刻但標記」,不是「相信它正確」。upstream 若修正,我方有清單可循。
-5. **延遲契約是即時化的關鍵數字**:算法本質延遲 = 1 幀(0.5 ms)lookahead + <24 樣本進位 → R5 的 `latency_samples() = 24`。任何宣稱「即時」的下游(VST 延遲補償、量測儀表時間戳)都建立在這個常數上,它值得一個專屬測試。
-6. **驗收基線缺硬體計數器**(Q3.1):在 R4 動工前補一次 perf/uProf 基線(快取命中、IPC、頻寬),否則「頻帶平行化 19.6→4 ms」的預估無法歸因驗證,false sharing 也只能猜。
+1. **There are no locks in the whole crate.** grep proves it: no `Mutex`, no `RwLock`, no `condvar`, no channels. The only synchronisation primitive is one `AtomicBool` (`FORCE_SCALAR` at `simd/mod.rs:3`, Relaxed, a test switch). A single atomic variable has no wait semantics and cannot take part in a circular wait. Of the four deadlock conditions, "hold and wait" and "circular wait" do not exist structurally in this crate.
+2. **rayon fork-join is acyclic**: `par_iter_mut`/`par_chunks_mut` hand disjoint mutable slices to the work-stealing pool; the join point is the only wait, and the wait graph is a tree, not a cycle. The Rust borrow checker guarantees **at compile time** that slices are disjoint and there is no shared mutable state; data races (the usual prelude to deadlock) are excluded by the type system, not by discipline.
+3. **No nested blocking**: there is currently no pattern of "waiting for another rayon task inside a rayon task" or "blocking I/O inside a parallel region". That is the only shape under rayon that can realistically starve or quasi-deadlock; it is a code-review red line.
+4. **Places where wait semantics will be introduced in the future, and the countermeasures** (deadlock risk only enters with scaling):
+   - **VST audio↔GUI** (R6): the audio thread never takes a lock, the iron rule of real-time audio; the design is fixed as a wait-free SPSC ring buffer (rtrb candidate): drop frames when full, never block;
+   - **Multi-instance aggregation inside the host** (R6c): if the in-process registry is lock-protected, the audio thread may only try_lock-or-skip, never wait;
+   - **Multi-threaded C-ABI calls** (R3): the API is designed so that each caller holds its own handle (`ZwtvProcessor` is not `Sync`, not shared); the documentation states "one handle, one thread"; no internal lock is provided.
 
 ---
 
-## 結論速覽
+## Q7. Points not asked about, but which are system characteristics or must be considered
 
-| 問 | 一句話答案 |
+1. **Determinism is a product-level feature, not just an implementation detail.** Same input → bit-identical output, independent of thread count and number of reruns (Q3.3). In acoustic measurement this is a selling point (reports are reproducible and auditable), and it is the precondition for the whole 1e-12 verification system. Any future change (especially R4 band-level parallelisation) that introduces a parallel reduction would **silently destroy** this property. Recommendation: make "thread-count invariance" a permanent test rather than a tacit agreement.
+2. **The golden system is the largest asset and also the most fragile single point.** Stage-by-stage golden data (.bin, f64 LE) + staged bisection is the core methodology of the project's 5 phases; but its regeneration depends entirely on the mosqito 1.2.1 + scipy version chain (Q5 X1). Asset and risk are two sides of the same thing.
+3. **The dual-baseline strategy is a written decision** (`MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md`): mosqito golden data is the sole day-to-day baseline; the official ISO values govern compliance statements; the loyalty ceiling of parity is "compliant mosqito". New readers should read that document before the tests, otherwise they will mistake 1e-12 for a commitment to ISO (it is not; to ISO we commit only ±5%).
+4. **Compatibility debt register**: pure implementation traces of mosqito (r8 rounding, nl wraparound, dead code such as the overwritten u2[0] initialisation) are "replicated but marked", not "believed correct". If upstream corrects them, we have a list to follow.
+5. **The latency contract is the key number for real-time operation**: intrinsic algorithmic latency = 1 frame (0.5 ms) lookahead + <24 samples carry → `latency_samples() = 24` in R5. Everything downstream that claims "real time" (VST latency compensation, meter timestamps) builds on this constant; it deserves a dedicated test.
+6. **The acceptance baseline lacks hardware counters** (Q3.1): record a perf/uProf baseline (cache hits, IPC, bandwidth) before R4 starts, otherwise the estimate "band-level parallelisation 19.6→4 ms" cannot be attributed and verified, and false sharing can only be guessed at.
+
+---
+
+## Conclusions at a glance
+
+| Q | One-sentence answer |
 |---|---|
-| Q1 | 遞迴不可沿時間平行 → 沿頻帶軸 SIMD(7×/5× f64x4)+ 分支改遮罩;多核只用在逐幀獨立段 |
-| Q2 | 1e-12 是自訂工程門檻(標準只要求 ±5%);精度與 Python 同為 f64,差異是驗證嚴 4–10 個數量級 + 快 283× |
-| Q3 | 快取命中未實測、不能稱極限(設計上 compute-bound);多核零精度犧牲(位元決定性),效能受 Amdahl 上限 3.6× |
-| Q4 | scratch 重用、佈局隨存取模式轉置、輸出降材化、扁平 row-major;熱路徑殘餘配置已登記待 R5 清零 |
-| Q5 | 風險大多已顯性登記(denormal、NaN、48k、FFI panic、golden 鏈);真正未登記的是病態輸入 fuzz 缺口,本文件補登 |
-| Q6 | 無鎖結構 + fork-join 樹狀等待 + 借用檢查器,死鎖結構性不可能;等待語意隨 VST/FFI 進場,對策已定(wait-free SPSC、一 handle 一執行緒) |
-| Q7 | 決定性是產品特徵、golden 是資產兼單點、雙基準策略已成文、延遲契約 24 樣本、R4 前補硬體計數器基線 |
+| Q1 | Recursion cannot be parallelised along time → SIMD along the band axis (7×/5× f64x4) + branches turned into masks; multi-core only for frame-independent segments |
+| Q2 | 1e-12 is a self-set engineering threshold (the standard requires only ±5%); precision equals Python's f64; the difference is verification 4–10 orders of magnitude stricter + 283× faster |
+| Q3 | Cache hits not measured, cannot be called the limit (compute-bound by design); multi-core sacrifices zero precision (bit determinism); performance bounded by the Amdahl ceiling of 3.6× |
+| Q4 | Scratch reuse, layout transposed to the access pattern, output de-materialisation, flat row-major; residual hot-path allocations registered, to be zeroed in R5 |
+| Q5 | Most risks already explicitly registered (denormal, NaN, 48k, FFI panic, golden chain); the truly unregistered one is the pathological-input fuzz gap, added by this document |
+| Q6 | Lock-free structure + fork-join tree waits + borrow checker make deadlock structurally impossible; wait semantics arrive with VST/FFI, countermeasures fixed (wait-free SPSC, one handle one thread) |
+| Q7 | Determinism is a product feature, golden data is asset and single point, dual-baseline strategy is written down, latency contract 24 samples, hardware counter baseline before R4 |

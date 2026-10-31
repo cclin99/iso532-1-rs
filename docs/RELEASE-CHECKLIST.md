@@ -1,5 +1,7 @@
 # Release checklist
 
+> 對照／Pair: [中文版](RELEASE-CHECKLIST.zh-TW.md) · source: en · synced 2026-11-01
+
 Run this checklist immediately before publishing a release or making the README public.
 
 - [ ] Remove or rewrite the review-draft blockquote near the top of both `README.md` and `README.zh-TW.md`; no public README may say "not yet announced as a public release" or "尚未對外宣布發布".

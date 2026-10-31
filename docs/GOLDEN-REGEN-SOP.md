@@ -1,40 +1,37 @@
-# Golden 資料再生 SOP(R-14)
+# Golden data regeneration SOP (R-14)
+> 對照／Pair: [中文版](GOLDEN-REGEN-SOP.zh-TW.md) · source: zh · synced 2026-11-01
 
-`data/` 是 gitignored;本文是換機器、venv 損毀、或需要重生 golden 時的唯一程序。
-**核心觀念:`tools/golden.sha256` 是 per-環境契約**——golden 位元組取決於生成
-機器的 libm(scipy/numpy 底層),跨機器 SHA256 不同是預期行為,不是錯誤
-(佐證:`docs/CI-HASH-GATE-DEBUG-2026-07-10.md`)。
+`data/` is gitignored. This document is the only procedure for changing machines, recovering from a broken venv, or regenerating the golden data.
+**Core idea: `tools/golden.sha256` is a per-environment contract.** The golden bytes depend on the libm of the generating machine (underneath scipy/numpy). A different SHA256 on a different machine is expected behaviour, not an error (evidence: `docs/CI-HASH-GATE-DEBUG-2026-07-10.md`).
 
-## A. 同機器重生(venv 損毀 / data 誤刪)
+## A. Regenerating on the same machine (broken venv / data deleted by mistake)
 
-前置:repo 根有 `mosqito-1.2.1.tar.gz`(sha256 見 `tools/requirements.lock` 標頭)。
+Prerequisite: `mosqito-1.2.1.tar.gz` in the repo root (sha256 in the header of `tools/requirements.lock`).
 
     bash tools/setup_env.sh                                   # 建 .venv(從 requirements.lock 安裝)+ 抓 Annex B
     .venv/Scripts/python.exe tools/gen_golden.py              # 重生 data/golden(約 5–15 分鐘)
     .venv/Scripts/python.exe tools/golden_manifest.py --verify
     cd iso532 && cargo test --test golden_core --test golden_dsp --test golden_zwst --test golden_zwtv --test annexb
 
-四步全過 = 鏈健在。`--verify` 失敗 ⇒ 環境已漂移(檢查 Python 小版本、
-requirements.lock 是否被動過、mosqito tarball sha256)。
+All four steps passing = the chain is intact. A `--verify` failure means the environment has drifted (check the Python minor version, whether `requirements.lock` was modified, and the mosqito tarball sha256).
 
-## B. 換新機器(SHA256 預期 mismatch)
+## B. Moving to a new machine (SHA256 mismatch expected)
 
-1. 跑 A 的前兩步。
-2. `--verify` **預期失敗**(libm 不同)。此時改跑 golden 測試:
+1. Run the first two steps of A.
+2. `--verify` is **expected to fail** (different libm). Run the golden tests instead:
    `cargo test --test golden_core --test golden_dsp --test golden_zwst --test golden_zwtv --test annexb`
-3. 測試全綠 ⇒ 新環境的 golden 有效。重新凍結契約:
+3. All tests green ⇒ the golden data of the new environment is valid. Re-freeze the contract:
    `.venv/Scripts/python.exe tools/golden_manifest.py --generate`
-   commit `tools/golden.sha256`,commit 訊息記錄新環境(OS/CPU)。
-4. 測試有紅 ⇒ 不是環境噪音,是真回歸或上游版本漂移——停下來調查,
-   不得直接重新凍結。
+   commit `tools/golden.sha256`; record the new environment (OS/CPU) in the commit message.
+4. Any test red ⇒ this is not environment noise; it is a real regression or upstream version drift. Stop and investigate. Do not re-freeze directly.
 
-## C. 什麼會讓鏈斷掉(維護清單)
+## C. What breaks the chain (maintenance list)
 
-| 依賴 | 固化方式 |
+| Dependency | How it is pinned |
 |---|---|
-| numpy/scipy 版本 | `tools/requirements.lock`(pip freeze 全鎖) |
-| mosqito 1.2.1 | 本地 tarball + sha256(lock 標頭) |
-| Annex B wav/xlsx | SHA256 在 `tools/golden.sha256`;來源是 MoSQITo GitHub repo tag v1.2.1(setup_env.sh) |
-| Python 小版本 | 3.11(lock 標頭註記) |
-| golden 位元組 | `tools/golden.sha256`(per-環境) |
-| 契約執行 | `setup_env.sh` 腳本守衛:Python == 3.11、tarball SHA256、sanity import 含 openpyxl/pyuff |
+| numpy/scipy versions | `tools/requirements.lock` (full pip freeze lock) |
+| mosqito 1.2.1 | local tarball + sha256 (lock header) |
+| Annex B wav/xlsx | SHA256 in `tools/golden.sha256`; source is the MoSQITo GitHub repo tag v1.2.1 (setup_env.sh) |
+| Python minor version | 3.11 (noted in the lock header) |
+| golden bytes | `tools/golden.sha256` (per-environment) |
+| contract enforcement | `setup_env.sh` script guards: Python == 3.11, tarball SHA256, sanity import including openpyxl/pyuff |

@@ -1,122 +1,123 @@
-# 基準值選擇策略:mosqito golden vs ISO 532-1 理論值
+# Baseline selection strategy: mosqito golden data vs ISO 532-1 theoretical values
+> 對照／Pair: [中文版](MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.zh-TW.md) · source: zh · synced 2026-11-01
 
-**日期:** 2026-07-05
-**性質:** 參考文件(策略決策依據)
-**前置文件:** `DESIGN-DEVELOPMENT-2026-07-04.md` §10(偏差實測)、`ROADMAP.md` §1(後續標準候選)
-**適用範圍:** ISO 532-1 現有實作的維護,以及 sharpness(DIN 45692)、ECMA-418-2、ISO 532-2、roughness 等後續標準的驗證基準選擇。
-
----
-
-## 1. 問題定義
-
-已量測到 mosqito 的 zwst 穩態路徑對 ISO 532-1 Annex B 官方基準值有 ±0.8% 偏差(Signal 3 +0.82%、Signal 5 −0.76%),而 zwtv 時變路徑幾乎精確(0/500 點超容差)。後續標準實作前需要回答三個問題:
-
-1. 這個偏差在 mosqito 端是**刻意設計**的嗎?成因是 Python 實作的限制嗎?
-2. 後續標準的驗證目標應該選 **ISO 理論值** 還是 **mosqito golden**?
-3. 兩者衝突時的決策準則是什麼?
+**Date:** 2026-07-05
+**Nature:** reference document (basis for a strategy decision)
+**Preceding documents:** `DESIGN-DEVELOPMENT-2026-07-04.md` §10 (measured deviation), `ROADMAP.md` §1 (candidate follow-on standards)
+**Scope:** maintenance of the existing ISO 532-1 implementation, and the choice of verification baseline for follow-on standards such as sharpness (DIN 45692), ECMA-418-2, ISO 532-2 and roughness.
 
 ---
 
-## 2. 偏差的實作成因解剖(mosqito 原始碼證據)
+## 1. Problem statement
 
-### 2.1 mosqito zwst 前端實際在做什麼
+We have measured that the mosqito zwst stationary path deviates by ±0.8% from the official ISO 532-1 Annex B reference values (Signal 3 +0.82%, Signal 5 −0.76%), while the zwtv time-varying path is almost exact (0/500 points outside tolerance). Before implementing follow-on standards, three questions must be answered:
 
-`loudness_zwst.py` 的頻譜前端呼叫的是 mosqito 的**通用聲級計工具** `sound_level_meter/noct_spectrum`,不是 ISO 參考濾波器組。逐步拆解(`_n_oct_time_filter.py`):
+1. Is this deviation **deliberate design** on the mosqito side? Is the cause a limitation of the Python implementation?
+2. Should the verification target for follow-on standards be the **ISO theoretical values** or the **mosqito golden data**?
+3. What is the decision rule when the two conflict?
 
-| 步驟 | 實作 | 依據 |
+---
+
+## 2. Anatomy of the implementation cause of the deviation (evidence from mosqito source)
+
+### 2.1 What the mosqito zwst front end actually does
+
+The spectral front end of `loudness_zwst.py` calls mosqito's **general-purpose sound level meter utility** `sound_level_meter/noct_spectrum`, not the ISO reference filter bank. Step by step (`_n_oct_time_filter.py`):
+
+| Step | Implementation | Basis |
 |---|---|---|
-| 濾波器設計 | scipy `butter(3, (w1, w2), 'bandpass', output='sos')`——3 階 Butterworth 帶通(雙線性變換,6 階 IIR) | 註解明載 **ANSI S1.1-1986**(即 IEC 61260 同族),不是 ISO 532-1 Annex A |
-| 低頻帶前置降採樣 | `fc < fs/200`(48 kHz 下即 fc < 240 Hz,約 25–200 Hz 的 10 個頻帶)先 `scipy.signal.decimate(sig, q)`——Chebyshev-I 8 階 + **filtfilt 零相位** | 數值必要性:fc=25 Hz 在 48 kHz 下正規化頻寬 ~1e-3,直接設計病態(原始碼註解自承 "filter design issue [ref needed]") |
-| 濾波 | `sosfilt`(因果、單向) | — |
-| 位準計算 | **全段 RMS**(`sqrt(mean(sig_filt²))`,含濾波器啟動暫態,無丟棄窗) | — |
-| 44.1 kHz 輸入 | `scipy.signal.resample`(FFT 法)重採樣到 48 kHz | — |
+| Filter design | scipy `butter(3, (w1, w2), 'bandpass', output='sos')`: 3rd-order Butterworth band-pass (bilinear transform, 6th-order IIR) | The comment explicitly cites **ANSI S1.1-1986** (same family as IEC 61260), not ISO 532-1 Annex A |
+| Pre-decimation of low bands | For `fc < fs/200` (at 48 kHz, fc < 240 Hz, i.e. the 10 bands from about 25 to 200 Hz) first `scipy.signal.decimate(sig, q)`: Chebyshev-I 8th order + **filtfilt zero phase** | Numerical necessity: at fc=25 Hz and 48 kHz the normalised bandwidth is ~1e-3 and a direct design is ill-conditioned (the source comment itself admits "filter design issue [ref needed]") |
+| Filtering | `sosfilt` (causal, one direction) | — |
+| Level computation | **Whole-signal RMS** (`sqrt(mean(sig_filt²))`, including the filter start-up transient, no discard window) | — |
+| 44.1 kHz input | `scipy.signal.resample` (FFT method) to 48 kHz | — |
 
-而 ISO 532-1 Annex B 的穩態基準值是用**標準自帶參考程式的濾波器鏈**(遞迴濾波器組,逐樣本推進)產生的。兩條路徑的頻帶邊緣形狀差 ~0.1 dB,經響度轉換級放大即為 ±0.8% 的 N 偏差。
+The stationary reference values of ISO 532-1 Annex B, on the other hand, were produced with **the filter chain of the standard's own reference program** (recursive filter bank, advanced sample by sample). The band edge shapes of the two paths differ by ~0.1 dB; amplified through the loudness transformation stage this becomes the ±0.8% deviation in N.
 
-### 2.2 對照:zwtv 為什麼幾乎精確
+### 2.2 Contrast: why zwtv is almost exact
 
-mosqito 的 zwtv 前端(`_third_octave_levels`)**逐係數移植了 ISO 參考程式(Annex A BASIC/C)的 28 頻帶濾波器組**——因為時變方法的前端是標準規定性的(prescriptive),沒有替換自由。這正是我們實測 zwtv 對官方曲線 0/500 點超容差、而 zwst 有 ±0.8% 的原因:**偏差不在響度數學,全部在 zwst 可自由選擇的頻譜前端**(§10.1 Signal 1 直接餵頻帶位準時偏差僅 +0.005%,即輸出量化步階,已證明轉換級精確)。
+The mosqito zwtv front end (`_third_octave_levels`) **ports the 28-band filter bank of the ISO reference program (Annex A BASIC/C) coefficient by coefficient**, because the front end of the time-varying method is prescriptive in the standard and leaves no freedom to substitute. This is exactly why our measurements show zwtv at 0/500 points outside tolerance against the official curve while zwst shows ±0.8%: **the deviation is not in the loudness mathematics; it lies entirely in the freely selectable spectral front end of zwst** (in §10.1, Signal 1, which feeds band levels directly, deviates by only +0.005%, which is the output quantisation step, proving that the transformation stage is exact).
 
-### 2.3 本 crate 的復刻範圍
+### 2.3 Scope of replication in this crate
 
-Rust 端 `zwst/mod.rs` + `dsp/filtfilt.rs` 對 mosqito 路徑做了**逐位級復刻**,包括 scipy `decimate` 的 Chebyshev-I 8 階係數與 `sosfiltfilt` 的 odd padding 語意——這是 golden parity 達 8.2e-14 的前提。也就是說:我們**繼承了 mosqito 的 ±0.8% 偏差,而且是刻意繼承的**(相容性優先)。
+On the Rust side, `zwst/mod.rs` + `dsp/filtfilt.rs` replicate the mosqito path **at bit level**, including the Chebyshev-I 8th-order coefficients of scipy `decimate` and the odd-padding semantics of `sosfiltfilt`. This is the precondition for golden parity reaching 8.2e-14. In other words: **we inherit mosqito's ±0.8% deviation, and we inherit it deliberately** (compatibility first).
 
 ---
 
-## 3. 分析:這是刻意設計嗎?是 Python 的關係嗎?
+## 3. Analysis: is this deliberate design? Is it because of Python?
 
-結論:**是刻意的工程選擇,但不是「刻意製造偏差」——偏差是被標準允許、被作者接受的副作用。Python 的效能現實是主要動機之一,但不是唯一動機。** 分四層論證:
+Conclusion: **it is a deliberate engineering choice, but not "deliberately manufacturing a deviation". The deviation is a side effect permitted by the standard and accepted by the authors. Python's performance reality is one of the main motives, but not the only one.** Four layers of argument:
 
-### 3.1 標準本身賦予這個自由度(首要原因)
+### 3.1 The standard itself grants this freedom (primary reason)
 
-ISO 532-1 的穩態方法(Method 1)參考程式的**輸入是 28 個三分之一倍頻程頻帶位準**,不是時域訊號。從訊號取得頻帶位準的方式,標準只要求符合 IEC 61260-1 class 1 三分之一倍頻程分析,**沒有規定必須用 Annex A 的濾波器組**(那是時變方法的規定件)。所以 mosqito 對 zwst 選 Butterworth 前端:
+The reference program of the stationary method of ISO 532-1 (Method 1) **takes 28 third-octave band levels as input**, not a time-domain signal. For obtaining band levels from a signal, the standard only requires third-octave analysis compliant with IEC 61260-1 class 1; **it does not require the Annex A filter bank** (that is a prescribed element of the time-varying method). So mosqito's choice of a Butterworth front end for zwst:
 
-- **不違反標準**——±0.8% 遠在 ±5% 合規容差內;
-- Annex B 穩態基準值恰好是用標準自家濾波器鏈生成的,任何「合規但不同」的濾波器實作都會顯出這個量級的偏移。這是「合規自由度的顯影」,不是誤差意義上的 bug。
+- **does not violate the standard**: ±0.8% is far inside the ±5% compliance tolerance;
+- the Annex B stationary reference values happen to be generated with the standard's own filter chain, so any "compliant but different" filter implementation shows an offset of this magnitude. This is "the compliance freedom becoming visible", not a defect in the implementation.
 
-### 3.2 Python 效能現實(使用者猜測的部分——對,但要精確化)
+### 3.2 Python performance reality (the part the user guessed: correct, but needs to be made precise)
 
-ISO 參考濾波器組必須**逐樣本推進遞迴狀態**,這種迴圈在純 Python/numpy 是災難性的慢。證據就在 mosqito 自己身上:
+The ISO reference filter bank must **advance recursive state sample by sample**, and such a loop is catastrophically slow in pure Python/numpy. The evidence is in mosqito itself:
 
-- zwtv **被迫**移植 ISO 濾波器組(標準規定性),結果 mosqito zwtv 在本機跑 10 秒訊號要 22.4 秒(**0.45× 即時**,連即時一半都不到);
-- zwst **可以避開**這個代價——scipy 的 `butter`/`sosfilt`/`decimate` 全是向量化 C 程式碼,整段訊號一次過。
+- zwtv was **forced** to port the ISO filter bank (prescriptive in the standard), and as a result mosqito zwtv takes 22.4 s for a 10 s signal on this machine (**0.45× real time**, not even half of real time);
+- zwst **can avoid** this cost: scipy's `butter`/`sosfilt`/`decimate` are all vectorised C code that processes the whole signal in one pass.
 
-所以精確的說法是:**Python 下「能用 scipy 向量化原語就不要手寫逐樣本迴圈」是生存法則,zwst 恰好有標準賦予的自由度可以這麼做,mosqito 就做了**。若標準對穩態前端也是規定性的,mosqito 只能像 zwtv 一樣硬吃效能代價——可見這是「自由度 + 效能動機」的交集,單靠 Python 因素不成立(zwtv 就是反例)。
+So the precise statement is: **under Python, "use scipy vectorised primitives whenever possible instead of hand-written per-sample loops" is a survival rule; zwst happens to have the freedom granted by the standard to do so, and mosqito did.** If the standard were prescriptive for the stationary front end as well, mosqito would have had to pay the performance cost as it did for zwtv. So this is the intersection of "freedom + performance motive"; the Python factor alone is not sufficient (zwtv is the counter-example).
 
-### 3.3 工具重用的架構動機
+### 3.3 Architectural motive of tool reuse
 
-`noct_spectrum` 是 mosqito 的**跨指標共用件**(sound level meter 模組,同時服務頻譜分析等其他功能),維護一套通用 IEC 61260 風格濾波器組、讓各指標共用,比為 zwst 單獨維護一份 ISO 專屬濾波器組更符合程式庫經濟學。ANSI S1.1/Butterworth 也是業界慣用寫法(MATLAB `poctave` 同族)。
+`noct_spectrum` is a **shared component across metrics** in mosqito (the sound level meter module, also serving spectral analysis and other functions). Maintaining one general IEC 61260-style filter bank shared by all metrics fits library economics better than maintaining a separate ISO-specific filter bank for zwst alone. ANSI S1.1/Butterworth is also the customary industry formulation (MATLAB `poctave` belongs to the same family).
 
-### 3.4 各偏差成分不是同一性質,分開記錄
+### 3.4 The deviation components are of different nature; record them separately
 
-| 成分 | 性質 | 量級貢獻 |
+| Component | Nature | Magnitude contribution |
 |---|---|---|
-| Butterworth vs ISO 參考濾波器形狀 | 合規自由度(刻意選擇) | 主要(~0.1 dB 帶位準 → ±0.8% N) |
-| 全段 RMS 含啟動暫態、無丟棄窗 | 簡化(對數秒級穩態訊號影響小) | 次要 |
-| 低頻帶 decimate(Cheby-8 filtfilt)通帶漣波 | 數值必要性(非刻意偏差) | 次要 |
-| 44.1→48 kHz FFT resample 漣波 | 便利性選擇 | Signal 3 殘留 +0.025% 的來源 |
+| Butterworth vs ISO reference filter shape | compliance freedom (deliberate choice) | major (~0.1 dB band level → ±0.8% N) |
+| Whole-signal RMS including start-up transient, no discard window | simplification (small effect on stationary signals several seconds long) | minor |
+| Pass-band ripple of the low-band decimate (Cheby-8 filtfilt) | numerical necessity (not a deliberate deviation) | minor |
+| Ripple of the 44.1→48 kHz FFT resample | convenience choice | source of the residual +0.025% in Signal 3 |
 
 ---
 
-## 4. 後續標準的基準選擇建議
+## 4. Baseline recommendation for follow-on standards
 
-### 4.1 主軸:mosqito golden parity(維持現行策略)
+### 4.1 Main axis: mosqito golden parity (keep the current strategy)
 
-四個理由,按重要性排序:
+Four reasons, ordered by importance:
 
-1. **驗證密度**:golden 可對**任意訊號**生成(9 組資料集、任何邊界案例都能加),parity 可測到 1e-12 量級;官方基準值只有少數幾個訊號、容差 ±5%/0.1 sone——粗了 10 個數量級。回歸偵測能力完全不是同一級。
-2. **可除錯性**:與 mosqito 分歧時可以**逐階段二分定位**(餵中間值進 Python 對照),這是本專案 5 個 phase 一路走來的核心方法論;對 ISO 紙面數值除錯只能猜。
-3. **合規性可遞移**:mosqito 已在 ISO 容差內(本專案 §10 實測亦独立確認:全部訊號都在 ±5% 帶內),位元級 parity 自動繼承合規。**但每個新指標動工前要重新確認一次遞移前提**(見 4.3)。
-4. **使用者遷移一致性**:從 mosqito 遷來的使用者拿到逐位一致的數字,信任成本最低。
+1. **Verification density**: golden data can be generated for **any signal** (9 datasets, and any edge case can be added), and parity can be tested down to 1e-12. The official reference values cover only a handful of signals with tolerance ±5% / 0.1 sone, which is 10 orders of magnitude coarser. Regression detection capability is not in the same class.
+2. **Debuggability**: on divergence from mosqito, the stage can be **located by bisection stage by stage** (feeding intermediate values into Python for comparison). This is the core methodology of the 5 phases of this project. Debugging against ISO paper values can only guess.
+3. **Transferable compliance**: mosqito is already inside the ISO tolerance (independently confirmed by this project's §10 measurements: all signals are inside the ±5% band), so bit-level parity inherits compliance automatically. **But the transfer premise must be re-confirmed before each new metric starts** (see 4.3).
+4. **Consistency for migrating users**: users migrating from mosqito receive bit-identical numbers; the trust cost is lowest.
 
-### 4.2 副軸:IsoReference 模式只在「量得到有意義 gap」時才建
+### 4.2 Secondary axis: build an IsoReference mode only when a meaningful gap is measured
 
-zwst 的 `ZwstMode::IsoReference`(§10.2,重用 zwtv 前端)是這個策略的範本:**mosqito 路徑為預設(golden 體系不可破壞),ISO 參考路徑為選配**。對後續標準,先跑 gap report 再決定:
+The `ZwstMode::IsoReference` of zwst (§10.2, reusing the zwtv front end) is the template for this strategy: **the mosqito path is the default (the golden system must not be broken); the ISO reference path is optional.** For follow-on standards, run the gap report first and then decide:
 
-- gap ≪ 容差且 ≪ 感知意義(sone 顯示解析度 1e-3)→ **不建第二模式**,文件記錄了事;
-- gap 達容差的可觀比例、或使用者場景需要對官方基準報告(認證、法規)→ 建選配模式。
+- gap ≪ tolerance and ≪ perceptual significance (sone display resolution 1e-3) → **do not build a second mode**; document it and move on;
+- gap is a noticeable fraction of the tolerance, or user scenarios require reporting against the official baseline (certification, regulation) → build the optional mode.
 
-### 4.3 每個新標準動工前的固定前置作業(寫入計畫模板)
+### 4.3 Fixed preparatory work before each new standard starts (write into the plan template)
 
-1. **gap report 先行**:複製 §10 的 `iso_gap_report` 方法,先量 mosqito 參考實作對該標準官方驗證資料的偏差,**動工前就知道要繼承多少偏差、偏差集中在哪一級**。
-2. **parity debt 登記**:mosqito 的純實作痕跡(如 zwst/zwtv 的 `r8()` 1e-8 捨入、nl wraparound 初始化)復刻時逐項登記為「相容性債」——復刻但標記,未來若 mosqito 修正或我們提供 ISO 模式時有清單可循。
-3. **自由度地圖**:標明該標準哪些環節是規定性的(必須位元級照抄參考程式)、哪些是自由度(mosqito 的選擇只是選項之一)——zwst/zwtv 的教訓就是這條線決定了偏差出現的位置。
+1. **Gap report first**: replicate the `iso_gap_report` method of §10 and measure the deviation of the mosqito reference implementation against the official validation data of that standard **before work starts, so that the amount of inherited deviation and the stage it concentrates in are known in advance.**
+2. **Parity debt register**: pure implementation traces of mosqito (such as the `r8()` 1e-8 rounding in zwst/zwtv and the nl wraparound initialisation) are registered item by item as "compatibility debt" when replicated: replicate but mark, so that there is a list to follow if mosqito corrects them or if we offer an ISO mode later.
+3. **Freedom map**: mark which parts of the standard are prescriptive (must be copied bit-exact from the reference program) and which are freedoms (mosqito's choice is only one option). The zwst/zwtv lesson is that this line decides where deviation appears.
 
-### 4.4 決策準則速查
+### 4.4 Decision rule quick reference
 
-| 情境 | 選擇 |
+| Situation | Choice |
 |---|---|
-| 日常開發、回歸測試、SIMD parity | mosqito golden(唯一基準) |
-| 標準合規性宣告 | 官方驗證資料 + 標準容差(golden 遞移 + 獨立確認) |
-| 認證/法規場景要求貼官方基準值 | IsoReference 類選配模式(僅在 gap 有意義時建) |
-| mosqito 與官方值衝突且超出容差 | 視為 mosqito bug,上報 upstream,我方文件記錄並以官方值為準 |
+| Day-to-day development, regression tests, SIMD parity | mosqito golden data (sole baseline) |
+| Standard compliance statement | official validation data + standard tolerance (golden transfer + independent confirmation) |
+| Certification / regulatory scenario requiring the official baseline values | an optional mode of the IsoReference kind (built only when the gap is meaningful) |
+| mosqito conflicts with the official values beyond tolerance | treat as a mosqito finding, report upstream, record in our documentation and follow the official values |
 
-第 4 列至今未發生(所有已測偏差均在容差內),但規則需先立:**parity 的忠誠上限是「合規的 mosqito」,不是「任何 mosqito」**。
+Row 4 has not occurred so far (all measured deviations are inside tolerance), but the rule must be set in advance: **the loyalty ceiling of parity is "compliant mosqito", not "any mosqito".**
 
 ---
 
-## 5. 結論
+## 5. Conclusions
 
-1. mosqito zwst 的 ±0.8% 偏差是**刻意的工程選擇**:標準賦予穩態前端實作自由度,mosqito 用 scipy 向量化原語(Butterworth + decimate + 全段 RMS)換取 Python 下可接受的效能與跨指標工具重用;偏差是被接受的副作用,在 ±5% 容差內合規。「Python 實作的關係」是主要動機之一,但前提是標準允許——zwtv 沒有這個自由度,mosqito 就老實付出了 0.45× 即時的代價逐係數移植。
-2. 後續標準**維持 mosqito golden 為主軸**(驗證密度、可除錯性、遞移合規、遷移一致性),官方基準值作為每標準動工前的 gap report 與最終合規確認,IsoReference 選配模式僅在 gap 有意義時建。
-3. 本文件 §4.3 的三項前置作業(gap report / parity debt 登記 / 自由度地圖)應納入後續每個標準的 phase 計畫模板。
+1. The ±0.8% deviation of mosqito zwst is a **deliberate engineering choice**: the standard grants freedom in the stationary front end, and mosqito trades it, via scipy vectorised primitives (Butterworth + decimate + whole-signal RMS), for acceptable performance under Python and for tool reuse across metrics. The deviation is an accepted side effect, compliant within the ±5% tolerance. "Because of the Python implementation" is one of the main motives, but only because the standard permits it: zwtv does not have this freedom, and there mosqito honestly paid the 0.45× real-time cost and ported coefficient by coefficient.
+2. Follow-on standards **keep mosqito golden data as the main axis** (verification density, debuggability, transferable compliance, migration consistency). Official reference values serve for the gap report before each standard starts and for the final compliance confirmation; an optional IsoReference mode is built only when the gap is meaningful.
+3. The three preparatory items in §4.3 of this document (gap report / parity debt register / freedom map) should be included in the phase plan template of every follow-on standard.
