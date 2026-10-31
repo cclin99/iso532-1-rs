@@ -1,0 +1,3060 @@
+{
+  "calibration_factor": 2.835797716391444,
+  "calibration_rms_digital": 0.007052689225467755,
+  "stationary_reference_time_skip_s": 0.2,
+  "cases": [
+    {
+      "signal": 1,
+      "field": "free",
+      "input_samples": 28,
+      "rust_frames": 1,
+      "c_frames": 1,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 83.3,
+        "ref_at_worst": 83.3,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 5.327229056173172,
+        "ref_at_worst": 5.327229056173172,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": true,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.004339575637814619,
+        "rms": 0.004339575637814619,
+        "max_rel_nonzero": 5.209846006029609e-05,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 83.3,
+        "ref_at_worst": 83.29566042436218,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.00027999917250021156,
+        "rms": 8.052067922290352e-05,
+        "max_rel_nonzero": 9.748565304570408e-05,
+        "worst_index": [
+          32
+        ],
+        "got_at_worst": 6.159899509499037,
+        "ref_at_worst": 6.160179508671537,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "n": 83.3,
+      "c_n": 83.29566042436218,
+      "xlsx_n": 83.2957,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.004300000000000637,
+        "rms": 0.004300000000000637,
+        "max_rel_nonzero": 5.1623313088198274e-05,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 83.3,
+        "ref_at_worst": 83.2957,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.00030049050096270236,
+        "rms": 8.872757361997986e-05,
+        "max_rel_nonzero": 0.00011597342595522077,
+        "worst_index": [
+          29
+        ],
+        "got_at_worst": 6.999899509499038,
+        "ref_at_worst": 7.0002,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "xlsx_stationary_n_pass": true,
+      "xlsx_stationary_spec_fail": 0
+    },
+    {
+      "signal": 2,
+      "field": "free",
+      "input_samples": 480000,
+      "rust_frames": 1,
+      "c_frames": 1,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 14.71,
+        "ref_at_worst": 14.71,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": true,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.033888942213673445,
+        "rms": 0.033888942213673445,
+        "max_rel_nonzero": 0.0023091227696654597,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 14.71,
+        "ref_at_worst": 14.676111057786327,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.0396381128556072,
+        "rms": 0.007677297327835584,
+        "max_rel_nonzero": 0.1203857756338614,
+        "worst_index": [
+          9
+        ],
+        "got_at_worst": 0.3688972188164449,
+        "ref_at_worst": 0.3292591059608377,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "n": 14.71,
+      "c_n": 14.676111057786327,
+      "xlsx_n": 14.6545,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.05550000000000033,
+        "rms": 0.05550000000000033,
+        "max_rel_nonzero": 0.0037872325906718293,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 14.71,
+        "ref_at_worst": 14.6545,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.04029721881644488,
+        "rms": 0.007985039058136556,
+        "max_rel_nonzero": 0.1567264423841153,
+        "worst_index": [
+          9
+        ],
+        "got_at_worst": 0.3688972188164449,
+        "ref_at_worst": 0.3286,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "xlsx_stationary_n_pass": true,
+      "xlsx_stationary_spec_fail": 0
+    },
+    {
+      "signal": 3,
+      "field": "free",
+      "input_samples": 480000,
+      "rust_frames": 1,
+      "c_frames": 1,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 4.059,
+        "ref_at_worst": 4.059,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": true,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.03329210729616161,
+        "rms": 0.03329210729616161,
+        "max_rel_nonzero": 0.008269876549289621,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 4.059,
+        "ref_at_worst": 4.0257078927038386,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.014833018945293097,
+        "rms": 0.004004181974414358,
+        "max_rel_nonzero": 0.7710257258322537,
+        "worst_index": [
+          66
+        ],
+        "got_at_worst": 0.3571249558725729,
+        "ref_at_worst": 0.3422919369272798,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "n": 4.059,
+      "c_n": 4.0257078927038386,
+      "xlsx_n": 4.0192,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.0398000000000005,
+        "rms": 0.0398000000000005,
+        "max_rel_nonzero": 0.009902468152866368,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 4.059,
+        "ref_at_worst": 4.0192,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.01542495587257292,
+        "rms": 0.004171606598934634,
+        "max_rel_nonzero": 0.7789085823343144,
+        "worst_index": [
+          66
+        ],
+        "got_at_worst": 0.3571249558725729,
+        "ref_at_worst": 0.3417,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "xlsx_stationary_n_pass": true,
+      "xlsx_stationary_spec_fail": 0
+    },
+    {
+      "signal": 4,
+      "field": "free",
+      "input_samples": 480000,
+      "rust_frames": 1,
+      "c_frames": 1,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 1.558,
+        "ref_at_worst": 1.558,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": true,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.006384320401826349,
+        "rms": 0.006384320401826349,
+        "max_rel_nonzero": 0.004114627407915673,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 1.558,
+        "ref_at_worst": 1.5516156795981737,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.004422606218990308,
+        "rms": 0.001105680149507387,
+        "max_rel_nonzero": 0.04589091996149212,
+        "worst_index": [
+          152
+        ],
+        "got_at_worst": 0.10079474743344831,
+        "ref_at_worst": 0.096372141214458,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "n": 1.558,
+      "c_n": 1.5516156795981737,
+      "xlsx_n": 1.5494,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.008599999999999941,
+        "rms": 0.008599999999999941,
+        "max_rel_nonzero": 0.005550535691235279,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 1.558,
+        "ref_at_worst": 1.5494,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.004594747433448315,
+        "rms": 0.0011666350260915038,
+        "max_rel_nonzero": 0.08174895070001766,
+        "worst_index": [
+          152
+        ],
+        "got_at_worst": 0.10079474743344831,
+        "ref_at_worst": 0.0962,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "xlsx_stationary_n_pass": true,
+      "xlsx_stationary_spec_fail": 0
+    },
+    {
+      "signal": 5,
+      "field": "free",
+      "input_samples": 480000,
+      "rust_frames": 1,
+      "c_frames": 1,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 10.434,
+        "ref_at_worst": 10.434,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.14955495465155805,
+        "ref_at_worst": 0.14955495465155805,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": true,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.08027424513644377,
+        "rms": 0.08027424513644377,
+        "max_rel_nonzero": 0.007634787077536616,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 10.434,
+        "ref_at_worst": 10.514274245136443,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.01020354266805562,
+        "rms": 0.0036156941085152693,
+        "max_rel_nonzero": 0.03250371179175188,
+        "worst_index": [
+          66
+        ],
+        "got_at_worst": 0.40549399448005685,
+        "ref_at_worst": 0.4156975371481125,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "n": 10.434,
+      "c_n": 10.514274245136443,
+      "xlsx_n": 10.4978,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.06380000000000052,
+        "rms": 0.06380000000000052,
+        "max_rel_nonzero": 0.006077463849568531,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 10.434,
+        "ref_at_worst": 10.4978,
+        "strict_fail": 0,
+        "count": 1,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.009606005519943173,
+        "rms": 0.0029684050149136948,
+        "max_rel_nonzero": 0.029494129451278002,
+        "worst_index": [
+          66
+        ],
+        "got_at_worst": 0.40549399448005685,
+        "ref_at_worst": 0.4151,
+        "strict_fail": 0,
+        "count": 240,
+        "nonfinite": 0
+      },
+      "xlsx_stationary_n_pass": true,
+      "xlsx_stationary_spec_fail": 0
+    },
+    {
+      "signal": 6,
+      "field": "free",
+      "input_samples": 508800,
+      "rust_frames": 5300,
+      "c_frames": 5300,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 2.4868995751603507e-13,
+        "rms": 1.452373984654666e-14,
+        "max_rel_nonzero": 3.1762438080080837e-09,
+        "worst_index": [
+          18,
+          5049
+        ],
+        "got_at_worst": 4.543257176758427,
+        "ref_at_worst": 4.543257176758676,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.01699866617224366,
+        "rms": 0.005795259772582713,
+        "max_rel_nonzero": 0.1129247065055377,
+        "worst_index": [
+          3364
+        ],
+        "got_at_worst": 4.150689042567658,
+        "ref_at_worst": 4.167687708739901,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.01002111403127326,
+        "rms": 0.0006493120616607605,
+        "max_rel_nonzero": 1.0,
+        "worst_index": [
+          50,
+          3181
+        ],
+        "got_at_worst": 0.3000104051157645,
+        "ref_at_worst": 0.31003151914703775,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 5300,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.025184523595722652,
+        "rms": 0.008842596208367194,
+        "max_rel_nonzero": 0.29405146422827755,
+        "worst_index": [
+          4988
+        ],
+        "got_at_worst": 13.799984523595723,
+        "ref_at_worst": 13.7748,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.02517825381880101,
+        "rms": 0.008724657071341511,
+        "max_rel_nonzero": 0.3656816749191201,
+        "worst_index": [
+          4988
+        ],
+        "got_at_worst": 13.799978253818802,
+        "ref_at_worst": 13.7748,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "nmax": 14.38072654816403,
+      "xlsx_nmax": 14.3592,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 11.857560000000003,
+      "n5_range_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_same_xlsx_window": 11.878399415441342,
+      "n5_window_indices": [
+        50,
+        5049
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15,
+      "xlsx_specific_bark": 2.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.00612537109788569,
+        "rms": 0.0024794808869266975,
+        "max_rel_nonzero": 0.443718253158276,
+        "worst_index": [
+          5044
+        ],
+        "got_at_worst": 4.548025371097886,
+        "ref_at_worst": 4.5419,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 7,
+      "field": "free",
+      "input_samples": 508800,
+      "rust_frames": 5300,
+      "c_frames": 5300,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 3.6415315207705135e-14,
+        "rms": 2.168471668840549e-15,
+        "max_rel_nonzero": 1.5699418595854786e-09,
+        "worst_index": [
+          79,
+          4881
+        ],
+        "got_at_worst": 3.6620607072479547,
+        "ref_at_worst": 3.662060707247991,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.000331132623051289,
+        "rms": 6.303990482669234e-05,
+        "max_rel_nonzero": 0.008597667141941533,
+        "worst_index": [
+          5036
+        ],
+        "got_at_worst": 15.875806950216678,
+        "ref_at_worst": 15.875475817593626,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.00012972224340446203,
+        "rms": 1.6181927497985922e-05,
+        "max_rel_nonzero": 1.0,
+        "worst_index": [
+          98,
+          5044
+        ],
+        "got_at_worst": 3.1197335029374167,
+        "ref_at_worst": 3.119863225180821,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 5300,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.02677238425474293,
+        "rms": 0.009386405532981174,
+        "max_rel_nonzero": 0.029261451818646055,
+        "worst_index": [
+          5045
+        ],
+        "got_at_worst": 15.980172384254743,
+        "ref_at_worst": 15.9534,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.026541116450768953,
+        "rms": 0.009388867139776014,
+        "max_rel_nonzero": 0.020487638777967224,
+        "worst_index": [
+          5045
+        ],
+        "got_at_worst": 15.97994111645077,
+        "ref_at_worst": 15.9534,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "nmax": 15.980172384254743,
+      "xlsx_nmax": 15.9534,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 13.378865000000001,
+      "n5_range_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_same_xlsx_window": 13.39997210174736,
+      "n5_window_indices": [
+        50,
+        5049
+      ],
+      "xlsx_bound_recalculation_max_abs": 3.552713678800501e-15,
+      "xlsx_specific_bark": 8.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.0053782388768519596,
+        "rms": 0.0021668267660974027,
+        "max_rel_nonzero": 0.45480415948972114,
+        "worst_index": [
+          5043
+        ],
+        "got_at_worst": 4.027378238876852,
+        "ref_at_worst": 4.022,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 8,
+      "field": "free",
+      "input_samples": 508800,
+      "rust_frames": 5300,
+      "c_frames": 5300,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 7.993605777301127e-15,
+        "rms": 4.081379952782618e-16,
+        "max_rel_nonzero": 1.1919030948879773e-11,
+        "worst_index": [
+          182,
+          5011
+        ],
+        "got_at_worst": 5.178785655531722,
+        "ref_at_worst": 5.17878565553173,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.0009647141421069705,
+        "rms": 0.00013032262986958825,
+        "max_rel_nonzero": 0.015114035020217357,
+        "worst_index": [
+          4782
+        ],
+        "got_at_worst": 20.063069523792542,
+        "ref_at_worst": 20.06403423793465,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.00017033875572458612,
+        "rms": 2.1579425082556565e-05,
+        "max_rel_nonzero": 1.0,
+        "worst_index": [
+          181,
+          5044
+        ],
+        "got_at_worst": 5.4557146531364555,
+        "ref_at_worst": 5.45588499189218,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 5300,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.03828982919538504,
+        "rms": 0.013957786768124843,
+        "max_rel_nonzero": 0.05892280365758372,
+        "worst_index": [
+          5044
+        ],
+        "got_at_worst": 23.988389829195384,
+        "ref_at_worst": 23.9501,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.03803275426726671,
+        "rms": 0.013965844132787147,
+        "max_rel_nonzero": 0.04315649978821724,
+        "worst_index": [
+          5043
+        ],
+        "got_at_worst": 23.971332754267266,
+        "ref_at_worst": 23.9333,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "nmax": 23.988389829195384,
+      "xlsx_nmax": 23.9501,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 20.261875,
+      "n5_range_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_same_xlsx_window": 20.29260186145463,
+      "n5_window_indices": [
+        50,
+        5049
+      ],
+      "xlsx_bound_recalculation_max_abs": 3.552713678800501e-15,
+      "xlsx_specific_bark": 17.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.007426196837290178,
+        "rms": 0.0030080942747656293,
+        "max_rel_nonzero": 0.4975896346409567,
+        "worst_index": [
+          5037
+        ],
+        "got_at_worst": 5.60312619683729,
+        "ref_at_worst": 5.5957,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 9,
+      "field": "free",
+      "input_samples": 508800,
+      "rust_frames": 5300,
+      "c_frames": 5300,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 2.4924506902834764e-13,
+        "rms": 1.0645541163880857e-14,
+        "max_rel_nonzero": 2.889974581309023e-11,
+        "worst_index": [
+          0,
+          4239
+        ],
+        "got_at_worst": 0.5024689372239662,
+        "ref_at_worst": 0.5024689372242155,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.003491146440872228,
+        "rms": 0.00039177364024998106,
+        "max_rel_nonzero": 0.06132108856064114,
+        "worst_index": [
+          2861
+        ],
+        "got_at_worst": 6.560736359480236,
+        "ref_at_worst": 6.564227505921108,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.059327382414680496,
+        "rms": 0.0004538988519948196,
+        "max_rel_nonzero": 0.28543325105797906,
+        "worst_index": [
+          18,
+          4847
+        ],
+        "got_at_worst": 1.3001811160175452,
+        "ref_at_worst": 1.3595084984322257,
+        "strict_fail": 0,
+        "count": 1272000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 5300,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.04169110608625104,
+        "rms": 0.01628793308812374,
+        "max_rel_nonzero": 0.19541224185583408,
+        "worst_index": [
+          5046
+        ],
+        "got_at_worst": 29.16079110608625,
+        "ref_at_worst": 29.1191,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.04130320791109554,
+        "rms": 0.016396644200835468,
+        "max_rel_nonzero": 0.1263436246961292,
+        "worst_index": [
+          5026
+        ],
+        "got_at_worst": 29.337003207911096,
+        "ref_at_worst": 29.2957,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "nmax": 29.354660929981,
+      "xlsx_nmax": 29.3141,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 24.221580000000007,
+      "n5_range_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_same_xlsx_window": 24.25694326088345,
+      "n5_window_indices": [
+        50,
+        5049
+      ],
+      "xlsx_bound_recalculation_max_abs": 3.552713678800501e-15,
+      "xlsx_specific_bark": 17.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.0028847677728229826,
+        "rms": 0.000884288040894764,
+        "max_rel_nonzero": 0.4492768407071242,
+        "worst_index": [
+          5036
+        ],
+        "got_at_worst": 2.1540847677728228,
+        "ref_at_worst": 2.1512,
+        "strict_fail": 0,
+        "count": 5300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 10,
+      "field": "free",
+      "input_samples": 48000,
+      "rust_frames": 500,
+      "c_frames": 500,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.3766765505351941e-14,
+        "rms": 5.020644039163522e-16,
+        "max_rel_nonzero": 2.8009009994432853e-12,
+        "worst_index": [
+          54,
+          16
+        ],
+        "got_at_worst": 0.2590028830315859,
+        "ref_at_worst": 0.2590028830315997,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.00016067969656793912,
+        "rms": 2.598011089778473e-05,
+        "max_rel_nonzero": 0.000908844646929194,
+        "worst_index": [
+          77
+        ],
+        "got_at_worst": 0.19469971902668978,
+        "ref_at_worst": 0.19453903933012184,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.0039162644971481725,
+        "rms": 1.1660906949828758e-05,
+        "max_rel_nonzero": 0.03927488376599935,
+        "worst_index": [
+          93,
+          7
+        ],
+        "got_at_worst": 0.09579795796831768,
+        "ref_at_worst": 0.09971422246546585,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 500,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.0065134946688329975,
+        "rms": 0.0008441660781839224,
+        "max_rel_nonzero": 0.4960950642454582,
+        "worst_index": [
+          14
+        ],
+        "got_at_worst": 4.306313494668833,
+        "ref_at_worst": 4.2998,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.00654462729734373,
+        "rms": 0.0008455640498423057,
+        "max_rel_nonzero": 0.49595690850213353,
+        "worst_index": [
+          14
+        ],
+        "got_at_worst": 4.306344627297344,
+        "ref_at_worst": 4.2998,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "nmax": 4.306313494668833,
+      "xlsx_nmax": 4.2998,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 0.7448749999999985,
+      "n5_range_formula": "=PERCENTILE(B11:B510,0.95)",
+      "n5_same_xlsx_window": 0.7460756617784261,
+      "n5_window_indices": [
+        0,
+        499
+      ],
+      "xlsx_bound_recalculation_max_abs": 4.440892098500626e-16,
+      "xlsx_specific_bark": 8.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.00310638646555228,
+        "rms": 0.0003331055917352267,
+        "max_rel_nonzero": 0.48850078609953484,
+        "worst_index": [
+          12
+        ],
+        "got_at_worst": 2.2918063864655522,
+        "ref_at_worst": 2.2887,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 11,
+      "field": "free",
+      "input_samples": 48000,
+      "rust_frames": 500,
+      "c_frames": 500,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 3.7547275612889036e-08,
+        "rms": 8.843497388805999e-10,
+        "max_rel_nonzero": 0.001680938786074324,
+        "worst_index": [
+          163,
+          35
+        ],
+        "got_at_worst": 0.003006024029382784,
+        "ref_at_worst": 0.003005986482107171,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.0001916193803506161,
+        "rms": 3.3538984178215185e-05,
+        "max_rel_nonzero": 0.000908844646929194,
+        "worst_index": [
+          32
+        ],
+        "got_at_worst": 5.92092997677932,
+        "ref_at_worst": 5.920738357398969,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.0039162644971481725,
+        "rms": 1.2508092648460724e-05,
+        "max_rel_nonzero": 0.1160919739357197,
+        "worst_index": [
+          93,
+          7
+        ],
+        "got_at_worst": 0.09579795796831768,
+        "ref_at_worst": 0.09971422246546585,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 500,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.009080637894873789,
+        "rms": 0.002017326085155741,
+        "max_rel_nonzero": 0.49835338298351006,
+        "worst_index": [
+          34
+        ],
+        "got_at_worst": 5.9836806378948735,
+        "ref_at_worst": 5.9746,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.009008225232512324,
+        "rms": 0.0020016183652479327,
+        "max_rel_nonzero": 0.49829513919936835,
+        "worst_index": [
+          34
+        ],
+        "got_at_worst": 5.983608225232512,
+        "ref_at_worst": 5.9746,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "nmax": 5.9836806378948735,
+      "xlsx_nmax": 5.9746,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 4.160264999999992,
+      "n5_range_formula": "=PERCENTILE(B11:B510,0.95)",
+      "n5_same_xlsx_window": 4.166525536516466,
+      "n5_window_indices": [
+        0,
+        499
+      ],
+      "xlsx_bound_recalculation_max_abs": 8.881784197001252e-16,
+      "xlsx_specific_bark": 8.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.0031182257014776837,
+        "rms": 0.0006984667272238721,
+        "max_rel_nonzero": 0.43988179559524254,
+        "worst_index": [
+          12
+        ],
+        "got_at_worst": 2.2918182257014776,
+        "ref_at_worst": 2.2887,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 12,
+      "field": "free",
+      "input_samples": 48000,
+      "rust_frames": 500,
+      "c_frames": 500,
+      "scalar_avx2_n": {
+        "max_abs": 0.00033221441246844563,
+        "rms": 4.762447025403159e-05,
+        "max_rel_nonzero": 6.0319398936509244e-05,
+        "worst_index": [
+          264
+        ],
+        "got_at_worst": 6.399936478839507,
+        "ref_at_worst": 6.4002686932519754,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 0.0006564320882619379,
+        "rms": 1.4123906982956762e-05,
+        "max_rel_nonzero": 0.05044644590849921,
+        "worst_index": [
+          66,
+          262
+        ],
+        "got_at_worst": 0.5994456216389324,
+        "ref_at_worst": 0.6001020537271944,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": false,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.0003804652951622245,
+        "rms": 0.00024293487714597444,
+        "max_rel_nonzero": 0.000908844646929194,
+        "worst_index": [
+          256
+        ],
+        "got_at_worst": 8.089390979565456,
+        "ref_at_worst": 8.089010514270294,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.0039162644971481725,
+        "rms": 2.4448611562911932e-05,
+        "max_rel_nonzero": 0.041558514351762756,
+        "worst_index": [
+          93,
+          7
+        ],
+        "got_at_worst": 0.09579795796831768,
+        "ref_at_worst": 0.09971422246546585,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 500,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.01237874369226688,
+        "rms": 0.008338025397594762,
+        "max_rel_nonzero": 0.008854474113512738,
+        "worst_index": [
+          254
+        ],
+        "got_at_worst": 8.089178743692267,
+        "ref_at_worst": 8.0768,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.012039215948510318,
+        "rms": 0.008107726693028453,
+        "max_rel_nonzero": 0.008922774757172203,
+        "worst_index": [
+          259
+        ],
+        "got_at_worst": 8.03343921594851,
+        "ref_at_worst": 8.0214,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "nmax": 8.089492635295088,
+      "xlsx_nmax": 8.0772,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 7.6700245,
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15,
+      "xlsx_specific_bark": 8.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.0031182257014776837,
+        "rms": 0.002154390795259623,
+        "max_rel_nonzero": 0.4594449810957543,
+        "worst_index": [
+          12
+        ],
+        "got_at_worst": 2.2918182257014776,
+        "ref_at_worst": 2.2887,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 13,
+      "field": "free",
+      "input_samples": 48000,
+      "rust_frames": 500,
+      "c_frames": 500,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.7238966310006987e-08,
+        "rms": 3.1429206938636824e-10,
+        "max_rel_nonzero": 4.5415371628472997e-07,
+        "worst_index": [
+          104,
+          72
+        ],
+        "got_at_worst": 0.46080422051078646,
+        "ref_at_worst": 0.46080420327182015,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.000773505048908607,
+        "rms": 9.08128691764964e-05,
+        "max_rel_nonzero": 0.006318883582103838,
+        "worst_index": [
+          60
+        ],
+        "got_at_worst": 3.3791129004317355,
+        "ref_at_worst": 3.379886405480644,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.001581857768601591,
+        "rms": 7.696855170187558e-06,
+        "max_rel_nonzero": 0.028895174877222766,
+        "worst_index": [
+          103,
+          73
+        ],
+        "got_at_worst": 0.4017016241321255,
+        "ref_at_worst": 0.4032834819007271,
+        "strict_fail": 0,
+        "count": 120000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 500,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.016229956779826082,
+        "rms": 0.0027637493291201498,
+        "max_rel_nonzero": 0.48505555063317285,
+        "worst_index": [
+          67
+        ],
+        "got_at_worst": 9.763929956779826,
+        "ref_at_worst": 9.7477,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.01634640180402336,
+        "rms": 0.0027332512615645408,
+        "max_rel_nonzero": 0.4850048317762653,
+        "worst_index": [
+          68
+        ],
+        "got_at_worst": 9.991946401804023,
+        "ref_at_worst": 9.9756,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "nmax": 9.991814234111226,
+      "xlsx_nmax": 9.9756,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 3.2393669999999988,
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15,
+      "xlsx_specific_bark": 8.5,
+      "rust_vs_xlsx_spec": {
+        "max_abs": 0.0054845363489706145,
+        "rms": 0.0008039932835793103,
+        "max_rel_nonzero": 0.45351647037866616,
+        "worst_index": [
+          66
+        ],
+        "got_at_worst": 4.134884536348971,
+        "ref_at_worst": 4.1294,
+        "strict_fail": 0,
+        "count": 500,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "signal": 14,
+      "field": "free",
+      "input_samples": 631417,
+      "rust_frames": 6578,
+      "c_frames": 6577,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 6578,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.4619416788264061e-12,
+        "rms": 7.735835452130942e-14,
+        "max_rel_nonzero": 3.482545442803164e-10,
+        "worst_index": [
+          9,
+          2789
+        ],
+        "got_at_worst": 5.918844513118036,
+        "ref_at_worst": 5.918844513116574,
+        "strict_fail": 0,
+        "count": 1578720,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.015084708914942624,
+        "rms": 0.0017265609376725616,
+        "max_rel_nonzero": 0.006885662920289116,
+        "worst_index": [
+          4268
+        ],
+        "got_at_worst": 10.877178618179231,
+        "ref_at_worst": 10.892263327094174,
+        "strict_fail": 0,
+        "count": 6577,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.05082317485578258,
+        "rms": 0.0005866613303783072,
+        "max_rel_nonzero": 1.0,
+        "worst_index": [
+          9,
+          5905
+        ],
+        "got_at_worst": 0.7656447192018385,
+        "ref_at_worst": 0.8164678940576211,
+        "strict_fail": 0,
+        "count": 1578480,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 6577,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.06790319629245722,
+        "rms": 0.01843290908114565,
+        "max_rel_nonzero": 0.00832650108498908,
+        "worst_index": [
+          1787
+        ],
+        "got_at_worst": 13.327003196292457,
+        "ref_at_worst": 13.2591,
+        "strict_fail": 0,
+        "count": 6577,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.069918347808402,
+        "rms": 0.01935077080558941,
+        "max_rel_nonzero": 0.008625498167018273,
+        "worst_index": [
+          1787
+        ],
+        "got_at_worst": 13.329018347808402,
+        "ref_at_worst": 13.2591,
+        "strict_fail": 0,
+        "count": 6577,
+        "nonfinite": 0
+      },
+      "nmax": 22.67903729078114,
+      "xlsx_nmax": 22.6399,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 18.08146,
+      "n5_range_formula": "=PERCENTILE(B61:B6337,0.95)",
+      "n5_same_xlsx_window": 18.109988929868635,
+      "n5_window_indices": [
+        50,
+        6326
+      ],
+      "xlsx_bound_recalculation_max_abs": 3.552713678800501e-15
+    },
+    {
+      "signal": 15,
+      "field": "diffuse",
+      "input_samples": 553800,
+      "rust_frames": 5769,
+      "c_frames": 5768,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 5769,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.269429006356404e-12,
+        "rms": 6.671213829805488e-14,
+        "max_rel_nonzero": 2.0270783142496985e-08,
+        "worst_index": [
+          14,
+          5265
+        ],
+        "got_at_worst": 0.6085960442871836,
+        "ref_at_worst": 0.6085960442859142,
+        "strict_fail": 0,
+        "count": 1384560,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.023433195465504042,
+        "rms": 0.0012320378593771106,
+        "max_rel_nonzero": 0.002718537377441653,
+        "worst_index": [
+          4803
+        ],
+        "got_at_worst": 8.643213692122288,
+        "ref_at_worst": 8.619780496656784,
+        "strict_fail": 0,
+        "count": 5768,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.056789673002594965,
+        "rms": 0.000687115357071274,
+        "max_rel_nonzero": 0.5416035924517942,
+        "worst_index": [
+          13,
+          2925
+        ],
+        "got_at_worst": 0.7626420937639524,
+        "ref_at_worst": 0.8194317667665474,
+        "strict_fail": 0,
+        "count": 1384320,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 5768,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.037813692122288245,
+        "rms": 0.013018403014303154,
+        "max_rel_nonzero": 0.010258125838607532,
+        "worst_index": [
+          4803
+        ],
+        "got_at_worst": 8.643213692122288,
+        "ref_at_worst": 8.6054,
+        "strict_fail": 0,
+        "count": 5768,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.01753125406114897,
+        "rms": 0.01337731011575096,
+        "max_rel_nonzero": 0.011610165274699165,
+        "worst_index": [
+          3731
+        ],
+        "got_at_worst": 7.300331254061149,
+        "ref_at_worst": 7.2828,
+        "strict_fail": 0,
+        "count": 5768,
+        "nonfinite": 0
+      },
+      "nmax": 9.621221918054022,
+      "xlsx_nmax": 9.6059,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 8.755009999999999,
+      "n5_range_formula": "=PERCENTILE(B61:B5528,0.95)",
+      "n5_same_xlsx_window": 8.769249256390125,
+      "n5_window_indices": [
+        50,
+        5517
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 16,
+      "field": "free",
+      "input_samples": 197270,
+      "rust_frames": 2055,
+      "c_frames": 2054,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 2055,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.1723955140041653e-13,
+        "rms": 1.1762159623594906e-14,
+        "max_rel_nonzero": 1.5572206317395175e-12,
+        "worst_index": [
+          18,
+          1660
+        ],
+        "got_at_worst": 1.2964815618307692,
+        "ref_at_worst": 1.296481561830652,
+        "strict_fail": 0,
+        "count": 493200,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.00338906330132005,
+        "rms": 0.00044020142276106697,
+        "max_rel_nonzero": 0.0022842836240763685,
+        "worst_index": [
+          1716
+        ],
+        "got_at_worst": 35.33182649147575,
+        "ref_at_worst": 35.32843742817443,
+        "strict_fail": 0,
+        "count": 2054,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.07607444672469832,
+        "rms": 0.0009739793064589814,
+        "max_rel_nonzero": 0.057281661124654694,
+        "worst_index": [
+          125,
+          796
+        ],
+        "got_at_worst": 2.0482536784661987,
+        "ref_at_worst": 2.124328125190897,
+        "strict_fail": 0,
+        "count": 492960,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 2054,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.05437555566104635,
+        "rms": 0.045557600568645926,
+        "max_rel_nonzero": 0.0036719108577245863,
+        "worst_index": [
+          669
+        ],
+        "got_at_worst": 38.249775555661046,
+        "ref_at_worst": 38.1954,
+        "strict_fail": 0,
+        "count": 2054,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.05395990836989739,
+        "rms": 0.045598964268399184,
+        "max_rel_nonzero": 0.003697404530991514,
+        "worst_index": [
+          670
+        ],
+        "got_at_worst": 38.590259908369895,
+        "ref_at_worst": 38.5363,
+        "strict_fail": 0,
+        "count": 2054,
+        "nonfinite": 0
+      },
+      "nmax": 38.590539341017696,
+      "xlsx_nmax": 38.5363,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 36.887570000000004,
+      "n5_range_formula": "=PERCENTILE(B61:B1814,0.95)",
+      "n5_same_xlsx_window": 36.9386959859171,
+      "n5_window_indices": [
+        50,
+        1803
+      ],
+      "xlsx_bound_recalculation_max_abs": 7.105427357601002e-15
+    },
+    {
+      "signal": 17,
+      "field": "free",
+      "input_samples": 139639,
+      "rust_frames": 1455,
+      "c_frames": 1454,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1455,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.0719203302755886e-13,
+        "rms": 7.038876457817149e-15,
+        "max_rel_nonzero": 3.540793552810287e-12,
+        "worst_index": [
+          0,
+          312
+        ],
+        "got_at_worst": 0.1859105261786927,
+        "ref_at_worst": 0.18591052617879988,
+        "strict_fail": 0,
+        "count": 349200,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.0017819066884463552,
+        "rms": 0.00017621202246698384,
+        "max_rel_nonzero": 0.06746005599812584,
+        "worst_index": [
+          1131
+        ],
+        "got_at_worst": 5.319176098877467,
+        "ref_at_worst": 5.320958005565913,
+        "strict_fail": 0,
+        "count": 1454,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.035822146342784245,
+        "rms": 0.00021687327424020766,
+        "max_rel_nonzero": 0.4194764274605044,
+        "worst_index": [
+          81,
+          273
+        ],
+        "got_at_worst": 0.7791920610164226,
+        "ref_at_worst": 0.8150142073592068,
+        "strict_fail": 0,
+        "count": 348960,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1454,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.017402436543521915,
+        "rms": 0.007147791475408668,
+        "max_rel_nonzero": 0.13387652727476756,
+        "worst_index": [
+          1089
+        ],
+        "got_at_worst": 10.865502436543522,
+        "ref_at_worst": 10.8481,
+        "strict_fail": 0,
+        "count": 1454,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.017233122526230105,
+        "rms": 0.007232446642233128,
+        "max_rel_nonzero": 0.16631032181179062,
+        "worst_index": [
+          1138
+        ],
+        "got_at_worst": 11.22773312252623,
+        "ref_at_worst": 11.2105,
+        "strict_fail": 0,
+        "count": 1454,
+        "nonfinite": 0
+      },
+      "nmax": 11.227317230598734,
+      "xlsx_nmax": 11.2105,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 9.722019999999995,
+      "n5_range_formula": "=PERCENTILE(B61:B1214,0.95)",
+      "n5_same_xlsx_window": 9.737114356460017,
+      "n5_window_indices": [
+        50,
+        1203
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 18,
+      "field": "free",
+      "input_samples": 103969,
+      "rust_frames": 1084,
+      "c_frames": 1083,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1084,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 9.126033262418787e-14,
+        "rms": 5.168477310378818e-15,
+        "max_rel_nonzero": 1.5137536571089373e-10,
+        "worst_index": [
+          28,
+          233
+        ],
+        "got_at_worst": 1.3710434072301663,
+        "ref_at_worst": 1.3710434072302575,
+        "strict_fail": 0,
+        "count": 260160,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.0030368413726424848,
+        "rms": 0.00043566082560874726,
+        "max_rel_nonzero": 0.001834725143247603,
+        "worst_index": [
+          685
+        ],
+        "got_at_worst": 8.32303286890089,
+        "ref_at_worst": 8.326069710273533,
+        "strict_fail": 0,
+        "count": 1083,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.0437728528172292,
+        "rms": 0.0003678456296267839,
+        "max_rel_nonzero": 0.9357331862766605,
+        "worst_index": [
+          36,
+          391
+        ],
+        "got_at_worst": 0.7701065448212966,
+        "ref_at_worst": 0.8138793976385258,
+        "strict_fail": 0,
+        "count": 259920,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1083,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.01902944917632432,
+        "rms": 0.009378787792510479,
+        "max_rel_nonzero": 0.040704102985346075,
+        "worst_index": [
+          373
+        ],
+        "got_at_worst": 12.634229449176324,
+        "ref_at_worst": 12.6152,
+        "strict_fail": 0,
+        "count": 1083,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.01887105212181517,
+        "rms": 0.009605236211068529,
+        "max_rel_nonzero": 0.040939082606932395,
+        "worst_index": [
+          372
+        ],
+        "got_at_worst": 12.665671052121816,
+        "ref_at_worst": 12.6468,
+        "strict_fail": 0,
+        "count": 1083,
+        "nonfinite": 0
+      },
+      "nmax": 12.665082658660838,
+      "xlsx_nmax": 12.6468,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 10.3915,
+      "n5_range_formula": "=PERCENTILE(B61:B1093,0.95)",
+      "n5_same_xlsx_window": 10.406529517238173,
+      "n5_window_indices": [
+        50,
+        1082
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 19,
+      "field": "free",
+      "input_samples": 124800,
+      "rust_frames": 1300,
+      "c_frames": 1300,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.688649220454863e-13,
+        "rms": 1.3131168787095341e-14,
+        "max_rel_nonzero": 2.201756038718544e-11,
+        "worst_index": [
+          0,
+          937
+        ],
+        "got_at_worst": 0.1914256098455297,
+        "ref_at_worst": 0.19142560984569856,
+        "strict_fail": 0,
+        "count": 312000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.0025870759450397074,
+        "rms": 0.0006739614286210429,
+        "max_rel_nonzero": 0.00047065236922476763,
+        "worst_index": [
+          640
+        ],
+        "got_at_worst": 5.641659531873523,
+        "ref_at_worst": 5.6442466078185625,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.03992122289116973,
+        "rms": 0.00044371130297301734,
+        "max_rel_nonzero": 0.4475908562404835,
+        "worst_index": [
+          29,
+          450
+        ],
+        "got_at_worst": 0.777873787485682,
+        "ref_at_worst": 0.8177950103768518,
+        "strict_fail": 0,
+        "count": 312000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1300,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.0164997792232775,
+        "rms": 0.010001840801753746,
+        "max_rel_nonzero": 0.012921078079035612,
+        "worst_index": [
+          323
+        ],
+        "got_at_worst": 10.898199779223278,
+        "ref_at_worst": 10.8817,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.01694795294808138,
+        "rms": 0.010448940573935249,
+        "max_rel_nonzero": 0.013105528816027744,
+        "worst_index": [
+          323
+        ],
+        "got_at_worst": 10.898647952948082,
+        "ref_at_worst": 10.8817,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "nmax": 10.898199779223278,
+      "xlsx_nmax": 10.8817,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 10.009345,
+      "n5_range_formula": "=PERCENTILE(B61:B1060,0.95)",
+      "n5_same_xlsx_window": 10.024509767910853,
+      "n5_window_indices": [
+        50,
+        1049
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 20,
+      "field": "free",
+      "input_samples": 124800,
+      "rust_frames": 1300,
+      "c_frames": 1300,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 4.823919041996305e-14,
+        "rms": 2.977946658365962e-15,
+        "max_rel_nonzero": 1.6220056527303485e-12,
+        "worst_index": [
+          9,
+          288
+        ],
+        "got_at_worst": 0.3558383924469558,
+        "ref_at_worst": 0.35583839244700405,
+        "strict_fail": 0,
+        "count": 312000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.0013647256782256534,
+        "rms": 0.0001828531324115899,
+        "max_rel_nonzero": 0.0005992209726714921,
+        "worst_index": [
+          365
+        ],
+        "got_at_worst": 9.659713977404934,
+        "ref_at_worst": 9.66107870308316,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.03961730178893097,
+        "rms": 0.0003485976800601159,
+        "max_rel_nonzero": 0.04973043102306293,
+        "worst_index": [
+          218,
+          126
+        ],
+        "got_at_worst": 1.3143092247842079,
+        "ref_at_worst": 1.3539265265731388,
+        "strict_fail": 0,
+        "count": 312000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1300,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.022434705645231645,
+        "rms": 0.013177826712144802,
+        "max_rel_nonzero": 0.006530458025782428,
+        "worst_index": [
+          265
+        ],
+        "got_at_worst": 14.859134705645232,
+        "ref_at_worst": 14.8367,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.022094203478202346,
+        "rms": 0.013251891119758729,
+        "max_rel_nonzero": 0.0066057682812699775,
+        "worst_index": [
+          264
+        ],
+        "got_at_worst": 14.902294203478203,
+        "ref_at_worst": 14.8802,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "nmax": 14.902242457523155,
+      "xlsx_nmax": 14.8802,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 13.092595,
+      "n5_range_formula": "=PERCENTILE(B61:B1060,0.95)",
+      "n5_same_xlsx_window": 13.111563401427668,
+      "n5_window_indices": [
+        50,
+        1049
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 21,
+      "field": "free",
+      "input_samples": 124800,
+      "rust_frames": 1300,
+      "c_frames": 1300,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 3.1336044870045043e-14,
+        "rms": 2.196684971932795e-15,
+        "max_rel_nonzero": 1.4170412016501093e-12,
+        "worst_index": [
+          9,
+          181
+        ],
+        "got_at_worst": 0.1922815878480637,
+        "ref_at_worst": 0.19228158784809504,
+        "strict_fail": 0,
+        "count": 312000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.0006635123432765511,
+        "rms": 7.83433860819802e-05,
+        "max_rel_nonzero": 0.08027182188423393,
+        "worst_index": [
+          618
+        ],
+        "got_at_worst": 8.494195023148041,
+        "ref_at_worst": 8.493531510804765,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.03444123059629822,
+        "rms": 0.000268139973730805,
+        "max_rel_nonzero": 0.09936986496798017,
+        "worst_index": [
+          198,
+          110
+        ],
+        "got_at_worst": 0.7843101743997822,
+        "ref_at_worst": 0.8187514049960805,
+        "strict_fail": 0,
+        "count": 312000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1300,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.015098601018470603,
+        "rms": 0.009933476637970739,
+        "max_rel_nonzero": 0.01061114423080814,
+        "worst_index": [
+          899
+        ],
+        "got_at_worst": 9.73389860101847,
+        "ref_at_worst": 9.7188,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.015084230771869045,
+        "rms": 0.009945288541527807,
+        "max_rel_nonzero": 0.010700686660823149,
+        "worst_index": [
+          899
+        ],
+        "got_at_worst": 9.733884230771869,
+        "ref_at_worst": 9.7188,
+        "strict_fail": 0,
+        "count": 1300,
+        "nonfinite": 0
+      },
+      "nmax": 9.73389860101847,
+      "xlsx_nmax": 9.7188,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 8.999804999999999,
+      "n5_range_formula": "=PERCENTILE(B61:B1060,0.95)",
+      "n5_same_xlsx_window": 9.014038537958589,
+      "n5_window_indices": [
+        50,
+        1049
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 22,
+      "field": "free",
+      "input_samples": 88800,
+      "rust_frames": 925,
+      "c_frames": 925,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 925,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 7.66053886991358e-15,
+        "rms": 3.7961062974109536e-16,
+        "max_rel_nonzero": 4.890909689358837e-11,
+        "worst_index": [
+          79,
+          506
+        ],
+        "got_at_worst": 0.5769334626492088,
+        "ref_at_worst": 0.5769334626492164,
+        "strict_fail": 0,
+        "count": 222000,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": true,
+      "rust_vs_c_n": {
+        "max_abs": 0.00016129700674699654,
+        "rms": 3.992003661524279e-05,
+        "max_rel_nonzero": 0.15790672039929501,
+        "worst_index": [
+          676
+        ],
+        "got_at_worst": 0.29190511393916846,
+        "ref_at_worst": 0.29174381693242146,
+        "strict_fail": 0,
+        "count": 925,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.03774193647141244,
+        "rms": 0.00015362976330896927,
+        "max_rel_nonzero": 0.09174183144678733,
+        "worst_index": [
+          181,
+          307
+        ],
+        "got_at_worst": 0.7798270150025476,
+        "ref_at_worst": 0.81756895147396,
+        "strict_fail": 0,
+        "count": 222000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 925,
+      "xlsx_shape_equal": true,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.013281318356531457,
+        "rms": 0.006239921003830186,
+        "max_rel_nonzero": 0.2197280147278214,
+        "worst_index": [
+          182
+        ],
+        "got_at_worst": 8.919581318356531,
+        "ref_at_worst": 8.9063,
+        "strict_fail": 0,
+        "count": 925,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.01331208055894173,
+        "rms": 0.0062445286755713385,
+        "max_rel_nonzero": 0.21994365281275394,
+        "worst_index": [
+          182
+        ],
+        "got_at_worst": 8.919612080558942,
+        "ref_at_worst": 8.9063,
+        "strict_fail": 0,
+        "count": 925,
+        "nonfinite": 0
+      },
+      "nmax": 8.919581318356531,
+      "xlsx_nmax": 8.9063,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 8.15808,
+      "n5_range_formula": "=PERCENTILE(B61:B1494,0.95)",
+      "n5_same_xlsx_window": 8.170367856815712,
+      "n5_window_indices": [
+        50,
+        1483
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 23,
+      "field": "free",
+      "input_samples": 122401,
+      "rust_frames": 1276,
+      "c_frames": 1275,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1276,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 2.1219137558148304e-14,
+        "rms": 1.990756583339146e-15,
+        "max_rel_nonzero": 5.311346036136122e-13,
+        "worst_index": [
+          9,
+          1027
+        ],
+        "got_at_worst": 0.059850654174742175,
+        "ref_at_worst": 0.059850654174763394,
+        "strict_fail": 0,
+        "count": 306240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.0015480181402631743,
+        "rms": 0.00020443282344753753,
+        "max_rel_nonzero": 0.0009430991336949789,
+        "worst_index": [
+          798
+        ],
+        "got_at_worst": 6.210922215192219,
+        "ref_at_worst": 6.212470233332482,
+        "strict_fail": 0,
+        "count": 1275,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.03508193084449651,
+        "rms": 0.00029969622529926564,
+        "max_rel_nonzero": 1.0,
+        "worst_index": [
+          198,
+          899
+        ],
+        "got_at_worst": 0.7805261186733446,
+        "ref_at_worst": 0.8156080495178412,
+        "strict_fail": 0,
+        "count": 306000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1275,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.01707751969674831,
+        "rms": 0.009924384586589745,
+        "max_rel_nonzero": 0.010668005643681033,
+        "worst_index": [
+          445
+        ],
+        "got_at_worst": 11.201777519696748,
+        "ref_at_worst": 11.1847,
+        "strict_fail": 0,
+        "count": 1275,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.017071895179775254,
+        "rms": 0.010012603279647736,
+        "max_rel_nonzero": 0.01078874722680035,
+        "worst_index": [
+          445
+        ],
+        "got_at_worst": 11.201771895179775,
+        "ref_at_worst": 11.1847,
+        "strict_fail": 0,
+        "count": 1275,
+        "nonfinite": 0
+      },
+      "nmax": 11.202743497736112,
+      "xlsx_nmax": 11.1858,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 10.42144,
+      "n5_range_formula": "=PERCENTILE(B61:B1035,0.95)",
+      "n5_same_xlsx_window": 10.437438464043344,
+      "n5_window_indices": [
+        50,
+        1024
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 24,
+      "field": "free",
+      "input_samples": 115202,
+      "rust_frames": 1201,
+      "c_frames": 1200,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1201,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 2.6069424396979457e-14,
+        "rms": 2.3506091059380518e-15,
+        "max_rel_nonzero": 1.6142857734950236e-11,
+        "worst_index": [
+          9,
+          468
+        ],
+        "got_at_worst": 0.048792872739723214,
+        "ref_at_worst": 0.048792872739749284,
+        "strict_fail": 0,
+        "count": 288240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.003486368354253422,
+        "rms": 0.0008507075176289102,
+        "max_rel_nonzero": 0.012333081919035559,
+        "worst_index": [
+          544
+        ],
+        "got_at_worst": 7.067863923559674,
+        "ref_at_worst": 7.0713502919139275,
+        "strict_fail": 0,
+        "count": 1200,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.03485164720526113,
+        "rms": 0.0004330954718570593,
+        "max_rel_nonzero": 0.247469668698942,
+        "worst_index": [
+          108,
+          238
+        ],
+        "got_at_worst": 0.784187282881864,
+        "ref_at_worst": 0.8190389300871251,
+        "strict_fail": 0,
+        "count": 288000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1200,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.014048926499224734,
+        "rms": 0.007900996181222978,
+        "max_rel_nonzero": 0.032498105956763924,
+        "worst_index": [
+          265
+        ],
+        "got_at_worst": 9.003248926499225,
+        "ref_at_worst": 8.9892,
+        "strict_fail": 0,
+        "count": 1200,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.014320641785459998,
+        "rms": 0.008505183541515315,
+        "max_rel_nonzero": 0.03222636198601965,
+        "worst_index": [
+          324
+        ],
+        "got_at_worst": 9.28942064178546,
+        "ref_at_worst": 9.2751,
+        "strict_fail": 0,
+        "count": 1200,
+        "nonfinite": 0
+      },
+      "nmax": 9.289042535988,
+      "xlsx_nmax": 9.2751,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 8.518889999999999,
+      "n5_range_formula": "=PERCENTILE(B61:B4492,0.95)",
+      "n5_same_xlsx_window": 8.531256816888884,
+      "n5_window_indices": [
+        50,
+        4481
+      ],
+      "xlsx_bound_recalculation_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "signal": 25,
+      "field": "free",
+      "input_samples": 122401,
+      "rust_frames": 1276,
+      "c_frames": 1275,
+      "scalar_avx2_n": {
+        "max_abs": 0.0,
+        "rms": 0.0,
+        "max_rel_nonzero": 0.0,
+        "worst_index": [
+          0
+        ],
+        "got_at_worst": 0.0,
+        "ref_at_worst": 0.0,
+        "strict_fail": 0,
+        "count": 1276,
+        "nonfinite": 0
+      },
+      "scalar_avx2_spec": {
+        "max_abs": 1.0269562977782698e-14,
+        "rms": 6.799729713977629e-16,
+        "max_rel_nonzero": 3.0816563342579273e-12,
+        "worst_index": [
+          35,
+          1006
+        ],
+        "got_at_worst": 0.17896068863091202,
+        "ref_at_worst": 0.17896068863090175,
+        "strict_fail": 0,
+        "count": 306240,
+        "nonfinite": 0
+      },
+      "scalar_avx2_n_bitwise": true,
+      "scalar_avx2_spec_bitwise": false,
+      "c_shape_equal": false,
+      "rust_vs_c_n": {
+        "max_abs": 0.0006434225633227264,
+        "rms": 5.377781812088593e-05,
+        "max_rel_nonzero": 0.06829774750574971,
+        "worst_index": [
+          361
+        ],
+        "got_at_worst": 2.4000307546780975,
+        "ref_at_worst": 2.3993873321147747,
+        "strict_fail": 0,
+        "count": 1275,
+        "nonfinite": 0
+      },
+      "rust_vs_c_spec": {
+        "max_abs": 0.02639265176253769,
+        "rms": 0.00014661322413840928,
+        "max_rel_nonzero": 0.2598254449176196,
+        "worst_index": [
+          152,
+          198
+        ],
+        "got_at_worst": 0.7831234070213142,
+        "ref_at_worst": 0.8095160587838519,
+        "strict_fail": 0,
+        "count": 306000,
+        "nonfinite": 0
+      },
+      "rust_vs_c_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "rust_vs_c_spec_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "xlsx_frames": 1275,
+      "xlsx_shape_equal": false,
+      "time_max_abs_s": 0.0,
+      "rust_vs_xlsx_n": {
+        "max_abs": 0.011275613903412918,
+        "rms": 0.005178596988901282,
+        "max_rel_nonzero": 0.14834729712159336,
+        "worst_index": [
+          202
+        ],
+        "got_at_worst": 7.2267756139034125,
+        "ref_at_worst": 7.2155,
+        "strict_fail": 0,
+        "count": 1275,
+        "nonfinite": 0
+      },
+      "rust_vs_xlsx_n_envelope": {
+        "strict_fail": 0,
+        "relaxed_fail": 0,
+        "max_series_exception_fraction": 0.0,
+        "passed": true
+      },
+      "c_vs_xlsx_n": {
+        "max_abs": 0.011324009635965027,
+        "rms": 0.005179479959112476,
+        "max_rel_nonzero": 0.2325260500845253,
+        "worst_index": [
+          251
+        ],
+        "got_at_worst": 7.270624009635965,
+        "ref_at_worst": 7.2593,
+        "strict_fail": 0,
+        "count": 1275,
+        "nonfinite": 0
+      },
+      "nmax": 7.270568967235313,
+      "xlsx_nmax": 7.2593,
+      "n5_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "xlsx_n5": 5.761419999999999,
+      "n5_range_formula": "=PERCENTILE(B61:B1035,0.95)",
+      "n5_same_xlsx_window": 5.770693102880683,
+      "n5_window_indices": [
+        50,
+        1024
+      ],
+      "xlsx_bound_recalculation_max_abs": 8.881784197001252e-16
+    }
+  ]
+}

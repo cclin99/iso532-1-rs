@@ -1,0 +1,13 @@
+{
+  "tests": {
+    "passed": 100,
+    "failed": 0,
+    "ignored": 3
+  },
+  "judgments": 84,
+  "annex_strict_fail": 0,
+  "baseline_changed": 0,
+  "baseline_equal": 188,
+  "shapes": 8,
+  "archive_matches": true
+}

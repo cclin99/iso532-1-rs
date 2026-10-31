@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\f02_independent.py", line 43, in <module>
+    old=Path(os.environ.get('ISO532_F02_PRIOR',str(R.parent/'reverify-3dc420c-frozen')))/'work/probe-target/release/iso532-independent-probe.exe';od=d/'old';od.mkdir()
+             ^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'environ'

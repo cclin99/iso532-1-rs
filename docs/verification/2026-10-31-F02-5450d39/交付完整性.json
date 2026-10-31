@@ -1,0 +1,640 @@
+{
+  "round": "F-02 independent verification",
+  "tested_commit": "5450d3908cd92f8c17e80133201f0b313c9eb646",
+  "project_report_directory": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39",
+  "original_reports_preserved": true,
+  "source_code_modified": false,
+  "copied_files": [
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證報告.md",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證報告.md",
+      "sha256": "5745925a95c2170a2b6973fe0c1ac56320c0d89a5d059b5518be589a56109d33",
+      "bytes": 13172,
+      "sha256_redacted": "9b919ca4e5d8a0b8cd874406320c17d913ca42e9e036bc5817557be706eafc45",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\AnnexB深入分析.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\AnnexB深入分析.json",
+      "sha256": "1c0dfc94ca8fcefdfbb0e4737901c1cab229056d6df7b9382270708d7861a3c5",
+      "bytes": 161934,
+      "sha256_redacted": "2cc42fee39a5aec8b90bc7147da3b4e81203b3eed4496c490494f25cf82e66d6",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\audit-env.txt",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\audit-env.txt",
+      "sha256": "012d840265956bb3e2eda0fb9f4a184c5e45722ac23fed0564b5f01f14a11e32",
+      "bytes": 81,
+      "sha256_redacted": "012d840265956bb3e2eda0fb9f4a184c5e45722ac23fed0564b5f01f14a11e32",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\build-deep-audit.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\build-deep-audit.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\build-deep-audit.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\build-deep-audit.log",
+      "sha256": "d0a0f2dea3a4a7899e9d98260e63192908d4a2eb127470f3012443bf7374a0c7",
+      "bytes": 449,
+      "sha256_redacted": "d0a0f2dea3a4a7899e9d98260e63192908d4a2eb127470f3012443bf7374a0c7",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\build-nl.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\build-nl.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\build-nl.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\build-nl.log",
+      "sha256": "3a4f0038f2fccf24622b67383fa9a8afbe0f770ad5d069cadaa4bb6d280daa4b",
+      "bytes": 370,
+      "sha256_redacted": "3a4f0038f2fccf24622b67383fa9a8afbe0f770ad5d069cadaa4bb6d280daa4b",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\build-reference.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\build-reference.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\build-reference.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\build-reference.log",
+      "sha256": "70b72fe80e0e51f4336fb71d0a93ed729cb728164a3e4bb02137a1b61b9978f9",
+      "bytes": 453,
+      "sha256_redacted": "70b72fe80e0e51f4336fb71d0a93ed729cb728164a3e4bb02137a1b61b9978f9",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\cargo-test.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\cargo-test.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\cargo-test.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\cargo-test.log",
+      "sha256": "b3e0c0a331638a22cb0d843005bfb8ed573bc61e117d114ae92d0420c0ddac52",
+      "bytes": 14874,
+      "sha256_redacted": "5f048bdb48acd8939bf7800b3e082de151c9b831d3a811a9ea502518fd6d0f8d",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\cargo-version.txt",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\cargo-version.txt",
+      "sha256": "cc02d909957298c5200ade3b5a5e344fdfd1902695f34a02c3eae183c5aa896a",
+      "bytes": 37,
+      "sha256_redacted": "cc02d909957298c5200ade3b5a5e344fdfd1902695f34a02c3eae183c5aa896a",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\clippy.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\clippy.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\clippy.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\clippy.log",
+      "sha256": "d273586b897f8611105ffa511858cd8610e2834fae9fbc7ee3a3817169a00af8",
+      "bytes": 2478,
+      "sha256_redacted": "40783089555546c5cfde21e7046970f3d1d23536436e10892d88e1f0361d6e15",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\deep-annex.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\deep-annex.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\deep-annex.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\deep-annex.log",
+      "sha256": "8eb4d3ae084b0113b2542826c6d74c74c3df856dcaf38521c45d68b1515488fd",
+      "bytes": 2166,
+      "sha256_redacted": "63087593cd75b0a279088442e0667ec82421a284b8fab42d95b6a3df21d1e2d7",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-bindings.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-bindings.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-bindings.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-bindings.json",
+      "sha256": "fd2288ddadddffd0ea28a6bbac7d2001ca98322578907c09f9ea985b4d721c07",
+      "bytes": 1881,
+      "sha256_redacted": "910dcc2702f91ddcb2e33236248dd63b7e424bd9d320fde7a66f553d6529ab2e",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-bindings.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-bindings.log",
+      "sha256": "fbe27ef4b9fc197978d725394e510da053ec42d529277c28a0bbeab583a49d1f",
+      "bytes": 48,
+      "sha256_redacted": "fbe27ef4b9fc197978d725394e510da053ec42d529277c28a0bbeab583a49d1f",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-independent-portability-error.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-independent-portability-error.log",
+      "sha256": "2c65e868e558d78d48f97bbe11b95a9ccaf8dcb587ef65da91d449cf4140253b",
+      "bytes": 464,
+      "sha256_redacted": "78d7b1a97f96342cd89c874cc8f0b6723f6a5586cc4c95c7acab814e68a78668",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-independent.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-independent.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-independent.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-independent.json",
+      "sha256": "8095a03837c1b25db4c8c7ef70784d4c9d7ace6ccddb489c1243d4a9390417b9",
+      "bytes": 36733,
+      "sha256_redacted": "8095a03837c1b25db4c8c7ef70784d4c9d7ace6ccddb489c1243d4a9390417b9",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-independent.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-independent.log",
+      "sha256": "e83bbe76a8256372c3af828decba47107b9f603ce45df1da0a5bca457e0b863e",
+      "bytes": 88,
+      "sha256_redacted": "e83bbe76a8256372c3af828decba47107b9f603ce45df1da0a5bca457e0b863e",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-summary.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-summary.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-summary.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-summary.json",
+      "sha256": "5ce3d27e702fed53d6aa42e366b418561315fbca3f0d7c9d60cf2f6750c0e5ac",
+      "bytes": 117817,
+      "sha256_redacted": "5ce3d27e702fed53d6aa42e366b418561315fbca3f0d7c9d60cf2f6750c0e5ac",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\f02-summary.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\f02-summary.log",
+      "sha256": "69c63e6f0fbc64bc65eb0aefb6fea308be5f923d85bfb6b09f870cba79d04810",
+      "bytes": 224,
+      "sha256_redacted": "69c63e6f0fbc64bc65eb0aefb6fea308be5f923d85bfb6b09f870cba79d04810",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\ffi-build.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\ffi-build.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\ffi-build.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\ffi-build.log",
+      "sha256": "6efd3a8d4d9d34705b5604d1961257191e2952db5555920e86e6a231c5ea2d39",
+      "bytes": 487,
+      "sha256_redacted": "9915d4c333cb8c53f14db289aac3cab560e937f4c8f59f640ce23cb1933b3c87",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\fmt.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\fmt.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\fmt.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "sha256_redacted": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\golden-hashes.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\golden-hashes.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\golden-hashes.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\golden-hashes.log",
+      "sha256": "1683287c3fd62487f4bf7987acb830db993286d3f4b66eedb61d008808313b8e",
+      "bytes": 1631,
+      "sha256_redacted": "ecdf4e57e9bac21dede7a656a5a943b3db964a87182a9a37b1e72a9e5ae7cf31",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\head.txt",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\head.txt",
+      "sha256": "9407d9b722cd724f59c8c0f9c26a27c2206150e983cdcedd0c84504b87562812",
+      "bytes": 42,
+      "sha256_redacted": "9407d9b722cd724f59c8c0f9c26a27c2206150e983cdcedd0c84504b87562812",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\nl-probe-build.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\nl-probe-build.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\nl-probe-build.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\nl-probe-build.log",
+      "sha256": "010068ba72903f7e21af297daa7334d53631fdf99e11e92502af6591b861d870",
+      "bytes": 233,
+      "sha256_redacted": "1b034ffb18369ce0a87ffa26d7f67d91620a9703cf6f238acbf6c1f694e8607a",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\probe-build.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\probe-build.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\probe-build.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\probe-build.log",
+      "sha256": "acc64297284306be4d845c65c07fa9ca58a7a2f1a5373c3c3a43a933bd58c657",
+      "bytes": 1016,
+      "sha256_redacted": "a511b023f8441ae26d214f962b3b78d725d3fbb754989b502ae4bf53a0cc7cc0",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\python-build.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\python-build.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\python-build.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\python-build.log",
+      "sha256": "4c296f1c3c241686850f79f381830ab122eadb7637153f0df6d8a93a72cc6762",
+      "bytes": 1490,
+      "sha256_redacted": "07acbf7a79cc7acb259c170f30d8261036ceb746ef34e5a82e188b237e6ef1fa",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\python-installed-env.txt",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\python-installed-env.txt",
+      "sha256": "cef78b1ec29aa80076ab72c902aed8a6ad479031ae1f02f14e19c09f6e11f3e3",
+      "bytes": 150,
+      "sha256_redacted": "ed556a4453b3546b661d38496ad8ca3d0301547ea9ddc269974367474ce98d13",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\python-tests.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\python-tests.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\python-tests.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\python-tests.log",
+      "sha256": "e1b8394f6f5fce725b20e03a82dfb624e9d69492cc00408acf11038779d631eb",
+      "bytes": 113,
+      "sha256_redacted": "e1b8394f6f5fce725b20e03a82dfb624e9d69492cc00408acf11038779d631eb",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\reproduce-f02.ps1",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\reproduce-f02.ps1",
+      "sha256": "8833fd5fc071ae51ffdc00e3a9dafb163aa31e6bea3e18012eb88c82c5852d02",
+      "bytes": 3806,
+      "sha256_redacted": "cf16769ab2524b63ead524a87902b62b70be29add0326332d51342ae690c03fe",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\results.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\results.json",
+      "sha256": "aaef20722db23a480e1e58279f217ab63bd2d0f07120279f8466d0c9ed33e278",
+      "bytes": 88964,
+      "sha256_redacted": "aaef20722db23a480e1e58279f217ab63bd2d0f07120279f8466d0c9ed33e278",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\rust-version.txt",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\rust-version.txt",
+      "sha256": "2a9ba90ddc1895fc7b4d94baee548ac7947533b6ef348fc9f010ab5d9f3d7898",
+      "bytes": 201,
+      "sha256_redacted": "2a9ba90ddc1895fc7b4d94baee548ac7947533b6ef348fc9f010ab5d9f3d7898",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-01-specific.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-01-specific.csv",
+      "sha256": "00b3721b0ffed8c057da9e7cb0a9ec4bb16bb5080fb1a94dc10401219ffa0713",
+      "bytes": 11874,
+      "sha256_redacted": "00b3721b0ffed8c057da9e7cb0a9ec4bb16bb5080fb1a94dc10401219ffa0713",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-02-specific.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-02-specific.csv",
+      "sha256": "67ece761df73e051e172c76857d8562a9bceda328199e31e8a24934b7a135ffe",
+      "bytes": 8247,
+      "sha256_redacted": "67ece761df73e051e172c76857d8562a9bceda328199e31e8a24934b7a135ffe",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-03-specific.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-03-specific.csv",
+      "sha256": "fc8674d49e1bab99de55f6e9070ec70fcf48a1eb6297a8e4de80a2a62cfc209d",
+      "bytes": 8272,
+      "sha256_redacted": "fc8674d49e1bab99de55f6e9070ec70fcf48a1eb6297a8e4de80a2a62cfc209d",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-04-specific.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-04-specific.csv",
+      "sha256": "2115a4641596b1d0aff4fc1ebd5d82f42f0211122e664230e2c5cd9d9183c505",
+      "bytes": 7192,
+      "sha256_redacted": "2115a4641596b1d0aff4fc1ebd5d82f42f0211122e664230e2c5cd9d9183c505",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-05-specific.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-05-specific.csv",
+      "sha256": "08c86cee0dc000c6cdb4bf4efb6d85e7293f91f60b8a949488cba596e15670fa",
+      "bytes": 12243,
+      "sha256_redacted": "08c86cee0dc000c6cdb4bf4efb6d85e7293f91f60b8a949488cba596e15670fa",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-06-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-06-total.csv",
+      "sha256": "c0fd3f681fb20ce75230ef78a973ed16ead3e5011fcd4e8aff6cd3f1f64e8f97",
+      "bytes": 512712,
+      "sha256_redacted": "c0fd3f681fb20ce75230ef78a973ed16ead3e5011fcd4e8aff6cd3f1f64e8f97",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-07-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-07-total.csv",
+      "sha256": "1bf3e21a554aa4c8b48828a3289e66636d14b19bd87e283459c276d7da999b9f",
+      "bytes": 511429,
+      "sha256_redacted": "1bf3e21a554aa4c8b48828a3289e66636d14b19bd87e283459c276d7da999b9f",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-08-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-08-total.csv",
+      "sha256": "8b09cc2ca9f8b05925dbc3f27f5c4713851db43bd8c8bd135f5558446dca7365",
+      "bytes": 516184,
+      "sha256_redacted": "8b09cc2ca9f8b05925dbc3f27f5c4713851db43bd8c8bd135f5558446dca7365",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-09-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-09-total.csv",
+      "sha256": "9032122355b08e8ec0eefbe2a9bc31a18834c5ba664cfb64bd3c6ca4373cd578",
+      "bytes": 520077,
+      "sha256_redacted": "9032122355b08e8ec0eefbe2a9bc31a18834c5ba664cfb64bd3c6ca4373cd578",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-10-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-10-total.csv",
+      "sha256": "3a61fe9bd93151fbd39d81da0047ae17ec98c7b8d6758a1228029658fd4dd8dc",
+      "bytes": 42807,
+      "sha256_redacted": "3a61fe9bd93151fbd39d81da0047ae17ec98c7b8d6758a1228029658fd4dd8dc",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-11-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-11-total.csv",
+      "sha256": "1cd237a39d99bc445c0738b13ae691194ed1124622cb755e692feb8c2054c988",
+      "bytes": 43988,
+      "sha256_redacted": "1cd237a39d99bc445c0738b13ae691194ed1124622cb755e692feb8c2054c988",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-12-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-12-total.csv",
+      "sha256": "ebe852e71c85a495320854ad4c462717e1d88aa062b2fbe878d8ca99d334ed67",
+      "bytes": 47303,
+      "sha256_redacted": "ebe852e71c85a495320854ad4c462717e1d88aa062b2fbe878d8ca99d334ed67",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-13-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-13-total.csv",
+      "sha256": "31e8aaf210b99d2b8490a42d669d7ad20d091719fa1fb0c99ec29ff7a60c1cd1",
+      "bytes": 45180,
+      "sha256_redacted": "31e8aaf210b99d2b8490a42d669d7ad20d091719fa1fb0c99ec29ff7a60c1cd1",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-14-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-14-total.csv",
+      "sha256": "d98780bc62cfaedf3c9c96cee55cb32032d7c7bed6bff6d65d3596e589cd40e2",
+      "bytes": 657375,
+      "sha256_redacted": "d98780bc62cfaedf3c9c96cee55cb32032d7c7bed6bff6d65d3596e589cd40e2",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-15-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-15-total.csv",
+      "sha256": "810791e7005a15d2392b3169a3ccb944422d8dba9aeaf90df6e83c4cbd368b1b",
+      "bytes": 556190,
+      "sha256_redacted": "810791e7005a15d2392b3169a3ccb944422d8dba9aeaf90df6e83c4cbd368b1b",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-16-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-16-total.csv",
+      "sha256": "596afa7d1f402c5ef343a79b0df0d4cd82daa2b24bd44f49ede9325dbac6191a",
+      "bytes": 204658,
+      "sha256_redacted": "596afa7d1f402c5ef343a79b0df0d4cd82daa2b24bd44f49ede9325dbac6191a",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-17-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-17-total.csv",
+      "sha256": "ad77b2ee41ca9a1118f098ea1d472d3ef3e1eede5c1d3d239b00010e5f32ea80",
+      "bytes": 134341,
+      "sha256_redacted": "ad77b2ee41ca9a1118f098ea1d472d3ef3e1eede5c1d3d239b00010e5f32ea80",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-18-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-18-total.csv",
+      "sha256": "7e1ebcba76c5d2e90acecb31437757cecc8bffba25233c9601b4ca1e8a475079",
+      "bytes": 101022,
+      "sha256_redacted": "7e1ebcba76c5d2e90acecb31437757cecc8bffba25233c9601b4ca1e8a475079",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-19-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-19-total.csv",
+      "sha256": "e62efd1ab6dc56ceef257fd7f16d23fae1fb1a68fa62386e85fda9f3edb02b15",
+      "bytes": 122012,
+      "sha256_redacted": "e62efd1ab6dc56ceef257fd7f16d23fae1fb1a68fa62386e85fda9f3edb02b15",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-20-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-20-total.csv",
+      "sha256": "fbfc79d80fff246d22a9a453de7ba7088c130451cb1c44d80068bf1159854cc0",
+      "bytes": 124638,
+      "sha256_redacted": "fbfc79d80fff246d22a9a453de7ba7088c130451cb1c44d80068bf1159854cc0",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-21-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-21-total.csv",
+      "sha256": "e873ddbf8526f4dc26c9885ca4decf899f2436adf1e2faba4df83419d2391bd6",
+      "bytes": 121236,
+      "sha256_redacted": "e873ddbf8526f4dc26c9885ca4decf899f2436adf1e2faba4df83419d2391bd6",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-22-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-22-total.csv",
+      "sha256": "ea00e4205cda9d3a208ee613e2387e0546ea620967abb07e539eff0f15b85f0e",
+      "bytes": 84366,
+      "sha256_redacted": "ea00e4205cda9d3a208ee613e2387e0546ea620967abb07e539eff0f15b85f0e",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-23-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-23-total.csv",
+      "sha256": "bc51ec5ba5d7f4b26cb1dc9a3501bfdefd3c19c00d84bb7b7ca45241bea63862",
+      "bytes": 120190,
+      "sha256_redacted": "bc51ec5ba5d7f4b26cb1dc9a3501bfdefd3c19c00d84bb7b7ca45241bea63862",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-24-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-24-total.csv",
+      "sha256": "b43e720a3d1284f4a3f1593ce85b999f26d891c8d501b15f4b4b6027b34c8dba",
+      "bytes": 111733,
+      "sha256_redacted": "b43e720a3d1284f4a3f1593ce85b999f26d891c8d501b15f4b4b6027b34c8dba",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\signal-25-total.csv",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\signal-25-total.csv",
+      "sha256": "dcd564502ed7fc828485a0c2c00f102832f101f375d3ebe24da2b7447f7e5bff",
+      "bytes": 119385,
+      "sha256_redacted": "dcd564502ed7fc828485a0c2c00f102832f101f375d3ebe24da2b7447f7e5bff",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\supplemental.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\supplemental.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\supplemental.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\supplemental.json",
+      "sha256": "6e5073659bd273367b21da2886016ba419d8209b119300064db3c7afaac8d1d2",
+      "bytes": 9126,
+      "sha256_redacted": "6e5073659bd273367b21da2886016ba419d8209b119300064db3c7afaac8d1d2",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\supplemental.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\supplemental.log",
+      "sha256": "38b71484325a8c03fd77ed99ca4e8c47c307bb9f73d74f65b247e33bcde99161",
+      "bytes": 5560,
+      "sha256_redacted": "38b71484325a8c03fd77ed99ca4e8c47c307bb9f73d74f65b247e33bcde99161",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\verify.exit",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\verify.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3,
+      "sha256_redacted": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\verify.log",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\verify.log",
+      "sha256": "5b435a31896769e8c58bf2a1acafd1a4d41733645d2a767d918f0aa63dd982c8",
+      "bytes": 3839,
+      "sha256_redacted": "aab336d43141353df9f04bef81f406f8fc9401af92dfe8dfde46ce02d28c5bbe",
+      "redacted": true
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\workbook-formulas.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\workbook-formulas.json",
+      "sha256": "59091b8876e549e7a1cc6bf7ec214bf2f1491641d85089efa9c0c0e66b24c272",
+      "bytes": 10596,
+      "sha256_redacted": "59091b8876e549e7a1cc6bf7ec214bf2f1491641d85089efa9c0c0e66b24c272",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證-5450d39\\workbook-metadata.json",
+      "destination": "<REPO>\\docs\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證-5450d39\\workbook-metadata.json",
+      "sha256": "b4d632cabe8d14a55a9d19f8877f9fcf69301e24d5990a8054f6bd149f9928fe",
+      "bytes": 6908,
+      "sha256_redacted": "b4d632cabe8d14a55a9d19f8877f9fcf69301e24d5990a8054f6bd149f9928fe",
+      "redacted": false
+    },
+    {
+      "source": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\outputs\\F02獨立驗證證據-5450d39.zip",
+      "destination": "<REPO>\\target\\verification\\2026-10-31-F02-5450d39\\F02獨立驗證證據-5450d39.zip",
+      "sha256": "9f777b6c9f717a57f6045a1a0c5f37d9ec65c7073d099fd8f9af9ae2c392add0",
+      "bytes": 350340207,
+      "sha256_redacted": "9f777b6c9f717a57f6045a1a0c5f37d9ec65c7073d099fd8f9af9ae2c392add0",
+      "redacted": false
+    }
+  ],
+  "readme_sha256": "649e38b9eb41bbf3fa033073dfb395e55cf46ad4bdcc3ca24f0e1a207ae1308b",
+  "redaction": {
+    "tool": "tools/redact_paths.py",
+    "note": "sha256 = original file as preserved in the evidence ZIP; sha256_redacted = tracked copy after workstation paths were replaced by placeholders (<AUDIT_HOME>, <AUDIT_PYTHON>, <USER_HOME>, <REPO>, <PANEL_REPO>). The evidence ZIP is unchanged.",
+    "files_changed_by_redaction": 15,
+    "files_total": 78
+  }
+}

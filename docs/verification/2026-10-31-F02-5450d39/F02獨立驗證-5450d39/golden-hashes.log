@@ -1,0 +1,31 @@
+   Compiling num-traits v0.2.19
+   Compiling syn v2.0.119
+   Compiling plotters v0.3.7
+   Compiling zerocopy-derive v0.8.52
+   Compiling serde_derive v1.0.228
+   Compiling thiserror-impl v1.0.69
+   Compiling zerocopy v0.8.52
+   Compiling thiserror v1.0.69
+   Compiling iso532 v0.2.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532)
+   Compiling serde v1.0.228
+   Compiling tinytemplate v1.2.1
+   Compiling half v2.7.1
+   Compiling ciborium-ll v0.2.2
+   Compiling ciborium v0.2.2
+   Compiling criterion v0.5.1
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 20.83s
+     Running tests\golden_zwtv.rs (work\target\debug\deps\golden_zwtv-06c54100fcae6d9c.exe)
+
+running 1 test
+sine_1k_60 [zero]: n=89eacdd9fbaa911f spec=f41af57bbf84a2a1 time=f076bcb342595537
+sine_1k_60 [mosqito_tail]: n=0b10971021634b4e spec=62496b610f7c223d time=f076bcb342595537
+pulse_1k_70 [zero]: n=b92a2b970de3067f spec=bdab430b961720f0 time=f076bcb342595537
+pulse_1k_70 [mosqito_tail]: n=b92a2b970de3067f spec=bdab430b961720f0 time=f076bcb342595537
+step_60_80 [zero]: n=d8da35c757b04b89 spec=ad4d8b343c25af1f time=f076bcb342595537
+step_60_80 [mosqito_tail]: n=40ac75b0dcaed5a8 spec=2fdc839b4f702621 time=f076bcb342595537
+annexb_sig10 [zero]: n=83da1e1c06d5296c spec=3c2b914686402b54 time=f076bcb342595537
+annexb_sig10 [mosqito_tail]: n=83da1e1c06d5296c spec=3c2b914686402b54 time=f076bcb342595537
+test dump_zwtv_output_hashes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.72s
+

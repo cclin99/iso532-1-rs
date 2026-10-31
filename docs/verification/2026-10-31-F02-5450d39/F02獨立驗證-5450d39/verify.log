@@ -1,0 +1,27 @@
+<USER_HOME>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\site-packages\openpyxl\worksheet\_reader.py:329: UserWarning: Conditional Formatting extension is not supported and will be removed
+  warn(msg)
+1 C N max 0.004339575637814619 C spec max 0.00027999917250021156 XLSX True
+2 C N max 0.033888942213673445 C spec max 0.0396381128556072 XLSX True
+3 C N max 0.03329210729616161 C spec max 0.014833018945293097 XLSX True
+4 C N max 0.006384320401826349 C spec max 0.004422606218990308 XLSX True
+5 C N max 0.08027424513644377 C spec max 0.01020354266805562 XLSX True
+6 C N max 0.01699866617224366 C spec max 0.01002111403127326 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+7 C N max 0.000331132623051289 C spec max 0.00012972224340446203 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+8 C N max 0.0009647141421069705 C spec max 0.00017033875572458612 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+9 C N max 0.003491146440872228 C spec max 0.059327382414680496 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+10 C N max 0.00016067969656793912 C spec max 0.0039162644971481725 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+11 C N max 0.0001916193803506161 C spec max 0.0039162644971481725 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+12 C N max 0.0003804652951622245 C spec max 0.0039162644971481725 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+13 C N max 0.000773505048908607 C spec max 0.001581857768601591 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+14 C N max 0.015084708914942624 C spec max 0.05082317485578258 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+15 C N max 0.023433195465504042 C spec max 0.056789673002594965 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+16 C N max 0.00338906330132005 C spec max 0.07607444672469832 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+17 C N max 0.0017819066884463552 C spec max 0.035822146342784245 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+18 C N max 0.0030368413726424848 C spec max 0.0437728528172292 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+19 C N max 0.0025870759450397074 C spec max 0.03992122289116973 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+20 C N max 0.0013647256782256534 C spec max 0.03961730178893097 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+21 C N max 0.0006635123432765511 C spec max 0.03444123059629822 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+22 C N max 0.00016129700674699654 C spec max 0.03774193647141244 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+23 C N max 0.0015480181402631743 C spec max 0.03508193084449651 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+24 C N max 0.003486368354253422 C spec max 0.03485164720526113 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}
+25 C N max 0.0006434225633227264 C spec max 0.02639265176253769 XLSX {'strict_fail': 0, 'relaxed_fail': 0, 'max_series_exception_fraction': 0.0, 'passed': True}

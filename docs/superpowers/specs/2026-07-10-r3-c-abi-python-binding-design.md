@@ -44,7 +44,7 @@ wheel build。
 ## 3. 架構
 
 ```
-D:\ISO532\
+<REPO>\
 ├── iso532/          ← 完全不動(驗收:src/ 零 diff)
 ├── iso532-ffi/      ← 新 crate,crate-type = ["cdylib","staticlib"]
 │   ├── src/lib.rs       extern "C" 薄殼,path 依賴 iso532

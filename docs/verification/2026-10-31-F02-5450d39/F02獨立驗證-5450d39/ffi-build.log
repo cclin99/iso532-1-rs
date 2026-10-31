@@ -1,0 +1,6 @@
+   Compiling syn v2.0.119
+   Compiling thiserror-impl v1.0.69
+   Compiling thiserror v1.0.69
+   Compiling iso532 v0.2.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532)
+   Compiling iso532-ffi v0.2.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532-ffi)
+    Finished `release` profile [optimized] target(s) in 7.11s

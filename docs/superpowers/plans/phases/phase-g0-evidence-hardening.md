@@ -10,7 +10,7 @@
 
 **背景事實(執行前不需重新驗證):**
 
-- 工作目錄:`D:\ISO532`,crate 在 `iso532/`(所有 cargo 命令在 `iso532/` 下執行)。
+- 工作目錄:`<REPO>`,crate 在 `iso532/`(所有 cargo 命令在 `iso532/` 下執行)。
 - `data/` 整個目錄被 `.gitignore` 排除,golden 測試(`golden_*.rs`、`annexb.rs`)在沒有本機資料的環境會 panic,因此 **CI 只能跑** `--lib`、`--doc` 與 `simd_parity`、`simd_dispatch`、`determinism`、`api_errors`、`hash_gate` 這些不讀 `data/` 的測試。
 - `iso532::simd::set_force_scalar` 是 **process-global** 旗標;同一個 test binary 內多個 `#[test]` 平行執行會互相污染。慣例見 `iso532/tests/determinism.rs:77-79`(一個 binary 只放一個 `#[test]`)。
 - R4 已合入 main(`a16b41f`/`0aff1bf`/`9158f98`/`e96dffa`),bitwise snapshot hash 記錄在 `docs/superpowers/plans/phases/phase-r4-band-parallel.md:69-72`,是 **auto dispatch(AVX2)** 路徑的值。determinism 測試已保證 Rayon/Sequential 逐位相同,所以這些 hash 不受執行緒數影響。
@@ -27,7 +27,7 @@
 
 - [ ] **Step 1: 刪除 benchmark 殘留目錄**
 
-在 repo 根目錄 `D:\ISO532` 執行:
+在 repo 根目錄 `<REPO>` 執行:
 
 ```powershell
 Remove-Item -Recurse -Force target-bench-before, target-bench-beforeoSAJNC

@@ -1,7 +1,7 @@
 # ISO 532-1 (Zwicker Loudness) Rust + AVX 改寫設計
 
 日期：2026-07-03
-來源基準：mosqito 1.2.1（`D:\ISO532\mosqito-1.2.1`，由 tarball 解壓，不入 git）
+來源基準：mosqito 1.2.1（`<REPO>\mosqito-1.2.1`，由 tarball 解壓，不入 git）
 
 ## 目標
 

@@ -1,0 +1,78 @@
+{
+  "python_module": "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\python-bindings\\iso532.pyd",
+  "cases": [
+    {
+      "field": 0,
+      "samples": 4800,
+      "frames": 50,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    },
+    {
+      "field": 0,
+      "samples": 4801,
+      "frames": 51,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    },
+    {
+      "field": 0,
+      "samples": 48000,
+      "frames": 500,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    },
+    {
+      "field": 0,
+      "samples": 48013,
+      "frames": 501,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    },
+    {
+      "field": 1,
+      "samples": 4800,
+      "frames": 50,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    },
+    {
+      "field": 1,
+      "samples": 4801,
+      "frames": 51,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    },
+    {
+      "field": 1,
+      "samples": 48000,
+      "frames": 500,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    },
+    {
+      "field": 1,
+      "samples": 48013,
+      "frames": 501,
+      "ffi_python_bitwise": true,
+      "default_explicit_zero_bitwise": true,
+      "first_n": 0.0,
+      "guards": true
+    }
+  ],
+  "invalid_init_rejected": true
+}

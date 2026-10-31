@@ -1,0 +1,331 @@
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.46
+   Compiling autocfg v1.5.1
+   Compiling once_cell v1.21.4
+   Compiling crossbeam-utils v0.8.22
+   Compiling crossbeam-epoch v0.9.20
+   Compiling crossbeam-deque v0.8.7
+   Compiling rayon-core v1.13.0
+   Compiling either v1.16.0
+   Compiling thiserror v1.0.69
+   Compiling serde_core v1.0.228
+   Compiling cfg-if v1.0.4
+   Compiling zerocopy v0.8.52
+   Compiling windows-link v0.2.1
+   Compiling zmij v1.0.21
+   Compiling windows-sys v0.61.2
+   Compiling num-traits v0.2.19
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.150
+   Compiling anstyle v1.0.14
+   Compiling memchr v2.8.2
+   Compiling winapi-util v0.1.11
+   Compiling plotters-backend v0.3.7
+   Compiling ciborium-io v0.2.2
+   Compiling clap_lex v1.1.0
+   Compiling itoa v1.0.18
+   Compiling regex-syntax v0.8.11
+   Compiling plotters-svg v0.3.7
+   Compiling clap_builder v4.6.0
+   Compiling same-file v1.0.6
+   Compiling syn v2.0.119
+   Compiling itertools v0.10.5
+   Compiling cast v0.3.0
+   Compiling plotters v0.3.7
+   Compiling walkdir v2.5.0
+   Compiling is-terminal v0.4.17
+   Compiling anes v0.1.6
+   Compiling oorandom v11.1.5
+   Compiling hound v3.5.1
+   Compiling rayon v1.12.0
+   Compiling target-lexicon v0.12.16
+   Compiling libc v0.2.186
+   Compiling memoffset v0.9.1
+   Compiling matrixmultiply v0.3.10
+   Compiling regex-automata v0.4.14
+   Compiling criterion-plot v0.5.0
+   Compiling heck v0.5.0
+   Compiling clap v4.6.1
+   Compiling rawpointer v0.2.1
+   Compiling num-integer v0.1.46
+   Compiling num-complex v0.4.6
+   Compiling indoc v2.0.7
+   Compiling unindent v0.2.4
+   Compiling pyo3-build-config v0.23.5
+   Compiling rustc-hash v2.1.3
+   Compiling regex v1.12.4
+   Compiling ndarray v0.16.1
+   Compiling thiserror-impl v1.0.69
+   Compiling zerocopy-derive v0.8.52
+   Compiling serde_derive v1.0.228
+   Compiling pyo3-macros-backend v0.23.5
+   Compiling pyo3-ffi v0.23.5
+   Compiling pyo3 v0.23.5
+   Compiling iso532 v0.2.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532)
+   Compiling iso532-ffi v0.2.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532-ffi)
+   Compiling tinytemplate v1.2.1
+   Compiling pyo3-macros v0.23.5
+   Compiling half v2.7.1
+   Compiling ciborium-ll v0.2.2
+   Compiling ciborium v0.2.2
+   Compiling criterion v0.5.1
+   Compiling numpy v0.23.0
+   Compiling iso532-py v0.2.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532-py)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 32.57s
+     Running unittests src\lib.rs (work\target\debug\deps\iso532-b165bc768767f71b.exe)
+
+running 22 tests
+test core::main_loudness::tests::low_freq_last_row_is_reachable_below_120_db ... ok
+test core::main_loudness::tests::clamped_variant_shares_the_row_selection_below_the_clamp ... ok
+test core::main_loudness::tests::clamped_variant_flags_and_matches_at_120 ... ok
+test core::calc_slopes::tests::n_only_matches_full_calc_slopes_total ... ok
+test core::main_loudness::tests::low_freq_dll_row_matches_annex_a_at_every_threshold ... ok
+test core::main_loudness::tests::low_freq_thresholds_are_strictly_increasing_per_band ... ok
+test error::tests::error_codes_are_frozen ... ok
+test core::calc_slopes::tests::calc_slopes_into_writes_same_specific_loudness ... ok
+test field_type_tests::try_from_i32_matches_abi_table ... ok
+test field_type_tests::from_str_matches_py_vocabulary ... ok
+test tables::tests::table_shapes_and_spot_values ... ok
+test core::main_loudness::tests::frame_major_batch_matches_per_frame_main_loudness ... ok
+test zwtv::stream::tests::flag_bits_and_frame_layout_are_frozen ... ok
+test zwtv::nonlinear_decay::tests::single_and_two_frame_inputs_do_not_panic_and_start_from_zero ... ok
+test zwtv::nonlinear_decay::tests::zero_init_default_and_mosqito_seed_formula ... ok
+test zwtv::nonlinear_decay::tests::silent_tail_makes_both_initialisations_identical ... ok
+test sone2phon::tests::anchors_and_branch_monotonicity ... ok
+test zwtv::nonlinear_decay::tests::tail_seed_only_changes_the_start_of_the_output ... ok
+test core::calc_slopes::tests::n_only_matches_into_for_edge_and_random_frames ... ok
+test zwtv::nonlinear_decay::tests::avx2_and_scalar_agree_for_both_initialisations ... ok
+test zwtv::tests::processor_matches_free_function_and_reuses_scratch_capacity ... ok
+test zwtv::tests::zwtv_out_frames_matches_pipeline_output ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+     Running tests\annexb.rs (work\target\debug\deps\annexb-6bcd3bb88845b289.exe)
+
+running 3 tests
+test annexb_timevarying_signal10 ... ok
+test annexb_stationary_signal3_1khz_60db ... ok
+test annexb_stationary_signal5_pinknoise_60db ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.83s
+
+     Running tests\api_errors.rs (work\target\debug\deps\api_errors-1055d6c4d351b35d.exe)
+
+running 4 tests
+test loudness_zwtv_rejects_unsupported_sample_rate ... ok
+test loudness_zwst_rejects_short_signal ... ok
+test loudness_zwtv_rejects_short_signal ... ok
+test loudness_zwst_rejects_unsupported_sample_rate ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\determinism.rs (work\target\debug\deps\determinism-bc74c0f12c00d6ca.exe)
+
+running 1 test
+test zwtv_output_is_bitwise_deterministic_over_20_runs ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.22s
+
+     Running tests\golden_core.rs (work\target\debug\deps\golden_core-741c77e8f6ea5945.exe)
+
+running 3 tests
+test main_loudness_rejects_low_frequency_third_octave_level_above_120_db ... ok
+test main_loudness_matches_mosqito_free_and_diffuse_core_loudness ... ok
+test calc_slopes_matches_mosqito_total_and_specific_loudness ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\golden_dsp.rs (work\target\debug\deps\golden_dsp-202c182f1a35b445.exe)
+
+running 3 tests
+test decimate_matches_scipy ... ok
+test sosfilt_matches_scipy ... ok
+test sosfiltfilt_matches_scipy ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\golden_zwst.rs (work\target\debug\deps\golden_zwst-3a0c7be54dd8d588.exe)
+
+running 6 tests
+test main_loudness_rejects_over_120db ... ok
+test main_loudness_matches_mosqito ... ok
+test calc_slopes_matches_mosqito ... ok
+test spec_to_db_matches_mosqito_amp2db ... ok
+test noct_spectrum_matches_mosqito ... ok
+test zwst_end_to_end_matches_mosqito ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.75s
+
+     Running tests\golden_zwtv.rs (work\target\debug\deps\golden_zwtv-88104efb866d1988.exe)
+
+running 9 tests
+test dump_zwtv_output_hashes ... ignored, manual helper: bitwise output snapshot for refactor verification
+test temporal_weighting_matches_mosqito ... ok
+test nl_loudness_zero_init_equals_golden_when_the_fixture_ends_in_silence ... ok
+test nl_loudness_matches_mosqito_under_tail_init ... ok
+test third_octave_levels_matches_mosqito ... ok
+test zwtv_end_to_end_matches_mosqito_under_tail_init ... ok
+test zwtv_default_equals_golden_for_silent_tail_fixtures ... ok
+test zwtv_output_hashes_match_frozen_snapshots ... ok
+test zwtv_default_converges_to_golden_once_the_tail_seed_has_decayed ... ok
+
+test result: ok. 8 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 2.99s
+
+     Running tests\hash_gate.rs (work\target\debug\deps\hash_gate-60569ad017ef6a9e.exe)
+
+running 1 test
+scalar: n=0xa7c2a418292a1a46 spec=0x16937b45e6e4155d time=0xf076bcb342595537
+scalar mosqito_tail: n=0xf3215787aaa48fbe spec=0xff98c57f3018ef94 time=0xf076bcb342595537
+avx2: n=0xa7c2a418292a1a46 spec=0x3d4b4b2df9073e48 time=0xf076bcb342595537
+avx2 mosqito_tail: n=0xf3215787aaa48fbe spec=0x3f241da3fe334097 time=0xf076bcb342595537
+test zwtv_backend_hashes_match_frozen_snapshot ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running tests\low_freq_correction.rs (work\target\debug\deps\low_freq_correction-9675496c2dcdce78.exe)
+
+running 6 tests
+test core_diffuse_field_uses_the_same_row_selection ... ok
+test core_band0_118_000001_db_matches_annex_a_reference ... ok
+test core_band0_threshold_118_db_is_strict_and_last_row_applies_above_it ... ok
+test zwtv_25hz_119db_sine_max_matches_annex_a_reference ... ok
+test zwst_25hz_119db_sine_matches_annex_a_reference ... ok
+test stream_25hz_119db_sine_matches_batch_and_is_not_clamped ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.85s
+
+     Running tests\nl_zero_init.rs (work\target\debug\deps\nl_zero_init-c22071af12395f16.exe)
+
+running 6 tests
+test silent_prefix_yields_exactly_zero_loudness_before_the_tone_starts ... ok
+test both_initialisations_agree_when_the_signal_ends_in_silence ... ok
+test processor_reuse_does_not_leak_state_between_calls ... ok
+test mosqito_tail_init_reproduces_the_audited_pre_fix_numbers ... ok
+test batch_prefix_is_invariant_to_the_future_tail ... ok
+test batch_matches_the_causal_stream_bitwise_from_frame_zero ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s
+
+     Running tests\py_contract_dump.rs (work\target\debug\deps\py_contract_dump-656bdca12d807598.exe)
+
+running 2 tests
+test dump_py_bitwise_contract_hashes ... ignored, manual: freeze constants for iso532-py/tests/test_smoke.py (R3-P3)
+test fnv1a_known_answer_matches_python_testkit ... ok
+
+test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\simd_dispatch.rs (work\target\debug\deps\simd_dispatch-82a1c542cd9dd686.exe)
+
+running 1 test
+test force_scalar_overrides_runtime_detection ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\simd_parity.rs (work\target\debug\deps\simd_parity-98c76e0a26f867ee.exe)
+
+running 2 tests
+test nl_loudness_avx2_matches_scalar ... ok
+test filter_bank_avx2_matches_scalar ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.31s
+
+     Running tests\stream.rs (work\target\debug\deps\stream-f9eba6cc8bb1fc21.exe)
+
+running 12 tests
+test silence_throughput_within_20pct_of_sine ... ignored
+test warmup_constant_is_frozen ... ok
+test push_and_flush_restore_mxcsr ... ok
+test tail_nonfinite_input_is_reported_as_residual_flag ... ok
+test over_120db_is_clamped_and_stream_continues ... ok
+test flush_reset_after_partial_nonfinite_chunk_matches_a_new_stream ... ok
+test stream_constants_and_single_push_reference ... ok
+test reset_matches_a_new_stream ... ok
+test nonfinite_input_flags_and_recovers ... ok
+test batch_zerostate_reference_and_stream_are_bitwise_identical_from_frame_zero ... ok
+test chunk_size_invariance_is_bitwise ... ok
+test nine_golden_signals_match_zerostate_and_batch_bitwise has been running for over 60 seconds
+test nine_golden_signals_match_zerostate_and_batch_bitwise ... ok
+
+test result: ok. 11 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 64.10s
+
+     Running tests\stream_alloc.rs (work\target\debug\deps\stream_alloc-5190536066383e82.exe)
+
+running 1 test
+test push_and_flush_do_not_allocate ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running tests\stream_no_rayon.rs (work\target\debug\deps\stream_no_rayon-ec3f563e1f360a38.exe)
+
+running 1 test
+test stream_does_not_initialize_rayon_pool ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.27s
+
+     Running tests\stream_scalar.rs (work\target\debug\deps\stream_scalar-c9e10f5081ef22be.exe)
+
+running 1 test
+test forced_scalar_stream_matches_scalar_zerostate_reference ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.80s
+
+     Running unittests src\lib.rs (work\target\debug\deps\iso532_ffi-74e40e0254af359a.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\ffi.rs (work\target\debug\deps\ffi-5a12f596097a1645.exe)
+
+running 17 tests
+
+thread 'injected_panic_returns_err_panic_not_abort' (74984) panicked at iso532-ffi\src\lib.rs:344:16:
+test-panic: direct
+test field_constants_are_frozen ... ok
+test out_frames_query_forwards_core_at_representative_boundaries ... ok
+test stream_layout_flags_and_null_paths_are_frozen ... ok
+test out_frames_query_never_panics_below_min_length ... ok
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread '<unnamed>' (93260) panicked at iso532-ffi\src\lib.rs:355:17:
+test-panic: inside rayon worker
+test stream_max_frames_forwards_rust_contract ... ok
+
+thread 'stream_path_panic_is_caught_at_ffi_boundary' (25476) panicked at iso532-ffi\src\lib.rs:367:9:
+test-panic: stream path
+test null_pointers_return_err_null ... ok
+test stream_residual_flags_null_handle_returns_zero ... ok
+test injected_panic_returns_err_panic_not_abort ... ok
+test stream_path_panic_is_caught_at_ffi_boundary ... ok
+test stream_rejects_small_output_without_consuming_input ... ok
+test rayon_worker_panic_is_caught_at_ffi_boundary ... ok
+test error_mapping_matches_spec_table ... ok
+test zwtv_diffuse_field_matches_rust_api ... ok
+test zwst_happy_path_matches_rust_api_bitwise ... ok
+test zwtv_happy_path_matches_rust_api_bitwise ... ok
+test stream_tail_nonfinite_is_exposed_as_residual_flag ... ok
+test stream_matches_rust_stream_bitwise ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.84s
+
+     Running unittests src\lib.rs (work\target\debug\deps\iso532-54ead19b09adc4de.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests iso532
+
+running 2 tests
+test iso532\src\lib.rs - (line 11) - compile ... ok
+test iso532\src\lib.rs - (line 24) - compile ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+   Doc-tests iso532_ffi
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

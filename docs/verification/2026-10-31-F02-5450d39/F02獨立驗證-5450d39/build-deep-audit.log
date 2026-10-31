@@ -1,0 +1,9 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.37
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+deep_audit_support.c
+ISO_532-1_helper.c
+正在產生程式碼...
+   正在建立程式庫 deep_audit_support.lib 和物件 deep_audit_support.exp

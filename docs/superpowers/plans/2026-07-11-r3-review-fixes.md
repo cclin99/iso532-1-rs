@@ -10,7 +10,7 @@
 
 **審查依據:** `docs/R3-REVIEW-2026-07-11.md` §2(發現編號 #1–#10 沿用該表)。
 
-**環境前提(本機,Windows):** repo 根 `D:\ISO532`;golden 資料在 `data/`(local-only);Python 工具鏈 venv 在 `.venv/`(含 maturin 1.14.1)。Rust 測試命令均在對應 crate 目錄下執行。
+**環境前提(本機,Windows):** repo 根 `<REPO>`;golden 資料在 `data/`(local-only);Python 工具鏈 venv 在 `.venv/`(含 maturin 1.14.1)。Rust 測試命令均在對應 crate 目錄下執行。
 
 ---
 

@@ -12,7 +12,7 @@
 
 ## 前置條件
 
-- 無（第一個 phase）。repo 根為 `D:\ISO532`，參考原始碼在 `mosqito-1.2.1/`（唯讀）。
+- 無（第一個 phase）。repo 根為 `<REPO>`，參考原始碼在 `mosqito-1.2.1/`（唯讀）。
 - 需要網路（clone MoSQITo repo 抓 Annex B wav/csv/xlsx）。失敗就停下回報，不得造假資料。
 
 ## 驗收（全部通過才算完成）

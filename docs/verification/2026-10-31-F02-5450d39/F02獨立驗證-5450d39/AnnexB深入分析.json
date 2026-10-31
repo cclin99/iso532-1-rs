@@ -1,0 +1,3161 @@
+{
+  "abi": [
+    24,
+    0,
+    8,
+    16
+  ],
+  "calibration": {
+    "c_factor": 2.835797716391444,
+    "numpy_factor": 2.835797716391444,
+    "factor_difference": 0.0,
+    "digital_rms": 0.007052689225467755,
+    "pressure_rms_pa": 0.019999999999999997,
+    "recovered_spl_db": 60.0
+  },
+  "cases": [
+    {
+      "signal": 1,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Stationary",
+        "F",
+        "..\\..\\official\\Annex B.2\\Test signal 1.txt"
+      ],
+      "cwd": "work\\deep-cli-v2\\01",
+      "exit_code": 0,
+      "cli_n_frames": 1,
+      "cli_spec_frames": 1,
+      "cli_vs_dll_n_max": 3.957563781398221e-05,
+      "cli_vs_dll_spec_max": 4.757940504962477e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "c52a4c7fafaca739fb94c0c9f1cd5094cc9b908431f536d2ac9f76b60e144248",
+        "SpecLoudness.csv": "44944c0094ee3ad3ab7a7e00c65e318bb5ad84534947439be722248964c4e370",
+        "stdout.txt": "e517388ed9ad7531528b4f5add19b9029cfdec7367913082a5761b4c7e1e0bdb"
+      },
+      "rust_n_frames": 1,
+      "rust_spec_frames": 1,
+      "rust_vs_c_full_specific_common_max": 0.00027999917250021156,
+      "new_specific_tail_count": 0,
+      "stationary_bound_cache_max": 1.4210854715202004e-14
+    },
+    {
+      "signal": 2,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Stationary",
+        "F",
+        "..\\..\\official\\Annex B.3\\Test signal 2 (250 Hz 80 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60",
+        "0.2"
+      ],
+      "cwd": "work\\deep-cli-v2\\02",
+      "exit_code": 0,
+      "cli_n_frames": 1,
+      "cli_spec_frames": 1,
+      "cli_vs_dll_n_max": 1.105778632748411e-05,
+      "cli_vs_dll_spec_max": 4.736046236208935e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "b06d9fac92584ff02fbba6f4201c812824dafa4a40c58c94f0cfc1cc05796b19",
+        "SpecLoudness.csv": "af9742c09fb6442ddcb0c3e7f69992e712a70c87bda2cf8768fa25bebb7167a4",
+        "stdout.txt": "2183ee5eebc4f035cb453ca27a111ae53f9feea8fe2c03a1de0dbdf1da254042"
+      },
+      "rust_n_frames": 1,
+      "rust_spec_frames": 1,
+      "rust_vs_c_full_specific_common_max": 0.0396381128556072,
+      "new_specific_tail_count": 0,
+      "stationary_bound_cache_max": 8.881784197001252e-16
+    },
+    {
+      "signal": 3,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Stationary",
+        "F",
+        "..\\..\\official\\Annex B.3\\Test signal 3 (1 kHz 60 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60",
+        "0.2"
+      ],
+      "cwd": "work\\deep-cli-v2\\03",
+      "exit_code": 0,
+      "cli_n_frames": 1,
+      "cli_spec_frames": 1,
+      "cli_vs_dll_n_max": 7.892703838940918e-06,
+      "cli_vs_dll_spec_max": 4.40391217319952e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "6a5d3e394352582413d73e6558aed73760762367069d22c5cc6f2a16d8fb3f9c",
+        "SpecLoudness.csv": "95e77c6da796457cb4614aec5d19bd6c293d588ac10307544510db8db271090a",
+        "stdout.txt": "6bea321baff513843f493239800f2166174e2d81a7d23037928d07097dc3ae66"
+      },
+      "rust_n_frames": 1,
+      "rust_spec_frames": 1,
+      "rust_vs_c_full_specific_common_max": 0.014833018945293097,
+      "new_specific_tail_count": 0,
+      "stationary_bound_cache_max": 4.440892098500626e-16
+    },
+    {
+      "signal": 4,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Stationary",
+        "F",
+        "..\\..\\official\\Annex B.3\\Test signal 4 (4 kHz 40 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60",
+        "0.2"
+      ],
+      "cwd": "work\\deep-cli-v2\\04",
+      "exit_code": 0,
+      "cli_n_frames": 1,
+      "cli_spec_frames": 1,
+      "cli_vs_dll_n_max": 1.567959817361242e-05,
+      "cli_vs_dll_spec_max": 4.318666533578708e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "0022ddab54f4bf41dd9511bb3db9e7784b96e3f4bd1a30d795120e495342a4f3",
+        "SpecLoudness.csv": "25026dafe030d4e0481b8712875cd1d3f4359197accc247f9e98bcf637ffd3d5",
+        "stdout.txt": "7b1c653454001959baa24c8ca94ed2f8e8ab2c3468eb3482b48873946c472e78"
+      },
+      "rust_n_frames": 1,
+      "rust_spec_frames": 1,
+      "rust_vs_c_full_specific_common_max": 0.004422606218990308,
+      "new_specific_tail_count": 0,
+      "stationary_bound_cache_max": 0.0
+    },
+    {
+      "signal": 5,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Stationary",
+        "F",
+        "..\\..\\official\\Annex B.3\\Test signal 5 (pinknoise 60 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60",
+        "0.2"
+      ],
+      "cwd": "work\\deep-cli-v2\\05",
+      "exit_code": 0,
+      "cli_n_frames": 1,
+      "cli_spec_frames": 1,
+      "cli_vs_dll_n_max": 2.5754863557381213e-05,
+      "cli_vs_dll_spec_max": 4.839749302937291e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "05d602d1eb624f0930c7a6b0cb8de4624370e3cc4da9da1fcccc7403de3c0bf7",
+        "SpecLoudness.csv": "cca9a88628fad33da1565c6683a8434846de78f17745607bf55524e09e24a09d",
+        "stdout.txt": "35baa55c427476f5f2dba331d21f2fbdce04c320490e182bf81e8bbc4a2e7a53"
+      },
+      "rust_n_frames": 1,
+      "rust_spec_frames": 1,
+      "rust_vs_c_full_specific_common_max": 0.01020354266805562,
+      "new_specific_tail_count": 0,
+      "stationary_bound_cache_max": 1.7763568394002505e-15
+    },
+    {
+      "signal": 6,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 6 (tone 250 Hz 30 dB - 80 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\06",
+      "exit_code": 0,
+      "cli_n_frames": 5300,
+      "cli_spec_frames": 5300,
+      "cli_vs_dll_n_max": 4.996486917097087e-05,
+      "cli_vs_dll_spec_max": 4.999990753673522e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "10ead613172d01f639d8c4e28ed817c0be3e4a9f9456bcde21c79dc867b022ec",
+        "SpecLoudness.csv": "a59ff5e2dc4cf1dcaf8322949f9d6dc008ebf249be15118d8362d50875308857",
+        "stdout.txt": "5f2fc25262f756b2931cd83371ca14a5559e90e3d3af5d653c2c8070608a52a3"
+      },
+      "rust_n_frames": 5300,
+      "rust_spec_frames": 5300,
+      "rust_vs_c_full_specific_common_max": 0.01002111403127326,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 42400,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 42400,
+          "max_abs": 8.881784197001252e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B5060,0.95)",
+        "cached": 11.857560000000003,
+        "recalculated_formula": 11.857560000000003,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 5049,
+        "xlsx_total_same_rows": 11.857560000000003,
+        "official_c_linear_same_rows": 11.878458458331828,
+        "rust_linear_same_rows": 11.878399415441342,
+        "official_cli_full_record": 11.8272,
+        "official_helper_full_record": 11.827196760085322,
+        "linear_full_record": 11.823052994256178,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 3.2399146778772092e-06,
+        "referenced_numeric_count": 5000,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          5049
+        ],
+        "xlsx_total_note_trim_n5": 11.857560000000003
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W5310)/COUNT(W11:W5310)*100+SUM(V11:V5310)",
+          "=SUM(AB11:AB5310)/COUNT(AB11:AB5310)*100+SUM(AC11:AC5310)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E5309,E5310)",
+          "4": "=MAXA(F5309,F5310)",
+          "7": "=MINA(I5309,I5310)",
+          "8": "=MAXA(J5309,J5310)"
+        }
+      }
+    },
+    {
+      "signal": 7,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 7 (tone 1 kHz 30 dB - 80 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\07",
+      "exit_code": 0,
+      "cli_n_frames": 5300,
+      "cli_spec_frames": 5300,
+      "cli_vs_dll_n_max": 4.999726163124052e-05,
+      "cli_vs_dll_spec_max": 4.99987281736905e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "2424ea31dc9f60b2d0fa8bf710c8fdea4535c9cb3c833329b0868515b2f023c4",
+        "SpecLoudness.csv": "91577832e2dbdad320988e26fa6028f74d275e618f3cbd45c6e6ac9bc0ad1328",
+        "stdout.txt": "95e8a8da5a7350c32e43a84cc481c3c18e8ae07879bf794e7f1c155c929fc5dd"
+      },
+      "rust_n_frames": 5300,
+      "rust_spec_frames": 5300,
+      "rust_vs_c_full_specific_common_max": 0.00012972224340446203,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 42400,
+          "max_abs": 3.552713678800501e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 42400,
+          "max_abs": 8.881784197001252e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B5060,0.95)",
+        "cached": 13.378865000000001,
+        "recalculated_formula": 13.378865000000001,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 5049,
+        "xlsx_total_same_rows": 13.378865000000001,
+        "official_c_linear_same_rows": 13.399974266204817,
+        "rust_linear_same_rows": 13.39997210174736,
+        "official_cli_full_record": 13.2833,
+        "official_helper_full_record": 13.283330657278356,
+        "linear_full_record": 13.279183519877831,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 3.065727835505072e-05,
+        "referenced_numeric_count": 5000,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          5049
+        ],
+        "xlsx_total_note_trim_n5": 13.378865000000001
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W5310)/COUNT(W11:W5310)*100+SUM(V11:V5310)",
+          "=SUM(AB11:AB5310)/COUNT(AB11:AB5310)*100+SUM(AC11:AC5310)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E5309,E5310)",
+          "4": "=MAXA(F5309,F5310)",
+          "7": "=MINA(I5309,I5310)",
+          "8": "=MAXA(J5309,J5310)"
+        }
+      }
+    },
+    {
+      "signal": 8,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 8 (tone 4 kHz 30 dB - 80 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\08",
+      "exit_code": 0,
+      "cli_n_frames": 5300,
+      "cli_spec_frames": 5300,
+      "cli_vs_dll_n_max": 4.9990464976557014e-05,
+      "cli_vs_dll_spec_max": 4.999964098661991e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "3b5be5d846f488675c5cfb2f29a300e4bcfe76bce08526ec51d8632c433a2fd2",
+        "SpecLoudness.csv": "01d09714e96cf5eb0a3bc7ba45f1c7411261ceaccb59df8d97e9ddcf2007fea2",
+        "stdout.txt": "4b0e106174cfbb779eb2a97ac89062036b32819586343052f2b046b702b62279"
+      },
+      "rust_n_frames": 5300,
+      "rust_spec_frames": 5300,
+      "rust_vs_c_full_specific_common_max": 0.00017033875572458612,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 42400,
+          "max_abs": 3.552713678800501e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 42400,
+          "max_abs": 8.881784197001252e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B5060,0.95)",
+        "cached": 20.261875,
+        "recalculated_formula": 20.261875,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 5049,
+        "xlsx_total_same_rows": 20.261875,
+        "official_c_linear_same_rows": 20.29236923629488,
+        "rust_linear_same_rows": 20.29260186145463,
+        "official_cli_full_record": 20.0973,
+        "official_helper_full_record": 20.097276746697528,
+        "linear_full_record": 20.0912808264459,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 2.3253302472880932e-05,
+        "referenced_numeric_count": 5000,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          5049
+        ],
+        "xlsx_total_note_trim_n5": 20.261875
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W5310)/COUNT(W11:W5310)*100+SUM(V11:V5310)",
+          "=SUM(AB11:AB5310)/COUNT(AB11:AB5310)*100+SUM(AC11:AC5310)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E5309,E5310)",
+          "4": "=MAXA(F5309,F5310)",
+          "7": "=MINA(I5309,I5310)",
+          "8": "=MAXA(J5309,J5310)"
+        }
+      }
+    },
+    {
+      "signal": 9,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 9 (pink noise 0 dB - 50 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\09",
+      "exit_code": 0,
+      "cli_n_frames": 5300,
+      "cli_spec_frames": 5300,
+      "cli_vs_dll_n_max": 4.9998539861650926e-05,
+      "cli_vs_dll_spec_max": 4.999984515008382e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "d35f47a8c14becb499f530eb72dc5a6f0a7a35a5bd7e901d5e2e05caaa9d9664",
+        "SpecLoudness.csv": "424874f054c51ff48e6e13a61d7dc545cab8112a249b3b902edbd7645becbc95",
+        "stdout.txt": "308eca0243795ec563c45bec8c195e23a7d957bf4b002abe48fb863b4a4073a3"
+      },
+      "rust_n_frames": 5300,
+      "rust_spec_frames": 5300,
+      "rust_vs_c_full_specific_common_max": 0.059327382414680496,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 42400,
+          "max_abs": 7.105427357601002e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 42400,
+          "max_abs": 4.440892098500626e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5300
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B5060,0.95)",
+        "cached": 24.221580000000007,
+        "recalculated_formula": 24.221580000000007,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 5049,
+        "xlsx_total_same_rows": 24.221580000000007,
+        "official_c_linear_same_rows": 24.256325055804453,
+        "rust_linear_same_rows": 24.25694326088345,
+        "official_cli_full_record": 24.1251,
+        "official_helper_full_record": 24.12506611640857,
+        "linear_full_record": 24.12453167951386,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 3.388359143130515e-05,
+        "referenced_numeric_count": 5000,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          5049
+        ],
+        "xlsx_total_note_trim_n5": 24.221580000000007
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W5310)/COUNT(W11:W5310)*100+SUM(V11:V5310)",
+          "=SUM(AB11:AB5310)/COUNT(AB11:AB5310)*100+SUM(AC11:AC5310)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E5309,E5310)",
+          "4": "=MAXA(F5309,F5310)",
+          "7": "=MINA(I5309,I5310)",
+          "8": "=MAXA(J5309,J5310)"
+        }
+      }
+    },
+    {
+      "signal": 10,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\10",
+      "exit_code": 0,
+      "cli_n_frames": 500,
+      "cli_spec_frames": 500,
+      "cli_vs_dll_n_max": 4.985525216388148e-05,
+      "cli_vs_dll_spec_max": 4.978261316174789e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "4f13ef15e1ce6cefe4c9f41601daa383b73c4943aca3b359ac256c7572e44a74",
+        "SpecLoudness.csv": "391913e81800362ecc48fe0ed275ba5c07a413aec37a98d77644dfcd6a90f176",
+        "stdout.txt": "5fbaa93d724789a17a3a972fffce3e64105c41c4f3a6dc3f1f6299b2d48bcfee"
+      },
+      "rust_n_frames": 500,
+      "rust_spec_frames": 500,
+      "rust_vs_c_full_specific_common_max": 0.0039162644971481725,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 4000,
+          "max_abs": 8.881784197001252e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 4000,
+          "max_abs": 4.440892098500626e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B11:B510,0.95)",
+        "cached": 0.7448749999999985,
+        "recalculated_formula": 0.7448749999999985,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 0,
+        "end_index_inclusive": 499,
+        "xlsx_total_same_rows": 0.7448749999999985,
+        "official_c_linear_same_rows": 0.7460319544319938,
+        "rust_linear_same_rows": 0.7460756617784261,
+        "official_cli_full_record": 0.7602,
+        "official_helper_full_record": 0.7602493701962119,
+        "linear_full_record": 0.7460319544319938,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 4.937019621187311e-05,
+        "referenced_numeric_count": 500,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          249
+        ],
+        "xlsx_total_note_trim_n5": 0.31797499999999984
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W510)/COUNT(W11:W510)*100+SUM(V11:V510)",
+          "=SUM(AB11:AB510)/COUNT(AB11:AB510)*100+SUM(AC11:AC510)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E509,E510)",
+          "4": "=MAXA(F509,F510)",
+          "7": "=MINA(I509,I510)",
+          "8": "=MAXA(J509,J510)"
+        }
+      }
+    },
+    {
+      "signal": 11,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 11 (tone pulse 1 kHz 50 ms 70 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\11",
+      "exit_code": 0,
+      "cli_n_frames": 500,
+      "cli_spec_frames": 500,
+      "cli_vs_dll_n_max": 4.987715802865742e-05,
+      "cli_vs_dll_spec_max": 4.99829883240056e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "1b8097b5454c121cd9c46346fe678ee166710d7fed72a33092db5483b747b779",
+        "SpecLoudness.csv": "055ad4eb15acfddd407ad3314fa4cf39bad4002eb8ac54146246be973890910b",
+        "stdout.txt": "551b7ae414085e0a72160426b68c789a18a919c5dd6118a41d70625b60794cb2"
+      },
+      "rust_n_frames": 500,
+      "rust_spec_frames": 500,
+      "rust_vs_c_full_specific_common_max": 0.0039162644971481725,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 4000,
+          "max_abs": 8.881784197001252e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 4000,
+          "max_abs": 4.440892098500626e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B11:B510,0.95)",
+        "cached": 4.160264999999992,
+        "recalculated_formula": 4.160264999999992,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 0,
+        "end_index_inclusive": 499,
+        "xlsx_total_same_rows": 4.160264999999992,
+        "official_c_linear_same_rows": 4.166530940139509,
+        "rust_linear_same_rows": 4.166525536516466,
+        "official_cli_full_record": 4.2518,
+        "official_helper_full_record": 4.251802952001945,
+        "linear_full_record": 4.166530940139509,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 2.952001945111249e-06,
+        "referenced_numeric_count": 500,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          249
+        ],
+        "xlsx_total_note_trim_n5": 1.4977849999999993
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W510)/COUNT(W11:W510)*100+SUM(V11:V510)",
+          "=SUM(AB11:AB510)/COUNT(AB11:AB510)*100+SUM(AC11:AC510)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E509,E510)",
+          "4": "=MAXA(F509,F510)",
+          "7": "=MINA(I509,I510)",
+          "8": "=MAXA(J509,J510)"
+        }
+      }
+    },
+    {
+      "signal": 12,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 12 (tone pulse 1 kHz 500 ms 70 dB).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\12",
+      "exit_code": 0,
+      "cli_n_frames": 500,
+      "cli_spec_frames": 500,
+      "cli_vs_dll_n_max": 4.9867672820794184e-05,
+      "cli_vs_dll_spec_max": 4.997502995918168e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "2393c868aa6b024599af56606e51a6ecadc61a88ba3d067dfaa8a43cc5ce0c05",
+        "SpecLoudness.csv": "692ec9643d83322479af0ebce0b55f450ee9e30561c8bf1563e288a6cebdcf44",
+        "stdout.txt": "c4798135fc850940d2681841fd540bdc19a3df1702ef58d6163a5d62216bc186"
+      },
+      "rust_n_frames": 500,
+      "rust_spec_frames": 500,
+      "rust_vs_c_full_specific_common_max": 0.0039162644971481725,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 4000,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 4000,
+          "max_abs": 4.440892098500626e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(E11:E510,0.95)",
+        "cached": 7.6700245,
+        "recalculated_formula": 7.6700245,
+        "formula_cache_abs": 0.0,
+        "column": "E",
+        "start_index": 0,
+        "end_index_inclusive": 499,
+        "xlsx_total_same_rows": 8.07371,
+        "official_c_linear_same_rows": 8.085666819185013,
+        "rust_linear_same_rows": 8.086047023118097,
+        "official_cli_full_record": 8.0858,
+        "official_helper_full_record": 8.085755066997088,
+        "linear_full_record": 8.085666819185013,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 4.493300291308344e-05,
+        "referenced_numeric_count": 500,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          249
+        ],
+        "xlsx_total_note_trim_n5": 8.07481
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W510)/COUNT(W11:W510)*100+SUM(V11:V510)",
+          "=SUM(AB11:AB510)/COUNT(AB11:AB510)*100+SUM(AC11:AC510)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E509,E510)",
+          "4": "=MAXA(F509,F510)",
+          "7": "=MINA(I509,I510)",
+          "8": "=MAXA(J509,J510)"
+        }
+      }
+    },
+    {
+      "signal": 13,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.4\\Test signal 13 (combined tone pulses 1 kHz).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\13",
+      "exit_code": 0,
+      "cli_n_frames": 500,
+      "cli_spec_frames": 500,
+      "cli_vs_dll_n_max": 4.995107650370357e-05,
+      "cli_vs_dll_spec_max": 4.998117413901326e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "427304fc0a6877f97fa8902450eb55230ca2e5c6a31a57ea1913225eedb309ce",
+        "SpecLoudness.csv": "5fb326bdf3ea290a8ec4744bdbe7bf195dd478160215de8216dca6346e907558",
+        "stdout.txt": "fab3468d71a4d8e921e5212c21891b9d3c3c310fec64bfa810366eaba2aea521"
+      },
+      "rust_n_frames": 500,
+      "rust_spec_frames": 500,
+      "rust_vs_c_full_specific_common_max": 0.001581857768601591,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 4000,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        },
+        "specific": {
+          "cells": 4000,
+          "max_abs": 8.881784197001252e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        },
+        "specific": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 500
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(E11:E510,0.95)",
+        "cached": 3.2393669999999988,
+        "recalculated_formula": 3.2393669999999988,
+        "formula_cache_abs": 0.0,
+        "column": "E",
+        "start_index": 0,
+        "end_index_inclusive": 499,
+        "xlsx_total_same_rows": 3.4098599999999992,
+        "official_c_linear_same_rows": 3.415412670416372,
+        "rust_linear_same_rows": 3.415735956317221,
+        "official_cli_full_record": 3.4231,
+        "official_helper_full_record": 3.4231447195953426,
+        "linear_full_record": 3.415412670416372,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 4.4719595342801455e-05,
+        "referenced_numeric_count": 500,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          249
+        ],
+        "xlsx_total_note_trim_n5": 5.23457499999999
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(W11:W510)/COUNT(W11:W510)*100+SUM(V11:V510)",
+          "=SUM(AB11:AB510)/COUNT(AB11:AB510)*100+SUM(AC11:AC510)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E509,E510)",
+          "4": "=MAXA(F509,F510)",
+          "7": "=MINA(I509,I510)",
+          "8": "=MAXA(J509,J510)"
+        }
+      }
+    },
+    {
+      "signal": 14,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 14 (propeller-driven airplane).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\14",
+      "exit_code": 0,
+      "cli_n_frames": 6577,
+      "cli_spec_frames": 6578,
+      "cli_vs_dll_n_max": 4.9994216760218535e-05,
+      "cli_vs_dll_spec_max": 4.999993319254603e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "1f1b38420a446f782eacd2f37f2eed80d4c731d7de0c161c6f7f6c13850e0643",
+        "SpecLoudness.csv": "af5d01422eed8f7b24434de7d5b2bfd92d3866d0723a03cb8d5b27a6fadf168f",
+        "stdout.txt": "e7ad605b736021de938263cfa05aa57c16e94ea17f7191a72b01caa9ea788620"
+      },
+      "rust_n_frames": 6578,
+      "rust_spec_frames": 6578,
+      "rust_vs_c_full_specific_common_max": 0.05082317485578258,
+      "new_specific_tail_count": 240,
+      "new_specific_tail_max_difference": 4.923131417187352e-19,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 52616,
+          "max_abs": 3.552713678800501e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 6577
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 6577
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 6577
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B6337,0.95)",
+        "cached": 18.08146,
+        "recalculated_formula": 18.08146,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 6326,
+        "xlsx_total_same_rows": 18.08146,
+        "official_c_linear_same_rows": 18.110286464231255,
+        "rust_linear_same_rows": 18.109988929868635,
+        "official_cli_full_record": 17.9065,
+        "official_helper_full_record": 17.90653285372991,
+        "linear_full_record": 17.906385424346322,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 3.285372990902147e-05,
+        "referenced_numeric_count": 6277,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          6326
+        ],
+        "xlsx_total_note_trim_n5": 18.08146
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N6587)/COUNT(N11:N6587)*100+SUM(O11:O6587)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E6586,E6587)",
+          "4": "=MAXA(F6586,F6587)",
+          "7": "=MINA(I6586,I6587,I6588)",
+          "8": "=MAXA(J6586,J6587,J6588)"
+        }
+      }
+    },
+    {
+      "signal": 15,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "D",
+        "..\\..\\official\\Annex B.5\\Test signal 15 (vehicle interior 40 kmh).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\15",
+      "exit_code": 0,
+      "cli_n_frames": 5768,
+      "cli_spec_frames": 5769,
+      "cli_vs_dll_n_max": 4.999983391584806e-05,
+      "cli_vs_dll_spec_max": 4.999998968491237e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "f860cbfed3176de1fadcae9d5ad5a8651889b5dbd8f5ade87e4c9476505f1e95",
+        "SpecLoudness.csv": "98b01df4faedb5aeaf83c9cab37e74d415443c583c6bf9dfe2ecf25567d2d4ef",
+        "stdout.txt": "5886e81ee3d11f6f437015afaddb0dc8843731052b1ef5f2d852f8a021f475fb"
+      },
+      "rust_n_frames": 5769,
+      "rust_spec_frames": 5769,
+      "rust_vs_c_full_specific_common_max": 0.056789673002594965,
+      "new_specific_tail_count": 240,
+      "new_specific_tail_max_difference": 8.504672052812515e-15,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 46144,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5768
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5768
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 5768
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B5528,0.95)",
+        "cached": 8.755009999999999,
+        "recalculated_formula": 8.755009999999999,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 5517,
+        "xlsx_total_same_rows": 8.755009999999999,
+        "official_c_linear_same_rows": 8.769637092004475,
+        "rust_linear_same_rows": 8.769249256390125,
+        "official_cli_full_record": 8.7637,
+        "official_helper_full_record": 8.763718192334116,
+        "linear_full_record": 8.763774858646782,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 1.819233411559651e-05,
+        "referenced_numeric_count": 5468,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          5517
+        ],
+        "xlsx_total_note_trim_n5": 8.755009999999999
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N5778)/COUNT(N11:N5778)*100+SUM(O11:O5778)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E5777,E5778)",
+          "4": "=MAXA(F5777,F5778)",
+          "7": "=MINA(I5777,I5778,I5779)",
+          "8": "=MAXA(J5777,J5778,J5779)"
+        }
+      }
+    },
+    {
+      "signal": 16,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 16 (hairdryer).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\16",
+      "exit_code": 0,
+      "cli_n_frames": 2054,
+      "cli_spec_frames": 2055,
+      "cli_vs_dll_n_max": 4.996937951062819e-05,
+      "cli_vs_dll_spec_max": 4.999750948631032e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "2d5532c2369e4f4b042a120132ac570cde4043659273d4c9fa771697808877db",
+        "SpecLoudness.csv": "78d28f142f098ee59977f633ccca472b5637a01d633b9646e1a8bb258906a0e2",
+        "stdout.txt": "34c30b4bcb7047b2894b71744106b2928af9b1e10f4989491e83a954709e4266"
+      },
+      "rust_n_frames": 2055,
+      "rust_spec_frames": 2055,
+      "rust_vs_c_full_specific_common_max": 0.07607444672469832,
+      "new_specific_tail_count": 240,
+      "new_specific_tail_max_difference": 3.2641999863803272e-21,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 16432,
+          "max_abs": 7.105427357601002e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 2054
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 2054
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 2054
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1814,0.95)",
+        "cached": 36.887570000000004,
+        "recalculated_formula": 36.887570000000004,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1803,
+        "xlsx_total_same_rows": 36.887570000000004,
+        "official_c_linear_same_rows": 36.93890992706391,
+        "rust_linear_same_rows": 36.9386959859171,
+        "official_cli_full_record": 36.8578,
+        "official_helper_full_record": 36.85781127291901,
+        "linear_full_record": 36.85654036292827,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 1.1272919010707483e-05,
+        "referenced_numeric_count": 1754,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          1803
+        ],
+        "xlsx_total_note_trim_n5": 36.887570000000004
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N2064)/COUNT(N11:N2064)*100+SUM(O11:O2064)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E2063,E2064)",
+          "4": "=MAXA(F2063,F2064)",
+          "7": "=MINA(I2063,I2064,I2065)",
+          "8": "=MAXA(J2063,J2064,J2065)"
+        }
+      }
+    },
+    {
+      "signal": 17,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 17 (machine gun).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\17",
+      "exit_code": 0,
+      "cli_n_frames": 1454,
+      "cli_spec_frames": 1455,
+      "cli_vs_dll_n_max": 4.997943331375154e-05,
+      "cli_vs_dll_spec_max": 4.999853634160556e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "c36def84f064c65b310a4dc8d9919c18d9d11cc06de6e0d53ea366b3ea1cbaf5",
+        "SpecLoudness.csv": "55ad1465c1a7f098048c0713844e40593c0bf6b7afddde9ce622174560ffd302",
+        "stdout.txt": "6fdafe4e553f8dbbf8902d1335d0a9dacf0c37f0e0fee541f2e6cd753a9504e5"
+      },
+      "rust_n_frames": 1455,
+      "rust_spec_frames": 1455,
+      "rust_vs_c_full_specific_common_max": 0.035822146342784245,
+      "new_specific_tail_count": 240,
+      "new_specific_tail_max_difference": 2.3055507562366204e-21,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 11632,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1454
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1454
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1454
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1214,0.95)",
+        "cached": 9.722019999999995,
+        "recalculated_formula": 9.722019999999995,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1203,
+        "xlsx_total_same_rows": 9.722019999999995,
+        "official_c_linear_same_rows": 9.737356697505977,
+        "rust_linear_same_rows": 9.737114356460017,
+        "official_cli_full_record": 9.363,
+        "official_helper_full_record": 9.362999070040697,
+        "linear_full_record": 9.357259497254233,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 9.299593024536534e-07,
+        "referenced_numeric_count": 1154,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          1203
+        ],
+        "xlsx_total_note_trim_n5": 9.722019999999995
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1464)/COUNT(N11:N1464)*100+SUM(O11:O1464)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1463,E1464)",
+          "4": "=MAXA(F1463,F1464)",
+          "7": "=MINA(I1463,I1464,I1465)",
+          "8": "=MAXA(J1463,J1464,J1465)"
+        }
+      }
+    },
+    {
+      "signal": 18,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 18 (hammer).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\18",
+      "exit_code": 0,
+      "cli_n_frames": 1083,
+      "cli_spec_frames": 1083,
+      "cli_vs_dll_n_max": 4.994650609946305e-05,
+      "cli_vs_dll_spec_max": 4.99990132392103e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "ebe53f110ca8d73d2108c26cc71e3eef8788a9a7171b8a5bfda34df96419217d",
+        "SpecLoudness.csv": "e8585c89811e251c30b07a51525a3dbbb1f9b3313e6cca28a1b28ecc0092f130",
+        "stdout.txt": "9230bd74ec8de29907e80972730ec11afdce6abe828a90f8485a235d56747736"
+      },
+      "rust_n_frames": 1084,
+      "rust_spec_frames": 1084,
+      "rust_vs_c_full_specific_common_max": 0.0437728528172292,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 8664,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1083
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1083
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1083
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1093,0.95)",
+        "cached": 10.3915,
+        "recalculated_formula": 10.3915,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1082,
+        "xlsx_total_same_rows": 10.3915,
+        "official_c_linear_same_rows": 10.406519655794787,
+        "rust_linear_same_rows": 10.406529517238173,
+        "official_cli_full_record": 10.2431,
+        "official_helper_full_record": 10.243139990406227,
+        "linear_full_record": 10.25111411991477,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 3.999040622737482e-05,
+        "referenced_numeric_count": 1033,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          832
+        ],
+        "xlsx_total_note_trim_n5": 10.81397
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1093)/COUNT(N11:N1093)*100+SUM(O11:O1093)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1092,E1093)",
+          "4": "=MAXA(F1092,F1093)",
+          "7": "=MINA(I1092,I1093,I1094)",
+          "8": "=MAXA(J1092,J1093,J1094)"
+        }
+      }
+    },
+    {
+      "signal": 19,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 19 (door creak).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\19",
+      "exit_code": 0,
+      "cli_n_frames": 1300,
+      "cli_spec_frames": 1300,
+      "cli_vs_dll_n_max": 4.993812085185567e-05,
+      "cli_vs_dll_spec_max": 4.999967950203299e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "6daea6f724f113d2334920c67e4e4ba5dbafa5e37fb030e685f1b5c93b6498d6",
+        "SpecLoudness.csv": "54193e526e82a2212d596567935a2e0ec191466afc7fc31b4a7a85dc3ce6f283",
+        "stdout.txt": "6a37ea4d528ed03fc1df1e9244bc13fa8ff7354fbe798a1d12ee22c6f5e29d23"
+      },
+      "rust_n_frames": 1300,
+      "rust_spec_frames": 1300,
+      "rust_vs_c_full_specific_common_max": 0.03992122289116973,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 10400,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1060,0.95)",
+        "cached": 10.009345,
+        "recalculated_formula": 10.009345,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1049,
+        "xlsx_total_same_rows": 10.009345,
+        "official_c_linear_same_rows": 10.025027432914213,
+        "rust_linear_same_rows": 10.024509767910853,
+        "official_cli_full_record": 9.8056,
+        "official_helper_full_record": 9.805640158067002,
+        "linear_full_record": 9.805023837377048,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 4.01580670015278e-05,
+        "referenced_numeric_count": 1000,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          1049
+        ],
+        "xlsx_total_note_trim_n5": 10.009345
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1310)/COUNT(N11:N1310)*100+SUM(O11:O1310)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1309,E1310)",
+          "4": "=MAXA(F1309,F1310)",
+          "7": "=MINA(I1309,I1310,I1311)",
+          "8": "=MAXA(J1309,J1310,J1311)"
+        }
+      }
+    },
+    {
+      "signal": 20,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 20 (shaking coins).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\20",
+      "exit_code": 0,
+      "cli_n_frames": 1300,
+      "cli_spec_frames": 1300,
+      "cli_vs_dll_n_max": 4.997735117745483e-05,
+      "cli_vs_dll_spec_max": 4.9998226496622555e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "68ea76794372138386eafde747f423b3efb59e9e7b615183abb84a862043cf1e",
+        "SpecLoudness.csv": "e4d7b9b03e2b89f5babac7a070428d99c17f157be1500912b7ea1af8b5692063",
+        "stdout.txt": "c6751525487efa30f8a7f698bf241f840840800fa88c3b6c97c1774e3a9e4f0c"
+      },
+      "rust_n_frames": 1300,
+      "rust_spec_frames": 1300,
+      "rust_vs_c_full_specific_common_max": 0.03961730178893097,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 10400,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1060,0.95)",
+        "cached": 13.092595,
+        "recalculated_formula": 13.092595,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1049,
+        "xlsx_total_same_rows": 13.092595,
+        "official_c_linear_same_rows": 13.112331793205943,
+        "rust_linear_same_rows": 13.111563401427668,
+        "official_cli_full_record": 12.7972,
+        "official_helper_full_record": 12.797210192718744,
+        "linear_full_record": 12.79703353072318,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 1.019271874369565e-05,
+        "referenced_numeric_count": 1000,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          1049
+        ],
+        "xlsx_total_note_trim_n5": 13.092595
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1310)/COUNT(N11:N1310)*100+SUM(O11:O1310)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1309,E1310)",
+          "4": "=MAXA(F1309,F1310)",
+          "7": "=MINA(I1309,I1310,I1311)",
+          "8": "=MAXA(J1309,J1310,J1311)"
+        }
+      }
+    },
+    {
+      "signal": 21,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 21 (jackhammer).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\21",
+      "exit_code": 0,
+      "cli_n_frames": 1300,
+      "cli_spec_frames": 1300,
+      "cli_vs_dll_n_max": 4.9964316215067583e-05,
+      "cli_vs_dll_spec_max": 4.9998317188243435e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "84edf38c7f30bab058996484d58afb8e66e421f2840f223832e4fffaecd804e4",
+        "SpecLoudness.csv": "c1345e47af39c1006672634f6d2c530ac246d5a53309e0f8c726885611f0cf4f",
+        "stdout.txt": "1c0e997635322ff00c726bca9811331cb39e857aa984a63d7a9e38d69dacb516"
+      },
+      "rust_n_frames": 1300,
+      "rust_spec_frames": 1300,
+      "rust_vs_c_full_specific_common_max": 0.03444123059629822,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 10400,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1300
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1060,0.95)",
+        "cached": 8.999804999999999,
+        "recalculated_formula": 8.999804999999999,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1049,
+        "xlsx_total_same_rows": 8.999804999999999,
+        "official_c_linear_same_rows": 9.013968993848023,
+        "rust_linear_same_rows": 9.014038537958589,
+        "official_cli_full_record": 8.9083,
+        "official_helper_full_record": 8.908317466869608,
+        "linear_full_record": 8.89688760824625,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 1.7466869607574154e-05,
+        "referenced_numeric_count": 1000,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          1049
+        ],
+        "xlsx_total_note_trim_n5": 8.999804999999999
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1310)/COUNT(N11:N1310)*100+SUM(O11:O1310)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1309,E1310)",
+          "4": "=MAXA(F1309,F1310)",
+          "7": "=MINA(I1309,I1310,I1311)",
+          "8": "=MAXA(J1309,J1310,J1311)"
+        }
+      }
+    },
+    {
+      "signal": 22,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 22 (ratchet wheel (large)).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\22",
+      "exit_code": 0,
+      "cli_n_frames": 925,
+      "cli_spec_frames": 925,
+      "cli_vs_dll_n_max": 4.99876639397101e-05,
+      "cli_vs_dll_spec_max": 4.9990312285086436e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "ca645ed62fb5fff9a3eabc5b9a99bb6f3daf87fce72e84542782add4378e52f8",
+        "SpecLoudness.csv": "321aded3c8000d612ff00e53f3f9f24e6b6e27ab0f78a594898209c397ad5093",
+        "stdout.txt": "1ac76dfe5c06d276e6e7c2d0eb391c25be7016c7b8f76d927474974589b7beed"
+      },
+      "rust_n_frames": 925,
+      "rust_spec_frames": 925,
+      "rust_vs_c_full_specific_common_max": 0.03774193647141244,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 7400,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 925
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 925
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 925
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1494,0.95)",
+        "cached": 8.15808,
+        "recalculated_formula": 8.15808,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1483,
+        "xlsx_total_same_rows": 8.15808,
+        "official_c_linear_same_rows": 8.170349919941692,
+        "rust_linear_same_rows": 8.170367856815712,
+        "official_cli_full_record": 8.1361,
+        "official_helper_full_record": 8.136093742266226,
+        "linear_full_record": 8.13760211462547,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 6.257733774717167e-06,
+        "referenced_numeric_count": 875,
+        "referenced_blank_count": 559,
+        "note_trim_window_indices": [
+          50,
+          674
+        ],
+        "xlsx_total_note_trim_n5": 8.29746
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N935)/COUNT(N11:N935)*100+SUM(O11:O935)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E934,E935)",
+          "4": "=MAXA(F934,F935)",
+          "7": "=MINA(I934,I935,I936)",
+          "8": "=MAXA(J934,J935,J936)"
+        }
+      }
+    },
+    {
+      "signal": 23,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 23 (typewriter).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\23",
+      "exit_code": 0,
+      "cli_n_frames": 1275,
+      "cli_spec_frames": 1275,
+      "cli_vs_dll_n_max": 4.996276172919423e-05,
+      "cli_vs_dll_spec_max": 4.999930979573963e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "c9d4f4f14133247506c31121893ff5369e74779ac72b948014a4dc504399755a",
+        "SpecLoudness.csv": "203e377d8ef6c11d81ecc9a59ba643d090ed627640d591e3920520af797837e5",
+        "stdout.txt": "c5dad4386abe17f6dbf41bea5b71145cbd75773950215cc46dc95986bfadbec1"
+      },
+      "rust_n_frames": 1276,
+      "rust_spec_frames": 1276,
+      "rust_vs_c_full_specific_common_max": 0.03508193084449651,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 10200,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1275
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1275
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1275
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1035,0.95)",
+        "cached": 10.42144,
+        "recalculated_formula": 10.42144,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1024,
+        "xlsx_total_same_rows": 10.42144,
+        "official_c_linear_same_rows": 10.437412379133871,
+        "rust_linear_same_rows": 10.437438464043344,
+        "official_cli_full_record": 10.3145,
+        "official_helper_full_record": 10.314452683902408,
+        "linear_full_record": 10.310616474982142,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 4.731609759289768e-05,
+        "referenced_numeric_count": 975,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          1024
+        ],
+        "xlsx_total_note_trim_n5": 10.42144
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1285)/COUNT(N11:N1285)*100+SUM(O11:O1285)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1284,E1285)",
+          "4": "=MAXA(F1284,F1285)",
+          "7": "=MINA(I1284,I1285,I1286)",
+          "8": "=MAXA(J1284,J1285,J1286)"
+        }
+      }
+    },
+    {
+      "signal": 24,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 24 (woodpecker).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\24",
+      "exit_code": 0,
+      "cli_n_frames": 1200,
+      "cli_spec_frames": 1200,
+      "cli_vs_dll_n_max": 4.9967230825270076e-05,
+      "cli_vs_dll_spec_max": 4.999952014768871e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "0599ae0b740d80412484885b8def52174b25386bab26d0938c19240514f003f0",
+        "SpecLoudness.csv": "2782b401d19e68d9d2bd80a0be3e6a8f9adc34ee3828b465840edd3920a7d890",
+        "stdout.txt": "0f9cac7618c701e3bc4973de6fabc169a128dfee00ef63751a78bd01f529e190"
+      },
+      "rust_n_frames": 1201,
+      "rust_spec_frames": 1201,
+      "rust_vs_c_full_specific_common_max": 0.03485164720526113,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 9600,
+          "max_abs": 1.7763568394002505e-15,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1200
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1200
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1200
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B4492,0.95)",
+        "cached": 8.518889999999999,
+        "recalculated_formula": 8.518889999999999,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 4481,
+        "xlsx_total_same_rows": 8.518889999999999,
+        "official_c_linear_same_rows": 8.532200026797558,
+        "rust_linear_same_rows": 8.531256816888884,
+        "official_cli_full_record": 8.5142,
+        "official_helper_full_record": 8.51423244305532,
+        "linear_full_record": 8.514091439864787,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 3.2443055319575365e-05,
+        "referenced_numeric_count": 1150,
+        "referenced_blank_count": 3282,
+        "note_trim_window_indices": [
+          50,
+          949
+        ],
+        "xlsx_total_note_trim_n5": 8.610785
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1210)/COUNT(N11:N1210)*100+SUM(O11:O1210)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1209,E1210)",
+          "4": "=MAXA(F1209,F1210)",
+          "7": "=MINA(I1209,I1210,I1211)",
+          "8": "=MAXA(J1209,J1210,J1211)"
+        }
+      }
+    },
+    {
+      "signal": 25,
+      "command": [
+        "<AUDIT_HOME>\\2026-10-31\\referenced-chatgpt-conversation-this-is-an\\work\\reverify-f02-5450d39\\work\\ref-build\\iso_reference_cli.exe",
+        "Time_varying",
+        "F",
+        "..\\..\\official\\Annex B.5\\Test signal 25 (full can rattle).wav",
+        "..\\..\\official\\Annex C\\calibration signal sine 1kHz 60dB.wav",
+        "60"
+      ],
+      "cwd": "work\\deep-cli-v2\\25",
+      "exit_code": 0,
+      "cli_n_frames": 1275,
+      "cli_spec_frames": 1275,
+      "cli_vs_dll_n_max": 4.994611262132409e-05,
+      "cli_vs_dll_spec_max": 4.999962192087093e-05,
+      "fresh_vs_prior_dll_n_max": 0.0,
+      "fresh_vs_prior_dll_spec_common_max": 0.0,
+      "calibrated_input_max_difference": 0.0,
+      "output_hashes": {
+        "Loudness.csv": "6af54f201e5acd4fe9ff622db3955ff35609e8dc3a5fd23da7a02f037c787b86",
+        "SpecLoudness.csv": "ef2242103327f2c57998394812f5105f43f0bd79e31521dbe8ca85319a697e7e",
+        "stdout.txt": "002efbabf1c578632957c30ca3f90e30d54b851e795c7b4c79b6c7aa88b36d8f"
+      },
+      "rust_n_frames": 1276,
+      "rust_spec_frames": 1276,
+      "rust_vs_c_full_specific_common_max": 0.02639265176253769,
+      "new_specific_tail_count": 0,
+      "time": {
+        "cli_vs_xlsx_max_s": 0.0,
+        "rust_vs_cli_common_max_s": 0.0,
+        "cli_grid_max_s": 0.0,
+        "specific_grid_max_s": 0.0
+      },
+      "bound_recalculation": {
+        "total": {
+          "cells": 10200,
+          "max_abs": 8.881784197001252e-16,
+          "finite": true,
+          "endpoint_max_abs": 0.0
+        }
+      },
+      "judgments": {
+        "total": {
+          "rust_auto": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1275
+          },
+          "official_c": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1275
+          },
+          "rust_scalar": {
+            "status": "PASS",
+            "strict": 0,
+            "hard": 0,
+            "count": 1275
+          }
+        }
+      },
+      "n5": {
+        "formula": "=PERCENTILE(B61:B1035,0.95)",
+        "cached": 5.761419999999999,
+        "recalculated_formula": 5.761419999999999,
+        "formula_cache_abs": 0.0,
+        "column": "B",
+        "start_index": 50,
+        "end_index_inclusive": 1024,
+        "xlsx_total_same_rows": 5.761419999999999,
+        "official_c_linear_same_rows": 5.770678913912754,
+        "rust_linear_same_rows": 5.770693102880683,
+        "official_cli_full_record": 5.6124,
+        "official_helper_full_record": 5.6124438906869685,
+        "linear_full_record": 5.611771110106987,
+        "workbook_note": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+        "cli_helper_abs": 4.389068696841747e-05,
+        "referenced_numeric_count": 975,
+        "referenced_blank_count": 0,
+        "note_trim_window_indices": [
+          50,
+          1024
+        ],
+        "xlsx_total_note_trim_n5": 5.761419999999999
+      },
+      "formula_evidence": {
+        "aggregate": [
+          "=SUM(N11:N1285)/COUNT(N11:N1285)*100+SUM(O11:O1285)"
+        ],
+        "last_row_bounds": {
+          "3": "=MINA(E1284,E1285)",
+          "4": "=MAXA(F1284,F1285)",
+          "7": "=MINA(I1284,I1285,I1286)",
+          "8": "=MAXA(J1284,J1285,J1286)"
+        }
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "exception_1_of_99",
+      "actual": "FAIL",
+      "expected": "FAIL",
+      "passed": true
+    },
+    {
+      "name": "exception_1_of_100",
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "exception_1_of_101",
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "exception_2_of_199",
+      "actual": "FAIL",
+      "expected": "FAIL",
+      "passed": true
+    },
+    {
+      "name": "exception_2_of_200",
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "boundary",
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "next_above",
+      "actual": "FAIL",
+      "expected": "FAIL",
+      "passed": true
+    },
+    {
+      "name": "additive_trap",
+      "actual": "FAIL",
+      "expected": "FAIL",
+      "passed": true
+    },
+    {
+      "name": "nan_actual",
+      "actual": "INVALID",
+      "expected": "INVALID",
+      "passed": true
+    },
+    {
+      "name": "inf_actual",
+      "actual": "INVALID",
+      "expected": "INVALID",
+      "passed": true
+    },
+    {
+      "name": "nan_reference",
+      "actual": "INVALID",
+      "expected": "INVALID",
+      "passed": true
+    },
+    {
+      "name": "empty",
+      "actual": "INVALID",
+      "expected": "INVALID",
+      "passed": true
+    },
+    {
+      "name": "shape",
+      "actual": "INVALID",
+      "expected": "INVALID",
+      "passed": true
+    },
+    {
+      "name": "inverted",
+      "actual": "INVALID",
+      "expected": "INVALID",
+      "passed": true
+    },
+    {
+      "name": "not_nested",
+      "actual": "INVALID",
+      "expected": "INVALID",
+      "passed": true
+    },
+    {
+      "name": "relaxed_violation",
+      "actual": "FAIL",
+      "expected": "FAIL",
+      "passed": true
+    },
+    {
+      "name": "one_sample_shift_envelope",
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "two_sample_shift_envelope",
+      "actual": "FAIL",
+      "expected": "FAIL",
+      "passed": true
+    },
+    {
+      "name": "no_endpoint_wrap",
+      "actual": 0.1,
+      "expected": 0.1,
+      "passed": true
+    }
+  ],
+  "integrity": {
+    "source_hashes_before": {
+      ".codex\\skills\\iso532-r3-verification\\agents\\openai.yaml": "2111cfe79cba3efe6c5c3d67ec36505e7f80d6368f3b89e0af4526a7d9f8d8f9",
+      ".codex\\skills\\iso532-r3-verification\\SKILL.md": "140cd8933f5f93027adab360ecd4d0660ef4de9c3b60d0d521c1e7c04a9f2d71",
+      ".github\\ISSUE_TEMPLATE\\bug_report.yml": "3a3f3f6be705d5090998fb4e1faa7bf9a59b7281a87e84cf24d0dc28b7dbe26a",
+      ".github\\ISSUE_TEMPLATE\\config.yml": "d1bd5a4b2686ecb4b2901f903a26ad3a1e427dea5e5e6efd71528902b36dfd59",
+      ".github\\ISSUE_TEMPLATE\\feature_request.yml": "29e9eca59135b89821b859097e4c31e74b03c04514cc5ee10edda89e4b6795ed",
+      ".github\\pull_request_template.md": "ae024d01a3d4282feb8ef23a11f897c105f28e81cfe604ff6d094ce9b23395f2",
+      ".github\\workflows\\ci.yml": "c0d424a9e812600d16a6b0d463ade1de6aae44a0fb12cc473f43a68297b6e686",
+      ".gitignore": "2f37414daf8d8de746a61e2abc019605a6848740508641505e2039d397feac5b",
+      "Cargo.lock": "70baa79d64a81b3580954d6b03c0dc179fab3a3101366aa3fd66d57b5b31e639",
+      "Cargo.toml": "83ffc786df58ad9c7c0388c4ee1337adccc2e80a9c61b3980825cf12123d741d",
+      "CHANGELOG.md": "036161dc9e43a163729f856719899919f01dbe85c92dd294e0cd1ca43ef07ef8",
+      "CITATION.cff": "5646a5063377d778d677893380fb3e6b52d4bc9af8fddb7ad79f52b171a88f09",
+      "CODE_OF_CONDUCT.md": "92ee257a050440eeb6dedc6d2cb466301ebd6b3f33eff1ab98366c2798e08646",
+      "CONTRIBUTING.md": "0b8d1cac44036b1d8525f35c6b4e9c7eeff5815d1ed1003ca187b1ac45c2520e",
+      "data\\annexb\\broadband_570.wav": "4b22473b9ba78d518fd5a54e17b35a45f45c9d6d6824474d37572c8c7028d4d6",
+      "data\\annexb\\Results and tests for synthetic signals (time varying loudness).xlsx": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "data\\annexb\\Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907",
+      "data\\annexb\\Test signal 3 (1 kHz 60 dB)_44100Hz.wav": "1300f0ddf7981fa9509a2084bc38fcfc14ac032c914e4f90b033e49d698551d4",
+      "data\\annexb\\Test signal 5 (pinknoise 60 dB).wav": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e",
+      "data\\annexb\\test_signal_1.csv": "6e44f8a4beb345d452451bc4537c9edabec3c0ceab6b785f97fba21b1a5df8ba",
+      "data\\annexb\\test_signal_3.csv": "efd5861ff8fc2c8d97adb4f2621a017c69bc640c93619cfce7ff267c3c0dcf71",
+      "data\\annexb\\test_signal_5.csv": "049a5e32945494c948e4c4353c0a96d1f6e112fd933966297c3ffc95eecf75de",
+      "data\\annexb\\white_noise_200_2000_Hz_stationary.wav": "3d697ffb20de6d8a4e39cd1079addb5456c9645e5614319afb62959aad5e99a4",
+      "data\\annexb\\white_noise_442_1768_Hz_stationary.wav": "289ce8701e85d59c9846b48d6b21d1df1c1b0928962da6bd5159e2339d9857ad",
+      "data\\annexb\\white_noise_442_1768_Hz_varying.wav": "df77f8ba3384a526e42701dc2d8fea8eb9d25d012b102d96ec4985eeb9986a1e",
+      "data\\AnnexB深入分析證據.zip": "2014a3a7644dbe7b11594d0451dbd380ef6a28aded19867d7f773e77afbef232",
+      "data\\golden\\_dsp\\dsp_cheby_sos.bin": "731898a24f90b322db1697b9487931aa7b9eab709393089df113c52bc4bef07d",
+      "data\\golden\\_dsp\\dsp_decimate_q10.bin": "7ef9726081257e40af7e769588a09399ea012039989fea47abdf1339663a3bce",
+      "data\\golden\\_dsp\\dsp_sosfilt_y.bin": "64dcc33f75987019131852c489a9ae4b46f45a81d4d3272a7e7c302796d01f71",
+      "data\\golden\\_dsp\\dsp_sosfiltfilt_y.bin": "6f9e678ab663112a855ce66661cbb2a8cf5df1df087e16414a5215cd4994c078",
+      "data\\golden\\_dsp\\dsp_x.bin": "699597ea57c2fae253cad08f6821167f37de6449abfc1f4a57f7e21aad0959bc",
+      "data\\golden\\_dsp\\meta.json": "9424eff04b48c2741d6e91b99ef97a793207600d74ee2a6869a890e15ae0dc9b",
+      "data\\golden\\annexb_sig10\\core_loudness.bin": "a496aa3be856c004c5384a0d31674a34c932fe3754c9295c8b7f7c258085ab4f",
+      "data\\golden\\annexb_sig10\\filt_loudness.bin": "12822dddfdd0b7897a1632f318734cd16fc8c18c3bf3d4323f30624049487471",
+      "data\\golden\\annexb_sig10\\loudness_raw.bin": "ade1e485c2524152c4effdb9db1ac64653a4343ec0054020131014bc18c2e555",
+      "data\\golden\\annexb_sig10\\meta.json": "7445e2547b454d4ef3236e4e095b14ca8ce90e4e13b8efe24b568e484b5ce98e",
+      "data\\golden\\annexb_sig10\\N.bin": "d18f5d9a67177dcc54f06f0cb4de7b882de54595beef934896bd7b8a01fa8147",
+      "data\\golden\\annexb_sig10\\N_spec_time.bin": "159554ad610e048f7ce6635b13aa9dc073e829cf47ce9ce3c7634806d6b20418",
+      "data\\golden\\annexb_sig10\\N_specific.bin": "660088794ae588c70c353280caded6ec095d486050341a273df9d3439519090e",
+      "data\\golden\\annexb_sig10\\N_time.bin": "1a13e19e25e3d384871cb48957b9b1edf450a10416aac4cc3c173f7ba5780057",
+      "data\\golden\\annexb_sig10\\nl_loudness.bin": "93aad78625057c9fb1825cf8df14593464ad952e6c6950d7a8349b5143645e44",
+      "data\\golden\\annexb_sig10\\nm_diffuse.bin": "38b1b91ada6b0c7c794b626d565322677789bd17bdf7d98a4fc5038e31ab5c5d",
+      "data\\golden\\annexb_sig10\\nm_free.bin": "34e092a917bac25d15f08ee37ba1e13c7c3d4a721a096c2e68848e0d8b6c6f57",
+      "data\\golden\\annexb_sig10\\sig.bin": "a849fcf48d4ee544a257a669059fac8a961de5283272cb9041734fc593b5e890",
+      "data\\golden\\annexb_sig10\\spec_loudness_raw.bin": "84892d5c0860d73cd9b6dadcf69b4e158b14aac8f12dc5fb113dd7729888fd10",
+      "data\\golden\\annexb_sig10\\spec_third_amp.bin": "7bbe43b77d411d50a635f2ccb29b9a28cbd5ecf2a1d9e254f20df54560e82ab4",
+      "data\\golden\\annexb_sig10\\spec_third_db.bin": "aca7ad5481e0d8d18af57829b1feb8a3ea177518cc9813ba9f22ba7abe466517",
+      "data\\golden\\annexb_sig10\\third_octave_level.bin": "c8b623442500621584cdea703fe559d3afcb65acfe59d03d892bde2d907b085b",
+      "data\\golden\\annexb_sig10\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\annexb_sig10\\tv_nmax_5pct.bin": "98c0bbb92cc9bdae255ae6aea28464378a4b42ac9d87715fb3b5786abdc7f8ad",
+      "data\\golden\\annexb_sig10\\tv_nmin_5pct.bin": "31597bf6024ce8e16f2c06af4def4a1329e788148158d37a63eb2f521cf28045",
+      "data\\golden\\annexb_sig10\\tv_nref.bin": "fd315680cacc151f896526e2e24b701b56494fcf0312faa158c70c12494781bb",
+      "data\\golden\\annexb_sig10\\tv_nspec_8p5.bin": "e8384fa74b350926b9909772f7d185e3f152d91549447c75e631ab4b3e053c18",
+      "data\\golden\\annexb_sig10\\tv_time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "data\\golden\\annexb_sig3\\core_loudness.bin": "6dffc8753da25f7460ee37d9e8379c5cd713edec53843f30e8d8ab5e692ec8a1",
+      "data\\golden\\annexb_sig3\\filt_loudness.bin": "e7d7ee02cc3e0b466fed1f4a821d75675b2be906629d2ed9039d0c045126be84",
+      "data\\golden\\annexb_sig3\\loudness_raw.bin": "8071102800c03978d4363cda7e2fddd4808c423ec9a2b396c08bca4e040b79d4",
+      "data\\golden\\annexb_sig3\\meta.json": "5b69a1f023df24f695b71b8a8c5ea16909570f27e75561c951fca0e6962870c3",
+      "data\\golden\\annexb_sig3\\N.bin": "f545650a5267ff1485632f1b7339c7d6eb0f178cc7f4bc6a83519709da15436d",
+      "data\\golden\\annexb_sig3\\N_spec_time.bin": "46a2d8f1ebe1af7c0cda40ecec71799d22608a68a3491231ac793142a1a04444",
+      "data\\golden\\annexb_sig3\\N_specific.bin": "82c422a3fda9432448ca3ce6c7c16674c695d5e1913c8e8821bb5782e5d4aaa2",
+      "data\\golden\\annexb_sig3\\N_time.bin": "eeba41710ad74a74d3457cd2dbc275a9cc02bc3bc875e6915cf408e625ad7ace",
+      "data\\golden\\annexb_sig3\\nl_loudness.bin": "3e53e44d2f3bf3ed401cba71929f9d77e9f4b856660660c02b2284aea98152e5",
+      "data\\golden\\annexb_sig3\\nm_diffuse.bin": "c2cde811a2c9ce3a9edc59280bf04eb59f2c752cf7909e433f0e61268ced03f7",
+      "data\\golden\\annexb_sig3\\nm_free.bin": "9b45fa5493e4b287e3ed523acd4ab6ab2604952af04860034d9c072912ac111a",
+      "data\\golden\\annexb_sig3\\sig.bin": "7b23fad6aebdff5156fa010310753b8ac20f3e1ab3b3298483f8cbe111f78c33",
+      "data\\golden\\annexb_sig3\\spec_loudness_raw.bin": "56e2f9006f3a519689da0ef75e6dd4f4e894a415bb2b9cd4b30e1a2c356d6927",
+      "data\\golden\\annexb_sig3\\spec_third_amp.bin": "75105ec8218d391d19f054532771a79ed5b893be0274017b2b7043a8e3b275f8",
+      "data\\golden\\annexb_sig3\\spec_third_db.bin": "0183e19b590aa7c8917465f2caa9c26160a319f19a5ad20572f228b338663054",
+      "data\\golden\\annexb_sig3\\third_octave_level.bin": "a0b4515249f26997dbe8d94a630158d7243f3bb7a862da4d1c0ee00d2f392a63",
+      "data\\golden\\annexb_sig3\\time_axis.bin": "d57163dc1a16c10881f0058fe6ed03149a738e5124c93bcb49af2a224cf9f5f2",
+      "data\\golden\\annexb_sig5\\core_loudness.bin": "2d2b106eeed6f09d63060a9121eb248c89291150afd8cc636ccfeb4b232b14b1",
+      "data\\golden\\annexb_sig5\\filt_loudness.bin": "9c0d437207d6a0fb66172009399ec91e4402adb001b05e0a12c012f860116864",
+      "data\\golden\\annexb_sig5\\loudness_raw.bin": "bb16749cd0f65e0c9d392399edbe440b868180a15c9d7c6fb9a4e176ddc5c73d",
+      "data\\golden\\annexb_sig5\\meta.json": "5b69a1f023df24f695b71b8a8c5ea16909570f27e75561c951fca0e6962870c3",
+      "data\\golden\\annexb_sig5\\N.bin": "84ed44ae3f3213b20f8dff24aa2f41605b39ca9212b3dee7c490539162747b05",
+      "data\\golden\\annexb_sig5\\N_spec_time.bin": "4aea621ac56df54cd2db25979b88b4070755655331d4306f274978ee72f75b04",
+      "data\\golden\\annexb_sig5\\N_specific.bin": "0c4c317c059370cee4211a0c0e3c32e72deffeec3924ba029732cf89d533699c",
+      "data\\golden\\annexb_sig5\\N_time.bin": "464c989b2480d61f088c5186c4b0a200e17e3ef372ff5ace282ab2d7e291fb80",
+      "data\\golden\\annexb_sig5\\nl_loudness.bin": "e2de367c4d276d35a62760984421b49e6f5545ed9c464ffcd6012d36f5af9f04",
+      "data\\golden\\annexb_sig5\\nm_diffuse.bin": "8b1e4e6e57c7f4ad6813c39c13b5b5c733be75ccea784a1802bff3bf17690987",
+      "data\\golden\\annexb_sig5\\nm_free.bin": "aa21bf0bc0ca7b1064cac25424e13c45d7a60ba03c802cbf4fc69084aa14e873",
+      "data\\golden\\annexb_sig5\\sig.bin": "20e036c556aa08b2fdc3409bfa404fa1325dbe2962651b6ae808f95b260be19b",
+      "data\\golden\\annexb_sig5\\spec_loudness_raw.bin": "588e1c6f329369ca7f516df6236737129d34bd090f0e7edbd877467f13d18e38",
+      "data\\golden\\annexb_sig5\\spec_third_amp.bin": "8c7240624b3d225f7e559ce494a13fdbb0777c40f865b6998ff013d7b7cf5470",
+      "data\\golden\\annexb_sig5\\spec_third_db.bin": "a88104c0c09853fbb478464570eabdbdcf410af423e19ac6cd045333dc8902ed",
+      "data\\golden\\annexb_sig5\\third_octave_level.bin": "69d563165ebf75d23fb6f3cd4d46355842b42761a233b5504135bb2001f9664d",
+      "data\\golden\\annexb_sig5\\time_axis.bin": "d57163dc1a16c10881f0058fe6ed03149a738e5124c93bcb49af2a224cf9f5f2",
+      "data\\golden\\pulse_1k_70\\core_loudness.bin": "c787e16ab4cf1239a907ea5af28c27ab8e614ed63b096510994e7d965bbd4741",
+      "data\\golden\\pulse_1k_70\\filt_loudness.bin": "a8583c7de12859136c46e13b7eef2b9f4c26407e3c2323395cba2e2e17facda2",
+      "data\\golden\\pulse_1k_70\\loudness_raw.bin": "5fdcbfeac5b127c6cc75efad0f1b619a706842faa77dc86010bad262bde3c997",
+      "data\\golden\\pulse_1k_70\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\pulse_1k_70\\N.bin": "1cb06149ad019d3249a9a28d71ba802ca7c9353be98c02e6c601c153a3869c75",
+      "data\\golden\\pulse_1k_70\\N_spec_time.bin": "7f72554a0e883677a9d15af349216207f8ee3ce93fb7f28d51b06eb7960e7f8a",
+      "data\\golden\\pulse_1k_70\\N_specific.bin": "a3d95584268c39377d98db10e4caca07440def7cd0b9c8a340ecbf926268f926",
+      "data\\golden\\pulse_1k_70\\N_time.bin": "07e429ce4f159c24b0655e4a66e34db8bc85c44d60e99769d5515beaf201fd9f",
+      "data\\golden\\pulse_1k_70\\nl_loudness.bin": "4ce158ee6936e4c35fc1d34a0abfb82a1edc2e79d777320b2ffb3216f35b9550",
+      "data\\golden\\pulse_1k_70\\nm_diffuse.bin": "1a855c55866e048021673baad2c460d9fb441788766a9e4722153a331dc99783",
+      "data\\golden\\pulse_1k_70\\nm_free.bin": "b871eb38deadb7bd7585be8037e209173361f9e170564304183c57fe34430d19",
+      "data\\golden\\pulse_1k_70\\sig.bin": "1497468c922275fa8eb443eefe881d1c83d41a2ed8dcd1cd4a10f44bd1d75003",
+      "data\\golden\\pulse_1k_70\\spec_loudness_raw.bin": "c25ee3b575cac2559dcd5840c0c0c96d556af4ccdec5830228fc26997180f34a",
+      "data\\golden\\pulse_1k_70\\spec_third_amp.bin": "e7f5a1dedc058e50f885bd713f6c77946bf4f189e444f2b504e9a8c9a8446be0",
+      "data\\golden\\pulse_1k_70\\spec_third_db.bin": "97a101cfedcb59c645192e09b5636516684f93864b8b651021c36465cff2cf8e",
+      "data\\golden\\pulse_1k_70\\third_octave_level.bin": "0a2844b86a6eb7eeb6440cd376c584ee6937bd93aabecb130a1222ec0339f052",
+      "data\\golden\\pulse_1k_70\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\sine_1k_60\\core_loudness.bin": "89ffde0fdd588f92569f6032990c57abae4c39e2bcf08fef7c48a732b4a75b94",
+      "data\\golden\\sine_1k_60\\filt_loudness.bin": "8bc981010e60eefba951de11513d74af82229226e4818d51dde9d90751691d0f",
+      "data\\golden\\sine_1k_60\\loudness_raw.bin": "49164284b5faf2c30e8db637aacebab5407f9127489d263ba3dc2926575067ba",
+      "data\\golden\\sine_1k_60\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\sine_1k_60\\N.bin": "a08951815cc4f110e68b11dc2f53816ed394d3cc8b386aee6bdc4241aee0e10b",
+      "data\\golden\\sine_1k_60\\N_spec_time.bin": "fbcf4ccc896cb1985fa190b678978fc4b7596926d388e118334adb12b09816e7",
+      "data\\golden\\sine_1k_60\\N_specific.bin": "d93efef2fb2a5426fe9dfd39b726816fc8ec69fdf0a5641c7490291a22674773",
+      "data\\golden\\sine_1k_60\\N_time.bin": "ede9e7c6adcd1a341e5b17862893328eaacda9a57c33bf2b057564cf6a3a000e",
+      "data\\golden\\sine_1k_60\\nl_loudness.bin": "56ca91e20ee81138eef8d83f07228afc0d9d2f63ed82e995842a282039310643",
+      "data\\golden\\sine_1k_60\\nm_diffuse.bin": "061c6610fa0ce6209a680690a24619e6192a891390ae89a0604cb14fdadcc178",
+      "data\\golden\\sine_1k_60\\nm_free.bin": "5c1786ed8ffce49b0afd637ddcfcc616382aa5160c4f01f2231843bdb5857648",
+      "data\\golden\\sine_1k_60\\sig.bin": "8f5db79d324ebf2863086cc1199bb6d58ad451882b387f37f23ab5fc3984fe54",
+      "data\\golden\\sine_1k_60\\spec_loudness_raw.bin": "5d504d5c20be47d3696d87802f7f18408d858513dca8f3e1848ac910f717e668",
+      "data\\golden\\sine_1k_60\\spec_third_amp.bin": "179c2732c16d4636bc658e91a43203c0694f479c7ff2fc73c4d97ef9a1445479",
+      "data\\golden\\sine_1k_60\\spec_third_db.bin": "ca20bf5769a68e18a66793cc649a83158a7fa117bca150f29d23733f11c19809",
+      "data\\golden\\sine_1k_60\\third_octave_level.bin": "d2741ca58521e6bf8b3b2f70933d64126fbd1d3b81ea25d90ddd102ea3aab1fe",
+      "data\\golden\\sine_1k_60\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\sine_250_80\\core_loudness.bin": "42debf1c30efc70f2a23169e7080d1216ad3edd65879816f4a529e845dbfe482",
+      "data\\golden\\sine_250_80\\filt_loudness.bin": "07a9f449e80e1da38aef03b7d229a3a15ae618569e81ed8bd89e61e014235a8b",
+      "data\\golden\\sine_250_80\\loudness_raw.bin": "62a75ff5b22fad70e9e6c9c9b429a81bc9049855720130db320e61977caf9c09",
+      "data\\golden\\sine_250_80\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\sine_250_80\\N.bin": "e6fa534dab3b7140dcfbb0a341c692c505a70efc15d884107e7f3263e99382f4",
+      "data\\golden\\sine_250_80\\N_spec_time.bin": "2f185c0e82be7d0d0a511f23b79bcb947938ed8179c3ae4967268af32299f0a2",
+      "data\\golden\\sine_250_80\\N_specific.bin": "b09500c0cc16e03df918d38d2ac64f913f932ab7666fae465ed4f83369d75027",
+      "data\\golden\\sine_250_80\\N_time.bin": "8152ef5f164015438930d350609b7f3e2e13624e2ba937a5678a07f94e680efa",
+      "data\\golden\\sine_250_80\\nl_loudness.bin": "ca6167cbbefe2ccba9aff56da99d9f818bbc35fb8902a2cb99a9d23ba8955294",
+      "data\\golden\\sine_250_80\\nm_diffuse.bin": "2ca963b142888bedc7f5c6bb10111b2c3e50c50f3b26552811ca15de31997222",
+      "data\\golden\\sine_250_80\\nm_free.bin": "59ba6554a599430bffa5ab24e02d8fecae03f4bb76af991aaf64d932087c3fa5",
+      "data\\golden\\sine_250_80\\sig.bin": "cec355feb2635fc4187d1a494c8b60313aef35b9fb64d123a810bcecde6a3a00",
+      "data\\golden\\sine_250_80\\spec_loudness_raw.bin": "99627db4177bfbdea8d873d29be7cc14ae355ed7c84ebc610b8df7349ffdb825",
+      "data\\golden\\sine_250_80\\spec_third_amp.bin": "32d64e590bfea0a574eb2a49b1d113670bd6ab0b15b8d7940c4f694e3376216d",
+      "data\\golden\\sine_250_80\\spec_third_db.bin": "6e8216ef415fedacf59a749ebb58e7406ff9303d45520f4dccda2f4afb4afac8",
+      "data\\golden\\sine_250_80\\third_octave_level.bin": "66ce13e51cc14daf8f23b17fbb2d6a63b0d40d1067742e1abb26cd38946e621a",
+      "data\\golden\\sine_250_80\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\sine_4k_60\\core_loudness.bin": "86d2cbe35be120126ea66b93cb5becc04b450b0a70249e4a25eb64fdab6bd544",
+      "data\\golden\\sine_4k_60\\filt_loudness.bin": "198cf63cdacc80a81dfd9b33858690060a9a70b512ef0a6e93fbc90228ab68e9",
+      "data\\golden\\sine_4k_60\\loudness_raw.bin": "a78409c698e10a9b2b6ed7181e78d05d40d1586958131c64da3ceb0d4a10e78e",
+      "data\\golden\\sine_4k_60\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\sine_4k_60\\N.bin": "7746dd1df419ad4965c6fae369eefb68a191156227bfdf72e91e1fc7815a42b0",
+      "data\\golden\\sine_4k_60\\N_spec_time.bin": "ca9dd82dcef2c649bbd28a05e29f3da26e3b511ba213791f41b7dfa6136027a8",
+      "data\\golden\\sine_4k_60\\N_specific.bin": "6091147fbed394b0b50a2017220d92400a6451a5e40ad5fc1a4add1dd20dd814",
+      "data\\golden\\sine_4k_60\\N_time.bin": "707dd3abeaea742a05732955655770273883c280c872681bbf04cc46335df4c1",
+      "data\\golden\\sine_4k_60\\nl_loudness.bin": "25c03a3a91146322a1aa3dcabb00fd17f8801e231bc6f61d2748145ef53fc00a",
+      "data\\golden\\sine_4k_60\\nm_diffuse.bin": "51bb417f21181ca46db93fff7ddfd0100d685d40c468b3f2f67a17ed37af3358",
+      "data\\golden\\sine_4k_60\\nm_free.bin": "c057a408f1b305ce40333b1273064f5a99b46016f79edf5da0c504c13bc7d510",
+      "data\\golden\\sine_4k_60\\sig.bin": "57ad1fff30c037f6f73cc40b5250145bc18ec14954a1ae44e654670228db752e",
+      "data\\golden\\sine_4k_60\\spec_loudness_raw.bin": "e0897d4cce849f604611bf1c01dfe429962bcf9df0b1c9664856e54d9895406f",
+      "data\\golden\\sine_4k_60\\spec_third_amp.bin": "a5b1016c47a7004bffb1c85619dd323c2b3259cbeefa1f9b79be9448ce4cfe93",
+      "data\\golden\\sine_4k_60\\spec_third_db.bin": "7341c909515b30a9ebf8d85a28620c51ab8f3734f173dd1a4d78c53f2715a43c",
+      "data\\golden\\sine_4k_60\\third_octave_level.bin": "8505a3794988ab2b02479a8be9b265c412ea81d42a29dedef50c658908bcc654",
+      "data\\golden\\sine_4k_60\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\step_60_80\\core_loudness.bin": "c21d4c48ebe5c2015bc740eee18f8e2790bc6bf70bc3ef9dcdfd31bf129455a4",
+      "data\\golden\\step_60_80\\filt_loudness.bin": "42d54419bc460f053bc07026e0137801fb24f2496e5fd8198ce728a024d96ada",
+      "data\\golden\\step_60_80\\loudness_raw.bin": "c02175c7f98ecfcf7fa3dc6ce35ef7b727eced29541ec6064eeea69084c92f54",
+      "data\\golden\\step_60_80\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\step_60_80\\N.bin": "c4592ca04b50417b961dd18e4016e4950bacb3a39239750dc5c183ed13ff7608",
+      "data\\golden\\step_60_80\\N_spec_time.bin": "114b472c07500137aef4f2a2c0c6baa0ab3b62ca9669f7be12d0fbcfb0809446",
+      "data\\golden\\step_60_80\\N_specific.bin": "0963182ba0de1613e683e34dbe6e284bd33094a3a95aa27180f02d7a3079c89b",
+      "data\\golden\\step_60_80\\N_time.bin": "f034a020ecb5f573ef7b318df9a739a7faf15fbe4f26641adfb9676092b337fe",
+      "data\\golden\\step_60_80\\nl_loudness.bin": "fbd7be38f724bfa10a101e043f77ff5c6d6ed2928d56b5615bbe59381122ebf3",
+      "data\\golden\\step_60_80\\nm_diffuse.bin": "0034a9ce7c629a66e41faf5e60ef0495a1666ba408fb184b38d86b702ab46add",
+      "data\\golden\\step_60_80\\nm_free.bin": "30e6773ee1c13efc1fcd3c8e68795bad5aa5227b08680308353f05e68816b064",
+      "data\\golden\\step_60_80\\sig.bin": "1c3dce0894eb03d9fa4a062940ba2a8a614d2cc5c6e35c233094e71974049504",
+      "data\\golden\\step_60_80\\spec_loudness_raw.bin": "2b845ea4a0a4a63324247a4f304c1e20e321b3a546f4a9e05816aeaa3a049e0f",
+      "data\\golden\\step_60_80\\spec_third_amp.bin": "b512a1a93e9875a0ae4fee08df802869804ebbfbec81eac241ffb07152ac4080",
+      "data\\golden\\step_60_80\\spec_third_db.bin": "d8c08fbaa2fa464b5ae402a40f634569160b1750d3f32b06486b11367750afc6",
+      "data\\golden\\step_60_80\\third_octave_level.bin": "4b77808444ca1876fd80e383dd72f6582051b708c60a30b4f3e04c3d8b95a7d9",
+      "data\\golden\\step_60_80\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\white_60\\core_loudness.bin": "44fac2677d94a6f589ee22de76d1f30d1cc9d00ac46015e96d066c623714fb8a",
+      "data\\golden\\white_60\\filt_loudness.bin": "7e33e6a5cd792175fd5b5ccaf6ba503af407250ceccfad30bd3bdbf822b98beb",
+      "data\\golden\\white_60\\loudness_raw.bin": "ddffecf19b23c4eac44c73c3786903cbec5e3512a41106fb348531c2e88670d3",
+      "data\\golden\\white_60\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\white_60\\N.bin": "f04ace134d4f101b3de2b8be399e8e4e8a0599afa134f3ac3b917c621883cc35",
+      "data\\golden\\white_60\\N_spec_time.bin": "8e58412a98ee5012bd39e0914dd66ea42be303451fabcf5bd625dcd0e18873d0",
+      "data\\golden\\white_60\\N_specific.bin": "ae63052aeb891bde937017b8026106a15508040c57efd40bee0a7e97551465ed",
+      "data\\golden\\white_60\\N_time.bin": "ffbeb308f0804450a8b615153a2ebed36748720a900fc2f0a77151d5c42473c6",
+      "data\\golden\\white_60\\nl_loudness.bin": "91d239cd7782f49001520431b2316292674dc04fdb0fcb4ddbdc74ffe6e431ae",
+      "data\\golden\\white_60\\nm_diffuse.bin": "f9854b2faa3975f0f289f54ec5889e3bae6c7e31585b8928f03687a62f073e2f",
+      "data\\golden\\white_60\\nm_free.bin": "e9d2bea3406072f59138d367e8597f9b2e21171af2a7e404a87a467ef85c6221",
+      "data\\golden\\white_60\\sig.bin": "88d78b26a2a7430aaa51869be01b55029888e1b4e3aa1dc049fd0dc895aa7266",
+      "data\\golden\\white_60\\spec_loudness_raw.bin": "71321522cd00903cc7cad5fbd4d46cb017a9c070381eb1c257e8ba77f7b7ee6f",
+      "data\\golden\\white_60\\spec_third_amp.bin": "71f657caec779a37ef633b4f7cacd2ea4f1bfdfdeeb9a5cb1ba0c0d22979f0a9",
+      "data\\golden\\white_60\\spec_third_db.bin": "982d035f1bc66460110e8b5cd975eb43cbdd5570e7b45318ff5e992c12e1616d",
+      "data\\golden\\white_60\\third_octave_level.bin": "c62daf8dbacae3572c092492d671efe7eb03c2816194c372610ed37aa2cb98d2",
+      "data\\golden\\white_60\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\ISO532-verification-evidence.zip": "dec6fcfd08be7a284c1e86604348c919151a87e82c6af8bc3f4cd3ea2f0be51a",
+      "data\\修正後獨立驗證證據-6aea8b3.zip": "9872f0e6b6e176684a8e1f80494a90159e088e27e963a51fb7cf37fdc46ea104",
+      "docs\\ARCH-EVAL-REPO-SPLIT-2026-07-18.md": "69166de6cf0c23a60666b655ee7194821a7cda131b048c9e5c8ffca1f928edc6",
+      "docs\\ARCHITECTURE-PERFORMANCE-RISK-REPORT-2026-07-10.md": "ac4252ddc614e26ca3670452d6c6a959af00ca7b1a443170c2708172d6883ece",
+      "docs\\bench-results.txt": "395d042979d32205487e6254a311f14c9e55b4a00570d82d8fc5663d7d904ce3",
+      "docs\\CI-HASH-GATE-DEBUG-2026-07-10.md": "3049935cd0df4087f5e78f310ca73e94f8f9e02ed0eecc582613e1cc5054dfa2",
+      "docs\\DESIGN-DEVELOPMENT-2026-07-04.md": "b688ec68d47a4a590e031874609a2209431679b58863c8bd0970c02b7781b37d",
+      "docs\\F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md": "481b83398416aa258a25ded3f08cc1ae7b17f402567cd1b0cfb4ae5234666924",
+      "docs\\F02-NL-ZERO-INIT-2026-10-31.md": "f9df15ac7ea4aca3ff9f369b29e502b40f4faffed684be07c86955d57ae7e78d",
+      "docs\\GOLDEN-REGEN-SOP.md": "c0ed51cb41830ecf9b7fce0d399545d05c2dfcbdfd8f4b298041d89a28ea4deb",
+      "docs\\ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md": "50e1933d7810020bb9157f10ea7aba77ed97d0a53c82994f972f83fe595f3e6c",
+      "docs\\iso532-1-rs-code-review-remediation.md": "6f724447cd513a8a2855d91a836d2da55c89bc5d85d6626756b5c4d4373af14f",
+      "docs\\ISO532-SYSTEM-OVERVIEW-QA.html": "b31a6bdcebc07d4aaca647e87eabf75c6a03738830b36348738386334aefe63a",
+      "docs\\MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md": "573010e8d7d5ff8c0b6a07ea55cb9caa60ccd6ccbb27e4a9129f0e005e288f29",
+      "docs\\PLAN-TIMING-ANALYSIS-2026-07-18.md": "a3280ad58986996a26d7e0863e4a1dd1022ca84e00c8f0241e9508446cb7d2b8",
+      "docs\\R3-FIXES-REVIEW-2026-07-11.md": "fb75c9954b9c0baf1e9d829f84468e47e038de48ed438b06a28d1e3ead7bd659",
+      "docs\\R3-REVIEW-2026-07-11.md": "6d8a6957b6d09c2d122dba4f843a5f895a7353379c7aa9134b05a962aedd32f1",
+      "docs\\R3-REVIEW-FIXES-IMPLEMENTATION-2026-07-11.md": "6ac4153bf910772519b6c91f884665681991c73b189d5f3ae145f473546290d7",
+      "docs\\R4-REVIEW-CLOSEOUT-2026-07-10.md": "7dc99185161d655ec950027ea65fd600a0af6f0d67ac19db21925b4c9d3ade7e",
+      "docs\\R5-REVIEW-2-FIXES-2026-07-17.md": "bf2204908a1c0a55005c9cb18a4670035b85eb83d20763960b6a5a3a0b15d55a",
+      "docs\\R5-REVIEW-3-FIXES-2026-07-18.md": "699a5e9cad515ee89f778d8d242367e7eaaece995fbe0a51599dae0f2d8e28e6",
+      "docs\\R5-REVIEW-FIXES-2026-07-17.md": "b1f46cdbb1a715401ea2b0346583343f1df5ca15d1c8a0196db910800e9a05ab",
+      "docs\\R5-REVIEW-FIXES-IMPLEMENTATION-2026-07-17.md": "192337ec0af43adc782a0b239b3de79a9542094b842fdc14e4dd5e38e0ff6e7a",
+      "docs\\RELEASE-0.2.0-2026-10-31.md": "d94fec442d4ed2e79fa79442f0bf7c716c480123bea63310e84de8500de027f8",
+      "docs\\RELEASE-CHECKLIST.md": "0bec654b1b2c0c1f891308d259cdb6e1a9550b1fb082525ce067bc51428b5e38",
+      "docs\\ROADMAP.md": "a5fe4249b6e2693f401322925fe4554246bf273c8107bbb59f0583255809d889",
+      "docs\\superpowers\\plans\\2026-07-03-iso532-rust-avx.md": "ec64b32377978c35659734fa8c1db2962b5e3488e5fedc94f289cd5e29d0abad",
+      "docs\\superpowers\\plans\\2026-07-05-roadmap-master-plan.md": "18ca51e3297485447ab6d95100fb70eb5ac1b09ce267ac8b5bbb0a4ffa5c53f4",
+      "docs\\superpowers\\plans\\2026-07-11-r3-review-fixes.md": "3b827b09e82c3d94cd47e14e29a52348ca9adde08612e7cd08e12a8e0c3214e3",
+      "docs\\superpowers\\plans\\phases\\phase-1-foundation.md": "a81259709b4baaa7e30ac0fa6683e7852c4600da720723dd831b4e63fc316784",
+      "docs\\superpowers\\plans\\phases\\phase-2-zwst-scalar.md": "a89861fd2a9d7a04a3bcc97e0399e05f1f24847b3e9f5632e3124a907d0968ef",
+      "docs\\superpowers\\plans\\phases\\phase-3-zwtv-scalar.md": "e2b5f3355281135887360201e354a29fa2db3fba407a0b40e9fd3df015918bdf",
+      "docs\\superpowers\\plans\\phases\\phase-4-avx2.md": "c8a1c1190e0fe346b8ed764bf6bd77cca0fba2cb877b37bcb9c1a4ebb053faeb",
+      "docs\\superpowers\\plans\\phases\\phase-5-bench-polish.md": "e9236e1204dd2a1663e0f861f850bde568fc2f837f01ae7a0210f683b6bbab40",
+      "docs\\superpowers\\plans\\phases\\phase-g0-evidence-hardening.md": "c27930cfb98ad95a20bf3cff9d8f3e5e5a807af18d7adabd98daa73b3c459d73",
+      "docs\\superpowers\\plans\\phases\\phase-pre-r6-1-workspace.md": "b869e8cbaf29afb72d67a091a7bc6c0845316eb3e0b564f128100c47bf39b1d7",
+      "docs\\superpowers\\plans\\phases\\phase-pre-r6-2-py-stream.md": "4444cb9acd59c23511c6e737591bfe747756eed20fc754c94f807199fe87f4ed",
+      "docs\\superpowers\\plans\\phases\\phase-r1-calc-slopes-dedup.md": "e6d04427abcdb25f3154f4d8f4e8b478cda19af5214b83ca6a2b58b21d0c4e07",
+      "docs\\superpowers\\plans\\phases\\phase-r3-1-golden-chain.md": "d7d76770276c6b16fef6ddb407b826065dc34ef5ad7b356d2cab76a75f347dfe",
+      "docs\\superpowers\\plans\\phases\\phase-r3-2-ffi.md": "dd4426c62be859919312fb4318c3f8db3831211bdd8c3db6782e34e94ecdec9c",
+      "docs\\superpowers\\plans\\phases\\phase-r3-3-python.md": "0b0b521d7d658446bd1406ea90004fd488b0b7879596c2a4f7502ac31dd4450f",
+      "docs\\superpowers\\plans\\phases\\phase-r4-band-parallel.md": "63be79976911969cdbaee1ac5064ccd5189794b510ebb8b513c827d88089ff7e",
+      "docs\\superpowers\\plans\\phases\\phase-r5-stream-api.md": "2ae95288f47c0b8613f3583459f736ea489c0ae3fcf0e368485d80044f707b4e",
+      "docs\\superpowers\\specs\\2026-07-03-iso532-1-rust-avx-design.md": "0f2c78d1f339b0fb922fb3be01bf2db5581ba0dfdb2710b8683733fe0f43dbc6",
+      "docs\\superpowers\\specs\\2026-07-10-r3-c-abi-python-binding-design.md": "cd4e6173d76c6201ba6557ccaab654b7849bc76ef4b177f27022196e1c8920b3",
+      "docs\\superpowers\\tdd-bdd\\phase-1-foundation.md": "77f49ca5abde2bb2345b9c26509fe117785a5471e97c5a252c3432691b43d966",
+      "docs\\superpowers\\tdd-bdd\\phase-10-other-standards.md": "43c6163da810c9ca66af5333c6cf364fd7d00f797bfc4f9ca5cdf5ed9660eb43",
+      "docs\\superpowers\\tdd-bdd\\phase-2-zwst-scalar.md": "4575f5206f6002a7bc6658d47fc64e4542c2b199607d6d3780ce9e2701d01520",
+      "docs\\superpowers\\tdd-bdd\\phase-3-zwtv-scalar.md": "f134cdb31299409b43660fc6a902bad51d86af1bd5579af23d760cbd11415dd6",
+      "docs\\superpowers\\tdd-bdd\\phase-4-avx2.md": "8f8997ed2afa77dbf8d63fc92f7311e95855364022d9083dadffc21f0c74947b",
+      "docs\\superpowers\\tdd-bdd\\phase-5-bench-polish.md": "0eb2c7eccf591436ffe76b3615f43b038af2668ca1f34b3587ee976d57a54965",
+      "docs\\superpowers\\tdd-bdd\\phase-6-cabi-python.md": "1a0fa75dd64973891aaf57b9a7aaddb2d34cd59e1a17c390bc2044780cfb69ee",
+      "docs\\superpowers\\tdd-bdd\\phase-7-streaming-phon.md": "f83f9ba5a370680859c44ea45011e4a90104a4e4dd6c096453994e7fa3642e05",
+      "docs\\superpowers\\tdd-bdd\\phase-8-vst-plugin.md": "e712eec5f0ed762ed9676ef30e51b8af6b64ab678e3c7072381370b91d479e22",
+      "docs\\superpowers\\tdd-bdd\\phase-9-neon-kernel.md": "b4bb61987da3f41795d5a78e4be27c81c2a74ea2f65d1af12650dc9d6d4e24c2",
+      "docs\\superpowers\\tdd-bdd\\README.md": "80413565659490a2c622883842bdcc74dc1a7f8c10a4889414991981030ddcff",
+      "docs\\SYSTEM-DESIGN-QA-2026-07-06.md": "8aa1fe1f92c226026d16d9c49872e21197d85259f31164e411063d30162f1cc5",
+      "docs\\修正報告.md": "0d4776c68980888ee63c6d25cd017801546cbd4838d48c7a7f9885b1081f1384",
+      "docs\\修正報告2.md": "36fc9eafffe090bad595676a187ef74a24381248d1e753974d5f7de990d60224",
+      "docs\\修正後獨立驗證報告.md": "b2fad5b9d49d82cc55a125141c5e3d3bca8356b4177cecf0d1ac710e3afdad5a",
+      "iso532\\benches\\loudness.rs": "311a8e751fdf166da61c79322e0e851bd2588079a1241ed5e5070b1a57d335f1",
+      "iso532\\Cargo.toml": "d2928e6e60c59b509f2ffca23066dec489989fcc7f46aa590de8a0ab8ecb2a57",
+      "iso532\\examples\\cli.rs": "52dadc99ebaf46fa095597be2da10b669bf275494bc218c4dd887601307eb8b3",
+      "iso532\\README.md": "1945c56d798dee665c314022ddfca9d91f7c47220033b34911458a2587912a04",
+      "iso532\\src\\core\\calc_slopes.rs": "be443d090d04e3b186ac338ec5a1c2061419c003a0cc74f9cfeb8c31354b80d9",
+      "iso532\\src\\core\\main_loudness.rs": "ff92090106863f35d60bf178953bea7f0b299803638e585f949a426bf0ad2049",
+      "iso532\\src\\core\\mod.rs": "d62174b9ab6cdcd8c4dfefd9f2a0599dce4ec476a45e20c43bb54bf5ed1a9cf9",
+      "iso532\\src\\dsp\\filtfilt.rs": "3af338dffa803acd5658b1fe46f45d541a606046f80880766d42f0105f3ced13",
+      "iso532\\src\\dsp\\mod.rs": "2a7a879ace8f76cf0b743bff8c195066c0e7ab856aeb094a4332ce9c3f0b95cc",
+      "iso532\\src\\dsp\\sos.rs": "a5fff9439885ac8aae36b2392b09e6a5e1a2afe1387d5cfdac62aabf10a28ff0",
+      "iso532\\src\\error.rs": "48e8e35ea4b4acddc48744249f1536bb980a58768d873b6c540488e364008faf",
+      "iso532\\src\\lib.rs": "cbe751e85bb3978f80f63e19db89a890308d701e5daa00056759774d134502bf",
+      "iso532\\src\\simd\\mod.rs": "242302d8cae15832309537ff5583265a3c71d89979dbdd544cdd8afed0b0035f",
+      "iso532\\src\\sone2phon.rs": "67755a36bfd944dc1e5ef071beb0a6ad4edc3665027a2698acb5aef82f8d28ef",
+      "iso532\\src\\tables.rs": "0a56ea70b6e9fbcc2b159f0da30430217bdad1b8b9d894ac4a655d35c58b5bad",
+      "iso532\\src\\tables_noct.rs": "c52201e4ba9d61875328ec8b1dea92a553b6a48b8193bae0137edbfdfa9d5fb3",
+      "iso532\\src\\zwst\\mod.rs": "5cd5ee6d99b6d18c1a8b24a4e324270d5861de83d528158cf8b0362011bdbcfc",
+      "iso532\\src\\zwtv\\mod.rs": "637f0bcb4bdbd5d90e2ec14607bd8cad84a25af1a827a33d1f90518e65aa6fde",
+      "iso532\\src\\zwtv\\nonlinear_decay.rs": "966ea4979cab03898a09d78fc96230b28c94bc951e700e0229503ff8a1bb7e92",
+      "iso532\\src\\zwtv\\stream.rs": "3ed7723cd6b066f97dd42279569a49aaebd6678810df608b503159a7fa4cb252",
+      "iso532\\src\\zwtv\\temporal_weighting.rs": "4735998b5238c1a00f526bcba0f740386c66f98a6543082228f7d9b6c91df43c",
+      "iso532\\src\\zwtv\\third_octave_levels.rs": "e1570576ffe230c2731529dd1acded63ca77af1d95b4ed33b8463b6ee4f23d45",
+      "iso532\\tests\\annexb.rs": "6e479091f8ac6a581b28543e52a42a53c85f9aea85f7b714f2dacc8fc0bb318e",
+      "iso532\\tests\\api_errors.rs": "595f2fb5c0223896d663b787c25184138ebb1f8f1d42e67712e998f91001d1c9",
+      "iso532\\tests\\common\\mod.rs": "f5e307830d5dc1b5cb2a9f1828a0eebf1a6542f50dae860b896425056d1702f3",
+      "iso532\\tests\\determinism.rs": "404bfc12e09fbd1a85cc8f77f3384c37af9c9afc74725966b940caf418d7c0c1",
+      "iso532\\tests\\golden_core.rs": "6b73a84af2c4bc82abcbda950f981fc60e3c042005461794a54cbd9298d47d7a",
+      "iso532\\tests\\golden_dsp.rs": "8f982fa80a170b4b7d43f8a567351fece73c80b99279b116b98b7f7d21da2e24",
+      "iso532\\tests\\golden_zwst.rs": "c3084d135bd624978ac910f3fa5cdaf3031ba56dea028c235e39b968fb15b985",
+      "iso532\\tests\\golden_zwtv.rs": "e4a82fafa441f449b5648e16f22f0e5f21d7529d300a01752a27fa70ac7da2a1",
+      "iso532\\tests\\hash_gate.rs": "ca3f9dab1f792ea8221ec367b577331576b7ee4473c6f15bd4aea99ad39a3c9a",
+      "iso532\\tests\\low_freq_correction.rs": "d970a9106af0a0e28154b2d2c9e825216cf0f787126d95874881cbb43a064938",
+      "iso532\\tests\\nl_zero_init.rs": "1c0359b0782cba5884b2e563f579a2242971a068db6a76699623eddb778bafc1",
+      "iso532\\tests\\py_contract_dump.rs": "167cd58bbc89a1cf69618b1d8c03f0185ea7ebe09dfc5cb42c634a383c6f97da",
+      "iso532\\tests\\simd_dispatch.rs": "d6e58adaae5fa6e912e1cf381e00ef6b4bea7c90ee79b5d0216a87970ac349c6",
+      "iso532\\tests\\simd_parity.rs": "7d364ff958ef19bc5de67aa65f6eca4127248d468a14928d75a8b826e44c758b",
+      "iso532\\tests\\stream.rs": "d715d7ba5141e0ebd04c46a25fa71807406a4769b8a7786fc1e7b23d5c0f1cac",
+      "iso532\\tests\\stream_alloc.rs": "6b953c96e22736652d5a1d1156a3b8a61bb7f2971a38deee2f41d95c241dd682",
+      "iso532\\tests\\stream_no_rayon.rs": "1f0eb0eaf7cb78b6804d7c0dbeb152c402831a2f6734a84a385e929794d97168",
+      "iso532\\tests\\stream_scalar.rs": "271fc485e291e1e9f2787766ae77c335c721be8886a1fd87a4f3461525383f92",
+      "iso532-ffi\\Cargo.toml": "d7e0e967a966c946f09dc0d235357e0066e9d035b604ef087d67d460d18eecb7",
+      "iso532-ffi\\cbindgen.toml": "6e70515782b586ff96d17588f23fa8ad0c54a5a92365cd08b710a9fe4d85c376",
+      "iso532-ffi\\include\\iso532.h": "fd28ff949bc2902d649405aa7adba1aba15e76b9d477d0c44784cc2875adae4b",
+      "iso532-ffi\\src\\lib.rs": "ffa818cf7f45e38fa1586019c7474796b6e64f884aa2c4e35874c7c3aaecb8bf",
+      "iso532-ffi\\tests\\ffi.rs": "bad608b37971528cd0aded291aefe5d1362a0c3cc1aefa3a3fcf7954664a1eab",
+      "iso532-ffi\\tests\\smoke.c": "75ecc277b2dd69871446beaf7fd0ef79ba3276cf639a6106b5834ce6f80a59ab",
+      "iso532-py\\Cargo.toml": "851d7e5677420c2707d345e0e272c99dd6fbd2e260e86c1d18d385733946d582",
+      "iso532-py\\pyproject.toml": "f5b071b3f933937723979a5217808795ed1b5be7a38d7a9e287ec67adda4a381",
+      "iso532-py\\src\\lib.rs": "b5e09120ec51781d5ea72561a2ba9aa0108e35ece2cf0e2c44e92304c2c11c00",
+      "iso532-py\\tests\\conftest.py": "87a96a30f628b841c37578f1961f97dd27150f32bbf3450cf248549b89d559c2",
+      "iso532-py\\tests\\test_parity_mosqito.py": "2241e15b3829bb1c9073ad181d1adbdc06e02ddccc2edcd6db8ce819ea6158ef",
+      "iso532-py\\tests\\test_smoke.py": "082834fe20a950a14843eaa1739bc01f9211fa2ae44ca5bb6b98348eb46d0679",
+      "iso532-py\\tests\\test_stream.py": "c50eee88770f012f3cdc6d81614b81afa52738820f6dd6e5bc2fad4d61b1f820",
+      "LICENSE": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "README.md": "9c04a173c41df4cf1af6eb15e00f3a2809793c74d6601d7ecaa526cb8fd1f15e",
+      "README.zh-TW.md": "aa61956f56c3b1ec14ae5b734749df29deeb811b72f68a59e8d3fc6af56cac11",
+      "SECURITY.md": "89a2663a461651691e18291743f910e1dbd019cc2f637918f2c5c864fd0ee27a",
+      "THIRD_PARTY_NOTICES.md": "1f3ffdd63b022739d9d66576666cc56d79a5da7cfa7d1e229a2cc75fd4c60064",
+      "tools\\bench.ps1": "3d01f08d9b1fbaab4f25e4ed15fc9db462f8ccaf1b4368867a50dac1f2f00cdb",
+      "tools\\bench_binding.py": "e3960518a07eba22e9d448fcb7a5f639e0980871681fa51f232a2ca24321f563",
+      "tools\\compare_mosqito.py": "8e32d600e784bd9c9f099caa0a8865c54c5ac843043e069610ddc173a14fddc8",
+      "tools\\gen_golden.py": "99e2931a8cfc29fe90cb067862e011c67ab7b9e3703a16f1d9c9c48d812e21f4",
+      "tools\\gen_tables.py": "28a57f9d49864a50a28c25054a71a2e5e9df99d7ba9712be982896cb93e2fe51",
+      "tools\\golden.sha256": "f3d3bcc8227942b82d4df5e256d061a9c32d6a830de197e83d209dd413367e56",
+      "tools\\golden_manifest.py": "383154bdb9195cfe41fdf3ba068adfda7924844ae3fe6003c63f848eb9659e03",
+      "tools\\iso532_testkit.py": "5e46ae5a5cc6c336a094266fc94cdda5d0b6fb7214a2e02dba515e75071f8cf0",
+      "tools\\requirements.lock": "4c05b10dbdc444e223a3d21d3b06b35d41b74a6e073532cb0b602de5e263b78a",
+      "tools\\setup_env.sh": "4ce0de0aa434a3c9eec44975d10891f6ae02437cf13b62f8fdbeaf6712d2341a",
+      "tools\\test_env_guards.py": "214eac92d98943e964989d453cfb0eda1a82a808fd6889de8aa2e01518fc69c6"
+    },
+    "source_hashes_after": {
+      ".codex\\skills\\iso532-r3-verification\\agents\\openai.yaml": "2111cfe79cba3efe6c5c3d67ec36505e7f80d6368f3b89e0af4526a7d9f8d8f9",
+      ".codex\\skills\\iso532-r3-verification\\SKILL.md": "140cd8933f5f93027adab360ecd4d0660ef4de9c3b60d0d521c1e7c04a9f2d71",
+      ".github\\ISSUE_TEMPLATE\\bug_report.yml": "3a3f3f6be705d5090998fb4e1faa7bf9a59b7281a87e84cf24d0dc28b7dbe26a",
+      ".github\\ISSUE_TEMPLATE\\config.yml": "d1bd5a4b2686ecb4b2901f903a26ad3a1e427dea5e5e6efd71528902b36dfd59",
+      ".github\\ISSUE_TEMPLATE\\feature_request.yml": "29e9eca59135b89821b859097e4c31e74b03c04514cc5ee10edda89e4b6795ed",
+      ".github\\pull_request_template.md": "ae024d01a3d4282feb8ef23a11f897c105f28e81cfe604ff6d094ce9b23395f2",
+      ".github\\workflows\\ci.yml": "c0d424a9e812600d16a6b0d463ade1de6aae44a0fb12cc473f43a68297b6e686",
+      ".gitignore": "2f37414daf8d8de746a61e2abc019605a6848740508641505e2039d397feac5b",
+      "Cargo.lock": "70baa79d64a81b3580954d6b03c0dc179fab3a3101366aa3fd66d57b5b31e639",
+      "Cargo.toml": "83ffc786df58ad9c7c0388c4ee1337adccc2e80a9c61b3980825cf12123d741d",
+      "CHANGELOG.md": "036161dc9e43a163729f856719899919f01dbe85c92dd294e0cd1ca43ef07ef8",
+      "CITATION.cff": "5646a5063377d778d677893380fb3e6b52d4bc9af8fddb7ad79f52b171a88f09",
+      "CODE_OF_CONDUCT.md": "92ee257a050440eeb6dedc6d2cb466301ebd6b3f33eff1ab98366c2798e08646",
+      "CONTRIBUTING.md": "0b8d1cac44036b1d8525f35c6b4e9c7eeff5815d1ed1003ca187b1ac45c2520e",
+      "data\\annexb\\broadband_570.wav": "4b22473b9ba78d518fd5a54e17b35a45f45c9d6d6824474d37572c8c7028d4d6",
+      "data\\annexb\\Results and tests for synthetic signals (time varying loudness).xlsx": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "data\\annexb\\Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907",
+      "data\\annexb\\Test signal 3 (1 kHz 60 dB)_44100Hz.wav": "1300f0ddf7981fa9509a2084bc38fcfc14ac032c914e4f90b033e49d698551d4",
+      "data\\annexb\\Test signal 5 (pinknoise 60 dB).wav": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e",
+      "data\\annexb\\test_signal_1.csv": "6e44f8a4beb345d452451bc4537c9edabec3c0ceab6b785f97fba21b1a5df8ba",
+      "data\\annexb\\test_signal_3.csv": "efd5861ff8fc2c8d97adb4f2621a017c69bc640c93619cfce7ff267c3c0dcf71",
+      "data\\annexb\\test_signal_5.csv": "049a5e32945494c948e4c4353c0a96d1f6e112fd933966297c3ffc95eecf75de",
+      "data\\annexb\\white_noise_200_2000_Hz_stationary.wav": "3d697ffb20de6d8a4e39cd1079addb5456c9645e5614319afb62959aad5e99a4",
+      "data\\annexb\\white_noise_442_1768_Hz_stationary.wav": "289ce8701e85d59c9846b48d6b21d1df1c1b0928962da6bd5159e2339d9857ad",
+      "data\\annexb\\white_noise_442_1768_Hz_varying.wav": "df77f8ba3384a526e42701dc2d8fea8eb9d25d012b102d96ec4985eeb9986a1e",
+      "data\\AnnexB深入分析證據.zip": "2014a3a7644dbe7b11594d0451dbd380ef6a28aded19867d7f773e77afbef232",
+      "data\\golden\\_dsp\\dsp_cheby_sos.bin": "731898a24f90b322db1697b9487931aa7b9eab709393089df113c52bc4bef07d",
+      "data\\golden\\_dsp\\dsp_decimate_q10.bin": "7ef9726081257e40af7e769588a09399ea012039989fea47abdf1339663a3bce",
+      "data\\golden\\_dsp\\dsp_sosfilt_y.bin": "64dcc33f75987019131852c489a9ae4b46f45a81d4d3272a7e7c302796d01f71",
+      "data\\golden\\_dsp\\dsp_sosfiltfilt_y.bin": "6f9e678ab663112a855ce66661cbb2a8cf5df1df087e16414a5215cd4994c078",
+      "data\\golden\\_dsp\\dsp_x.bin": "699597ea57c2fae253cad08f6821167f37de6449abfc1f4a57f7e21aad0959bc",
+      "data\\golden\\_dsp\\meta.json": "9424eff04b48c2741d6e91b99ef97a793207600d74ee2a6869a890e15ae0dc9b",
+      "data\\golden\\annexb_sig10\\core_loudness.bin": "a496aa3be856c004c5384a0d31674a34c932fe3754c9295c8b7f7c258085ab4f",
+      "data\\golden\\annexb_sig10\\filt_loudness.bin": "12822dddfdd0b7897a1632f318734cd16fc8c18c3bf3d4323f30624049487471",
+      "data\\golden\\annexb_sig10\\loudness_raw.bin": "ade1e485c2524152c4effdb9db1ac64653a4343ec0054020131014bc18c2e555",
+      "data\\golden\\annexb_sig10\\meta.json": "7445e2547b454d4ef3236e4e095b14ca8ce90e4e13b8efe24b568e484b5ce98e",
+      "data\\golden\\annexb_sig10\\N.bin": "d18f5d9a67177dcc54f06f0cb4de7b882de54595beef934896bd7b8a01fa8147",
+      "data\\golden\\annexb_sig10\\N_spec_time.bin": "159554ad610e048f7ce6635b13aa9dc073e829cf47ce9ce3c7634806d6b20418",
+      "data\\golden\\annexb_sig10\\N_specific.bin": "660088794ae588c70c353280caded6ec095d486050341a273df9d3439519090e",
+      "data\\golden\\annexb_sig10\\N_time.bin": "1a13e19e25e3d384871cb48957b9b1edf450a10416aac4cc3c173f7ba5780057",
+      "data\\golden\\annexb_sig10\\nl_loudness.bin": "93aad78625057c9fb1825cf8df14593464ad952e6c6950d7a8349b5143645e44",
+      "data\\golden\\annexb_sig10\\nm_diffuse.bin": "38b1b91ada6b0c7c794b626d565322677789bd17bdf7d98a4fc5038e31ab5c5d",
+      "data\\golden\\annexb_sig10\\nm_free.bin": "34e092a917bac25d15f08ee37ba1e13c7c3d4a721a096c2e68848e0d8b6c6f57",
+      "data\\golden\\annexb_sig10\\sig.bin": "a849fcf48d4ee544a257a669059fac8a961de5283272cb9041734fc593b5e890",
+      "data\\golden\\annexb_sig10\\spec_loudness_raw.bin": "84892d5c0860d73cd9b6dadcf69b4e158b14aac8f12dc5fb113dd7729888fd10",
+      "data\\golden\\annexb_sig10\\spec_third_amp.bin": "7bbe43b77d411d50a635f2ccb29b9a28cbd5ecf2a1d9e254f20df54560e82ab4",
+      "data\\golden\\annexb_sig10\\spec_third_db.bin": "aca7ad5481e0d8d18af57829b1feb8a3ea177518cc9813ba9f22ba7abe466517",
+      "data\\golden\\annexb_sig10\\third_octave_level.bin": "c8b623442500621584cdea703fe559d3afcb65acfe59d03d892bde2d907b085b",
+      "data\\golden\\annexb_sig10\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\annexb_sig10\\tv_nmax_5pct.bin": "98c0bbb92cc9bdae255ae6aea28464378a4b42ac9d87715fb3b5786abdc7f8ad",
+      "data\\golden\\annexb_sig10\\tv_nmin_5pct.bin": "31597bf6024ce8e16f2c06af4def4a1329e788148158d37a63eb2f521cf28045",
+      "data\\golden\\annexb_sig10\\tv_nref.bin": "fd315680cacc151f896526e2e24b701b56494fcf0312faa158c70c12494781bb",
+      "data\\golden\\annexb_sig10\\tv_nspec_8p5.bin": "e8384fa74b350926b9909772f7d185e3f152d91549447c75e631ab4b3e053c18",
+      "data\\golden\\annexb_sig10\\tv_time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "data\\golden\\annexb_sig3\\core_loudness.bin": "6dffc8753da25f7460ee37d9e8379c5cd713edec53843f30e8d8ab5e692ec8a1",
+      "data\\golden\\annexb_sig3\\filt_loudness.bin": "e7d7ee02cc3e0b466fed1f4a821d75675b2be906629d2ed9039d0c045126be84",
+      "data\\golden\\annexb_sig3\\loudness_raw.bin": "8071102800c03978d4363cda7e2fddd4808c423ec9a2b396c08bca4e040b79d4",
+      "data\\golden\\annexb_sig3\\meta.json": "5b69a1f023df24f695b71b8a8c5ea16909570f27e75561c951fca0e6962870c3",
+      "data\\golden\\annexb_sig3\\N.bin": "f545650a5267ff1485632f1b7339c7d6eb0f178cc7f4bc6a83519709da15436d",
+      "data\\golden\\annexb_sig3\\N_spec_time.bin": "46a2d8f1ebe1af7c0cda40ecec71799d22608a68a3491231ac793142a1a04444",
+      "data\\golden\\annexb_sig3\\N_specific.bin": "82c422a3fda9432448ca3ce6c7c16674c695d5e1913c8e8821bb5782e5d4aaa2",
+      "data\\golden\\annexb_sig3\\N_time.bin": "eeba41710ad74a74d3457cd2dbc275a9cc02bc3bc875e6915cf408e625ad7ace",
+      "data\\golden\\annexb_sig3\\nl_loudness.bin": "3e53e44d2f3bf3ed401cba71929f9d77e9f4b856660660c02b2284aea98152e5",
+      "data\\golden\\annexb_sig3\\nm_diffuse.bin": "c2cde811a2c9ce3a9edc59280bf04eb59f2c752cf7909e433f0e61268ced03f7",
+      "data\\golden\\annexb_sig3\\nm_free.bin": "9b45fa5493e4b287e3ed523acd4ab6ab2604952af04860034d9c072912ac111a",
+      "data\\golden\\annexb_sig3\\sig.bin": "7b23fad6aebdff5156fa010310753b8ac20f3e1ab3b3298483f8cbe111f78c33",
+      "data\\golden\\annexb_sig3\\spec_loudness_raw.bin": "56e2f9006f3a519689da0ef75e6dd4f4e894a415bb2b9cd4b30e1a2c356d6927",
+      "data\\golden\\annexb_sig3\\spec_third_amp.bin": "75105ec8218d391d19f054532771a79ed5b893be0274017b2b7043a8e3b275f8",
+      "data\\golden\\annexb_sig3\\spec_third_db.bin": "0183e19b590aa7c8917465f2caa9c26160a319f19a5ad20572f228b338663054",
+      "data\\golden\\annexb_sig3\\third_octave_level.bin": "a0b4515249f26997dbe8d94a630158d7243f3bb7a862da4d1c0ee00d2f392a63",
+      "data\\golden\\annexb_sig3\\time_axis.bin": "d57163dc1a16c10881f0058fe6ed03149a738e5124c93bcb49af2a224cf9f5f2",
+      "data\\golden\\annexb_sig5\\core_loudness.bin": "2d2b106eeed6f09d63060a9121eb248c89291150afd8cc636ccfeb4b232b14b1",
+      "data\\golden\\annexb_sig5\\filt_loudness.bin": "9c0d437207d6a0fb66172009399ec91e4402adb001b05e0a12c012f860116864",
+      "data\\golden\\annexb_sig5\\loudness_raw.bin": "bb16749cd0f65e0c9d392399edbe440b868180a15c9d7c6fb9a4e176ddc5c73d",
+      "data\\golden\\annexb_sig5\\meta.json": "5b69a1f023df24f695b71b8a8c5ea16909570f27e75561c951fca0e6962870c3",
+      "data\\golden\\annexb_sig5\\N.bin": "84ed44ae3f3213b20f8dff24aa2f41605b39ca9212b3dee7c490539162747b05",
+      "data\\golden\\annexb_sig5\\N_spec_time.bin": "4aea621ac56df54cd2db25979b88b4070755655331d4306f274978ee72f75b04",
+      "data\\golden\\annexb_sig5\\N_specific.bin": "0c4c317c059370cee4211a0c0e3c32e72deffeec3924ba029732cf89d533699c",
+      "data\\golden\\annexb_sig5\\N_time.bin": "464c989b2480d61f088c5186c4b0a200e17e3ef372ff5ace282ab2d7e291fb80",
+      "data\\golden\\annexb_sig5\\nl_loudness.bin": "e2de367c4d276d35a62760984421b49e6f5545ed9c464ffcd6012d36f5af9f04",
+      "data\\golden\\annexb_sig5\\nm_diffuse.bin": "8b1e4e6e57c7f4ad6813c39c13b5b5c733be75ccea784a1802bff3bf17690987",
+      "data\\golden\\annexb_sig5\\nm_free.bin": "aa21bf0bc0ca7b1064cac25424e13c45d7a60ba03c802cbf4fc69084aa14e873",
+      "data\\golden\\annexb_sig5\\sig.bin": "20e036c556aa08b2fdc3409bfa404fa1325dbe2962651b6ae808f95b260be19b",
+      "data\\golden\\annexb_sig5\\spec_loudness_raw.bin": "588e1c6f329369ca7f516df6236737129d34bd090f0e7edbd877467f13d18e38",
+      "data\\golden\\annexb_sig5\\spec_third_amp.bin": "8c7240624b3d225f7e559ce494a13fdbb0777c40f865b6998ff013d7b7cf5470",
+      "data\\golden\\annexb_sig5\\spec_third_db.bin": "a88104c0c09853fbb478464570eabdbdcf410af423e19ac6cd045333dc8902ed",
+      "data\\golden\\annexb_sig5\\third_octave_level.bin": "69d563165ebf75d23fb6f3cd4d46355842b42761a233b5504135bb2001f9664d",
+      "data\\golden\\annexb_sig5\\time_axis.bin": "d57163dc1a16c10881f0058fe6ed03149a738e5124c93bcb49af2a224cf9f5f2",
+      "data\\golden\\pulse_1k_70\\core_loudness.bin": "c787e16ab4cf1239a907ea5af28c27ab8e614ed63b096510994e7d965bbd4741",
+      "data\\golden\\pulse_1k_70\\filt_loudness.bin": "a8583c7de12859136c46e13b7eef2b9f4c26407e3c2323395cba2e2e17facda2",
+      "data\\golden\\pulse_1k_70\\loudness_raw.bin": "5fdcbfeac5b127c6cc75efad0f1b619a706842faa77dc86010bad262bde3c997",
+      "data\\golden\\pulse_1k_70\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\pulse_1k_70\\N.bin": "1cb06149ad019d3249a9a28d71ba802ca7c9353be98c02e6c601c153a3869c75",
+      "data\\golden\\pulse_1k_70\\N_spec_time.bin": "7f72554a0e883677a9d15af349216207f8ee3ce93fb7f28d51b06eb7960e7f8a",
+      "data\\golden\\pulse_1k_70\\N_specific.bin": "a3d95584268c39377d98db10e4caca07440def7cd0b9c8a340ecbf926268f926",
+      "data\\golden\\pulse_1k_70\\N_time.bin": "07e429ce4f159c24b0655e4a66e34db8bc85c44d60e99769d5515beaf201fd9f",
+      "data\\golden\\pulse_1k_70\\nl_loudness.bin": "4ce158ee6936e4c35fc1d34a0abfb82a1edc2e79d777320b2ffb3216f35b9550",
+      "data\\golden\\pulse_1k_70\\nm_diffuse.bin": "1a855c55866e048021673baad2c460d9fb441788766a9e4722153a331dc99783",
+      "data\\golden\\pulse_1k_70\\nm_free.bin": "b871eb38deadb7bd7585be8037e209173361f9e170564304183c57fe34430d19",
+      "data\\golden\\pulse_1k_70\\sig.bin": "1497468c922275fa8eb443eefe881d1c83d41a2ed8dcd1cd4a10f44bd1d75003",
+      "data\\golden\\pulse_1k_70\\spec_loudness_raw.bin": "c25ee3b575cac2559dcd5840c0c0c96d556af4ccdec5830228fc26997180f34a",
+      "data\\golden\\pulse_1k_70\\spec_third_amp.bin": "e7f5a1dedc058e50f885bd713f6c77946bf4f189e444f2b504e9a8c9a8446be0",
+      "data\\golden\\pulse_1k_70\\spec_third_db.bin": "97a101cfedcb59c645192e09b5636516684f93864b8b651021c36465cff2cf8e",
+      "data\\golden\\pulse_1k_70\\third_octave_level.bin": "0a2844b86a6eb7eeb6440cd376c584ee6937bd93aabecb130a1222ec0339f052",
+      "data\\golden\\pulse_1k_70\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\sine_1k_60\\core_loudness.bin": "89ffde0fdd588f92569f6032990c57abae4c39e2bcf08fef7c48a732b4a75b94",
+      "data\\golden\\sine_1k_60\\filt_loudness.bin": "8bc981010e60eefba951de11513d74af82229226e4818d51dde9d90751691d0f",
+      "data\\golden\\sine_1k_60\\loudness_raw.bin": "49164284b5faf2c30e8db637aacebab5407f9127489d263ba3dc2926575067ba",
+      "data\\golden\\sine_1k_60\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\sine_1k_60\\N.bin": "a08951815cc4f110e68b11dc2f53816ed394d3cc8b386aee6bdc4241aee0e10b",
+      "data\\golden\\sine_1k_60\\N_spec_time.bin": "fbcf4ccc896cb1985fa190b678978fc4b7596926d388e118334adb12b09816e7",
+      "data\\golden\\sine_1k_60\\N_specific.bin": "d93efef2fb2a5426fe9dfd39b726816fc8ec69fdf0a5641c7490291a22674773",
+      "data\\golden\\sine_1k_60\\N_time.bin": "ede9e7c6adcd1a341e5b17862893328eaacda9a57c33bf2b057564cf6a3a000e",
+      "data\\golden\\sine_1k_60\\nl_loudness.bin": "56ca91e20ee81138eef8d83f07228afc0d9d2f63ed82e995842a282039310643",
+      "data\\golden\\sine_1k_60\\nm_diffuse.bin": "061c6610fa0ce6209a680690a24619e6192a891390ae89a0604cb14fdadcc178",
+      "data\\golden\\sine_1k_60\\nm_free.bin": "5c1786ed8ffce49b0afd637ddcfcc616382aa5160c4f01f2231843bdb5857648",
+      "data\\golden\\sine_1k_60\\sig.bin": "8f5db79d324ebf2863086cc1199bb6d58ad451882b387f37f23ab5fc3984fe54",
+      "data\\golden\\sine_1k_60\\spec_loudness_raw.bin": "5d504d5c20be47d3696d87802f7f18408d858513dca8f3e1848ac910f717e668",
+      "data\\golden\\sine_1k_60\\spec_third_amp.bin": "179c2732c16d4636bc658e91a43203c0694f479c7ff2fc73c4d97ef9a1445479",
+      "data\\golden\\sine_1k_60\\spec_third_db.bin": "ca20bf5769a68e18a66793cc649a83158a7fa117bca150f29d23733f11c19809",
+      "data\\golden\\sine_1k_60\\third_octave_level.bin": "d2741ca58521e6bf8b3b2f70933d64126fbd1d3b81ea25d90ddd102ea3aab1fe",
+      "data\\golden\\sine_1k_60\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\sine_250_80\\core_loudness.bin": "42debf1c30efc70f2a23169e7080d1216ad3edd65879816f4a529e845dbfe482",
+      "data\\golden\\sine_250_80\\filt_loudness.bin": "07a9f449e80e1da38aef03b7d229a3a15ae618569e81ed8bd89e61e014235a8b",
+      "data\\golden\\sine_250_80\\loudness_raw.bin": "62a75ff5b22fad70e9e6c9c9b429a81bc9049855720130db320e61977caf9c09",
+      "data\\golden\\sine_250_80\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\sine_250_80\\N.bin": "e6fa534dab3b7140dcfbb0a341c692c505a70efc15d884107e7f3263e99382f4",
+      "data\\golden\\sine_250_80\\N_spec_time.bin": "2f185c0e82be7d0d0a511f23b79bcb947938ed8179c3ae4967268af32299f0a2",
+      "data\\golden\\sine_250_80\\N_specific.bin": "b09500c0cc16e03df918d38d2ac64f913f932ab7666fae465ed4f83369d75027",
+      "data\\golden\\sine_250_80\\N_time.bin": "8152ef5f164015438930d350609b7f3e2e13624e2ba937a5678a07f94e680efa",
+      "data\\golden\\sine_250_80\\nl_loudness.bin": "ca6167cbbefe2ccba9aff56da99d9f818bbc35fb8902a2cb99a9d23ba8955294",
+      "data\\golden\\sine_250_80\\nm_diffuse.bin": "2ca963b142888bedc7f5c6bb10111b2c3e50c50f3b26552811ca15de31997222",
+      "data\\golden\\sine_250_80\\nm_free.bin": "59ba6554a599430bffa5ab24e02d8fecae03f4bb76af991aaf64d932087c3fa5",
+      "data\\golden\\sine_250_80\\sig.bin": "cec355feb2635fc4187d1a494c8b60313aef35b9fb64d123a810bcecde6a3a00",
+      "data\\golden\\sine_250_80\\spec_loudness_raw.bin": "99627db4177bfbdea8d873d29be7cc14ae355ed7c84ebc610b8df7349ffdb825",
+      "data\\golden\\sine_250_80\\spec_third_amp.bin": "32d64e590bfea0a574eb2a49b1d113670bd6ab0b15b8d7940c4f694e3376216d",
+      "data\\golden\\sine_250_80\\spec_third_db.bin": "6e8216ef415fedacf59a749ebb58e7406ff9303d45520f4dccda2f4afb4afac8",
+      "data\\golden\\sine_250_80\\third_octave_level.bin": "66ce13e51cc14daf8f23b17fbb2d6a63b0d40d1067742e1abb26cd38946e621a",
+      "data\\golden\\sine_250_80\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\sine_4k_60\\core_loudness.bin": "86d2cbe35be120126ea66b93cb5becc04b450b0a70249e4a25eb64fdab6bd544",
+      "data\\golden\\sine_4k_60\\filt_loudness.bin": "198cf63cdacc80a81dfd9b33858690060a9a70b512ef0a6e93fbc90228ab68e9",
+      "data\\golden\\sine_4k_60\\loudness_raw.bin": "a78409c698e10a9b2b6ed7181e78d05d40d1586958131c64da3ceb0d4a10e78e",
+      "data\\golden\\sine_4k_60\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\sine_4k_60\\N.bin": "7746dd1df419ad4965c6fae369eefb68a191156227bfdf72e91e1fc7815a42b0",
+      "data\\golden\\sine_4k_60\\N_spec_time.bin": "ca9dd82dcef2c649bbd28a05e29f3da26e3b511ba213791f41b7dfa6136027a8",
+      "data\\golden\\sine_4k_60\\N_specific.bin": "6091147fbed394b0b50a2017220d92400a6451a5e40ad5fc1a4add1dd20dd814",
+      "data\\golden\\sine_4k_60\\N_time.bin": "707dd3abeaea742a05732955655770273883c280c872681bbf04cc46335df4c1",
+      "data\\golden\\sine_4k_60\\nl_loudness.bin": "25c03a3a91146322a1aa3dcabb00fd17f8801e231bc6f61d2748145ef53fc00a",
+      "data\\golden\\sine_4k_60\\nm_diffuse.bin": "51bb417f21181ca46db93fff7ddfd0100d685d40c468b3f2f67a17ed37af3358",
+      "data\\golden\\sine_4k_60\\nm_free.bin": "c057a408f1b305ce40333b1273064f5a99b46016f79edf5da0c504c13bc7d510",
+      "data\\golden\\sine_4k_60\\sig.bin": "57ad1fff30c037f6f73cc40b5250145bc18ec14954a1ae44e654670228db752e",
+      "data\\golden\\sine_4k_60\\spec_loudness_raw.bin": "e0897d4cce849f604611bf1c01dfe429962bcf9df0b1c9664856e54d9895406f",
+      "data\\golden\\sine_4k_60\\spec_third_amp.bin": "a5b1016c47a7004bffb1c85619dd323c2b3259cbeefa1f9b79be9448ce4cfe93",
+      "data\\golden\\sine_4k_60\\spec_third_db.bin": "7341c909515b30a9ebf8d85a28620c51ab8f3734f173dd1a4d78c53f2715a43c",
+      "data\\golden\\sine_4k_60\\third_octave_level.bin": "8505a3794988ab2b02479a8be9b265c412ea81d42a29dedef50c658908bcc654",
+      "data\\golden\\sine_4k_60\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\step_60_80\\core_loudness.bin": "c21d4c48ebe5c2015bc740eee18f8e2790bc6bf70bc3ef9dcdfd31bf129455a4",
+      "data\\golden\\step_60_80\\filt_loudness.bin": "42d54419bc460f053bc07026e0137801fb24f2496e5fd8198ce728a024d96ada",
+      "data\\golden\\step_60_80\\loudness_raw.bin": "c02175c7f98ecfcf7fa3dc6ce35ef7b727eced29541ec6064eeea69084c92f54",
+      "data\\golden\\step_60_80\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\step_60_80\\N.bin": "c4592ca04b50417b961dd18e4016e4950bacb3a39239750dc5c183ed13ff7608",
+      "data\\golden\\step_60_80\\N_spec_time.bin": "114b472c07500137aef4f2a2c0c6baa0ab3b62ca9669f7be12d0fbcfb0809446",
+      "data\\golden\\step_60_80\\N_specific.bin": "0963182ba0de1613e683e34dbe6e284bd33094a3a95aa27180f02d7a3079c89b",
+      "data\\golden\\step_60_80\\N_time.bin": "f034a020ecb5f573ef7b318df9a739a7faf15fbe4f26641adfb9676092b337fe",
+      "data\\golden\\step_60_80\\nl_loudness.bin": "fbd7be38f724bfa10a101e043f77ff5c6d6ed2928d56b5615bbe59381122ebf3",
+      "data\\golden\\step_60_80\\nm_diffuse.bin": "0034a9ce7c629a66e41faf5e60ef0495a1666ba408fb184b38d86b702ab46add",
+      "data\\golden\\step_60_80\\nm_free.bin": "30e6773ee1c13efc1fcd3c8e68795bad5aa5227b08680308353f05e68816b064",
+      "data\\golden\\step_60_80\\sig.bin": "1c3dce0894eb03d9fa4a062940ba2a8a614d2cc5c6e35c233094e71974049504",
+      "data\\golden\\step_60_80\\spec_loudness_raw.bin": "2b845ea4a0a4a63324247a4f304c1e20e321b3a546f4a9e05816aeaa3a049e0f",
+      "data\\golden\\step_60_80\\spec_third_amp.bin": "b512a1a93e9875a0ae4fee08df802869804ebbfbec81eac241ffb07152ac4080",
+      "data\\golden\\step_60_80\\spec_third_db.bin": "d8c08fbaa2fa464b5ae402a40f634569160b1750d3f32b06486b11367750afc6",
+      "data\\golden\\step_60_80\\third_octave_level.bin": "4b77808444ca1876fd80e383dd72f6582051b708c60a30b4f3e04c3d8b95a7d9",
+      "data\\golden\\step_60_80\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\golden\\white_60\\core_loudness.bin": "44fac2677d94a6f589ee22de76d1f30d1cc9d00ac46015e96d066c623714fb8a",
+      "data\\golden\\white_60\\filt_loudness.bin": "7e33e6a5cd792175fd5b5ccaf6ba503af407250ceccfad30bd3bdbf822b98beb",
+      "data\\golden\\white_60\\loudness_raw.bin": "ddffecf19b23c4eac44c73c3786903cbec5e3512a41106fb348531c2e88670d3",
+      "data\\golden\\white_60\\meta.json": "ec3a1faba38fd3bc2713bac2dc2642eba2f224b31019a6471896ac1b1968215d",
+      "data\\golden\\white_60\\N.bin": "f04ace134d4f101b3de2b8be399e8e4e8a0599afa134f3ac3b917c621883cc35",
+      "data\\golden\\white_60\\N_spec_time.bin": "8e58412a98ee5012bd39e0914dd66ea42be303451fabcf5bd625dcd0e18873d0",
+      "data\\golden\\white_60\\N_specific.bin": "ae63052aeb891bde937017b8026106a15508040c57efd40bee0a7e97551465ed",
+      "data\\golden\\white_60\\N_time.bin": "ffbeb308f0804450a8b615153a2ebed36748720a900fc2f0a77151d5c42473c6",
+      "data\\golden\\white_60\\nl_loudness.bin": "91d239cd7782f49001520431b2316292674dc04fdb0fcb4ddbdc74ffe6e431ae",
+      "data\\golden\\white_60\\nm_diffuse.bin": "f9854b2faa3975f0f289f54ec5889e3bae6c7e31585b8928f03687a62f073e2f",
+      "data\\golden\\white_60\\nm_free.bin": "e9d2bea3406072f59138d367e8597f9b2e21171af2a7e404a87a467ef85c6221",
+      "data\\golden\\white_60\\sig.bin": "88d78b26a2a7430aaa51869be01b55029888e1b4e3aa1dc049fd0dc895aa7266",
+      "data\\golden\\white_60\\spec_loudness_raw.bin": "71321522cd00903cc7cad5fbd4d46cb017a9c070381eb1c257e8ba77f7b7ee6f",
+      "data\\golden\\white_60\\spec_third_amp.bin": "71f657caec779a37ef633b4f7cacd2ea4f1bfdfdeeb9a5cb1ba0c0d22979f0a9",
+      "data\\golden\\white_60\\spec_third_db.bin": "982d035f1bc66460110e8b5cd975eb43cbdd5570e7b45318ff5e992c12e1616d",
+      "data\\golden\\white_60\\third_octave_level.bin": "c62daf8dbacae3572c092492d671efe7eb03c2816194c372610ed37aa2cb98d2",
+      "data\\golden\\white_60\\time_axis.bin": "19fc91d247fce717498c6cea1269da634b764e3e667497bf92e3fddc0bf139ff",
+      "data\\ISO532-verification-evidence.zip": "dec6fcfd08be7a284c1e86604348c919151a87e82c6af8bc3f4cd3ea2f0be51a",
+      "data\\修正後獨立驗證證據-6aea8b3.zip": "9872f0e6b6e176684a8e1f80494a90159e088e27e963a51fb7cf37fdc46ea104",
+      "docs\\ARCH-EVAL-REPO-SPLIT-2026-07-18.md": "69166de6cf0c23a60666b655ee7194821a7cda131b048c9e5c8ffca1f928edc6",
+      "docs\\ARCHITECTURE-PERFORMANCE-RISK-REPORT-2026-07-10.md": "ac4252ddc614e26ca3670452d6c6a959af00ca7b1a443170c2708172d6883ece",
+      "docs\\bench-results.txt": "395d042979d32205487e6254a311f14c9e55b4a00570d82d8fc5663d7d904ce3",
+      "docs\\CI-HASH-GATE-DEBUG-2026-07-10.md": "3049935cd0df4087f5e78f310ca73e94f8f9e02ed0eecc582613e1cc5054dfa2",
+      "docs\\DESIGN-DEVELOPMENT-2026-07-04.md": "b688ec68d47a4a590e031874609a2209431679b58863c8bd0970c02b7781b37d",
+      "docs\\F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md": "481b83398416aa258a25ded3f08cc1ae7b17f402567cd1b0cfb4ae5234666924",
+      "docs\\F02-NL-ZERO-INIT-2026-10-31.md": "f9df15ac7ea4aca3ff9f369b29e502b40f4faffed684be07c86955d57ae7e78d",
+      "docs\\GOLDEN-REGEN-SOP.md": "c0ed51cb41830ecf9b7fce0d399545d05c2dfcbdfd8f4b298041d89a28ea4deb",
+      "docs\\ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md": "50e1933d7810020bb9157f10ea7aba77ed97d0a53c82994f972f83fe595f3e6c",
+      "docs\\iso532-1-rs-code-review-remediation.md": "6f724447cd513a8a2855d91a836d2da55c89bc5d85d6626756b5c4d4373af14f",
+      "docs\\ISO532-SYSTEM-OVERVIEW-QA.html": "b31a6bdcebc07d4aaca647e87eabf75c6a03738830b36348738386334aefe63a",
+      "docs\\MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md": "573010e8d7d5ff8c0b6a07ea55cb9caa60ccd6ccbb27e4a9129f0e005e288f29",
+      "docs\\PLAN-TIMING-ANALYSIS-2026-07-18.md": "a3280ad58986996a26d7e0863e4a1dd1022ca84e00c8f0241e9508446cb7d2b8",
+      "docs\\R3-FIXES-REVIEW-2026-07-11.md": "fb75c9954b9c0baf1e9d829f84468e47e038de48ed438b06a28d1e3ead7bd659",
+      "docs\\R3-REVIEW-2026-07-11.md": "6d8a6957b6d09c2d122dba4f843a5f895a7353379c7aa9134b05a962aedd32f1",
+      "docs\\R3-REVIEW-FIXES-IMPLEMENTATION-2026-07-11.md": "6ac4153bf910772519b6c91f884665681991c73b189d5f3ae145f473546290d7",
+      "docs\\R4-REVIEW-CLOSEOUT-2026-07-10.md": "7dc99185161d655ec950027ea65fd600a0af6f0d67ac19db21925b4c9d3ade7e",
+      "docs\\R5-REVIEW-2-FIXES-2026-07-17.md": "bf2204908a1c0a55005c9cb18a4670035b85eb83d20763960b6a5a3a0b15d55a",
+      "docs\\R5-REVIEW-3-FIXES-2026-07-18.md": "699a5e9cad515ee89f778d8d242367e7eaaece995fbe0a51599dae0f2d8e28e6",
+      "docs\\R5-REVIEW-FIXES-2026-07-17.md": "b1f46cdbb1a715401ea2b0346583343f1df5ca15d1c8a0196db910800e9a05ab",
+      "docs\\R5-REVIEW-FIXES-IMPLEMENTATION-2026-07-17.md": "192337ec0af43adc782a0b239b3de79a9542094b842fdc14e4dd5e38e0ff6e7a",
+      "docs\\RELEASE-0.2.0-2026-10-31.md": "d94fec442d4ed2e79fa79442f0bf7c716c480123bea63310e84de8500de027f8",
+      "docs\\RELEASE-CHECKLIST.md": "0bec654b1b2c0c1f891308d259cdb6e1a9550b1fb082525ce067bc51428b5e38",
+      "docs\\ROADMAP.md": "a5fe4249b6e2693f401322925fe4554246bf273c8107bbb59f0583255809d889",
+      "docs\\superpowers\\plans\\2026-07-03-iso532-rust-avx.md": "ec64b32377978c35659734fa8c1db2962b5e3488e5fedc94f289cd5e29d0abad",
+      "docs\\superpowers\\plans\\2026-07-05-roadmap-master-plan.md": "18ca51e3297485447ab6d95100fb70eb5ac1b09ce267ac8b5bbb0a4ffa5c53f4",
+      "docs\\superpowers\\plans\\2026-07-11-r3-review-fixes.md": "3b827b09e82c3d94cd47e14e29a52348ca9adde08612e7cd08e12a8e0c3214e3",
+      "docs\\superpowers\\plans\\phases\\phase-1-foundation.md": "a81259709b4baaa7e30ac0fa6683e7852c4600da720723dd831b4e63fc316784",
+      "docs\\superpowers\\plans\\phases\\phase-2-zwst-scalar.md": "a89861fd2a9d7a04a3bcc97e0399e05f1f24847b3e9f5632e3124a907d0968ef",
+      "docs\\superpowers\\plans\\phases\\phase-3-zwtv-scalar.md": "e2b5f3355281135887360201e354a29fa2db3fba407a0b40e9fd3df015918bdf",
+      "docs\\superpowers\\plans\\phases\\phase-4-avx2.md": "c8a1c1190e0fe346b8ed764bf6bd77cca0fba2cb877b37bcb9c1a4ebb053faeb",
+      "docs\\superpowers\\plans\\phases\\phase-5-bench-polish.md": "e9236e1204dd2a1663e0f861f850bde568fc2f837f01ae7a0210f683b6bbab40",
+      "docs\\superpowers\\plans\\phases\\phase-g0-evidence-hardening.md": "c27930cfb98ad95a20bf3cff9d8f3e5e5a807af18d7adabd98daa73b3c459d73",
+      "docs\\superpowers\\plans\\phases\\phase-pre-r6-1-workspace.md": "b869e8cbaf29afb72d67a091a7bc6c0845316eb3e0b564f128100c47bf39b1d7",
+      "docs\\superpowers\\plans\\phases\\phase-pre-r6-2-py-stream.md": "4444cb9acd59c23511c6e737591bfe747756eed20fc754c94f807199fe87f4ed",
+      "docs\\superpowers\\plans\\phases\\phase-r1-calc-slopes-dedup.md": "e6d04427abcdb25f3154f4d8f4e8b478cda19af5214b83ca6a2b58b21d0c4e07",
+      "docs\\superpowers\\plans\\phases\\phase-r3-1-golden-chain.md": "d7d76770276c6b16fef6ddb407b826065dc34ef5ad7b356d2cab76a75f347dfe",
+      "docs\\superpowers\\plans\\phases\\phase-r3-2-ffi.md": "dd4426c62be859919312fb4318c3f8db3831211bdd8c3db6782e34e94ecdec9c",
+      "docs\\superpowers\\plans\\phases\\phase-r3-3-python.md": "0b0b521d7d658446bd1406ea90004fd488b0b7879596c2a4f7502ac31dd4450f",
+      "docs\\superpowers\\plans\\phases\\phase-r4-band-parallel.md": "63be79976911969cdbaee1ac5064ccd5189794b510ebb8b513c827d88089ff7e",
+      "docs\\superpowers\\plans\\phases\\phase-r5-stream-api.md": "2ae95288f47c0b8613f3583459f736ea489c0ae3fcf0e368485d80044f707b4e",
+      "docs\\superpowers\\specs\\2026-07-03-iso532-1-rust-avx-design.md": "0f2c78d1f339b0fb922fb3be01bf2db5581ba0dfdb2710b8683733fe0f43dbc6",
+      "docs\\superpowers\\specs\\2026-07-10-r3-c-abi-python-binding-design.md": "cd4e6173d76c6201ba6557ccaab654b7849bc76ef4b177f27022196e1c8920b3",
+      "docs\\superpowers\\tdd-bdd\\phase-1-foundation.md": "77f49ca5abde2bb2345b9c26509fe117785a5471e97c5a252c3432691b43d966",
+      "docs\\superpowers\\tdd-bdd\\phase-10-other-standards.md": "43c6163da810c9ca66af5333c6cf364fd7d00f797bfc4f9ca5cdf5ed9660eb43",
+      "docs\\superpowers\\tdd-bdd\\phase-2-zwst-scalar.md": "4575f5206f6002a7bc6658d47fc64e4542c2b199607d6d3780ce9e2701d01520",
+      "docs\\superpowers\\tdd-bdd\\phase-3-zwtv-scalar.md": "f134cdb31299409b43660fc6a902bad51d86af1bd5579af23d760cbd11415dd6",
+      "docs\\superpowers\\tdd-bdd\\phase-4-avx2.md": "8f8997ed2afa77dbf8d63fc92f7311e95855364022d9083dadffc21f0c74947b",
+      "docs\\superpowers\\tdd-bdd\\phase-5-bench-polish.md": "0eb2c7eccf591436ffe76b3615f43b038af2668ca1f34b3587ee976d57a54965",
+      "docs\\superpowers\\tdd-bdd\\phase-6-cabi-python.md": "1a0fa75dd64973891aaf57b9a7aaddb2d34cd59e1a17c390bc2044780cfb69ee",
+      "docs\\superpowers\\tdd-bdd\\phase-7-streaming-phon.md": "f83f9ba5a370680859c44ea45011e4a90104a4e4dd6c096453994e7fa3642e05",
+      "docs\\superpowers\\tdd-bdd\\phase-8-vst-plugin.md": "e712eec5f0ed762ed9676ef30e51b8af6b64ab678e3c7072381370b91d479e22",
+      "docs\\superpowers\\tdd-bdd\\phase-9-neon-kernel.md": "b4bb61987da3f41795d5a78e4be27c81c2a74ea2f65d1af12650dc9d6d4e24c2",
+      "docs\\superpowers\\tdd-bdd\\README.md": "80413565659490a2c622883842bdcc74dc1a7f8c10a4889414991981030ddcff",
+      "docs\\SYSTEM-DESIGN-QA-2026-07-06.md": "8aa1fe1f92c226026d16d9c49872e21197d85259f31164e411063d30162f1cc5",
+      "docs\\修正報告.md": "0d4776c68980888ee63c6d25cd017801546cbd4838d48c7a7f9885b1081f1384",
+      "docs\\修正報告2.md": "36fc9eafffe090bad595676a187ef74a24381248d1e753974d5f7de990d60224",
+      "docs\\修正後獨立驗證報告.md": "b2fad5b9d49d82cc55a125141c5e3d3bca8356b4177cecf0d1ac710e3afdad5a",
+      "iso532\\benches\\loudness.rs": "311a8e751fdf166da61c79322e0e851bd2588079a1241ed5e5070b1a57d335f1",
+      "iso532\\Cargo.toml": "d2928e6e60c59b509f2ffca23066dec489989fcc7f46aa590de8a0ab8ecb2a57",
+      "iso532\\examples\\cli.rs": "52dadc99ebaf46fa095597be2da10b669bf275494bc218c4dd887601307eb8b3",
+      "iso532\\README.md": "1945c56d798dee665c314022ddfca9d91f7c47220033b34911458a2587912a04",
+      "iso532\\src\\core\\calc_slopes.rs": "be443d090d04e3b186ac338ec5a1c2061419c003a0cc74f9cfeb8c31354b80d9",
+      "iso532\\src\\core\\main_loudness.rs": "ff92090106863f35d60bf178953bea7f0b299803638e585f949a426bf0ad2049",
+      "iso532\\src\\core\\mod.rs": "d62174b9ab6cdcd8c4dfefd9f2a0599dce4ec476a45e20c43bb54bf5ed1a9cf9",
+      "iso532\\src\\dsp\\filtfilt.rs": "3af338dffa803acd5658b1fe46f45d541a606046f80880766d42f0105f3ced13",
+      "iso532\\src\\dsp\\mod.rs": "2a7a879ace8f76cf0b743bff8c195066c0e7ab856aeb094a4332ce9c3f0b95cc",
+      "iso532\\src\\dsp\\sos.rs": "a5fff9439885ac8aae36b2392b09e6a5e1a2afe1387d5cfdac62aabf10a28ff0",
+      "iso532\\src\\error.rs": "48e8e35ea4b4acddc48744249f1536bb980a58768d873b6c540488e364008faf",
+      "iso532\\src\\lib.rs": "cbe751e85bb3978f80f63e19db89a890308d701e5daa00056759774d134502bf",
+      "iso532\\src\\simd\\mod.rs": "242302d8cae15832309537ff5583265a3c71d89979dbdd544cdd8afed0b0035f",
+      "iso532\\src\\sone2phon.rs": "67755a36bfd944dc1e5ef071beb0a6ad4edc3665027a2698acb5aef82f8d28ef",
+      "iso532\\src\\tables.rs": "0a56ea70b6e9fbcc2b159f0da30430217bdad1b8b9d894ac4a655d35c58b5bad",
+      "iso532\\src\\tables_noct.rs": "c52201e4ba9d61875328ec8b1dea92a553b6a48b8193bae0137edbfdfa9d5fb3",
+      "iso532\\src\\zwst\\mod.rs": "5cd5ee6d99b6d18c1a8b24a4e324270d5861de83d528158cf8b0362011bdbcfc",
+      "iso532\\src\\zwtv\\mod.rs": "637f0bcb4bdbd5d90e2ec14607bd8cad84a25af1a827a33d1f90518e65aa6fde",
+      "iso532\\src\\zwtv\\nonlinear_decay.rs": "966ea4979cab03898a09d78fc96230b28c94bc951e700e0229503ff8a1bb7e92",
+      "iso532\\src\\zwtv\\stream.rs": "3ed7723cd6b066f97dd42279569a49aaebd6678810df608b503159a7fa4cb252",
+      "iso532\\src\\zwtv\\temporal_weighting.rs": "4735998b5238c1a00f526bcba0f740386c66f98a6543082228f7d9b6c91df43c",
+      "iso532\\src\\zwtv\\third_octave_levels.rs": "e1570576ffe230c2731529dd1acded63ca77af1d95b4ed33b8463b6ee4f23d45",
+      "iso532\\tests\\annexb.rs": "6e479091f8ac6a581b28543e52a42a53c85f9aea85f7b714f2dacc8fc0bb318e",
+      "iso532\\tests\\api_errors.rs": "595f2fb5c0223896d663b787c25184138ebb1f8f1d42e67712e998f91001d1c9",
+      "iso532\\tests\\common\\mod.rs": "f5e307830d5dc1b5cb2a9f1828a0eebf1a6542f50dae860b896425056d1702f3",
+      "iso532\\tests\\determinism.rs": "404bfc12e09fbd1a85cc8f77f3384c37af9c9afc74725966b940caf418d7c0c1",
+      "iso532\\tests\\golden_core.rs": "6b73a84af2c4bc82abcbda950f981fc60e3c042005461794a54cbd9298d47d7a",
+      "iso532\\tests\\golden_dsp.rs": "8f982fa80a170b4b7d43f8a567351fece73c80b99279b116b98b7f7d21da2e24",
+      "iso532\\tests\\golden_zwst.rs": "c3084d135bd624978ac910f3fa5cdaf3031ba56dea028c235e39b968fb15b985",
+      "iso532\\tests\\golden_zwtv.rs": "e4a82fafa441f449b5648e16f22f0e5f21d7529d300a01752a27fa70ac7da2a1",
+      "iso532\\tests\\hash_gate.rs": "ca3f9dab1f792ea8221ec367b577331576b7ee4473c6f15bd4aea99ad39a3c9a",
+      "iso532\\tests\\low_freq_correction.rs": "d970a9106af0a0e28154b2d2c9e825216cf0f787126d95874881cbb43a064938",
+      "iso532\\tests\\nl_zero_init.rs": "1c0359b0782cba5884b2e563f579a2242971a068db6a76699623eddb778bafc1",
+      "iso532\\tests\\py_contract_dump.rs": "167cd58bbc89a1cf69618b1d8c03f0185ea7ebe09dfc5cb42c634a383c6f97da",
+      "iso532\\tests\\simd_dispatch.rs": "d6e58adaae5fa6e912e1cf381e00ef6b4bea7c90ee79b5d0216a87970ac349c6",
+      "iso532\\tests\\simd_parity.rs": "7d364ff958ef19bc5de67aa65f6eca4127248d468a14928d75a8b826e44c758b",
+      "iso532\\tests\\stream.rs": "d715d7ba5141e0ebd04c46a25fa71807406a4769b8a7786fc1e7b23d5c0f1cac",
+      "iso532\\tests\\stream_alloc.rs": "6b953c96e22736652d5a1d1156a3b8a61bb7f2971a38deee2f41d95c241dd682",
+      "iso532\\tests\\stream_no_rayon.rs": "1f0eb0eaf7cb78b6804d7c0dbeb152c402831a2f6734a84a385e929794d97168",
+      "iso532\\tests\\stream_scalar.rs": "271fc485e291e1e9f2787766ae77c335c721be8886a1fd87a4f3461525383f92",
+      "iso532-ffi\\Cargo.toml": "d7e0e967a966c946f09dc0d235357e0066e9d035b604ef087d67d460d18eecb7",
+      "iso532-ffi\\cbindgen.toml": "6e70515782b586ff96d17588f23fa8ad0c54a5a92365cd08b710a9fe4d85c376",
+      "iso532-ffi\\include\\iso532.h": "fd28ff949bc2902d649405aa7adba1aba15e76b9d477d0c44784cc2875adae4b",
+      "iso532-ffi\\src\\lib.rs": "ffa818cf7f45e38fa1586019c7474796b6e64f884aa2c4e35874c7c3aaecb8bf",
+      "iso532-ffi\\tests\\ffi.rs": "bad608b37971528cd0aded291aefe5d1362a0c3cc1aefa3a3fcf7954664a1eab",
+      "iso532-ffi\\tests\\smoke.c": "75ecc277b2dd69871446beaf7fd0ef79ba3276cf639a6106b5834ce6f80a59ab",
+      "iso532-py\\Cargo.toml": "851d7e5677420c2707d345e0e272c99dd6fbd2e260e86c1d18d385733946d582",
+      "iso532-py\\pyproject.toml": "f5b071b3f933937723979a5217808795ed1b5be7a38d7a9e287ec67adda4a381",
+      "iso532-py\\src\\lib.rs": "b5e09120ec51781d5ea72561a2ba9aa0108e35ece2cf0e2c44e92304c2c11c00",
+      "iso532-py\\tests\\conftest.py": "87a96a30f628b841c37578f1961f97dd27150f32bbf3450cf248549b89d559c2",
+      "iso532-py\\tests\\test_parity_mosqito.py": "2241e15b3829bb1c9073ad181d1adbdc06e02ddccc2edcd6db8ce819ea6158ef",
+      "iso532-py\\tests\\test_smoke.py": "082834fe20a950a14843eaa1739bc01f9211fa2ae44ca5bb6b98348eb46d0679",
+      "iso532-py\\tests\\test_stream.py": "c50eee88770f012f3cdc6d81614b81afa52738820f6dd6e5bc2fad4d61b1f820",
+      "LICENSE": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "README.md": "9c04a173c41df4cf1af6eb15e00f3a2809793c74d6601d7ecaa526cb8fd1f15e",
+      "README.zh-TW.md": "aa61956f56c3b1ec14ae5b734749df29deeb811b72f68a59e8d3fc6af56cac11",
+      "SECURITY.md": "89a2663a461651691e18291743f910e1dbd019cc2f637918f2c5c864fd0ee27a",
+      "THIRD_PARTY_NOTICES.md": "1f3ffdd63b022739d9d66576666cc56d79a5da7cfa7d1e229a2cc75fd4c60064",
+      "tools\\bench.ps1": "3d01f08d9b1fbaab4f25e4ed15fc9db462f8ccaf1b4368867a50dac1f2f00cdb",
+      "tools\\bench_binding.py": "e3960518a07eba22e9d448fcb7a5f639e0980871681fa51f232a2ca24321f563",
+      "tools\\compare_mosqito.py": "8e32d600e784bd9c9f099caa0a8865c54c5ac843043e069610ddc173a14fddc8",
+      "tools\\gen_golden.py": "99e2931a8cfc29fe90cb067862e011c67ab7b9e3703a16f1d9c9c48d812e21f4",
+      "tools\\gen_tables.py": "28a57f9d49864a50a28c25054a71a2e5e9df99d7ba9712be982896cb93e2fe51",
+      "tools\\golden.sha256": "f3d3bcc8227942b82d4df5e256d061a9c32d6a830de197e83d209dd413367e56",
+      "tools\\golden_manifest.py": "383154bdb9195cfe41fdf3ba068adfda7924844ae3fe6003c63f848eb9659e03",
+      "tools\\iso532_testkit.py": "5e46ae5a5cc6c336a094266fc94cdda5d0b6fb7214a2e02dba515e75071f8cf0",
+      "tools\\requirements.lock": "4c05b10dbdc444e223a3d21d3b06b35d41b74a6e073532cb0b602de5e263b78a",
+      "tools\\setup_env.sh": "4ce0de0aa434a3c9eec44975d10891f6ae02437cf13b62f8fdbeaf6712d2341a",
+      "tools\\test_env_guards.py": "214eac92d98943e964989d453cfb0eda1a82a808fd6889de8aa2e01518fc69c6"
+    },
+    "untracked_unchanged": true,
+    "official_zip_files": 44,
+    "official_files_unchanged": true
+  },
+  "artifact_hashes": {
+    "work\\deep_annex_audit.py": "1d28c3c19737fbb5178600a0e6e6e90c8397b5a8a489a3746306cb4f81769fac",
+    "work\\deep_audit_support.c": "b03ac588312e1f158a059abdf49c771a2cf90ce4ac3ae3633130f1a0d7be4505",
+    "work\\build-deep-audit.cmd": "18f58a7417322290c5fbca9560a1a920929be9889a7b4bcc13176d86da63ebdf",
+    "work\\ref-build\\deep_audit_support.dll": "04e5e7b1e91e3e010e04e5bc36a48f740a76a976e5c919289a1dbceda804dda7",
+    "work\\ref-build\\iso_reference_cli.exe": "74b13551340762b31c9e351613aa5e0586031b62425678391471ee34750c8287",
+    "work\\ref-build\\iso_reference.dll": "e2289c66fad003a216f0c7a32aa9af1b3539a4a53df7d61cbeb2902c2a0df1e9"
+  }
+}

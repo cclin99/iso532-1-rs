@@ -21,7 +21,7 @@
 - Rust 測試 `iso532/tests/golden_*.rs`、`annexb.rs` 開檔即讀,檔案缺失即 panic。
 - 目前 `.venv` 實測:Python 3.11.9、numpy 2.4.6、scipy 1.17.1、mosqito 裝自本地 `mosqito-1.2.1.tar.gz`(sha256=50c0ebdc5102c67cfe4362178ce07d7e6b3211d7cb3e6051082e503ff019f16f)。**沒有任何 lockfile。**
 - **per-環境契約**(重要,見 `docs/CI-HASH-GATE-DEBUG-2026-07-10.md`):golden 位元組取決於生成機器的 libm(scipy/numpy 底層),SHA256 manifest 只回答「**本機**重生是否與測試驗證過的資料一致」,不是跨平台契約。
-- 所有指令在 repo 根(`D:\ISO532`)、Git Bash 下執行。
+- 所有指令在 repo 根(`<REPO>`)、Git Bash 下執行。
 
 ### Task 0 開始前
 

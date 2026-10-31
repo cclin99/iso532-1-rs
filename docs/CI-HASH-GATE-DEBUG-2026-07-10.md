@@ -39,7 +39,7 @@ GitHub `ubuntu-latest` = Ubuntu 24.04。本機 Docker 跑 `ubuntu:24.04` 容器
 抄 log → 再 push」的慢迴圈:
 
 ```
-docker run --rm -v D:/ISO532:/work -w /work/iso532 -e CARGO_TARGET_DIR=/tmp/target \
+docker run --rm -v <REPO>:/work -w /work/iso532 -e CARGO_TARGET_DIR=/tmp/target \
   ubuntu:24.04 bash -c "apt-get install curl build-essential && rustup(minimal) && \
   cargo test --test hash_gate -- --nocapture"
 ```

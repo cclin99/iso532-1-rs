@@ -1,0 +1,152 @@
+{
+  "1": {
+    "file": "Annex B.2\\Results and test (stationary loudness based on third octave levels).xlsx",
+    "sheet": "Test signal 1.txt",
+    "header": "Loudness calculation according to ISO 532-1 for stationary sounds (input: 28 third octave levels, free field)",
+    "specific_header": null
+  },
+  "2": {
+    "file": "Annex B.3\\Results and tests for synthetic signals (stationary loudness).xlsx",
+    "sheet": "Test signal 2",
+    "header": "Loudness calculation according to ISO 532-1 for stationary sounds (free field)",
+    "specific_header": null
+  },
+  "3": {
+    "file": "Annex B.3\\Results and tests for synthetic signals (stationary loudness).xlsx",
+    "sheet": "Test signal 3",
+    "header": "Loudness calculation according to ISO 532-1 for stationary sounds (free field)",
+    "specific_header": null
+  },
+  "4": {
+    "file": "Annex B.3\\Results and tests for synthetic signals (stationary loudness).xlsx",
+    "sheet": "Test signal 4",
+    "header": "Loudness calculation according to ISO 532-1 for stationary sounds (free field)",
+    "specific_header": null
+  },
+  "5": {
+    "file": "Annex B.3\\Results and tests for synthetic signals (stationary loudness).xlsx",
+    "sheet": "Test signal 5",
+    "header": "Loudness calculation according to ISO 532-1 for stationary sounds (free field)",
+    "specific_header": null
+  },
+  "6": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 6",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 2,5 Bark"
+  },
+  "7": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 7",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 8,5 Bark"
+  },
+  "8": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 8",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 17,5 Bark"
+  },
+  "9": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 9",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 17,5 Bark"
+  },
+  "10": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 10",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 8,5 Bark"
+  },
+  "11": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 11",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 8,5 Bark"
+  },
+  "12": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 12",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 8,5 Bark"
+  },
+  "13": {
+    "file": "Annex B.4\\Results and tests for synthetic signals (time varying loudness).xlsx",
+    "sheet": "Test signal 13",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": "at 8,5 Bark"
+  },
+  "14": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 14",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "15": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 15",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (diffuse field)",
+    "specific_header": null
+  },
+  "16": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 16",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "17": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 17",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "18": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 18",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "19": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 19",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "20": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 20",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "21": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 21",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "22": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 22",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "23": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 23",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "24": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 24",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  },
+  "25": {
+    "file": "Annex B.5\\Results and tests for technical signals (time varying loudness).xlsx",
+    "sheet": "Test signal 25",
+    "header": "Loudness calculation according to ISO 532-1 for time varying sounds (free field)",
+    "specific_header": null
+  }
+}

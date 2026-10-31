@@ -1,0 +1,17 @@
+     Locking 1 package to highest compatible version
+    Updating iso532 v0.1.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532) -> v0.2.0
+   Compiling crossbeam-utils v0.8.23
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling crossbeam-epoch v0.9.20
+   Compiling crossbeam-deque v0.8.7
+   Compiling rayon-core v1.13.0
+   Compiling thiserror v1.0.69
+   Compiling either v1.18.0
+   Compiling syn v2.0.119
+   Compiling rayon v1.12.0
+   Compiling thiserror-impl v1.0.69
+   Compiling iso532 v0.2.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\source\iso532)
+   Compiling iso532-independent-probe v0.1.0 (<AUDIT_HOME>\2026-10-31\referenced-chatgpt-conversation-this-is-an\work\reverify-f02-5450d39\work\probe)
+    Finished `release` profile [optimized] target(s) in 15.76s

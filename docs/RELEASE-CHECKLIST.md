@@ -11,3 +11,4 @@ Run this checklist immediately before publishing a release or making the README 
 - [ ] With the normal antivirus protection enabled, build and scan the release DLL/static library, wheel, and any plug-in bundle; record any detection by product, version, artifact hash, and exact build command. Do not treat a disabled-antivirus build as release evidence.
 - [ ] Generate and publish SHA-256 checksums for every release artifact; verify downloaded artifacts against those checksums before smoke testing.
 - [ ] Confirm that local-only files, archives, generated `data/`, credentials, and machine-specific paths are not staged.
+- [ ] Audit and verification deliveries: run `python tools/redact_paths.py --check docs` (must print `clean`); every evidence archive referenced by a report is listed in `docs/verification/README.md` with size, SHA-256 and a working download link; the archives themselves are not committed.

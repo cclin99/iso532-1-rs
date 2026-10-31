@@ -584,7 +584,7 @@ Workspace 化應在第二個標準真正動工時進行。太早拆 crate 只會
 
 ## 12. 可重現命令
 
-在 `D:\ISO532\iso532`：
+在 `<REPO>\iso532`：
 
 ```powershell
 # Correctness
