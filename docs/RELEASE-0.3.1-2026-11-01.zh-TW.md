@@ -51,7 +51,7 @@
 
 ### 獨立驗證
 
-本次沒有新的獨立驗證輪。C-02 變更由 `docs/修正報告2.md` §12.2 C-02 列的驗收項覆蓋（對照見 `docs/C02-NONFINITE-INPUT-2026-11-01.zh-TW.md` §4）。C-01 的數值驗收（Annex B 訊號 18／23／24／25 尾端點的官方 C library 值）已交辦於 `docs/verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md`，將在本次發布後交付到 `docs/verification/`；它不會改變格線，只決定稽核列是否結案。
+打 tag 前待交付（使用者 2026-11-01 決定：先獨立驗證）。對 release commit `30e4279` 的驗收輪已交辦於 `docs/verification/briefs/2026-11-01-release-0.3.1-acceptance.zh-TW.md`：以 Rust、C、Python 獨立 harness 驗 C-02；在真實 Annex B 訊號上驗 C-01 格線契約；V-01 驗證器的 fail-closed 控制；對有限輸入與 `v0.3.0` 在每個 Annex B 訊號上位元比較；產出物 hash 與匯出符號；紀錄一致性。交付放 `docs/verification/2026-11-01-release-0.3.1-30e4279/`，建立 `v0.3.1` 前依其更新本節。在此之前 C-02 變更只由 `docs/修正報告2.md` §12.2 C-02 列的驗收項覆蓋（對照見 `docs/C02-NONFINITE-INPUT-2026-11-01.zh-TW.md` §4）。C-01 的數值驗收（Annex B 訊號 18／23／24／25 尾端點的官方 C library 值）是另一份簡報 `docs/verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md`；它不會改變格線，只決定稽核列是否結案，不作為打 tag 的門檻。
 
 ## 產出物（自 release commit 狀態建置，Windows x64，rustc 1.99.1）
 

@@ -71,13 +71,19 @@ computation. Subnormal, zero and large finite values remain valid input.
 
 ### Independent verification
 
-No new independent round is part of this release. The C-02 change is covered by the
-acceptance items of `docs/修正報告2.md` §12.2 row C-02 (mapped in
+Pending before the tag (user decision 2026-11-01: independent verification first). The
+acceptance round on release commit `30e4279` is briefed in
+`docs/verification/briefs/2026-11-01-release-0.3.1-acceptance.md`: C-02 through an
+independent harness in Rust, C and Python; the C-01 grid contract on real Annex B
+signals; the V-01 validator's fail-closed controls; bitwise comparison with `v0.3.0` on
+every Annex B signal for finite input; artifact hashes and exports; record consistency.
+Its delivery goes to `docs/verification/2026-11-01-release-0.3.1-30e4279/` and this
+section is updated from it before `v0.3.1` is created. Until then the C-02 change is
+covered only by the acceptance items of `docs/修正報告2.md` §12.2 row C-02 (mapped in
 `docs/C02-NONFINITE-INPUT-2026-11-01.md` §4). The C-01 numerical acceptance (official C
-library value for the trailing point of Annex B signals 18/23/24/25) is briefed in
-`docs/verification/briefs/2026-11-01-C01-zero-pad-reference.md` and will be delivered
-under `docs/verification/` after this release; it cannot change the grid, only close or
-keep open the audit row.
+library value for the trailing point of Annex B signals 18/23/24/25) is a separate
+brief, `docs/verification/briefs/2026-11-01-C01-zero-pad-reference.md`; it cannot change
+the grid, only close or keep open the audit row, and does not gate the tag.
 
 ## Artifacts (built from the release commit state, Windows x64, rustc 1.99.1)
 

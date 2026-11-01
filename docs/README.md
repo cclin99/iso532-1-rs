@@ -52,13 +52,14 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 | [`verification/README.md`](verification/README.md) | index of all verification rounds, evidence archives, redaction rules, auditor briefs | en |
 | [`修正報告.md`](修正報告.md) | 2026-10-31 audit, part 1 (pre-fix state, methodology) | zh |
 | [`修正報告2.md`](修正報告2.md) | 2026-10-31 audit, part 2: priorities §12, F-01 re-verification §14, F-03 §15, V-01 specification §15.5 | zh |
-| [`修正後獨立驯證報告.md`](修正後獨立驗證報告.md) | post-F-01 independent verification (`3dc420c`, `6aea8b3`) | zh |
+| [`修正後獨立驗證報告.md`](修正後獨立驗證報告.md) | post-F-01 independent verification (`3dc420c`, `6aea8b3`) | zh |
 | `verification/2026-10-31-F02-5450d39/` | F-02 verification: PASS within scope | zh |
 | `verification/2026-10-31-F03-sensitivity-d623d32/` | F-03: tests cannot discriminate 0.22 from 0.24 | zh |
 | `verification/2026-10-31-F03-authority-d623d32/` | F-03: Table A.9 confirmed corrected in 2017-11, cell unknown; 1991 paper has 0.22 | zh |
 | `verification/2026-10-31-F03-SQAT-d623d32/` | F-03: SQAT carries 0.24 in all versions | zh |
 | [`verification/briefs/2026-11-01-F03-B-aarae-lineage.md`](verification/briefs/2026-11-01-F03-B-aarae-lineage.md) | brief for F-03 option B | en + zh |
 | [`verification/briefs/2026-11-01-C01-zero-pad-reference.md`](verification/briefs/2026-11-01-C01-zero-pad-reference.md) | brief for the C-01 official-C reference of the trailing point | en + zh |
+| [`verification/briefs/2026-11-01-release-0.3.1-acceptance.md`](verification/briefs/2026-11-01-release-0.3.1-acceptance.md) | brief for the pre-tag acceptance of release commit `30e4279` | en + zh |
 
 ## Historical review records (closed rounds; translation backlog P3)
 
