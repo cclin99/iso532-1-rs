@@ -3,7 +3,13 @@
 All notable changes to this project will be documented here. The project follows
 [Semantic Versioning](https://semver.org/) for public API and ABI changes.
 
-## Unreleased
+## 0.3.1 - 2026-11-01
+
+Patch release: input contract and output-grid contract of the batch API, plus
+test-only and documentation changes. No numeric output changes for finite input;
+the C ABI gains one positive error code (additive, ABI v1 unchanged otherwise);
+Python batch functions raise `ValueError` on NaN/Inf. Record:
+`docs/RELEASE-0.3.1-2026-11-01.md`.
 
 ### Added
 

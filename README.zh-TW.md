@@ -325,12 +325,12 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 | ZWTV `N_specific(t)` vs MoSQITo golden（`NlInit::MosqitoTail`） | `1.3e-9` sone/Bark | 最差案例位於 slope／rounding 分支邊界附近 |
 | AVX2 vs Rust scalar `N(t)` | 0 | 已量測 golden set 上 bit-identical |
 | AVX2 vs Rust scalar `N_specific(t)` | `1.4e-9` sone/Bark | FMA／rounding 殘差，由測試看守 |
-| 2026-10-31 直接 3 秒比對，預設 `nl_init="zero"`，`N(t)` | `5.83e-3` sone | 與效能量測相同訊號；差異來自 F-02 初始化，位於 t = 2 ms |
-| 2026-10-31 直接 3 秒比對，預設 `nl_init="zero"`，`N_specific(t)` | `3.25e-2` sone/Bark | 同一原因；該訊號開頭沒有靜音，MoSQITo 的 seed 不為零 |
-| 2026-10-31 直接 3 秒比對，`nl_init="mosqito_tail"`，`N(t)` | `2.66e-15` sone | 與 2026-07-20 數值相同：共用迴路未變 |
-| 2026-10-31 直接 3 秒比對，`nl_init="mosqito_tail"`，`N_specific(t)` | `3.46e-15` sone/Bark | 與 2026-07-20 數值相同 |
+| 2026-11-01 直接 3 秒比對，預設 `nl_init="zero"`，`N(t)` | `5.83e-3` sone | 與效能量測相同訊號；差異來自 F-02 初始化，位於 t = 2 ms |
+| 2026-11-01 直接 3 秒比對，預設 `nl_init="zero"`，`N_specific(t)` | `3.25e-2` sone/Bark | 同一原因；該訊號開頭沒有靜音，MoSQITo 的 seed 不為零 |
+| 2026-11-01 直接 3 秒比對，`nl_init="mosqito_tail"`，`N(t)` | `2.66e-15` sone | 與 2026-07-20 數值相同：共用迴路未變 |
+| 2026-11-01 直接 3 秒比對，`nl_init="mosqito_tail"`，`N_specific(t)` | `3.46e-15` sone/Bark | 與 2026-07-20 數值相同 |
 
-上面的直接比對列與效能表均由 `.venv\Scripts\python.exe tools\compare_mosqito.py` 產生（相容性列加 `--nl-init mosqito_tail`；效能表維持 2026-07-20 安靜機器量測，發版當時快照見 `docs/RELEASE-0.3.0-2026-10-31.md`）。腳本使用 `tools.iso532_testkit.contract_signal(3 * 48_000)`，先各 warm up 一次，再各連續量測 30 次，輸出算術平均、sample SD、min／max，以及 `N(t)` 與 `N_specific(t)` 的最大絕對差異。
+上面的直接比對列與效能表均由 `.venv\Scripts\python.exe tools\compare_mosqito.py` 產生（相容性列加 `--nl-init mosqito_tail`；效能表維持 2026-07-20 安靜機器量測，發版當時快照見 `docs/RELEASE-0.3.1-2026-11-01.md`）。腳本使用 `tools.iso532_testkit.contract_signal(3 * 48_000)`，先各 warm up 一次，再各連續量測 30 次，輸出算術平均、sample SD、min／max，以及 `N(t)` 與 `N_specific(t)` 的最大絕對差異。
 
 ISO Annex B 使用寬得多的逐點接受式：`abs(error) <= max(0.1, 0.05 * abs(reference))`；此公式直接讀自官方 Annex B 工作簿（V-01，2026-10-31），不是標準條文逐條核對；`tests/annexb.rs` 以零例外、對無效資料 fail-closed 的方式套用。Signal 3／5／10 的詳細數據，以及「實作 parity」與「Annex B compliance」的差異，請見 [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md)。
 
