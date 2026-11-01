@@ -107,11 +107,13 @@ The extra point (signals 18, 23, 24, 25) is internal frame K, sampled at real sa
 
 For example `OutputGrid::Full` (default) and `OutputGrid::CliTotal`. Not listed as a separate option because trimming is a one-liner for the caller, the stream cannot honour it, and a new API surface has to be maintained in Rust, the C ABI and Python. A documented trimming formula is cheaper.
 
-## 5. Decisions needed
+## 5. Decision (2026-11-01)
 
-1. Best, middle or worst. Recommendation: best.
-2. If best: authorise one Astra round "zero-padded official C library reference for signals 18/23/24/25" (plus the length-boundary cases of the contract tests).
-3. Whether the C tail conventions go on the backlog of a future opt-in exact-Annex-A mode together with the ROADMAP R2 stationary front end.
+The user chose the best option: keep ceil ("使用 ceil 方式，同意繼續任務").
+
+1. Grid frozen as in §1. Implemented the same day: contract text in both READMEs, in the doc comments of `zwtv_out_frames`, `loudness_zwtv`, `LoudnessTimeVarying` and the C header, and in the CHANGELOG; contract tests `iso532/tests/output_grid.rs` (16 lengths, exact time axis, stream count under any chunking, prefix determinism bitwise under zero padding **and under the real continuation of the signal**, which is stronger than the §2.2 probe) plus a Python shape test.
+2. Astra round authorised: brief `docs/verification/briefs/2026-11-01-C01-zero-pad-reference.md`; delivery to `docs/verification/2026-11-01-C01-zero-pad-<commit>/`. Audit row C-01 closes when the four points agree at rounding level.
+3. The C tail conventions (floor frame count, CLI total decimation) stay on the backlog of a future opt-in exact-Annex-A mode together with ROADMAP R2; no API option is added now (§4.2).
 
 ## 6. Work needed under every option
 

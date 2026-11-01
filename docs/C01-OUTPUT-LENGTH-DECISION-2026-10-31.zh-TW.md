@@ -107,11 +107,13 @@ floor 格線是另一種性質的規則：「整段訊號都知道以後，若 `
 
 例如 `OutputGrid::Full`（預設）與 `OutputGrid::CliTotal`。不列為獨立一策，理由是：裁切對呼叫端是一行程式，stream 無法支援它，而新增 API 面要同時維護 Rust、C ABI、Python 三處。文件給出裁切公式比加選項划算。
 
-## 5. 需要你決定的點
+## 5. 決定（2026-11-01）
 
-1. 選上、中、下哪一策。建議：上策。
-2. 若選上策：是否授權 Astra 一輪「以補零輸入的官方 C library 為訊號 18／23／24／25 建立參考值」（加上契約測試的長度邊界案例）。
-3. C 的尾端慣例是否與 ROADMAP R2 的穩態前端一起列入未來 opt-in Annex A 精確模式的待辦。
+使用者選上策：保留 ceil（「使用 ceil 方式，同意繼續任務」）。
+
+1. 格線依 §1 凍結。同日落地：契約文字寫進兩語言 README、`zwtv_out_frames`／`loudness_zwtv`／`LoudnessTimeVarying` 的文件註解與 C header、CHANGELOG；契約測試 `iso532/tests/output_grid.rs`（16 種長度、精確時間軸、任意 chunk 切分下 stream 點數、補零**與真實延續訊號**兩種情況下前綴逐位元相同，後者比 §2.2 的探測更強）加一個 Python 形狀測試。
+2. 已授權 Astra 一輪：簡報 `docs/verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md`；交付到 `docs/verification/2026-11-01-C01-zero-pad-<commit>/`。四個點在捨入層級一致時，稽核 C-01 列即可結案。
+3. C 的尾端慣例（floor 幀數、CLI total 再抽取）與 ROADMAP R2 一起留在未來 opt-in Annex A 精確模式的待辦；現在不加 API 選項（§4.2）。
 
 ## 6. 不論選哪一策都要做的事
 

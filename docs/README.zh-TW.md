@@ -29,7 +29,7 @@
 | F-02 | [`F02-NL-ZERO-INIT-2026-10-31.md`](F02-NL-ZERO-INIT-2026-10-31.md) | 已於 0.3.0 修正 | yes | [yes](F02-NL-ZERO-INIT-2026-10-31.zh-TW.md) |
 | F-03 | [`F03-USL12-4-STATUS-2026-10-31.md`](F03-USL12-4-STATUS-2026-10-31.md) | 未結：`USL[12][4]` 0.24 vs 0.22，待 Table A.9；選項 B（血緣追溯）已於 2026-11-01 交辦 | yes | [yes](F03-USL12-4-STATUS-2026-10-31.zh-TW.md) |
 | V-01 | [`V01-ANNEXB-VALIDATOR-2026-10-31.md`](V01-ANNEXB-VALIDATOR-2026-10-31.md) | 完成（僅測試），含浮點邊界根因 | yes | [yes](V01-ANNEXB-VALIDATOR-2026-10-31.zh-TW.md) |
-| C-01 | [`C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`](C01-OUTPUT-LENGTH-DECISION-2026-10-31.md) | 待決：ceil vs floor、架構比較、上中下策 | yes | [yes](C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md) |
+| C-01 | [`C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`](C01-OUTPUT-LENGTH-DECISION-2026-10-31.md) | 2026-11-01 已決：保留 ceil；契約凍結於文件與 `tests/output_grid.rs`；Astra 補零參考值輪已交辦 | yes | [yes](C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md) |
 | C-02 | [`C02-NONFINITE-INPUT-2026-11-01.md`](C02-NONFINITE-INPUT-2026-11-01.md) | 完成：批次拒絕 NaN／Inf（錯誤碼 4），串流以 flag 回報 | yes | [yes](C02-NONFINITE-INPUT-2026-11-01.zh-TW.md) |
 | — | [`ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md) | 對 MoSQITo 與 Annex B 的數值殘差（含 2026-10-31 容差更正註記） | yes | [yes](ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.zh-TW.md) |
 
@@ -57,6 +57,7 @@
 | `verification/2026-10-31-F03-authority-d623d32/` | F-03：Table A.9 確認於 2017-11 更正，但不知哪一格；1991 論文為 0.22 | zh |
 | `verification/2026-10-31-F03-SQAT-d623d32/` | F-03：SQAT 所有版本皆為 0.24 | zh |
 | [`verification/briefs/2026-11-01-F03-B-aarae-lineage.zh-TW.md`](verification/briefs/2026-11-01-F03-B-aarae-lineage.zh-TW.md) | F-03 選項 B 交辦簡報 | en + zh |
+| [`verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md`](verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md) | C-01 尾端點官方 C 參考值交辦簡報 | en + zh |
 
 ## 歷史審查紀錄（已結輪次；翻譯待辦 P3）
 

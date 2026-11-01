@@ -96,6 +96,8 @@ The public numeric data contract is:
 | Stream | Consecutive chunks of calibrated 48 kHz pressure samples | Zero or more frames containing sone, phon, frame index, and status flags; `flush()` returns the tail |
 | C ABI | Caller-owned input and output pointers with explicit lengths | The same layouts flattened into caller-owned buffers; see `iso532-ffi/include/iso532.h` |
 
+Output grid (frozen 2026-11-01, audit item C-01): for a signal of `L` samples the ZWTV batch and the stream both produce `ceil(ceil(L/24)/4)` points (`zwtv_out_frames`, C `iso532_zwtv_out_frames`). Point `j` lies at exactly `96j/48000` s, starting at 0, and its value depends only on samples `≤ 96j`, so truncating or extending the signal never changes an earlier point. The official Annex A command-line program writes `floor(K/4)` total-loudness points and `ceil(K/4)` specific-loudness points with `K = floor(L/24)`; both are prefixes of this grid and differ from it by at most one trailing point, so a caller that needs the CLI grid drops the last point. Details and the comparison that fixed this choice: `docs/C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`.
+
 Local reference files follow this structure:
 
 ```text

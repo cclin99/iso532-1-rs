@@ -15,6 +15,15 @@ pub(crate) const OUT_DECIM: usize = 4;
 
 /// `loudness_zwtv` 對 `signal_len` 樣本輸入的輸出框架數。
 /// 純函數、不驗證輸入；binding 必須轉發本函式，勿手抄公式。
+///
+/// Output-grid contract (C-01, frozen 2026-11-01): for `L` samples at 48 kHz the
+/// result has `ceil(ceil(L/24)/4)` points; point `j` is internal 2 kHz frame `4j`,
+/// its time is exactly `96j / 48000` s (grid starts at 0, 2 ms step), and its value
+/// depends only on samples `<= 96j`. The batch and the stream produce the same count.
+/// The official Annex A CLI writes `floor(K/4)` total-loudness points and
+/// `ceil(K/4)` specific-loudness points with `K = floor(L/24)`; both are prefixes of
+/// this grid (`n[..cli_len]`), differing by at most one trailing point.
+/// See `docs/C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`.
 pub fn zwtv_out_frames(signal_len: usize) -> usize {
     signal_len
         .div_ceil(third_octave_levels::DEC_FACTOR)
@@ -161,6 +170,13 @@ impl ZwtvProcessor {
     }
 }
 
+/// Time-varying loudness (ISO 532-1 Zwicker, ZWTV) of a 48 kHz pressure signal in Pa.
+///
+/// Output length is [`zwtv_out_frames`]`(signal.len())` points on an exact 2 ms grid
+/// starting at 0 s (see that function for the frozen output-grid contract). Input
+/// contract: `fs == 48000.0`, at least 4800 samples, every sample finite; otherwise
+/// `UnsupportedSampleRate`, `SignalTooShort` or `NonFiniteInput` is returned and
+/// nothing is computed.
 pub fn loudness_zwtv(
     signal: &[f64],
     fs: f64,
@@ -168,6 +184,7 @@ pub fn loudness_zwtv(
 ) -> Result<LoudnessTimeVarying, Iso532Error> {
     ZwtvProcessor::new().process(signal, fs, field)
 }
+
 #[cfg(test)]
 mod tests {
     use super::{loudness_zwtv, ZwtvProcessor};

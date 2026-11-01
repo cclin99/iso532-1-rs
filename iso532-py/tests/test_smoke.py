@@ -92,6 +92,23 @@ def test_batch_rejects_nonfinite_input(value, idx):
         iso532.loudness_zwst(sig, FS)
 
 
+@pytest.mark.parametrize(
+    "length", [4800, 4801, 4823, 4824, 4825, 4895, 4896, 4897, 47905, 47927, 47928, 47999, 48000]
+)
+def test_zwtv_output_grid_contract(length):
+    # C-01: frames = ceil(ceil(L/24)/4); time[j] = 96 j / 48000 exactly; prefix-determined.
+    sig = contract_signal()[:length].copy()
+    n, spec, _bark, time = iso532.loudness_zwtv(sig, FS)
+    frames = -(-(-(-length // 24)) // 4)
+    assert n.shape == (frames,)
+    assert time.shape == (frames,)
+    assert spec.shape == (240, frames)
+    assert np.array_equal(time, np.arange(frames) * 96 / 48000.0)
+    full_n, full_spec, _b, _t = iso532.loudness_zwtv(contract_signal(), FS)
+    assert np.array_equal(n, full_n[:frames])
+    assert np.array_equal(spec, full_spec[:, :frames])
+
+
 def test_strict_input_contract():
     sig = contract_signal()
     with pytest.raises(TypeError):

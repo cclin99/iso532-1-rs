@@ -223,6 +223,13 @@ pub unsafe extern "C" fn iso532_stream_free(handle: *mut Iso532Stream) {
 /// Number of output frames `iso532_loudness_zwtv` will write for a signal of
 /// `signal_len` samples, on the ISO 2 ms output grid. Pure; does not validate
 /// (validation happens in the main call). Forwards `iso532::zwtv_out_frames`.
+///
+/// Output-grid contract (C-01, frozen 2026-11-01): frames = ceil(ceil(L/24)/4);
+/// frame j is at exactly 96*j/48000 s (grid starts at 0) and depends only on
+/// samples <= 96*j. The stream API yields the same count. The official Annex A
+/// CLI grids are prefixes of this one: total loudness floor(K/4) points,
+/// specific loudness ceil(K/4) points, K = floor(L/24); a caller that needs
+/// either simply ignores the trailing point.
 #[no_mangle]
 pub extern "C" fn iso532_zwtv_out_frames(signal_len: usize) -> usize {
     iso532::zwtv_out_frames(signal_len)

@@ -29,7 +29,7 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 | F-02 | [`F02-NL-ZERO-INIT-2026-10-31.md`](F02-NL-ZERO-INIT-2026-10-31.md) | fixed in 0.3.0 | yes | [yes](F02-NL-ZERO-INIT-2026-10-31.zh-TW.md) |
 | F-03 | [`F03-USL12-4-STATUS-2026-10-31.md`](F03-USL12-4-STATUS-2026-10-31.md) | open: `USL[12][4]` 0.24 vs 0.22, Table A.9 pending; option B (lineage) briefed 2026-11-01 | yes | [yes](F03-USL12-4-STATUS-2026-10-31.zh-TW.md) |
 | V-01 | [`V01-ANNEXB-VALIDATOR-2026-10-31.md`](V01-ANNEXB-VALIDATOR-2026-10-31.md) | done (test-only), with the floating-point boundary root cause | yes | [yes](V01-ANNEXB-VALIDATOR-2026-10-31.zh-TW.md) |
-| C-01 | [`C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`](C01-OUTPUT-LENGTH-DECISION-2026-10-31.md) | decision pending: ceil vs floor, architecture comparison, three options | yes | [yes](C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md) |
+| C-01 | [`C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`](C01-OUTPUT-LENGTH-DECISION-2026-10-31.md) | decided 2026-11-01: keep ceil; contract frozen in docs and `tests/output_grid.rs`; Astra zero-pad reference round briefed | yes | [yes](C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md) |
 | C-02 | [`C02-NONFINITE-INPUT-2026-11-01.md`](C02-NONFINITE-INPUT-2026-11-01.md) | done: batch rejects NaN/Inf with code 4, stream flags | yes | [yes](C02-NONFINITE-INPUT-2026-11-01.zh-TW.md) |
 | — | [`ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md) | numerical residuals vs MoSQITo and Annex B (with the 2026-10-31 tolerance correction note) | yes | [yes](ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.zh-TW.md) |
 
@@ -57,6 +57,7 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 | `verification/2026-10-31-F03-authority-d623d32/` | F-03: Table A.9 confirmed corrected in 2017-11, cell unknown; 1991 paper has 0.22 | zh |
 | `verification/2026-10-31-F03-SQAT-d623d32/` | F-03: SQAT carries 0.24 in all versions | zh |
 | [`verification/briefs/2026-11-01-F03-B-aarae-lineage.md`](verification/briefs/2026-11-01-F03-B-aarae-lineage.md) | brief for F-03 option B | en + zh |
+| [`verification/briefs/2026-11-01-C01-zero-pad-reference.md`](verification/briefs/2026-11-01-C01-zero-pad-reference.md) | brief for the C-01 official-C reference of the trailing point | en + zh |
 
 ## Historical review records (closed rounds; translation backlog P3)
 

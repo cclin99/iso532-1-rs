@@ -116,11 +116,13 @@ pub struct LoudnessStationary {
 #[derive(Debug, Clone)]
 pub struct LoudnessTimeVarying {
     /// Total loudness over time, in sone, on the returned time axis.
+    /// Length `zwtv_out_frames(signal.len()) = ceil(ceil(L/24)/4)` (C-01 contract).
     pub n: Vec<f64>,
     /// Specific loudness, row-major (240 Bark steps, frames) [sone/Bark].
     pub n_specific: Vec<f64>,
     /// Bark axis from 0.1 to 24 Bark, 240 points.
     pub bark_axis: Vec<f64>,
-    /// Time axis, in seconds, on the ISO 532-1 2 ms output grid.
+    /// Time axis, in seconds, on the ISO 532-1 2 ms output grid:
+    /// `time_axis[j] = 96 * j / 48000` exactly, starting at 0.
     pub time_axis: Vec<f64>,
 }

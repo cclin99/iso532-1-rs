@@ -17,6 +17,7 @@ English summary.
 | brief | issued | status |
 |---|---|---|
 | [`briefs/2026-11-01-F03-B-aarae-lineage.md`](briefs/2026-11-01-F03-B-aarae-lineage.md) | 2026-11-01 | open: lineage of the `USL[12][4]` value 0.24 through AARAE 2015 and the 2014 C program |
+| [`briefs/2026-11-01-C01-zero-pad-reference.md`](briefs/2026-11-01-C01-zero-pad-reference.md) | 2026-11-01 | open: official C library value for the trailing point of Annex B signals 18/23/24/25 on zero-padded input |
 
 ## Evidence archives
 

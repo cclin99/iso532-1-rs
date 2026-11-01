@@ -19,6 +19,16 @@ All notable changes to this project will be documented here. The project follows
 
 ### Changed
 
+- Output-grid contract frozen (audit item C-01, decision 2026-11-01: keep ceil).
+  `loudness_zwtv` and the stream return `ceil(ceil(L/24)/4)` points at exactly
+  `96j/48000` s from 0; point `j` depends only on samples `<= 96j`. The official
+  Annex A CLI grids (`floor(K/4)` total, `ceil(K/4)` specific, `K = floor(L/24)`)
+  are documented as prefixes differing by at most one trailing point. New
+  `tests/output_grid.rs` pins the count for 16 lengths (shortest legal, `24k±1`,
+  `96k±1`, every `K mod 4` case), the exact time axis, stream count under any
+  chunking, and prefix determinism bitwise under zero padding and under the real
+  continuation of the signal. Documentation and tests only; no numeric or API
+  change.
 - Annex B tests (`tests/annexb.rs`) use the per-point tolerance of the official
   Annex B workbook, `max(0.1, 0.05 * |reference|)`, instead of the additive
   `0.1 + 0.05 * |reference|` (V-01). The verdict is fail-closed: empty curves,

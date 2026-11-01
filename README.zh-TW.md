@@ -96,6 +96,8 @@ ISO532/
 | Stream | 依時間順序輸入的已校準 48 kHz chunks | 零或多筆包含 sone、phon、frame index、status flags 的 frames；`flush()` 取回尾端 |
 | C ABI | Caller-owned input/output pointers 與明確 lengths | 相同 layout 攤平成 caller-owned buffers；詳見 `iso532-ffi/include/iso532.h` |
 
+輸出格線（2026-11-01 凍結，稽核項 C-01）：長度 `L` 個 samples 的訊號，ZWTV batch 與 stream 都產生 `ceil(ceil(L/24)/4)` 個點（`zwtv_out_frames`、C 的 `iso532_zwtv_out_frames`）。第 `j` 點恰在 `96j/48000` 秒、從 0 起算，其值只取決於 index `≤ 96j` 的 samples，所以截斷或延長訊號不會改變任何較早的點。官方 Annex A 命令列程式的 total 檔寫 `floor(K/4)` 點、specific 檔寫 `ceil(K/4)` 點（`K = floor(L/24)`）；兩者都是這條格線的前綴，最多只差尾端一點，需要 CLI 格線的呼叫端丟掉最後一點即可。細節與定案比較見 `docs/C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md`。
+
 本機參照檔案採以下結構：
 
 ```text
