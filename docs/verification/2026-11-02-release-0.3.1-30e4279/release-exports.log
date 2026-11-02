@@ -1,0 +1,71 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35228.0
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+
+
+
+Dump of file <REPO>\tmp\dist-0.3.1\iso532_ffi.dll
+
+
+
+File Type: DLL
+
+
+
+  Section contains the following exports for iso532_ffi.dll
+
+
+
+    00000000 characteristics
+
+    FFFFFFFF time date stamp
+
+        0.00 version
+
+           1 ordinal base
+
+           9 number of functions
+
+           9 number of names
+
+
+
+    ordinal hint RVA      name
+
+
+
+          1    0 00001100 iso532_loudness_zwst
+
+          2    1 00001440 iso532_loudness_zwtv
+
+          3    2 00001830 iso532_stream_flush
+
+          4    3 000019D0 iso532_stream_free
+
+          5    4 00001A50 iso532_stream_max_frames
+
+          6    5 00001A70 iso532_stream_new
+
+          7    6 00001CD0 iso532_stream_push
+
+          8    7 00001EB0 iso532_stream_residual_flags
+
+          9    8 00001EC0 iso532_zwtv_out_frames
+
+
+
+  Summary
+
+
+
+        1000 .data
+
+        4000 .pdata
+
+       18000 .rdata
+
+        1000 .reloc
+
+       3F000 .text

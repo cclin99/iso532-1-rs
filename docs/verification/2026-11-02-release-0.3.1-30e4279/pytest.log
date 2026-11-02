@@ -1,0 +1,23 @@
+============================= test session starts =============================
+
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
+
+rootdir: <REPO>\tmp\acceptance-031\source\iso532-py
+
+configfile: pyproject.toml
+
+plugins: anyio-4.14.1, bdd-8.1.0
+
+collected 69 items
+
+
+
+iso532-py\tests\test_parity_mosqito.py ...........................       [ 39%]
+
+iso532-py\tests\test_smoke.py ..................................         [ 88%]
+
+iso532-py\tests\test_stream.py ........                                  [100%]
+
+
+
+======================= 69 passed in 151.59s (0:02:31) ========================

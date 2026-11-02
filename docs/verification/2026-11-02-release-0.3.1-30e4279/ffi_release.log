@@ -1,0 +1,7 @@
+    Blocking waiting for file lock on build directory
+   Compiling syn v2.0.119
+   Compiling thiserror-impl v1.0.69
+   Compiling thiserror v1.0.69
+   Compiling iso532 v0.3.1 (<REPO>\tmp\acceptance-031\source\iso532)
+   Compiling iso532-ffi v0.3.1 (<REPO>\tmp\acceptance-031\source\iso532-ffi)
+    Finished `release` profile [optimized] target(s) in 2m 58s

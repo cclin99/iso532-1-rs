@@ -1,0 +1,5 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe bin <REPO>\tmp\acceptance-031\numerics-work\truncated-15.bin
+
+thread 'main' (53692) panicked at <REPO>\tmp\acceptance-031\source\iso532\tests\common\mod.rs:79:5:
+golden "<REPO>\\tmp\\acceptance-031\\numerics-work\\truncated-15.bin": 7 trailing bytes, not a whole number of f64
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

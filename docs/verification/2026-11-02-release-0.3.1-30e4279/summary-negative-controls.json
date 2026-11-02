@@ -1,0 +1,32 @@
+[
+  {
+    "case": "missing_log",
+    "exit_code": 1,
+    "decision": null,
+    "passed": true
+  },
+  {
+    "case": "failed_exit",
+    "exit_code": 0,
+    "decision": "HOLD",
+    "passed": true
+  },
+  {
+    "case": "skipped_pytest",
+    "exit_code": 0,
+    "decision": "HOLD",
+    "passed": true
+  },
+  {
+    "case": "missing_record",
+    "exit_code": 1,
+    "decision": null,
+    "passed": true
+  },
+  {
+    "case": "incomplete_run",
+    "exit_code": 1,
+    "decision": null,
+    "passed": true
+  }
+]

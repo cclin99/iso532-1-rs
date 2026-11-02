@@ -1,0 +1,5 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe csv <REPO>\tmp\acceptance-031\numerics-work\bom.csv
+
+thread 'main' (108684) panicked at <REPO>\tmp\acceptance-031\source\iso532\tests\common\annexb_check.rs:137:9:
+<REPO>\tmp\acceptance-031\numerics-work\bom.csv:121: BOM outside the header line
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

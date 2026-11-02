@@ -1,0 +1,2 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe csv <REPO>\tmp\acceptance-031\numerics-work\nan.csv
+Invalid(NonFinite { which: "reference", idx: 119 })

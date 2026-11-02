@@ -1,0 +1,1 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe compute <REPO>\tmp\acceptance-031\source\data\golden\annexb_sig5\sig.bin <REPO>\tmp\acceptance-031\numerics-work\margin_5

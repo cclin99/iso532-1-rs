@@ -1,0 +1,38 @@
+{
+  "iso532-0.3.1-cp39-abi3-win_amd64.whl": {
+    "sha256": "841584a2741029f23d8f66b5ff8ba72af0061a5d948248a61a7ef155c095f747",
+    "bytes": 273252,
+    "matches_release": true,
+    "matches_sums": true
+  },
+  "iso532.h": {
+    "sha256": "0f548fd348cb0e3999ce8892bec05d4a5afd53740eb695428ad0eca9a45b709b",
+    "bytes": 7215,
+    "matches_release": true,
+    "matches_sums": true
+  },
+  "iso532_ffi.dll": {
+    "sha256": "c2d1b9d310733ebd49208050213b41a16a0bc8acbd3c7527485ee2f9e160102e",
+    "bytes": 367104,
+    "matches_release": true,
+    "matches_sums": true
+  },
+  "iso532_ffi.dll.lib": {
+    "sha256": "e5b7a8f812cd9e6d8be7a22f15dd0493ef3ebda7920757f3858d1e63026c05a9",
+    "bytes": 3654,
+    "matches_release": true,
+    "matches_sums": true
+  },
+  "SHA256SUMS.txt": {
+    "sha256": "dd5eadb4826dcfb59c8f8fd24f348a1347ae01a03188a431fef7466e8f307899",
+    "bytes": 344,
+    "matches_release": null,
+    "matches_sums": null
+  },
+  "header_matches_archive_copy": false,
+  "header_matches_committed_blob": true,
+  "header_blob_sha256": "0f548fd348cb0e3999ce8892bec05d4a5afd53740eb695428ad0eca9a45b709b",
+  "header_archive_sha256": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+  "header_archive_eol_only_difference": true,
+  "git_core_autocrlf": "true"
+}

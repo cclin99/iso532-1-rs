@@ -1,0 +1,14 @@
+{
+  "source": "tmp\\acceptance-031\\source\\data\\annexb\\Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+  "source_sha256": "1300f0ddf7981fa9509a2084bc38fcfc14ac032c914e4f90b033e49d698551d4",
+  "source_rate": 44100,
+  "source_samples": 441000,
+  "source_dtype": "int16",
+  "pressure_scale": "2*sqrt(2)/32768",
+  "resampler": "scipy.signal.resample_poly(pressure,160,147), default window/zero padding",
+  "scipy": "1.17.1",
+  "numpy": "2.4.6",
+  "output": "tmp\\acceptance-031\\sig3-pressure.bin",
+  "output_sha256": "1f35a092f0dc180fee982bde211938ed737c803811156656081e496a7ce4e4fe",
+  "output_samples": 480000
+}

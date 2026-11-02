@@ -1,0 +1,459 @@
+{
+  "module": "<REPO>\\tmp\\acceptance-031\\venv\\Lib\\site-packages\\iso532\\__init__.py",
+  "module_sha256": "9017fe6ae67f759da815f5fd5a10073fa02c75e445ce0723538b027e6f38cfe2",
+  "cases": [
+    {
+      "case": "loudness_zwst/nan/0",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 0; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/nan/2400",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 2400; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/nan/4799",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 4799; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/pinf/0",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 0; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/pinf/2400",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 2400; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/pinf/4799",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 4799; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/ninf/0",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 0; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/ninf/2400",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 2400; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/ninf/4799",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 4799; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/first_index",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 73; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwst/precedence/44100.0/4800",
+      "pass_": true,
+      "message": "sampling rate must be 48000 Hz, got 44100"
+    },
+    {
+      "case": "loudness_zwst/precedence/48000.0/4799",
+      "pass_": true,
+      "message": "signal too short: got 4799 samples, need at least 4800"
+    },
+    {
+      "case": "loudness_zwst/finite/subnormal",
+      "pass_": true,
+      "message": "success"
+    },
+    {
+      "case": "loudness_zwst/finite/positive_zero",
+      "pass_": true,
+      "message": "success"
+    },
+    {
+      "case": "loudness_zwst/finite/negative_zero",
+      "pass_": true,
+      "message": "success"
+    },
+    {
+      "case": "loudness_zwst/finite/huge",
+      "pass_": true,
+      "message": "1/3 octave band level exceeds 120 dB below 300 Hz; Zwicker method not applicable"
+    },
+    {
+      "case": "loudness_zwtv/nan/0",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 0; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/nan/2400",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 2400; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/nan/4799",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 4799; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/pinf/0",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 0; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/pinf/2400",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 2400; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/pinf/4799",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 4799; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/ninf/0",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 0; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/ninf/2400",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 2400; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/ninf/4799",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 4799; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/first_index",
+      "pass_": true,
+      "message": "non-finite sample (NaN or infinite) at index 73; batch input is rejected"
+    },
+    {
+      "case": "loudness_zwtv/precedence/44100.0/4800",
+      "pass_": true,
+      "message": "sampling rate must be 48000 Hz, got 44100"
+    },
+    {
+      "case": "loudness_zwtv/precedence/48000.0/4799",
+      "pass_": true,
+      "message": "signal too short: got 4799 samples, need at least 4800"
+    },
+    {
+      "case": "loudness_zwtv/finite/subnormal",
+      "pass_": true,
+      "message": "success"
+    },
+    {
+      "case": "loudness_zwtv/finite/positive_zero",
+      "pass_": true,
+      "message": "success"
+    },
+    {
+      "case": "loudness_zwtv/finite/negative_zero",
+      "pass_": true,
+      "message": "success"
+    },
+    {
+      "case": "loudness_zwtv/finite/huge",
+      "pass_": true,
+      "message": "1/3 octave band level exceeds 120 dB below 300 Hz; Zwicker method not applicable"
+    },
+    {
+      "case": "grid/4800",
+      "pass_": true,
+      "shapes": [
+        [
+          50
+        ],
+        [
+          240,
+          50
+        ],
+        [
+          50
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fb916872b020c4a"
+    },
+    {
+      "case": "grid/4801",
+      "pass_": true,
+      "shapes": [
+        [
+          51
+        ],
+        [
+          240,
+          51
+        ],
+        [
+          51
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fb999999999999a"
+    },
+    {
+      "case": "grid/4823",
+      "pass_": true,
+      "shapes": [
+        [
+          51
+        ],
+        [
+          240,
+          51
+        ],
+        [
+          51
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fb999999999999a"
+    },
+    {
+      "case": "grid/4824",
+      "pass_": true,
+      "shapes": [
+        [
+          51
+        ],
+        [
+          240,
+          51
+        ],
+        [
+          51
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fb999999999999a"
+    },
+    {
+      "case": "grid/4825",
+      "pass_": true,
+      "shapes": [
+        [
+          51
+        ],
+        [
+          240,
+          51
+        ],
+        [
+          51
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fb999999999999a"
+    },
+    {
+      "case": "grid/4895",
+      "pass_": true,
+      "shapes": [
+        [
+          51
+        ],
+        [
+          240,
+          51
+        ],
+        [
+          51
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fb999999999999a"
+    },
+    {
+      "case": "grid/4896",
+      "pass_": true,
+      "shapes": [
+        [
+          51
+        ],
+        [
+          240,
+          51
+        ],
+        [
+          51
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fb999999999999a"
+    },
+    {
+      "case": "grid/4897",
+      "pass_": true,
+      "shapes": [
+        [
+          52
+        ],
+        [
+          240,
+          52
+        ],
+        [
+          52
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fba1cac083126e9"
+    },
+    {
+      "case": "grid/24013",
+      "pass_": true,
+      "shapes": [
+        [
+          251
+        ],
+        [
+          240,
+          251
+        ],
+        [
+          251
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fe0000000000000"
+    },
+    {
+      "case": "grid/47905",
+      "pass_": true,
+      "shapes": [
+        [
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          500
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fefef9db22d0e56"
+    },
+    {
+      "case": "grid/47916",
+      "pass_": true,
+      "shapes": [
+        [
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          500
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fefef9db22d0e56"
+    },
+    {
+      "case": "grid/47927",
+      "pass_": true,
+      "shapes": [
+        [
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          500
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fefef9db22d0e56"
+    },
+    {
+      "case": "grid/47928",
+      "pass_": true,
+      "shapes": [
+        [
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          500
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fefef9db22d0e56"
+    },
+    {
+      "case": "grid/47952",
+      "pass_": true,
+      "shapes": [
+        [
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          500
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fefef9db22d0e56"
+    },
+    {
+      "case": "grid/47999",
+      "pass_": true,
+      "shapes": [
+        [
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          500
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fefef9db22d0e56"
+    },
+    {
+      "case": "grid/48000",
+      "pass_": true,
+      "shapes": [
+        [
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          500
+        ]
+      ],
+      "first_mismatch": null,
+      "time_last_hex": "3fefef9db22d0e56"
+    }
+  ],
+  "passed": 48,
+  "failed": 0,
+  "extension_hashes": {
+    "<REPO>\\tmp\\acceptance-031\\venv\\Lib\\site-packages\\iso532\\iso532.pyd": "130466639da647a704bec9a12bce34d6b1a894005842d6d23ea0e7858326bd1d"
+  }
+}

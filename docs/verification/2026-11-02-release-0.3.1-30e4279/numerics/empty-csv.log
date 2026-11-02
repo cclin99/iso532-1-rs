@@ -1,0 +1,7 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe csv <REPO>\tmp\acceptance-031\numerics-work\empty.csv
+
+thread 'main' (64900) panicked at src\main.rs:11:58:
+assertion `left == right` failed
+  left: 0
+ right: 240
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

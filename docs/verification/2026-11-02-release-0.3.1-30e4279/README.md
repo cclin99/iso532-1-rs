@@ -1,0 +1,15 @@
+# Reproduction
+
+Run from the repository root. The release tar is generated from fixed commit `30e427963da88db8b23e82cf612f047f36cd164b`; baseline from peeled commit `62e46ca7d6ac65df7c4a4db8df8380e30234e267`. The existing licensed/local `data/` files and original `tmp/dist-0.3.1/` artifacts are required; their hashes are recorded. Scripts do not synthesize missing authority data.
+
+1. `python docs/verification/2026-11-02-release-0.3.1-30e4279/prepare.py`
+2. `python docs/verification/2026-11-02-release-0.3.1-30e4279/run_gates.py`
+3. `powershell -File docs/verification/2026-11-02-release-0.3.1-30e4279/contracts/run.ps1`
+4. Follow `numerics/README.md` for its separately recorded NumPy environment and hash audit.
+5. `python docs/verification/2026-11-02-release-0.3.1-30e4279/audit_artifacts.py`
+6. Capture `gh run view 41278186406 --json headSha,status,conclusion,jobs,url` as `ci.json`, then run `audit_metadata.py`.
+7. Run `test_summary_controls.py`, then `summarize.py` to generate both reports/results and `finalize.py` to redact, inventory and hash delivery.
+
+For a new round, create a new folder directly under docs/verification and copy only source files (.py/.ps1/.cmd/.c/.rs/.toml/.lock), retaining subdirectories. Do not copy historical .json/.jsonl/.log/.exit outputs or formal-gates.json. Run the commands above with the new folder path. Its depth must remain docs/verification/<round>. run_gates.py refuses to overwrite an existing formal record and starts a new run_id; incomplete runs never pass summary. Temporary build locations remain tmp/acceptance-031, so execute one reproduction at a time. The original run's initial failed maturin console-script lookup and tar.exe Unicode-path extraction are retained; the corrected path uses Python tarfile and a working maturin installation. The initial pytest run was not accepted because it preceded the successful source build; `pytest-formal.log` is the formal run. `formal-gates.json` selects the completed formal commands and stores actual process exits. The original run was reconstructed by record_observed_run.py from the tool-returned exits; that historical reconstruction is not run in new rounds. New run_gates.py emits formal records directly, including pytest terminal counts and a separate strict hash-gate execution. summarize.py requires every formal record and referenced log, checks pytest counts, and rejects failed/skipped/incomplete evidence. test_summary_controls.py exercises five negative controls without rerunning DSP. No numerical acceptance uses MoSQITo as the independent oracle; the mandated repository pytest parity gate still executes its existing MoSQITo tests.
+
+Observed tools: Rust/cargo 1.99.1, Python 3.11.9, MSVC 19.44.35228. Full gate NumPy 2.4.6; numerical comparison harness NumPy 2.4.4. Detailed per-harness versions, raw source/input/binary hashes and exact commands are retained. Local CPU AVX2/FMA required by tests; this is Windows acceptance, not a new Linux run. CI run inspection is read-only.

@@ -1,0 +1,22 @@
+   Compiling zerocopy v0.8.52
+   Compiling serde v1.0.228
+   Compiling num-traits v0.2.19
+   Compiling thiserror v1.0.69
+   Compiling plotters v0.3.7
+   Compiling tinytemplate v1.2.1
+   Compiling iso532 v0.3.1 (<REPO>\tmp\acceptance-031\source\iso532)
+   Compiling half v2.7.1
+   Compiling ciborium-ll v0.2.2
+   Compiling ciborium v0.2.2
+   Compiling criterion v0.5.1
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.81s
+     Running tests\hash_gate.rs (<REPO>/tmp/acceptance-031/gate-target\debug\deps\hash_gate-b7af01f01566e5ca.exe)
+
+running 1 test
+scalar: n=0xa7c2a418292a1a46 spec=0x16937b45e6e4155d time=0xf076bcb342595537
+scalar mosqito_tail: n=0xf3215787aaa48fbe spec=0xff98c57f3018ef94 time=0xf076bcb342595537
+avx2: n=0xa7c2a418292a1a46 spec=0x3d4b4b2df9073e48 time=0xf076bcb342595537
+avx2 mosqito_tail: n=0xf3215787aaa48fbe spec=0x3f241da3fe334097 time=0xf076bcb342595537
+test zwtv_backend_hashes_match_frozen_snapshot ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.31s

@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "languages": {
+    "rust": {
+      "cases": 66,
+      "passed": 66,
+      "failed": 0,
+      "failures": []
+    },
+    "c": {
+      "cases": 52,
+      "passed": 52,
+      "failed": 0,
+      "failures": []
+    },
+    "python": {
+      "cases": 48,
+      "passed": 48,
+      "failed": 0
+    }
+  },
+  "input_wav_hashes": [
+    {
+      "name": "broadband_570.wav",
+      "sha256": "4b22473b9ba78d518fd5a54e17b35a45f45c9d6d6824474d37572c8c7028d4d6"
+    },
+    {
+      "name": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "sha256": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907"
+    },
+    {
+      "name": "Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+      "sha256": "1300f0ddf7981fa9509a2084bc38fcfc14ac032c914e4f90b033e49d698551d4"
+    },
+    {
+      "name": "Test signal 5 (pinknoise 60 dB).wav",
+      "sha256": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e"
+    },
+    {
+      "name": "white_noise_200_2000_Hz_stationary.wav",
+      "sha256": "3d697ffb20de6d8a4e39cd1079addb5456c9645e5614319afb62959aad5e99a4"
+    },
+    {
+      "name": "white_noise_442_1768_Hz_stationary.wav",
+      "sha256": "289ce8701e85d59c9846b48d6b21d1df1c1b0928962da6bd5159e2339d9857ad"
+    },
+    {
+      "name": "white_noise_442_1768_Hz_varying.wav",
+      "sha256": "df77f8ba3384a526e42701dc2d8fea8eb9d25d012b102d96ec4985eeb9986a1e"
+    }
+  ],
+  "first_mismatch": null,
+  "prefix_official_signals": [
+    3,
+    5,
+    10
+  ],
+  "prefix_lengths": [
+    4801,
+    24013,
+    47927
+  ],
+  "prefix_comparison": "n,time_axis,all240Bark rows using f64::to_bits",
+  "C_boundary_scenarios": {
+    "0": "bad fs plus NaN =>3",
+    "1": "short plus NaN =>2",
+    "2": "two nonfinite =>4, C has no index return",
+    "3": "smallest positive subnormal",
+    "4": "positive zero",
+    "5": "negative zero",
+    "6": "1e300"
+  }
+}

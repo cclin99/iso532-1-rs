@@ -1,0 +1,140 @@
+{
+  "fmt": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--check"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+    "elapsed_seconds": 0.34039878845214844
+  },
+  "clippy": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "clippy",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source\\iso532",
+    "elapsed_seconds": 184.41831731796265
+  },
+  "clippy_all": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "clippy",
+      "--workspace",
+      "--all-features",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source\\iso532",
+    "elapsed_seconds": 28.207988739013672
+  },
+  "rust_tests": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source\\iso532",
+    "elapsed_seconds": 208.85410833358765,
+    "counts": {
+      "passed": 138,
+      "failed": 0,
+      "ignored": 3
+    }
+  },
+  "golden": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "<REPO>\\tmp\\acceptance-031\\venv\\Scripts\\python.exe",
+      "tools/golden_manifest.py",
+      "--verify"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+    "elapsed_seconds": 0.32804226875305176,
+    "summary": [
+      "verify OK: 175 files match"
+    ]
+  },
+  "maturin": {
+    "status": "failed",
+    "exit_code": 1,
+    "command": [
+      "<REPO>\\tmp\\acceptance-031\\venv\\Scripts\\python.exe",
+      "-m",
+      "maturin",
+      "develop",
+      "--release"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source\\iso532-py",
+    "elapsed_seconds": 0.1329963207244873
+  },
+  "pytest": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "<REPO>\\tmp\\acceptance-031\\venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "iso532-py/tests",
+      "-ra"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+    "elapsed_seconds": 153.683123588562,
+    "summary": [
+      "======================= 69 passed in 151.59s (0:02:31) ========================"
+    ]
+  },
+  "doc_pairs": {
+    "status": "failed",
+    "exit_code": 1,
+    "command": [
+      "<REPO>\\tmp\\acceptance-031\\venv\\Scripts\\python.exe",
+      "tools/doc_pairs.py",
+      "--check"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+    "elapsed_seconds": 0.10254049301147461
+  },
+  "redact_docs": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "<REPO>\\tmp\\acceptance-031\\venv\\Scripts\\python.exe",
+      "tools/redact_paths.py",
+      "--check",
+      "docs"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+    "elapsed_seconds": 0.404325008392334
+  },
+  "ffi_release": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": [
+      "cargo",
+      "build",
+      "--release",
+      "-p",
+      "iso532-ffi"
+    ],
+    "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+    "elapsed_seconds": 178.1030924320221
+  }
+}

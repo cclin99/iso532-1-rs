@@ -1,0 +1,5 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe csv <REPO>\tmp\acceptance-031\numerics-work\unparsable.csv
+
+thread 'main' (120012) panicked at <REPO>\tmp\acceptance-031\source\iso532\tests\common\annexb_check.rs:150:33:
+<REPO>\tmp\acceptance-031\numerics-work\unparsable.csv:121: cannot parse "abc"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

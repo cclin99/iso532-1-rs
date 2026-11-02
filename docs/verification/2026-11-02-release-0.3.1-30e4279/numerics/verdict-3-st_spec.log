@@ -1,0 +1,2 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe verdict <REPO>\tmp\acceptance-031\numerics-work\margin_3\st_spec.bin <REPO>\tmp\acceptance-031\numerics-work\ref-3-st_spec.bin
+Pass { points: 240 }

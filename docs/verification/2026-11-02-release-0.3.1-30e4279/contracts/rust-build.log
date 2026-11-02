@@ -1,0 +1,3 @@
+   Compiling independent-contracts v0.1.0 (<REPO>\docs\verification\2026-11-02-release-0.3.1-30e4279\contracts\rust)
+    Finished `release` profile [optimized] target(s) in 1.19s
+     Running `tmp/acceptance-031/contract-target\release\independent-contracts.exe tmp/acceptance-031/source`

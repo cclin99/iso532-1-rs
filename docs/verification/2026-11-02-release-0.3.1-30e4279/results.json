@@ -1,0 +1,206 @@
+{
+  "date": "2026-11-02",
+  "timezone": "Asia/Taipei",
+  "source_commit": "30e427963da88db8b23e82cf612f047f36cd164b",
+  "baseline_commit": "62e46ca7d6ac65df7c4a4db8df8380e30234e267",
+  "baseline_tag_object_sha": "749dac1933c160d8bbd0592e7be31397af8513ab",
+  "decision": "ACCEPT",
+  "tag_blockers": [],
+  "items": {
+    "1": {
+      "status": "passed",
+      "counts": {
+        "tracked_files": 275,
+        "logical_processors": 12
+      },
+      "first_difference": null,
+      "hashes": {
+        "source_archive_sha256": "fb3d990dc0f4623a1170aed4dc9287053b0e9ce9fe7fd1398d09b8c8a26c8a96",
+        "baseline_archive_sha256": "411ccd76dfde4d27b9952d680e34b8d0c55e48cceee8378f907ec033439c743a"
+      },
+      "evidence": [
+        "freeze.json",
+        "archive-extraction.json"
+      ]
+    },
+    "2": {
+      "status": "passed",
+      "counts": {
+        "rust": {
+          "passed": 138,
+          "failed": 0,
+          "ignored": 3
+        },
+        "golden_files": 175,
+        "python": 69
+      },
+      "first_difference": null,
+      "hashes": {},
+      "evidence": [
+        "formal-gates.json",
+        "pytest-formal.log"
+      ],
+      "warnings": {
+        "doc_pair_backlog": 10
+      }
+    },
+    "3": {
+      "status": "passed",
+      "counts": {
+        "rust": {
+          "cases": 66,
+          "passed": 66,
+          "failed": 0,
+          "failures": []
+        },
+        "c": {
+          "cases": 52,
+          "passed": 52,
+          "failed": 0,
+          "failures": []
+        },
+        "python": {
+          "cases": 48,
+          "passed": 48,
+          "failed": 0
+        }
+      },
+      "first_difference": null,
+      "hashes": {
+        "inputs": "contracts/results.json",
+        "extension": "contracts/python-results.json"
+      },
+      "evidence": [
+        "contracts/results.json"
+      ],
+      "note": "Language case counts combine C01 and C02; do not sum item3 and item4."
+    },
+    "4": {
+      "status": "passed",
+      "counts": {
+        "lengths": 16,
+        "official_wavs": 3,
+        "prefix_lengths_per_wav": 3
+      },
+      "first_difference": null,
+      "hashes": {
+        "inputs": "contracts/results.json"
+      },
+      "evidence": [
+        "contracts/rust-results.jsonl",
+        "contracts/python-results.json",
+        "contracts/c-results.jsonl"
+      ]
+    },
+    "5": {
+      "status": "passed",
+      "counts": {
+        "direct_controls": 21,
+        "corrupt_copy_controls": 19,
+        "curves": 5,
+        "curve_points": 982
+      },
+      "minimum_margin": {
+        "signal": 3,
+        "field": "st_spec",
+        "points": 240,
+        "minimum_margin": 0.08513610649320266,
+        "index_zero_based": 66,
+        "got_bits": "3fd6d1f15d62f3a7",
+        "reference_bits": "3fd5de69ad42c3ca",
+        "passed": true
+      },
+      "first_difference": null,
+      "hashes": {
+        "data\\golden\\annexb_sig3\\sig.bin": "7b23fad6aebdff5156fa010310753b8ac20f3e1ab3b3298483f8cbe111f78c33",
+        "data\\golden\\annexb_sig5\\sig.bin": "20e036c556aa08b2fdc3409bfa404fa1325dbe2962651b6ae808f95b260be19b",
+        "data\\golden\\annexb_sig10\\sig.bin": "a849fcf48d4ee544a257a669059fac8a961de5283272cb9041734fc593b5e890",
+        "data\\golden\\annexb_sig10\\tv_nref.bin": "fd315680cacc151f896526e2e24b701b56494fcf0312faa158c70c12494781bb",
+        "data\\annexb\\test_signal_3.csv": "efd5861ff8fc2c8d97adb4f2621a017c69bc640c93619cfce7ff267c3c0dcf71",
+        "data\\annexb\\test_signal_5.csv": "049a5e32945494c948e4c4353c0a96d1f6e112fd933966297c3ffc95eecf75de"
+      },
+      "evidence": [
+        "numerics/results.json"
+      ]
+    },
+    "6": {
+      "status": "passed",
+      "counts": {
+        "inputs": 8,
+        "arrays": 40,
+        "f64_values": 4720928,
+        "hash_gate_hashes": 12
+      },
+      "first_difference": null,
+      "hashes": {
+        "old_binary_sha256": "759bb8063f481103ceb8a0b2c1520702934e76f5f5413bd6a2805203c64ad01d",
+        "new_binary_sha256": "cc1a53c31666e783369a2784918124a4df85557dbaef41985d6aea74897be050"
+      },
+      "evidence": [
+        "numerics/results.json"
+      ],
+      "scope": "All seven WAV files available in data/annexb: three formal named Test signal 3/5/10 WAVs plus four auxiliary/synthetic WAV fixtures; not all 25 official Annex cases."
+    },
+    "7": {
+      "status": "passed",
+      "counts": {
+        "release_artifacts": 4,
+        "exports": 9,
+        "clean_install_nan_cases": 2
+      },
+      "first_difference": null,
+      "hashes": {
+        "iso532-0.3.1-cp39-abi3-win_amd64.whl": "841584a2741029f23d8f66b5ff8ba72af0061a5d948248a61a7ef155c095f747",
+        "iso532.h": "0f548fd348cb0e3999ce8892bec05d4a5afd53740eb695428ad0eca9a45b709b",
+        "iso532_ffi.dll": "c2d1b9d310733ebd49208050213b41a16a0bc8acbd3c7527485ee2f9e160102e",
+        "iso532_ffi.dll.lib": "e5b7a8f812cd9e6d8be7a22f15dd0493ef3ebda7920757f3858d1e63026c05a9",
+        "SHA256SUMS.txt": "dd5eadb4826dcfb59c8f8fd24f348a1347ae01a03188a431fef7466e8f307899"
+      },
+      "evidence": [
+        "artifacts.json",
+        "artifact-runtime.json"
+      ],
+      "finding": "Archive CRLF differs bytewise; distributed header equals committed Git blob bytewise."
+    },
+    "8": {
+      "status": "passed",
+      "counts": {
+        "ci_jobs": 6,
+        "release_commits": 8
+      },
+      "first_difference": null,
+      "hashes": {
+        "ci_commit": "30e427963da88db8b23e82cf612f047f36cd164b"
+      },
+      "evidence": [
+        "records.json",
+        "ci.json"
+      ]
+    }
+  },
+  "release_count_comparison": {
+    "expected": {
+      "rust_passed": 138,
+      "rust_failed": 0,
+      "rust_ignored": 3,
+      "golden_files": 175,
+      "pytest_passed": 69
+    },
+    "observed": {
+      "rust_passed": 138,
+      "rust_failed": 0,
+      "rust_ignored": 3,
+      "golden_files": 175,
+      "pytest_passed": 69
+    }
+  },
+  "scope_exclusions": [
+    "F-03",
+    "stationary frontend",
+    "zero-padding official C reference",
+    "MoSQITo performance timing",
+    "antivirus manual scan",
+    "full 25-signal Annex requalification",
+    "new Linux execution"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "run_id": "2026-11-02-observed-acceptance-031",
+  "source_commit": "30e427963da88db8b23e82cf612f047f36cd164b",
+  "completed": true,
+  "provenance": "Original gates.json actual subprocess exits plus observed separately completed retry command exits. Historical reconstruction; no new DSP run.",
+  "gates": {
+    "fmt": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--check"
+      ],
+      "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+      "elapsed_seconds": 0.34039878845214844,
+      "log": "fmt.log"
+    },
+    "clippy": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "clippy",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "cwd": "<REPO>\\tmp\\acceptance-031\\source\\iso532",
+      "elapsed_seconds": 184.41831731796265,
+      "log": "clippy.log"
+    },
+    "clippy_all": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-features",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "cwd": "<REPO>\\tmp\\acceptance-031\\source\\iso532",
+      "elapsed_seconds": 28.207988739013672,
+      "log": "clippy_all.log"
+    },
+    "rust_tests": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features"
+      ],
+      "cwd": "<REPO>\\tmp\\acceptance-031\\source\\iso532",
+      "elapsed_seconds": 208.85410833358765,
+      "counts": {
+        "passed": 138,
+        "failed": 0,
+        "ignored": 3
+      },
+      "log": "rust_tests.log",
+      "environment_note": "Initial full run HASH_GATE_DUMP_ONLY=1; independent strict hash_gate_strict record closes this gate."
+    },
+    "golden": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": [
+        "<REPO>\\tmp\\acceptance-031\\venv\\Scripts\\python.exe",
+        "tools/golden_manifest.py",
+        "--verify"
+      ],
+      "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+      "elapsed_seconds": 0.32804226875305176,
+      "summary": [
+        "verify OK: 175 files match"
+      ],
+      "log": "golden.log"
+    },
+    "maturin": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "python -m maturin develop --release",
+      "log": "maturin-retry.log",
+      "exit_provenance": "exec session 33216 completion"
+    },
+    "pytest": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "python -m pytest iso532-py/tests -ra",
+      "log": "pytest-formal.log",
+      "exit_provenance": "exec session 63174 completion",
+      "counts": {
+        "passed": 69,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "xfailed": 0,
+        "xpassed": 0,
+        "deselected": 0
+      }
+    },
+    "doc_pairs": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "python tools/doc_pairs.py --check",
+      "log": "doc_pairs-retry.log",
+      "exit_provenance": "exec chunk d3df70 returned0; stdout ok"
+    },
+    "redact_docs": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "python tools/redact_paths.py --check docs",
+      "log": "redact_docs-retry.log",
+      "exit_provenance": "exec chunk d3df70 returned0; stdout clean"
+    },
+    "ffi_release": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "iso532-ffi"
+      ],
+      "cwd": "<REPO>\\tmp\\acceptance-031\\source",
+      "elapsed_seconds": 178.1030924320221,
+      "log": "ffi_release.log"
+    },
+    "hash_gate_strict": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "cargo test -p iso532 --test hash_gate -- --nocapture",
+      "log": "hash-gate-strict.log",
+      "exit_provenance": "exec session 29922 completion"
+    }
+  }
+}

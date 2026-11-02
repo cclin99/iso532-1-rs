@@ -1,0 +1,782 @@
+{
+  "baseline_commit": "62e46ca7d6ac65df7c4a4db8df8380e30234e267",
+  "source_commit": "30e427963da88db8b23e82cf612f047f36cd164b",
+  "tools": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1"
+  },
+  "inputs": [
+    {
+      "name": "broadband_570.wav",
+      "wav_sha256": "4b22473b9ba78d518fd5a54e17b35a45f45c9d6d6824474d37572c8c7028d4d6",
+      "original_fs": 48000,
+      "original_dtype": "int16",
+      "prepared_samples": 240000,
+      "prepared_f64_sha256": "e91fcec6c0886eeba75aabdda8188ba13cba66d6d8fba65a4e2351c9b14d39b5",
+      "preparation": "PCM normalized, mono mean if multichannel, calibration 2*sqrt(2), scipy.resample_poly to 48000 if needed"
+    },
+    {
+      "name": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "wav_sha256": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907",
+      "original_fs": 48000,
+      "original_dtype": "int16",
+      "prepared_samples": 48000,
+      "prepared_f64_sha256": "587e644791f785111ae19e9b7f6d9a12dd4ec0686bd494346a65adeb2be97658",
+      "preparation": "PCM normalized, mono mean if multichannel, calibration 2*sqrt(2), scipy.resample_poly to 48000 if needed"
+    },
+    {
+      "name": "Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+      "wav_sha256": "1300f0ddf7981fa9509a2084bc38fcfc14ac032c914e4f90b033e49d698551d4",
+      "original_fs": 44100,
+      "original_dtype": "int16",
+      "prepared_samples": 480000,
+      "prepared_f64_sha256": "1f35a092f0dc180fee982bde211938ed737c803811156656081e496a7ce4e4fe",
+      "preparation": "PCM normalized, mono mean if multichannel, calibration 2*sqrt(2), scipy.resample_poly to 48000 if needed"
+    },
+    {
+      "name": "Test signal 5 (pinknoise 60 dB).wav",
+      "wav_sha256": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e",
+      "original_fs": 48000,
+      "original_dtype": "int16",
+      "prepared_samples": 480000,
+      "prepared_f64_sha256": "391a2d241cb671df62345ed1afa64e2b1716b1a871014881c8dbd7abf8ea6166",
+      "preparation": "PCM normalized, mono mean if multichannel, calibration 2*sqrt(2), scipy.resample_poly to 48000 if needed"
+    },
+    {
+      "name": "white_noise_200_2000_Hz_stationary.wav",
+      "wav_sha256": "3d697ffb20de6d8a4e39cd1079addb5456c9645e5614319afb62959aad5e99a4",
+      "original_fs": 44100,
+      "original_dtype": "int16",
+      "prepared_samples": 192000,
+      "prepared_f64_sha256": "18b8e38f6f225fe7a67f383e74f247f4fcf58538d71f668faed235023a3f15bd",
+      "preparation": "PCM normalized, mono mean if multichannel, calibration 2*sqrt(2), scipy.resample_poly to 48000 if needed"
+    },
+    {
+      "name": "white_noise_442_1768_Hz_stationary.wav",
+      "wav_sha256": "289ce8701e85d59c9846b48d6b21d1df1c1b0928962da6bd5159e2339d9857ad",
+      "original_fs": 44100,
+      "original_dtype": "int16",
+      "prepared_samples": 144000,
+      "prepared_f64_sha256": "5197143c41f3bd5ab381e6fa27faaa52b89efa73837b170631691e0143915a2c",
+      "preparation": "PCM normalized, mono mean if multichannel, calibration 2*sqrt(2), scipy.resample_poly to 48000 if needed"
+    },
+    {
+      "name": "white_noise_442_1768_Hz_varying.wav",
+      "wav_sha256": "df77f8ba3384a526e42701dc2d8fea8eb9d25d012b102d96ec4985eeb9986a1e",
+      "original_fs": 44100,
+      "original_dtype": "int16",
+      "prepared_samples": 144000,
+      "prepared_f64_sha256": "6690bef016af79ee89964e6096600068993ff4b4a1da3e6555ea4a345c78b06a",
+      "preparation": "PCM normalized, mono mean if multichannel, calibration 2*sqrt(2), scipy.resample_poly to 48000 if needed"
+    },
+    {
+      "name": "contract_3s",
+      "samples": 144000,
+      "prepared_f64_sha256": "d27b1e863dae1270d78e61ed154daf4b9bdaae6b24aabc1454ee0facbef94d0a",
+      "generator_sha256": "5e46ae5a5cc6c336a094266fc94cdda5d0b6fb7214a2e02dba515e75071f8cf0"
+    }
+  ],
+  "comparisons": [
+    {
+      "input": "broadband_570.wav",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "72838fa723b659e5be48c1f81d80933068455e058e0fadd82a7bc246c1b734cf",
+      "new_sha256": "72838fa723b659e5be48c1f81d80933068455e058e0fadd82a7bc246c1b734cf",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "broadband_570.wav",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "5076a51ccc99755e07238e3725c9c44188d8784faa77c8a9fb29c8f217b477d0",
+      "new_sha256": "5076a51ccc99755e07238e3725c9c44188d8784faa77c8a9fb29c8f217b477d0",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "broadband_570.wav",
+      "field": "tv_n",
+      "old_count": 2500,
+      "new_count": 2500,
+      "old_sha256": "037122c124d8c55f4ce9d9426f7b03f4cb237ebc466751a809766a9ee224852b",
+      "new_sha256": "037122c124d8c55f4ce9d9426f7b03f4cb237ebc466751a809766a9ee224852b",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "broadband_570.wav",
+      "field": "tv_spec",
+      "old_count": 600000,
+      "new_count": 600000,
+      "old_sha256": "81a82cc02e590f8db5a66004d0668d08ad87481574a27e14f64fd72b6e26bd93",
+      "new_sha256": "81a82cc02e590f8db5a66004d0668d08ad87481574a27e14f64fd72b6e26bd93",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "broadband_570.wav",
+      "field": "tv_time",
+      "old_count": 2500,
+      "new_count": 2500,
+      "old_sha256": "5fb496fcab26352626134afc5946718327d9194f4d721391659d88e5a9adcda8",
+      "new_sha256": "5fb496fcab26352626134afc5946718327d9194f4d721391659d88e5a9adcda8",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "ceb866eefab05dd6ecd15882255cd2d82508878c2e0b6bd74a8017ad510b24e7",
+      "new_sha256": "ceb866eefab05dd6ecd15882255cd2d82508878c2e0b6bd74a8017ad510b24e7",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "f6490b3afa575023d0f6fdc030bab6d4a58c990bacdef68d18afefd3a7376978",
+      "new_sha256": "f6490b3afa575023d0f6fdc030bab6d4a58c990bacdef68d18afefd3a7376978",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "field": "tv_n",
+      "old_count": 500,
+      "new_count": 500,
+      "old_sha256": "55280c78d5c48985d4f49b05321ef659aa1c249ab5d95ec3713f61edb36f61f4",
+      "new_sha256": "55280c78d5c48985d4f49b05321ef659aa1c249ab5d95ec3713f61edb36f61f4",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "field": "tv_spec",
+      "old_count": 120000,
+      "new_count": 120000,
+      "old_sha256": "ceb873a3d0280c9df65709c37cb165ada1cd04bb0a1be7c9f039b03b1f4fccac",
+      "new_sha256": "ceb873a3d0280c9df65709c37cb165ada1cd04bb0a1be7c9f039b03b1f4fccac",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "field": "tv_time",
+      "old_count": 500,
+      "new_count": 500,
+      "old_sha256": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "new_sha256": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "d8ff339bbee8181018792dba9a92f7f7b7dcf254b4282d18a062a839bd5e5711",
+      "new_sha256": "d8ff339bbee8181018792dba9a92f7f7b7dcf254b4282d18a062a839bd5e5711",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "5c8da22a36b6ae2cf93ff51719d3032ae45a486f0f645bb949557367555816a9",
+      "new_sha256": "5c8da22a36b6ae2cf93ff51719d3032ae45a486f0f645bb949557367555816a9",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+      "field": "tv_n",
+      "old_count": 5000,
+      "new_count": 5000,
+      "old_sha256": "6a6295dafc2fb93700c4ba7d8150ef6b8e54249f7153a664c87570821101b42f",
+      "new_sha256": "6a6295dafc2fb93700c4ba7d8150ef6b8e54249f7153a664c87570821101b42f",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+      "field": "tv_spec",
+      "old_count": 1200000,
+      "new_count": 1200000,
+      "old_sha256": "65ad89c1a5cfa354b6c2a2d59db829bc151e97679e0327367a4a49991755c1fa",
+      "new_sha256": "65ad89c1a5cfa354b6c2a2d59db829bc151e97679e0327367a4a49991755c1fa",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 3 (1 kHz 60 dB)_44100Hz.wav",
+      "field": "tv_time",
+      "old_count": 5000,
+      "new_count": 5000,
+      "old_sha256": "0ac54de8baa987e7a21450962887a90be52d1d31029bcc2530512181b34aa9d8",
+      "new_sha256": "0ac54de8baa987e7a21450962887a90be52d1d31029bcc2530512181b34aa9d8",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 5 (pinknoise 60 dB).wav",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "dbe58f72fabbc9f9748f3cadc6face936f94baec642371de1d5d2f480dfcbc8d",
+      "new_sha256": "dbe58f72fabbc9f9748f3cadc6face936f94baec642371de1d5d2f480dfcbc8d",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 5 (pinknoise 60 dB).wav",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "4cd1084aae6a9a7993dcbae4335951a203c40a6868cf0228e70ab6187533fbd5",
+      "new_sha256": "4cd1084aae6a9a7993dcbae4335951a203c40a6868cf0228e70ab6187533fbd5",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 5 (pinknoise 60 dB).wav",
+      "field": "tv_n",
+      "old_count": 5000,
+      "new_count": 5000,
+      "old_sha256": "9372fef6205ba42179fff590abec05e533d36e25bdf6083767bd463e490dba0d",
+      "new_sha256": "9372fef6205ba42179fff590abec05e533d36e25bdf6083767bd463e490dba0d",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 5 (pinknoise 60 dB).wav",
+      "field": "tv_spec",
+      "old_count": 1200000,
+      "new_count": 1200000,
+      "old_sha256": "5c4f8c3cd1b1af5774da6fcf8cb4221fa20ae65f9c8ed8aab7fd60606032a5d3",
+      "new_sha256": "5c4f8c3cd1b1af5774da6fcf8cb4221fa20ae65f9c8ed8aab7fd60606032a5d3",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "Test signal 5 (pinknoise 60 dB).wav",
+      "field": "tv_time",
+      "old_count": 5000,
+      "new_count": 5000,
+      "old_sha256": "0ac54de8baa987e7a21450962887a90be52d1d31029bcc2530512181b34aa9d8",
+      "new_sha256": "0ac54de8baa987e7a21450962887a90be52d1d31029bcc2530512181b34aa9d8",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_200_2000_Hz_stationary.wav",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "c829891966922c340cb23c70a60f4b04a8996190e9fd74dabb7dc91ce9ae5d04",
+      "new_sha256": "c829891966922c340cb23c70a60f4b04a8996190e9fd74dabb7dc91ce9ae5d04",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_200_2000_Hz_stationary.wav",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "331e3f0ce4266ca7244db6f54aa515215389aa709817b48c1db38524f43ce879",
+      "new_sha256": "331e3f0ce4266ca7244db6f54aa515215389aa709817b48c1db38524f43ce879",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_200_2000_Hz_stationary.wav",
+      "field": "tv_n",
+      "old_count": 2000,
+      "new_count": 2000,
+      "old_sha256": "5dbd339e51fb877aca6e9f820a70116ef4b3f8e9512ff82a094fdeaaa9f9b13c",
+      "new_sha256": "5dbd339e51fb877aca6e9f820a70116ef4b3f8e9512ff82a094fdeaaa9f9b13c",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_200_2000_Hz_stationary.wav",
+      "field": "tv_spec",
+      "old_count": 480000,
+      "new_count": 480000,
+      "old_sha256": "b3269dd84faad1f3339b0be8c5475db363c9761ff15aa47d89ad373f75ff7167",
+      "new_sha256": "b3269dd84faad1f3339b0be8c5475db363c9761ff15aa47d89ad373f75ff7167",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_200_2000_Hz_stationary.wav",
+      "field": "tv_time",
+      "old_count": 2000,
+      "new_count": 2000,
+      "old_sha256": "531894696c334139201409a21752137103c954a2f12fb8668fff0d80d0bfed61",
+      "new_sha256": "531894696c334139201409a21752137103c954a2f12fb8668fff0d80d0bfed61",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_stationary.wav",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "6f04e57810b63117532d3299c9bf8060465ea72c2204700f02ede43efd6e82ce",
+      "new_sha256": "6f04e57810b63117532d3299c9bf8060465ea72c2204700f02ede43efd6e82ce",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_stationary.wav",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "37f295efc08800422b4fb9478e9eb22303dfc3e1f044890b259d4a18a1fe479b",
+      "new_sha256": "37f295efc08800422b4fb9478e9eb22303dfc3e1f044890b259d4a18a1fe479b",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_stationary.wav",
+      "field": "tv_n",
+      "old_count": 1500,
+      "new_count": 1500,
+      "old_sha256": "f66506c0fa040006157b50ffbcb3c524ee403965bd312215d53076af423f5a6d",
+      "new_sha256": "f66506c0fa040006157b50ffbcb3c524ee403965bd312215d53076af423f5a6d",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_stationary.wav",
+      "field": "tv_spec",
+      "old_count": 360000,
+      "new_count": 360000,
+      "old_sha256": "bfc5ad79a825f09160263558b18580e68dc4b988c933815a3270dc8ee628a11e",
+      "new_sha256": "bfc5ad79a825f09160263558b18580e68dc4b988c933815a3270dc8ee628a11e",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_stationary.wav",
+      "field": "tv_time",
+      "old_count": 1500,
+      "new_count": 1500,
+      "old_sha256": "ea128652463da807460f4759539a8fea6e0c0f729ab8f4af4129fbbef6e5866b",
+      "new_sha256": "ea128652463da807460f4759539a8fea6e0c0f729ab8f4af4129fbbef6e5866b",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_varying.wav",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "5eff13ee02c77ccb22461b418259cd8b8c065932b25185d16c0b70239c73718d",
+      "new_sha256": "5eff13ee02c77ccb22461b418259cd8b8c065932b25185d16c0b70239c73718d",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_varying.wav",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "25039b14e6ec1bfd768219a8bc993f32eab733cf7c37bbecfbb8f79833f462c8",
+      "new_sha256": "25039b14e6ec1bfd768219a8bc993f32eab733cf7c37bbecfbb8f79833f462c8",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_varying.wav",
+      "field": "tv_n",
+      "old_count": 1500,
+      "new_count": 1500,
+      "old_sha256": "489df171113474cba645e24297b4e8f7d6f0ca3743a8f7c842861cd729eb83c1",
+      "new_sha256": "489df171113474cba645e24297b4e8f7d6f0ca3743a8f7c842861cd729eb83c1",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_varying.wav",
+      "field": "tv_spec",
+      "old_count": 360000,
+      "new_count": 360000,
+      "old_sha256": "c0b8af3cc75e64b4a9fba64efe0ae8ba8a3b7deddea4f1729003489051269b95",
+      "new_sha256": "c0b8af3cc75e64b4a9fba64efe0ae8ba8a3b7deddea4f1729003489051269b95",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "white_noise_442_1768_Hz_varying.wav",
+      "field": "tv_time",
+      "old_count": 1500,
+      "new_count": 1500,
+      "old_sha256": "ea128652463da807460f4759539a8fea6e0c0f729ab8f4af4129fbbef6e5866b",
+      "new_sha256": "ea128652463da807460f4759539a8fea6e0c0f729ab8f4af4129fbbef6e5866b",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "contract_3s",
+      "field": "st_n",
+      "old_count": 1,
+      "new_count": 1,
+      "old_sha256": "256fb59a0b335da4f40954c978f411525630e957383b238dbfd434f8cd28e546",
+      "new_sha256": "256fb59a0b335da4f40954c978f411525630e957383b238dbfd434f8cd28e546",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "contract_3s",
+      "field": "st_spec",
+      "old_count": 240,
+      "new_count": 240,
+      "old_sha256": "31d235e1b11cb8e34fffbed3e760fd625d9883e77b64e7b2f2a110cb36908cbd",
+      "new_sha256": "31d235e1b11cb8e34fffbed3e760fd625d9883e77b64e7b2f2a110cb36908cbd",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "contract_3s",
+      "field": "tv_n",
+      "old_count": 1500,
+      "new_count": 1500,
+      "old_sha256": "fbccbd9ec318a13debc67c5d47dc6bf98d622f7e72209fd3c55c350e628381a8",
+      "new_sha256": "fbccbd9ec318a13debc67c5d47dc6bf98d622f7e72209fd3c55c350e628381a8",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "contract_3s",
+      "field": "tv_spec",
+      "old_count": 360000,
+      "new_count": 360000,
+      "old_sha256": "319ebbdca2a7b1e80c323faaf7799cb1542c71f5f3b57d3e1eabde1a3e1538d2",
+      "new_sha256": "319ebbdca2a7b1e80c323faaf7799cb1542c71f5f3b57d3e1eabde1a3e1538d2",
+      "equal": true,
+      "first_diff": null
+    },
+    {
+      "input": "contract_3s",
+      "field": "tv_time",
+      "old_count": 1500,
+      "new_count": 1500,
+      "old_sha256": "ea128652463da807460f4759539a8fea6e0c0f729ab8f4af4129fbbef6e5866b",
+      "new_sha256": "ea128652463da807460f4759539a8fea6e0c0f729ab8f4af4129fbbef6e5866b",
+      "equal": true,
+      "first_diff": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "csv_unparsable",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "ff9ecc40653d44a0c46bef0938fa1f8b78295d691f270769cded6276ed47e5ce"
+    },
+    {
+      "name": "csv_blank",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "2ba1111ca86b2a9cf1ed3e7c9bed18d9af22037de38be83f85acd94a3aa77b07"
+    },
+    {
+      "name": "csv_bom",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "41ffe028d0a53595feec051b1821e8908d51ea68de2fd89e4b34cb25340e7cbb"
+    },
+    {
+      "name": "csv_nan",
+      "passed": true,
+      "exit_code": 0,
+      "copy_sha256": "ca5ecd3540f012bf9ba2fca398a933fdafd186943cb16d426132e2dada25e5db"
+    },
+    {
+      "name": "csv_posinf",
+      "passed": true,
+      "exit_code": 0,
+      "copy_sha256": "f2e149530ff7597cc527849c7f8a7fafd79fa726368a437a595724b9f19efa59"
+    },
+    {
+      "name": "csv_neginf",
+      "passed": true,
+      "exit_code": 0,
+      "copy_sha256": "57d280f2fcee92ba798b7461c650669ffd748370c7ddbbf86855e62689d123f8"
+    },
+    {
+      "name": "csv_missing_row",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "3fc76c66181751cf09b3afa984d39e34b81fd83e8ac64a4cfb69d7e772bd35d7"
+    },
+    {
+      "name": "csv_header_only",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "939480a42c5dc67f5de1ef7599243e0efbcde7952ef32e7960bfc1fc2214f2ac"
+    },
+    {
+      "name": "csv_empty",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "name": "bin_truncated_1",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    },
+    {
+      "name": "bin_truncated_7",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619"
+    },
+    {
+      "name": "bin_truncated_9",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d"
+    },
+    {
+      "name": "bin_truncated_15",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "5322fecfc92a5e3248a297a3df3eddfb9bd9049504272e4f572b87fa36d4b3bd"
+    },
+    {
+      "name": "bin_truncated_17",
+      "passed": true,
+      "exit_code": 101,
+      "copy_sha256": "0a88111852095cae045340ea1f0b279944b2a756a213d9b50107d7489771e159"
+    },
+    {
+      "name": "bin_nan",
+      "passed": true,
+      "exit_code": 0,
+      "copy_sha256": "97a15d01f8eba5c9ee66cd70a492b29f0adacec9becb29598dd650bf5e4fca47"
+    },
+    {
+      "name": "bin_posinf",
+      "passed": true,
+      "exit_code": 0,
+      "copy_sha256": "2513912e798263672580ad2bb219528cc97e43c83fce82d80dcbc4cc733eacf6"
+    },
+    {
+      "name": "bin_neginf",
+      "passed": true,
+      "exit_code": 0,
+      "copy_sha256": "292ca3d662952376c827e136ed585c60d615d26f1e40df5213c6f2c16446453d"
+    },
+    {
+      "name": "bin_negative",
+      "passed": true,
+      "exit_code": 0,
+      "copy_sha256": "47cafb2dfb6a6bc54cfd5cdbcd38db9560c1624f81c088275debcdcce3938a42"
+    },
+    {
+      "name": "bin_empty",
+      "passed": true,
+      "exit_code": 0
+    }
+  ],
+  "margins": [
+    {
+      "signal": 3,
+      "field": "st_n",
+      "points": 1,
+      "minimum_margin": 0.16795000000000054,
+      "index_zero_based": 0,
+      "got_bits": "4010353f7ced9168",
+      "reference_bits": "40101374bc6a7efa",
+      "passed": true
+    },
+    {
+      "signal": 3,
+      "field": "st_spec",
+      "points": 240,
+      "minimum_margin": 0.08513610649320266,
+      "index_zero_based": 66,
+      "got_bits": "3fd6d1f15d62f3a7",
+      "reference_bits": "3fd5de69ad42c3ca",
+      "passed": true
+    },
+    {
+      "signal": 5,
+      "field": "st_n",
+      "points": 1,
+      "minimum_margin": 0.44489999999999996,
+      "index_zero_based": 0,
+      "got_bits": "4024d604189374bc",
+      "reference_bits": "4024fef9db22d0e5",
+      "passed": true
+    },
+    {
+      "signal": 5,
+      "field": "st_spec",
+      "points": 240,
+      "minimum_margin": 0.09014480817319456,
+      "index_zero_based": 66,
+      "got_bits": "3fd9ede47d4fe048",
+      "reference_bits": "3fda8f5c28f5c28f",
+      "passed": true
+    },
+    {
+      "signal": 10,
+      "field": "tv_n",
+      "points": 500,
+      "minimum_margin": 0.09980236562743719,
+      "index_zero_based": 77,
+      "got_bits": "3fc8e2058d0663df",
+      "reference_bits": "3fc8db8bac710cb3",
+      "passed": true
+    }
+  ],
+  "old_binary_sha256": "759bb8063f481103ceb8a0b2c1520702934e76f5f5413bd6a2805203c64ad01d",
+  "new_binary_sha256": "cc1a53c31666e783369a2784918124a4df85557dbaef41985d6aea74897be050",
+  "direct_control_count": 21,
+  "minimum_margin": {
+    "signal": 3,
+    "field": "st_spec",
+    "points": 240,
+    "minimum_margin": 0.08513610649320266,
+    "index_zero_based": 66,
+    "got_bits": "3fd6d1f15d62f3a7",
+    "reference_bits": "3fd5de69ad42c3ca",
+    "passed": true
+  },
+  "finite_status": "passed",
+  "validator_status": "passed",
+  "compared_f64_count": 4720928,
+  "source_hashes": {
+    "iso532\\tests\\common\\annexb_check.rs": "41d6fcdb9d96e02bb3cc3489cbbe1d23db95e28b7ba7e81ac6afa8c92e1e1f5f",
+    "iso532\\tests\\common\\mod.rs": "b470a47078494decf8810c26b67c74f91c73d04c486ec917a9444233e7024ec9",
+    "iso532\\tests\\annexb.rs": "141953f0a38916bd1741dca94aff02ab48d0d78aec7132a0a8ab79fa31edc154",
+    "iso532\\tests\\hash_gate.rs": "ca3f9dab1f792ea8221ec367b577331576b7ee4473c6f15bd4aea99ad39a3c9a"
+  },
+  "annexb_call_site_audit": {
+    "source_sha256": "141953f0a38916bd1741dca94aff02ab48d0d78aec7132a0a8ab79fa31edc154",
+    "call_count": 5,
+    "helper_calls_annexb_verdict": true,
+    "helper_asserts_pass": true,
+    "calls": [
+      "&[r.n], &[4.019], \"sig3 N\");",
+      "&r.n_specific, &want_spec, \"sig3 N_specific vs ISO csv\");",
+      "&[r.n], &[10.498], \"sig5 N\");",
+      "&r.n_specific, &want_spec, \"sig5 N_specific vs ISO csv\");",
+      "&r.n, &iso_ref, \"sig10 N(t) vs ISO xlsx reference\");"
+    ],
+    "review": "All five official reference comparisons route through assert_annexb and require Verdict::Pass. Additional MoSQITo/time checks do not replace these."
+  },
+  "hash_gate": {
+    "command": "CARGO_BUILD_JOBS=2 HASH_GATE_DUMP_ONLY=1 REQUIRE_AVX2=1 cargo test --offline -p iso532 --test hash_gate -- --nocapture",
+    "comparisons": [
+      {
+        "label": "scalar",
+        "actual": [
+          "0xa7c2a418292a1a46",
+          "0x16937b45e6e4155d",
+          "0xf076bcb342595537"
+        ],
+        "expected": [
+          "0xa7c2a418292a1a46",
+          "0x16937b45e6e4155d",
+          "0xf076bcb342595537"
+        ],
+        "equal": true,
+        "fields": [
+          "n",
+          "n_specific",
+          "time_axis"
+        ]
+      },
+      {
+        "label": "scalar mosqito_tail",
+        "actual": [
+          "0xf3215787aaa48fbe",
+          "0xff98c57f3018ef94",
+          "0xf076bcb342595537"
+        ],
+        "expected": [
+          "0xf3215787aaa48fbe",
+          "0xff98c57f3018ef94",
+          "0xf076bcb342595537"
+        ],
+        "equal": true,
+        "fields": [
+          "n",
+          "n_specific",
+          "time_axis"
+        ]
+      },
+      {
+        "label": "avx2",
+        "actual": [
+          "0xa7c2a418292a1a46",
+          "0x3d4b4b2df9073e48",
+          "0xf076bcb342595537"
+        ],
+        "expected": [
+          "0xa7c2a418292a1a46",
+          "0x3d4b4b2df9073e48",
+          "0xf076bcb342595537"
+        ],
+        "equal": true,
+        "fields": [
+          "n",
+          "n_specific",
+          "time_axis"
+        ]
+      },
+      {
+        "label": "avx2 mosqito_tail",
+        "actual": [
+          "0xf3215787aaa48fbe",
+          "0x3f241da3fe334097",
+          "0xf076bcb342595537"
+        ],
+        "expected": [
+          "0xf3215787aaa48fbe",
+          "0x3f241da3fe334097",
+          "0xf076bcb342595537"
+        ],
+        "equal": true,
+        "fields": [
+          "n",
+          "n_specific",
+          "time_axis"
+        ]
+      }
+    ],
+    "status": "passed",
+    "dump_test_passed": true,
+    "note": "Dump-only exit zero is not acceptance; these comparisons separately check all frozen Windows constants."
+  },
+  "corrupt_copy_control_count": 19,
+  "all_control_count": 40,
+  "annex_margin_input_hashes": {
+    "data\\golden\\annexb_sig3\\sig.bin": "7b23fad6aebdff5156fa010310753b8ac20f3e1ab3b3298483f8cbe111f78c33",
+    "data\\golden\\annexb_sig5\\sig.bin": "20e036c556aa08b2fdc3409bfa404fa1325dbe2962651b6ae808f95b260be19b",
+    "data\\golden\\annexb_sig10\\sig.bin": "a849fcf48d4ee544a257a669059fac8a961de5283272cb9041734fc593b5e890",
+    "data\\golden\\annexb_sig10\\tv_nref.bin": "fd315680cacc151f896526e2e24b701b56494fcf0312faa158c70c12494781bb",
+    "data\\annexb\\test_signal_3.csv": "efd5861ff8fc2c8d97adb4f2621a017c69bc640c93619cfce7ff267c3c0dcf71",
+    "data\\annexb\\test_signal_5.csv": "049a5e32945494c948e4c4353c0a96d1f6e112fd933966297c3ffc95eecf75de"
+  },
+  "available_wav_scope": "All seven WAV files available in data/annexb: three formal named Test signal 3/5/10 WAVs plus four auxiliary/synthetic WAV fixtures; not all 25 official Annex cases.",
+  "annex_curve_points": 982,
+  "baseline_tag_object_sha": "749dac1933c160d8bbd0592e7be31397af8513ab"
+}

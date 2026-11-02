@@ -1,0 +1,66 @@
+{"case":"error_code","pass":true,"detail":"4"}
+{"case":"nonfinite/false/nan/0","pass":true,"detail":"Some(NonFiniteInput { idx: 0 })"}
+{"case":"nonfinite/false/nan/2400","pass":true,"detail":"Some(NonFiniteInput { idx: 2400 })"}
+{"case":"nonfinite/false/nan/4799","pass":true,"detail":"Some(NonFiniteInput { idx: 4799 })"}
+{"case":"nonfinite/false/pinf/0","pass":true,"detail":"Some(NonFiniteInput { idx: 0 })"}
+{"case":"nonfinite/false/pinf/2400","pass":true,"detail":"Some(NonFiniteInput { idx: 2400 })"}
+{"case":"nonfinite/false/pinf/4799","pass":true,"detail":"Some(NonFiniteInput { idx: 4799 })"}
+{"case":"nonfinite/false/ninf/0","pass":true,"detail":"Some(NonFiniteInput { idx: 0 })"}
+{"case":"nonfinite/false/ninf/2400","pass":true,"detail":"Some(NonFiniteInput { idx: 2400 })"}
+{"case":"nonfinite/false/ninf/4799","pass":true,"detail":"Some(NonFiniteInput { idx: 4799 })"}
+{"case":"first_index/false","pass":true,"detail":"Some(NonFiniteInput { idx: 301 })"}
+{"case":"precedence/false/3","pass":true,"detail":"Some(UnsupportedSampleRate(44100.0))"}
+{"case":"precedence/false/2","pass":true,"detail":"Some(SignalTooShort { got: 4799, need: 4800 })"}
+{"case":"finite/false/subnormal","pass":true,"detail":"None"}
+{"case":"finite/false/positive_zero","pass":true,"detail":"None"}
+{"case":"finite/false/negative_zero","pass":true,"detail":"None"}
+{"case":"finite/false/huge","pass":true,"detail":"Some(LevelExceeds120dB)"}
+{"case":"nonfinite/true/nan/0","pass":true,"detail":"Some(NonFiniteInput { idx: 0 })"}
+{"case":"nonfinite/true/nan/2400","pass":true,"detail":"Some(NonFiniteInput { idx: 2400 })"}
+{"case":"nonfinite/true/nan/4799","pass":true,"detail":"Some(NonFiniteInput { idx: 4799 })"}
+{"case":"nonfinite/true/pinf/0","pass":true,"detail":"Some(NonFiniteInput { idx: 0 })"}
+{"case":"nonfinite/true/pinf/2400","pass":true,"detail":"Some(NonFiniteInput { idx: 2400 })"}
+{"case":"nonfinite/true/pinf/4799","pass":true,"detail":"Some(NonFiniteInput { idx: 4799 })"}
+{"case":"nonfinite/true/ninf/0","pass":true,"detail":"Some(NonFiniteInput { idx: 0 })"}
+{"case":"nonfinite/true/ninf/2400","pass":true,"detail":"Some(NonFiniteInput { idx: 2400 })"}
+{"case":"nonfinite/true/ninf/4799","pass":true,"detail":"Some(NonFiniteInput { idx: 4799 })"}
+{"case":"first_index/true","pass":true,"detail":"Some(NonFiniteInput { idx: 301 })"}
+{"case":"precedence/true/3","pass":true,"detail":"Some(UnsupportedSampleRate(44100.0))"}
+{"case":"precedence/true/2","pass":true,"detail":"Some(SignalTooShort { got: 4799, need: 4800 })"}
+{"case":"finite/true/subnormal","pass":true,"detail":"None"}
+{"case":"finite/true/positive_zero","pass":true,"detail":"None"}
+{"case":"finite/true/negative_zero","pass":true,"detail":"None"}
+{"case":"finite/true/huge","pass":true,"detail":"Some(LevelExceeds120dB)"}
+{"case":"grid/4800","pass":true,"detail":"frames=50; rust=50; C=50; spec=12000; time_first=0000000000000000; time_last=3fb916872b020c4a; "}
+{"case":"grid/4801","pass":true,"detail":"frames=51; rust=51; C=51; spec=12240; time_first=0000000000000000; time_last=3fb999999999999a; "}
+{"case":"grid/4823","pass":true,"detail":"frames=51; rust=51; C=51; spec=12240; time_first=0000000000000000; time_last=3fb999999999999a; "}
+{"case":"grid/4824","pass":true,"detail":"frames=51; rust=51; C=51; spec=12240; time_first=0000000000000000; time_last=3fb999999999999a; "}
+{"case":"grid/4825","pass":true,"detail":"frames=51; rust=51; C=51; spec=12240; time_first=0000000000000000; time_last=3fb999999999999a; "}
+{"case":"grid/4895","pass":true,"detail":"frames=51; rust=51; C=51; spec=12240; time_first=0000000000000000; time_last=3fb999999999999a; "}
+{"case":"grid/4896","pass":true,"detail":"frames=51; rust=51; C=51; spec=12240; time_first=0000000000000000; time_last=3fb999999999999a; "}
+{"case":"grid/4897","pass":true,"detail":"frames=52; rust=52; C=52; spec=12480; time_first=0000000000000000; time_last=3fba1cac083126e9; "}
+{"case":"grid/24013","pass":true,"detail":"frames=251; rust=251; C=251; spec=60240; time_first=0000000000000000; time_last=3fe0000000000000; "}
+{"case":"grid/47905","pass":true,"detail":"frames=500; rust=500; C=500; spec=120000; time_first=0000000000000000; time_last=3fefef9db22d0e56; "}
+{"case":"grid/47916","pass":true,"detail":"frames=500; rust=500; C=500; spec=120000; time_first=0000000000000000; time_last=3fefef9db22d0e56; "}
+{"case":"grid/47927","pass":true,"detail":"frames=500; rust=500; C=500; spec=120000; time_first=0000000000000000; time_last=3fefef9db22d0e56; "}
+{"case":"grid/47928","pass":true,"detail":"frames=500; rust=500; C=500; spec=120000; time_first=0000000000000000; time_last=3fefef9db22d0e56; "}
+{"case":"grid/47952","pass":true,"detail":"frames=500; rust=500; C=500; spec=120000; time_first=0000000000000000; time_last=3fefef9db22d0e56; "}
+{"case":"grid/47999","pass":true,"detail":"frames=500; rust=500; C=500; spec=120000; time_first=0000000000000000; time_last=3fefef9db22d0e56; "}
+{"case":"grid/48000","pass":true,"detail":"frames=500; rust=500; C=500; spec=120000; time_first=0000000000000000; time_last=3fefef9db22d0e56; "}
+{"case":"stream_nan/0","pass":true,"detail":"frames=50; flagged=[0]; residual=0; "}
+{"case":"stream_nan/101","pass":true,"detail":"frames=50; flagged=[1]; residual=0; "}
+{"case":"stream_nan/4799","pass":true,"detail":"frames=50; flagged=[]; residual=2; "}
+{"case":"prefix/Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav/4801","pass":true,"detail":"frames=51; words=12342; first_n=0000000000000000; last_n=3fdb6704aa60c8f1; "}
+{"case":"prefix/Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav/24013","pass":true,"detail":"frames=251; words=60742; first_n=0000000000000000; last_n=3f56ab97897d892e; "}
+{"case":"prefix/Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav/47927","pass":true,"detail":"frames=500; words=121000; first_n=0000000000000000; last_n=3eb2e1f22efee900; "}
+{"case":"stream_wav","pass":true,"detail":"wav=Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav; frames=500; residual=0; chunks=[1,131,7,409,24,97]; "}
+{"case":"prefix/Test signal 5 (pinknoise 60 dB).wav/4801","pass":true,"detail":"frames=51; words=12342; first_n=0000000000000000; last_n=4021c39ffc1d6911; "}
+{"case":"prefix/Test signal 5 (pinknoise 60 dB).wav/24013","pass":true,"detail":"frames=251; words=60742; first_n=0000000000000000; last_n=4024943afcf48eda; "}
+{"case":"prefix/Test signal 5 (pinknoise 60 dB).wav/47927","pass":true,"detail":"frames=500; words=121000; first_n=0000000000000000; last_n=4023dce223a847ba; "}
+{"case":"prefix/broadband_570.wav/4801","pass":true,"detail":"frames=51; words=12342; first_n=0000000000000000; last_n=40229dbf84994a17; "}
+{"case":"prefix/broadband_570.wav/24013","pass":true,"detail":"frames=251; words=60742; first_n=0000000000000000; last_n=4025dc561bd8f4d4; "}
+{"case":"prefix/broadband_570.wav/47927","pass":true,"detail":"frames=500; words=121000; first_n=0000000000000000; last_n=4024d53f328edb7c; "}
+{"case":"prefix/official-signal-3-resampled/4801","pass":true,"detail":"frames=51; words=12342; first_n=0000000000000000; last_n=400c4cd17f8febe5; "}
+{"case":"prefix/official-signal-3-resampled/24013","pass":true,"detail":"frames=251; words=60742; first_n=0000000000000000; last_n=401014e3cc22bb9b; "}
+{"case":"prefix/official-signal-3-resampled/47927","pass":true,"detail":"frames=500; words=121000; first_n=0000000000000000; last_n=40101686d3ae9f16; "}
+{"case":"wav_count","pass":true,"detail":"native 48k WAVs=3; additional official resampled sig3=1"}

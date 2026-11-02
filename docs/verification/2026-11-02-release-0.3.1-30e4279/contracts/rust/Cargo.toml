@@ -1,0 +1,9 @@
+[package]
+name="independent-contracts"
+version="0.1.0"
+edition="2021"
+[workspace]
+[dependencies]
+iso532={path="../../../../../tmp/acceptance-031/source/iso532"}
+iso532-ffi={path="../../../../../tmp/acceptance-031/source/iso532-ffi"}
+hound="3.5"

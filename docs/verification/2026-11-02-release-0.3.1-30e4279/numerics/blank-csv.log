@@ -1,0 +1,5 @@
+$ <REPO>\tmp\acceptance-031\numerics-target-new\release\numeric_acceptance_new.exe csv <REPO>\tmp\acceptance-031\numerics-work\blank.csv
+
+thread 'main' (49080) panicked at <REPO>\tmp\acceptance-031\source\iso532\tests\common\annexb_check.rs:143:9:
+<REPO>\tmp\acceptance-031\numerics-work\blank.csv:121: blank line is not a valid Annex B row
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
