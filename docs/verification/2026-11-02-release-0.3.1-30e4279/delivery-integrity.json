@@ -146,8 +146,8 @@
     },
     {
       "path": "delivery-check.md",
-      "bytes": 5975,
-      "sha256": "deb2955b2bbc0b35af0154f334958411fafc94b886ecb215c21ffaf7346a2754"
+      "bytes": 6629,
+      "sha256": "70126d3374f2fb971c567864a183aa766a55b8f1ee117666de98f555baa7eecc"
     },
     {
       "path": "doc_pairs-retry.log",
@@ -206,8 +206,8 @@
     },
     {
       "path": "maturin-retry.log",
-      "bytes": 1606,
-      "sha256": "3782fbbfa959309d0792572cd34282c7504bbc39a1eb684c54bd82897e27a234"
+      "bytes": 1603,
+      "sha256": "3e33f0996a7b5f2443ae9e1001f894a8b6a8c98393c082be08021bff0bd1fa48"
     },
     {
       "path": "maturin.log",

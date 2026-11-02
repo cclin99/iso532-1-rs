@@ -1,5 +1,5 @@
 🔗 Found pyo3 bindings with abi3-py3.9 support
-Requirement already satisfied: numpy>=1.24 in d:\iso532\.venv\lib\site-packages (2.4.6)
+Requirement already satisfied: numpy>=1.24 in <REPO>\.venv\lib\site-packages (2.4.6)
    Compiling target-lexicon v0.12.16
    Compiling autocfg v1.5.1
    Compiling once_cell v1.21.4

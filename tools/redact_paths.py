@@ -37,8 +37,10 @@ RULES: list[tuple[str, str]] = [
     (rf"[A-Za-z]:{SEP}Users{SEP}[^\\/\s\"']+{SEP}Documents{SEP}Codex", "<AUDIT_HOME>"),
     (rf"[A-Za-z]:{SEP}Users{SEP}[^\\/\s\"']+", "<USER_HOME>"),
     (rf"/c/Users/[^/\s\"']+", "<USER_HOME>"),
-    (rf"[A-Za-z]:{SEP}iso532-rs-panel", "<PANEL_REPO>"),
-    (rf"[A-Za-z]:{SEP}ISO532", "<REPO>"),
+    # repository paths are matched case-insensitively (shell output may print `d:\iso532`)
+    (rf"(?i)[A-Za-z]:{SEP}iso532-rs-panel", "<PANEL_REPO>"),
+    (rf"(?i)[A-Za-z]:{SEP}iso532-panel", "<PANEL_REPO>"),
+    (rf"(?i)[A-Za-z]:{SEP}ISO532(?![\w-])", "<REPO>"),
 ]
 COMPILED = [(re.compile(p), r) for p, r in RULES]
 TEXT_SUFFIXES = {".md", ".json", ".txt", ".log", ".ps1", ".py", ".csv", ".yml", ".yaml", ".toml", ".sh"}

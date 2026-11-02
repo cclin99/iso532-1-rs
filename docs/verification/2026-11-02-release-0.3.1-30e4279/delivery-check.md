@@ -137,3 +137,9 @@ Files (excluding integrity manifest): 116. Suffix counts: {".c": 1, ".cmd": 1, "
 | test_summary_controls.py | yes | covered |
 | wheel-install-probe.log | yes | covered |
 | wheel_probe.py | yes | covered |
+
+## Main-agent review addendum (2026-11-02)
+
+- `maturin-retry.log` line 2 still carried the repository path in lowercase (`d:` drive spelling), which the case-sensitive `<REPO>` rule of `tools/redact_paths.py` at the time of delivery did not match. The rule was made case-insensitive (commit after `0c9ed8d`), the directory was re-redacted (`1 file(s) changed`) and `--check` printed `clean`.
+- The `sha256` and `bytes` of `maturin-retry.log` and of this file in `delivery-integrity.json` were recomputed after that edit; every other entry is unchanged. The manifest still excludes itself.
+- No other file of the delivery was modified by the main agent.
