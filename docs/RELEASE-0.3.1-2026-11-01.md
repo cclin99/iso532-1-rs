@@ -26,6 +26,7 @@ minor number.
 | `a2c0410` | Documentation language policy, 20 paired en/zh-TW documents, `tools/doc_pairs.py`, docs index, F-03 option B brief |
 | `d0bd38b` | C-01: output-grid contract in README, doc comments, C header and CHANGELOG; `tests/output_grid.rs` (7 tests) and a Python shape test; C-01 verification brief |
 | release commit | version 0.3.1, CHANGELOG, CITATION, README direct-comparison rows, auditor amendments to the C-01 brief, this record |
+| `4e615bf`, `0c9ed8d`, follow-ups | acceptance brief, delivery of the independent round, redaction-rule fix, this section; documentation, verification evidence and `tools/redact_paths.py` only. Crate sources at the tag are identical to `30e4279`, from which the artifacts were built. |
 
 ## What changes for users
 
@@ -67,23 +68,53 @@ computation. Subnormal, zero and large finite values remain valid input.
 - Run 41216048341 (`28f6a49`), 41219574093 (`a2c0410`), 41257789141 (`d0bd38b`): all
   six jobs green (test, ffi, py on ubuntu-latest and windows-latest), including the
   Linux frozen hash gate, which is unchanged by this release.
-- The release commit's run result is recorded in the tag message.
+- Release commit `30e4279`: run 41278186406, six jobs success (also recorded in the tag
+  message).
 
 ### Independent verification
 
-Pending before the tag (user decision 2026-11-01: independent verification first). The
-acceptance round on release commit `30e4279` is briefed in
-`docs/verification/briefs/2026-11-01-release-0.3.1-acceptance.md`: C-02 through an
-independent harness in Rust, C and Python; the C-01 grid contract on real Annex B
-signals; the V-01 validator's fail-closed controls; bitwise comparison with `v0.3.0` on
-every Annex B signal for finite input; artifact hashes and exports; record consistency.
-Its delivery goes to `docs/verification/2026-11-01-release-0.3.1-30e4279/` and this
-section is updated from it before `v0.3.1` is created. Until then the C-02 change is
-covered only by the acceptance items of `docs/修正報告2.md` §12.2 row C-02 (mapped in
-`docs/C02-NONFINITE-INPUT-2026-11-01.md` §4). The C-01 numerical acceptance (official C
-library value for the trailing point of Annex B signals 18/23/24/25) is a separate
-brief, `docs/verification/briefs/2026-11-01-C01-zero-pad-reference.md`; it cannot change
-the grid, only close or keep open the audit row, and does not gate the tag.
+Delivered 2026-11-02 (one day after the planned date), tested commit `30e4279`, verdict
+**ACCEPT**, no tag blocker:
+[`docs/verification/2026-11-02-release-0.3.1-30e4279/report.en.md`](verification/2026-11-02-release-0.3.1-30e4279/report.en.md)
+(brief: `docs/verification/briefs/2026-11-01-release-0.3.1-acceptance.md`). All eight
+items PASSED:
+
+- Freeze: isolated archive of `30e4279`, 275 tracked source files hashed; baseline tag
+  `v0.3.0` peeled to `62e46ca`.
+- Gates re-run with identical counts: 138 passed / 0 failed / 3 ignored, 175 golden
+  files, 69 pytest; fmt, both clippy commands, doc pairing and docs redaction clean;
+  strict hash gate (`HASH_GATE_DUMP_ONLY=0`) passed separately.
+- C-02 through independent harnesses: Rust 66, C 52, Python 48 cases (counts combine
+  C-01 and C-02 cases); first offending index, check precedence, untouched C buffers,
+  stream next-frame and residual flags verified. 1e300 returns `LevelExceeds120dB`
+  (code 1), not code 4, as documented.
+- C-01: 16 lengths; Annex B signals 3/5/10 with prefixes 4801/24013/47927 bitwise
+  equal on `n`, `time_axis` and all 240 Bark rows; custom stream chunking including
+  1-sample and >96-sample chunks.
+- V-01: 21 direct and 19 corrupt-copy controls; 5 curves / 982 points; minimum real
+  margin 0.08513610649320266 sone/Bark (signal 3, specific row 66, zero-based).
+- Finite-input stability versus `v0.3.0`: 8 inputs, 40 arrays, 4,720,928 binary64
+  values equal, first difference null; all 12 frozen Windows hash values match.
+- Artifacts: all four hashes match this record and `SHA256SUMS.txt`; distributed header
+  byte-identical to the committed Git blob; 9 exports and the import library identical
+  to `v0.3.0`; clean-venv wheel reports 0.3.1 and raises `ValueError` on NaN.
+- Record consistency: versions, date, CHANGELOG, commit table; CI run 41278186406 on
+  `30e4279`, six jobs success.
+
+Findings without blocker: Windows `tar.exe` mangled Unicode document paths on the first
+extraction (re-extracted with Python `tarfile`, source bytes unchanged); `core.autocrlf`
+made the archive header CRLF (the committed blob was compared instead); the isolated
+venv lacked the maturin console script (formal pytest rerun after a successful build).
+Scope limits: 7 WAVs available locally (official 3/5/10 plus 4 auxiliary fixtures), not a
+25-signal requalification; Windows only, no new Linux run. Negative controls on the
+summariser (missing log, failed exit, skipped pytest, missing record, incomplete run)
+all reject ACCEPT.
+
+Main-agent review 2026-11-02: one residual lowercase repository path in
+`maturin-retry.log` had escaped the case-sensitive redaction rule. The rule in
+`tools/redact_paths.py` was made case-insensitive (and extended to the second panel
+checkout spelling), the file re-redacted, and its entry in `delivery-integrity.json`
+updated; see the addendum in `delivery-check.md`. No other change to the delivery.
 
 ## Artifacts (built from the release commit state, Windows x64, rustc 1.99.1)
 
@@ -125,7 +156,7 @@ reproduce the DLL and wheel hashes byte for byte.
 | Antivirus scan of release artifacts | **pending manual step**: Avira is the active product on the build machine; scan the artifact folder and record product, version, hashes and result here before publishing binaries |
 | SHA-256 checksums | listed above |
 | Local-only files, archives, `data/`, credentials, machine paths not staged | `data/`, `tmp/` and archives gitignored; `redact_paths.py --check docs` clean |
-| Verification deliveries indexed with size, SHA-256 and link | unchanged since 0.3.0; download links for the archives still pending upload |
+| Verification deliveries indexed with size, SHA-256 and link | this round is a text-only delivery tracked in Git with per-file SHA-256 in `delivery-integrity.json`; download links for the earlier archives still pending upload |
 
 ## MoSQITo comparison (release commit state, rustc 1.99.1)
 

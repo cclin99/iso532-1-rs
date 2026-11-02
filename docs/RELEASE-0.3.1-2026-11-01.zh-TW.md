@@ -18,6 +18,7 @@
 | `a2c0410` | 文件語言政策、20 份 en／zh-TW 配對文件、`tools/doc_pairs.py`、文件索引、F-03 選項 B 簡報 |
 | `d0bd38b` | C-01：輸出格線契約寫入 README、文件註解、C header 與 CHANGELOG；`tests/output_grid.rs`（7 測試）與 Python 形狀測試；C-01 驗證簡報 |
 | release commit | 版號 0.3.1、CHANGELOG、CITATION、README 直接比對列、稽核方對 C-01 簡報的補強、本紀錄 |
+| `4e615bf`、`0c9ed8d`、後續 | 驗收簡報、獨立驗證輪交付、去識別化規則修正、本節；只動文件、驗證證據與 `tools/redact_paths.py`。tag 處的 crate 原始碼與建置產出物的 `30e4279` 完全相同。 |
 
 ## 使用者看到的變化
 
@@ -47,11 +48,24 @@
 ### CI
 
 - Run 41216048341（`28f6a49`）、41219574093（`a2c0410`）、41257789141（`d0bd38b`）：六個 job 全綠（ubuntu-latest 與 windows-latest 的 test、ffi、py），含本次未變動的 Linux 凍結 hash gate。
-- release commit 的 run 結果記在 tag 訊息。
+- release commit `30e4279`：run 41278186406，六個 job 成功（亦記在 tag 訊息）。
 
 ### 獨立驗證
 
-打 tag 前待交付（使用者 2026-11-01 決定：先獨立驗證）。對 release commit `30e4279` 的驗收輪已交辦於 `docs/verification/briefs/2026-11-01-release-0.3.1-acceptance.zh-TW.md`：以 Rust、C、Python 獨立 harness 驗 C-02；在真實 Annex B 訊號上驗 C-01 格線契約；V-01 驗證器的 fail-closed 控制；對有限輸入與 `v0.3.0` 在每個 Annex B 訊號上位元比較；產出物 hash 與匯出符號；紀錄一致性。交付放 `docs/verification/2026-11-01-release-0.3.1-30e4279/`，建立 `v0.3.1` 前依其更新本節。在此之前 C-02 變更只由 `docs/修正報告2.md` §12.2 C-02 列的驗收項覆蓋（對照見 `docs/C02-NONFINITE-INPUT-2026-11-01.zh-TW.md` §4）。C-01 的數值驗收（Annex B 訊號 18／23／24／25 尾端點的官方 C library 值）是另一份簡報 `docs/verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md`；它不會改變格線，只決定稽核列是否結案，不作為打 tag 的門檻。
+2026-11-02 交付（較預定晚一天），受驗 commit `30e4279`，結論 **ACCEPT**，無阻擋打 tag 的事項：[`docs/verification/2026-11-02-release-0.3.1-30e4279/report.md`](verification/2026-11-02-release-0.3.1-30e4279/report.md)（簡報：`docs/verification/briefs/2026-11-01-release-0.3.1-acceptance.zh-TW.md`）。八項全部 PASSED：
+
+- 凍結：`30e4279` 的隔離封存，275 個追蹤來源檔逐一 hash；基準 tag `v0.3.0` 解析為 `62e46ca`。
+- 重跑 gate 數量一致：138 通過／0 失敗／3 ignored、175 個 golden 檔、pytest 69；fmt、兩種 clippy、文件配對、docs 去識別化皆 clean；嚴格 hash gate（`HASH_GATE_DUMP_ONLY=0`）另行通過。
+- C-02 以獨立 harness：Rust 66、C 52、Python 48 案（計數合併 C-01 與 C-02 案例）；第一個違規 index、檢查順序、C 緩衝區不動、串流下一幀與殘留旗標均確認。1e300 回 `LevelExceeds120dB`（碼 1）而非碼 4，與文件一致。
+- C-01：16 種長度；Annex B 訊號 3／5／10 以前綴 4801／24013／47927 在 `n`、`time_axis` 與全部 240 個 Bark 列位元相同；自訂串流 chunk 含 1 樣本與大於 96 樣本。
+- V-01：21 個直接控制與 19 個損壞副本控制；5 條曲線／982 點；最小真實餘裕 0.08513610649320266 sone/Bark（訊號 3，比響度第 66 列，零起算）。
+- 有限輸入對 `v0.3.0` 的穩定性：8 個輸入、40 個陣列、4,720,928 個 binary64 值相同，首差異 null；12 個凍結 Windows hash 全部相符。
+- 產出物：四個 hash 與本紀錄及 `SHA256SUMS.txt` 相符；發布的 header 與已提交 Git blob 位元相同；9 個匯出符號與 import library 與 `v0.3.0` 相同；乾淨 venv 安裝的 wheel 版號 0.3.1、遇 NaN 丟 `ValueError`。
+- 紀錄一致性：版號、日期、CHANGELOG、commit 表；CI run 41278186406 在 `30e4279` 上六個 job 成功。
+
+不構成阻擋的發現：Windows `tar.exe` 首次解壓把 Unicode 文件路徑弄亂（改以 Python `tarfile` 重解，原始碼位元未變）；`core.autocrlf` 使封存內 header 為 CRLF（改與已提交 blob 比較）；隔離 venv 缺 maturin console script（成功建置後重跑正式 pytest）。範圍限制：本機只有 7 個 WAV（正式 3／5／10 加 4 個輔助 fixture），不是 25 訊號重新認證；僅 Windows，無新的 Linux 執行。對總結器的負向控制（缺日誌、失敗退出碼、skipped pytest、缺紀錄、未完成執行）均不產生 ACCEPT。
+
+主代理 2026-11-02 覆核：`maturin-retry.log` 殘留一個小寫的 repo 路徑，是去識別化規則區分大小寫所漏；已把 `tools/redact_paths.py` 的規則改為不分大小寫（並涵蓋另一種 panel checkout 拼法），重新去識別化該檔並更新 `delivery-integrity.json` 的對應項；見 `delivery-check.md` 的補記。交付其他內容未改。
 
 ## 產出物（自 release commit 狀態建置，Windows x64，rustc 1.99.1）
 
@@ -84,7 +98,7 @@ Import library 與 v0.2.0、v0.3.0 位元相同（匯出符號未變）。`iso53
 | 產出物防毒掃描 | **待手動**：建置機的防毒為 Avira；發布二進位前請掃描產出物資料夾並在此記錄產品、版本、hash 與結果 |
 | SHA-256 校驗 | 如上表 |
 | 本機檔案、封存、`data/`、憑證、機器路徑未 stage | `data/`、`tmp/` 與封存已 gitignore；`redact_paths.py --check docs` clean |
-| 驗證交付含大小、SHA-256 與連結 | 自 0.3.0 未變；封存下載連結仍待上傳 |
+| 驗證交付含大小、SHA-256 與連結 | 本輪為純文字交付並進 Git，逐檔 SHA-256 在 `delivery-integrity.json`；較早封存的下載連結仍待上傳 |
 
 ## MoSQITo 比較（release commit 狀態，rustc 1.99.1）
 

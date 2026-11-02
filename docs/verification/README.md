@@ -18,7 +18,7 @@ English summary.
 |---|---|---|
 | [`briefs/2026-11-01-F03-B-aarae-lineage.md`](briefs/2026-11-01-F03-B-aarae-lineage.md) | 2026-11-01 | open: lineage of the `USL[12][4]` value 0.24 through AARAE 2015 and the 2014 C program |
 | [`briefs/2026-11-01-C01-zero-pad-reference.md`](briefs/2026-11-01-C01-zero-pad-reference.md) | 2026-11-01 | open: official C library value for the trailing point of Annex B signals 18/23/24/25 on zero-padded input |
-| [`briefs/2026-11-01-release-0.3.1-acceptance.md`](briefs/2026-11-01-release-0.3.1-acceptance.md) | 2026-11-01 | open: pre-tag acceptance of release commit `30e4279` (C-02, C-01 contract, V-01, no numeric change vs `v0.3.0`, artifacts, record consistency); tag `v0.3.1` held until delivered |
+| [`briefs/2026-11-01-release-0.3.1-acceptance.md`](briefs/2026-11-01-release-0.3.1-acceptance.md) | 2026-11-01 | delivered 2026-11-02: [`2026-11-02-release-0.3.1-30e4279/`](2026-11-02-release-0.3.1-30e4279/) ACCEPT, 8/8 items passed; tag `v0.3.1` released on it |
 
 ## Evidence archives
 
@@ -37,6 +37,7 @@ below before unpacking it into a new, empty directory.
 | 2026-10-31 F-03 sensitivity probe, [`2026-10-31-F03-sensitivity-d623d32/`](2026-10-31-F03-sensitivity-d623d32/) | `d623d32` | text-only delivery (report, scripts, `summary.json`, `run.log`); binary run outputs stay in the auditor's `tmp/`, not archived | – | – | n/a |
 | 2026-10-31 F-03 authority trace, [`2026-10-31-F03-authority-d623d32/`](2026-10-31-F03-authority-d623d32/) | `d623d32` | text-only delivery (report, sources, acquisition checklist, literature follow-up) | – | – | n/a |
 | 2026-10-31 F-03 SQAT source check, [`2026-10-31-F03-SQAT-d623d32/`](2026-10-31-F03-SQAT-d623d32/) | `d623d32` | text-only delivery (report, sources) | – | – | n/a |
+| 2026-11-02 release 0.3.1 pre-tag acceptance, [`2026-11-02-release-0.3.1-30e4279/`](2026-11-02-release-0.3.1-30e4279/) | `30e4279` | text-only delivery (reports, harness sources, logs, `results.json`, `delivery-integrity.json`); builds, WAVs and the isolated checkout stay in the auditor's `tmp/`, not archived | – | – | n/a |
 
 Fill the download column with the cloud-drive link once the archive is uploaded.
 A link alone is not evidence; the hash is what ties the download to the report.

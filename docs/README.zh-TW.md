@@ -60,6 +60,7 @@
 | [`verification/briefs/2026-11-01-F03-B-aarae-lineage.zh-TW.md`](verification/briefs/2026-11-01-F03-B-aarae-lineage.zh-TW.md) | F-03 選項 B 交辦簡報 | en + zh |
 | [`verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md`](verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md) | C-01 尾端點官方 C 參考值交辦簡報 | en + zh |
 | [`verification/briefs/2026-11-01-release-0.3.1-acceptance.zh-TW.md`](verification/briefs/2026-11-01-release-0.3.1-acceptance.zh-TW.md) | release commit `30e4279` 打 tag 前的驗收交辦簡報 | en + zh |
+| [`verification/2026-11-02-release-0.3.1-30e4279/report.md`](verification/2026-11-02-release-0.3.1-30e4279/report.md) | 0.3.1 在 `30e4279` 的打 tag 前驗收：ACCEPT，8／8 項通過 | en + zh |
 
 ## 歷史審查紀錄（已結輪次；翻譯待辦 P3）
 
