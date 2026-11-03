@@ -1,0 +1,7 @@
+[package]
+name="c01-root-probe"
+version="0.0.0"
+edition="2021"
+[workspace]
+[dependencies]
+iso532={path="../snapshot/iso532"}

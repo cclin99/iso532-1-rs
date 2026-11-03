@@ -1,0 +1,9 @@
+{
+  "preflight_python_parse_exit_code": 1,
+  "first_wrapper_attempt_exit_code": 1,
+  "successful_primary_run2_exit_code": 0,
+  "main_literal_controls_exit_code": 0,
+  "slopes_controls_exit_code": 0,
+  "r8_control_exit_code": 0,
+  "meaning": "Execution completion is separate from numerical acceptance. The original 1e-14 tail acceptance is not closed; rounding removal alone fails for four signals."
+}

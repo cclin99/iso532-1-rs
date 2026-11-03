@@ -1,0 +1,350 @@
+{
+  "meaning": "Original source/input/binary hashes, not hashes of redacted copies. Final delivered text is inventoried separately.",
+  "tested_commit": "aa379db8f3dc37f5048ac6c8b7a6d4ba2a6c3b76",
+  "source_hashes": {
+    "archive_sha256": "b66a0dcc5cb5af47f1ce2fef7830da0f79e09a04af3ffc89d9e3d01cf9a2ad3d",
+    "snapshot_before": {
+      "Cargo.lock": "131d0d7889476866e5b9c24ccfd958a937f88a1d9be2596cfa364d82929e72f7",
+      "Cargo.toml": "83ffc786df58ad9c7c0388c4ee1337adccc2e80a9c61b3980825cf12123d741d",
+      "iso532/benches/loudness.rs": "311a8e751fdf166da61c79322e0e851bd2588079a1241ed5e5070b1a57d335f1",
+      "iso532/Cargo.toml": "28c7ebad1fc0f854247929e7de3c1a81da9da68ebda386fec224c65a49fa27eb",
+      "iso532/examples/cli.rs": "52dadc99ebaf46fa095597be2da10b669bf275494bc218c4dd887601307eb8b3",
+      "iso532/README.md": "1945c56d798dee665c314022ddfca9d91f7c47220033b34911458a2587912a04",
+      "iso532/src/core/calc_slopes.rs": "be443d090d04e3b186ac338ec5a1c2061419c003a0cc74f9cfeb8c31354b80d9",
+      "iso532/src/core/main_loudness.rs": "ff92090106863f35d60bf178953bea7f0b299803638e585f949a426bf0ad2049",
+      "iso532/src/core/mod.rs": "d62174b9ab6cdcd8c4dfefd9f2a0599dce4ec476a45e20c43bb54bf5ed1a9cf9",
+      "iso532/src/dsp/filtfilt.rs": "3af338dffa803acd5658b1fe46f45d541a606046f80880766d42f0105f3ced13",
+      "iso532/src/dsp/mod.rs": "2a7a879ace8f76cf0b743bff8c195066c0e7ab856aeb094a4332ce9c3f0b95cc",
+      "iso532/src/dsp/sos.rs": "a5fff9439885ac8aae36b2392b09e6a5e1a2afe1387d5cfdac62aabf10a28ff0",
+      "iso532/src/error.rs": "8864c0e9e7a0c895ee0497a0d5534d6df3ba18e62f67c04171acef4a9addb979",
+      "iso532/src/lib.rs": "983b8a17a6871b3379d422623a0be7c1e128f2df218baf07f3bc7c1aca458a37",
+      "iso532/src/simd/mod.rs": "242302d8cae15832309537ff5583265a3c71d89979dbdd544cdd8afed0b0035f",
+      "iso532/src/sone2phon.rs": "67755a36bfd944dc1e5ef071beb0a6ad4edc3665027a2698acb5aef82f8d28ef",
+      "iso532/src/tables.rs": "0a56ea70b6e9fbcc2b159f0da30430217bdad1b8b9d894ac4a655d35c58b5bad",
+      "iso532/src/tables_noct.rs": "c52201e4ba9d61875328ec8b1dea92a553b6a48b8193bae0137edbfdfa9d5fb3",
+      "iso532/src/zwst/mod.rs": "e1c0c57e9d07700d173fab0867e8b5a69f80a05d31a19bc846c0fedbeafbad83",
+      "iso532/src/zwtv/mod.rs": "a083859d2368db851b2586fc6ccbd09c31e381f648e2409f44c1f3a186f479e4",
+      "iso532/src/zwtv/nonlinear_decay.rs": "966ea4979cab03898a09d78fc96230b28c94bc951e700e0229503ff8a1bb7e92",
+      "iso532/src/zwtv/stream.rs": "3ed7723cd6b066f97dd42279569a49aaebd6678810df608b503159a7fa4cb252",
+      "iso532/src/zwtv/temporal_weighting.rs": "4735998b5238c1a00f526bcba0f740386c66f98a6543082228f7d9b6c91df43c",
+      "iso532/src/zwtv/third_octave_levels.rs": "e1570576ffe230c2731529dd1acded63ca77af1d95b4ed33b8463b6ee4f23d45",
+      "iso532/tests/annexb.rs": "141953f0a38916bd1741dca94aff02ab48d0d78aec7132a0a8ab79fa31edc154",
+      "iso532/tests/annexb_validator.rs": "c1301e509dd20c4c97d2bd05b4f265f45549994a0587ec5e66ef4e8957ec57e2",
+      "iso532/tests/api_errors.rs": "6a2c554821cfde3978f09a61dc5c486ad368f1a334ccef2aa002053fc833439a",
+      "iso532/tests/common/annexb_check.rs": "41d6fcdb9d96e02bb3cc3489cbbe1d23db95e28b7ba7e81ac6afa8c92e1e1f5f",
+      "iso532/tests/common/mod.rs": "b470a47078494decf8810c26b67c74f91c73d04c486ec917a9444233e7024ec9",
+      "iso532/tests/determinism.rs": "404bfc12e09fbd1a85cc8f77f3384c37af9c9afc74725966b940caf418d7c0c1",
+      "iso532/tests/golden_core.rs": "6b73a84af2c4bc82abcbda950f981fc60e3c042005461794a54cbd9298d47d7a",
+      "iso532/tests/golden_dsp.rs": "8f982fa80a170b4b7d43f8a567351fece73c80b99279b116b98b7f7d21da2e24",
+      "iso532/tests/golden_zwst.rs": "c3084d135bd624978ac910f3fa5cdaf3031ba56dea028c235e39b968fb15b985",
+      "iso532/tests/golden_zwtv.rs": "e4a82fafa441f449b5648e16f22f0e5f21d7529d300a01752a27fa70ac7da2a1",
+      "iso532/tests/hash_gate.rs": "ca3f9dab1f792ea8221ec367b577331576b7ee4473c6f15bd4aea99ad39a3c9a",
+      "iso532/tests/low_freq_correction.rs": "d970a9106af0a0e28154b2d2c9e825216cf0f787126d95874881cbb43a064938",
+      "iso532/tests/nl_zero_init.rs": "1c0359b0782cba5884b2e563f579a2242971a068db6a76699623eddb778bafc1",
+      "iso532/tests/output_grid.rs": "008d1fd055955d7d6a4d713f96b57c932fa8ddc963556082cd398b167c3a8677",
+      "iso532/tests/py_contract_dump.rs": "167cd58bbc89a1cf69618b1d8c03f0185ea7ebe09dfc5cb42c634a383c6f97da",
+      "iso532/tests/simd_dispatch.rs": "d6e58adaae5fa6e912e1cf381e00ef6b4bea7c90ee79b5d0216a87970ac349c6",
+      "iso532/tests/simd_parity.rs": "7d364ff958ef19bc5de67aa65f6eca4127248d468a14928d75a8b826e44c758b",
+      "iso532/tests/stream.rs": "d715d7ba5141e0ebd04c46a25fa71807406a4769b8a7786fc1e7b23d5c0f1cac",
+      "iso532/tests/stream_alloc.rs": "6b953c96e22736652d5a1d1156a3b8a61bb7f2971a38deee2f41d95c241dd682",
+      "iso532/tests/stream_no_rayon.rs": "1f0eb0eaf7cb78b6804d7c0dbeb152c402831a2f6734a84a385e929794d97168",
+      "iso532/tests/stream_scalar.rs": "271fc485e291e1e9f2787766ae77c335c721be8886a1fd87a4f3461525383f92",
+      "iso532-ffi/Cargo.toml": "33413a3a03bfab4f9613efa659dd0b43155ad49ad37dbca949f87d88a23e5065",
+      "iso532-ffi/cbindgen.toml": "6e70515782b586ff96d17588f23fa8ad0c54a5a92365cd08b710a9fe4d85c376",
+      "iso532-ffi/include/iso532.h": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+      "iso532-ffi/src/lib.rs": "80b09294570f4bfd22c381e693761c67f47f3340dc324c98ac853329797160a5",
+      "iso532-ffi/tests/ffi.rs": "c712ba2dd6e5f150cfae6f2d3c25522192b8b683e39d9c4b7d28a69e1e27d5d8",
+      "iso532-ffi/tests/smoke.c": "75ecc277b2dd69871446beaf7fd0ef79ba3276cf639a6106b5834ce6f80a59ab",
+      "iso532-py/Cargo.toml": "4fbd0d41a623fddb04c837256ec4fea7938a2500aa9b256c6afec98c9163a37c",
+      "iso532-py/pyproject.toml": "f5b071b3f933937723979a5217808795ed1b5be7a38d7a9e287ec67adda4a381",
+      "iso532-py/src/lib.rs": "b5e09120ec51781d5ea72561a2ba9aa0108e35ece2cf0e2c44e92304c2c11c00",
+      "iso532-py/tests/conftest.py": "87a96a30f628b841c37578f1961f97dd27150f32bbf3450cf248549b89d559c2",
+      "iso532-py/tests/test_parity_mosqito.py": "2241e15b3829bb1c9073ad181d1adbdc06e02ddccc2edcd6db8ce819ea6158ef",
+      "iso532-py/tests/test_smoke.py": "82a24ad830d4ee7485697d3095066b0ed9c223c8cdfdb911b3b96837e5f8943c",
+      "iso532-py/tests/test_stream.py": "c50eee88770f012f3cdc6d81614b81afa52738820f6dd6e5bc2fad4d61b1f820"
+    },
+    "official_archive_sha256": "d17b2c6d66a28550ed145c3e1ae5af6ee5917b90e584358285686b1fc61edca7",
+    "official_files": {
+      "ISO_532-1.c": "a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491",
+      "ISO_532-1.h": "b067a0e16ebfbbf47044edc030f2f792f6968e60150b35edd8bb7641f5c56605",
+      "ISO_532-1_helper.c": "aaf69545e954679c1332f9eab774c3fe8a11852d75fec1f95f785d5d85c46b25",
+      "ISO_532-1_main.c": "aad7f98c372295e0188948a3628518932e4e7de53c3565e41ea3ab2dd13955cf",
+      "ISO_532-1_helper.h": "ac544ff0e6d85dbc2fb4b508be459588801d6fa4d8d7bb3befa9a5d213e5462b"
+    },
+    "snapshot_after": {
+      "Cargo.lock": "131d0d7889476866e5b9c24ccfd958a937f88a1d9be2596cfa364d82929e72f7",
+      "Cargo.toml": "83ffc786df58ad9c7c0388c4ee1337adccc2e80a9c61b3980825cf12123d741d",
+      "iso532/benches/loudness.rs": "311a8e751fdf166da61c79322e0e851bd2588079a1241ed5e5070b1a57d335f1",
+      "iso532/Cargo.toml": "28c7ebad1fc0f854247929e7de3c1a81da9da68ebda386fec224c65a49fa27eb",
+      "iso532/examples/cli.rs": "52dadc99ebaf46fa095597be2da10b669bf275494bc218c4dd887601307eb8b3",
+      "iso532/README.md": "1945c56d798dee665c314022ddfca9d91f7c47220033b34911458a2587912a04",
+      "iso532/src/core/calc_slopes.rs": "be443d090d04e3b186ac338ec5a1c2061419c003a0cc74f9cfeb8c31354b80d9",
+      "iso532/src/core/main_loudness.rs": "ff92090106863f35d60bf178953bea7f0b299803638e585f949a426bf0ad2049",
+      "iso532/src/core/mod.rs": "d62174b9ab6cdcd8c4dfefd9f2a0599dce4ec476a45e20c43bb54bf5ed1a9cf9",
+      "iso532/src/dsp/filtfilt.rs": "3af338dffa803acd5658b1fe46f45d541a606046f80880766d42f0105f3ced13",
+      "iso532/src/dsp/mod.rs": "2a7a879ace8f76cf0b743bff8c195066c0e7ab856aeb094a4332ce9c3f0b95cc",
+      "iso532/src/dsp/sos.rs": "a5fff9439885ac8aae36b2392b09e6a5e1a2afe1387d5cfdac62aabf10a28ff0",
+      "iso532/src/error.rs": "8864c0e9e7a0c895ee0497a0d5534d6df3ba18e62f67c04171acef4a9addb979",
+      "iso532/src/lib.rs": "983b8a17a6871b3379d422623a0be7c1e128f2df218baf07f3bc7c1aca458a37",
+      "iso532/src/simd/mod.rs": "242302d8cae15832309537ff5583265a3c71d89979dbdd544cdd8afed0b0035f",
+      "iso532/src/sone2phon.rs": "67755a36bfd944dc1e5ef071beb0a6ad4edc3665027a2698acb5aef82f8d28ef",
+      "iso532/src/tables.rs": "0a56ea70b6e9fbcc2b159f0da30430217bdad1b8b9d894ac4a655d35c58b5bad",
+      "iso532/src/tables_noct.rs": "c52201e4ba9d61875328ec8b1dea92a553b6a48b8193bae0137edbfdfa9d5fb3",
+      "iso532/src/zwst/mod.rs": "e1c0c57e9d07700d173fab0867e8b5a69f80a05d31a19bc846c0fedbeafbad83",
+      "iso532/src/zwtv/mod.rs": "a083859d2368db851b2586fc6ccbd09c31e381f648e2409f44c1f3a186f479e4",
+      "iso532/src/zwtv/nonlinear_decay.rs": "966ea4979cab03898a09d78fc96230b28c94bc951e700e0229503ff8a1bb7e92",
+      "iso532/src/zwtv/stream.rs": "3ed7723cd6b066f97dd42279569a49aaebd6678810df608b503159a7fa4cb252",
+      "iso532/src/zwtv/temporal_weighting.rs": "4735998b5238c1a00f526bcba0f740386c66f98a6543082228f7d9b6c91df43c",
+      "iso532/src/zwtv/third_octave_levels.rs": "e1570576ffe230c2731529dd1acded63ca77af1d95b4ed33b8463b6ee4f23d45",
+      "iso532/tests/annexb.rs": "141953f0a38916bd1741dca94aff02ab48d0d78aec7132a0a8ab79fa31edc154",
+      "iso532/tests/annexb_validator.rs": "c1301e509dd20c4c97d2bd05b4f265f45549994a0587ec5e66ef4e8957ec57e2",
+      "iso532/tests/api_errors.rs": "6a2c554821cfde3978f09a61dc5c486ad368f1a334ccef2aa002053fc833439a",
+      "iso532/tests/common/annexb_check.rs": "41d6fcdb9d96e02bb3cc3489cbbe1d23db95e28b7ba7e81ac6afa8c92e1e1f5f",
+      "iso532/tests/common/mod.rs": "b470a47078494decf8810c26b67c74f91c73d04c486ec917a9444233e7024ec9",
+      "iso532/tests/determinism.rs": "404bfc12e09fbd1a85cc8f77f3384c37af9c9afc74725966b940caf418d7c0c1",
+      "iso532/tests/golden_core.rs": "6b73a84af2c4bc82abcbda950f981fc60e3c042005461794a54cbd9298d47d7a",
+      "iso532/tests/golden_dsp.rs": "8f982fa80a170b4b7d43f8a567351fece73c80b99279b116b98b7f7d21da2e24",
+      "iso532/tests/golden_zwst.rs": "c3084d135bd624978ac910f3fa5cdaf3031ba56dea028c235e39b968fb15b985",
+      "iso532/tests/golden_zwtv.rs": "e4a82fafa441f449b5648e16f22f0e5f21d7529d300a01752a27fa70ac7da2a1",
+      "iso532/tests/hash_gate.rs": "ca3f9dab1f792ea8221ec367b577331576b7ee4473c6f15bd4aea99ad39a3c9a",
+      "iso532/tests/low_freq_correction.rs": "d970a9106af0a0e28154b2d2c9e825216cf0f787126d95874881cbb43a064938",
+      "iso532/tests/nl_zero_init.rs": "1c0359b0782cba5884b2e563f579a2242971a068db6a76699623eddb778bafc1",
+      "iso532/tests/output_grid.rs": "008d1fd055955d7d6a4d713f96b57c932fa8ddc963556082cd398b167c3a8677",
+      "iso532/tests/py_contract_dump.rs": "167cd58bbc89a1cf69618b1d8c03f0185ea7ebe09dfc5cb42c634a383c6f97da",
+      "iso532/tests/simd_dispatch.rs": "d6e58adaae5fa6e912e1cf381e00ef6b4bea7c90ee79b5d0216a87970ac349c6",
+      "iso532/tests/simd_parity.rs": "7d364ff958ef19bc5de67aa65f6eca4127248d468a14928d75a8b826e44c758b",
+      "iso532/tests/stream.rs": "d715d7ba5141e0ebd04c46a25fa71807406a4769b8a7786fc1e7b23d5c0f1cac",
+      "iso532/tests/stream_alloc.rs": "6b953c96e22736652d5a1d1156a3b8a61bb7f2971a38deee2f41d95c241dd682",
+      "iso532/tests/stream_no_rayon.rs": "1f0eb0eaf7cb78b6804d7c0dbeb152c402831a2f6734a84a385e929794d97168",
+      "iso532/tests/stream_scalar.rs": "271fc485e291e1e9f2787766ae77c335c721be8886a1fd87a4f3461525383f92",
+      "iso532-ffi/Cargo.toml": "33413a3a03bfab4f9613efa659dd0b43155ad49ad37dbca949f87d88a23e5065",
+      "iso532-ffi/cbindgen.toml": "6e70515782b586ff96d17588f23fa8ad0c54a5a92365cd08b710a9fe4d85c376",
+      "iso532-ffi/include/iso532.h": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+      "iso532-ffi/src/lib.rs": "80b09294570f4bfd22c381e693761c67f47f3340dc324c98ac853329797160a5",
+      "iso532-ffi/tests/ffi.rs": "c712ba2dd6e5f150cfae6f2d3c25522192b8b683e39d9c4b7d28a69e1e27d5d8",
+      "iso532-ffi/tests/smoke.c": "75ecc277b2dd69871446beaf7fd0ef79ba3276cf639a6106b5834ce6f80a59ab",
+      "iso532-py/Cargo.toml": "4fbd0d41a623fddb04c837256ec4fea7938a2500aa9b256c6afec98c9163a37c",
+      "iso532-py/pyproject.toml": "f5b071b3f933937723979a5217808795ed1b5be7a38d7a9e287ec67adda4a381",
+      "iso532-py/src/lib.rs": "b5e09120ec51781d5ea72561a2ba9aa0108e35ece2cf0e2c44e92304c2c11c00",
+      "iso532-py/tests/conftest.py": "87a96a30f628b841c37578f1961f97dd27150f32bbf3450cf248549b89d559c2",
+      "iso532-py/tests/test_parity_mosqito.py": "2241e15b3829bb1c9073ad181d1adbdc06e02ddccc2edcd6db8ce819ea6158ef",
+      "iso532-py/tests/test_smoke.py": "82a24ad830d4ee7485697d3095066b0ed9c223c8cdfdb911b3b96837e5f8943c",
+      "iso532-py/tests/test_stream.py": "c50eee88770f012f3cdc6d81614b81afa52738820f6dd6e5bc2fad4d61b1f820"
+    },
+    "official_files_after": {
+      "ISO_532-1.c": "a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491",
+      "ISO_532-1.h": "b067a0e16ebfbbf47044edc030f2f792f6968e60150b35edd8bb7641f5c56605",
+      "ISO_532-1_helper.c": "aaf69545e954679c1332f9eab774c3fe8a11852d75fec1f95f785d5d85c46b25",
+      "ISO_532-1_main.c": "aad7f98c372295e0188948a3628518932e4e7de53c3565e41ea3ab2dd13955cf",
+      "ISO_532-1_helper.h": "ac544ff0e6d85dbc2fb4b508be459588801d6fa4d8d7bb3befa9a5d213e5462b"
+    }
+  },
+  "binary_hashes": {
+    "c01-probe.exe": "f9a538f6c346e59c36ed6f8e9da1bafa9ad1072855b2fc4f5fc65b6e33a5e256",
+    "reference.dll": "fb1ef5be897b1230b6c0aae62fae125b64a9d7080ee00d70cc59b134086a7e5d",
+    "reference_cli.exe": "598b224790d6c7c28ed16e95ce4e2d8f01973f2380f67451d2df5bf226f6d854"
+  },
+  "calibration": {
+    "format": "PCM signed 16-bit little-endian",
+    "channels": 1,
+    "sample_rate": 48000,
+    "sample_width_bytes": 2,
+    "samples": 48000,
+    "WAV_sha256": "a65e5d0a0e6dd1cb6e021331005b2ea4f05bd412ff637d419bc72dbde134f698",
+    "PCM_payload_sha256": "3b0e6c3ac3563b716f6c4cf64d103b2ba92e9655bf1be9a47a6d852099963a43",
+    "decoded_f64le_sha256": "3489d98a9364dd3ed84ebd560208b63f79669a29f81c79badb1d5c72165c6a71",
+    "file": "calibration signal sine 1kHz 60dB.wav",
+    "reference_level_dB": 60.0,
+    "decoded_check": "PCM16/32768",
+    "calculation": "sequential sum(pow(sample,2))/N; sqrt(pow(10,60/10)*4e-10/mean_square)"
+  },
+  "signals": [
+    {
+      "signal": 18,
+      "input": {
+        "format": "PCM signed 16-bit little-endian",
+        "channels": 1,
+        "sample_rate": 48000,
+        "sample_width_bytes": 2,
+        "samples": 103969,
+        "WAV_sha256": "7cfca7001bff2a0746cdc7d39e0ebfaa631b60d3d99726847db2d6914da13904",
+        "PCM_payload_sha256": "0d3f827dfe6e2b46eafb729e3ce9b457894e21373ae528aa5521499ef651be1f",
+        "decoded_f64le_sha256": "afe7f3b3445fc9738a478f2a5db081740e58cb340c9f5d829686953a44614f04",
+        "file": "Test signal 18 (hammer).wav",
+        "pressure_f64le_sha256": "b16a82ee3b9f3eeec6261da60083d4de9af6a85c373b7f96a4ae024a5d5aef7a",
+        "padded_pressure_f64le_sha256": "5d019f3315fd7238b14295c02b2288c375de0bc2dc43ba83bfbbe9df65b43125",
+        "padded_WAV_sha256": "5d317edf6a6446dfd003ab51e552a60dae2c9fe47834c5ef7dc1ae40c1bcbcba",
+        "calibration_factor": {
+          "decimal17": "2.8357977163914438",
+          "bits": "4006afb6b68fc829"
+        },
+        "C_Rust_same_input": true,
+        "CLI_wrapper_padded_pressure_sha256": "5d019f3315fd7238b14295c02b2288c375de0bc2dc43ba83bfbbe9df65b43125",
+        "CLI_input_identity_passed": true
+      },
+      "output_hashes": {
+        "C_unpadded_n": "b8e4787ff50057c73f0f6d2a7f7d0d703b85d2e54760b13ff97f7864180800fb",
+        "C_unpadded_spec": "afae52d1570aa1c90e11fe3a4f6ce2cd02f8e28f8b9a2e476bcb86c4eca232f1",
+        "C_padded_n": "ded00407d84465777def8737a49c55e29c536115924515315739bd59eadf4bea",
+        "C_padded_spec": "d91e7b7b58c00e815ec056915bff8f478877439b7cbbd2ef7717977d9c585b91",
+        "Rust_n": "2f7f91755c47954cad05d5fddcb86a61772aca5a17766c667fb631ef99c22567",
+        "Rust_spec": "8e770195b58b17918a9f0cc132c7d234deb6027fcc41a9d7654546867d4f3978",
+        "Rust_time": "1adab14a62cf20f002945ce1b850aede5fca439c71184ee098145286cdcb52de"
+      }
+    },
+    {
+      "signal": 23,
+      "input": {
+        "format": "PCM signed 16-bit little-endian",
+        "channels": 1,
+        "sample_rate": 48000,
+        "sample_width_bytes": 2,
+        "samples": 122401,
+        "WAV_sha256": "51d9daea3810c4e32efbe43abcfec74960be74e58f5403bdf20ff9c9a7d26f26",
+        "PCM_payload_sha256": "fe7172ca937ae90267772c63094ab4a26bfede64c26c657f777c4d9fc447f6a4",
+        "decoded_f64le_sha256": "aff6f2d42b56f8ae7c77a287c62180745ea7e1de450cfad33c0f1808acfcc353",
+        "file": "Test signal 23 (typewriter).wav",
+        "pressure_f64le_sha256": "c67d32d7146dbf2a83791ff439973642f0089a9c17e1ae133502b80827837433",
+        "padded_pressure_f64le_sha256": "66444dbcddae883cc0af88bafe3706c7adc8b0dcb508ff480cbf9f6870b2a2da",
+        "padded_WAV_sha256": "3f1652b0f3de3962883f99e2299212f72591fe69187afa16ba240e5389e8ffae",
+        "calibration_factor": {
+          "decimal17": "2.8357977163914438",
+          "bits": "4006afb6b68fc829"
+        },
+        "C_Rust_same_input": true,
+        "CLI_wrapper_padded_pressure_sha256": "66444dbcddae883cc0af88bafe3706c7adc8b0dcb508ff480cbf9f6870b2a2da",
+        "CLI_input_identity_passed": true
+      },
+      "output_hashes": {
+        "C_unpadded_n": "321bb37057997ba75cadaa99132c54115227f35bd4bce96ad2b84e7c730a8aa2",
+        "C_unpadded_spec": "356f5b67655879afa899183a7201880f6c7cf8b6b7b901143bec373319e91cf5",
+        "C_padded_n": "02a5826a46213f38d0e7515e88a7100428a7dbf75d82c32ef0ad5f84fb7a4f7b",
+        "C_padded_spec": "d9905474e438556da6b90cbb7327af1bb66bdc5df382a0588f50ba86083f7563",
+        "Rust_n": "7eda4686fd90d0795b9f9512a3f5316380c96b8eabb15fc759eba0b0cc5a177d",
+        "Rust_spec": "a0f39fc712774e27130dbd1d0b96ae08bc751de7201ecf36f064fcd2f98d7993",
+        "Rust_time": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99"
+      }
+    },
+    {
+      "signal": 24,
+      "input": {
+        "format": "PCM signed 16-bit little-endian",
+        "channels": 1,
+        "sample_rate": 48000,
+        "sample_width_bytes": 2,
+        "samples": 115202,
+        "WAV_sha256": "85e566d2ba104b1b5f8b380720b37083448abca8d8913d159710e94a7c184fd4",
+        "PCM_payload_sha256": "9dbf05ebc7e398e734a47140c94a4e00736b0a52c72bd909e629228206af967f",
+        "decoded_f64le_sha256": "441eba1d064056821b2075e3042a4617424a179033e8e3c019827cbc82950dcd",
+        "file": "Test signal 24 (woodpecker).wav",
+        "pressure_f64le_sha256": "2f20c961bb76b3f29e8d36a3a80edddfc56336c4784bfefece75831e474d1298",
+        "padded_pressure_f64le_sha256": "6a702e4640a9a0436966f2afca9fead44bb177e155a978d0249ec27c87f2db8d",
+        "padded_WAV_sha256": "4cab5f87c8673e5b23ada6240dd82bd43868785f98fc4b8bbee28f287ec87935",
+        "calibration_factor": {
+          "decimal17": "2.8357977163914438",
+          "bits": "4006afb6b68fc829"
+        },
+        "C_Rust_same_input": true,
+        "CLI_wrapper_padded_pressure_sha256": "6a702e4640a9a0436966f2afca9fead44bb177e155a978d0249ec27c87f2db8d",
+        "CLI_input_identity_passed": true
+      },
+      "output_hashes": {
+        "C_unpadded_n": "531341f525cf921b851540d9453812f19dff6fa6e7585ea883960352f116d80e",
+        "C_unpadded_spec": "89b76de8f6102cb74d2249874d3f71fab9a73ebbe975ab49328c7ea3869f2bfd",
+        "C_padded_n": "8d6617b534c337abf2f591b886932215bd2f721d235eb46db7f61401eddef866",
+        "C_padded_spec": "40e74a0b0413117d673c75b41fb41cb2328fd82ece28aed5e6c556a1896704f0",
+        "Rust_n": "ef5a2fde2b143d050a123c99ed8d5286e47e49e59d7dc4a7335c772a3c320fa9",
+        "Rust_spec": "24bd6efed61aac88f9f6048cf2af460302388baed0b10ead41b82f746dea5176",
+        "Rust_time": "e02214a308b5047b68ef555c698aca0da42dbc613db86a58c0c3478422558ca0"
+      }
+    },
+    {
+      "signal": 25,
+      "input": {
+        "format": "PCM signed 16-bit little-endian",
+        "channels": 1,
+        "sample_rate": 48000,
+        "sample_width_bytes": 2,
+        "samples": 122401,
+        "WAV_sha256": "972e87bbecb4531ab5b53255dbb9c13c11f59a769a726e37002875bc424c75a8",
+        "PCM_payload_sha256": "551a0b9b090589487613b6f078eeadc6a80f428e6059f60856c04a69275e4bc5",
+        "decoded_f64le_sha256": "d4932caac23028b91e901263efa9743299e3b3ded622d67f33c86b137b144a56",
+        "file": "Test signal 25 (full can rattle).wav",
+        "pressure_f64le_sha256": "0f2ecae2a233732ad0763da35c20168aaa19db3af8298f88539b1faf358babcb",
+        "padded_pressure_f64le_sha256": "853051b8b93b59c1dd55e027b6468294d3ba7126f753b11f44b84a8e9ee2ba25",
+        "padded_WAV_sha256": "173faf3e482a416d5d1f727dec0b20063a166942b08d3a5a64f4fa540fda52ef",
+        "calibration_factor": {
+          "decimal17": "2.8357977163914438",
+          "bits": "4006afb6b68fc829"
+        },
+        "C_Rust_same_input": true,
+        "CLI_wrapper_padded_pressure_sha256": "853051b8b93b59c1dd55e027b6468294d3ba7126f753b11f44b84a8e9ee2ba25",
+        "CLI_input_identity_passed": true
+      },
+      "output_hashes": {
+        "C_unpadded_n": "6cff40d9f69ebf3f48aaf24e5c4540576db6c908b6117f154598887e03d21814",
+        "C_unpadded_spec": "672efc51816926516aa53e01e9b29ba8a9b690c6501973231451e4500e2bba70",
+        "C_padded_n": "18a0bafb77493d9f07c22858026f851342371be11214daff22850f7510de3802",
+        "C_padded_spec": "15dda26e7ca19ba2faecfd58ceeecd13ce614fd92685853b34f14e19ca1ed1fd",
+        "Rust_n": "6ba1ad9fdeb0645b004422a1598e7aa58b8bd7b495a2fab2e024f1d5a93b8fe9",
+        "Rust_spec": "35c95ae1fa418d0febb56267885ab0bf49a89948d63ecca997957dadc4026b2a",
+        "Rust_time": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99"
+      }
+    }
+  ],
+  "boundary_base": {
+    "signal": 18,
+    "samples": 4897,
+    "pressure_f64le_sha256": "b01e838eddf9f8e3fae07b95e7a175b9c54e05c4aa9ea741dcc4d9db1fd9e448",
+    "original_WAV_sha256": "7cfca7001bff2a0746cdc7d39e0ebfaa631b60d3d99726847db2d6914da13904"
+  },
+  "boundary_inputs": [
+    {
+      "L": 4800,
+      "input_pressure_f64le_sha256": "5c9b37300155c1f3338bc88f17d69c51fb248b0de0155630962ca6504d789bba",
+      "WAV_sha256": "639dad0ac2923f5fe9e9ccfb99aa9b3084048e2e53317d1903e6e899a4f6296a"
+    },
+    {
+      "L": 4801,
+      "input_pressure_f64le_sha256": "4b9cb4148eb60f6341dc0cf6d1fb30547ed455d04794590b5cec1400907b4e71",
+      "WAV_sha256": "ec588fb3140d160ff79f5c3f20cb96028a1cb55787f06f64fd8fe24c1500036d"
+    },
+    {
+      "L": 4823,
+      "input_pressure_f64le_sha256": "9077166dab864084191d959f93ccecd52fac3481ebb08e3e2a5271d022354904",
+      "WAV_sha256": "bdb7c8103e4313994754f4f3ceea23ecb579692cf24b272331253926765bf6ce"
+    },
+    {
+      "L": 4824,
+      "input_pressure_f64le_sha256": "aba2c0cfdc28fe9e6d002cdbbb775a37b8efe991e6bfec5791f5ab7b87f002ce",
+      "WAV_sha256": "8b57b03bc4454ba676557957be3a1b35f72b3dd7c28e872fe92a2073cece0b6e"
+    },
+    {
+      "L": 4825,
+      "input_pressure_f64le_sha256": "a8f409b405f6db0ad6af529c23c934d1a1799c900476ed2ef991bb63cfe93a1c",
+      "WAV_sha256": "526b36ac4b7eed8f7a0dd5dcc1cc916dd6e34240ab029f6f49f012d279743ed2"
+    },
+    {
+      "L": 4895,
+      "input_pressure_f64le_sha256": "1d1c12757c917d621405e2cdfbf958f9514478e4039311c1eabebe44d7f522a2",
+      "WAV_sha256": "e2a000357608bc8585cbb6796a4294c8a9897ec41c8cdb227af5f65e584a4cb9"
+    },
+    {
+      "L": 4896,
+      "input_pressure_f64le_sha256": "261136c91bfdf513f75f87fe26f971a5b37d9bd4601c2089ca15329fc1b02ad9",
+      "WAV_sha256": "a52c1f00acca017b42209507f8507d7e9e959d382a45427d43dc78531d35cd0e"
+    },
+    {
+      "L": 4897,
+      "input_pressure_f64le_sha256": "b01e838eddf9f8e3fae07b95e7a175b9c54e05c4aa9ea741dcc4d9db1fd9e448",
+      "WAV_sha256": "bee83228767c657b3de27aa3b551027ab7e417f0df246dc0aafc68ef69b4e79a"
+    }
+  ],
+  "executed_harness_hashes_before_redaction": {
+    "run_experiment.py": "b903781ff8f2bcade36010c9f2015b7c6bae3d316495aa0e50fcd11d3c07d1eb",
+    "decoder-wrapper.c.txt": "28f8312e899c36e81088d490e5e61122244b37eb7e8997952574f3ef6e6c2166",
+    "rust-probe.rs.txt": "7b3d6d219595965b1c3965e68da4a9df4eec264c310c0cd625d535a423c09f0e",
+    "build.cmd": "a35a987002802d8ea0978c700fed4b113ccf1eb314ba9829f19b3724e2b7f1bf"
+  },
+  "executed_runner_copy": "attempt-1-run_experiment.py.txt"
+}

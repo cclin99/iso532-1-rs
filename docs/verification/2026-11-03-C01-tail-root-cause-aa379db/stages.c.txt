@@ -1,0 +1,41 @@
+/* Original official file remains byte-identical. Wrapper calls/export only. */
+#include <string.h>
+#include "ISO_532-1.c"
+#define API __declspec(dllexport)
+static void rows(double *flat, double **p, int bands, int n) {
+    int b; for(b=0;b<bands;b++) p[b]=flat+b*n;
+}
+API int rc_filter(double *x,int len,double *out) {
+    struct InputData in={len,48000,x}; double *p[28]; rows(out,p,28,len/24);
+    return f_calc_third_octave_levels(&in,p,24,LoudnessMethodTimeVarying,0);
+}
+API int rc_main(double *tol,int n,double *out) {
+    int k; double *tp[28],*cp[21],*ip[11],*lp[3];
+    double *intens=calloc(11*n,sizeof(double)),*lcb=calloc(3*n,sizeof(double));
+    double *tol_work=malloc(28*n*sizeof(double));
+    if(!intens || !lcb || !tol_work) return -1;
+    /* The official core stage mutates its SPL argument. Preserve caller evidence. */
+    memcpy(tol_work,tol,28*n*sizeof(double));
+    rows(tol_work,tp,28,n);rows(out,cp,21,n);rows(intens,ip,11,n);rows(lcb,lp,3,n);
+    for(k=0;k<n;k++) {
+        f_corr_third_octave_intensities(tp,ip,k); f_calc_lcbs(ip,lp,k);
+        f_calc_core_loudness(tp,lp,cp,SoundFieldFree,k);
+    }
+    for(k=0;k<n;k++) f_corr_loudness(cp,k);
+    free(intens);free(lcb);free(tol_work);return 0;
+}
+API int rc_nl(double *core,int n,double *out) {
+    double *p[21];memcpy(out,core,21*n*sizeof(double));rows(out,p,21,n);
+    f_nl(p,2000,n);return 0;
+}
+API int rc_slopes(double *nl,int n,double *total,double *spec) {
+    int k;double *p[21],*s[240];rows(nl,p,21,n);rows(spec,s,240,n);
+    for(k=0;k<n;k++)f_calc_slopes(p,total,s,k);return 0;
+}
+API int rc_tw(double *in,int n,double *out) {
+    memcpy(out,in,n*sizeof(double));return f_temporal_weight_loudness(out,2000,n);
+}
+API int rc_public(double *x,int len,double *n,double *spec) {
+    struct InputData in={len,48000,x};double *s[240];rows(spec,s,240,len/24);
+    return f_loudness_from_signal(&in,SoundFieldFree,LoudnessMethodTimeVarying,0,n,s,len/24);
+}

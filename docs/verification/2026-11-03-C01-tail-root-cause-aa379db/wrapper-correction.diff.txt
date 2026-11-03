@@ -1,0 +1,23 @@
+--- attempt-1-stages.c
++++ stages.c
+@@ -12,14 +12,17 @@
+ API int rc_main(double *tol,int n,double *out) {
+     int k; double *tp[28],*cp[21],*ip[11],*lp[3];
+     double *intens=calloc(11*n,sizeof(double)),*lcb=calloc(3*n,sizeof(double));
+-    if(!intens || !lcb) return -1;
+-    rows(tol,tp,28,n);rows(out,cp,21,n);rows(intens,ip,11,n);rows(lcb,lp,3,n);
++    double *tol_work=malloc(28*n*sizeof(double));
++    if(!intens || !lcb || !tol_work) return -1;
++    /* The official core stage mutates its SPL argument. Preserve caller evidence. */
++    memcpy(tol_work,tol,28*n*sizeof(double));
++    rows(tol_work,tp,28,n);rows(out,cp,21,n);rows(intens,ip,11,n);rows(lcb,lp,3,n);
+     for(k=0;k<n;k++) {
+         f_corr_third_octave_intensities(tp,ip,k); f_calc_lcbs(ip,lp,k);
+         f_calc_core_loudness(tp,lp,cp,SoundFieldFree,k);
+     }
+     for(k=0;k<n;k++) f_corr_loudness(cp,k);
+-    free(intens);free(lcb);return 0;
++    free(intens);free(lcb);free(tol_work);return 0;
+ }
+ API int rc_nl(double *core,int n,double *out) {
+     double *p[21];memcpy(out,core,21*n*sizeof(double));rows(out,p,21,n);

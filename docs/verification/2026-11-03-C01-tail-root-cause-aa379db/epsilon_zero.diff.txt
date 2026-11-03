@@ -1,0 +1,11 @@
+--- ISO_532-1.c.original
++++ epsilon_zero.diagnostic.c
+@@ -859,7 +859,7 @@
+         pCoreL  = CoreLoudness[IdxCL]+IdxTime;
+         CoreL   = *pCoreL;
+         _ZUP    = ZUP[IdxCL];
+-        _ZUP    += .0001f;
++        _ZUP    += 0.0;
+         IdxCBN  = IdxCL - 1;
+         if (IdxCBN > N_CB_RANGES-1) 
+             IdxCBN  = N_CB_RANGES-1;

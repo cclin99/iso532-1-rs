@@ -1,0 +1,4 @@
+#![allow(dead_code)]
+use std::{env,fs,io::Write,path::Path};mod off24;mod off22;mod tables22;
+fn save(d:&Path,name:&str,x:&[f64]){let mut f=fs::File::create(d.join(format!("{name}.bin"))).unwrap();for v in x{f.write_all(&v.to_le_bytes()).unwrap();}}
+fn main(){let a:Vec<String>=env::args().collect();let raw=fs::read(&a[1]).unwrap();let x:Vec<f64>=raw.chunks_exact(8).map(|b|f64::from_le_bytes(b.try_into().unwrap())).collect();let n=x.len()/21;let d=Path::new(&a[2]);let mut y24=vec![0.;n];let mut y22=vec![0.;n];for t in 0..n{let frame=std::array::from_fn(|b|x[b*n+t]);y24[t]=off24::calc_slopes_n_only(&frame);y22[t]=off22::calc_slopes_n_only(&frame);}save(d,"slope24",&y24);save(d,"slope22",&y22);save(d,"tw24",&iso532::zwtv::temporal_weighting::temporal_weighting(&y24));save(d,"tw22",&iso532::zwtv::temporal_weighting::temporal_weighting(&y22));}

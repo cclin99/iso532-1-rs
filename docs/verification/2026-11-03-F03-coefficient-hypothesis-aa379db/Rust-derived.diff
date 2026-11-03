@@ -1,0 +1,9 @@
+--- calc_slopes.rs.original
++++ calc_slopes.rs.derived
+@@ -204,6 +204,7 @@
+ }
+ 
+ fn usl_value(rns_idx: usize, band_idx: usize) -> f64 {
++    if rns_idx == 12 && band_idx.min(7) == 4 { crate::READS.fetch_add(1, std::sync::atomic::Ordering::Relaxed); }
+     USL[rns_idx][band_idx.min(7)]
+ }

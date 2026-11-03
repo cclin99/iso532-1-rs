@@ -1,0 +1,297 @@
+{
+  "meaning": "Final post-redaction UTF-8 delivery bytes; not raw input/source/binary identity.",
+  "self_excluded": "delivery-integrity.json",
+  "file_count": 58,
+  "files": [
+    {
+      "file": "artifact-audit.json",
+      "size_bytes": 2292,
+      "sha256": "fae8c2c1506d0e3a70877a63affbac6853b7bfdf0e3851ad21a993a122f014bc"
+    },
+    {
+      "file": "attempt-1-results.json",
+      "size_bytes": 473755,
+      "sha256": "54e41ad84013b6959883f232a4a71193ee75eb20aa68055715e9dea8b8cf2f25"
+    },
+    {
+      "file": "attempt-1-run_experiment.py.txt",
+      "size_bytes": 18649,
+      "sha256": "b903781ff8f2bcade36010c9f2015b7c6bae3d316495aa0e50fcd11d3c07d1eb"
+    },
+    {
+      "file": "audit_artifacts.py",
+      "size_bytes": 2989,
+      "sha256": "af2c4385df9bdcc2a14946a2581a518a56db79400c3fd7e6d0871ef13e5254a4"
+    },
+    {
+      "file": "boundary-4800-Loudness.csv",
+      "size_bytes": 922,
+      "sha256": "7124bc5abc41c20758a39d6d4885efd091b671e3ef1897d92c657baddc02a955"
+    },
+    {
+      "file": "boundary-4800-SpecLoudness.csv",
+      "size_bytes": 86402,
+      "sha256": "aa28876b0b02e26028d1f347540551d73a2170210f2a2616347dbfd04a9fbdad"
+    },
+    {
+      "file": "boundary-4801-Loudness.csv",
+      "size_bytes": 922,
+      "sha256": "7124bc5abc41c20758a39d6d4885efd091b671e3ef1897d92c657baddc02a955"
+    },
+    {
+      "file": "boundary-4801-SpecLoudness.csv",
+      "size_bytes": 86402,
+      "sha256": "aa28876b0b02e26028d1f347540551d73a2170210f2a2616347dbfd04a9fbdad"
+    },
+    {
+      "file": "boundary-4823-Loudness.csv",
+      "size_bytes": 922,
+      "sha256": "7124bc5abc41c20758a39d6d4885efd091b671e3ef1897d92c657baddc02a955"
+    },
+    {
+      "file": "boundary-4823-SpecLoudness.csv",
+      "size_bytes": 86402,
+      "sha256": "aa28876b0b02e26028d1f347540551d73a2170210f2a2616347dbfd04a9fbdad"
+    },
+    {
+      "file": "boundary-4824-Loudness.csv",
+      "size_bytes": 922,
+      "sha256": "7124bc5abc41c20758a39d6d4885efd091b671e3ef1897d92c657baddc02a955"
+    },
+    {
+      "file": "boundary-4824-SpecLoudness.csv",
+      "size_bytes": 88091,
+      "sha256": "54fb16cb32eea332c8ce0c947b3e614be47cc94b76ad4e4ff2041e9b5a2d2c85"
+    },
+    {
+      "file": "boundary-4825-Loudness.csv",
+      "size_bytes": 922,
+      "sha256": "7124bc5abc41c20758a39d6d4885efd091b671e3ef1897d92c657baddc02a955"
+    },
+    {
+      "file": "boundary-4825-SpecLoudness.csv",
+      "size_bytes": 88091,
+      "sha256": "54fb16cb32eea332c8ce0c947b3e614be47cc94b76ad4e4ff2041e9b5a2d2c85"
+    },
+    {
+      "file": "boundary-4895-Loudness.csv",
+      "size_bytes": 922,
+      "sha256": "7124bc5abc41c20758a39d6d4885efd091b671e3ef1897d92c657baddc02a955"
+    },
+    {
+      "file": "boundary-4895-SpecLoudness.csv",
+      "size_bytes": 88091,
+      "sha256": "54fb16cb32eea332c8ce0c947b3e614be47cc94b76ad4e4ff2041e9b5a2d2c85"
+    },
+    {
+      "file": "boundary-4896-Loudness.csv",
+      "size_bytes": 937,
+      "sha256": "5d15d8c4d50671b6a6e6b187e5a0c08c2d7e110b2c8f96073c91861a9260c297"
+    },
+    {
+      "file": "boundary-4896-SpecLoudness.csv",
+      "size_bytes": 88091,
+      "sha256": "54fb16cb32eea332c8ce0c947b3e614be47cc94b76ad4e4ff2041e9b5a2d2c85"
+    },
+    {
+      "file": "boundary-4897-Loudness.csv",
+      "size_bytes": 937,
+      "sha256": "5d15d8c4d50671b6a6e6b187e5a0c08c2d7e110b2c8f96073c91861a9260c297"
+    },
+    {
+      "file": "boundary-4897-SpecLoudness.csv",
+      "size_bytes": 88091,
+      "sha256": "54fb16cb32eea332c8ce0c947b3e614be47cc94b76ad4e4ff2041e9b5a2d2c85"
+    },
+    {
+      "file": "build-c.cmd.txt",
+      "size_bytes": 500,
+      "sha256": "a35a987002802d8ea0978c700fed4b113ccf1eb314ba9829f19b3724e2b7f1bf"
+    },
+    {
+      "file": "commands.md",
+      "size_bytes": 4131,
+      "sha256": "a218b6631dc4216204093c1963b11f5f6945e213598f9b10653accca65e4e64f"
+    },
+    {
+      "file": "control-correction.diff.txt",
+      "size_bytes": 685,
+      "sha256": "b360e270b144156e24463b1dc1d18035b906ea2e5a50cc4a1226d5bf2398ce4e"
+    },
+    {
+      "file": "control-correction.json",
+      "size_bytes": 71503,
+      "sha256": "ca5f349d90ab4553b6dc0e8c08b488f40a2715619f8b58984c2597bbcd1b3c62"
+    },
+    {
+      "file": "decoder-wrapper.c.txt",
+      "size_bytes": 1135,
+      "sha256": "28f8312e899c36e81088d490e5e61122244b37eb7e8997952574f3ef6e6c2166"
+    },
+    {
+      "file": "delivery-check.md",
+      "size_bytes": 3996,
+      "sha256": "11d38f32ce9fa07058a8ebef7f91809918ebf59217de67585ab9353035da7c75"
+    },
+    {
+      "file": "diagnose_history.py",
+      "size_bytes": 4183,
+      "sha256": "6098955114a750f8b4886e97de22b2cc935f3894e33250b0a61d89d3690cd2d1"
+    },
+    {
+      "file": "diff-review.json",
+      "size_bytes": 18684,
+      "sha256": "ad1ddfce8ef5c1ba9b60f072c60325d171cc8722666dc5477692d0873134cea5"
+    },
+    {
+      "file": "execution-summary.json",
+      "size_bytes": 296,
+      "sha256": "d17f7ce75dcb16206f58c80f47b17b0944c0a52b548d8fdd9df65f82c6c8d270"
+    },
+    {
+      "file": "experiment-design.en.md",
+      "size_bytes": 5695,
+      "sha256": "4245c06fc1b9bf66632fd8ee7a248a1fed26ba2dddd5e4488a51daedb6a32b9c"
+    },
+    {
+      "file": "experiment-design.md",
+      "size_bytes": 4777,
+      "sha256": "7b338889f37088c3fb412d7ccd0cc149bd634989fd0255a049a7037ff9b49af3"
+    },
+    {
+      "file": "finalize_delivery.py",
+      "size_bytes": 7975,
+      "sha256": "056383640b8d48ed0d74fc73a297aa71ff2278af9cea1ab5fe7d6f73e2755ac7"
+    },
+    {
+      "file": "history-diagnostic.json",
+      "size_bytes": 61195,
+      "sha256": "fca90036b0053c8a9f2dcff52d5acab19e01ee350dcf8d7e30c4e69a4b25f596"
+    },
+    {
+      "file": "probe-Cargo.lock.txt",
+      "size_bytes": 3043,
+      "sha256": "e1e4f542ca8331ca0a02d7cc253e3aa59e7dcebba3d8507fcac12244b5c86636"
+    },
+    {
+      "file": "probe-Cargo.toml",
+      "size_bytes": 120,
+      "sha256": "90837543fac9163036d01a8c82fb9eafe89da002ad01a6a2dec55d6145186123"
+    },
+    {
+      "file": "redaction-final.log",
+      "size_bytes": 476,
+      "sha256": "2346cc7da2d41804256db097c80f88ad2a990f32a10c61e51d333d24e680fca6"
+    },
+    {
+      "file": "render_reports.py",
+      "size_bytes": 19475,
+      "sha256": "ff1e468defab1f6a25bbdd869ecfda62b9db9604bdb86f41ba981316dfb9d79f"
+    },
+    {
+      "file": "repair_control.py",
+      "size_bytes": 3766,
+      "sha256": "cb498f86749dbd90a0274f878c841c9f7d4a1a781d762f1a969a83307d50644d"
+    },
+    {
+      "file": "report.en.md",
+      "size_bytes": 12426,
+      "sha256": "0567239453026ac840a9b7f555904d70ccf67592eab59615d2308fc5dda514f1"
+    },
+    {
+      "file": "report.md",
+      "size_bytes": 11087,
+      "sha256": "3b52548df3238f71c258cdaa7fbe00afc8a8522f552766b6528e720ce648d3a9"
+    },
+    {
+      "file": "results.json",
+      "size_bytes": 474602,
+      "sha256": "84dc68fe0223bc9dc239d05bdd97392067a2b72f7adc9e11202e48d983cf521f"
+    },
+    {
+      "file": "run-log.json",
+      "size_bytes": 182437,
+      "sha256": "b2e9bab1dd89c01b043efb4a571fab702bac9c6873c906c191705ac58efe4d49"
+    },
+    {
+      "file": "run-start.json",
+      "size_bytes": 339,
+      "sha256": "032d6b7b932db988a766c8324713e6419105c8ab8cdfba7806642ba0e3816f0e"
+    },
+    {
+      "file": "run_experiment.py",
+      "size_bytes": 18649,
+      "sha256": "153a5c008da6067f51cd1c0662efcc6af824ab378483746b7f87fa7ae490c5d2"
+    },
+    {
+      "file": "rust-probe.rs.txt",
+      "size_bytes": 1136,
+      "sha256": "7b3d6d219595965b1c3965e68da4a9df4eec264c310c0cd625d535a423c09f0e"
+    },
+    {
+      "file": "signal-18-padded-Loudness.csv",
+      "size_bytes": 16509,
+      "sha256": "d1ab7f84a74ed49755249e9477b9c92aef89dfa133cb7779dd6c787922ecbfad"
+    },
+    {
+      "file": "signal-18-padded-SpecLoudness.csv",
+      "size_bytes": 1834517,
+      "sha256": "5b7fca4738a1f6333a8a0675cdd90e7b6afe6cfa0e56357bc61be9180dc65522"
+    },
+    {
+      "file": "signal-18-target.csv",
+      "size_bytes": 28129,
+      "sha256": "c920baa09f48021aee1ff5323ce9cb62db931c47ae25f6bddd34bfecc8c222e2"
+    },
+    {
+      "file": "signal-23-padded-Loudness.csv",
+      "size_bytes": 19417,
+      "sha256": "9360beccc4a5e7c319f73e89a89d72af5ca598f43e3c9b22d0ccfd6b910b6e1e"
+    },
+    {
+      "file": "signal-23-padded-SpecLoudness.csv",
+      "size_bytes": 2158805,
+      "sha256": "5e68b9cf9103b834cd7ee80d395be5bc1358f657e6c87dbe0bc17a401fb01e95"
+    },
+    {
+      "file": "signal-23-target.csv",
+      "size_bytes": 27465,
+      "sha256": "08fdfcc31001be7fd666dab86a9b4599215b6101a5abcb3c480b1099e773d4ca"
+    },
+    {
+      "file": "signal-24-padded-Loudness.csv",
+      "size_bytes": 18202,
+      "sha256": "29d75a1d268098addeda1d6aee43f4ef128401bf9f9a5cf70c15187ffa1cbb5f"
+    },
+    {
+      "file": "signal-24-padded-SpecLoudness.csv",
+      "size_bytes": 2032130,
+      "sha256": "24e721ac8af7745374bd3bea6aee880218ce387429eb7819b0cdb76812996b60"
+    },
+    {
+      "file": "signal-24-target.csv",
+      "size_bytes": 28079,
+      "sha256": "24ee028cb9b1645d13ec2431f417b9974ac7995f5e515cad2181d87103716ccf"
+    },
+    {
+      "file": "signal-25-padded-Loudness.csv",
+      "size_bytes": 19327,
+      "sha256": "d83dd561fcaac80ab522aba4e2beea89b7be66c263edf6ad66c5d216dfebdd02"
+    },
+    {
+      "file": "signal-25-padded-SpecLoudness.csv",
+      "size_bytes": 2158805,
+      "sha256": "8b3c042e490663cb307169192a3ed629864019eeece434bd8443debf3911f35f"
+    },
+    {
+      "file": "signal-25-target.csv",
+      "size_bytes": 27517,
+      "sha256": "088408e672c5e84319fe9019bc9359040a60080b07e5ae2e5b42597eb6bdb283"
+    },
+    {
+      "file": "source-input-hashes.json",
+      "size_bytes": 24383,
+      "sha256": "24f4ff3a954e9eacfe14efbf595c626486cb5845bc524b5186a8f6d3146c1e55"
+    }
+  ]
+}

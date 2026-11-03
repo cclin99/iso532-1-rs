@@ -1,0 +1,18 @@
+--- ISO_532-1.c.original
++++ ISO_532-1.c.derived
+@@ -836,6 +836,7 @@
+ 
+ /*  Calculation of specific loudness pattern and integration of overall 
+     loudness by attaching slopes towards higher frequencies             */
++static int target_reads = 0;
+ void f_calc_slopes( double **CoreLoudness, double *Loudness,
+                     double *SpecLoudness[N_BARK_BANDS], int IdxTime)
+ {
+@@ -867,6 +868,7 @@
+         do 
+         {   if (N1 > CoreL) /*  Slope loudness > core loudness?         */
+             {   _USL    = USL[IdxRNS][IdxCBN];
++                if (IdxRNS == 12 && IdxCBN == 4) target_reads++;
+                 /*  Contribution of the value N2 of the specific 
+                     loudness at the cut-off frequency of the 
+                     corresponding critical band                         */

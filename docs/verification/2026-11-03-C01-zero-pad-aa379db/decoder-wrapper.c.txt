@@ -1,0 +1,26 @@
+/* Input-only wrapper. The official DSP compilation unit is unmodified.
+ * Calibration statements follow official CLI main.c lines 244-260.
+ * This exports calibrated inputs, not an alternative loudness algorithm. */
+#include "ISO_532-1.h"
+#include "ISO_532-1_helper.h"
+#include <math.h>
+#include <stdlib.h>
+__declspec(dllexport) int c01_decode(const char *wav, const char *cal,
+    double level, double *out, int capacity, double *factor) {
+    struct InputData signal, reference;
+    double sum = 0, *p;
+    int i;
+    if (f_read_wavfile(wav, &signal) != 1) return -100;
+    if (f_read_wavfile(cal, &reference) != 1) return -101;
+    if (signal.SampleRate != 48000 || reference.SampleRate != 48000 ||
+        signal.NumSamples > capacity) return -102;
+    p = reference.pData;
+    for (i = 0; i < reference.NumSamples; i++) { sum += pow(*p, 2); p++; }
+    sum /= reference.NumSamples;
+    *factor = sqrt(pow(10, level / 10) * I_REF / sum);
+    p = signal.pData;
+    for (i = 0; i < signal.NumSamples; i++) { *p *= *factor; out[i] = *p; p++; }
+    i = signal.NumSamples;
+    free(signal.pData); free(reference.pData);
+    return i;
+}

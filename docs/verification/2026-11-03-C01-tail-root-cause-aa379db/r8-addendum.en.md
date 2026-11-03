@@ -1,0 +1,3 @@
+# Final exploratory comparison-rounding control
+
+Before execution: 2026-11-03T13:11:06.700272+00:00. After epsilon/table controls left a measurable same-input slope gap, test ONLY replacing Rust r8(value)=(value*1e8).round()/1e8 with identity in already unrounded slope modules, both cell24 and cell22. Original Rust/C remain unchanged. Fix R nonlinear history and R TW. Record the 2x2 cell/r8 interaction, tail residual against original C slopes on that history and epsilon-zero/tables-double C diagnostic, full history counts and hashes. This is the last bounded control; afterward stop and report any residual unresolved. No threshold changes or code-fix claim.

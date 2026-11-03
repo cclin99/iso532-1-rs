@@ -1,0 +1,7 @@
+{
+  "primary_runner_exit_code": 0,
+  "isolated_control_repair_exit_code": 0,
+  "history_diagnostic_exit_code": 0,
+  "report_generation_exit_code": 0,
+  "note": "Observed process exit codes. These indicate completed execution, not numerical acceptance; strict total gate remains failed."
+}

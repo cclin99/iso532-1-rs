@@ -1,0 +1,6 @@
+First runner invocation exited 1 during Python parsing, before creating scratch or run-start.json:
+run_experiment.py:164: SyntaxError: closing parenthesis ']' does not match opening parenthesis '{' on line 156.
+Correction: dict comprehension terminator ]] } (without space) changed to ] } (without space).
+No computation or numerical result existed at this point; no threshold or source changed.
+
+Attempt 1 computation exited 1 before replay equivalence/attribution: C main stage returned 0 but mutated the supplied SPL input. Official f_calc_core_loudness modifies ThirdOctaveLevel in place. The input-immutability guard caught it. Original wrapper/runner/start/log/partial are preserved with attempt-1 prefix. Correction: wrapper copies SPL into a private work buffer before invoking the original official routines; no original C source/body changes. Repeat all computations in fresh run2 scratch.

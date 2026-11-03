@@ -1,0 +1,722 @@
+[
+  {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "<REPO>",
+    "exit_code": 0,
+    "stdout": " M docs/verification/README.md\n?? docs/verification/2026-11-03-C01-tail-root-cause-aa379db/\n?? docs/verification/2026-11-03-C01-zero-pad-aa379db/\n?? docs/verification/2026-11-03-F03-coefficient-hypothesis-aa379db/\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\source.tar",
+      "aa379db8f3dc37f5048ac6c8b7a6d4ba2a6c3b76",
+      "Cargo.toml",
+      "Cargo.lock",
+      "iso532",
+      "iso532-ffi",
+      "iso532-py"
+    ],
+    "cwd": "<REPO>",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "cmd",
+      "/c",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\c\\build.cmd"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\c",
+    "exit_code": 0,
+    "stdout": "**********************************************************************\n** Visual Studio 2022 Developer Command Prompt v17.0\n** Copyright (c) 2025 Microsoft Corporation\n**********************************************************************\n[vcvarsall.bat] Environment initialized for: 'x64'\nstages.c\n   正在建立程式庫 stages.lib 和物件 stages.exp\n",
+    "stderr": "'vswhere.exe' is not recognized as an internal or external command,\noperable program or batch file.\n"
+  },
+  {
+    "command": [
+      "cmd",
+      "/c",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\c\\version.cmd"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\c",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "'vswhere.exe' is not recognized as an internal or external command,\noperable program or batch file.\nMicrosoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64\nCopyright (C) Microsoft Corporation.  著作權所有，並保留一切權利。\n\n編譯器傳遞: \n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\cl.exe:        版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c1.dll:        版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c1xx.dll:      版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c2.dll:        版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c1xx.dll:      版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe:      版本 14.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\mspdb140.dll:  版本 14.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\1028\\clui.dll: 版本 19.44.35228.0\n\ncl : 命令列 error D8003 : 遺漏原始程式檔檔名\n"
+  },
+  {
+    "command": [
+      "rustc",
+      "--version"
+    ],
+    "cwd": "<REPO>",
+    "exit_code": 0,
+    "stdout": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "cargo",
+      "--version"
+    ],
+    "cwd": "<REPO>",
+    "exit_code": 0,
+    "stdout": "cargo 1.99.1 (5f94df478 2026-08-27)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "cargo",
+      "build",
+      "--release",
+      "--offline",
+      "--manifest-path",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\Cargo.toml"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "   Compiling proc-macro2 v1.0.106\n   Compiling crossbeam-utils v0.8.22\n   Compiling crossbeam-epoch v0.9.20\n   Compiling unicode-ident v1.0.24\n   Compiling quote v1.0.46\n   Compiling crossbeam-deque v0.8.7\n   Compiling rayon-core v1.13.0\n   Compiling thiserror v1.0.69\n   Compiling either v1.16.0\n   Compiling syn v2.0.119\n   Compiling rayon v1.12.0\n   Compiling thiserror-impl v1.0.69\n   Compiling iso532 v0.3.1 (<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\snapshot\\iso532)\n   Compiling c01-root-probe v0.0.0 (<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe)\n    Finished `release` profile [optimized] target(s) in 1m 43s\n"
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "pipeline",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-pipeline\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-pipeline"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "{\"frames\":4340,\"avx2_available\":true}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "public",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-original-public\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-original-public"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-reround\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-reround"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T2\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T2"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T3\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T3"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T4\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T4"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T5\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\T5"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "main",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-main-on-Ctol\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-main-on-Ctol"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "nl",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-nl-on-Ccore\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-nl-on-Ccore"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "slopes",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-slopes-on-Cnl\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-slopes-on-Cnl"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\round-C-history\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\round-C-history"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\Rtw-Crounded\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\Rtw-Crounded"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\TW-positive-R\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\TW-positive-R"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "pipeline",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-pipeline\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-pipeline"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "{\"frames\":5108,\"avx2_available\":true}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "public",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-original-public\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-original-public"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-reround\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-reround"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T2\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T2"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T3\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T3"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T4\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T4"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T5\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\T5"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "main",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-main-on-Ctol\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-main-on-Ctol"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "nl",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-nl-on-Ccore\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-nl-on-Ccore"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "slopes",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-slopes-on-Cnl\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-slopes-on-Cnl"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\round-C-history\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\round-C-history"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\Rtw-Crounded\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\Rtw-Crounded"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\TW-positive-R\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\TW-positive-R"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "pipeline",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-pipeline\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-pipeline"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "{\"frames\":4808,\"avx2_available\":true}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "public",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-original-public\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-original-public"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-reround\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-reround"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T2\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T2"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T3\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T3"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T4\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T4"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T5\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\T5"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "main",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-main-on-Ctol\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-main-on-Ctol"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "nl",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-nl-on-Ccore\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-nl-on-Ccore"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "slopes",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-slopes-on-Cnl\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-slopes-on-Cnl"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\round-C-history\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\round-C-history"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\Rtw-Crounded\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\Rtw-Crounded"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\TW-positive-R\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\TW-positive-R"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "pipeline",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-pipeline\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-pipeline"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "{\"frames\":5108,\"avx2_available\":true}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "public",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-original-public\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-original-public"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-reround\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-reround"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T2\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T2"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T3\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T3"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T4\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T4"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T5\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\T5"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "main",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-main-on-Ctol\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-main-on-Ctol"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "nl",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-nl-on-Ccore\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-nl-on-Ccore"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "slopes",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-slopes-on-Cnl\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-slopes-on-Cnl"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "round",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\round-C-history\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\round-C-history"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\Rtw-Crounded\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\Rtw-Crounded"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\TW-positive-R\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\TW-positive-R"
+    ],
+    "cwd": "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "<REPO>",
+    "exit_code": 0,
+    "stdout": " M docs/verification/README.md\n?? docs/verification/2026-11-03-C01-tail-root-cause-aa379db/\n?? docs/verification/2026-11-03-C01-zero-pad-aa379db/\n?? docs/verification/2026-11-03-F03-coefficient-hypothesis-aa379db/\n",
+    "stderr": ""
+  }
+]

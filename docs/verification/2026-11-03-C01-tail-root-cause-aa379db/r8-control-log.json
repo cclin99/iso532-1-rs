@@ -1,0 +1,57 @@
+[
+  {
+    "command": [
+      "cargo",
+      "build",
+      "--release",
+      "--offline",
+      "--manifest-path",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\r8-control\\Cargo.toml",
+      "--target-dir",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "   Compiling c01-r8-control v0.0.0 (<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\r8-control)\n    Finished `release` profile [optimized] target(s) in 1.34s\n"
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-r8-control.exe",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-18\\R-pipeline\\nl.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\r8-control\\signal-18"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-r8-control.exe",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-23\\R-pipeline\\nl.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\r8-control\\signal-23"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-r8-control.exe",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-24\\R-pipeline\\nl.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\r8-control\\signal-24"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-r8-control.exe",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\signal-25\\R-pipeline\\nl.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\r8-control\\signal-25"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

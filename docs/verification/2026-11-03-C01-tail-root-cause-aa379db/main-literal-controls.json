@@ -1,0 +1,1460 @@
+{
+  "started_utc": "2026-11-03T13:06:06.953649+00:00",
+  "primary_results_sha256_before_redaction": "c8e8915c6902c8896c40ae1c728e311563ba59089bdf1cbb3c9331605f228d31",
+  "addendum_sha256": {
+    "exploratory-addendum.en.md": "a8b133840f33c728924f86d60d7dea002f7739fcfbb0d4c5fde8b57a9beb4914",
+    "exploratory-addendum.md": "4020345a542867765179215c827185bd8fa93dfdad024b8bc5f5074b1e152b34"
+  },
+  "source_original_sha256": "a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491",
+  "scope": "Exploratory only: MP1 binary32 literal, then additional low-band correction binary32 literals. No normative change.",
+  "literals": {
+    "0.0635": {
+      "C_binary32_promoted": {
+        "decimal17": "0.063500002026557922",
+        "bits": "3fb0418940000000"
+      },
+      "Rust_binary64": {
+        "decimal17": "0.063500000000000001",
+        "bits": "3fb04189374bc6a8"
+      }
+    },
+    "0.4": {
+      "C_binary32_promoted": {
+        "decimal17": "0.40000000596046448",
+        "bits": "3fd99999a0000000"
+      },
+      "Rust_binary64": {
+        "decimal17": "0.40000000000000002",
+        "bits": "3fd999999999999a"
+      }
+    },
+    "0.32": {
+      "C_binary32_promoted": {
+        "decimal17": "0.31999999284744263",
+        "bits": "3fd47ae140000000"
+      },
+      "Rust_binary64": {
+        "decimal17": "0.32000000000000001",
+        "bits": "3fd47ae147ae147b"
+      }
+    }
+  },
+  "variants": {
+    "mp1_double": {
+      "diagnostic_source_sha256": "2a3d8dfe09147a0deff85c6d068e1782a9613bf04ba092948b5cb70bd929acde",
+      "wrapper_sha256": "f1703fe9d4ba0a8d616542af837d97b8b96d46a1f3ac89bf934bbb064e544162",
+      "binary_sha256": "04480e566267b17d526dbf0a3972c9e46a924750b339f134327f46bf46bc179e",
+      "diff_file": "mp1_double.diff.txt"
+    },
+    "mp1_and_correction_double": {
+      "diagnostic_source_sha256": "f0f137b300bb2674d83a0ec8193d0bfb4991132d1d33fe1f918a0895b9105b47",
+      "wrapper_sha256": "f1703fe9d4ba0a8d616542af837d97b8b96d46a1f3ac89bf934bbb064e544162",
+      "binary_sha256": "a708f7fa69391582c232add6a0b9cebf5679f7b57bdaac03f960c86692a3e12b",
+      "diff_file": "mp1_and_correction_double.diff.txt"
+    }
+  },
+  "signals": [
+    {
+      "signal": 18,
+      "original_main_gap_R_minus_C": -3.153894962033832e-11,
+      "variants": {
+        "mp1_double": {
+          "tail": {
+            "decimal17": "0.00095543260814967004",
+            "bits": "3f4f4ebfe71bc3cd"
+          },
+          "effect_vs_original_C_main": -3.08622461354241e-11,
+          "fraction_of_original_main_gap": 0.9785438800892139,
+          "remaining_R_main_minus_variant": -6.767034849142206e-13,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              4333
+            ],
+            "finite": true,
+            "compared_count": 90993,
+            "bitwise_mismatches": 35939,
+            "above_1e_minus14": 35771,
+            "max_abs_diff": 7.944954472094423e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625967585008631",
+                  "bits": "3f4628e0987f2121"
+                },
+                "right": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "signed_diff": -8.662250387467263e-11,
+                "abs_diff": 8.662250387467263e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625967585008631",
+                  "bits": "3f4628e0987f2121"
+                },
+                "right": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "signed_diff": -8.662250387467263e-11,
+                "abs_diff": 8.662250387467263e-11
+              },
+              "worst": {
+                "coordinate": [
+                  13,
+                  2645
+                ],
+                "left": {
+                  "decimal17": "1.8541653120640456",
+                  "bits": "3ffdaaa93f0b1557"
+                },
+                "right": {
+                  "decimal17": "1.854165320009",
+                  "bits": "3ffdaaa9412d0e75"
+                },
+                "signed_diff": -7.944954472094423e-09,
+                "abs_diff": 7.944954472094423e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4332
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              4333
+            ],
+            "finite": true,
+            "compared_count": 90993,
+            "bitwise_mismatches": 54489,
+            "above_1e_minus14": 54489,
+            "max_abs_diff": 6.518154060941583e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "right": {
+                  "decimal17": "0.00067625978405494577",
+                  "bits": "3f4628e0d3fb9c0c"
+                },
+                "signed_diff": -2.1582355585851587e-11,
+                "abs_diff": 2.1582355585851587e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "right": {
+                  "decimal17": "0.00067625978405494577",
+                  "bits": "3f4628e0d3fb9c0c"
+                },
+                "signed_diff": -2.1582355585851587e-11,
+                "abs_diff": 2.1582355585851587e-11
+              },
+              "worst": {
+                "coordinate": [
+                  12,
+                  2646
+                ],
+                "left": {
+                  "decimal17": "2.0423930573736961",
+                  "bits": "400056d22bd7fad5"
+                },
+                "right": {
+                  "decimal17": "2.0423931225552368",
+                  "bits": "400056d2349799ba"
+                },
+                "signed_diff": -6.518154060941583e-08,
+                "abs_diff": 6.518154060941583e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4332
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "e7c028d8ce2f939bb4338948f0fef034c551cf3f2fd2799e945c2f89a97cb7b6",
+            "input.bin": "f2fc95b48304cd3d94df5a1330f59626400a08c6888248aa391d9d089ffae857",
+            "nl.bin": "2480be61f6b397c38678825f852d51217c5b32005ca278a9492841b4946cb97a",
+            "tw.bin": "41486f91de5d4eb0273ee238ddf9915aed7bb8175f09d9d5ca1dfb07a0f1d87b"
+          }
+        },
+        "mp1_and_correction_double": {
+          "tail": {
+            "decimal17": "0.00095543260814902136",
+            "bits": "3f4f4ebfe71bac6e"
+          },
+          "effect_vs_original_C_main": -3.0862894813583897e-11,
+          "fraction_of_original_main_gap": 0.9785644476150068,
+          "remaining_R_main_minus_variant": -6.760548067544225e-13,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              4333
+            ],
+            "finite": true,
+            "compared_count": 90993,
+            "bitwise_mismatches": 34470,
+            "above_1e_minus14": 34298,
+            "max_abs_diff": 7.944954472094423e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625967585008631",
+                  "bits": "3f4628e0987f2121"
+                },
+                "right": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "signed_diff": -8.662250387467263e-11,
+                "abs_diff": 8.662250387467263e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625967585008631",
+                  "bits": "3f4628e0987f2121"
+                },
+                "right": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "signed_diff": -8.662250387467263e-11,
+                "abs_diff": 8.662250387467263e-11
+              },
+              "worst": {
+                "coordinate": [
+                  13,
+                  2645
+                ],
+                "left": {
+                  "decimal17": "1.8541653120640456",
+                  "bits": "3ffdaaa93f0b1557"
+                },
+                "right": {
+                  "decimal17": "1.854165320009",
+                  "bits": "3ffdaaa9412d0e75"
+                },
+                "signed_diff": -7.944954472094423e-09,
+                "abs_diff": 7.944954472094423e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4332
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              4333
+            ],
+            "finite": true,
+            "compared_count": 90993,
+            "bitwise_mismatches": 54489,
+            "above_1e_minus14": 54489,
+            "max_abs_diff": 6.518154060941583e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "right": {
+                  "decimal17": "0.00067625978405494577",
+                  "bits": "3f4628e0d3fb9c0c"
+                },
+                "signed_diff": -2.1582355585851587e-11,
+                "abs_diff": 2.1582355585851587e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00067625976247259018",
+                  "bits": "3f4628e0c81e29bd"
+                },
+                "right": {
+                  "decimal17": "0.00067625978405494577",
+                  "bits": "3f4628e0d3fb9c0c"
+                },
+                "signed_diff": -2.1582355585851587e-11,
+                "abs_diff": 2.1582355585851587e-11
+              },
+              "worst": {
+                "coordinate": [
+                  12,
+                  2646
+                ],
+                "left": {
+                  "decimal17": "2.0423930573736961",
+                  "bits": "400056d22bd7fad5"
+                },
+                "right": {
+                  "decimal17": "2.0423931225552368",
+                  "bits": "400056d2349799ba"
+                },
+                "signed_diff": -6.518154060941583e-08,
+                "abs_diff": 6.518154060941583e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4332
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "9b7755a7185fa5464974797e000073a95d100adeb3511d63bb1d530877c119d8",
+            "input.bin": "efac6e9cf315c41be22d5f1b9eeb1b0fd095d29583e14ce31e15ac72c5b1cf69",
+            "nl.bin": "4c4930c288a090af31970c8dfa244fbf8e0cb2bd56ae1f4c7a86b90c97545744",
+            "tw.bin": "4a4aa19bcd55e4918de8dfcb735e25cc1af8f483c0883341145728f3932fd09b"
+          }
+        }
+      }
+    },
+    {
+      "signal": 23,
+      "original_main_gap_R_minus_C": -1.1206908925170955e-10,
+      "variants": {
+        "mp1_double": {
+          "tail": {
+            "decimal17": "0.0034913529792992594",
+            "bits": "3f6c99e5dbad1e08"
+          },
+          "effect_vs_original_C_main": -1.1161292593278582e-10,
+          "fraction_of_original_main_gap": 0.9959296241098277,
+          "remaining_R_main_minus_variant": -4.561633189237302e-13,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 43022,
+            "above_1e_minus14": 42719,
+            "max_abs_diff": 9.452989946368007e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316065788655558",
+                  "bits": "3f64bd29eecd573a"
+                },
+                "right": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "signed_diff": -1.1007050652878103e-10,
+                "abs_diff": 1.1007050652878103e-10
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316065788655558",
+                  "bits": "3f64bd29eecd573a"
+                },
+                "right": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "signed_diff": -1.1007050652878103e-10,
+                "abs_diff": 1.1007050652878103e-10
+              },
+              "worst": {
+                "coordinate": [
+                  14,
+                  4002
+                ],
+                "left": {
+                  "decimal17": "2.2204278956556003",
+                  "bits": "4001c36fb357bc38"
+                },
+                "right": {
+                  "decimal17": "2.2204278862026103",
+                  "bits": "4001c36fb212eed7"
+                },
+                "signed_diff": 9.452989946368007e-09,
+                "abs_diff": 9.452989946368007e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 73778,
+            "above_1e_minus14": 73778,
+            "max_abs_diff": 7.086339737227831e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "right": {
+                  "decimal17": "0.0025316067697305129",
+                  "bits": "3f64bd2a0908cded"
+                },
+                "signed_diff": -8.0794450556948e-11,
+                "abs_diff": 8.0794450556948e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "right": {
+                  "decimal17": "0.0025316067697305129",
+                  "bits": "3f64bd2a0908cded"
+                },
+                "signed_diff": -8.0794450556948e-11,
+                "abs_diff": 8.0794450556948e-11
+              },
+              "worst": {
+                "coordinate": [
+                  14,
+                  4002
+                ],
+                "left": {
+                  "decimal17": "2.2204278862026103",
+                  "bits": "4001c36fb212eed7"
+                },
+                "right": {
+                  "decimal17": "2.2204279570660077",
+                  "bits": "4001c36fbb95c7e0"
+                },
+                "signed_diff": -7.086339737227831e-08,
+                "abs_diff": 7.086339737227831e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "15369e4508f7b70901394c6ba703e360be4035835f409a8ed2bcc5320d2729f7",
+            "input.bin": "0a44a78f6838d0e67b32dd4181f537b2bf65114e0ebe22f236302a125ec0530f",
+            "nl.bin": "ab68c3dabe6309802aeb83181262b28d4de7bccc00ffee4cfb023adc6afe8074",
+            "tw.bin": "9ba8db8d24053116e40c0e6b5ccf97584d28aaf831057cb12a7f1403f32d8766"
+          }
+        },
+        "mp1_and_correction_double": {
+          "tail": {
+            "decimal17": "0.0034913529792992594",
+            "bits": "3f6c99e5dbad1e08"
+          },
+          "effect_vs_original_C_main": -1.1161292593278582e-10,
+          "fraction_of_original_main_gap": 0.9959296241098277,
+          "remaining_R_main_minus_variant": -4.561633189237302e-13,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 43022,
+            "above_1e_minus14": 42719,
+            "max_abs_diff": 9.452989946368007e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316065788655558",
+                  "bits": "3f64bd29eecd573a"
+                },
+                "right": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "signed_diff": -1.1007050652878103e-10,
+                "abs_diff": 1.1007050652878103e-10
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316065788655558",
+                  "bits": "3f64bd29eecd573a"
+                },
+                "right": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "signed_diff": -1.1007050652878103e-10,
+                "abs_diff": 1.1007050652878103e-10
+              },
+              "worst": {
+                "coordinate": [
+                  14,
+                  4002
+                ],
+                "left": {
+                  "decimal17": "2.2204278956556003",
+                  "bits": "4001c36fb357bc38"
+                },
+                "right": {
+                  "decimal17": "2.2204278862026103",
+                  "bits": "4001c36fb212eed7"
+                },
+                "signed_diff": 9.452989946368007e-09,
+                "abs_diff": 9.452989946368007e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 73778,
+            "above_1e_minus14": 73778,
+            "max_abs_diff": 7.086339737227831e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "right": {
+                  "decimal17": "0.0025316067697305129",
+                  "bits": "3f64bd2a0908cded"
+                },
+                "signed_diff": -8.0794450556948e-11,
+                "abs_diff": 8.0794450556948e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.0025316066889360623",
+                  "bits": "3f64bd29fdee1a36"
+                },
+                "right": {
+                  "decimal17": "0.0025316067697305129",
+                  "bits": "3f64bd2a0908cded"
+                },
+                "signed_diff": -8.0794450556948e-11,
+                "abs_diff": 8.0794450556948e-11
+              },
+              "worst": {
+                "coordinate": [
+                  14,
+                  4002
+                ],
+                "left": {
+                  "decimal17": "2.2204278862026103",
+                  "bits": "4001c36fb212eed7"
+                },
+                "right": {
+                  "decimal17": "2.2204279570660077",
+                  "bits": "4001c36fbb95c7e0"
+                },
+                "signed_diff": -7.086339737227831e-08,
+                "abs_diff": 7.086339737227831e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "15369e4508f7b70901394c6ba703e360be4035835f409a8ed2bcc5320d2729f7",
+            "input.bin": "0a44a78f6838d0e67b32dd4181f537b2bf65114e0ebe22f236302a125ec0530f",
+            "nl.bin": "ab68c3dabe6309802aeb83181262b28d4de7bccc00ffee4cfb023adc6afe8074",
+            "tw.bin": "9ba8db8d24053116e40c0e6b5ccf97584d28aaf831057cb12a7f1403f32d8766"
+          }
+        }
+      }
+    },
+    {
+      "signal": 24,
+      "original_main_gap_R_minus_C": -3.5479500197152514e-11,
+      "variants": {
+        "mp1_double": {
+          "tail": {
+            "decimal17": "0.0010659326831502995",
+            "bits": "3f5176d880e336e3"
+          },
+          "effect_vs_original_C_main": -3.439291559881319e-11,
+          "fraction_of_original_main_gap": 0.969374298050948,
+          "remaining_R_main_minus_variant": -1.086584598339324e-12,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              4801
+            ],
+            "finite": true,
+            "compared_count": 100821,
+            "bitwise_mismatches": 40085,
+            "above_1e_minus14": 39872,
+            "max_abs_diff": 5.129207947263126e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402593897671501",
+                  "bits": "3f4f42f31a8d6a92"
+                },
+                "right": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "signed_diff": 6.015413026635302e-11,
+                "abs_diff": 6.015413026635302e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402593897671501",
+                  "bits": "3f4f42f31a8d6a92"
+                },
+                "right": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "signed_diff": 6.015413026635302e-11,
+                "abs_diff": 6.015413026635302e-11
+              },
+              "worst": {
+                "coordinate": [
+                  11,
+                  1287
+                ],
+                "left": {
+                  "decimal17": "1.170299576944273",
+                  "bits": "3ff2b98c0c97f8fd"
+                },
+                "right": {
+                  "decimal17": "1.1702995820734809",
+                  "bits": "3ff2b98c0df872f8"
+                },
+                "signed_diff": -5.129207947263126e-09,
+                "abs_diff": 5.129207947263126e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4800
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              4801
+            ],
+            "finite": true,
+            "compared_count": 100821,
+            "bitwise_mismatches": 63017,
+            "above_1e_minus14": 63017,
+            "max_abs_diff": 3.93532224585158e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "right": {
+                  "decimal17": "0.00095402590926965095",
+                  "bits": "3f4f42f30a3884ca"
+                },
+                "signed_diff": -3.0447066200721407e-11,
+                "abs_diff": 3.0447066200721407e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "right": {
+                  "decimal17": "0.00095402590926965095",
+                  "bits": "3f4f42f30a3884ca"
+                },
+                "signed_diff": -3.0447066200721407e-11,
+                "abs_diff": 3.0447066200721407e-11
+              },
+              "worst": {
+                "coordinate": [
+                  8,
+                  2012
+                ],
+                "left": {
+                  "decimal17": "1.2330906528767616",
+                  "bits": "3ff3babd43b1be61"
+                },
+                "right": {
+                  "decimal17": "1.233090692229984",
+                  "bits": "3ff3babd4e421397"
+                },
+                "signed_diff": -3.93532224585158e-08,
+                "abs_diff": 3.93532224585158e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4800
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "9929b94b6684cc431bc931251527c9a8abb536c380754c7d1f7c311d45642b34",
+            "input.bin": "9043c8a306828d55f8ad86b54124951ccdd9ee6aca26b6cb7a9482ea132620a2",
+            "nl.bin": "2f56358d035bbad0bf7683ca3b05e723792f2612c00e472a97a00563d3cf232a",
+            "tw.bin": "01492202eb41bf959369a89355af4ed92a1743dcca4b45052594ed7d9e55badd"
+          }
+        },
+        "mp1_and_correction_double": {
+          "tail": {
+            "decimal17": "0.0010659326831480088",
+            "bits": "3f5176d880e30d9f"
+          },
+          "effect_vs_original_C_main": -3.439520630116322e-11,
+          "fraction_of_original_main_gap": 0.9694388621608508,
+          "remaining_R_main_minus_variant": -1.0842938959892967e-12,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              4801
+            ],
+            "finite": true,
+            "compared_count": 100821,
+            "bitwise_mismatches": 39381,
+            "above_1e_minus14": 39167,
+            "max_abs_diff": 5.129207947263126e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402593897671501",
+                  "bits": "3f4f42f31a8d6a92"
+                },
+                "right": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "signed_diff": 6.015413026635302e-11,
+                "abs_diff": 6.015413026635302e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402593897671501",
+                  "bits": "3f4f42f31a8d6a92"
+                },
+                "right": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "signed_diff": 6.015413026635302e-11,
+                "abs_diff": 6.015413026635302e-11
+              },
+              "worst": {
+                "coordinate": [
+                  11,
+                  1287
+                ],
+                "left": {
+                  "decimal17": "1.170299576944273",
+                  "bits": "3ff2b98c0c97f8fd"
+                },
+                "right": {
+                  "decimal17": "1.1702995820734809",
+                  "bits": "3ff2b98c0df872f8"
+                },
+                "signed_diff": -5.129207947263126e-09,
+                "abs_diff": 5.129207947263126e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4800
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              4801
+            ],
+            "finite": true,
+            "compared_count": 100821,
+            "bitwise_mismatches": 63017,
+            "above_1e_minus14": 63017,
+            "max_abs_diff": 3.93532224585158e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "right": {
+                  "decimal17": "0.00095402590926965095",
+                  "bits": "3f4f42f30a3884ca"
+                },
+                "signed_diff": -3.0447066200721407e-11,
+                "abs_diff": 3.0447066200721407e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  9,
+                  213
+                ],
+                "left": {
+                  "decimal17": "0.00095402587882258475",
+                  "bits": "3f4f42f2f97b799f"
+                },
+                "right": {
+                  "decimal17": "0.00095402590926965095",
+                  "bits": "3f4f42f30a3884ca"
+                },
+                "signed_diff": -3.0447066200721407e-11,
+                "abs_diff": 3.0447066200721407e-11
+              },
+              "worst": {
+                "coordinate": [
+                  8,
+                  2012
+                ],
+                "left": {
+                  "decimal17": "1.2330906528767616",
+                  "bits": "3ff3babd43b1be61"
+                },
+                "right": {
+                  "decimal17": "1.233090692229984",
+                  "bits": "3ff3babd4e421397"
+                },
+                "signed_diff": -3.93532224585158e-08,
+                "abs_diff": 3.93532224585158e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  4800
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "81c5e70ba729e03f37deaa3b70c28692490e84cf4f4a8da8e6df73002a73601c",
+            "input.bin": "25548b8da8e4afa47a2c53cf4b3f7e1f288290f93440b662e0c0be2ac3144613",
+            "nl.bin": "23fccda6708fefde6777e052e89d82443db44b545b78187bfc1c193fb79dcd87",
+            "tw.bin": "ab8b8f704fa37bab4da87770aafd3764a808e5ce3685f9048d93c747c0ed04a4"
+          }
+        }
+      }
+    },
+    {
+      "signal": 25,
+      "original_main_gap_R_minus_C": -3.936957465762447e-11,
+      "variants": {
+        "mp1_double": {
+          "tail": {
+            "decimal17": "0.0011947789634726199",
+            "bits": "3f53934424bd7598"
+          },
+          "effect_vs_original_C_main": -3.8535530669236984e-11,
+          "fraction_of_original_main_gap": 0.9788150114487975,
+          "remaining_R_main_minus_variant": -8.340439883874895e-13,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 35550,
+            "above_1e_minus14": 35088,
+            "max_abs_diff": 8.653957550563973e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474618263806731",
+                  "bits": "3f595a867be94844"
+                },
+                "right": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "signed_diff": -9.782261806146053e-11,
+                "abs_diff": 9.782261806146053e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474618263806731",
+                  "bits": "3f595a867be94844"
+                },
+                "right": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "signed_diff": -9.782261806146053e-11,
+                "abs_diff": 9.782261806146053e-11
+              },
+              "worst": {
+                "coordinate": [
+                  13,
+                  509
+                ],
+                "left": {
+                  "decimal17": "2.026363804418815",
+                  "bits": "400035fe39ee3732"
+                },
+                "right": {
+                  "decimal17": "2.0263638130727726",
+                  "bits": "400035fe3b179036"
+                },
+                "signed_diff": -8.653957550563973e-09,
+                "abs_diff": 8.653957550563973e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 59945,
+            "above_1e_minus14": 59943,
+            "max_abs_diff": 6.46699787054672e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "right": {
+                  "decimal17": "0.0015474619735894521",
+                  "bits": "3f595a86a4602de0"
+                },
+                "signed_diff": -4.938616095934156e-11,
+                "abs_diff": 4.938616095934156e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "right": {
+                  "decimal17": "0.0015474619735894521",
+                  "bits": "3f595a86a4602de0"
+                },
+                "signed_diff": -4.938616095934156e-11,
+                "abs_diff": 4.938616095934156e-11
+              },
+              "worst": {
+                "coordinate": [
+                  13,
+                  509
+                ],
+                "left": {
+                  "decimal17": "2.0263638130727726",
+                  "bits": "400035fe3b179036"
+                },
+                "right": {
+                  "decimal17": "2.0263638777427513",
+                  "bits": "400035fe43c59b5c"
+                },
+                "signed_diff": -6.46699787054672e-08,
+                "abs_diff": 6.46699787054672e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "83ce6a4c7565a7887c51aa08385e20c17c1edb04adf9447c8ae8744fac29b79e",
+            "input.bin": "03126feb9ae48704ecc537827aefa80788d0a42008fdd7fd1f7b9554b7bbb44a",
+            "nl.bin": "c00a463749e33855aaf8df848771034e5e5f50c3adb945bef4128dccf05f48a1",
+            "tw.bin": "c746851ebddb1e4040fa2b0507715eac2b2c8aa08418a830f5f8230ada990cbf"
+          }
+        },
+        "mp1_and_correction_double": {
+          "tail": {
+            "decimal17": "0.0011947789634726199",
+            "bits": "3f53934424bd7598"
+          },
+          "effect_vs_original_C_main": -3.8535530669236984e-11,
+          "fraction_of_original_main_gap": 0.9788150114487975,
+          "remaining_R_main_minus_variant": -8.340439883874895e-13,
+          "remaining_within_1e_minus14": false,
+          "core_R_minus_variant": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 35550,
+            "above_1e_minus14": 35088,
+            "max_abs_diff": 8.653957550563973e-09,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474618263806731",
+                  "bits": "3f595a867be94844"
+                },
+                "right": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "signed_diff": -9.782261806146053e-11,
+                "abs_diff": 9.782261806146053e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474618263806731",
+                  "bits": "3f595a867be94844"
+                },
+                "right": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "signed_diff": -9.782261806146053e-11,
+                "abs_diff": 9.782261806146053e-11
+              },
+              "worst": {
+                "coordinate": [
+                  13,
+                  509
+                ],
+                "left": {
+                  "decimal17": "2.026363804418815",
+                  "bits": "400035fe39ee3732"
+                },
+                "right": {
+                  "decimal17": "2.0263638130727726",
+                  "bits": "400035fe3b179036"
+                },
+                "signed_diff": -8.653957550563973e-09,
+                "abs_diff": 8.653957550563973e-09
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "core_variant_minus_original_C": {
+            "shape": [
+              21,
+              5101
+            ],
+            "finite": true,
+            "compared_count": 107121,
+            "bitwise_mismatches": 59945,
+            "above_1e_minus14": 59943,
+            "max_abs_diff": 6.46699787054672e-08,
+            "target_max_abs_diff": 0.0,
+            "samples": {
+              "first_bitwise": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "right": {
+                  "decimal17": "0.0015474619735894521",
+                  "bits": "3f595a86a4602de0"
+                },
+                "signed_diff": -4.938616095934156e-11,
+                "abs_diff": 4.938616095934156e-11
+              },
+              "first_above_1e_minus14": {
+                "coordinate": [
+                  13,
+                  215
+                ],
+                "left": {
+                  "decimal17": "0.0015474619242032911",
+                  "bits": "3f595a8696ccefe4"
+                },
+                "right": {
+                  "decimal17": "0.0015474619735894521",
+                  "bits": "3f595a86a4602de0"
+                },
+                "signed_diff": -4.938616095934156e-11,
+                "abs_diff": 4.938616095934156e-11
+              },
+              "worst": {
+                "coordinate": [
+                  13,
+                  509
+                ],
+                "left": {
+                  "decimal17": "2.0263638130727726",
+                  "bits": "400035fe3b179036"
+                },
+                "right": {
+                  "decimal17": "2.0263638777427513",
+                  "bits": "400035fe43c59b5c"
+                },
+                "signed_diff": -6.46699787054672e-08,
+                "abs_diff": 6.46699787054672e-08
+              },
+              "target_worst": {
+                "coordinate": [
+                  0,
+                  5100
+                ],
+                "left": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "right": {
+                  "decimal17": "0",
+                  "bits": "0000000000000000"
+                },
+                "signed_diff": 0.0,
+                "abs_diff": 0.0
+              }
+            }
+          },
+          "raw_hashes": {
+            "core.bin": "83ce6a4c7565a7887c51aa08385e20c17c1edb04adf9447c8ae8744fac29b79e",
+            "input.bin": "03126feb9ae48704ecc537827aefa80788d0a42008fdd7fd1f7b9554b7bbb44a",
+            "nl.bin": "c00a463749e33855aaf8df848771034e5e5f50c3adb945bef4128dccf05f48a1",
+            "tw.bin": "c746851ebddb1e4040fa2b0507715eac2b2c8aa08418a830f5f8230ada990cbf"
+          }
+        }
+      }
+    }
+  ],
+  "finished_utc": "2026-11-03T13:06:40.146206+00:00",
+  "original_C_unchanged": true
+}

@@ -1,0 +1,11 @@
+--- attempt-1-run_experiment.py
++++ run_experiment.py
+@@ -191,7 +191,7 @@
+         assert j==len(rn)-1
+         ref=np.r_[pn[K],ps[:,K]];got=np.r_[rn[-1],rs[:,-1]];comparison=compare(ref,got)
+         inv={'total':invariance(cn,pn[:K]),'specific':invariance(cs,ps[:,:K].copy())}
+-        perturbed=ref.copy();perturbed[138]+=1e-6;neg=compare(perturbed,got)
++        perturbed=ref.copy();perturbed[138]+=1e-6;neg=compare(ref,perturbed)
+         neg={'injected_coordinate':'specific[137]','injected_offset':float(perturbed[138]-ref[138]),'result':neg,
+              'passed':neg['verdict']!='AGREES' and neg['first_failure']=='specific[137]'}
+         nanref=ref.copy();nanref[1]=np.nan

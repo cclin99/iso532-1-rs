@@ -1,0 +1,110 @@
+[
+  {
+    "command": [
+      "cmd",
+      "/c",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\build.cmd"
+    ],
+    "exit_code": 0,
+    "stdout": "**********************************************************************\n** Visual Studio 2022 Developer Command Prompt v17.0\n** Copyright (c) 2025 Microsoft Corporation\n**********************************************************************\n[vcvarsall.bat] Environment initialized for: 'x64'\nstages.c\n   正在建立程式庫 stages.lib 和物件 stages.exp\n",
+    "stderr": "'vswhere.exe' is not recognized as an internal or external command,\noperable program or batch file.\n"
+  },
+  {
+    "command": [
+      "cmd",
+      "/c",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\build.cmd"
+    ],
+    "exit_code": 0,
+    "stdout": "**********************************************************************\n** Visual Studio 2022 Developer Command Prompt v17.0\n** Copyright (c) 2025 Microsoft Corporation\n**********************************************************************\n[vcvarsall.bat] Environment initialized for: 'x64'\nstages.c\n   正在建立程式庫 stages.lib 和物件 stages.exp\n",
+    "stderr": "'vswhere.exe' is not recognized as an internal or external command,\noperable program or batch file.\n"
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-18\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-18"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-18\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-18"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-23\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-23"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-23\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-23"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-24\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-24"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-24\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-24"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-25\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_double\\signal-25"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\probe\\target\\release\\c01-root-probe.exe",
+      "tw",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-25\\input.bin",
+      "<REPO>\\tmp\\c01-tail-root-cause-aa379db-run2\\main-literal-controls\\mp1_and_correction_double\\signal-25"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

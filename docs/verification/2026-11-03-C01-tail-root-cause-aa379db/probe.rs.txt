@@ -1,0 +1,38 @@
+#![allow(dead_code)]
+use std::{env,fs,io::Write,path::Path};
+use iso532::{FieldType,zwtv::{ParMode,NlInit}};
+mod slopes_raw; mod slopes_raw22; mod tables22;
+fn save(d:&Path,name:&str,x:&[f64]) { let mut f=fs::File::create(d.join(format!("{name}.bin"))).unwrap();for v in x {f.write_all(&v.to_le_bytes()).unwrap();} }
+fn read(p:&str)->Vec<f64>{fs::read(p).unwrap().chunks_exact(8).map(|b|f64::from_le_bytes(b.try_into().unwrap())).collect()}
+fn main_stage(tol:&[f64],n:usize)->Vec<f64>{
+    let mut frames=vec![0.;tol.len()];for t in 0..n {for b in 0..28 {frames[t*28+b]=tol[b*n+t];}}
+    let mut core=vec![0.;21*n];iso532::core::main_loudness::main_loudness_frames_into(&frames,n,FieldType::Free,&mut core).unwrap();core
+}
+fn slopes(nl:&[f64],n:usize,d:&Path) {
+    let mut spec=vec![0.;240*n];let mut rounded=vec![0.;n];let mut raw=vec![0.;n];let mut raw22=vec![0.;n];
+    for t in 0..n {
+        let a:[f64;21]=std::array::from_fn(|b|nl[b*n+t]);let mut s=[0.;240];
+        rounded[t]=iso532::core::calc_slopes::calc_slopes_into(&a,&mut s);
+        raw[t]=slopes_raw::calc_slopes_n_only(&a);raw22[t]=slopes_raw22::calc_slopes_n_only(&a);
+        for b in 0..240 {spec[b*n+t]=s[b];}
+    }
+    save(d,"slope_round",&rounded);save(d,"slope_raw",&raw);save(d,"slope_raw22",&raw22);save(d,"specific",&spec);
+    for (name,x) in [("tw_round",&rounded),("tw_raw",&raw),("tw_raw22",&raw22)] {save(d,name,&iso532::zwtv::temporal_weighting::temporal_weighting(x));}
+}
+fn main(){
+    let a:Vec<String>=env::args().collect();let mode=&a[1];let x=read(&a[2]);let d=Path::new(&a[3]);
+    if mode=="tw" {save(d,"tw",&iso532::zwtv::temporal_weighting::temporal_weighting(&x));return;}
+    if mode=="round" {let y:Vec<f64>=x.iter().map(|&v|if v<=16. {(v*1000.+0.5).floor()/1000.} else {(v*100.+0.5).floor()/100.}).collect();save(d,"round",&y);return;}
+    if mode=="main" {save(d,"core",&main_stage(&x,x.len()/28));return;}
+    if mode=="nl" {let y=iso532::zwtv::nonlinear_decay::nl_loudness_with(&x,x.len()/21,ParMode::Rayon,NlInit::Zero);save(d,"nl",&y);return;}
+    if mode=="slopes" {slopes(&x,x.len()/21,d);return;}
+    if mode=="pipeline_scalar" {iso532::simd::set_force_scalar(true);}
+    let public=iso532::loudness_zwtv(&x,48000.,FieldType::Free).unwrap();
+    save(d,"public_n",&public.n);save(d,"public_spec",&public.n_specific);save(d,"public_time",&public.time_axis);
+    if mode=="public" {return;}
+    let (tol,n)=iso532::zwtv::third_octave_levels::third_octave_levels(&x);save(d,"tol",&tol);
+    let core=main_stage(&tol,n);save(d,"core",&core);
+    let nl=iso532::zwtv::nonlinear_decay::nl_loudness_with(&core,n,ParMode::Rayon,NlInit::Zero);save(d,"nl",&nl);
+    slopes(&nl,n,d);
+    println!("{{\"frames\":{n},\"avx2_available\":{}}}",std::is_x86_feature_detected!("avx2"));
+}

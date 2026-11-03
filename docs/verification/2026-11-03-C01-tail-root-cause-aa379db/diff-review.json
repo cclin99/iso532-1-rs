@@ -1,0 +1,398 @@
+{
+  "self_excluded": "diff-review.json",
+  "checks": [
+    {
+      "file": "attempt-1-build-c.cmd.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\attempt-1-build-c.cmd.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "attempt-1-results.partial.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\attempt-1-results.partial.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "attempt-1-run-log.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\attempt-1-run-log.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "attempt-1-run-start.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\attempt-1-run-start.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "attempt-1-run_experiment.py.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\attempt-1-run_experiment.py.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "attempt-1-stages.c.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\attempt-1-stages.c.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "build-c.cmd.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\build-c.cmd.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "commands.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\commands.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "delivery-check.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\delivery-check.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "epsilon_zero.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero.diff.txt:10: trailing whitespace.\n+         if (IdxCBN > N_CB_RANGES-1) \n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "epsilon_zero_tables_double.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:12: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:18: trailing whitespace.\n+-    0.82f,0.42f,0.30f,0.22f,0.15f,0.10f,0.035f,0.0f \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:20: trailing whitespace.\n++    0.82,0.42,0.30,0.22,0.15,0.10,0.035,0.0 \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:22: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:44: trailing whitespace.\n+-    { 0.06f,0.05f,0.03f,0.02f,0.02f,0.02f,0.02f,0.02f} \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:62: trailing whitespace.\n++    { 0.06,0.05,0.03,0.02,0.02,0.02,0.02,0.02} \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:64: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt:73: trailing whitespace.\n+         if (IdxCBN > N_CB_RANGES-1) \n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\epsilon_zero_tables_double.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "execution-summary.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\execution-summary.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "experiment-design.en.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\experiment-design.en.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "experiment-design.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\experiment-design.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "exploratory-addendum.en.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\exploratory-addendum.en.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "exploratory-addendum.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\exploratory-addendum.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "exploratory-tails.csv",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "main-literal-controls.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\main-literal-controls.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "main-literal-log.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\main-literal-log.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "main_literal_controls.py",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\main_literal_controls.py', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "mp1_and_correction_double.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\mp1_and_correction_double.diff.txt:11: trailing whitespace.\n+             if (*pCoreL <= 0.) \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\mp1_and_correction_double.diff.txt:14: trailing whitespace.\n+     \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\mp1_and_correction_double.diff.txt:20: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\mp1_and_correction_double.diff.txt:20: new blank line at EOF.\n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\mp1_and_correction_double.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "mp1_double.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\mp1_double.diff.txt:11: trailing whitespace.\n+             if (*pCoreL <= 0.) \n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\mp1_double.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "off22.rs.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\off22.rs.diff.txt:6: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\off22.rs.diff.txt:11: trailing whitespace.\n+ \n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\off22.rs.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "off24.rs.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\off24.rs.diff.txt:6: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\off24.rs.diff.txt:11: trailing whitespace.\n+ \n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\off24.rs.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "preflight-errors.log",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\preflight-errors.log', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "primary-results.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\primary-results.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "probe-Cargo.lock.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\probe-Cargo.lock.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "probe-Cargo.toml",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\probe-Cargo.toml', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "probe.rs.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\probe.rs.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8-addendum.en.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8-addendum.en.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8-addendum.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8-addendum.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8-Cargo.lock.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8-Cargo.lock.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8-Cargo.toml",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8-Cargo.toml', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8-control-log.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8-control-log.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8-control.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8-control.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8-probe.rs.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8-probe.rs.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "r8_control.py",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\r8_control.py', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "report.en.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\report.en.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "report.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\report.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "results.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\results.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "run-log.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\run-log.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "run-start.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\run-start.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "run_experiment.py",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\run_experiment.py', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "slopes-addendum.en.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes-addendum.en.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "slopes-addendum.md",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes-addendum.md', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "slopes-controls-log.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes-controls-log.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "slopes-controls.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes-controls.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "slopes_controls.py",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_controls.py', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "slopes_raw.rs.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw.rs.diff.txt:6: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw.rs.diff.txt:10: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw.rs.diff.txt:19: trailing whitespace.\n+ \n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw.rs.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "slopes_raw22.rs.diff.txt",
+      "exit_code": 3,
+      "preserved_unified_diff_whitespace": true,
+      "stdout": "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw22.rs.diff.txt:6: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw22.rs.diff.txt:10: trailing whitespace.\n+ \ndocs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw22.rs.diff.txt:19: trailing whitespace.\n+ \n",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\slopes_raw22.rs.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "source-input-hashes.json",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\source-input-hashes.json', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "stage-coordinates.csv",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "stages.c.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\stages.c.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "tables22.rs.diff.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\tables22.rs.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "file": "tail-decomposition.csv",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "file": "wrapper-correction.diff.txt",
+      "exit_code": 1,
+      "preserved_unified_diff_whitespace": false,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db\\wrapper-correction.diff.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    }
+  ],
+  "final_read_only_check": "All final files including this log and the manifest are checked after manifest creation."
+}

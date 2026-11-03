@@ -1,0 +1,122 @@
+{
+  "tested_commit": "aa379db8f3dc37f5048ac6c8b7a6d4ba2a6c3b76",
+  "started_utc": "2026-11-03T12:56:32.380740+00:00",
+  "design_sha256": {
+    "experiment-design.en.md": "bce29484c8cf8bf7d9f1e84cf32eac92aa9abe239c0c523bb166591950995558",
+    "experiment-design.md": "e9ecc9520e65a63eb67f419b5e7d660e054d72e7780ce2c4d0b604f05b990f82"
+  },
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "2.4.4",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "MSVC": {
+      "stdout": "",
+      "stderr": "'vswhere.exe' is not recognized as an internal or external command,\noperable program or batch file.\nMicrosoft (R) C/C++ Optimizing Compiler Version 19.44.35228 for x64\nCopyright (C) Microsoft Corporation.  著作權所有，並保留一切權利。\n\n編譯器傳遞: \n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\cl.exe:        版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c1.dll:        版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c1xx.dll:      版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c2.dll:        版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\c1xx.dll:      版本 19.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe:      版本 14.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\mspdb140.dll:  版本 14.44.35228.0\n C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\1028\\clui.dll: 版本 19.44.35228.0\n\ncl : 命令列 error D8003 : 遺漏原始程式檔檔名\n",
+      "exit_code": 2,
+      "note": "No-source /Bv query may exit 2 (D8003)."
+    },
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)"
+  },
+  "signals": [],
+  "encoding": "all .bin arrays little-endian binary64; multiband arrays row-major [band,time]",
+  "prior_evidence": {
+    "results_sha256": "84dc68fe0223bc9dc239d05bdd97392067a2b72f7adc9e11202e48d983cf521f",
+    "role": "Frozen inputs and old expected baseline bits; all new results recomputed."
+  },
+  "worktree_before": " M docs/verification/README.md\n?? docs/verification/2026-11-03-C01-tail-root-cause-aa379db/\n?? docs/verification/2026-11-03-C01-zero-pad-aa379db/\n?? docs/verification/2026-11-03-F03-coefficient-hypothesis-aa379db/\n",
+  "source": {
+    "archive_sha256": "b66a0dcc5cb5af47f1ce2fef7830da0f79e09a04af3ffc89d9e3d01cf9a2ad3d",
+    "snapshot_before": {
+      "Cargo.lock": "131d0d7889476866e5b9c24ccfd958a937f88a1d9be2596cfa364d82929e72f7",
+      "Cargo.toml": "83ffc786df58ad9c7c0388c4ee1337adccc2e80a9c61b3980825cf12123d741d",
+      "iso532/benches/loudness.rs": "311a8e751fdf166da61c79322e0e851bd2588079a1241ed5e5070b1a57d335f1",
+      "iso532/Cargo.toml": "28c7ebad1fc0f854247929e7de3c1a81da9da68ebda386fec224c65a49fa27eb",
+      "iso532/examples/cli.rs": "52dadc99ebaf46fa095597be2da10b669bf275494bc218c4dd887601307eb8b3",
+      "iso532/README.md": "1945c56d798dee665c314022ddfca9d91f7c47220033b34911458a2587912a04",
+      "iso532/src/core/calc_slopes.rs": "be443d090d04e3b186ac338ec5a1c2061419c003a0cc74f9cfeb8c31354b80d9",
+      "iso532/src/core/main_loudness.rs": "ff92090106863f35d60bf178953bea7f0b299803638e585f949a426bf0ad2049",
+      "iso532/src/core/mod.rs": "d62174b9ab6cdcd8c4dfefd9f2a0599dce4ec476a45e20c43bb54bf5ed1a9cf9",
+      "iso532/src/dsp/filtfilt.rs": "3af338dffa803acd5658b1fe46f45d541a606046f80880766d42f0105f3ced13",
+      "iso532/src/dsp/mod.rs": "2a7a879ace8f76cf0b743bff8c195066c0e7ab856aeb094a4332ce9c3f0b95cc",
+      "iso532/src/dsp/sos.rs": "a5fff9439885ac8aae36b2392b09e6a5e1a2afe1387d5cfdac62aabf10a28ff0",
+      "iso532/src/error.rs": "8864c0e9e7a0c895ee0497a0d5534d6df3ba18e62f67c04171acef4a9addb979",
+      "iso532/src/lib.rs": "983b8a17a6871b3379d422623a0be7c1e128f2df218baf07f3bc7c1aca458a37",
+      "iso532/src/simd/mod.rs": "242302d8cae15832309537ff5583265a3c71d89979dbdd544cdd8afed0b0035f",
+      "iso532/src/sone2phon.rs": "67755a36bfd944dc1e5ef071beb0a6ad4edc3665027a2698acb5aef82f8d28ef",
+      "iso532/src/tables.rs": "0a56ea70b6e9fbcc2b159f0da30430217bdad1b8b9d894ac4a655d35c58b5bad",
+      "iso532/src/tables_noct.rs": "c52201e4ba9d61875328ec8b1dea92a553b6a48b8193bae0137edbfdfa9d5fb3",
+      "iso532/src/zwst/mod.rs": "e1c0c57e9d07700d173fab0867e8b5a69f80a05d31a19bc846c0fedbeafbad83",
+      "iso532/src/zwtv/mod.rs": "a083859d2368db851b2586fc6ccbd09c31e381f648e2409f44c1f3a186f479e4",
+      "iso532/src/zwtv/nonlinear_decay.rs": "966ea4979cab03898a09d78fc96230b28c94bc951e700e0229503ff8a1bb7e92",
+      "iso532/src/zwtv/stream.rs": "3ed7723cd6b066f97dd42279569a49aaebd6678810df608b503159a7fa4cb252",
+      "iso532/src/zwtv/temporal_weighting.rs": "4735998b5238c1a00f526bcba0f740386c66f98a6543082228f7d9b6c91df43c",
+      "iso532/src/zwtv/third_octave_levels.rs": "e1570576ffe230c2731529dd1acded63ca77af1d95b4ed33b8463b6ee4f23d45",
+      "iso532/tests/annexb.rs": "141953f0a38916bd1741dca94aff02ab48d0d78aec7132a0a8ab79fa31edc154",
+      "iso532/tests/annexb_validator.rs": "c1301e509dd20c4c97d2bd05b4f265f45549994a0587ec5e66ef4e8957ec57e2",
+      "iso532/tests/api_errors.rs": "6a2c554821cfde3978f09a61dc5c486ad368f1a334ccef2aa002053fc833439a",
+      "iso532/tests/common/annexb_check.rs": "41d6fcdb9d96e02bb3cc3489cbbe1d23db95e28b7ba7e81ac6afa8c92e1e1f5f",
+      "iso532/tests/common/mod.rs": "b470a47078494decf8810c26b67c74f91c73d04c486ec917a9444233e7024ec9",
+      "iso532/tests/determinism.rs": "404bfc12e09fbd1a85cc8f77f3384c37af9c9afc74725966b940caf418d7c0c1",
+      "iso532/tests/golden_core.rs": "6b73a84af2c4bc82abcbda950f981fc60e3c042005461794a54cbd9298d47d7a",
+      "iso532/tests/golden_dsp.rs": "8f982fa80a170b4b7d43f8a567351fece73c80b99279b116b98b7f7d21da2e24",
+      "iso532/tests/golden_zwst.rs": "c3084d135bd624978ac910f3fa5cdaf3031ba56dea028c235e39b968fb15b985",
+      "iso532/tests/golden_zwtv.rs": "e4a82fafa441f449b5648e16f22f0e5f21d7529d300a01752a27fa70ac7da2a1",
+      "iso532/tests/hash_gate.rs": "ca3f9dab1f792ea8221ec367b577331576b7ee4473c6f15bd4aea99ad39a3c9a",
+      "iso532/tests/low_freq_correction.rs": "d970a9106af0a0e28154b2d2c9e825216cf0f787126d95874881cbb43a064938",
+      "iso532/tests/nl_zero_init.rs": "1c0359b0782cba5884b2e563f579a2242971a068db6a76699623eddb778bafc1",
+      "iso532/tests/output_grid.rs": "008d1fd055955d7d6a4d713f96b57c932fa8ddc963556082cd398b167c3a8677",
+      "iso532/tests/py_contract_dump.rs": "167cd58bbc89a1cf69618b1d8c03f0185ea7ebe09dfc5cb42c634a383c6f97da",
+      "iso532/tests/simd_dispatch.rs": "d6e58adaae5fa6e912e1cf381e00ef6b4bea7c90ee79b5d0216a87970ac349c6",
+      "iso532/tests/simd_parity.rs": "7d364ff958ef19bc5de67aa65f6eca4127248d468a14928d75a8b826e44c758b",
+      "iso532/tests/stream.rs": "d715d7ba5141e0ebd04c46a25fa71807406a4769b8a7786fc1e7b23d5c0f1cac",
+      "iso532/tests/stream_alloc.rs": "6b953c96e22736652d5a1d1156a3b8a61bb7f2971a38deee2f41d95c241dd682",
+      "iso532/tests/stream_no_rayon.rs": "1f0eb0eaf7cb78b6804d7c0dbeb152c402831a2f6734a84a385e929794d97168",
+      "iso532/tests/stream_scalar.rs": "271fc485e291e1e9f2787766ae77c335c721be8886a1fd87a4f3461525383f92",
+      "iso532-ffi/Cargo.toml": "33413a3a03bfab4f9613efa659dd0b43155ad49ad37dbca949f87d88a23e5065",
+      "iso532-ffi/cbindgen.toml": "6e70515782b586ff96d17588f23fa8ad0c54a5a92365cd08b710a9fe4d85c376",
+      "iso532-ffi/include/iso532.h": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+      "iso532-ffi/src/lib.rs": "80b09294570f4bfd22c381e693761c67f47f3340dc324c98ac853329797160a5",
+      "iso532-ffi/tests/ffi.rs": "c712ba2dd6e5f150cfae6f2d3c25522192b8b683e39d9c4b7d28a69e1e27d5d8",
+      "iso532-ffi/tests/smoke.c": "75ecc277b2dd69871446beaf7fd0ef79ba3276cf639a6106b5834ce6f80a59ab",
+      "iso532-py/Cargo.toml": "4fbd0d41a623fddb04c837256ec4fea7938a2500aa9b256c6afec98c9163a37c",
+      "iso532-py/pyproject.toml": "f5b071b3f933937723979a5217808795ed1b5be7a38d7a9e287ec67adda4a381",
+      "iso532-py/src/lib.rs": "b5e09120ec51781d5ea72561a2ba9aa0108e35ece2cf0e2c44e92304c2c11c00",
+      "iso532-py/tests/conftest.py": "87a96a30f628b841c37578f1961f97dd27150f32bbf3450cf248549b89d559c2",
+      "iso532-py/tests/test_parity_mosqito.py": "2241e15b3829bb1c9073ad181d1adbdc06e02ddccc2edcd6db8ce819ea6158ef",
+      "iso532-py/tests/test_smoke.py": "82a24ad830d4ee7485697d3095066b0ed9c223c8cdfdb911b3b96837e5f8943c",
+      "iso532-py/tests/test_stream.py": "c50eee88770f012f3cdc6d81614b81afa52738820f6dd6e5bc2fad4d61b1f820"
+    },
+    "official_archive_sha256": "d17b2c6d66a28550ed145c3e1ae5af6ee5917b90e584358285686b1fc61edca7"
+  },
+  "transformations": [
+    {
+      "file": "slopes_raw.rs",
+      "original_text_sha256": "8a613e6490a071c15c11222286d2e25b96e35610b13587d50ca06f0cc0b0a3f2",
+      "diagnostic_text_sha256": "ec1ec66fd1242c1d20f5473e72aa2444096c9d66708905443160bfa7417c3d07",
+      "diff_file": "slopes_raw.rs.diff.txt"
+    },
+    {
+      "file": "slopes_raw22.rs",
+      "original_text_sha256": "8a613e6490a071c15c11222286d2e25b96e35610b13587d50ca06f0cc0b0a3f2",
+      "diagnostic_text_sha256": "66b2c86774b5d07cb2fd4fd83c8cf1106f5453ebea316ffedb88040902a89481",
+      "diff_file": "slopes_raw22.rs.diff.txt"
+    },
+    {
+      "file": "tables22.rs",
+      "original_text_sha256": "f2f788faed945e7389cdc7ea86b908c68af7935aa382748585e86ddb27e8cd9f",
+      "diagnostic_text_sha256": "2591bcaef075562fc50c39a2bb69afd50798dc53ed2cde5def05a8384c8b40fe",
+      "diff_file": "tables22.rs.diff.txt"
+    }
+  ],
+  "binary_hashes": {
+    "c01-root-probe.exe": "29f039bbafa8c5c25af583725d33d1da2ad99c27dfe0f9efe1b1ec44558f0e60",
+    "stages.dll": "0216a792ab42ea7be0a1e7c5fbc14e67b4b4dd4c63a2751ed9dc7fbdb2c641d1"
+  },
+  "harness_hashes_before_redaction": {
+    "run_experiment.py": "d1cf4322f465156a7538823a89f8a18e940d8255affdf1218f83f4f4303e36f4",
+    "probe.rs.txt": "5126ccb6c544f43918533c78d8e8db470e45a7d0897b12dcc66ae3cf752c062b",
+    "stages.c.txt": "af1f4d32cf3a90379dc0faf5847adf45b82a8b4513464e4f1166859000b205d8"
+  },
+  "execution_error": "AssertionError(('main', 0))"
+}

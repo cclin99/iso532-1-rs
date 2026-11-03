@@ -1,0 +1,85 @@
+{
+  "schema": "sha256-delivery-v1",
+  "tested_commit": "aa379db8f3dc37f5048ac6c8b7a6d4ba2a6c3b76",
+  "hash_meaning": "post-redaction LF-normalized delivered bytes; original source/binary hashes retain their original meaning in results.json",
+  "excludes": [
+    "delivery-integrity.json"
+  ],
+  "files": [
+    {
+      "path": "C-derived.diff",
+      "bytes": 815,
+      "sha256": "b0658fc315a0417c7f66c5eb843070016934c5e9596e9aca061d755c32f313cf"
+    },
+    {
+      "path": "delivery-check.md",
+      "bytes": 3627,
+      "sha256": "843a4305d1cd599b4bdefeafd67b5b2227d6b1b292c3d62e69754a9c2767d524"
+    },
+    {
+      "path": "design.en.md",
+      "bytes": 2674,
+      "sha256": "c7fc64d68e3485e117a1486c886bf288f785469540b6b553254bf357cbe83cb5"
+    },
+    {
+      "path": "design.md",
+      "bytes": 2399,
+      "sha256": "8470ac7f9f9a5902e1acbdad11015a7f5c8d20ced5fde5b067d4c15d1bd1c9b2"
+    },
+    {
+      "path": "numeric.c",
+      "bytes": 1669,
+      "sha256": "e74f95e64787cea29e03bfa2358786419f34faf980751e7eb6a4e234438d788b"
+    },
+    {
+      "path": "Python-0.22.diff",
+      "bytes": 973,
+      "sha256": "dccf0b83c92cc0d49ed3eb61f71278341e310afb708517b7cdb0e47b6f70dd72"
+    },
+    {
+      "path": "Python-0.24.diff",
+      "bytes": 453,
+      "sha256": "ebbe33943aee22971ea0925912f03c6273ce2ceeaae0a745463aacf7fbb0a15e"
+    },
+    {
+      "path": "report.en.md",
+      "bytes": 12279,
+      "sha256": "e65e352bea0c72ae11d66c171d699ad8cb5776924b28f4006c0b5ab41d591323"
+    },
+    {
+      "path": "report.md",
+      "bytes": 10800,
+      "sha256": "79b9995dfb2dee9166a8b7891c37a373cc9644b21d069a7264c8fe8665809490"
+    },
+    {
+      "path": "results.json",
+      "bytes": 97717,
+      "sha256": "6b64bbaf1c48bd75ed68ff237a8683faff33faa30bc0e94441e90f69b633f473"
+    },
+    {
+      "path": "run-log.json",
+      "bytes": 24198,
+      "sha256": "c44bc3af9fe5b41303aeef38897d85f216dc8d18792296b187543ee418fba798"
+    },
+    {
+      "path": "run_experiment.py",
+      "bytes": 19027,
+      "sha256": "112111ffb0b028948a632225e8e13d68b99dc8f5e982dd4cb37ce2b46e324d69"
+    },
+    {
+      "path": "Rust-derived.diff",
+      "bytes": 289,
+      "sha256": "055ae1cda5aadd45cd702cb30644718da1a23a6c267eb3a63e24925848360019"
+    },
+    {
+      "path": "Rust-table22.diff",
+      "bytes": 501,
+      "sha256": "74fcc88394c928ecd7b46cc995eb04f835833faccbd965a376b047bcec98742a"
+    },
+    {
+      "path": "sources.md",
+      "bytes": 4206,
+      "sha256": "6ae190d0d6a32025eb777b847d27b1077df1f246ee6f63128e1357195b4fa93f"
+    }
+  ]
+}

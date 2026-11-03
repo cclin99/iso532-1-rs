@@ -1,0 +1,8 @@
+{
+  "tested_commit": "aa379db8f3dc37f5048ac6c8b7a6d4ba2a6c3b76",
+  "started_utc": "2026-11-03T12:56:32.380740+00:00",
+  "design_sha256": {
+    "experiment-design.en.md": "bce29484c8cf8bf7d9f1e84cf32eac92aa9abe239c0c523bb166591950995558",
+    "experiment-design.md": "e9ecc9520e65a63eb67f419b5e7d660e054d72e7780ce2c4d0b604f05b990f82"
+  }
+}

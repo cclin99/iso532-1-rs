@@ -1,0 +1,11 @@
+--- ISO_532-1.c.original
++++ mp1_double.diagnostic.c
+@@ -808,7 +808,7 @@
+         {
+             *pLe += -DCB[IdxCL];
+             S = .25;
+-            MP1 = .0635f * (double)pow(10., 0.025 * (*pLtq));
++            MP1 = .0635 * (double)pow(10., 0.025 * (*pLtq));
+             MP2 = (double)pow((1. - S + S * pow(10., 0.1 * (*pLe - *pLtq))), .25) - 1.0f;
+             *pCoreL = MP1 * MP2;
+             if (*pCoreL <= 0.) 

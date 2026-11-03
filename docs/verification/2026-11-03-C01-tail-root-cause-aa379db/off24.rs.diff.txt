@@ -1,0 +1,13 @@
+--- slopes_raw.rs
++++ off24.rs
+@@ -202,9 +202,7 @@
+     USL[rns_idx][band_idx.min(7)]
+ }
+ 
+-fn r8(value: f64) -> f64 {
+-    (value * 100_000_000.0).round() / 100_000_000.0
+-}
++fn r8(value: f64) -> f64 { value }
+ 
+ #[cfg(test)]
+ mod tests {

@@ -1,0 +1,434 @@
+{
+  "scope": "All new files compared against NUL; diff --check emits no whitespace diagnostics. Exit 1 under --no-index denotes expected new-file differences.",
+  "review": "Narrative/code/commands reviewed; decimal/bits/CSV/JSON checked by audit_artifacts.py; large repeated raw CLI rows checked by parsed shape/serialization and original hashes.",
+  "files": [
+    {
+      "file": "attempt-1-results.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "16226\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\attempt-1-results.json\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\attempt-1-results.json', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "attempt-1-run_experiment.py.txt",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "250\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\attempt-1-run_experiment.py.txt\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\attempt-1-run_experiment.py.txt', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "audit_artifacts.py",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "44\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\audit_artifacts.py\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\audit_artifacts.py', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "boundary-4800-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4800-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4800-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "55\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4800-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4801-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4801-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4801-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "55\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4801-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4823-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4823-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4823-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "55\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4823-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4824-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4824-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4824-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4824-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4825-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4825-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4825-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4825-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4895-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4895-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4895-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4895-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4896-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "57\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4896-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4896-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4896-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4897-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "57\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4897-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "boundary-4897-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "56\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\boundary-4897-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "build-c.cmd.txt",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "7\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\build-c.cmd.txt\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\build-c.cmd.txt', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "commands.md",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "45\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\commands.md\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\commands.md', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "control-correction.diff.txt",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "11\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\control-correction.diff.txt\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\control-correction.diff.txt', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "control-correction.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "3065\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\control-correction.json\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\control-correction.json', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "decoder-wrapper.c.txt",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "26\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\decoder-wrapper.c.txt\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\decoder-wrapper.c.txt', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "diagnose_history.py",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "46\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\diagnose_history.py\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\diagnose_history.py', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "execution-summary.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "7\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\execution-summary.json\"",
+      "warnings": []
+    },
+    {
+      "file": "experiment-design.en.md",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "44\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\experiment-design.en.md\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\experiment-design.en.md', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "experiment-design.md",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "44\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\experiment-design.md\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\experiment-design.md', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "finalize_delivery.py",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "74\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\finalize_delivery.py\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\finalize_delivery.py', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "history-diagnostic.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "272\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\history-diagnostic.json\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\history-diagnostic.json', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "probe-Cargo.lock.txt",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "124\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\probe-Cargo.lock.txt\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\probe-Cargo.lock.txt', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "probe-Cargo.toml",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "7\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\probe-Cargo.toml\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\probe-Cargo.toml', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "render_reports.py",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "148\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\render_reports.py\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\render_reports.py', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "repair_control.py",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "45\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\repair_control.py\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\repair_control.py', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "report.en.md",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "122\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\report.en.md\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\report.en.md', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "report.md",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "122\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\report.md\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\report.md', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "results.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "17233\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\results.json\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\results.json', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "run-log.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "683\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\run-log.json\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\run-log.json', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "run-start.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "8\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\run-start.json\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\run-start.json', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "run_experiment.py",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "250\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\run_experiment.py\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\run_experiment.py', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "rust-probe.rs.txt",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "25\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\rust-probe.rs.txt\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\rust-probe.rs.txt', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    },
+    {
+      "file": "signal-18-padded-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1091\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-18-padded-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-18-padded-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1090\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-18-padded-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-18-target.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "242\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-18-target.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-23-padded-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1283\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-23-padded-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-23-padded-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1282\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-23-padded-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-23-target.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "242\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-23-target.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-24-padded-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1208\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-24-padded-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-24-padded-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1207\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-24-padded-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-24-target.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "242\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-24-target.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-25-padded-Loudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1283\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-25-padded-Loudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-25-padded-SpecLoudness.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "1282\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-25-padded-SpecLoudness.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "signal-25-target.csv",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "242\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\signal-25-target.csv\"",
+      "warnings": []
+    },
+    {
+      "file": "source-input-hashes.json",
+      "check_exit_code": 1,
+      "numstat_exit_code": 1,
+      "numstat": "350\t0\tNUL => \"docs\\\\verification\\\\2026-11-03-C01-zero-pad-aa379db\\\\source-input-hashes.json\"",
+      "warnings": [
+        "warning: in the working copy of 'docs\\verification\\2026-11-03-C01-zero-pad-aa379db\\source-input-hashes.json', LF will be replaced by CRLF the next time Git touches it"
+      ]
+    }
+  ]
+}

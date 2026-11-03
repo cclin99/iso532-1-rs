@@ -1,0 +1,250 @@
+"""Independent C-01 experiment. Requires Windows MSVC, Rust, Python + NumPy.
+Run from repo root with --official <extracted-official-archive> --archive <zip>
+--vcvars <vcvars64.bat> --work <NEW-scratch-dir>. All binaries stay in scratch.
+Output is this script's folder unless --out is supplied; refuse existing results.
+"""
+from __future__ import annotations
+import argparse, ctypes as ct, csv, datetime, hashlib, json, math, os, platform
+import shutil, subprocess, sys, tarfile, wave
+from pathlib import Path
+import numpy as np
+
+COMMIT = "aa379db8f3dc37f5048ac6c8b7a6d4ba2a6c3b76"
+C_SHA = "a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491"
+HERE = Path(__file__).resolve().parent
+DP = ct.POINTER(ct.c_double)
+class Input(ct.Structure):
+    _fields_ = [('NumSamples',ct.c_int),('SampleRate',ct.c_double),('pData',DP)]
+def ptr(x): return x.ctypes.data_as(DP)
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def ah(x): return hashlib.sha256(np.asarray(x,dtype='<f8').tobytes()).hexdigest()
+def write(p,s): Path(p).write_text(s,encoding='utf8',newline='\n')
+def js(p,x): write(p,json.dumps(x,indent=2,ensure_ascii=False,allow_nan=False)+'\n')
+def value(x):
+    x=float(x)
+    return {'decimal17':format(x,'.17g'),'bits':format(np.float64(x).view(np.uint64).item(),'016x')}
+def array_check(x,shape):
+    return {'shape':list(x.shape),'expected_shape':list(shape),
+            'shape_passed':x.shape==shape,'finite_count':int(np.isfinite(x).sum()),
+            'nonfinite_count':int((~np.isfinite(x)).sum()),'passed':x.shape==shape and bool(np.isfinite(x).all())}
+def compare(ref,got):
+    """Same finite/shape/threshold comparator for primary and injected controls."""
+    if ref.shape!=(241,) or got.shape!=(241,):
+        return {'verdict':'NOT OBTAINABLE','reason':'shape','first_failure':None}
+    if not np.isfinite(ref).all() or not np.isfinite(got).all():
+        return {'verdict':'NOT OBTAINABLE','reason':'nonfinite','first_failure':None}
+    d=np.abs(ref-got); bad=np.flatnonzero(d>1e-14)
+    first=None if not len(bad) else ('total' if bad[0]==0 else f'specific[{bad[0]-1}]')
+    verdict='AGREES' if not len(bad) else ('WITHIN TOLERANCE' if np.all(d<=np.maximum(.1,.05*np.abs(ref))) else 'DIFFERS')
+    return {'verdict':verdict,'total_abs_diff':float(d[0]),'max_specific_abs_diff':float(d[1:].max()),
+            'rounding_failure_count':len(bad),'first_failure':first,'differences':d.tolist()}
+def invariance(a,b):
+    assert a.shape==b.shape and np.isfinite(a).all() and np.isfinite(b).all()
+    bad=np.argwhere(a.view(np.uint64)!=b.view(np.uint64))
+    return {'compared_count':int(a.size),'bitwise_mismatch_count':len(bad),
+            'max_abs_diff':float(np.abs(a-b).max()),
+            'first_differing_coordinate':None if not len(bad) else bad[0].tolist(),
+            'passed':not len(bad)}
+def wav_read(p):
+    with wave.open(str(p),'rb') as w:
+        assert (w.getnchannels(),w.getsampwidth(),w.getframerate(),w.getcomptype())==(1,2,48000,'NONE')
+        raw=w.readframes(w.getnframes());n=w.getnframes()
+    decoded=np.frombuffer(raw,dtype='<i2').astype('<f8')/32768
+    return decoded,raw,{'format':'PCM signed 16-bit little-endian','channels':1,'sample_rate':48000,
+        'sample_width_bytes':2,'samples':n,'WAV_sha256':sha(p),'PCM_payload_sha256':hashlib.sha256(raw).hexdigest(),
+        'decoded_f64le_sha256':ah(decoded),'file':p.name}
+def wav_write(p,raw):
+    with wave.open(str(p),'wb') as w:
+        w.setnchannels(1);w.setsampwidth(2);w.setframerate(48000);w.writeframes(raw)
+
+ap=argparse.ArgumentParser();ap.add_argument('--official',type=Path,required=True)
+ap.add_argument('--archive',type=Path,required=True);ap.add_argument('--vcvars',type=Path,required=True)
+ap.add_argument('--work',type=Path,required=True);ap.add_argument('--repo',type=Path,default=Path.cwd())
+ap.add_argument('--out',type=Path,default=HERE)
+args=ap.parse_args();repo=args.repo.resolve();work=args.work.resolve();out=args.out.resolve();off=args.official.resolve()
+assert not (out/'results.json').exists();work.mkdir(parents=True,exist_ok=False)
+log=[]
+results={'tested_commit':COMMIT,'tested_short_commit':'aa379db','date_Asia_Taipei':'2026-11-03',
+ 'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'design_sha256':{p.name:sha(p) for p in HERE.glob('experiment-design*.md')},
+ 'environment':{'python':sys.version,'numpy':np.__version__,'platform':platform.platform()},
+ 'encoding':'all sample/output hashes: contiguous little-endian IEEE-754 binary64; specific row-major [Bark,frame]',
+ 'signals':[],'boundaries':[],'gates':{}}
+js(out/'run-start.json',{'started_utc':results['started_utc'],'design_sha256':results['design_sha256'],'tested_commit':COMMIT})
+def run(cmd,cwd=None,check=True):
+    t=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    p=subprocess.run(list(map(str,cmd)),cwd=cwd,capture_output=True,text=True,encoding='utf8',errors='replace')
+    log.append({'started_utc':t,'command':list(map(str,cmd)),'cwd':str(cwd or repo),'exit_code':p.returncode,'stdout':p.stdout,'stderr':p.stderr})
+    js(out/'run-log.json',log)
+    if check and p.returncode: raise RuntimeError(p.stdout+p.stderr)
+    return p
+
+try:
+    results['worktree_before']=run(['git','status','--short'],repo).stdout
+    assert run(['git','rev-parse',COMMIT],repo).stdout.strip()==COMMIT
+    for tool in ['rustc','cargo']:
+        results['environment'][tool]=run([tool,'--version'],repo).stdout.strip()
+    archive=work/'source.tar'
+    run(['git','archive','--format=tar',f'--output={archive}',COMMIT,'Cargo.toml','Cargo.lock','iso532','iso532-ffi','iso532-py'],repo)
+    with tarfile.open(archive) as tar:tar.extractall(work/'snapshot',filter='data')
+    snapshot=work/'snapshot'
+    source_before={str(p.relative_to(snapshot)).replace('\\','/'):sha(p) for p in sorted(snapshot.rglob('*')) if p.is_file()}
+    results['source_hashes']={'archive_sha256':sha(archive),'snapshot_before':source_before,'official_archive_sha256':sha(args.archive)}
+    cdir=work/'c';cdir.mkdir()
+    originals=[off/'Annex A.4/ISO_532-1_LIB/src/ISO_532-1.c',off/'Annex A.4/ISO_532-1_LIB/include/ISO_532-1.h']
+    originals+=list((off/'Annex A.4/ISO_532-1/Source').glob('*.c'))+list((off/'Annex A.4/ISO_532-1/Source').glob('*.h'))
+    assert sha(originals[0])==C_SHA
+    for p in originals:shutil.copyfile(p,cdir/p.name)
+    results['source_hashes']['official_files']={p.name:sha(p) for p in originals}
+    shutil.copyfile(HERE/'decoder-wrapper.c.txt',cdir/'decoder-wrapper.c')
+    write(cdir/'build.cmd',f'''@echo off
+call "{args.vcvars.resolve()}"
+if errorlevel 1 exit /b %errorlevel%
+cl /nologo /O2 /fp:precise /D_CRT_SECURE_NO_WARNINGS /LD /I. ISO_532-1.c ISO_532-1_helper.c decoder-wrapper.c /link /OUT:reference.dll /EXPORT:f_loudness_from_signal
+if errorlevel 1 exit /b %errorlevel%
+cl /nologo /O2 /fp:precise /D_CRT_SECURE_NO_WARNINGS /I. ISO_532-1.c ISO_532-1_main.c ISO_532-1_helper.c /Fe:reference_cli.exe
+exit /b %errorlevel%
+''')
+    shutil.copyfile(cdir/'build.cmd',out/'build-c.cmd.txt')
+    run(['cmd','/c',cdir/'build.cmd'],cdir)
+    write(cdir/'version.cmd',f'@echo off\ncall "{args.vcvars.resolve()}" >nul\ncl /Bv\nexit /b %errorlevel%\n')
+    ver=run(['cmd','/c',cdir/'version.cmd'],cdir,False)
+    assert ver.returncode in [0,2]
+    results['environment']['MSVC_version_probe']={'exit_code':ver.returncode,'text':ver.stdout+ver.stderr,'exit_2_reason':'cl /Bv with no source emits D8003'}
+    probe=work/'probe';(probe/'src').mkdir(parents=True)
+    shutil.copyfile(HERE/'rust-probe.rs.txt',probe/'src/main.rs')
+    write(probe/'Cargo.toml','[package]\nname="c01-probe"\nversion="0.0.0"\nedition="2021"\n[workspace]\n[dependencies]\niso532={path="../snapshot/iso532"}\n')
+    shutil.copyfile(snapshot/'Cargo.lock',probe/'Cargo.lock')
+    run(['cargo','build','--release','--offline','--manifest-path',probe/'Cargo.toml'],work)
+    shutil.copyfile(probe/'Cargo.toml',out/'probe-Cargo.toml')
+    shutil.copyfile(probe/'Cargo.lock',out/'probe-Cargo.lock.txt')
+    exe=probe/'target/release/c01-probe.exe'
+    results['binary_hashes']={p.name:sha(p) for p in [exe,cdir/'reference.dll',cdir/'reference_cli.exe']}
+    results['harness_hashes_before_redaction']={p.name:sha(p) for p in [HERE/'run_experiment.py',HERE/'decoder-wrapper.c.txt',HERE/'rust-probe.rs.txt',cdir/'build.cmd']}
+    lib=ct.CDLL(str(cdir/'reference.dll'))
+    lib.c01_decode.argtypes=[ct.c_char_p,ct.c_char_p,ct.c_double,DP,ct.c_int,DP]
+    lib.c01_decode.restype=ct.c_int
+    lib.f_loudness_from_signal.argtypes=[ct.POINTER(Input),ct.c_int,ct.c_int,ct.c_double,DP,ct.POINTER(DP),ct.c_int]
+    lib.f_loudness_from_signal.restype=ct.c_int
+    cal=next((off/'Annex C').glob('calibration*.wav'))
+    cal_dec,_,cal_meta=wav_read(cal);results['calibration']=cal_meta|{'reference_level_dB':60.0,'decoded_check':'PCM16/32768','calculation':'sequential sum(pow(sample,2))/N; sqrt(pow(10,60/10)*4e-10/mean_square)'}
+    def decode(p,n):
+        x=np.empty(n,dtype='<f8');factor=np.empty(1,dtype='<f8')
+        got=lib.c01_decode(str(p).encode(),str(cal).encode(),60.,ptr(x),n,ptr(factor))
+        log.append({'operation':'c01_decode','input':str(p),'return_code':got,'expected_samples':n})
+        assert got==n and np.isfinite(x).all();return x,float(factor[0])
+    def c_run(x,tag):
+        k=len(x)//24;n=np.full(k,np.nan);s=np.full((240,k),np.nan)
+        sp=(DP*240)(*[ptr(r) for r in s]);ih=ah(x)
+        got=lib.f_loudness_from_signal(ct.byref(Input(len(x),48000.,ptr(x))),0,1,0.,ptr(n),sp,k)
+        log.append({'operation':'f_loudness_from_signal','case':tag,'return_frames':got,'expected_frames':k,'input_f64le_sha256':ih,'input_unchanged':ih==ah(x)})
+        assert got==k and ih==ah(x)
+        ck={'n':array_check(n,(k,)),'spec':array_check(s,(240,k))}
+        assert all(v['passed'] for v in ck.values())
+        n.tofile(work/f'{tag}-c-n.bin');s.tofile(work/f'{tag}-c-spec.bin')
+        return n,s,ck
+    def rust(x,tag):
+        d=work/tag;d.mkdir();x.tofile(d/'input.bin');ih=sha(d/'input.bin')
+        r=run([exe,d/'input.bin',d],work)
+        n=np.fromfile(d/'n.bin',dtype='<f8');s=np.fromfile(d/'spec.bin',dtype='<f8');t=np.fromfile(d/'time.bin',dtype='<f8')
+        f=(len(x)+95)//96
+        ck={'n':array_check(n,(f,)),'spec':array_check(s,(240*f,)),'time':array_check(t,(f,))}
+        assert all(v['passed'] for v in ck.values())
+        assert ih==ah(x)==sha(d/'input.bin')
+        assert np.array_equal(t.view(np.uint64),(96*np.arange(f,dtype=np.float64)/48000).view(np.uint64))
+        meta=json.loads(r.stdout.splitlines()[0]);assert meta['last_total_bits']==value(n[-1])['bits']
+        return n,s.reshape(240,f),t,ck,meta
+    def cli(wav,tag,j=None,ref=None):
+        d=work/(tag+'-cli');d.mkdir()
+        run([cdir/'reference_cli.exe','Time_varying','F',wav,cal,'60'],d)
+        files=list(d.glob('*.csv'))
+        def rows(p,cols):
+            rs=[]
+            for line in p.read_text(encoding='utf8').splitlines():
+                cells=line.strip().rstrip(';').split(';')
+                if len(cells)!=cols:continue
+                try:vals=[float(v.replace(',','.')) for v in cells]
+                except ValueError:continue
+                rs.append(vals)
+            return rs
+        nf=next(p for p in files if p.name.startswith('Loudness'))
+        sf=next(p for p in files if p.name.startswith('SpecLoudness'))
+        nr=rows(nf,2);sr=rows(sf,241)
+        for p in [nf,sf]:shutil.copyfile(p,out/f'{tag}-{p.name}')
+        result={'total_rows':len(nr),'specific_rows':len(sr),'files':{p.name:sha(p) for p in files}}
+        if j is not None:
+            assert j<len(nr) and j<len(sr)
+            vals=np.array([nr[j][1]]+sr[j][1:]);errors=np.abs(vals-ref)
+            result|={'target_row':j,'target_total_row':nr[j],'target_specific_time':sr[j][0],
+                     'target_specific_columns':len(sr[j])-1,'max_serialization_error':float(errors.max()),
+                     'passed':nr[j][0]==96*j/48000 and sr[j][0]==96*j/48000 and bool(np.all(errors<=.000050000001))}
+        return result
+    for sig in [18,23,24,25]:
+        p=next(off.rglob(f'Test signal {sig} (*.wav'));dec,raw,meta=wav_read(p)
+        x,factor=decode(p,len(dec));assert np.array_equal((dec*factor).view('u8'),x.view('u8'))
+        L=len(x);K=L//24;Lp=96*((L+95)//96+1);j=K//4
+        assert K%4==0 and L%24>0
+        xp=np.concatenate([x,np.zeros(Lp-L)]);pw=work/f'signal-{sig}-padded.wav';wav_write(pw,raw+bytes((Lp-L)*2))
+        xcli,factor2=decode(pw,Lp);assert factor==factor2 and ah(xcli)==ah(xp)
+        cn,cs,cc=c_run(x,f'signal-{sig}-unpadded');pn,ps,pc=c_run(xp,f'signal-{sig}-padded')
+        rn,rs,rt,rc,rm=rust(x,f'signal-{sig}-rust')
+        assert j==len(rn)-1
+        ref=np.r_[pn[K],ps[:,K]];got=np.r_[rn[-1],rs[:,-1]];comparison=compare(ref,got)
+        inv={'total':invariance(cn,pn[:K]),'specific':invariance(cs,ps[:,:K].copy())}
+        perturbed=ref.copy();perturbed[138]+=1e-6;neg=compare(perturbed,got)
+        neg={'injected_coordinate':'specific[137]','injected_offset':float(perturbed[138]-ref[138]),'result':neg,
+             'passed':neg['verdict']!='AGREES' and neg['first_failure']=='specific[137]'}
+        nanref=ref.copy();nanref[1]=np.nan
+        guards={'nonfinite_rejected':compare(nanref,got)['reason']=='nonfinite','shape_rejected':compare(ref[:-1],got)['reason']=='shape'}
+        cr=cli(pw,f'signal-{sig}-padded',j,ref)
+        c={'signal':sig,'L':L,'K':K,'L_pad':Lp,'j':j,'frames':len(rn),'time_seconds':float(rt[-1]),
+           'input':meta|{'pressure_f64le_sha256':ah(x),'padded_pressure_f64le_sha256':ah(xp),'padded_WAV_sha256':sha(pw),'calibration_factor':value(factor),
+           'C_Rust_same_input':True,'CLI_wrapper_padded_pressure_sha256':ah(xcli),'CLI_input_identity_passed':ah(xcli)==ah(xp)},
+           'shapes_and_finite':{'c_unpadded':cc,'c_padded':pc,'rust':rc},'comparison':comparison,
+           'total':{'C':value(ref[0]),'Rust':value(got[0]),'abs_diff':float(abs(ref[0]-got[0]))},
+           'specific':[{'bark_index':b,'bark':(b+1)/10,'C':value(ref[b+1]),'Rust':value(got[b+1]),'abs_diff':float(abs(ref[b+1]-got[b+1]))} for b in range(240)],
+           'padding_invariance':inv,'comparator_negative_control':neg,'comparator_guard_controls':guards,'cli':cr,'rust_probe_metadata':rm,
+           'output_hashes':{'C_unpadded_n':ah(cn),'C_unpadded_spec':ah(cs),'C_padded_n':ah(pn),'C_padded_spec':ah(ps),'Rust_n':ah(rn),'Rust_spec':ah(rs),'Rust_time':ah(rt)}}
+        results['signals'].append(c)
+        with (out/f'signal-{sig}-target.csv').open('w',encoding='utf8',newline='') as f:
+            w=csv.writer(f);w.writerow(['coordinate','C_decimal17','C_binary64_hex','Rust_decimal17','Rust_binary64_hex','abs_difference_decimal17'])
+            for b,(a,z) in enumerate(zip(ref,got)):
+                w.writerow(['total' if b==0 else f'specific[{b-1}]',value(a)['decimal17'],value(a)['bits'],value(z)['decimal17'],value(z)['bits'],format(abs(a-z),'.17g')])
+        if sig==18:base=x[:4897].copy();base_raw=raw[:4897*2];base_meta=meta
+        print(f'signal {sig}: {comparison["verdict"]}, total={comparison["total_abs_diff"]:.17g}, specific={comparison["max_specific_abs_diff"]:.17g}',flush=True)
+        js(out/'results.partial.json',results)
+    results['boundary_base']={'signal':18,'samples':4897,'pressure_f64le_sha256':ah(base),'original_WAV_sha256':base_meta['WAV_sha256']}
+    expected=[(4800,200,50,50,50),(4801,200,50,50,51),(4823,200,50,50,51),(4824,201,50,51,51),(4825,201,50,51,51),(4895,203,50,51,51),(4896,204,51,51,51),(4897,204,51,51,52)]
+    for L,k,nt,ns,nr in expected:
+        x=base[:L].copy();wav=work/f'boundary-{L}.wav';wav_write(wav,base_raw[:L*2])
+        xd,_=decode(wav,L);assert ah(xd)==ah(x)
+        cn,cs,cc=c_run(x,f'boundary-{L}');rn,rs,rt,rc,rm=rust(x,f'boundary-{L}-rust');cr=cli(wav,f'boundary-{L}')
+        measured={'C_library_frames':len(cn),'C_spec_elements':cs.size,'CLI_total':cr['total_rows'],'CLI_specific':cr['specific_rows'],'Rust_n':len(rn),'Rust_spec_elements':rs.size,'Rust_time':len(rt)}
+        exp={'C_library_frames':k,'C_spec_elements':240*k,'CLI_total':nt,'CLI_specific':ns,'Rust_n':nr,'Rust_spec_elements':240*nr,'Rust_time':nr}
+        results['boundaries'].append({'L':L,'input_pressure_f64le_sha256':ah(x),'WAV_sha256':sha(wav),'expected':exp,'measured':measured,'shape_finite':{'C':cc,'Rust':rc},'passed':exp==measured})
+    test=run(['cargo','test','-p','iso532','--test','output_grid','--locked','--offline'],snapshot,False)
+    results['output_grid_test']={'exit_code':test.returncode,'stdout':test.stdout,'stderr':test.stderr,'passed':test.returncode==0}
+    source_after={str(p.relative_to(snapshot)).replace('\\','/'):sha(p) for p in sorted(snapshot.rglob('*')) if p.is_file() and 'target' not in p.relative_to(snapshot).parts}
+    # Cargo creates build output only; every archived file must stay byte-identical.
+    unchanged=all(source_after.get(k)==v for k,v in source_before.items())
+    results['source_hashes']['snapshot_after']=source_after
+    results['source_hashes']['official_files_after']={p.name:sha(cdir/p.name) for p in originals}
+    results['gates']={
+      'official_source_identity':sha(cdir/'ISO_532-1.c')==C_SHA,
+      'source_snapshot_unchanged':unchanged,
+      'four_rounding_agreements':all(c['comparison']['verdict']=='AGREES' for c in results['signals']),
+      'all_internal_prefix_invariance':all(v['passed'] for c in results['signals'] for v in c['padding_invariance'].values()),
+      'comparator_negative_control':all(c['comparator_negative_control']['passed'] for c in results['signals']),
+      'finite_shape_rejection_controls':all(all(c['comparator_guard_controls'].values()) for c in results['signals']),
+      'CLI_target_serialization_grid':all(c['cli']['passed'] for c in results['signals']),
+      'eight_boundary_rows':len(results['boundaries'])==8 and all(c['passed'] for c in results['boundaries']),
+      'identical_pressure_input':all(c['input']['CLI_input_identity_passed'] and c['input']['C_Rust_same_input'] for c in results['signals']),
+      'supporting_output_grid_contract':test.returncode==0}
+    results['numeric_gap_closure_recommended']=all(results['gates'].values())
+    results['finished_utc']=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    results['worktree_after']=run(['git','status','--short'],repo).stdout
+    js(out/'results.json',results);js(out/'run-log.json',log)
+    (out/'results.partial.json').unlink()
+    print(json.dumps(results['gates'],indent=2),flush=True)
+except BaseException as e:
+    results['execution_error']=repr(e);js(out/'results.partial.json',results);js(out/'run-log.json',log);raise

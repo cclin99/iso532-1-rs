@@ -1,0 +1,17 @@
+{
+  "final_logged_passes": [
+    {
+      "command": "python tools/redact_paths.py <delivery>",
+      "exit_code": 0,
+      "stdout": "0 file(s) changed\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/redact_paths.py --check <delivery>",
+      "exit_code": 0,
+      "stdout": "clean\n",
+      "stderr": ""
+    }
+  ],
+  "post_log_confirmation": "Both commands are repeated after this log is written; finalizer requires no changes and clean before hashing."
+}

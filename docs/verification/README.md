@@ -17,7 +17,7 @@ English summary.
 | brief | issued | status |
 |---|---|---|
 | [`briefs/2026-11-01-F03-B-aarae-lineage.md`](briefs/2026-11-01-F03-B-aarae-lineage.md) | 2026-11-01 | open: lineage of the `USL[12][4]` value 0.24 through AARAE 2015 and the 2014 C program |
-| [`briefs/2026-11-01-C01-zero-pad-reference.md`](briefs/2026-11-01-C01-zero-pad-reference.md) | 2026-11-01 | open: official C library value for the trailing point of Annex B signals 18/23/24/25 on zero-padded input |
+| [`briefs/2026-11-01-C01-zero-pad-reference.md`](briefs/2026-11-01-C01-zero-pad-reference.md) | 2026-11-01 | delivered 2026-11-03: [`2026-11-03-C01-zero-pad-aa379db/`](2026-11-03-C01-zero-pad-aa379db/) PARTIAL; four specific tails agree within 1e-14, but total tails only WITHIN TOLERANCE; prefix invariance, negative controls and eight boundaries pass; numerical gap remains open. Separate [tail root-cause experiment](2026-11-03-C01-tail-root-cause-aa379db/) quantifies rounding, slope and main-loudness contributions; it is not a production fix or closure |
 | [`briefs/2026-11-01-release-0.3.1-acceptance.md`](briefs/2026-11-01-release-0.3.1-acceptance.md) | 2026-11-01 | delivered 2026-11-02: [`2026-11-02-release-0.3.1-30e4279/`](2026-11-02-release-0.3.1-30e4279/) ACCEPT, 8/8 items passed; tag `v0.3.1` released on it |
 
 ## Evidence archives
@@ -38,6 +38,9 @@ below before unpacking it into a new, empty directory.
 | 2026-10-31 F-03 authority trace, [`2026-10-31-F03-authority-d623d32/`](2026-10-31-F03-authority-d623d32/) | `d623d32` | text-only delivery (report, sources, acquisition checklist, literature follow-up) | – | – | n/a |
 | 2026-10-31 F-03 SQAT source check, [`2026-10-31-F03-SQAT-d623d32/`](2026-10-31-F03-SQAT-d623d32/) | `d623d32` | text-only delivery (report, sources) | – | – | n/a |
 | 2026-11-02 release 0.3.1 pre-tag acceptance, [`2026-11-02-release-0.3.1-30e4279/`](2026-11-02-release-0.3.1-30e4279/) | `30e4279` | text-only delivery (reports, harness sources, logs, `results.json`, `delivery-integrity.json`); builds, WAVs and the isolated checkout stay in the auditor's `tmp/`, not archived | – | – | n/a |
+| 2026-11-03 C-01 zero-pad reference, [`2026-11-03-C01-zero-pad-aa379db/`](2026-11-03-C01-zero-pad-aa379db/) | `aa379db` | text-only delivery (bilingual preregistered design and reports, runner, full-precision values, CLI outputs, controls, logs and integrity manifest); C/Rust builds, WAVs and the isolated snapshot stay in `tmp/`, not archived; strict total-loudness gate failed, no closure | – | – | n/a |
+| 2026-11-03 C-01 tail root cause, [`2026-11-03-C01-tail-root-cause-aa379db/`](2026-11-03-C01-tail-root-cause-aa379db/) | `aa379db` | separate text-only diagnostic delivery; bitwise baseline/replay controls and ordered stage substitutions quantify four tail discrepancies; removing rounding alone does not meet 1e-14; no production change or C-01 closure; raw stage arrays and builds remain in `tmp/` | – | – | n/a |
+| 2026-11-03 F-03 coefficient hypothesis, [`2026-11-03-F03-coefficient-hypothesis-aa379db/`](2026-11-03-F03-coefficient-hypothesis-aa379db/) | `aa379db` | research delivery (bilingual design and reports, `numeric.c`, isolation diffs, `results.json`, `run-log.json`, sources, integrity manifest); exact-arithmetic and C/Python/Rust cross-checks do not support "0.24 compensates floating-point or layout error"; the ISO Table A.9 cell itself stays PENDING; no table change | – | – | n/a |
 
 Fill the download column with the cloud-drive link once the archive is uploaded.
 A link alone is not evidence; the hash is what ties the download to the report.

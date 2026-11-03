@@ -1,0 +1,25 @@
+use std::{env, fs, io::Write, path::Path};
+fn save(p: &Path, xs: &[f64]) {
+    let mut f = fs::File::create(p).unwrap();
+    for x in xs { f.write_all(&x.to_le_bytes()).unwrap(); }
+}
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    let raw = fs::read(&args[1]).unwrap();
+    assert_eq!(raw.len() % 8, 0);
+    let x: Vec<f64> = raw.chunks_exact(8)
+        .map(|v| f64::from_le_bytes(v.try_into().unwrap())).collect();
+    let out = iso532::loudness_zwtv(&x, 48_000.0, iso532::FieldType::Free).unwrap();
+    let d = Path::new(&args[2]);
+    save(&d.join("n.bin"), &out.n);
+    save(&d.join("spec.bin"), &out.n_specific);
+    save(&d.join("time.bin"), &out.time_axis);
+    let j = out.n.len() - 1;
+    println!("{{\"n\":{},\"spec\":{},\"time\":{},\"last_total\":\"{:.17e}\",\"last_total_bits\":\"{:016x}\",\"avx2_available\":{}}}",
+        out.n.len(), out.n_specific.len(), out.time_axis.len(), out.n[j], out.n[j].to_bits(),
+        std::is_x86_feature_detected!("avx2"));
+    for b in 0..240 {
+        let v = out.n_specific[b * out.n.len() + j];
+        println!("specific,{b},{v:.17e},{:016x}",v.to_bits());
+    }
+}

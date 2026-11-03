@@ -1,0 +1,49 @@
+{
+  "recorded_precheck_passes": [
+    {
+      "command": [
+        "python",
+        "tools/redact_paths.py",
+        "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db"
+      ],
+      "exit_code": 0,
+      "stdout": "0 file(s) changed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "tools/redact_paths.py",
+        "--check",
+        "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db"
+      ],
+      "exit_code": 0,
+      "stdout": "clean\n",
+      "stderr": ""
+    }
+  ],
+  "final_logged_passes": [
+    {
+      "command": [
+        "python",
+        "tools/redact_paths.py",
+        "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db"
+      ],
+      "exit_code": 0,
+      "stdout": "0 file(s) changed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "tools/redact_paths.py",
+        "--check",
+        "docs\\verification\\2026-11-03-C01-tail-root-cause-aa379db"
+      ],
+      "exit_code": 0,
+      "stdout": "clean\n",
+      "stderr": ""
+    }
+  ],
+  "post_log_confirmation": "Both passes repeated after writing this log; zero changes and clean required before hashing."
+}
