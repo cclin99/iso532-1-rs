@@ -1,6 +1,6 @@
 # Aligning the slope stage with Annex A: decision on the C-01 tail root cause and the F-03 coefficient
 
-> Pair／對照: [繁體中文](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md) · source: zh · synced 2026-11-03
+> 對照／Pair: [中文版](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md) · source: zh · synced 2026-11-03
 
 2026-11-03 (Asia/Taipei). Code snapshot `aa379db` (v0.3.1). Decision memo; no code or golden change. Evidence: Astra's [`verification/2026-11-03-C01-zero-pad-aa379db/`](verification/2026-11-03-C01-zero-pad-aa379db/), [`verification/2026-11-03-C01-tail-root-cause-aa379db/`](verification/2026-11-03-C01-tail-root-cause-aa379db/), [`verification/2026-11-03-F03-coefficient-hypothesis-aa379db/`](verification/2026-11-03-F03-coefficient-hypothesis-aa379db/), and Claude's cross-analysis [`verification/2026-11-03-C01-cross-analysis-aa379db/`](verification/2026-11-03-C01-cross-analysis-aa379db/).
 
