@@ -404,6 +404,126 @@ mod tests {
         assert!(spec.iter().all(|&v| v >= 0.0), "negative specific loudness");
     }
 
+    /// Annex B signal 18, frame 1564 (NL loudness, Rust pipeline at `aa379db`,
+    /// `tmp/c01-tail-root-cause-aa379db-run2/signal-18/R-pipeline/nl.bin`).
+    /// Band 4 starts with a slope from N1 = nm[3] at Z = 3.5: USL 0.63 down to
+    /// RNS 0.82 at Z = 3.6002, then USL 0.50 down to the core loudness nm[4] at
+    /// Z = 3.6124, then flat.
+    const SIG18_FRAME1564: [f64; 21] = [
+        6.43992114652731096e-02,
+        5.99842137688217036e-01,
+        8.08837572799405269e-01,
+        8.83134246474833851e-01,
+        8.13879371664140705e-01,
+        3.57705753641196944e-01,
+        2.20569571587427210e-01,
+        2.46142650453736456e-01,
+        3.93134195201309600e-01,
+        3.51847485801889681e-01,
+        2.76104071380374294e-01,
+        2.58339113853283397e-01,
+        3.38786597848122206e-01,
+        3.65479352730189611e-01,
+        2.57648123606176893e-01,
+        1.96771441338274927e-01,
+        1.38028800770865573e-01,
+        6.49358452068741349e-02,
+        2.95640883251312723e-03,
+        7.11993604699323124e-04,
+        0.00000000000000000e+00,
+    ];
+
+    /// Total of `SIG18_FRAME1564` before F-07 (commit 9301c0d); F-07 only
+    /// changes the specific pattern, so the total must stay bitwise identical.
+    const SIG18_FRAME1564_TOTAL_BITS: u64 = 0x401f_c356_fc47_a15a;
+
+    #[test]
+    fn f07_sample_after_segment_end_is_core_or_next_segment() {
+        let nm = SIG18_FRAME1564;
+        let mut spec = [f64::NAN; 240];
+        let total = calc_slopes_into(&nm, &mut spec);
+        assert_eq!(
+            total.to_bits(),
+            SIG18_FRAME1564_TOTAL_BITS,
+            "total {total:.17e} moved"
+        );
+        assert_eq!(calc_slopes_n_only(&nm).to_bits(), total.to_bits());
+        // Cell 35 (Z = 3.6) lies inside the first segment (ends at 3.6002).
+        let want35 = nm[3] - 0.1 * 0.63;
+        assert!(
+            (spec[35] - want35).abs() <= 1e-12,
+            "spec[35] {:.17e} vs {want35:.17e}",
+            spec[35]
+        );
+        // Cell 36 (Z = 3.7) lies after the second segment (ends at 3.6124 on
+        // the core loudness): Annex A writes the core loudness there, the
+        // MoSQITo-derived rule extrapolated the second segment to 0.77011.
+        assert_eq!(
+            spec[36].to_bits(),
+            nm[4].to_bits(),
+            "spec[36] {:.17e} vs nm[4] {:.17e}",
+            spec[36],
+            nm[4]
+        );
+        for (j, v) in spec.iter().enumerate().take(44).skip(37) {
+            assert_eq!(v.to_bits(), nm[4].to_bits(), "spec[{j}] {v:.17e}");
+        }
+    }
+
+    /// Synthetic band-4 frame whose slope segments end on RNS boundaries and
+    /// continue with another slope segment (never on the core loudness inside
+    /// a cell): nm[3] = 0.45, nm[4] = 0.1, all other bands 0.
+    ///
+    /// Expected values by hand from the Annex A segment chain (binary64
+    /// tables): from Z = 3.5, USL[11][3] = 0.50 down to RNS 0.42 at Z = 3.56,
+    /// USL[12][3] = 0.24 down to 0.30 at Z = 4.06, USL[13][3] = 0.18 clamped at
+    /// ZUP = 4.4 (N = 0.2388); band 5 continues with USL[13][4] = 0.17 down to
+    /// 0.22 at Z = 4.5106 and USL[14][4] = 0.11 after that.
+    ///
+    /// Cross-check: the official C (`tmp/c01-tail-root-cause-aa379db-run2/c/
+    /// stages.dll`, `rc_slopes`, n = 1) gives 0.41042398052005946,
+    /// 0.29281798859491043, 0.22181698491381224 and 0.21017569557691812 for
+    /// cells 35, 40, 44 and 45: the same chain shifted by its `_ZUP += .0001f`
+    /// band-edge epsilon (1e-4 Bark x USL, <= 2.4e-5 here).
+    #[test]
+    fn f07_slope_followed_by_slope_keeps_the_segment_values() {
+        let mut nm = [0.0; 21];
+        nm[3] = 0.45;
+        nm[4] = 0.1;
+        let mut spec = [f64::NAN; 240];
+        let total = calc_slopes_into(&nm, &mut spec);
+        assert_eq!(calc_slopes_n_only(&nm).to_bits(), total.to_bits());
+        let n_zup4 = 0.30 - (4.4 - 4.06) * 0.18;
+        let z_rns13_band5 = 4.4 + (n_zup4 - 0.22) / 0.17;
+        for (j, want) in [
+            (35, 0.42 - (3.6 - 3.56) * 0.24),
+            (39, 0.42 - (4.0 - 3.56) * 0.24),
+            (40, 0.30 - (4.1 - 4.06) * 0.18),
+            (43, n_zup4),
+            (44, n_zup4 - 0.1 * 0.17),
+            (45, 0.22 - (4.6 - z_rns13_band5) * 0.11),
+        ] {
+            assert!(
+                (spec[j] - want).abs() <= 1e-12,
+                "spec[{j}] {:.17e} vs {want:.17e}",
+                spec[j]
+            );
+        }
+        let c = [
+            (35, 0.410_423_980_520_059_46),
+            (40, 0.292_817_988_594_910_43),
+            (44, 0.221_816_984_913_812_24),
+            (45, 0.210_175_695_576_918_12),
+        ];
+        for (j, want) in c {
+            assert!(
+                (spec[j] - want).abs() <= 1e-4 * 0.24,
+                "spec[{j}] {:.17e} vs official C {want:.17e}",
+                spec[j]
+            );
+        }
+    }
+
     fn sample_main_loudness() -> [f64; 21] {
         let mut nm = [0.0; 21];
         for (band, value) in nm.iter_mut().enumerate() {

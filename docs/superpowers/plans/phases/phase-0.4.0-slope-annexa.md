@@ -111,8 +111,8 @@
 
 ## Task 7：RED — F-07
 
-- [ ] `calc_slopes.rs` 單元測試 `f07_sample_after_segment_end_is_core_or_next_segment`：Annex B 訊號 18 第 1564 幀 NL 向量（從 `tmp/c01-tail-root-cause-aa379db-run2/signal-18/R-pipeline/nl.bin` 取，21 值、17 位十進位寫進測試），期望 `spec[36]` 逐位元等於 `nm[4]`（C 寫核心值）、`spec[35]` 等於 `nm[3] - 0.1 * 0.63`（容差 1e-12）、total 與修正前逐位元相同。修正前 `spec[36]` = 0.77011…，必須 FAILED。
-- [ ] 自選一個「後面接另一段斜率」的合成幀（例如 nm[3] 高、nm[4] 很低使段落在 RNS 邊界結束），期望值用 `complete_band` 語意手算或用官方 C DLL（`tmp/c01-tail-root-cause-aa379db-run2/c/stages.dll` 的 `rc_slopes`，見 cross-analysis 的 `ctypes_check.py`）取得，寫明來源。
+- [x] `calc_slopes.rs` 單元測試 `f07_sample_after_segment_end_is_core_or_next_segment`：Annex B 訊號 18 第 1564 幀 NL 向量（從 `tmp/c01-tail-root-cause-aa379db-run2/signal-18/R-pipeline/nl.bin` 取，21 值、17 位十進位寫進測試），期望 `spec[36]` 逐位元等於 `nm[4]`（C 寫核心值）、`spec[35]` 等於 `nm[3] - 0.1 * 0.63`（容差 1e-12）、total 與修正前逐位元相同。修正前 `spec[36]` = 0.77011…，必須 FAILED。
+- [x] 自選一個「後面接另一段斜率」的合成幀（例如 nm[3] 高、nm[4] 很低使段落在 RNS 邊界結束），期望值用 `complete_band` 語意手算或用官方 C DLL（`tmp/c01-tail-root-cause-aa379db-run2/c/stages.dll` 的 `rc_slopes`，見 cross-analysis 的 `ctypes_check.py`）取得，寫明來源。
 
 ## Task 8：GREEN 與重測
 
