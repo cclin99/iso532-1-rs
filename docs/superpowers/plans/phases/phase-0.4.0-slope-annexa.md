@@ -55,8 +55,8 @@
 
 ## Task 3：契約與串流不變
 
-- [ ] `cargo test -p iso532 --test output_grid --test stream --test stream_scalar --test stream_no_rayon --test simd_parity --test determinism` 全過（不改這些測試）。
-- [ ] `cargo test -p iso532 --test annexb --test annexb_validator` 全過；若任何 Annex B 點失敗，停止並記錄為 finding，不得調門檻。
+- [x] `cargo test -p iso532 --test output_grid --test stream --test stream_scalar --test stream_no_rayon --test simd_parity --test determinism` 全過（不改這些測試）。
+- [x] `cargo test -p iso532 --test annexb --test annexb_validator` 全過；若任何 Annex B 點失敗，停止並記錄為 finding，不得調門檻。
 
 ## Task 4：C golden 工具與測試
 

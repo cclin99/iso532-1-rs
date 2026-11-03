@@ -42,7 +42,18 @@ fn annexb_timevarying_signal10() {
     let iso_time = read_bin("annexb_sig10", "tv_time.bin");
     let iso_ref = read_bin("annexb_sig10", "tv_nref.bin");
     let r = loudness_zwtv(&sig, 48000.0, FieldType::Free).unwrap();
-    assert_close(&r.n, &want_n, 1e-6, 1e-9, "sig10 N(t) vs mosqito");
+    // Compatibility comparison with the MoSQITo 1.2.1 golden only (D-E of the
+    // 0.4.0 phase plan): since 0.4.0 the slope stage follows Annex A (F-04/F-05)
+    // and MoSQITo is no longer the acceptance reference, so the bound is the
+    // 5e-3 sone compatibility tolerance. The Annex B verdicts below are the
+    // conformance check and keep their rule unchanged.
+    assert_close(
+        &r.n,
+        &want_n,
+        0.0,
+        5e-3,
+        "sig10 N(t) vs mosqito (compatibility)",
+    );
     assert_close(
         &r.time_axis,
         &iso_time,
