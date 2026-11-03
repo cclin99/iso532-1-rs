@@ -285,6 +285,88 @@ mod tests {
         assert_eq!(spec, full_spec);
     }
 
+    /// Annex B signal 23, frame 3893 (NL loudness, Rust pipeline at `aa379db`;
+    /// cross-analysis `docs/verification/2026-11-03-C01-cross-analysis-aa379db/`
+    /// §3.3). Band 3 starts a slope segment at its last 0.1 Bark cell and meets
+    /// the core loudness at Z = 3.438, before ZUP = 3.5.
+    const SIG23_FRAME3893: [f64; 21] = [
+        0.0,
+        0.09591180735716698,
+        0.16833504054822399,
+        0.09948491987338776,
+        0.3233949923141389,
+        0.22772788115184733,
+        0.1431873258089412,
+        0.13681489675458033,
+        0.24888795267053007,
+        0.16349381128989549,
+        0.16619398143785133,
+        0.18463027349402386,
+        0.292104681120268,
+        0.30724002086646746,
+        0.28346493604659934,
+        0.27811900938216066,
+        0.23453330895606994,
+        0.17703989122604918,
+        0.0814303217458846,
+        0.018764949048978314,
+        0.0,
+    ];
+
+    #[test]
+    fn f05_last_cell_remainder_is_integrated() {
+        // Expected value: `sliver_check.py::rust_slopes_fixed` with USL[12][4] = 0.24
+        // (the Annex A band completion restored); the C port with epsilon = 0 and
+        // binary64 tables gives 4.750843403589338 for the same frame.
+        let want = 4.750_843_403_589_338_5;
+        let got = calc_slopes_n_only(&SIG23_FRAME3893);
+        assert!(
+            (got - want).abs() <= 1e-12,
+            "N {got:.17} vs Annex A {want:.17}, |diff| = {:e}",
+            (got - want).abs()
+        );
+        let mut spec = [f64::NAN; 240];
+        assert_eq!(
+            calc_slopes_into(&SIG23_FRAME3893, &mut spec).to_bits(),
+            got.to_bits()
+        );
+    }
+
+    #[test]
+    fn f04_total_is_not_rounded() {
+        for (name, nm) in [
+            ("sig23_frame3893", SIG23_FRAME3893),
+            ("sample", sample_main_loudness()),
+            ("ramp", ramp(0.3, 7.0)),
+        ] {
+            let got = calc_slopes_n_only(&nm);
+            assert!(got > 0.0, "{name}: non-zero frame expected");
+            let step = if got <= 16.0 { 1000.0 } else { 100.0 };
+            let rounded = (got * step).round() / step;
+            assert_ne!(
+                got.to_bits(),
+                rounded.to_bits(),
+                "{name}: N = {got:.17} is still rounded to 1/{step}"
+            );
+        }
+    }
+
+    #[test]
+    fn f06_band0_ignores_band20() {
+        let mut nm = [0.0; 21];
+        nm[20] = 1.0;
+        let mut spec = [f64::NAN; 240];
+        let got = calc_slopes_into(&nm, &mut spec);
+        assert_eq!(got, 1.0 * (24.0 - 23.6), "band 0 must start from N1 = 0");
+        assert_eq!(calc_slopes_n_only(&nm).to_bits(), got.to_bits());
+        assert!(
+            spec[0..9].iter().all(|&v| v == 0.0),
+            "band 0 specific loudness must stay 0: {:?}",
+            &spec[0..9]
+        );
+        assert!(spec.iter().all(|&v| v >= 0.0), "negative specific loudness");
+    }
+
     fn sample_main_loudness() -> [f64; 21] {
         let mut nm = [0.0; 21];
         for (band, value) in nm.iter_mut().enumerate() {

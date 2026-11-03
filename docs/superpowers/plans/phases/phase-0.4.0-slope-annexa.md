@@ -40,10 +40,10 @@
 
 ## Task 1：RED — F-05 與 F-04 的失敗測試
 
-- [ ] 新增 `iso532/src/core/calc_slopes.rs` 單元測試 `f05_last_cell_remainder_is_integrated`：取 cross-analysis 報告 §3 的訊號 23 第 3893 幀 NL 向量（21 值，報告附 17 位十進位），期望值為 C（epsilon=0、f64 表、0.24）之 total `4.7653976527…` 的去 epsilon 對應值；用 `sliver_check_024.py` 印出的 `fixed24` 精確值作為期望，容差 1e-12。此測試在修正前必須失敗（現值 4.7517… 差 1.4e-2）。
-- [ ] 新增 `f04_total_is_not_rounded`：任一非零 NL 幀的 total 乘 1000 不應為整數（在修正前恆為整數，失敗）。
-- [ ] 新增 `f06_band0_ignores_band20`：`nm = [0; 21]; nm[20] = 1.0` 期望 total 等於 `1.0 * (24.0 - 23.6)` 且 `spec[0..9]` 全為 0（修正前 total 0.982、spec[0] = −9.86，失敗）。
-- [ ] `cargo test -p iso532 --lib calc_slopes` 三個新測試 RED，其餘 GREEN。
+- [x] 新增 `iso532/src/core/calc_slopes.rs` 單元測試 `f05_last_cell_remainder_is_integrated`：取 cross-analysis 報告 §3 的訊號 23 第 3893 幀 NL 向量（21 值，報告附 17 位十進位），期望值為 C（epsilon=0、f64 表、0.24）之 total `4.7653976527…` 的去 epsilon 對應值；用 `sliver_check_024.py` 印出的 `fixed24` 精確值作為期望，容差 1e-12。此測試在修正前必須失敗（現值 4.7517… 差 1.4e-2）。
+- [x] 新增 `f04_total_is_not_rounded`：任一非零 NL 幀的 total 乘 1000 不應為整數（在修正前恆為整數，失敗）。
+- [x] 新增 `f06_band0_ignores_band20`：`nm = [0; 21]; nm[20] = 1.0` 期望 total 等於 `1.0 * (24.0 - 23.6)` 且 `spec[0..9]` 全為 0（修正前 total 0.982、spec[0] = −9.86，失敗）。
+- [x] `cargo test -p iso532 --lib calc_slopes` 三個新測試 RED，其餘 GREEN。
 
 ## Task 2：GREEN — 修 `calc_slopes_impl`
 
