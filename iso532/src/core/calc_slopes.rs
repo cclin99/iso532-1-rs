@@ -60,12 +60,17 @@ fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
 
     for i in 0..21 {
         let j0 = prev_zup_index(&zup_ea, i);
-        let before = prev_grid_index(j0);
-        let idx = get_rns_index(n2[before], false);
-        rns_values[j0] = RNS[idx];
-        usl[j0] = usl_value(idx, i.wrapping_sub(1));
-
-        let mut mask_n1_bigger_nm = r8(n2[before]) > r8(nm[i]);
+        // F-06: band 0 starts from N1 = 0 (Annex A), so it never has a slope
+        // to continue and must not look at band 20 through a wrap-around.
+        let mut mask_n1_bigger_nm = false;
+        let mut before = j0;
+        if i > 0 {
+            before = j0 - 1;
+            let idx = get_rns_index(n2[before], false);
+            rns_values[j0] = RNS[idx];
+            usl[j0] = usl_value(idx, i - 1);
+            mask_n1_bigger_nm = r8(n2[before]) > r8(nm[i]);
+        }
         if !mask_n1_bigger_nm {
             total += n2[j0] * (z2[j0] - z1_aux);
             n1_aux = n2[j0];
@@ -80,7 +85,7 @@ fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
 
             total += dz[j0] * (n1_aux + n2[j0]) / 2.0;
 
-            let mut z_array = if i == 0 { ZUP[20] } else { ZUP[i - 1] } + 0.1;
+            let mut z_array = ZUP[i - 1] + 0.1;
             let mut last_mask_z_bigger_z2 = false;
             let mut last_j = j0;
 
@@ -144,8 +149,18 @@ fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
                 }
             }
 
-            z1_aux = z2[zup_ea[i] - 1];
-            n1_aux = n2[zup_ea[i] - 1];
+            let last = zup_ea[i] - 1;
+            if mask_n1_bigger_nm && z2[last] < ZUP[i] {
+                // F-05: the grid loop ran out of 0.1 Bark cells while the slope
+                // was still active. Complete the band the Annex A way, from the
+                // end of the last segment up to ZUP[i]; the specific loudness of
+                // the band is already final and is not touched.
+                let (z_end, n_end) = complete_band(nm[i], i, z2[last], n2[last], &mut total);
+                z2[last] = z_end;
+                n2[last] = n_end;
+            }
+            z1_aux = z2[last];
+            n1_aux = n2[last];
 
             if last_mask_z_bigger_z2 {
                 let idx = get_rns_index(n2[last_j], true);
@@ -155,16 +170,46 @@ fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
         }
     }
 
+    // F-04: no per-frame rounding of the total (Annex A has none); only the
+    // negative clamp is kept.
     if total < 0.0 {
         total = 0.0;
     }
-    if total <= 16.0 {
-        total = (total * 1000.0 + 0.5).floor() / 1000.0;
-    } else {
-        total = (total * 100.0 + 0.5).floor() / 100.0;
-    }
 
     total
+}
+
+/// Annex A band completion (F-05): starting at `(z1, n1)` inside band `band`,
+/// keep attaching upper-slope segments until the slope meets the core loudness
+/// `nm_band` (then add the flat remainder `nm_band * (ZUP - z)`) or reaches
+/// ZUP[band] (last segment clamped to ZUP). Each segment adds
+/// `dz * (n1 + n2) / 2` to `total`. Returns the end point of the band.
+///
+/// Every slope segment ends at the next RNS boundary, so the loop finishes in
+/// at most `RNS.len()` segments plus the flat remainder; the bound only guards
+/// direct callers of the public `calc_slopes*` with negative core loudness.
+fn complete_band(nm_band: f64, band: usize, z1: f64, n1: f64, total: &mut f64) -> (f64, f64) {
+    let zup = ZUP[band];
+    let (mut z, mut n) = (z1, n1);
+    for _ in 0..=RNS.len() + 1 {
+        if r8(n) <= r8(nm_band) {
+            *total += nm_band * (zup - z);
+            return (zup, nm_band);
+        }
+        let idx = get_rns_index(n, true);
+        let slope = usl_value(idx, band - 1);
+        let max_rns_nm = RNS[idx].max(nm_band);
+        let z_next = ((n - max_rns_nm) / slope + z).min(zup);
+        let dz = z_next - z;
+        let n_next = n - dz * slope;
+        *total += dz * (n + n_next) / 2.0;
+        z = z_next;
+        n = n_next;
+        if z >= zup {
+            break;
+        }
+    }
+    (z, n)
 }
 
 fn zup_indices() -> [usize; 21] {
@@ -180,14 +225,6 @@ fn prev_zup_index(zup_ea: &[usize; 21], idx: usize) -> usize {
         0
     } else {
         zup_ea[idx - 1]
-    }
-}
-
-fn prev_grid_index(idx: usize) -> usize {
-    if idx == 0 {
-        239
-    } else {
-        idx - 1
     }
 }
 

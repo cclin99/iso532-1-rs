@@ -47,11 +47,11 @@
 
 ## Task 2：GREEN — 修 `calc_slopes_impl`
 
-- [ ] 依 D-B 刪除捨入。
-- [ ] 依 D-C 處理 `i == 0`。
-- [ ] 依 D-A 加迴圈後補完；`n_specific` 分支不變。
-- [ ] `n_only_matches_into_*` 兩個既有測試仍逐位元通過（批次／串流共用的前提）。
-- [ ] `cargo test -p iso532 --lib`、`cargo clippy -D warnings`、`cargo fmt --check` 全過。
+- [x] 依 D-B 刪除捨入。
+- [x] 依 D-C 處理 `i == 0`。
+- [x] 依 D-A 加迴圈後補完；`n_specific` 分支不變。
+- [x] `n_only_matches_into_*` 兩個既有測試仍逐位元通過（批次／串流共用的前提）。
+- [x] `cargo test -p iso532 --lib`、`cargo clippy -D warnings`、`cargo fmt --check` 全過。
 
 ## Task 3：契約與串流不變
 
