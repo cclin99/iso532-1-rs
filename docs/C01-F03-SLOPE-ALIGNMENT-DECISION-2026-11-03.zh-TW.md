@@ -1,6 +1,6 @@
 # slope 階段對齊 Annex A：C-01 尾值根因與 F-03 係數的決策
 
-> 對照／Pair: [English](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) · 來源：zh · 同步 2026-11-03
+> 對照／Pair: [English](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) · 來源：zh · 同步 2026-11-04
 
 2026-11-03（Asia/Taipei）。程式快照 `aa379db`（v0.3.1）。決策備忘，不改程式、不改 golden。證據：Astra 的 [`verification/2026-11-03-C01-zero-pad-aa379db/`](verification/2026-11-03-C01-zero-pad-aa379db/)、[`verification/2026-11-03-C01-tail-root-cause-aa379db/`](verification/2026-11-03-C01-tail-root-cause-aa379db/)、[`verification/2026-11-03-F03-coefficient-hypothesis-aa379db/`](verification/2026-11-03-F03-coefficient-hypothesis-aa379db/)，以及 Claude 的交叉分析 [`verification/2026-11-03-C01-cross-analysis-aa379db/`](verification/2026-11-03-C01-cross-analysis-aa379db/)。
 
