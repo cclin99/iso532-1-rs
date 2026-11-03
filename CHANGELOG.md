@@ -3,6 +3,72 @@
 All notable changes to this project will be documented here. The project follows
 [Semantic Versioning](https://semver.org/) for public API and ABI changes.
 
+## 0.4.0 - Unreleased (pending independent verification)
+
+Numeric release: the slope stage (`calc_slopes`) follows ISO 532-1:2017 Annex A,
+and the correctness reference changes from MoSQITo 1.2.1 to the official Annex A
+C program (decision `docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`, plan
+`docs/superpowers/plans/phases/phase-0.4.0-slope-annexa.md`). Every total
+loudness value can change; no public API, output grid, stream contract, SIMD
+dispatch, C ABI or Python shape changes.
+
+### Changed
+
+- F-04: the total loudness of each frame is no longer rounded to 0.001 sone
+  (N <= 16) or 0.01 sone. The rounding came from MoSQITo `_calc_slopes`; Annex A
+  does not round. The negative clamp is kept. Callers that want three decimals
+  round themselves.
+- F-05: when a band's slope segment starts in the band's last 0.1 Bark cell and
+  meets the core loudness before `ZUP`, the band is now completed as in Annex A
+  (flat remainder, or further slope segments clamped to `ZUP`) instead of being
+  back-filled by the next band. This affected about 1% of time-varying frames
+  by 1e-3 to 2.6e-2 sone each. Because the next band now starts from `ZUP`, the
+  time-varying specific loudness of that next band changes too (towards Annex A;
+  up to 1.13e-2 sone/Bark against MoSQITo on the white-noise and pink-noise
+  fixtures); the specific value written in the completed cell is unchanged.
+- On 19,364 NL frames of Annex B signals 18/23/24/25 the slope stage equals the
+  reference port `rust_slopes_fixed` (cross-analysis) bitwise and the Annex A
+  algorithm with epsilon 0 and binary64 tables to <= 1.42e-14 sone.
+- Correctness goldens: new `tools/gen_golden_c.py` builds the official
+  `ISO_532-1.c` (SHA-256 `a74b45ed...834491`) with only `USL[12][4]` changed
+  0.22f -> 0.24f (`tools/golden-c-usl12-4.diff`), MSVC x64 `/O2 /fp:precise`,
+  and writes `data/golden-c/` (gitignored; manifest `tools/golden-c.sha256`).
+  New `tests/golden_c.rs` gates the C-01 tail points (last output point of
+  Annex B signals 18/23/24/25) at 1e-10 sone for total and specific loudness
+  (measured <= 9.0e-11 and <= 3.3e-23). Whole-series agreement is limited by the
+  C program itself (band-edge epsilon `_ZUP += .0001f` and float32 literals:
+  totals up to 2.7e-5 sone) and by the specific-loudness cell rule kept from
+  MoSQITo (up to 4.4e-2 sone/Bark where a slope meets the core loudness); those
+  1e-10 comparisons are kept as ignored strict tests and reported as findings.
+- MoSQITo goldens are a compatibility check: `tests/golden_zwtv.rs`,
+  `tests/golden_zwst.rs`, the slope total in `tests/golden_core.rs`, the sig10
+  MoSQITo line in `tests/annexb.rs` and `iso532-py/tests/test_parity_mosqito.py`
+  use a 5e-3 sone bound for total (and, where the plan says so, specific)
+  loudness; stage goldens keep their tolerances. The Python white-noise and
+  pink-noise time-varying specific comparisons exceed 5e-3 and are strict
+  `xfail`. Annex B verdicts are unchanged and pass.
+- Frozen hashes: `N(t)` now carries the same libm/FMA ULP noise as
+  `N_specific(t)` (the rounding used to hide it), so scalar and AVX2 differ by
+  up to 2.6e-10 sone and the `n` hashes are per OS and backend.
+  `tests/hash_gate.rs` and the `tests/golden_zwtv.rs` snapshots re-froze only
+  `n` (windows: local machine; linux: ubuntu:24.04, glibc 2.39);
+  `n_specific` and `time_axis` hashes are unchanged. The Python cross-language
+  `N` hashes in `iso532-py/tests/test_smoke.py` are per platform now
+  (`HASH_GATE_DUMP_ONLY=1` turns them into a dump), `TIME_HASH` is unchanged.
+- `tests/nl_zero_init.rs` pins the 0.4.0 MoSQITo-tail reproduction numbers and
+  keeps the audited pre-F-04 numbers within the rounding bound.
+- F-03: `USL[12][4]` stays 0.24 provisionally (Table A.9 still PENDING). Against
+  the unmodified C program (0.22) the C-01 tail points differ by up to 1.3e-7
+  sone and whole series by up to 3.5e-3 sone (`docs/F03-USL12-4-STATUS-2026-10-31.md`).
+
+### Fixed
+
+- F-06: `core::calc_slopes*` no longer reads band 20 when starting band 0
+  (`prev_grid_index(0) = 239` wrap-around). Direct calls with `nm[20] > nm[0]`
+  returned a negative band-0 specific loudness and an inflated total (0.982
+  instead of 0.4 sone for `nm[20] = 1` alone). Unreachable through the
+  pipeline, whose main loudness keeps `nm[20] = 0`.
+
 ## 0.3.1 - 2026-11-01
 
 Patch release: input contract and output-grid contract of the batch API, plus

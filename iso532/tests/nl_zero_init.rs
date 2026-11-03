@@ -178,6 +178,16 @@ fn mosqito_tail_init_reproduces_the_audited_pre_fix_numbers() {
     // half: pre-fix batch N[0] = 0.001623810180 sone and the first 0.25 s differ
     // from the all-silent signal by 0.113550559256 sone. Those numbers belong to
     // the MoSQITo tail seed and must stay reachable under `NlInit::MosqitoTail`.
+    //
+    // They were measured with the per-frame rounding of the total to 0.001 sone
+    // that 0.4.0 removed (F-04). The rounding moves each frame by at most half a
+    // step, 5e-4 sone, and temporal weighting is a convex smoother, so the audited
+    // values must still hold within 5e-4 (one series) / 1e-3 (difference of two
+    // series). The 0.4.0 values themselves are pinned to 1e-9.
+    const AUDITED_N0: f64 = 0.001_623_810_180;
+    const AUDITED_PREFIX_DIFF: f64 = 0.113_550_559_256;
+    const N0: f64 = 0.001_623_699_865_834_095;
+    const PREFIX_DIFF: f64 = 0.113_590_159_483_987;
     let silent = vec![0.0; 48_000];
     let signal = concat(&vec![0.0; 24_000], &tone(1_000.0, 80.0, 24_000));
     let mut p = ZwtvProcessor::new();
@@ -187,9 +197,10 @@ fn mosqito_tail_init_reproduces_the_audited_pre_fix_numbers() {
     let b = p
         .process_with(&signal, FS, FieldType::Free, NlInit::MosqitoTail)
         .unwrap();
+    assert!((b.n[0] - N0).abs() < 1e-9, "N[0] = {}", b.n[0]);
     assert!(
-        (b.n[0] - 0.001_623_810_180).abs() < 1e-9,
-        "N[0] = {}",
+        (b.n[0] - AUDITED_N0).abs() <= 5e-4,
+        "N[0] = {} vs audited {AUDITED_N0}",
         b.n[0]
     );
     let prefix_diff = a.n[..125]
@@ -198,8 +209,12 @@ fn mosqito_tail_init_reproduces_the_audited_pre_fix_numbers() {
         .map(|(x, y)| (x - y).abs())
         .fold(0.0, f64::max);
     assert!(
-        (prefix_diff - 0.113_550_559_256).abs() < 1e-9,
+        (prefix_diff - PREFIX_DIFF).abs() < 1e-9,
         "prefix diff = {prefix_diff}"
+    );
+    assert!(
+        (prefix_diff - AUDITED_PREFIX_DIFF).abs() <= 1e-3,
+        "prefix diff = {prefix_diff} vs audited {AUDITED_PREFIX_DIFF}"
     );
     // The default is the zero state.
     let z = p.process(&signal, FS, FieldType::Free).unwrap();

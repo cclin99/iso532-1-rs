@@ -13,8 +13,10 @@ const FS: f64 = 48_000.0;
 // stay bitwise-stable against its own snapshot (refactor invariance, see risk
 // report §8.4).
 //
-// Scope of the contract: n and time_axis have proven bitwise-identical across
-// every environment tested; only n_specific carries libm ULP noise. glibc
+// Scope of the contract: time_axis is bitwise-identical across every
+// environment tested. n_specific carries libm ULP noise, and since 0.4.0 so
+// does n: until 0.3.1 the per-frame rounding of the total to 0.001 sone (F-04)
+// hid that noise, so n used to agree across backends and OSes. glibc
 // values are stable across machines (frozen from ubuntu:24.04, matches GitHub
 // runners). Windows UCRT dispatches libm by CPU and varies by OS build, so
 // the windows constants only hold on the machine that froze them — windows CI
@@ -26,31 +28,34 @@ const FS: f64 = 48_000.0;
 // they now pin `NlInit::MosqitoTail`. The default (`NlInit::Zero`) constants
 // were frozen on 2026-10-31 (windows: this machine; linux: ubuntu:24.04
 // container, glibc 2.39). Only `n` and `n_specific` moved; `time_axis` is
-// unchanged. Regenerate: set a pair to (0, 0, 0), run
+// unchanged. 0.4.0 (2026-11-04) re-froze only `n` of all eight constants after
+// the slope stage moved to Annex A (F-04/F-05); `n_specific` and `time_axis`
+// are unchanged (windows: this machine; linux: ubuntu:24.04 container, glibc
+// 2.39, rustc 1.99.1). Regenerate: set a pair to (0, 0, 0), run
 // `cargo test --test hash_gate -- --nocapture`, copy the printed values.
 #[cfg(target_os = "windows")]
 const EXPECTED_SCALAR: (u64, u64, u64) =
-    (0xa7c2a418292a1a46, 0x16937b45e6e4155d, 0xf076bcb342595537);
+    (0xde3ccbba47ec9dd5, 0x16937b45e6e4155d, 0xf076bcb342595537);
 #[cfg(target_os = "windows")]
-const EXPECTED_AVX2: (u64, u64, u64) = (0xa7c2a418292a1a46, 0x3d4b4b2df9073e48, 0xf076bcb342595537);
+const EXPECTED_AVX2: (u64, u64, u64) = (0x917cc80e33295cc3, 0x3d4b4b2df9073e48, 0xf076bcb342595537);
 #[cfg(target_os = "windows")]
 const EXPECTED_SCALAR_MOSQITO_TAIL: (u64, u64, u64) =
-    (0xf3215787aaa48fbe, 0xff98c57f3018ef94, 0xf076bcb342595537);
+    (0xb62e33532ef3019a, 0xff98c57f3018ef94, 0xf076bcb342595537);
 #[cfg(target_os = "windows")]
 const EXPECTED_AVX2_MOSQITO_TAIL: (u64, u64, u64) =
-    (0xf3215787aaa48fbe, 0x3f241da3fe334097, 0xf076bcb342595537);
+    (0x441d7721a9a22ffc, 0x3f241da3fe334097, 0xf076bcb342595537);
 
 #[cfg(target_os = "linux")]
 const EXPECTED_SCALAR: (u64, u64, u64) =
-    (0xa7c2a418292a1a46, 0x05dc55b516e20132, 0xf076bcb342595537);
+    (0x6b40a36a3d846e23, 0x05dc55b516e20132, 0xf076bcb342595537);
 #[cfg(target_os = "linux")]
-const EXPECTED_AVX2: (u64, u64, u64) = (0xa7c2a418292a1a46, 0x197c1084aab28c59, 0xf076bcb342595537);
+const EXPECTED_AVX2: (u64, u64, u64) = (0x284854f5f5758f91, 0x197c1084aab28c59, 0xf076bcb342595537);
 #[cfg(target_os = "linux")]
 const EXPECTED_SCALAR_MOSQITO_TAIL: (u64, u64, u64) =
-    (0xf3215787aaa48fbe, 0x6e181dac593b5fef, 0xf076bcb342595537);
+    (0x00af090992c2d076, 0x6e181dac593b5fef, 0xf076bcb342595537);
 #[cfg(target_os = "linux")]
 const EXPECTED_AVX2_MOSQITO_TAIL: (u64, u64, u64) =
-    (0xf3215787aaa48fbe, 0x8213780cd5384fb0, 0xf076bcb342595537);
+    (0xa59f12960442c5cc, 0x8213780cd5384fb0, 0xf076bcb342595537);
 
 // unfrozen: regenerate per note above
 #[cfg(not(any(target_os = "windows", target_os = "linux")))]

@@ -67,11 +67,11 @@
 
 ## Task 5：MoSQITo golden 降級、hash 重凍、版號與文件
 
-- [ ] 依 D-E 改 `golden_zwtv.rs`／`golden_zwst.rs` 門檻與說明。
-- [ ] `tests/hash_gate.rs`：重凍 zwtv／zwst 輸出 hash；commit 訊息列舊新 hash。
-- [ ] `iso532/Cargo.toml` 與 binding 版本 → 0.4.0；`CHANGELOG.md` 新增 0.4.0 段落（F-04、F-05、F-06、golden 基準變更、F-03 暫定 0.24）。
-- [ ] README 兩語言：第 281 行基準敘述改寫（D1）；「繼承自 MoSQITo 的相容性選擇」表新增 F-03（暫定 0.24）、F-04、F-05 三列，格式比照 F-01／F-02；`docs/README.md` 索引加決策備忘與 cross-analysis 列。
-- [ ] `docs/F03-USL12-4-STATUS-2026-10-31.md` 兩語言補「2026-11-03 暫定維持 0.24」一段，不改結論狀態（仍 PENDING）。
+- [x] 依 D-E 改 `golden_zwtv.rs`／`golden_zwst.rs` 門檻與說明。
+- [x] `tests/hash_gate.rs`：重凍 zwtv／zwst 輸出 hash；commit 訊息列舊新 hash。
+- [x] `iso532/Cargo.toml` 與 binding 版本 → 0.4.0；`CHANGELOG.md` 新增 0.4.0 段落（F-04、F-05、F-06、golden 基準變更、F-03 暫定 0.24）。
+- [x] README 兩語言：第 281 行基準敘述改寫（D1）；「繼承自 MoSQITo 的相容性選擇」表新增 F-03（暫定 0.24）、F-04、F-05 三列，格式比照 F-01／F-02；`docs/README.md` 索引加決策備忘與 cross-analysis 列。
+- [x] `docs/F03-USL12-4-STATUS-2026-10-31.md` 兩語言補「2026-11-03 暫定維持 0.24」一段，不改結論狀態（仍 PENDING）。
 
 ## Task 6：收尾
 

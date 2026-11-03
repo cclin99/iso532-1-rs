@@ -29,4 +29,17 @@ fn dump_py_bitwise_contract_hashes() {
         fnv1a_f64(&r.time_axis),
         r.n.len()
     );
+    let tail = iso532::ZwtvProcessor::new()
+        .process_with(
+            &contract_signal(),
+            48_000.0,
+            FieldType::Free,
+            iso532::NlInit::MosqitoTail,
+        )
+        .unwrap();
+    eprintln!(
+        "py-contract mosqito_tail: n={:#018x} time={:#018x}",
+        fnv1a_f64(&tail.n),
+        fnv1a_f64(&tail.time_axis)
+    );
 }

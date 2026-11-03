@@ -1,4 +1,7 @@
 """Smoke + cross-language bitwise contract tests (no mosqito; runs in CI)."""
+import os
+import sys
+
 import numpy as np
 import pytest
 
@@ -10,14 +13,35 @@ FS = 48000.0
 
 # Frozen from Rust:
 #   cd iso532 && cargo test --test py_contract_dump -- --ignored --nocapture
-# n/time_axis are bitwise-stable across platforms and backends (see
-# docs/CI-HASH-GATE-DEBUG-2026-07-10.md). Values MUST come from an actual
-# dump run — never invented, never copied from another signal.
+# Values MUST come from an actual dump run — never invented, never copied from
+# another signal.
 # F-02 (2026-10-31): the default nonlinear-decay initialisation moved from the
-# MoSQITo tail seed to zero state. The old N hash is kept for nl_init="mosqito_tail".
-N_HASH = 0x9C0B638BFB7758D6
-N_HASH_MOSQITO_TAIL = 0x44E6822074554786
+# MoSQITo tail seed to zero state. The tail-seed hash is kept for
+# nl_init="mosqito_tail".
+# 0.4.0 (2026-11-04, F-04): the total loudness is no longer rounded to 0.001
+# sone per frame. That rounding is what made n bitwise-stable across platforms;
+# n now carries the same libm ULP noise as n_specific (see iso532/tests/
+# hash_gate.rs), so the N hashes are per OS like the Rust hash gate: linux from
+# an ubuntu:24.04 container (glibc 2.39, matches GitHub runners), windows from
+# the machine that froze them (UCRT varies by CPU/OS build; HASH_GATE_DUMP_ONLY=1
+# turns the N-hash comparison into a dump, as for the Rust hash gate).
+# time_axis is unchanged and still bitwise-stable everywhere.
+N_HASHES = {
+    # platform: (N_HASH, N_HASH_MOSQITO_TAIL), AVX2 runtime dispatch
+    "linux": (0x046FDC830A43E1E2, 0x2CD05C64E0CB8931),
+    "win32": (0xFF2754E949A15287, 0xAA3D499447B9A2C4),
+}
 TIME_HASH = 0xF076BCB342595537
+
+
+def check_n_hash(n, which):
+    got = fnv1a_f64(n)
+    frozen = N_HASHES.get(sys.platform)
+    if frozen is None or os.environ.get("HASH_GATE_DUMP_ONLY") == "1":
+        print(f"py-contract {which}: n={got:#018x} (dump-only on {sys.platform})")
+        return
+    want = frozen[0 if which == "zero" else 1]
+    assert hex(got) == hex(want), f"{which} N hash drifted on {sys.platform}"
 
 
 def test_zwtv_shapes_and_axes():
@@ -45,7 +69,7 @@ def test_zwst_shapes():
 
 def test_bitwise_contract_n_and_time_axis():
     n, _spec, _bark, time = iso532.loudness_zwtv(contract_signal(), FS)
-    assert hex(fnv1a_f64(n)) == hex(N_HASH)
+    check_n_hash(n, "zero")
     assert hex(fnv1a_f64(time)) == hex(TIME_HASH)
 
 
@@ -53,10 +77,10 @@ def test_bitwise_contract_mosqito_tail_init():
     n, _spec, _bark, time = iso532.loudness_zwtv(
         contract_signal(), FS, nl_init="mosqito_tail"
     )
-    assert hex(fnv1a_f64(n)) == hex(N_HASH_MOSQITO_TAIL)
+    check_n_hash(n, "mosqito_tail")
     assert hex(fnv1a_f64(time)) == hex(TIME_HASH)
     n_zero, *_ = iso532.loudness_zwtv(contract_signal(), FS, nl_init="zero")
-    assert hex(fnv1a_f64(n_zero)) == hex(N_HASH)
+    check_n_hash(n_zero, "zero")
     # the two initialisations differ at the start and converge later
     assert n_zero[0] == 0.0 and n[0] > 0.0
     assert abs(n_zero[-1] - n[-1]) < 1e-9

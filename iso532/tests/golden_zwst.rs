@@ -1,5 +1,15 @@
+//! MoSQITo 1.2.1 goldens. The stage tests (noct spectrum, dB conversion, main
+//! loudness) stay tight. Since 0.4.0 the slope stage follows ISO 532-1 Annex A
+//! (F-04 no per-frame rounding, F-05 band completion) and the correctness
+//! reference is the Annex A C golden (`tests/golden_c.rs`); the total/specific
+//! loudness comparisons below are a compatibility check against MoSQITo
+//! (相容性對照) with the D-E bound of 5e-3 sone (phase plan 0.4.0).
+
 mod common;
 use common::*;
+
+/// MoSQITo compatibility bound for total and specific loudness (D-E), sone.
+const COMPAT_TOL: f64 = 5e-3;
 use iso532::core::calc_slopes::calc_slopes;
 use iso532::core::main_loudness::main_loudness;
 use iso532::zwst::{noct_spectrum_rms, spec_to_db};
@@ -49,7 +59,7 @@ fn main_loudness_rejects_over_120db() {
 }
 
 #[test]
-fn calc_slopes_matches_mosqito() {
+fn calc_slopes_compat_mosqito() {
     for sig in ["sine_1k_60", "sine_250_80", "sine_4k_60", "white_60"] {
         let nm_v = read_bin(sig, "nm_free.bin");
         let nm: [f64; 21] = nm_v.as_slice().try_into().unwrap();
@@ -57,15 +67,21 @@ fn calc_slopes_matches_mosqito() {
         let want_spec = read_bin(sig, "N_specific.bin");
         let (n, spec) = calc_slopes(&nm);
         assert!(
-            (n - want_n).abs() <= 1e-9 + 1e-6 * want_n.abs(),
-            "{sig}: N {n} vs {want_n}"
+            (n - want_n).abs() <= COMPAT_TOL,
+            "{sig}: N {n} vs {want_n} (compatibility)"
         );
-        assert_close(&spec, &want_spec, 1e-6, 1e-9, &format!("{sig}/N_specific"));
+        assert_close(
+            &spec,
+            &want_spec,
+            0.0,
+            COMPAT_TOL,
+            &format!("{sig}/N_specific (compatibility)"),
+        );
     }
 }
 
 #[test]
-fn zwst_end_to_end_matches_mosqito() {
+fn zwst_end_to_end_compat_mosqito() {
     for sig in [
         "sine_1k_60",
         "sine_250_80",
@@ -79,16 +95,16 @@ fn zwst_end_to_end_matches_mosqito() {
         let want_spec = read_bin(sig, "N_specific.bin");
         let r = loudness_zwst(&x, 48000.0, FieldType::Free).unwrap();
         assert!(
-            (r.n - want_n).abs() <= 1e-3 + 1e-6 * want_n.abs(),
-            "{sig}: N {} vs {want_n}",
+            (r.n - want_n).abs() <= COMPAT_TOL,
+            "{sig}: N {} vs {want_n} (compatibility)",
             r.n
         );
         assert_close(
             &r.n_specific,
             &want_spec,
-            1e-6,
-            1e-9,
-            &format!("{sig}/spec"),
+            0.0,
+            COMPAT_TOL,
+            &format!("{sig}/spec (compatibility)"),
         );
         assert_eq!(r.bark_axis.len(), 240);
     }
