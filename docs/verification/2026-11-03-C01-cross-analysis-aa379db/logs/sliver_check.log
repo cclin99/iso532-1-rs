@@ -1,0 +1,24 @@
+sig 18: sparse frames (|raw22-C(eps0,f64)|>1e-6) = 40; of these with restoration triggered = 40; non-sparse frames where restoration triggered = 0; total frames with restoration = 40
+         fixed-Rust vs C(eps0,f64): max |diff| = 1.421e-14; frames >1e-12: 0; frames >1e-13: 0
+         tail @K: Rust raw22=0.00095543386464519247  Rust fixed=0.00095543257292094895  C(eps0,f64)=0.00095543257292095415  C official-slopes=0.00095543260747296655
+         tail diffs: raw22-C_official=+1.257e-09; fixed-C(eps0,f64)=-5.204e-18; fixed-C_official=-3.455e-11; C(eps0,f64)-C_official=-3.455e-11
+         example sparse frame 336: raw22=8.1247577245 fixed=8.1310244057 C(eps0,f64)=8.1310244057 restorations=1
+sig 23: sparse frames (|raw22-C(eps0,f64)|>1e-6) = 63; of these with restoration triggered = 63; non-sparse frames where restoration triggered = 0; total frames with restoration = 63
+         fixed-Rust vs C(eps0,f64): max |diff| = 1.066e-14; frames >1e-12: 0; frames >1e-13: 0
+         tail @K: Rust raw22=0.0034913446389026608  Rust fixed=0.0034913530394069113  C(eps0,f64)=0.0034913530394069291  C official-slopes=0.0034913529788430974
+         tail diffs: raw22-C_official=-8.340e-09; fixed-C(eps0,f64)=-1.778e-17; fixed-C_official=+6.056e-11; C(eps0,f64)-C_official=+6.056e-11
+         example sparse frame 315: raw22=6.4098998013 fixed=6.4104418381 C(eps0,f64)=6.4104418381 restorations=1
+sig 24: sparse frames (|raw22-C(eps0,f64)|>1e-6) = 38; of these with restoration triggered = 38; non-sparse frames where restoration triggered = 0; total frames with restoration = 38
+         fixed-Rust vs C(eps0,f64): max |diff| = 8.882e-15; frames >1e-12: 0; frames >1e-13: 0
+         tail @K: Rust raw22=0.0010659333203211639  Rust fixed=0.0010659326276719673  C(eps0,f64)=0.0010659326276719783  C official-slopes=0.0010659326820637149
+         tail diffs: raw22-C_official=+6.383e-10; fixed-C(eps0,f64)=-1.106e-17; fixed-C_official=-5.439e-11; C(eps0,f64)-C_official=-5.439e-11
+         example sparse frame 232: raw22=0.9151659245 fixed=0.9143283763 C(eps0,f64)=0.9143283763 restorations=1
+sig 25: sparse frames (|raw22-C(eps0,f64)|>1e-6) = 31; of these with restoration triggered = 31; non-sparse frames where restoration triggered = 1; total frames with restoration = 32
+         fixed-Rust vs C(eps0,f64): max |diff| = 8.882e-15; frames >1e-12: 0; frames >1e-13: 0
+         tail @K: Rust raw22=0.001194775749910797  Rust fixed=0.0011947789279511286  C(eps0,f64)=0.0011947789279511348  C official-slopes=0.0011947789626385759
+         tail diffs: raw22-C_official=-3.213e-09; fixed-C(eps0,f64)=-6.288e-18; fixed-C_official=-3.469e-11; C(eps0,f64)-C_official=-3.469e-11
+         example sparse frame 270: raw22=5.1805238421 fixed=5.1819428129 C(eps0,f64)=5.1819428129 restorations=1
+
+real	0m9.518s
+user	0m0.000s
+sys	0m0.015s

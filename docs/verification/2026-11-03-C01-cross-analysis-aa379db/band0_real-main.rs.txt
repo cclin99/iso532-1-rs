@@ -1,0 +1,21 @@
+// Calls the real crate's public `core::calc_slopes` on synthetic core-loudness frames to check the
+// band-0 wrap-around of the MoSQITo-derived algorithm (prev_grid_index(0) == 239 reads band 20).
+// Build as a tiny cargo project with band0_real-Cargo.toml.txt (rename to Cargo.toml, this file to
+// src/main.rs); `cargo run --release`.
+use iso532::core::calc_slopes::calc_slopes;
+
+fn main() {
+    let cases: Vec<(&str, [f64; 21])> = vec![
+        ("nm0=0.5 nm20=1.0", { let mut a = [0.0; 21]; a[0] = 0.5; a[20] = 1.0; a }),
+        ("nm0=0.5 nm20=0.3", { let mut a = [0.0; 21]; a[0] = 0.5; a[20] = 0.3; a }),
+        ("nm0=0.0 nm20=1.0", { let mut a = [0.0; 21]; a[20] = 1.0; a }),
+        ("nm0=0.2 nm20=2.0", { let mut a = [0.0; 21]; a[0] = 0.2; a[20] = 2.0; a }),
+        ("nm0=1.0 nm20=1.0", { let mut a = [0.0; 21]; a[0] = 1.0; a[20] = 1.0; a }),
+        ("all0.3 nm0=0.5 nm20=1.0", { let mut a = [0.3; 21]; a[0] = 0.5; a[20] = 1.0; a }),
+    ];
+    for (name, nm) in cases {
+        let (total, spec) = calc_slopes(&nm);
+        let spec_band0: Vec<String> = spec[..9].iter().map(|v| format!("{v:.4}")).collect();
+        println!("{name}: total={total:.9} bits={:016x} spec[0..9]={spec_band0:?}", total.to_bits());
+    }
+}

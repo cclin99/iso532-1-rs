@@ -1,0 +1,117 @@
+{
+ "meaning": "Final post-redaction UTF-8 delivery bytes (LF as stored in git); not raw input/source/binary identity. External inputs are hashed separately in inputs.sha256.txt.",
+ "self_excluded": "delivery-integrity.json",
+ "file_count": 22,
+ "files": [
+  {
+   "file": "band0_real-Cargo.toml.txt",
+   "size_bytes": 183,
+   "sha256": "b640ddb3372b7863092460dafe81e7697ffc1b08c81bf28d149dba5836d80faf"
+  },
+  {
+   "file": "band0_real-main.rs.txt",
+   "size_bytes": 1232,
+   "sha256": "f5f81a0bf19cdf1ee04d55601992b6cef4802686245eba1d53ae1cab79b749ea"
+  },
+  {
+   "file": "ctypes_check.py",
+   "size_bytes": 1318,
+   "sha256": "bf666c3d50d89ac38da0c59cb486759ba70a3fa7e1ec5f5b2165422a4fbb86c1"
+  },
+  {
+   "file": "delivery-check.md",
+   "size_bytes": 2520,
+   "sha256": "f9c1572cd8fc5e77e60d350896bfdab4d5d529fa826ad129a9968b130baf5172"
+  },
+  {
+   "file": "dense_check.py",
+   "size_bytes": 1927,
+   "sha256": "00fbc723fe835582274d54826fda8f3ed049bfcc5341881a0246279e2e2b7552"
+  },
+  {
+   "file": "e2e_band0.py",
+   "size_bytes": 3574,
+   "sha256": "cf839f12cb88b1cb06293bd4be354e3a93af4af1b5d7c8393dcf03dfac1275ea"
+  },
+  {
+   "file": "inputs.sha256.txt",
+   "size_bytes": 3741,
+   "sha256": "5817d2691cc1b90f0dff18c2e13c264818d4a49762f88d7d9d90e7e543d97daa"
+  },
+  {
+   "file": "logs/band0_real.log",
+   "size_bytes": 1165,
+   "sha256": "a2eefdb9f6fa9fa69d6fba3ea0a5fe0d6146634af6a9959430ac15bcb063d55a"
+  },
+  {
+   "file": "logs/dense_check.log",
+   "size_bytes": 1821,
+   "sha256": "381dacea228237f817cb10ddf0e7494fecd5f9840c0100876727263d270fbac9"
+  },
+  {
+   "file": "logs/e2e_band0_ctypes.log",
+   "size_bytes": 2170,
+   "sha256": "4e5d3c781c90c144ece3d54e87dfd32338b417d496e999faeb473407019b55f4"
+  },
+  {
+   "file": "logs/main_check.log",
+   "size_bytes": 2626,
+   "sha256": "237487c27f96afa78224a351a6cf414dcbbd0027b82a91bc7c0598432dc84d94"
+  },
+  {
+   "file": "logs/repro_check.log",
+   "size_bytes": 2024,
+   "sha256": "69cfb356cade9cd86606549bf0c9513755af681bcefcf5a480f3e27914f89716"
+  },
+  {
+   "file": "logs/sliver_check.log",
+   "size_bytes": 2845,
+   "sha256": "d21cbab6f0ade1ce4ae1b48ac0fbd6e2acd9cb7148018c13b4c91498f4ef27d4"
+  },
+  {
+   "file": "logs/sliver_check_024.log",
+   "size_bytes": 1351,
+   "sha256": "4ba4ba03c9dc8c6adcea5d9e3010aa607da0281045c3521fbffb8c2ef81182f7"
+  },
+  {
+   "file": "logs/slope_trace.log",
+   "size_bytes": 7065,
+   "sha256": "4080f1cf49a88a398980a14c022804927607d5e17e25bb6dcecb50259a3a5fe5"
+  },
+  {
+   "file": "main_check.py",
+   "size_bytes": 3475,
+   "sha256": "773f7e35ba50942f4e80e39b4e685cbb07568bafb5f9f5c8d7f92d985f58c846"
+  },
+  {
+   "file": "report.en.md",
+   "size_bytes": 9387,
+   "sha256": "e730668090c1e2d3ca4a4a0d8d300e8a0449f0e7c8637d2a2f93ec977e19e294"
+  },
+  {
+   "file": "report.md",
+   "size_bytes": 8782,
+   "sha256": "2efd11cb068e5504c382111916a5c9e193940ae2b17747471cc2295c484fe984"
+  },
+  {
+   "file": "repro_check.py",
+   "size_bytes": 1598,
+   "sha256": "9822a435e0cf07e21ba9bb89f6ede64f5808337f626ee0f17efebb7deab702e6"
+  },
+  {
+   "file": "sliver_check.py",
+   "size_bytes": 6921,
+   "sha256": "e327cecad20df3f52af3c226ae6775fd94c8a4fc7b2b7d25f75f1e11196a087b"
+  },
+  {
+   "file": "sliver_check_024.py",
+   "size_bytes": 2205,
+   "sha256": "686c9d06cd4cecebb925027a31a71c2846f9920e56b1db3ff9cd241e3ebd8366"
+  },
+  {
+   "file": "slope_trace.py",
+   "size_bytes": 11175,
+   "sha256": "55b53831c682b9e5eaabd73559768453492268f45359a15d82d295deda005c26"
+  }
+ ]
+}

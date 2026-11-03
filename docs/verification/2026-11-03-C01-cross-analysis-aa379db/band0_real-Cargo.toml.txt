@@ -1,0 +1,10 @@
+[package]
+name = "band0_real"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# path to the crate at the tested snapshot (aa379db)
+iso532 = { path = "<REPO>/iso532" }
+
+[workspace]

@@ -1,0 +1,28 @@
+sig 18: native Rust-C core max |diff| = 6.71e-08
+   port(f64) vs Rust core                                    : max |diff| = 0.00e+00; bitwise mismatches = 0/91140
+   port(C-style: .0635f+0.4f/0.32f+A0/DCB f32) vs C core     : max |diff| = 4.44e-16; bitwise mismatches = 127/91140
+   only .0635f vs C core                                     : max |diff| = 7.94e-09; bitwise mismatches = 35937/91140
+   only A0/DCB f32 vs C core                                 : max |diff| = 6.52e-08; bitwise mismatches = 54489/91140
+   .0635f + A0/DCB f32 vs C core                             : max |diff| = 1.60e-10; bitwise mismatches = 1597/91140
+sig 23: native Rust-C core max |diff| = 7.41e-08
+   port(f64) vs Rust core                                    : max |diff| = 0.00e+00; bitwise mismatches = 0/107268
+   port(C-style: .0635f+0.4f/0.32f+A0/DCB f32) vs C core     : max |diff| = 2.22e-16; bitwise mismatches = 166/107268
+   only .0635f vs C core                                     : max |diff| = 9.45e-09; bitwise mismatches = 43020/107268
+   only A0/DCB f32 vs C core                                 : max |diff| = 7.09e-08; bitwise mismatches = 73778/107268
+   .0635f + A0/DCB f32 vs C core                             : max |diff| = 2.22e-16; bitwise mismatches = 166/107268
+sig 24: native Rust-C core max |diff| = 4.25e-08
+   port(f64) vs Rust core                                    : max |diff| = 0.00e+00; bitwise mismatches = 0/100968
+   port(C-style: .0635f+0.4f/0.32f+A0/DCB f32) vs C core     : max |diff| = 2.22e-16; bitwise mismatches = 145/100968
+   only .0635f vs C core                                     : max |diff| = 5.13e-09; bitwise mismatches = 40085/100968
+   only A0/DCB f32 vs C core                                 : max |diff| = 3.94e-08; bitwise mismatches = 63017/100968
+   .0635f + A0/DCB f32 vs C core                             : max |diff| = 9.15e-11; bitwise mismatches = 849/100968
+sig 25: native Rust-C core max |diff| = 7.33e-08
+   port(f64) vs Rust core                                    : max |diff| = 0.00e+00; bitwise mismatches = 0/107268
+   port(C-style: .0635f+0.4f/0.32f+A0/DCB f32) vs C core     : max |diff| = 4.44e-16; bitwise mismatches = 131/107268
+   only .0635f vs C core                                     : max |diff| = 8.65e-09; bitwise mismatches = 35550/107268
+   only A0/DCB f32 vs C core                                 : max |diff| = 6.47e-08; bitwise mismatches = 59945/107268
+   .0635f + A0/DCB f32 vs C core                             : max |diff| = 4.44e-16; bitwise mismatches = 131/107268
+
+real	0m5.195s
+user	0m0.000s
+sys	0m0.015s

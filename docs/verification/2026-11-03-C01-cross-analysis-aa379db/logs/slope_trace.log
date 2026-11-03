@@ -1,0 +1,76 @@
+[validate sig 18] frames=4340 C-port bitwise mismatches=0 (max 0.00e+00); Rust24-port mismatches=0 (max 0.00e+00); Rust22-port mismatches=0 (max 0.00e+00); 4s
+[validate sig 23] frames=1703 C-port bitwise mismatches=0 (max 0.00e+00); Rust24-port mismatches=0 (max 0.00e+00); Rust22-port mismatches=0 (max 0.00e+00); 1s
+band0 test nm0=0.5 nm20=1.0: C=1.327164130 Rust=1.568051543 diff=+2.409e-01
+band0 test nm0=0.5 nm20=0.3: C=1.047164397 Rust=1.047114523 diff=-4.987e-05
+band0 test nm0=0.0 nm20=1.0: C=0.399999619 Rust=0.982093708 diff=+5.821e-01
+band0 test nm0=0.2 nm20=2.0: C=1.153622567 Rust=1.715088048 diff=+5.615e-01
+band0 test nm0=1.0 nm20=1.0: C=2.436283285 Rust=2.436183679 diff=-9.961e-05
+band0 test all0.3 nm0=0.5 nm20=1.0: C=7.699744643 Rust=7.940631935 diff=+2.409e-01
+sig 18: frames with nm20>nm0>0: 0/4340; frames nm0>0: 4018; frames nm20>0: 0
+sig 23: frames with nm20>nm0>0: 0/5108; frames nm0>0: 0; frames nm20>0: 0
+sig 24: frames with nm20>nm0>0: 0/4808; frames nm0>0: 4177; frames nm20>0: 0
+sig 25: frames with nm20>nm0>0: 0/5108; frames nm0>0: 0; frames nm20>0: 0
+
+--- sig 23 frame 3893: C=4.7515873957 Rust22=4.7653976527 diff=+1.381e-02; band with largest |contribution diff|: 4 (+1.995e-02); per-band diffs>1e-6: [(3, '-6.1e-03'), (4, '+2.0e-02')]
+    nm: ['0', '0.09591', '0.1683', '0.09948', '0.3234', '0.2277', '0.1432', '0.1368', '0.2489', '0.1635', '0.1662', '0.1846', '0.2921', '0.3072', '0.2835', '0.2781', '0.2345', '0.177', '0.08143', '0.01876', '0']
+    band 3 nm=0.0994849 ZUP=3.5  contribution C=9.021519e-02 R=8.407924e-02 (R-C=-6.136e-03)
+       C  slope rns=14 usl=0.14000000059604645 N1=0.168335 N2=0.15 Z1=2.8001 Z2=2.93106 False
+       C  slope rns=15 usl=0.10000000149011612 N1=0.15 N2=0.1 Z1=2.93106 Z2=3.43106 False
+       C  slope rns=16 usl=0.07000000029802322 N1=0.1 N2=0.0994849 Z1=3.43106 Z2=3.43842 False
+       C  flat  rns=16 usl=None N1=0.0994849 N2=0.0994849 Z1=3.43842 Z2=3.5001 True
+       R  slope rns=14 usl=0.14 N1=0.168335 N2=0.15 Z1=2.8 Z2=2.93096
+       R  slope rns=15 usl=0.1 N1=0.15 N2=0.1 Z1=2.93096 Z2=3.43096 grid 29
+       R  slope rns=16 usl=0.07 N1=0.1 N2=0.0994849 Z1=3.43096 Z2=3.43832 grid 34
+    band 4 nm=0.323395 ZUP=4.4  contribution C=2.910555e-01 R=3.110016e-01 (R-C=+1.995e-02)
+       C  flat  rns=12 usl=None N1=0.0994849 N2=0.323395 Z1=3.5001 Z2=4.4001 True
+       R  flat  rns=16 usl=None N1=0.0994849 N2=0.323395 Z1=3.43832 Z2=4.4
+    band 5 nm=0.227728 ZUP=5.4  contribution C=2.520198e-01 R=2.520198e-01 (R-C=-1.039e-09)
+       C  slope rns=12 usl=0.2199999988079071 N1=0.323395 N2=0.3 Z1=4.4001 Z2=4.50644 False
+       C  slope rns=13 usl=0.17000000178813934 N1=0.3 N2=0.227728 Z1=4.50644 Z2=4.93157 False
+       C  flat  rns=13 usl=None N1=0.227728 N2=0.227728 Z1=4.93157 Z2=5.4001 True
+       R  slope rns=12 usl=0.22 N1=0.323395 N2=0.3 Z1=4.4 Z2=4.50634
+       R  slope rns=13 usl=0.17 N1=0.3 N2=0.227728 Z1=4.50634 Z2=4.93147 grid 45
+       R  flat  rns=13 usl=None N1=0.227728 N2=0.227728 Z1=4.93147 Z2=5.4 grid 49
+
+--- sig 23 frame 4017: C=13.3135835434 Rust22=13.3091054168 diff=-4.478e-03; band with largest |contribution diff|: 19 (-2.005e-02); per-band diffs>1e-6: [(15, '+1.3e-06'), (19, '-2.0e-02'), (20, '+1.6e-02')]
+    nm: ['0', '0.04198', '0.1926', '0.2111', '0.3305', '0.4062', '0.2683', '0.4408', '0.632', '0.5628', '0.6416', '0.5537', '0.584', '0.8405', '1.175', '1.148', '0.7317', '0.6495', '0.3734', '0.2195', '0']
+    band 18 nm=0.373416 ZUP=22.7  contribution C=4.291468e-01 R=4.291463e-01 (R-C=-5.712e-07)
+       C  slope rns=11 usl=0.41999998688697815 N1=0.649473 N2=0.42 Z1=21.8001 Z2=22.3465 False
+       C  slope rns=12 usl=0.2199999988079071 N1=0.42 N2=0.373416 Z1=22.3465 Z2=22.5582 False
+       C  flat  rns=12 usl=None N1=0.373416 N2=0.373416 Z1=22.5582 Z2=22.7001 True
+       R  slope rns=11 usl=0.42 N1=0.649473 N2=0.42 Z1=21.8 Z2=22.3464
+       R  slope rns=12 usl=0.22 N1=0.42 N2=0.373416 Z1=22.3464 Z2=22.5581 grid 223
+       R  flat  rns=12 usl=None N1=0.373416 N2=0.373416 Z1=22.5581 Z2=22.7 grid 225
+    band 19 nm=0.219522 ZUP=23.6  contribution C=2.557253e-01 R=2.356707e-01 (R-C=-2.005e-02)
+       C  slope rns=12 usl=0.2199999988079071 N1=0.373416 N2=0.3 Z1=22.7001 Z2=23.0338 False
+       C  slope rns=13 usl=0.17000000178813934 N1=0.3 N2=0.22 Z1=23.0338 Z2=23.5044 False
+       C  slope rns=14 usl=0.10999999940395355 N1=0.22 N2=0.219522 Z1=23.5044 Z2=23.5087 False
+       C  flat  rns=14 usl=None N1=0.219522 N2=0.219522 Z1=23.5087 Z2=23.6001 True
+       R  slope rns=12 usl=0.22 N1=0.373416 N2=0.3 Z1=22.7 Z2=23.0337
+       R  slope rns=13 usl=0.17 N1=0.3 N2=0.22 Z1=23.0337 Z2=23.5043 grid 230
+       R  slope rns=14 usl=0.11 N1=0.22 N2=0.219522 Z1=23.5043 Z2=23.5086 grid 235
+    band 20 nm=0 ZUP=24.0  contribution C=7.900871e-02 R=9.458477e-02 (R-C=+1.558e-02)
+       C  slope rns=14 usl=0.10999999940395355 N1=0.219522 N2=0.175522 Z1=23.6001 Z2=24.0001 True
+       R  slope rns=14 usl=0.11 N1=0.219522 N2=0.165473 Z1=23.5086 Z2=24
+       R  slope rns=14 usl=0.11 N1=0.165473 N2=0.165473 Z1=24 Z2=24 grid 239
+
+--- sig 23 frame 3981: C=7.6544256022 Rust22=7.6488550084 diff=-5.571e-03; band with largest |contribution diff|: 18 (-1.628e-02); per-band diffs>1e-6: [(18, '-1.6e-02'), (19, '+1.1e-02')]
+    nm: ['0', '0.04182', '0.1383', '0.1852', '0.2175', '0.1341', '0.1833', '0.3279', '0.3362', '0.3697', '0.3115', '0.3161', '0.4157', '0.4809', '0.3061', '0.5833', '0.4646', '0.5365', '0.2962', '0.1949', '0']
+    band 17 nm=0.536548 ZUP=21.8  contribution C=6.438568e-01 R=6.438574e-01 (R-C=+6.140e-07)
+       C  flat  rns=11 usl=None N1=0.464568 N2=0.536548 Z1=20.6001 Z2=21.8001 True
+       R  flat  rns=11 usl=None N1=0.464568 N2=0.536548 Z1=20.6 Z2=21.8
+    band 18 nm=0.296242 ZUP=22.7  contribution C=3.519498e-01 R=3.356723e-01 (R-C=-1.628e-02)
+       C  slope rns=11 usl=0.41999998688697815 N1=0.536548 N2=0.42 Z1=21.8001 Z2=22.0776 False
+       C  slope rns=12 usl=0.2199999988079071 N1=0.42 N2=0.3 Z1=22.0776 Z2=22.623 False
+       C  slope rns=13 usl=0.17000000178813934 N1=0.3 N2=0.296242 Z1=22.623 Z2=22.6452 False
+       C  flat  rns=13 usl=None N1=0.296242 N2=0.296242 Z1=22.6452 Z2=22.7001 True
+       R  slope rns=11 usl=0.42 N1=0.536548 N2=0.42 Z1=21.8 Z2=22.0775
+       R  slope rns=12 usl=0.22 N1=0.42 N2=0.3 Z1=22.0775 Z2=22.6229 grid 220
+       R  slope rns=13 usl=0.17 N1=0.3 N2=0.296242 Z1=22.6229 Z2=22.6451 grid 226
+    band 19 nm=0.194855 ZUP=23.6  contribution C=2.066171e-01 R=2.173235e-01 (R-C=+1.071e-02)
+       C  slope rns=13 usl=0.17000000178813934 N1=0.296242 N2=0.22 Z1=22.7001 Z2=23.1486 False
+       C  slope rns=14 usl=0.10999999940395355 N1=0.22 N2=0.194855 Z1=23.1486 Z2=23.3772 False
+       C  flat  rns=14 usl=None N1=0.194855 N2=0.194855 Z1=23.3772 Z2=23.6001 True
+       R  slope rns=13 usl=0.17 N1=0.296242 N2=0.22 Z1=22.6451 Z2=23.0935
+       R  slope rns=14 usl=0.11 N1=0.22 N2=0.194855 Z1=23.0935 Z2=23.3221 grid 230
+       R  flat  rns=14 usl=None N1=0.194855 N2=0.194855 Z1=23.3221 Z2=23.6 grid 233

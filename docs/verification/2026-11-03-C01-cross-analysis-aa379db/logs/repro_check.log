@@ -1,0 +1,13 @@
+sig 18 baseline          : independent TW = 0.00095521696145359593 bits=3f4f4cf0ce156323 | Astra = 0.00095521696145359593 bits=3f4f4cf0ce156323 | diff = +0.000e+00
+sig 18 remove_R_rounding : independent TW = 0.00095541963759617225 bits=3f4f4ea40c78a49b | Astra = 0.00095541963759617323 bits=3f4f4ea40c78a4a4 | diff = -9.758e-19
+sig 18 replace_slopes_C  : independent TW = 0.00095543260747296655 bits=3f4f4ebfe6bc86fd | Astra = 0.00095543260747296655 bits=3f4f4ebfe6bc86fd | diff = +0.000e+00
+sig 23 baseline          : independent TW = 0.0034909360388862658 bits=3f6c990603d27cd8 | Astra = 0.0034909360388862636 bits=3f6c990603d27cd3 | diff = +2.168e-18
+sig 23 remove_R_rounding : independent TW = 0.0034912166701711899 bits=3f6c999cad7e0945 | Astra = 0.0034912166701711899 bits=3f6c999cad7e0945 | diff = +0.000e+00
+sig 23 replace_slopes_C  : independent TW = 0.0034913529788430974 bits=3f6c99e5db9d114a | Astra = 0.0034913529788430974 bits=3f6c99e5db9d114a | diff = +0.000e+00
+sig 24 baseline          : independent TW = 0.0010656334112001786 bits=3f51759729a3eab3 | Astra = 0.0010656334112001788 bits=3f51759729a3eab4 | diff = -2.168e-19
+sig 24 remove_R_rounding : independent TW = 0.0010659245717942838 bits=3f5176cfcb41472b | Astra = 0.0010659245717942834 bits=3f5176cfcb414729 | diff = +4.337e-19
+sig 24 replace_slopes_C  : independent TW = 0.0010659326820637149 bits=3f5176d88096c0b8 | Astra = 0.0010659326820637149 bits=3f5176d88096c0b8 | diff = +0.000e+00
+sig 25 baseline          : independent TW = 0.0011945761670982486 bits=3f53926a647f4564 | Astra = 0.0011945761670982473 bits=3f53926a647f455e | diff = +1.301e-18
+sig 25 remove_R_rounding : independent TW = 0.001194775749910797 bits=3f539340b1672648 | Astra = 0.001194775749910797 bits=3f539340b1672648 | diff = +0.000e+00
+sig 25 replace_slopes_C  : independent TW = 0.0011947789626385759 bits=3f5393442482c4cb | Astra = 0.0011947789626385759 bits=3f5393442482c4cb | diff = +0.000e+00
+worst |independent TW - Astra| over 12 tail values = 2.168e-18

@@ -1,0 +1,16 @@
+sig 18: fixed-Rust(0.24) vs C-port(0.24, eps0, f64): per-frame max |diff| = 1.42e-14
+         tail: fixed(0.24)-C(0.24,eps0,f64)=-9.43e-18 | fixed(0.24)-C(official arithmetic, cell 0.24f)=-3.46e-11 | fixed(0.24)-C(official, 0.22)=-1.43e-08
+         whole-series weighted max |fixed(0.24) - official C(0.22)| = 2.97e-03 sone
+sig 23: fixed-Rust(0.24) vs C-port(0.24, eps0, f64): per-frame max |diff| = 1.07e-14
+         tail: fixed(0.24)-C(0.24,eps0,f64)=-7.37e-18 | fixed(0.24)-C(official arithmetic, cell 0.24f)=+6.05e-11 | fixed(0.24)-C(official, 0.22)=-1.28e-07
+         whole-series weighted max |fixed(0.24) - official C(0.22)| = 1.53e-03 sone
+sig 24: fixed-Rust(0.24) vs C-port(0.24, eps0, f64): per-frame max |diff| = 8.88e-15
+         tail: fixed(0.24)-C(0.24,eps0,f64)=-9.11e-18 | fixed(0.24)-C(official arithmetic, cell 0.24f)=-5.44e-11 | fixed(0.24)-C(official, 0.22)=-9.30e-09
+         whole-series weighted max |fixed(0.24) - official C(0.22)| = 3.53e-03 sone
+sig 25: fixed-Rust(0.24) vs C-port(0.24, eps0, f64): per-frame max |diff| = 8.88e-15
+         tail: fixed(0.24)-C(0.24,eps0,f64)=-6.29e-18 | fixed(0.24)-C(official arithmetic, cell 0.24f)=-3.47e-11 | fixed(0.24)-C(official, 0.22)=-3.47e-11
+         whole-series weighted max |fixed(0.24) - official C(0.22)| = 5.56e-07 sone
+
+real	0m12.779s
+user	0m0.015s
+sys	0m0.000s

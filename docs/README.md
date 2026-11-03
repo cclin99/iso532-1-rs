@@ -28,9 +28,10 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 |---|---|---|---|---|
 | F-01 | [`F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md`](F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md) | fixed in 0.2.0 | yes | [yes](F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.zh-TW.md) |
 | F-02 | [`F02-NL-ZERO-INIT-2026-10-31.md`](F02-NL-ZERO-INIT-2026-10-31.md) | fixed in 0.3.0 | yes | [yes](F02-NL-ZERO-INIT-2026-10-31.zh-TW.md) |
-| F-03 | [`F03-USL12-4-STATUS-2026-10-31.md`](F03-USL12-4-STATUS-2026-10-31.md) | open: `USL[12][4]` 0.24 vs 0.22, Table A.9 pending; option B (lineage) briefed 2026-11-01 | yes | [yes](F03-USL12-4-STATUS-2026-10-31.zh-TW.md) |
+| F-03 | [`F03-USL12-4-STATUS-2026-10-31.md`](F03-USL12-4-STATUS-2026-10-31.md) | open: `USL[12][4]` 0.24 vs 0.22, Table A.9 pending; option B (lineage) briefed 2026-11-01; coefficient-hypothesis round 2026-11-03 cannot decide; provisional 0.24 kept per the slope-alignment decision | yes | [yes](F03-USL12-4-STATUS-2026-10-31.zh-TW.md) |
 | V-01 | [`V01-ANNEXB-VALIDATOR-2026-10-31.md`](V01-ANNEXB-VALIDATOR-2026-10-31.md) | done (test-only), with the floating-point boundary root cause | yes | [yes](V01-ANNEXB-VALIDATOR-2026-10-31.zh-TW.md) |
-| C-01 | [`C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`](C01-OUTPUT-LENGTH-DECISION-2026-10-31.md) | decided 2026-11-01: keep ceil; contract frozen in docs and `tests/output_grid.rs`; Astra zero-pad reference round briefed | yes | [yes](C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md) |
+| C-01 | [`C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`](C01-OUTPUT-LENGTH-DECISION-2026-10-31.md) | decided 2026-11-01: keep ceil; contract frozen in docs and `tests/output_grid.rs`; zero-pad reference delivered 2026-11-03 (PARTIAL: specifics ≤1e-14, totals within tolerance); tail root cause traced, see the slope-alignment decision below | yes | [yes](C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md) |
+| F-04 / F-05 / F-06 | [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) | decided 2026-11-03: Annex A C is the correctness reference; remove the per-frame rounding (F-04) and restore the dropped last-cell remainder (F-05) in `calc_slopes`; guard the band-0 wrap (F-06); keep `USL[12][4] = 0.24` provisionally; C-generated goldens at 1e-10; version 0.4.0 via [`phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) | yes | [yes](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md) |
 | C-02 | [`C02-NONFINITE-INPUT-2026-11-01.md`](C02-NONFINITE-INPUT-2026-11-01.md) | done: batch rejects NaN/Inf with code 4, stream flags | yes | [yes](C02-NONFINITE-INPUT-2026-11-01.zh-TW.md) |
 | — | [`ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md) | numerical residuals vs MoSQITo and Annex B (with the 2026-10-31 tolerance correction note) | yes | [yes](ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.zh-TW.md) |
 
@@ -61,6 +62,10 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 | [`verification/briefs/2026-11-01-C01-zero-pad-reference.md`](verification/briefs/2026-11-01-C01-zero-pad-reference.md) | brief for the C-01 official-C reference of the trailing point | en + zh |
 | [`verification/briefs/2026-11-01-release-0.3.1-acceptance.md`](verification/briefs/2026-11-01-release-0.3.1-acceptance.md) | brief for the pre-tag acceptance of release commit `30e4279` | en + zh |
 | [`verification/2026-11-02-release-0.3.1-30e4279/report.en.md`](verification/2026-11-02-release-0.3.1-30e4279/report.en.md) | 0.3.1 pre-tag acceptance on `30e4279`: ACCEPT, 8/8 items passed | en + zh |
+| [`verification/2026-11-03-C01-zero-pad-aa379db/report.md`](verification/2026-11-03-C01-zero-pad-aa379db/report.md) | C-01 official-C zero-pad reference on `aa379db`: PARTIAL (specifics ≤1e-14, totals within tolerance) | en + zh |
+| [`verification/2026-11-03-C01-tail-root-cause-aa379db/report.en.md`](verification/2026-11-03-C01-tail-root-cause-aa379db/report.en.md) | C-01 tail root cause on `aa379db`: rounding explains 67–98 %, slope/main residuals quantified | en + zh |
+| [`verification/2026-11-03-F03-coefficient-hypothesis-aa379db/report.md`](verification/2026-11-03-F03-coefficient-hypothesis-aa379db/report.md) | F-03: data cannot decide 0.22 vs 0.24; no table change | en + zh |
+| [`verification/2026-11-03-C01-cross-analysis-aa379db/report.en.md`](verification/2026-11-03-C01-cross-analysis-aa379db/report.en.md) | Claude cross-analysis on `aa379db`: Astra rounds reproduced; residuals closed to F-05 (dropped last-cell remainder) and C float32 constants; band-0 wrap F-06 | en + zh |
 
 ## Historical review records (closed rounds; translation backlog P3)
 
