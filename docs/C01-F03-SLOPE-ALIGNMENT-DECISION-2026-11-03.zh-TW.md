@@ -49,4 +49,4 @@ C-01 的四個尾端點（Annex B 訊號 18／23／24／25）沒有官方對照�
 
 ## 6. 執行
 
-phase 計畫：[`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md)，交 Codex；完成後另出 Astra 驗收簡報。
+phase 計畫：[`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md)，交實作者（Claude Opus 5.5）；完成後由 Astra 獨立驗收。

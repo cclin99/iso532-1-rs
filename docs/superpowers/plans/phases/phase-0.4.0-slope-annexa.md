@@ -8,6 +8,8 @@
 
 **Tech Stack:** Rust 2021；Python 3 + NumPy（golden 工具）；MSVC x64（只在產生 C golden 時需要，測試本身不需要）。
 
+**實作者:** Claude Opus 5.5（本階段不交 Codex）；完成後由 Astra 獨立驗收，驗收簡報另出。
+
 **上游依據:** 決策備忘 D1–D5；證據 `docs/verification/2026-11-03-C01-tail-root-cause-aa379db/`、`docs/verification/2026-11-03-C01-cross-analysis-aa379db/`（`sliver_check.py` 的 `rust_slopes_fixed` 是 F-05 的參考實作，Python）。不授權處理穩態前端、F-03 表格、Table A.9 取得。
 
 ---
@@ -75,6 +77,10 @@
 - [ ] 全套 `cargo test --workspace`、Python 測試、`cargo bench --no-run`。
 - [ ] 產出 `docs/RELEASE-0.4.0-<日期>.md` 兩語言草稿（不打 tag；tag 在 Astra 驗收後）。
 - [ ] 回報：改動檔案清單、hash 舊新值、四個 C-01 尾端點對 C golden 與對未修改 C 的差值、Annex B 結果、串流測試結果。
+
+## 回報格式
+
+完成後回報一份純文字摘要（中文即可）：改動檔案清單；`tests/hash_gate.rs` 舊新 hash；四個 C-01 尾端點（訊號 18／23／24／25）對 C golden 與對未修改 C 的 total 差值；Annex B 測試結果；串流／output_grid 測試結果；Task 1 的 RED 輸出節錄；未完成或改動範圍外的任何事項。不打 tag、不推送；commit 留在本機 `main`，由使用者決定推送時機。
 
 ## 驗收條件（交 Astra 前自檢）
 

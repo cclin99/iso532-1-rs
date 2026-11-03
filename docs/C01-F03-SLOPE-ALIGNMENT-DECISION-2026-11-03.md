@@ -49,4 +49,4 @@ Incidental finding: the public `core::calc_slopes` wraps band 0 around to band 2
 
 ## 6. Execution
 
-Phase plan: [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md), handed to Codex; an Astra acceptance brief follows completion.
+Phase plan: [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md), handed to the implementer (Claude Opus 5.5); Astra performs the independent acceptance afterwards.
