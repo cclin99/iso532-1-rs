@@ -90,3 +90,41 @@
 3. 批次＝串流逐位元、output_grid、Annex B 全過。
 4. 對未修改官方 C 的差值寫入文件，與決策備忘 §2 的量級一致（尾點 ≤1.3e-7；全序列 ≤3.5e-3 sone）。
 5. 不含任何 API、格線、契約變更；diff 只落在 `calc_slopes.rs`、測試、工具、文件、版號。
+
+---
+
+## Round 2（2026-11-04）：F-07、全序列門檻、CI
+
+依決策備忘 §7。實作者 Claude Opus 5.5；起點為 Round 1 的最後一個 commit。
+
+### D-F. F-07 的修法 = 取樣位置所在段的值
+
+`calc_slopes_impl` 斜率分支寫 `spec[j] = n1_aux - (z_array - z1_aux) * usl[j]` 的兩處（loop 內 `mask_z_bigger_z2` 的 else 子分支，以及 `!mask_z_bigger_z2` 分支），只在 `r8(z_array) <= r8(z2[j])`（取樣位置落在本段內）時保留原式。否則取樣位置在本段結束之後，值由一個不動 `total` 的純函式 `sample_after(z_array, z2[j], n2[j], nm[i], i)` 給出：從 `(z, n) = (z2[j], n2[j])` 起，若 `r8(n) <= r8(nm[i])` 回傳 `nm[i]`；否則 `idx = get_rns_index(n, true)`、`u = usl_value(idx, i-1)`、`z_next = min((n - max(RNS[idx], nm[i])) / u + z, ZUP[i])`；若 `r8(z_array) <= r8(z_next)` 回傳 `n - (z_array - z) * u`，否則 `n -= (z_next - z) * u; z = z_next` 繼續；迭代上限同 `complete_band`。這對應 C 的「`for (ZK = Z; ZK <= Z2; ...)` 只寫本段，之後的格由下一段或平台段寫」。`total` 的計算完全不動；`n_only` 路徑不受影響。
+
+### D-G. 門檻
+
+`tests/golden_c.rs`：尾點 1e-10 不變；把兩個 `#[ignore]` 的全序列測試改成常態測試，total 門檻 `1e-4`，specific 門檻 = F-07 後實測最大值向上取到 1 位有效數字（預期 ≤2e-3）；把實測最大值寫進測試常數旁的註解與 CHANGELOG。若 specific 實測 >2e-3，停下回報，不得自行放寬。
+
+### D-H. MoSQITo 相容性
+
+`COMPAT_TOL` 5e-3 只套 total；specific 對 MoSQITo 改為「記錄不 gate」：測試印出每個 fixture 的最大值並斷言有限（finite），Python parity 的 specific 比對同樣改為記錄，移除 Round 1 的兩個 strict xfail。
+
+## Task 7：RED — F-07
+
+- [ ] `calc_slopes.rs` 單元測試 `f07_sample_after_segment_end_is_core_or_next_segment`：Annex B 訊號 18 第 1564 幀 NL 向量（從 `tmp/c01-tail-root-cause-aa379db-run2/signal-18/R-pipeline/nl.bin` 取，21 值、17 位十進位寫進測試），期望 `spec[36]` 逐位元等於 `nm[4]`（C 寫核心值）、`spec[35]` 等於 `nm[3] - 0.1 * 0.63`（容差 1e-12）、total 與修正前逐位元相同。修正前 `spec[36]` = 0.77011…，必須 FAILED。
+- [ ] 自選一個「後面接另一段斜率」的合成幀（例如 nm[3] 高、nm[4] 很低使段落在 RNS 邊界結束），期望值用 `complete_band` 語意手算或用官方 C DLL（`tmp/c01-tail-root-cause-aa379db-run2/c/stages.dll` 的 `rc_slopes`，見 cross-analysis 的 `ctypes_check.py`）取得，寫明來源。
+
+## Task 8：GREEN 與重測
+
+- [ ] 依 D-F 實作；`n_only_matches_into_*` 仍逐位元通過；total 的 hash 不變（只有 `n_specific` 的 hash 改變）——以 `tests/hash_gate.rs` 證明：`n` 各平台值不動，`n_specific` 重凍（commit 訊息列舊新）。
+- [ ] 重跑 `tools/gen_golden_c.py` 不需要（C 端沒變）；重跑 `golden_c` 全序列比對，依 D-G 設門檻並記錄九個訊號 + 四個 C-01 訊號的實測最大值。
+- [ ] 依 D-H 改 MoSQITo 相容性測試與 Python parity。
+- [ ] `.github/workflows`：Python smoke job 的 Windows 矩陣加 `HASH_GATE_DUMP_ONLY: '1'`（比照 Rust job 第 20 行的寫法）。
+- [ ] 全套 `cargo test --workspace`、clippy、fmt、Python 測試、`cargo bench --no-run`。
+
+## Task 9：文件
+
+- [ ] CHANGELOG 0.4.0 段落加 F-07；修正 Round 1 寫的「specific cell rule kept from MoSQITo」敘述。
+- [ ] README 兩語言：相容性選擇表加 F-07 列；數值差異表更新 specific 對 MoSQITo 與對 C golden 的數字。
+- [ ] `docs/RELEASE-0.4.0-2026-11-04.md` 兩語言更新；phase 計畫勾選。
+- [ ] 回報格式同 Round 1，另加：F-07 RED／GREEN 節錄、全序列實測最大值表（total／specific，13 個訊號）、`n_specific` hash 舊新值、對 MoSQITo 的 specific 最大值表。

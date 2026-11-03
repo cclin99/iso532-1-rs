@@ -50,3 +50,16 @@ C-01 的四個尾端點（Annex B 訊號 18／23／24／25）沒有官方對照�
 ## 6. 執行
 
 phase 計畫：[`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md)，交實作者（Claude Opus 5.5）；完成後由 Astra 獨立驗收。
+
+## 7. 修訂（2026-11-04，第一輪實作驗證後）
+
+第一輪實作（commit `93ba5e4`…`2fc1708`）的驗證推翻了 D4 的一部分，並發現第五個差異來源：
+
+- **D4 的全序列門檻 1e-10 不成立。** 官方 C 的 `_ZUP += .0001f` 把每個 band 邊界移 1e-4 Bark，逐幀 total 差最大 9.7e-6（訊號 18，Claude 以移植重算確認），九個 golden 訊號全序列 total 差最大 2.7e-5。§2 的「C-f32 ~1e-11」只在尾點（N≈1e-3）成立，是 Claude 的推論錯誤。
+- **F-07（新）：斜率與核心響度相交格的 specific 寫法。** Rust／MoSQITo 在格點 j 寫的是「本格啟動的那一段斜率外插到取樣位置」的值，即使那一段在取樣位置之前已經結束；C 寫的是取樣位置所在段的值（後續斜率段或核心值）。訊號 18 第 1564 幀 bark 3.6：Rust 0.7701、C 0.8139，差 4.4e-2 sone/Bark。總響度不受影響（total 的分段積分正確），只有 specific。
+- **D4 修訂：** C golden 門檻分三層。尾點（C-01 四點）total 與 specific 1e-10 不變；全序列 total 1e-4 sone（實測 2.7e-5，留 3.7 倍）；全序列 specific 在 F-07 修正後以實測最大值定，預期 ≤2e-3 sone/Bark（C 的 1e-4 Bark 位移乘以最大 USL 13）；若實測超過 2e-3，停下回報，表示還有未知差異。
+- **D-E 修訂：** MoSQITo 相容性容差 5e-3 只套在 total；specific 對 MoSQITo 的差在 F-07 後必然達 4e-2 量級，改為記錄每個 fixture 的最大值、不當 gate。
+- **D2 擴充：** F-07 與 F-04／F-05 同在 `calc_slopes_impl`，納入 0.4.0，不另出版本。
+- **CI：** F-04 後 `N(t)` 帶出 FMA／libm 的 ULP 雜訊，`n` 的 hash 改為逐平台；Python smoke 的 CI Windows job 需比照 Rust job 設 `HASH_GATE_DUMP_ONLY=1`。
+
+執行：phase 計畫「Round 2」（Task 7–9）。

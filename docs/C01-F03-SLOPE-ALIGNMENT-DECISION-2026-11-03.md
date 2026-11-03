@@ -1,6 +1,6 @@
 # Aligning the slope stage with Annex A: decision on the C-01 tail root cause and the F-03 coefficient
 
-> 對照／Pair: [中文版](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md) · source: zh · synced 2026-11-03
+> 對照／Pair: [中文版](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md) · source: zh · synced 2026-11-04
 
 2026-11-03 (Asia/Taipei). Code snapshot `aa379db` (v0.3.1). Decision memo; no code or golden change. Evidence: Astra's [`verification/2026-11-03-C01-zero-pad-aa379db/`](verification/2026-11-03-C01-zero-pad-aa379db/), [`verification/2026-11-03-C01-tail-root-cause-aa379db/`](verification/2026-11-03-C01-tail-root-cause-aa379db/), [`verification/2026-11-03-F03-coefficient-hypothesis-aa379db/`](verification/2026-11-03-F03-coefficient-hypothesis-aa379db/), and Claude's cross-analysis [`verification/2026-11-03-C01-cross-analysis-aa379db/`](verification/2026-11-03-C01-cross-analysis-aa379db/).
 
@@ -50,3 +50,16 @@ Incidental finding: the public `core::calc_slopes` wraps band 0 around to band 2
 ## 6. Execution
 
 Phase plan: [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md), handed to the implementer (Claude Opus 5.5); Astra performs the independent acceptance afterwards.
+
+## 7. Revision (2026-11-04, after verifying the first implementation round)
+
+Verification of the first round (commits `93ba5e4`…`2fc1708`) overturned part of D4 and found a fifth source of difference:
+
+- **The whole-series 1e-10 threshold of D4 does not hold.** The official C's `_ZUP += .0001f` shifts every band edge by 1e-4 Bark; per-frame totals differ by up to 9.7e-6 (signal 18, confirmed by Claude's own port) and whole-series totals of the nine golden signals by up to 2.7e-5. The "C-f32 ~1e-11" of §2 holds only at the tails (N≈1e-3); the extrapolation was Claude's error.
+- **F-07 (new): the specific-loudness write at the cell where a slope meets the core loudness.** Rust/MoSQITo write, at grid cell j, the slope segment started in that cell extrapolated to the sampling position even when the segment ended before it; C writes the value of the segment that contains the sampling position (a later slope segment or the core value). Signal 18 frame 1564, bark 3.6: Rust 0.7701, C 0.8139, difference 4.4e-2 sone/Bark. Total loudness is unaffected (the segment integration is correct); only specific loudness.
+- **D4 revised:** three tiers for the C golden. Tail points (the four C-01 points): total and specific 1e-10, unchanged. Whole-series total: 1e-4 sone (measured 2.7e-5, margin 3.7×). Whole-series specific: set from the measured maximum after F-07, expected ≤2e-3 sone/Bark (the C 1e-4 Bark shift times the largest USL, 13); if the measurement exceeds 2e-3, stop and report, since that would indicate a further unknown difference.
+- **D-E revised:** the MoSQITo compatibility bound of 5e-3 applies to totals only; after F-07 the specific difference against MoSQITo necessarily reaches ~4e-2, so it is recorded per fixture, not gated.
+- **D2 extended:** F-07 lives in the same `calc_slopes_impl` as F-04/F-05 and is included in 0.4.0; no separate release.
+- **CI:** after F-04 `N(t)` carries FMA/libm ULP noise and its hashes are per platform; the Python smoke CI job on Windows needs `HASH_GATE_DUMP_ONLY=1` like the Rust job.
+
+Execution: phase plan "Round 2" (Tasks 7–9).
