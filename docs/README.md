@@ -18,6 +18,7 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 
 | document | content | en | zh |
 |---|---|---|---|
+| [`RELEASE-0.4.0-2026-11-04.md`](RELEASE-0.4.0-2026-11-04.md) | 0.4.0 draft (pending verification): slope stage follows Annex A (F-04, F-05, F-06), Annex A C golden, MoSQITo goldens as compatibility checks | yes | [yes](RELEASE-0.4.0-2026-11-04.zh-TW.md) |
 | [`RELEASE-0.3.1-2026-11-01.md`](RELEASE-0.3.1-2026-11-01.md) | 0.3.1: C-02 non-finite input contract (code 4), C-01 output-grid contract and tests, V-01 validator; no numeric change | yes | [yes](RELEASE-0.3.1-2026-11-01.zh-TW.md) |
 | [`RELEASE-0.3.0-2026-10-31.md`](RELEASE-0.3.0-2026-10-31.md) | 0.3.0: finding F-02 (zero-state nonlinear decay), gates, artifacts, open items | yes | [yes](RELEASE-0.3.0-2026-10-31.zh-TW.md) |
 | [`RELEASE-0.2.0-2026-10-31.md`](RELEASE-0.2.0-2026-10-31.md) | 0.2.0: finding F-01 (low-frequency DLL row), gates, artifacts | yes | [yes](RELEASE-0.2.0-2026-10-31.zh-TW.md) |

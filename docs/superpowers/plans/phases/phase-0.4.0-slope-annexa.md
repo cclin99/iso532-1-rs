@@ -75,9 +75,9 @@
 
 ## Task 6：收尾
 
-- [ ] 全套 `cargo test --workspace`、Python 測試、`cargo bench --no-run`。
-- [ ] 產出 `docs/RELEASE-0.4.0-<日期>.md` 兩語言草稿（不打 tag；tag 在 Astra 驗收後）。
-- [ ] 回報：改動檔案清單、hash 舊新值、四個 C-01 尾端點對 C golden 與對未修改 C 的差值、Annex B 結果、串流測試結果。
+- [x] 全套 `cargo test --workspace`、Python 測試、`cargo bench --no-run`。
+- [x] 產出 `docs/RELEASE-0.4.0-<日期>.md` 兩語言草稿（不打 tag；tag 在 Astra 驗收後）。
+- [x] 回報：改動檔案清單、hash 舊新值、四個 C-01 尾端點對 C golden 與對未修改 C 的差值、Annex B 結果、串流測試結果。
 
 ## 回報格式
 
