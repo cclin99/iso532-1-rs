@@ -30,11 +30,11 @@ fn main_loudness_rejects_low_frequency_third_octave_level_above_120_db() {
     );
 }
 
-/// The specific loudness of the slope stage is unchanged by 0.4.0 and keeps
-/// its tight MoSQITo bound. The total follows Annex A since 0.4.0 (F-04 no
-/// per-frame rounding, F-05 band completion), so against MoSQITo it is a
-/// compatibility check (相容性對照) with the D-E bound of 5e-3 sone; the Annex A
-/// reference is `tests/golden_c.rs`.
+/// The slope stage follows Annex A since 0.4.0 (F-04 no per-frame rounding,
+/// F-05 band completion, F-07 specific value where a slope ends inside a
+/// cell); the Annex A reference is `tests/golden_c.rs`. Against MoSQITo the
+/// total is a compatibility check (相容性對照) with the D-E bound of 5e-3 sone
+/// and the specific loudness is recorded, not gated (D-H).
 #[test]
 fn calc_slopes_compat_mosqito_total_and_specific_loudness() {
     for sig in SIGNALS {
@@ -47,6 +47,6 @@ fn calc_slopes_compat_mosqito_total_and_specific_loudness() {
             (n - want_n).abs() <= 5e-3,
             "{sig}: N {n} vs {want_n} (compatibility)"
         );
-        assert_close(&spec, &want_spec, 1e-6, 1e-9, &format!("{sig}/N_specific"));
+        record_max_abs_diff(&spec, &want_spec, &format!("{sig}/N_specific vs MoSQITo"));
     }
 }

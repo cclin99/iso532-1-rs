@@ -1,14 +1,17 @@
 //! MoSQITo 1.2.1 goldens. The stage tests (noct spectrum, dB conversion, main
 //! loudness) stay tight. Since 0.4.0 the slope stage follows ISO 532-1 Annex A
 //! (F-04 no per-frame rounding, F-05 band completion) and the correctness
-//! reference is the Annex A C golden (`tests/golden_c.rs`); the total/specific
+//! reference is the Annex A C golden (`tests/golden_c.rs`); the total
 //! loudness comparisons below are a compatibility check against MoSQITo
-//! (相容性對照) with the D-E bound of 5e-3 sone (phase plan 0.4.0).
+//! (相容性對照) with the D-E bound of 5e-3 sone (phase plan 0.4.0). Since F-07
+//! (Annex A writes the core loudness, or the segment that contains the
+//! sample, in the cell where a slope ends) the specific loudness differs from
+//! MoSQITo by up to ~4e-2 sone/Bark by design; it is recorded, not gated (D-H).
 
 mod common;
 use common::*;
 
-/// MoSQITo compatibility bound for total and specific loudness (D-E), sone.
+/// MoSQITo compatibility bound for the total loudness (D-E, D-H), sone.
 const COMPAT_TOL: f64 = 5e-3;
 use iso532::core::calc_slopes::calc_slopes;
 use iso532::core::main_loudness::main_loudness;
@@ -70,13 +73,7 @@ fn calc_slopes_compat_mosqito() {
             (n - want_n).abs() <= COMPAT_TOL,
             "{sig}: N {n} vs {want_n} (compatibility)"
         );
-        assert_close(
-            &spec,
-            &want_spec,
-            0.0,
-            COMPAT_TOL,
-            &format!("{sig}/N_specific (compatibility)"),
-        );
+        record_max_abs_diff(&spec, &want_spec, &format!("{sig}/N_specific vs MoSQITo"));
     }
 }
 
@@ -99,13 +96,7 @@ fn zwst_end_to_end_compat_mosqito() {
             "{sig}: N {} vs {want_n} (compatibility)",
             r.n
         );
-        assert_close(
-            &r.n_specific,
-            &want_spec,
-            0.0,
-            COMPAT_TOL,
-            &format!("{sig}/spec (compatibility)"),
-        );
+        record_max_abs_diff(&r.n_specific, &want_spec, &format!("{sig}/spec vs MoSQITo"));
         assert_eq!(r.bark_axis.len(), 240);
     }
 }

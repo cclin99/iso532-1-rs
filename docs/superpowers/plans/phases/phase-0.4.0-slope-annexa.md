@@ -116,11 +116,11 @@
 
 ## Task 8：GREEN 與重測
 
-- [ ] 依 D-F 實作；`n_only_matches_into_*` 仍逐位元通過；total 的 hash 不變（只有 `n_specific` 的 hash 改變）——以 `tests/hash_gate.rs` 證明：`n` 各平台值不動，`n_specific` 重凍（commit 訊息列舊新）。
-- [ ] 重跑 `tools/gen_golden_c.py` 不需要（C 端沒變）；重跑 `golden_c` 全序列比對，依 D-G 設門檻並記錄九個訊號 + 四個 C-01 訊號的實測最大值。
-- [ ] 依 D-H 改 MoSQITo 相容性測試與 Python parity。
-- [ ] `.github/workflows`：Python smoke job 的 Windows 矩陣加 `HASH_GATE_DUMP_ONLY: '1'`（比照 Rust job 第 20 行的寫法）。
-- [ ] 全套 `cargo test --workspace`、clippy、fmt、Python 測試、`cargo bench --no-run`。
+- [x] 依 D-F 實作；`n_only_matches_into_*` 仍逐位元通過；total 的 hash 不變（只有 `n_specific` 的 hash 改變）——以 `tests/hash_gate.rs` 證明：`n` 各平台值不動，`n_specific` 重凍（commit 訊息列舊新）。
+- [x] 重跑 `tools/gen_golden_c.py` 不需要（C 端沒變）；重跑 `golden_c` 全序列比對，依 D-G 設門檻並記錄九個訊號 + 四個 C-01 訊號的實測最大值。
+- [x] 依 D-H 改 MoSQITo 相容性測試與 Python parity。
+- [x] `.github/workflows`：Python smoke job 的 Windows 矩陣加 `HASH_GATE_DUMP_ONLY: '1'`（比照 Rust job 第 20 行的寫法）。
+- [x] 全套 `cargo test --workspace`、clippy、fmt、Python 測試、`cargo bench --no-run`。
 
 ## Task 9：文件
 

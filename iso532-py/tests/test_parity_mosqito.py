@@ -6,19 +6,15 @@ phase after R3 — do not weaken tolerances to make a change pass.
 Expected runtime: ~5-10 min (mosqito zwtv is ~0.45x realtime).
 
 0.4.0: the slope stage follows ISO 532-1 Annex A (F-04 no per-frame rounding
-of the total, F-05 band completion); the correctness reference is the Annex A
-C golden (iso532/tests/golden_c.rs). Per decision D-E of the 0.4.0 phase plan
-total and specific loudness are compared with MoSQITo as a compatibility
-check (COMPAT_ATOL = 5e-3 sone); the stationary specific loudness and the Bark
-axis are unchanged by 0.4.0 and keep RTOL/ATOL.
-
-Known 0.4.0 finding (xfail, strict): after F-05 the band following a completed
-band starts at ZUP with the Annex A state, which also changes the time-varying
-specific loudness of that next band on broadband fixtures. Against MoSQITo the
-change reaches 1.13e-2 (white_60) and 9.0e-3 (annexb_sig5) sone/Bark, above the
-D-E bound; against the Annex A C golden the same values move closer (fewer
-cells off by > 1e-3, smaller L1). The bound is not widened here; the decision
-belongs to the phase owner.
+of the total, F-05 band completion, F-07 specific value in the cell where a
+slope segment ends); the correctness reference is the Annex A C golden
+(iso532/tests/golden_c.rs). Per decisions D-E / D-H of the 0.4.0 phase plan
+the total loudness is compared with MoSQITo as a compatibility check
+(COMPAT_ATOL = 5e-3 sone). Specific loudness (time-varying and stationary)
+differs from MoSQITo by design since F-07 (Annex A writes the core loudness,
+or the segment that contains the sample, where MoSQITo extrapolates the
+slope; up to ~4e-2 sone/Bark): it is recorded (maximum printed, finiteness
+and shape asserted), not gated. The Bark axis keeps RTOL/ATOL.
 """
 
 from pathlib import Path
@@ -57,30 +53,25 @@ NAMES = [
 ]
 
 RTOL, ATOL = 1e-6, 1e-9
-COMPAT_ATOL = 5e-3  # N and time-varying N_specific vs MoSQITo since 0.4.0 (D-E)
-
-# zwtv N_specific beyond the D-E bound since 0.4.0 (see the module docstring).
-SPEC_BEYOND_COMPAT = {"white_60", "annexb_sig5"}
+COMPAT_ATOL = 5e-3  # N vs MoSQITo since 0.4.0 (D-E, D-H)
 
 
 def tol(label):
-    return (0.0, COMPAT_ATOL) if label in ("N", "N_specific") else (RTOL, ATOL)
+    return (0.0, COMPAT_ATOL) if label == "N" else (RTOL, ATOL)
 
 
-def spec_params():
-    return [
-        pytest.param(
-            name,
-            marks=pytest.mark.xfail(
-                strict=True,
-                reason="0.4.0 finding: F-05 changes the next band's time-varying "
-                "specific loudness beyond the D-E bound vs MoSQITo",
-            ),
-        )
-        if name in SPEC_BEYOND_COMPAT
-        else name
-        for name in NAMES
-    ]
+def record_specific(got, want, ctx):
+    """Record-only N_specific comparison (D-H): shape and finiteness asserted,
+    maximum |got - want| printed (run pytest with -s to see it), not gated."""
+    got = np.asarray(got, dtype=np.float64)
+    want = np.asarray(want, dtype=np.float64)
+    assert got.shape == want.shape, f"{ctx}: shape {got.shape} vs {want.shape}"
+    assert np.all(np.isfinite(got)), f"{ctx}: result not finite"
+    assert np.all(np.isfinite(want)), f"{ctx}: MoSQITo reference not finite"
+    diff = np.abs(got - want)
+    worst = float(diff.max()) if diff.size else 0.0
+    print(f"{ctx}: max |diff| {worst:.3e} vs MoSQITo (recorded, not gated)")
+    return worst
 
 
 @pytest.fixture(scope="session")
@@ -129,19 +120,12 @@ def test_zwtv_parity(signals, mosqito_runs, name):
     np.testing.assert_array_equal(got_time, iso_time)
 
 
-@pytest.mark.parametrize("name", spec_params())
+@pytest.mark.parametrize("name", NAMES)
 def test_zwtv_specific_parity(signals, mosqito_runs, name):
     sig = np.ascontiguousarray(signals[name], dtype=np.float64)
     want = mosqito_zwtv(mosqito_runs, name, sig)
     got = iso532.loudness_zwtv(sig, float(FS), nl_init="mosqito_tail")
-    rtol, atol = tol("N_specific")
-    np.testing.assert_allclose(
-        got[1],
-        np.asarray(want[1], dtype=np.float64),
-        rtol=rtol,
-        atol=atol,
-        err_msg=f"{name}/N_specific (compatibility)",
-    )
+    record_specific(got[1], want[1], f"{name}/N_specific zwtv")
 
 
 # 0.5 s of trailing silence drives every band's core loudness to exactly zero
@@ -174,19 +158,20 @@ def test_zwtv_default_matches_mosqito_given_a_silent_tail(signals, mosqito_runs,
     )
 
 
-@pytest.mark.parametrize("name", spec_params())
+@pytest.mark.parametrize("name", NAMES)
 def test_zwtv_default_specific_matches_mosqito_given_a_silent_tail(
     signals, mosqito_runs, name
 ):
-    """N_specific half of the silent-tail cross-check (compatibility bound)."""
+    """N_specific half of the silent-tail cross-check (recorded, D-H)."""
     sig = np.ascontiguousarray(signals[name], dtype=np.float64)
     padded = np.concatenate([sig, SILENT_TAIL])
     want = mosqito_zwtv(mosqito_runs, f"{name}+silence", padded)
     got = iso532.loudness_zwtv(sig, float(FS))
     frames = got[0].shape[0]
-    np.testing.assert_allclose(
-        got[1], np.asarray(want[1], dtype=np.float64)[:, :frames],
-        rtol=0.0, atol=COMPAT_ATOL, err_msg=f"{name}/N_specific default",
+    record_specific(
+        got[1],
+        np.asarray(want[1], dtype=np.float64)[:, :frames],
+        f"{name}/N_specific zwtv default",
     )
 
 
@@ -198,12 +183,10 @@ def test_zwst_parity(signals, name):
     np.testing.assert_allclose(
         got_n, float(want_n), rtol=0.0, atol=COMPAT_ATOL, err_msg=f"{name}/N"
     )
-    np.testing.assert_allclose(
+    record_specific(
         got_spec,
         np.asarray(want_spec, dtype=np.float64).ravel(),
-        rtol=RTOL,
-        atol=ATOL,
-        err_msg=f"{name}/N_specific",
+        f"{name}/N_specific zwst",
     )
     np.testing.assert_allclose(
         got_bark, want_bark, rtol=RTOL, atol=ATOL, err_msg=f"{name}/bark"

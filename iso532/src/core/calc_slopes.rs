@@ -120,14 +120,13 @@ fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
                         dz[j] = z2[j] - z1_aux;
                         n2[j] = n1_aux - dz[j] * usl[j];
                         total += dz[j] * (n1_aux + n2[j]) / 2.0;
-                        if let Some(spec) = n_specific.as_mut() {
-                            spec[j] = n1_aux - (z_array - z1_aux) * usl[j];
-                        }
                     }
 
                     if !mask_z_bigger_z2_1 {
                         if let Some(spec) = n_specific.as_mut() {
-                            spec[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                            spec[j] = segment_sample(
+                                z_array, z1_aux, n1_aux, usl[j], z2[j], n2[j], nm[i], i,
+                            );
                         }
                     }
                     z_array += 0.1;
@@ -136,7 +135,8 @@ fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
                     }
                 } else {
                     if let Some(spec) = n_specific.as_mut() {
-                        spec[j] = n1_aux - (z_array - z1_aux) * usl[j];
+                        spec[j] =
+                            segment_sample(z_array, z1_aux, n1_aux, usl[j], z2[j], n2[j], nm[i], i);
                     }
                     z_array += 0.1;
                 }
@@ -212,6 +212,54 @@ fn complete_band(nm_band: f64, band: usize, z1: f64, n1: f64, total: &mut f64) -
     (z, n)
 }
 
+/// Specific loudness at the 0.1 Bark sample `z_array` of the slope segment
+/// running from `(z1, n1)` with steepness `slope` to `(z2, n2)` in band `band`
+/// (F-07). Inside the segment (`z_array <= z2`) this is the segment itself.
+/// After it, Annex A (`for (ZK = Z; ZK <= Z2; ...)`) leaves the sample to the
+/// segment that contains it, which `sample_after` finds.
+#[allow(clippy::too_many_arguments)]
+#[inline]
+fn segment_sample(
+    z_array: f64,
+    z1: f64,
+    n1: f64,
+    slope: f64,
+    z2: f64,
+    n2: f64,
+    nm_band: f64,
+    band: usize,
+) -> f64 {
+    if r8(z_array) <= r8(z2) {
+        n1 - (z_array - z1) * slope
+    } else {
+        sample_after(z_array, z2, n2, nm_band, band)
+    }
+}
+
+/// Annex A value at `z_array`, a sample past the end `(z, n)` of a slope
+/// segment of band `band` (F-07): follow the segment chain of
+/// `complete_band` from `(z, n)` and return the value of the segment that
+/// contains `z_array`, or the core loudness `nm_band` once the slope has met
+/// it. Pure: `total` is integrated by the caller and is not touched here.
+fn sample_after(z_array: f64, z: f64, n: f64, nm_band: f64, band: usize) -> f64 {
+    let zup = ZUP[band];
+    let (mut z, mut n) = (z, n);
+    for _ in 0..=RNS.len() + 1 {
+        if r8(n) <= r8(nm_band) {
+            return nm_band;
+        }
+        let idx = get_rns_index(n, true);
+        let slope = usl_value(idx, band - 1);
+        let z_next = ((n - RNS[idx].max(nm_band)) / slope + z).min(zup);
+        if r8(z_array) <= r8(z_next) {
+            return n - (z_array - z) * slope;
+        }
+        n -= (z_next - z) * slope;
+        z = z_next;
+    }
+    n
+}
+
 fn zup_indices() -> [usize; 21] {
     let mut indices = [0; 21];
     for (idx, zup) in ZUP.iter().enumerate() {
@@ -250,7 +298,8 @@ fn r8(value: f64) -> f64 {
 
 #[cfg(test)]
 mod tests {
-    use super::{calc_slopes, calc_slopes_into, calc_slopes_n_only};
+    use super::{calc_slopes, calc_slopes_into, calc_slopes_n_only, sample_after};
+    use crate::tables::{RNS, USL, ZUP};
 
     #[test]
     fn n_only_matches_into_for_edge_and_random_frames() {
@@ -408,7 +457,9 @@ mod tests {
     /// `tmp/c01-tail-root-cause-aa379db-run2/signal-18/R-pipeline/nl.bin`).
     /// Band 4 starts with a slope from N1 = nm[3] at Z = 3.5: USL 0.63 down to
     /// RNS 0.82 at Z = 3.6002, then USL 0.50 down to the core loudness nm[4] at
-    /// Z = 3.6124, then flat.
+    /// Z = 3.6124, then flat. Written with 17 significant digits (exact
+    /// binary64 round trip of the dumped values).
+    #[allow(clippy::excessive_precision)]
     const SIG18_FRAME1564: [f64; 21] = [
         6.43992114652731096e-02,
         5.99842137688217036e-01,
@@ -482,7 +533,7 @@ mod tests {
     ///
     /// Cross-check: the official C (`tmp/c01-tail-root-cause-aa379db-run2/c/
     /// stages.dll`, `rc_slopes`, n = 1) gives 0.41042398052005946,
-    /// 0.29281798859491043, 0.22181698491381224 and 0.21017569557691812 for
+    /// 0.2928179885949104, 0.22181698491381224 and 0.21017569557691812 for
     /// cells 35, 40, 44 and 45: the same chain shifted by its `_ZUP += .0001f`
     /// band-edge epsilon (1e-4 Bark x USL, <= 2.4e-5 here).
     #[test]
@@ -511,7 +562,7 @@ mod tests {
         }
         let c = [
             (35, 0.410_423_980_520_059_46),
-            (40, 0.292_817_988_594_910_43),
+            (40, 0.292_817_988_594_910_4),
             (44, 0.221_816_984_913_812_24),
             (45, 0.210_175_695_576_918_12),
         ];
@@ -521,6 +572,123 @@ mod tests {
                 "spec[{j}] {:.17e} vs official C {want:.17e}",
                 spec[j]
             );
+        }
+    }
+
+    #[test]
+    fn f07_sample_after_walks_the_segment_chain() {
+        // From (3.6, 0.45) in band 4: USL[11][3] = 0.50 down to RNS 0.42 at
+        // Z = 3.66, then USL[12][3] = 0.24; Z = 3.7 lies in the second segment.
+        let got = sample_after(3.7, 3.6, 0.45, 0.1, 4);
+        let want = 0.42 - (3.7 - (3.6 + (0.45 - 0.42) / 0.50)) * 0.24;
+        assert!((got - want).abs() <= 1e-15, "{got:.17e} vs {want:.17e}");
+        // Core loudness met before the sample: flat.
+        assert_eq!(sample_after(3.7, 3.6, 0.45, 0.44, 4), 0.44);
+        assert_eq!(sample_after(3.7, 3.6, 0.44, 0.44, 4), 0.44);
+    }
+
+    /// Plain binary64 port of the official `f_calc_slopes` (ISO 532-1:2017
+    /// Annex A) without its `_ZUP += .0001f` band-edge epsilon and float32
+    /// literals: every 0.1 Bark sample is written by the segment (or flat part)
+    /// that contains it.
+    fn annex_a_reference(nm: &[f64; 21]) -> (f64, [f64; 240]) {
+        let mut spec = [f64::NAN; 240];
+        let (mut n1, mut z1, mut z) = (0.0_f64, 0.0_f64, 0.1_f64);
+        let (mut idx_rns, mut idx_ns, mut total) = (0usize, 0usize, 0.0_f64);
+        for (i, &core) in nm.iter().enumerate() {
+            let zup = ZUP[i];
+            let cbn = i.saturating_sub(1).min(7);
+            loop {
+                let (z2, n2, next_band);
+                if n1 > core {
+                    let usl = USL[idx_rns][cbn];
+                    let mut n = RNS[idx_rns].max(core);
+                    let mut dz = (n1 - n) / usl;
+                    let mut zz = z1 + dz;
+                    let mut nb = false;
+                    if zz > zup {
+                        nb = true;
+                        zz = zup;
+                        dz = zz - z1;
+                        n = n1 - dz * usl;
+                    }
+                    total += dz * (n1 + n) / 2.0;
+                    let mut zk = z;
+                    // 1e-9 Bark: the binary64 grid sum may overshoot ZUP by
+                    // an ULP where C relies on its band-edge epsilon.
+                    while zk <= zz + 1e-9 && idx_ns < 240 {
+                        spec[idx_ns] = n1 - (zk - z1) * usl;
+                        idx_ns += 1;
+                        zk += 0.1;
+                    }
+                    z = zk;
+                    (z2, n2, next_band) = (zz, n, nb);
+                } else {
+                    if n1 < core {
+                        idx_rns = 0;
+                        while idx_rns < RNS.len() && RNS[idx_rns] >= core {
+                            idx_rns += 1;
+                        }
+                    }
+                    total += core * (zup - z1);
+                    let mut zk = z;
+                    while zk <= zup + 1e-9 && idx_ns < 240 {
+                        spec[idx_ns] = core;
+                        idx_ns += 1;
+                        zk += 0.1;
+                    }
+                    z = zk;
+                    (z2, n2, next_band) = (zup, core, true);
+                }
+                while idx_rns < RNS.len() - 1 && n2 <= RNS[idx_rns] {
+                    idx_rns += 1;
+                }
+                z1 = z2;
+                n1 = n2;
+                if next_band {
+                    break;
+                }
+            }
+        }
+        (total.max(0.0), spec)
+    }
+
+    #[test]
+    fn f07_specific_matches_the_annex_a_reference_port() {
+        let mut frames: Vec<[f64; 21]> = vec![
+            SIG18_FRAME1564,
+            SIG23_FRAME3893,
+            sample_main_loudness(),
+            spike(3, 8.0),
+            spike(10, 8.0),
+            ramp(10.0, 0.0),
+            alternating(6.0, 0.05),
+        ];
+        let mut state = 0x0f07_0f07_0f07_0f07_u64;
+        for _ in 0..500 {
+            let mut frame = [0.0; 21];
+            for value in frame.iter_mut() {
+                state = state
+                    .wrapping_mul(6364136223846793005)
+                    .wrapping_add(1442695040888963407);
+                let u = (state >> 11) as f64 / (1u64 << 53) as f64;
+                *value = u * u * 12.0;
+            }
+            frames.push(frame);
+        }
+        for (k, nm) in frames.iter().enumerate() {
+            let (total, spec) = calc_slopes(nm);
+            let (want_total, want_spec) = annex_a_reference(nm);
+            assert!(
+                (total - want_total).abs() <= 1e-9,
+                "frame {k}: total {total:.17e} vs {want_total:.17e}"
+            );
+            for (j, (g, w)) in spec.iter().zip(&want_spec).enumerate() {
+                assert!(
+                    (g - w).abs() <= 1e-9,
+                    "frame {k} cell {j}: {g:.17e} vs Annex A {w:.17e}"
+                );
+            }
         }
     }
 

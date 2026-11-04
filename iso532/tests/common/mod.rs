@@ -96,6 +96,29 @@ pub fn assert_close(got: &[f64], want: &[f64], rtol: f64, atol: f64, ctx: &str) 
         );
     }
 }
+/// Record-only comparison (0.4.0 D-H, MoSQITo specific loudness): checks the
+/// lengths and that both sides are finite, prints the maximum |got - want| and
+/// returns it. Not a gate.
+#[allow(dead_code)]
+pub fn record_max_abs_diff(got: &[f64], want: &[f64], ctx: &str) -> f64 {
+    assert_eq!(got.len(), want.len(), "{ctx}: length mismatch");
+    assert!(!want.is_empty(), "{ctx}: empty reference");
+    let mut worst = (0.0_f64, 0usize);
+    for (i, (g, w)) in got.iter().zip(want).enumerate() {
+        assert!(g.is_finite(), "{ctx}[{i}]: result not finite: {g}");
+        assert!(w.is_finite(), "{ctx}[{i}]: reference not finite: {w}");
+        let d = (g - w).abs();
+        if d > worst.0 {
+            worst = (d, i);
+        }
+    }
+    eprintln!(
+        "{ctx}: max |diff| {:.3e} at index {} (recorded, not gated)",
+        worst.0, worst.1
+    );
+    worst.0
+}
+
 #[allow(dead_code)]
 pub fn fnv1a_f64(values: &[f64]) -> u64 {
     let mut hash = 0xcbf2_9ce4_8422_2325_u64;

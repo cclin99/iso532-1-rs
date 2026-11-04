@@ -2,8 +2,11 @@
 //! decay, temporal weighting) stay tight. Since 0.4.0 the slope stage follows
 //! ISO 532-1 Annex A (F-04 no per-frame rounding, F-05 band completion) and the
 //! correctness reference is the Annex A C golden (`tests/golden_c.rs`); the
-//! end-to-end N(t) / N'(t) comparisons below are a compatibility check against
-//! MoSQITo (相容性對照) with the D-E bound of 5e-3 sone (phase plan 0.4.0).
+//! end-to-end N(t) comparisons below are a compatibility check against MoSQITo
+//! (相容性對照) with the D-E bound of 5e-3 sone (phase plan 0.4.0). N'(t) is
+//! recorded, not gated, against MoSQITo since F-07 (D-H): Annex A writes the
+//! core loudness (or the containing segment) in the cell where a slope ends,
+//! MoSQITo extrapolates the slope there (up to ~4e-2 sone/Bark).
 
 mod common;
 use common::*;
@@ -19,7 +22,7 @@ use iso532::{loudness_zwtv, FieldType, ZwtvProcessor};
 // under both initialisations.
 const SILENT_TAIL: [&str; 2] = ["pulse_1k_70", "annexb_sig10"];
 
-/// MoSQITo compatibility bound for total and specific loudness (D-E), sone.
+/// MoSQITo compatibility bound for the total loudness (D-E, D-H), sone.
 const COMPAT_TOL: f64 = 5e-3;
 
 fn mosqito_compatible(sig: &[f64]) -> iso532::LoudnessTimeVarying {
@@ -101,12 +104,10 @@ fn zwtv_end_to_end_compat_mosqito_under_tail_init() {
             COMPAT_TOL,
             &format!("{sig}/N_time (compatibility)"),
         );
-        assert_close(
+        record_max_abs_diff(
             &r.n_specific,
             &want_spec,
-            0.0,
-            COMPAT_TOL,
-            &format!("{sig}/N_spec_time (compatibility)"),
+            &format!("{sig}/N_spec_time vs MoSQITo"),
         );
     }
 }
@@ -183,31 +184,34 @@ fn zwtv_default_converges_to_golden_once_the_tail_seed_has_decayed() {
 /// 0.4.0 (2026-11-04) re-froze the `n` column of both tables after the slope
 /// stage moved to Annex A (F-04/F-05); `n_specific` and `time_axis` hashes are
 /// unchanged, which is the attribution: only the total loudness moved.
+/// 0.4.0 Round 2 (F-07) re-froze only the `n_specific` column; `n` and
+/// `time_axis` are unchanged, which is the attribution: only the specific
+/// pattern moved.
 /// Regenerate with
 /// `cargo test --test golden_zwtv dump_zwtv_output_hashes -- --ignored --nocapture`.
 const SNAPSHOT_AVX2_MOSQITO_TAIL: [(&str, u64, u64, u64); 4] = [
     (
         "sine_1k_60",
         0xf0b56048aedfa2bb,
-        0x62496b610f7c223d,
+        0x82acf1a81530f2c5,
         0xf076bcb342595537,
     ),
     (
         "pulse_1k_70",
         0xd22155cfcbf45989,
-        0xbdab430b961720f0,
+        0x3e6a9f727b2d1bc3,
         0xf076bcb342595537,
     ),
     (
         "step_60_80",
         0xfd9ae7beddca7080,
-        0x2fdc839b4f702621,
+        0x83b401caf77e3832,
         0xf076bcb342595537,
     ),
     (
         "annexb_sig10",
         0x7a6a6f249051aec6,
-        0x3c2b914686402b54,
+        0x873ff274458f30fa,
         0xf076bcb342595537,
     ),
 ];
@@ -216,25 +220,25 @@ const SNAPSHOT_AVX2_ZERO: [(&str, u64, u64, u64); 4] = [
     (
         "sine_1k_60",
         0x27f8f4ebb33359e0,
-        0xf41af57bbf84a2a1,
+        0x6754bac3c21024c8,
         0xf076bcb342595537,
     ),
     (
         "pulse_1k_70",
         0xd22155cfcbf45989,
-        0xbdab430b961720f0,
+        0x3e6a9f727b2d1bc3,
         0xf076bcb342595537,
     ),
     (
         "step_60_80",
         0x6a9a8c73bef27459,
-        0xad4d8b343c25af1f,
+        0x0ad9b8460aeda514,
         0xf076bcb342595537,
     ),
     (
         "annexb_sig10",
         0x7a6a6f249051aec6,
-        0x3c2b914686402b54,
+        0x873ff274458f30fa,
         0xf076bcb342595537,
     ),
 ];

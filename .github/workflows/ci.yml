@@ -101,6 +101,11 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
+    env:
+      # Same rule as the Rust job: since 0.4.0 the smoke suite's N hashes are
+      # per platform and the windows constants only hold on the machine that
+      # froze them, so windows CI runs the N-hash check dump-only.
+      HASH_GATE_DUMP_ONLY: ${{ matrix.os == 'windows-latest' && '1' || '0' }}
     defaults:
       run:
         working-directory: iso532-py

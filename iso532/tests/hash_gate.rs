@@ -31,31 +31,35 @@ const FS: f64 = 48_000.0;
 // unchanged. 0.4.0 (2026-11-04) re-froze only `n` of all eight constants after
 // the slope stage moved to Annex A (F-04/F-05); `n_specific` and `time_axis`
 // are unchanged (windows: this machine; linux: ubuntu:24.04 container, glibc
-// 2.39, rustc 1.99.1). Regenerate: set a pair to (0, 0, 0), run
+// 2.39, rustc 1.99.1). 0.4.0 Round 2 (F-07, specific value in the cell where
+// a slope segment ends) re-froze only `n_specific` of all eight constants; `n`
+// and `time_axis` are unchanged, which is the evidence that F-07 leaves the
+// total loudness bitwise untouched (same machines / container as above).
+// Regenerate: set a pair to (0, 0, 0), run
 // `cargo test --test hash_gate -- --nocapture`, copy the printed values.
 #[cfg(target_os = "windows")]
 const EXPECTED_SCALAR: (u64, u64, u64) =
-    (0xde3ccbba47ec9dd5, 0x16937b45e6e4155d, 0xf076bcb342595537);
+    (0xde3ccbba47ec9dd5, 0x80e89aeeafaf2164, 0xf076bcb342595537);
 #[cfg(target_os = "windows")]
-const EXPECTED_AVX2: (u64, u64, u64) = (0x917cc80e33295cc3, 0x3d4b4b2df9073e48, 0xf076bcb342595537);
+const EXPECTED_AVX2: (u64, u64, u64) = (0x917cc80e33295cc3, 0x38b0cdbd447978d7, 0xf076bcb342595537);
 #[cfg(target_os = "windows")]
 const EXPECTED_SCALAR_MOSQITO_TAIL: (u64, u64, u64) =
-    (0xb62e33532ef3019a, 0xff98c57f3018ef94, 0xf076bcb342595537);
+    (0xb62e33532ef3019a, 0xb2247c2f9f943399, 0xf076bcb342595537);
 #[cfg(target_os = "windows")]
 const EXPECTED_AVX2_MOSQITO_TAIL: (u64, u64, u64) =
-    (0x441d7721a9a22ffc, 0x3f241da3fe334097, 0xf076bcb342595537);
+    (0x441d7721a9a22ffc, 0xced0f74f725403e1, 0xf076bcb342595537);
 
 #[cfg(target_os = "linux")]
 const EXPECTED_SCALAR: (u64, u64, u64) =
-    (0x6b40a36a3d846e23, 0x05dc55b516e20132, 0xf076bcb342595537);
+    (0x6b40a36a3d846e23, 0x3065b74438e81ca6, 0xf076bcb342595537);
 #[cfg(target_os = "linux")]
-const EXPECTED_AVX2: (u64, u64, u64) = (0x284854f5f5758f91, 0x197c1084aab28c59, 0xf076bcb342595537);
+const EXPECTED_AVX2: (u64, u64, u64) = (0x284854f5f5758f91, 0xe510c9ec5b5244c3, 0xf076bcb342595537);
 #[cfg(target_os = "linux")]
 const EXPECTED_SCALAR_MOSQITO_TAIL: (u64, u64, u64) =
-    (0x00af090992c2d076, 0x6e181dac593b5fef, 0xf076bcb342595537);
+    (0x00af090992c2d076, 0x062926a7788343e3, 0xf076bcb342595537);
 #[cfg(target_os = "linux")]
 const EXPECTED_AVX2_MOSQITO_TAIL: (u64, u64, u64) =
-    (0xa59f12960442c5cc, 0x8213780cd5384fb0, 0xf076bcb342595537);
+    (0xa59f12960442c5cc, 0x10130ca6b26aa5af, 0xf076bcb342595537);
 
 // unfrozen: regenerate per note above
 #[cfg(not(any(target_os = "windows", target_os = "linux")))]
