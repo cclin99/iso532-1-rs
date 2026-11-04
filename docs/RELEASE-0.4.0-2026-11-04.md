@@ -1,8 +1,8 @@
-# Release record draft: v0.4.0 (2026-11-04, pending independent verification)
+# Release record: v0.4.0 (2026-11-04)
 
-> 對照／Pair: [中文版](RELEASE-0.4.0-2026-11-04.zh-TW.md) · source: zh · synced 2026-11-04
+> 對照／Pair: [中文版](RELEASE-0.4.0-2026-11-04.zh-TW.md) · source: zh · synced 2026-11-05
 
-**Status: draft.** No tag, no push, no CI run and no release artifacts yet; the tag follows Astra's independent verification. Implementer: Claude Opus 5.5, following [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) and the decision memo [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) (D1–D5, revised in §7). Round 1 started at `5cb036a` (documentation commit after v0.3.1); Round 2 started at `9301c0d` (decision revision after the first verification).
+**Status:** Astra's independent acceptance of the candidate `fca4ccd` is delivered with verdict PARTIAL and no numeric or API release blocker (see "Independent verification"). The tag `v0.4.0` goes on the commit that records that section, and the CI result after the push is recorded in the tag message; no release artifacts are built. Implementer: Claude Opus 5.5, following [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) and the decision memo [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) (D1–D5, revised in §7). Round 1 started at `5cb036a` (documentation commit after v0.3.1); Round 2 started at `9301c0d` (decision revision after the first verification).
 
 Scope: the slope stage (`calc_slopes_impl`) follows ISO 532-1:2017 Annex A, and the correctness reference changes from MoSQITo 1.2.1 to the official Annex A C program. This is a numeric change, so the minor version is raised under the versioning rule. API, output grid, stream contract, SIMD dispatch, C ABI and Python shapes are unchanged; `USL[12][4]` stays 0.24 (F-03, provisional).
 
@@ -16,10 +16,12 @@ Scope: the slope stage (`calc_slopes_impl`) follows ISO 532-1:2017 Annex A, and 
 | `777d8e8` | Round 1 Task 4: `tools/gen_golden_c.py`, `tools/golden-c-usl12-4.diff`, `tools/golden-c.sha256`, `tests/golden_c.rs` |
 | `8beeb90` | Round 1 Task 5: MoSQITo goldens as compatibility checks, `n` hashes re-frozen, version 0.4.0, CHANGELOG, README, F-03 status |
 | `2fc1708` | Round 1 Task 6: first draft of this record (both languages) |
+| `5bbbb93` | Fix of the pair line of the English decision memo (documentation only) |
 | `fe3d0b2`, `9301c0d` | Decision revision after the first verification (F-07, tiered C-golden gates) and the Round 2 plan |
 | `a1a261d` | Round 2 Task 7: RED unit tests for F-07 |
 | `0bb2272` | Round 2 Task 8: F-07 fix, `n_specific` hashes re-frozen, whole-series C-golden gates, MoSQITo specific loudness recorded, `HASH_GATE_DUMP_ONLY` in the CI py job |
-| commit holding this record | Round 2 Task 9: CHANGELOG, README, this record (both languages) |
+| `fca4ccd` | Round 2 Task 9: CHANGELOG, README, this record (both languages); the verified candidate snapshot |
+| `7900035`, `b119d20`, later | Acceptance brief, delivery of the independent round (with a `.gitattributes` that applies only to that delivery folder), this section; documentation and verification evidence only. The crate sources at the tag are identical to the verified `fca4ccd`. |
 
 ## What users see
 
@@ -49,10 +51,28 @@ Scope: the slope stage (`calc_slopes_impl`) follows ISO 532-1:2017 Annex A, and 
 | linux scalar mosqito_tail | `0x6e181dac593b5fef` | `0x062926a7788343e3` |
 | linux avx2 mosqito_tail | `0x8213780cd5384fb0` | `0x10130ca6b26aa5af` |
 
+## Independent verification (Astra, `fca4ccd`)
+
+Delivered 2026-11-04 on commit `fca4ccd`, verdict **PARTIAL**: seven of nine items PASSED, no numeric or API release blocker. Report: [`verification/2026-11-04-release-0.4.0-fca4ccd/report.en.md`](verification/2026-11-04-release-0.4.0-fca4ccd/report.en.md) (brief: `verification/briefs/2026-11-04-release-0.4.0-acceptance.md`).
+
+- Freeze: candidate / Round 1 / baseline built from git archives, 560 / 560 / 394 tracked files, byte-identical to the archives after execution.
+- C golden: all 123 data files reproduce `tools/golden-c.sha256`; the official and single-cell sources match their hashes; the tool exits 1 on a wrong source.
+- Gates: workspace 146 passed / 0 failed / 3 ignored; the wheel in a fresh venv with `ISO532_REQUIRE_PARITY=1`: 87 passed, 0 xfailed; fmt, both clippy gates, doc pairs, docs redaction and benchmark compilation pass; Linux lib 30, hash 1, contract dump 1 and CI subset 29 pass.
+- F-04 to F-07 with an independent C wrapper and an external Rust program: signal 18 frame 1564 cell 36 = `nm[4]` = 0.8138793716641407, total bits `401fc356fc47a15a` as in Round 1; signal 23 frame 3893 total 4.7508434035893385; with only band 20 non-zero the total is 0.3999999999999986 (the binary64 result for the mathematical 0.4) and band 0 is all zero. Maximum differences of 13 series against the 0.24f C golden: total 2.712e-5, specific 2.100e-4; four tail points 8.99e-11 / 3.26e-23; all agree with the tables below.
+- F-07 leaves total loudness unchanged: Round 1 (`2fc1708`) against `fca4ccd` on 24 Annex B WAVs plus the 3 s contract signal, 70,219 frames, `n` and `time_axis` bit differences 0; 16,902 specific cells change, all in the after-segment branch.
+- Hashes: on Windows and Linux, all four scalar / AVX2 × zero / mosqito_tail sets of `n`, `n_specific` and `time_axis` equal the frozen values, with no CPU / UCRT allowance needed; the Windows wheel's Python N / time hashes also match.
+- MoSQITo: time-varying total up to 3.94e-3, stationary 4.88e-4, both below 5e-3; the recorded specific values 3.147e-2 / 7.960e-3 reproduce.
+- Contracts (PARTIAL): both versions pass 73,116 / 73,116 official Annex B reference points, minimum margin 0.0597 (signal 2, 1.0 Bark); custom-chunk streams of four signals give `n` and derived time bitwise equal to batch; seven grid lengths, nine DLL exports and the header equal v0.3.1. Gap: the public `StreamFrame` has no specific loudness, so the brief's stream-specific equality cannot be checked. This is an existing capability gap, not a regression.
+- Record consistency (FAILED): the commit table omitted `5bbbb93`; it is added above. Versions, the CITATION exception, CHANGELOG, CI settings and all 54 numbers of the C tables match.
+
+Diagnostic findings (not acceptance gates): on the same NL vectors, C without the `_ZUP` epsilon and with binary64 slope tables differs in total by 1.4e-14, but in specific loudness by 4.26, because nine float32 `ZK += 0.1f` steps give 0.9000000134110451 > 0.9 and cell ownership changes. Replacing only the grid with integer index / 10 brings the specific difference down to 1.3e-14. With all C constants in binary64 the end-to-end total difference is 5.9e-11, so no end-to-end 1.5e-14 claim is made. The C golden `meta.json` also differs from the frozen one in more than the date: both DLL hashes and the line endings of the substitution diff (CRLF versus LF); no data-file byte is affected.
+
+Out of scope: F-03 authority, the stationary front end, performance measurement, release packaging, remote CI.
+
 ## Annex A C golden (D4 as revised / D-D, D-G)
 
 - Reference program: the official `ISO_532-1.c` (SHA-256 `a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491`) with only `USL[12][4]` changed from `0.22f` to `0.24f` (substituted source SHA-256 `739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9`); MSVC 19.44.35228 x64, `/O2 /fp:precise`; the wrapper only calls `f_loudness_from_signal` and `f_loudness_from_levels`. Round 2 did not change the C side; `data/golden-c/` is the Round 1 output.
-- Three gate tiers: C-01 tail points, total and specific, 1e-10; whole series, total, 1e-4 sone; whole series, specific, 3e-4 sone/Bark (the post-F-07 measured maximum 2.100e-4 rounded up to one significant digit). The whole-series residue is the C program's `_ZUP += .0001f` and float32 literals.
+- Three gate tiers: C-01 tail points, total and specific, 1e-10; whole series, total, 1e-4 sone; whole series, specific, 3e-4 sone/Bark (the post-F-07 measured maximum 2.100e-4 rounded up to one significant digit). The whole-series residue is the C program's `_ZUP += .0001f`, its float32 grid accumulation `ZK += 0.1f` and its other float32 literals (attribution in the diagnostics of "Independent verification").
 - C-01 tail points (last output point of Annex B signals 18/23/24/25), identical before and after F-07:
 
 | signal | Rust 0.4.0 − C golden (0.24f) | max specific diff | Rust 0.4.0 − unmodified C (0.22f) |
@@ -97,13 +117,14 @@ Total loudness against MoSQITo keeps the 5e-3 sone gate; its numbers are the sam
 
 ## Round 1 findings, resolved
 
-1. **Whole-series 1e-10 is not achievable.** Replaced by the three gate tiers of decision memo §7 (above). The 4.4e-2 specific difference was F-07, fixed in Round 2; the remaining ≤ 2.1e-4 is the C program's band-edge epsilon.
+1. **Whole-series 1e-10 is not achievable.** Replaced by the three gate tiers of decision memo §7 (above). The 4.4e-2 specific difference was F-07, fixed in Round 2; the remaining ≤ 2.1e-4 is the C program's band-edge epsilon together with its float32 grid accumulation (independent diagnostics: both have to be replaced before the specific difference drops to the 1e-14 range).
 2. **MoSQITo specific compatibility exceeds D-E.** Per D-H, specific loudness against MoSQITo is recorded, not gated; the two strict Python `xfail`s are removed.
 3. **The Python `n` hash holds only on this Windows machine.** The CI py job now sets `HASH_GATE_DUMP_ONLY=1` on windows-latest, as the Rust job does.
 
 ## Not done / open
 
-- No tag, no push, no GitHub CI run, no release artifacts.
+- Push, tag and GitHub CI follow the commit that records "Independent verification"; no release artifacts are built.
+- The public `StreamFrame` carries no specific loudness (as in v0.3.1), so stream-versus-batch equality of specific loudness cannot be checked through the public API; the bitwise stream contract covers `n` and the time derived from the frame index.
 - `CITATION.cff` still says 0.3.1: version and `date-released` were updated in the release commit in the past, and the release date is not known yet.
 - The Round 2 RED commit `a1a261d` does not pass `clippy -D warnings` on its own (the 17-significant-digit test constants trigger `excessive_precision`); `0bb2272` adds the `#[allow]` and is clean again.
 - F-03 (Table A.9) remains PENDING; the stationary front end is still undecided.

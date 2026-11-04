@@ -1,8 +1,8 @@
-# Release 紀錄草稿：v0.4.0（2026-11-04，待獨立驗收）
+# Release 紀錄：v0.4.0（2026-11-04）
 
-> 對照／Pair: [English](RELEASE-0.4.0-2026-11-04.md) · 來源：zh · 同步 2026-11-04
+> 對照／Pair: [English](RELEASE-0.4.0-2026-11-04.md) · 來源：zh · 同步 2026-11-05
 
-**狀態：草稿。** 尚未打 tag、未推送、未跑 CI、未建置發行產出物；tag 在 Astra 獨立驗收之後。實作者：Claude Opus 5.5，依 [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) 與決策備忘 [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md)（D1–D5，§7 修訂）。Round 1 起點 `5cb036a`（v0.3.1 之後的文件 commit）；Round 2 起點 `9301c0d`（第一輪驗證後的決策修訂）。
+**狀態：** Astra 對候選 `fca4ccd` 的獨立驗收已交付，結論 PARTIAL，無數值或 API 的發布阻擋項（見「獨立驗證」節）。tag `v0.4.0` 打在記錄本節的 commit，推送後的 CI 結果記在 tag 訊息；未建置發行產出物。實作者：Claude Opus 5.5，依 [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) 與決策備忘 [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md)（D1–D5，§7 修訂）。Round 1 起點 `5cb036a`（v0.3.1 之後的文件 commit）；Round 2 起點 `9301c0d`（第一輪驗證後的決策修訂）。
 
 本次範圍：slope 階段（`calc_slopes_impl`）對齊 ISO 532-1:2017 Annex A，正確性參考由 MoSQITo 1.2.1 改為官方 Annex A C 程式。屬數值變更，依版號規則升 minor。API、輸出格線、串流契約、SIMD 分派、C ABI、Python shape 都不變；`USL[12][4]` 維持 0.24（F-03 暫定）。
 
@@ -16,10 +16,12 @@
 | `777d8e8` | Round 1 Task 4：`tools/gen_golden_c.py`、`tools/golden-c-usl12-4.diff`、`tools/golden-c.sha256`、`tests/golden_c.rs` |
 | `8beeb90` | Round 1 Task 5：MoSQITo golden 降為相容性對照、重凍 n hash、版號 0.4.0、CHANGELOG、README、F-03 狀態 |
 | `2fc1708` | Round 1 Task 6：本紀錄初稿（兩語言） |
+| `5bbbb93` | 英文決策備忘的配對行修正（只動文件） |
 | `fe3d0b2`、`9301c0d` | 第一輪驗證後的決策修訂（F-07、C golden 分層門檻）與 Round 2 計畫 |
 | `a1a261d` | Round 2 Task 7：F-07 的 RED 單元測試 |
 | `0bb2272` | Round 2 Task 8：F-07 修正、`n_specific` hash 重凍、C golden 全序列門檻、MoSQITo specific 改為記錄、CI py job 的 `HASH_GATE_DUMP_ONLY` |
-| 本紀錄所在 commit | Round 2 Task 9：CHANGELOG、README、本紀錄（兩語言） |
+| `fca4ccd` | Round 2 Task 9：CHANGELOG、README、本紀錄（兩語言）；受驗的候選快照 |
+| `7900035`、`b119d20`、後續 | 驗收簡報、獨立驗證輪交付（含只對該交付資料夾生效的 `.gitattributes`）、本節；只動文件與驗證證據。tag 處的 crate 原始碼與受驗的 `fca4ccd` 完全相同。 |
 
 ## 使用者看到的變化
 
@@ -49,10 +51,28 @@
 | linux scalar mosqito_tail | `0x6e181dac593b5fef` | `0x062926a7788343e3` |
 | linux avx2 mosqito_tail | `0x8213780cd5384fb0` | `0x10130ca6b26aa5af` |
 
+## 獨立驗證（Astra，`fca4ccd`）
+
+2026-11-04 交付，受驗 commit `fca4ccd`，結論 **PARTIAL**：九項中七項 PASSED，沒有數值或 API 的發布阻擋項。報告：[`verification/2026-11-04-release-0.4.0-fca4ccd/report.md`](verification/2026-11-04-release-0.4.0-fca4ccd/report.md)（簡報：`verification/briefs/2026-11-04-release-0.4.0-acceptance.zh-TW.md`）。
+
+- 凍結：以 git archive 建置 candidate／Round 1／baseline，共 560／560／394 個追蹤檔，執行後與 archive 位元相同。
+- C golden：123 個資料檔全部重現 `tools/golden-c.sha256`；官方來源與單格替換版 hash 符合；給錯來源時工具退出 1。
+- Gate：workspace 146 passed／0 failed／3 ignored；全新 venv 的 wheel 在 `ISO532_REQUIRE_PARITY=1` 下 87 passed、0 xfailed；fmt、兩種 clippy、文件配對、docs 去識別化、benchmark 編譯通過；Linux lib 30、hash 1、contract dump 1、CI 子集 29 通過。
+- F-04～F-07 以獨立 C wrapper 與外部 Rust 程式驗證：訊號 18 第 1564 幀 cell 36 = `nm[4]` = 0.8138793716641407，總量 bits `401fc356fc47a15a` 與 Round 1 相同；訊號 23 第 3893 幀總量 4.7508434035893385；只有 band 20 非零時總量 0.3999999999999986（數學值 0.4 的 binary64 結果），band 0 全 0。13 個序列對 0.24f C golden 最大差：總響度 2.712e-5、比響度 2.100e-4；四個尾點 8.99e-11／3.26e-23；全部與上表一致。
+- F-07 不動總響度：Round 1（`2fc1708`）對 `fca4ccd`，24 個 Annex B WAV 加 3 秒 contract 共 70,219 幀，`n` 與 `time_axis` 位元差 0；比響度 16,902 格改變，全部在 after-segment 分支。
+- hash：Windows 與 Linux 各四組 scalar／AVX2 × zero／mosqito_tail 的 `n`、`n_specific`、`time_axis` 都與凍結值相同，不需動用 CPU／UCRT 差異容許；Windows wheel 的 Python N／time hash 也相同。
+- MoSQITo：時變總響度最大差 3.94e-3、穩態 4.88e-4，均低於 5e-3；比響度記錄值 3.147e-2／7.960e-3 可重現。
+- 契約（PARTIAL）：兩版的 Annex B 官方參考點都是 73,116／73,116 通過，最小餘裕 0.0597（訊號 2，1.0 Bark）；四個訊號的自訂 chunk 串流 `n` 與推導時間跟批次位元相同；七組格線、九個 DLL exports、header 與 v0.3.1 相同。缺口：公開 `StreamFrame` 沒有比響度，簡報要求的串流比響度相等無法驗證。這是既有能力缺口，不是回歸。
+- 紀錄一致性（FAILED）：commit 表原本漏列 `5bbbb93`，已在本次補上。其餘版號、CITATION 例外、CHANGELOG、CI 設定，以及 C 表的 54 個數字都相符。
+
+診斷發現（不是驗收門檻）：給定相同 NL 向量，C 端拿掉 `_ZUP` epsilon、slope 表改 binary64 後，總響度差 1.4e-14；但比響度差變成 4.26，因為 float32 的 `ZK += 0.1f` 累加 9 次是 0.9000000134110451 > 0.9，格點歸屬隨之改變。只把格線改成整數索引／10，比響度差就降到 1.3e-14。整份 C 常數改 binary64 的端到端總響度差是 5.9e-11，不能宣稱端到端 1.5e-14。另外，C golden 的 `meta.json` 跟凍結版本不只日期不同，兩個 DLL hash 和替換 diff 的行尾（CRLF 對 LF）也不同；資料檔位元不受影響。
+
+範圍外：F-03 權威、穩態前端、效能實測、發行封裝、遠端 CI。
+
 ## Annex A C golden（D4 修訂／D-D、D-G）
 
 - 參考程式：官方 `ISO_532-1.c`（SHA-256 `a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491`），只把 `USL[12][4]` 由 `0.22f` 改為 `0.24f`（替換版 SHA-256 `739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9`）；MSVC 19.44.35228 x64，`/O2 /fp:precise`；wrapper 只呼叫 `f_loudness_from_signal` 與 `f_loudness_from_levels`。Round 2 未改 C 端，`data/golden-c/` 沿用 Round 1 產出。
-- 門檻分三層：C-01 尾點總響度與比響度 1e-10；全序列總響度 1e-4 sone；全序列比響度 3e-4 sone/Bark（F-07 後實測最大 2.100e-4 向上取到 1 位有效數字）。全序列殘差來自 C 程式的 `_ZUP += .0001f` 與 float32 常數。
+- 門檻分三層：C-01 尾點總響度與比響度 1e-10；全序列總響度 1e-4 sone；全序列比響度 3e-4 sone/Bark（F-07 後實測最大 2.100e-4 向上取到 1 位有效數字）。全序列殘差來自 C 程式的 `_ZUP += .0001f`、float32 格線累加 `ZK += 0.1f` 與其他 float32 常數（歸因見「獨立驗證」節的診斷）。
 - C-01 尾點（Annex B 訊號 18／23／24／25 的最後一個輸出點），F-07 前後相同：
 
 | 訊號 | Rust 0.4.0 − C golden（0.24f） | specific 最大差 | Rust 0.4.0 − 未修改 C（0.22f） |
@@ -97,13 +117,14 @@
 
 ## 第一輪 finding 的處理
 
-1. **全序列 1e-10 不可行。** 依決策備忘 §7 改為三層門檻（見上）。比響度的 4.4e-2 是 F-07，Round 2 已修正；剩下 ≤ 2.1e-4 來自 C 程式的 band 邊界 epsilon。
+1. **全序列 1e-10 不可行。** 依決策備忘 §7 改為三層門檻（見上）。比響度的 4.4e-2 是 F-07，Round 2 已修正；剩下 ≤ 2.1e-4 來自 C 程式的 band 邊界 epsilon 與 float32 格線累加（獨立驗證的診斷：兩者需一起換掉，比響度才降到 1e-14 量級）。
 2. **MoSQITo specific 相容性超出 D-E。** 依 D-H，對 MoSQITo 的比響度改為只記錄，Python parity 的兩個 strict `xfail` 已移除。
 3. **Python 的 n hash 只在本機 Windows 成立。** CI 的 py job 已比照 Rust job 在 windows-latest 設 `HASH_GATE_DUMP_ONLY=1`。
 
 ## 未做／待辦
 
-- 未打 tag、未推送、未跑 GitHub CI、未建置發行產出物。
+- 推送、tag 與 GitHub CI 在記錄本節的 commit 之後；未建置發行產出物。
+- 公開 `StreamFrame` 不含比響度（v0.3.1 即如此），串流與批次的比響度相等無法從公開 API 驗證；串流契約的位元相等涵蓋 `n` 與由 frame index 推導的時間。
 - `CITATION.cff` 仍為 0.3.1：過去在 release commit 才更新版本與 `date-released`，發版日未定。
 - Round 2 的 RED commit `a1a261d` 本身過不了 `clippy -D warnings`（17 位有效數字的測試常數觸發 `excessive_precision`）；`0bb2272` 加上 `#[allow]` 後恢復 clean。
 - F-03（Table A.9）仍 PENDING；穩態前端仍待決。

@@ -18,7 +18,7 @@
 
 | 文件 | 內容 | en | zh |
 |---|---|---|---|
-| [`RELEASE-0.4.0-2026-11-04.md`](RELEASE-0.4.0-2026-11-04.md) | 0.4.0 草稿（待驗收）：slope 階段依 Annex A（F-04、F-05、F-06）、Annex A C golden、MoSQITo golden 改為相容性對照 | yes | [yes](RELEASE-0.4.0-2026-11-04.zh-TW.md) |
+| [`RELEASE-0.4.0-2026-11-04.md`](RELEASE-0.4.0-2026-11-04.md) | 0.4.0：slope 階段依 Annex A（F-04～F-07）、分層門檻的 Annex A C golden、MoSQITo golden 改為相容性對照；獨立驗收 PARTIAL，無發布阻擋 | yes | [yes](RELEASE-0.4.0-2026-11-04.zh-TW.md) |
 | [`RELEASE-0.3.1-2026-11-01.md`](RELEASE-0.3.1-2026-11-01.md) | 0.3.1：C-02 非有限輸入契約（錯誤碼 4）、C-01 輸出格線契約與測試、V-01 驗證器；數值不變 | yes | [yes](RELEASE-0.3.1-2026-11-01.zh-TW.md) |
 | [`RELEASE-0.3.0-2026-10-31.md`](RELEASE-0.3.0-2026-10-31.md) | 0.3.0：發現 F-02（非線性衰減零初始狀態）、gates、產物、未結項目 | yes | [yes](RELEASE-0.3.0-2026-10-31.zh-TW.md) |
 | [`RELEASE-0.2.0-2026-10-31.md`](RELEASE-0.2.0-2026-10-31.md) | 0.2.0：發現 F-01（低頻 DLL 列）、gates、產物 | yes | [yes](RELEASE-0.2.0-2026-10-31.zh-TW.md) |
@@ -61,7 +61,9 @@
 | [`verification/briefs/2026-11-01-F03-B-aarae-lineage.zh-TW.md`](verification/briefs/2026-11-01-F03-B-aarae-lineage.zh-TW.md) | F-03 選項 B 交辦簡報 | en + zh |
 | [`verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md`](verification/briefs/2026-11-01-C01-zero-pad-reference.zh-TW.md) | C-01 尾端點官方 C 參考值交辦簡報 | en + zh |
 | [`verification/briefs/2026-11-01-release-0.3.1-acceptance.zh-TW.md`](verification/briefs/2026-11-01-release-0.3.1-acceptance.zh-TW.md) | release commit `30e4279` 打 tag 前的驗收交辦簡報 | en + zh |
+| [`verification/briefs/2026-11-04-release-0.4.0-acceptance.zh-TW.md`](verification/briefs/2026-11-04-release-0.4.0-acceptance.zh-TW.md) | 0.4.0 候選 `fca4ccd` 推送與打 tag 前的驗收交辦簡報 | en + zh |
 | [`verification/2026-11-02-release-0.3.1-30e4279/report.md`](verification/2026-11-02-release-0.3.1-30e4279/report.md) | 0.3.1 在 `30e4279` 的打 tag 前驗收：ACCEPT，8／8 項通過 | en + zh |
+| [`verification/2026-11-04-release-0.4.0-fca4ccd/report.md`](verification/2026-11-04-release-0.4.0-fca4ccd/report.md) | 0.4.0 在 `fca4ccd` 的推送前驗收：PARTIAL，7／9 項通過，無數值或 API 阻擋（串流沒有比響度可驗；commit 表漏列已補） | en + zh |
 
 ## 歷史審查紀錄（已結輪次；翻譯待辦 P3）
 

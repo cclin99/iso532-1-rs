@@ -18,7 +18,7 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 
 | document | content | en | zh |
 |---|---|---|---|
-| [`RELEASE-0.4.0-2026-11-04.md`](RELEASE-0.4.0-2026-11-04.md) | 0.4.0 draft (pending verification): slope stage follows Annex A (F-04, F-05, F-06), Annex A C golden, MoSQITo goldens as compatibility checks | yes | [yes](RELEASE-0.4.0-2026-11-04.zh-TW.md) |
+| [`RELEASE-0.4.0-2026-11-04.md`](RELEASE-0.4.0-2026-11-04.md) | 0.4.0: slope stage follows Annex A (F-04 to F-07), Annex A C golden with tiered gates, MoSQITo goldens as compatibility checks; independent acceptance PARTIAL, no release blocker | yes | [yes](RELEASE-0.4.0-2026-11-04.zh-TW.md) |
 | [`RELEASE-0.3.1-2026-11-01.md`](RELEASE-0.3.1-2026-11-01.md) | 0.3.1: C-02 non-finite input contract (code 4), C-01 output-grid contract and tests, V-01 validator; no numeric change | yes | [yes](RELEASE-0.3.1-2026-11-01.zh-TW.md) |
 | [`RELEASE-0.3.0-2026-10-31.md`](RELEASE-0.3.0-2026-10-31.md) | 0.3.0: finding F-02 (zero-state nonlinear decay), gates, artifacts, open items | yes | [yes](RELEASE-0.3.0-2026-10-31.zh-TW.md) |
 | [`RELEASE-0.2.0-2026-10-31.md`](RELEASE-0.2.0-2026-10-31.md) | 0.2.0: finding F-01 (low-frequency DLL row), gates, artifacts | yes | [yes](RELEASE-0.2.0-2026-10-31.zh-TW.md) |
@@ -64,6 +64,7 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 | [`verification/briefs/2026-11-01-release-0.3.1-acceptance.md`](verification/briefs/2026-11-01-release-0.3.1-acceptance.md) | brief for the pre-tag acceptance of release commit `30e4279` | en + zh |
 | [`verification/briefs/2026-11-04-release-0.4.0-acceptance.md`](verification/briefs/2026-11-04-release-0.4.0-acceptance.md) | brief for the pre-push, pre-tag acceptance of the 0.4.0 candidate `fca4ccd` | en + zh |
 | [`verification/2026-11-02-release-0.3.1-30e4279/report.en.md`](verification/2026-11-02-release-0.3.1-30e4279/report.en.md) | 0.3.1 pre-tag acceptance on `30e4279`: ACCEPT, 8/8 items passed | en + zh |
+| [`verification/2026-11-04-release-0.4.0-fca4ccd/report.en.md`](verification/2026-11-04-release-0.4.0-fca4ccd/report.en.md) | 0.4.0 pre-push acceptance on `fca4ccd`: PARTIAL, 7/9 items passed, no numeric or API blocker (no stream-specific output to check; commit-table omission corrected) | en + zh |
 | [`verification/2026-11-03-C01-zero-pad-aa379db/report.md`](verification/2026-11-03-C01-zero-pad-aa379db/report.md) | C-01 official-C zero-pad reference on `aa379db`: PARTIAL (specifics ≤1e-14, totals within tolerance) | en + zh |
 | [`verification/2026-11-03-C01-tail-root-cause-aa379db/report.en.md`](verification/2026-11-03-C01-tail-root-cause-aa379db/report.en.md) | C-01 tail root cause on `aa379db`: rounding explains 67–98 %, slope/main residuals quantified | en + zh |
 | [`verification/2026-11-03-F03-coefficient-hypothesis-aa379db/report.md`](verification/2026-11-03-F03-coefficient-hypothesis-aa379db/report.md) | F-03: data cannot decide 0.22 vs 0.24; no table change | en + zh |
