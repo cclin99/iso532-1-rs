@@ -124,7 +124,7 @@
 
 ## Task 9：文件
 
-- [ ] CHANGELOG 0.4.0 段落加 F-07；修正 Round 1 寫的「specific cell rule kept from MoSQITo」敘述。
-- [ ] README 兩語言：相容性選擇表加 F-07 列；數值差異表更新 specific 對 MoSQITo 與對 C golden 的數字。
-- [ ] `docs/RELEASE-0.4.0-2026-11-04.md` 兩語言更新；phase 計畫勾選。
-- [ ] 回報格式同 Round 1，另加：F-07 RED／GREEN 節錄、全序列實測最大值表（total／specific，13 個訊號）、`n_specific` hash 舊新值、對 MoSQITo 的 specific 最大值表。
+- [x] CHANGELOG 0.4.0 段落加 F-07；修正 Round 1 寫的「specific cell rule kept from MoSQITo」敘述。
+- [x] README 兩語言：相容性選擇表加 F-07 列；數值差異表更新 specific 對 MoSQITo 與對 C golden 的數字。
+- [x] `docs/RELEASE-0.4.0-2026-11-04.md` 兩語言更新；phase 計畫勾選。
+- [x] 回報格式同 Round 1，另加：F-07 RED／GREEN 節錄、全序列實測最大值表（total／specific，13 個訊號）、`n_specific` hash 舊新值、對 MoSQITo 的 specific 最大值表。

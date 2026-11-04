@@ -2,7 +2,7 @@
 
 > 對照／Pair: [中文版](RELEASE-0.4.0-2026-11-04.zh-TW.md) · source: zh · synced 2026-11-04
 
-**Status: draft.** No tag, no push, no CI run and no release artifacts yet; the tag follows Astra's independent verification. Implementer: Claude Opus 5.5, following [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) and the decision memo [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) (D1–D5). Starting point `5cb036a` (documentation commit after v0.3.1).
+**Status: draft.** No tag, no push, no CI run and no release artifacts yet; the tag follows Astra's independent verification. Implementer: Claude Opus 5.5, following [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) and the decision memo [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) (D1–D5, revised in §7). Round 1 started at `5cb036a` (documentation commit after v0.3.1); Round 2 started at `9301c0d` (decision revision after the first verification).
 
 Scope: the slope stage (`calc_slopes_impl`) follows ISO 532-1:2017 Annex A, and the correctness reference changes from MoSQITo 1.2.1 to the official Annex A C program. This is a numeric change, so the minor version is raised under the versioning rule. API, output grid, stream contract, SIMD dispatch, C ABI and Python shapes are unchanged; `USL[12][4]` stays 0.24 (F-03, provisional).
 
@@ -10,33 +10,50 @@ Scope: the slope stage (`calc_slopes_impl`) follows ISO 532-1:2017 Annex A, and 
 
 | commit | content |
 |---|---|
-| `93ba5e4` | Task 1: three RED unit tests for F-04 / F-05 / F-06 |
-| `d011921` | Task 2: `calc_slopes_impl` fix (no per-frame rounding, Annex A band completion, band 0 does not read band 20) |
-| `9d8ae5a` | Task 3: contract and stream tests unchanged; the sig10 MoSQITo line in `annexb.rs` becomes a compatibility bound |
-| `777d8e8` | Task 4: `tools/gen_golden_c.py`, `tools/golden-c-usl12-4.diff`, `tools/golden-c.sha256`, `tests/golden_c.rs` |
-| `8beeb90` | Task 5: MoSQITo goldens as compatibility checks, `n` hashes re-frozen, version 0.4.0, CHANGELOG, README, F-03 status |
-| commit holding this draft | Task 6: this record (both languages) |
+| `93ba5e4` | Round 1 Task 1: three RED unit tests for F-04 / F-05 / F-06 |
+| `d011921` | Round 1 Task 2: `calc_slopes_impl` fix (no per-frame rounding, Annex A band completion, band 0 does not read band 20) |
+| `9d8ae5a` | Round 1 Task 3: contract and stream tests unchanged; the sig10 MoSQITo line in `annexb.rs` becomes a compatibility bound |
+| `777d8e8` | Round 1 Task 4: `tools/gen_golden_c.py`, `tools/golden-c-usl12-4.diff`, `tools/golden-c.sha256`, `tests/golden_c.rs` |
+| `8beeb90` | Round 1 Task 5: MoSQITo goldens as compatibility checks, `n` hashes re-frozen, version 0.4.0, CHANGELOG, README, F-03 status |
+| `2fc1708` | Round 1 Task 6: first draft of this record (both languages) |
+| `fe3d0b2`, `9301c0d` | Decision revision after the first verification (F-07, tiered C-golden gates) and the Round 2 plan |
+| `a1a261d` | Round 2 Task 7: RED unit tests for F-07 |
+| `0bb2272` | Round 2 Task 8: F-07 fix, `n_specific` hashes re-frozen, whole-series C-golden gates, MoSQITo specific loudness recorded, `HASH_GATE_DUMP_ONLY` in the CI py job |
+| commit holding this record | Round 2 Task 9: CHANGELOG, README, this record (both languages) |
 
 ## What users see
 
 - Every total loudness value can change: no per-frame rounding to 0.001 / 0.01 sone (F-04); about 1% of time-varying frames change by 1e-3 to 2.6e-2 sone through the band completion (F-05) (≤ 3.9e-3 sone against the MoSQITo goldens after temporal weighting).
-- On broadband input the time-varying specific loudness of the band after a completed band changes as well (it now starts from `ZUP`): up to 1.13e-2 sone/Bark against MoSQITo (white_60) and 9.0e-3 (annexb_sig5), closer to the Annex A C golden.
+- In the cell where a slope segment ends before the cell's sample, the specific loudness is now the value of the segment that contains the sample (F-07); e.g. signal 18 frame 1564 at 3.7 Bark goes from 0.77011 to the core loudness 0.81388. Total loudness is not affected (bitwise identical). The band after a completed band starts at `ZUP` (F-05), which also changes its time-varying specific loudness. Together, the whole-series specific difference against the Annex A C golden drops from 4.4e-2 to 2.1e-4 sone/Bark; against MoSQITo it now differs by design, up to 3.15e-2 sone/Bark time-varying (annexb_sig5) and 7.96e-3 stationary (annexb_sig5).
 - Direct calls of `core::calc_slopes*` with `nm[20] > nm[0]` no longer produce a negative band-0 specific loudness (F-06); pipeline input is unaffected.
-- `N(t)` is no longer bitwise identical across OSes and backends: scalar and AVX2 differ by up to 2.6e-10 sone. Downstream users of `n` hashes must re-freeze per platform.
+- `N(t)` is no longer bitwise identical across OSes and backends: scalar and AVX2 differ by up to 2.6e-10 sone. Downstream users of `n` or `n_specific` hashes must re-freeze per platform.
 
-## Verification (local, state `8beeb90`, Windows x64, rustc 1.99.1)
+## Verification (local, state `0bb2272`, Windows x64, rustc 1.99.1)
 
-- `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets -- -D warnings`: clean.
-- `cargo test --workspace`: 140 passed, 0 failed, 5 ignored (two of them are the whole-series 1e-10 `golden_c` comparisons, a known finding below). `cargo bench --workspace --no-run`: builds.
-- Contract and stream: `output_grid` 7, `stream` 11 (1 pre-existing ignored), `stream_scalar` 1, `stream_no_rayon` 1, `simd_parity` 2, `determinism` 1, all passing with unchanged tests.
-- Annex B: `annexb` 3 and `annexb_validator` 24 pass; the 500 ISO reference points of signal 10 have 0 exceptions (max |N − ref| 1.25e-4). The rule `max(0.1, 0.05·|ref|)` is unchanged.
-- Linux (`ubuntu:24.04` container, glibc 2.39, rustc 1.99.1, Task 5 working tree with the same Rust code and tests as `8beeb90`): the CI test subset plus `nl_zero_init` passes, and `hash_gate` asserts the new Linux constants; the container's `n_specific` hashes equal the previously frozen ones.
-- Python (0.4.0 wheel, `ISO532_REQUIRE_PARITY=1`): 83 passed, 4 xfailed (strict); see the known findings.
+- `cargo fmt --all -- --check`, `cargo clippy --workspace --all-targets -- -D warnings`, and `cargo clippy --all-targets --all-features -- -D warnings` in `iso532-ffi`: clean.
+- `cargo test --workspace`: 146 passed, 0 failed, 3 ignored (all three are pre-existing manual helpers or performance tests: `dump_zwtv_output_hashes`, `dump_py_bitwise_contract_hashes`, `silence_throughput_within_20pct_of_sine`). `cargo bench --workspace --no-run`: builds.
+- F-07: `f07_sample_after_segment_end_is_core_or_next_segment` FAILED before the fix (`spec[36]` 0.770106544821296590 vs `nm[4]` 0.813879371664140705) and passes after it; the frame total is bitwise identical before and after (`0x401fc356fc47a15a`). `f07_specific_matches_the_annex_a_reference_port`: a binary64 port of the official `f_calc_slopes` (without the band-edge epsilon) matches total and all 240 cells to 1e-9 on 507 frames.
+- `hash_gate.rs`: `n` and `time_axis` are unchanged on every platform; only `n_specific` was re-frozen (old and new values below). The `golden_zwtv.rs` AVX2 snapshots likewise changed only in the `n_specific` column.
+- Annex B: `annexb` 3 and `annexb_validator` 24 pass; the rule `max(0.1, 0.05·|ref|)` is unchanged.
+- Linux (`ubuntu:24.04` container, glibc 2.39, rustc 1.99.1, `git archive` of `0bb2272`): `cargo test --lib` 30 passed; `hash_gate` asserts the new constants; the CI test subset plus `nl_zero_init` passes; the `py_contract_dump` N hashes equal the `test_smoke.py` constants.
+- Python (0.4.0 wheel built from `0bb2272`, `ISO532_REQUIRE_PARITY=1`): 87 passed, 0 xfailed.
 
-## Annex A C golden (D4 / D-D)
+| `hash_gate.rs` `n_specific` | Round 1 | Round 2 (F-07) |
+|---|---|---|
+| windows scalar | `0x16937b45e6e4155d` | `0x80e89aeeafaf2164` |
+| windows avx2 | `0x3d4b4b2df9073e48` | `0x38b0cdbd447978d7` |
+| windows scalar mosqito_tail | `0xff98c57f3018ef94` | `0xb2247c2f9f943399` |
+| windows avx2 mosqito_tail | `0x3f241da3fe334097` | `0xced0f74f725403e1` |
+| linux scalar | `0x05dc55b516e20132` | `0x3065b74438e81ca6` |
+| linux avx2 | `0x197c1084aab28c59` | `0xe510c9ec5b5244c3` |
+| linux scalar mosqito_tail | `0x6e181dac593b5fef` | `0x062926a7788343e3` |
+| linux avx2 mosqito_tail | `0x8213780cd5384fb0` | `0x10130ca6b26aa5af` |
 
-- Reference program: the official `ISO_532-1.c` (SHA-256 `a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491`) with only `USL[12][4]` changed from `0.22f` to `0.24f` (substituted source SHA-256 `739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9`); MSVC 19.44.35228 x64, `/O2 /fp:precise`; the wrapper only calls `f_loudness_from_signal` and `f_loudness_from_levels`. Data files reproduce bitwise on a rerun (only the date in `meta.json` differs).
-- C-01 tail points (last output point of Annex B signals 18/23/24/25):
+## Annex A C golden (D4 as revised / D-D, D-G)
+
+- Reference program: the official `ISO_532-1.c` (SHA-256 `a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491`) with only `USL[12][4]` changed from `0.22f` to `0.24f` (substituted source SHA-256 `739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9`); MSVC 19.44.35228 x64, `/O2 /fp:precise`; the wrapper only calls `f_loudness_from_signal` and `f_loudness_from_levels`. Round 2 did not change the C side; `data/golden-c/` is the Round 1 output.
+- Three gate tiers: C-01 tail points, total and specific, 1e-10; whole series, total, 1e-4 sone; whole series, specific, 3e-4 sone/Bark (the post-F-07 measured maximum 2.100e-4 rounded up to one significant digit). The whole-series residue is the C program's `_ZUP += .0001f` and float32 literals.
+- C-01 tail points (last output point of Annex B signals 18/23/24/25), identical before and after F-07:
 
 | signal | Rust 0.4.0 − C golden (0.24f) | max specific diff | Rust 0.4.0 − unmodified C (0.22f) |
 |---|---|---|---|
@@ -45,17 +62,48 @@ Scope: the slope stage (`calc_slopes_impl`) follows ISO 532-1:2017 Annex A, and 
 | 24 | −8.99e-11 | 2.2e-23 | −9.33e-9 |
 | 25 | −7.41e-11 | 4.7e-24 | −7.41e-11 |
 
-`unmodified_c_delta` in `meta.json` (C golden − unmodified C) is −1.42e-8 / −1.28e-7 / −9.24e-9 / 0, the magnitude stated in §2 of the decision memo (≤ 1.3e-7).
+- Whole series (time-varying, Rust vs C golden 0.24f, default AVX2 dispatch):
 
-## Known findings (for the decision owner)
+| signal | max total diff (sone) | max specific diff (after F-07) | max specific diff (before F-07) |
+|---|---:|---:|---:|
+| sine_1k_60 | 1.471e-7 | 6.184e-5 | 3.582e-3 |
+| sine_250_80 | 2.022e-5 | 2.100e-4 | 2.496e-3 |
+| sine_4k_60 | 4.987e-8 | 8.214e-5 | 2.867e-3 |
+| white_60 | 1.915e-6 | 6.235e-5 | 3.112e-2 |
+| pulse_1k_70 | 1.465e-7 | 1.097e-4 | 1.287e-2 |
+| step_60_80 | 1.645e-6 | 1.297e-4 | 2.209e-2 |
+| annexb_sig3 | 1.472e-7 | 6.184e-5 | 3.527e-3 |
+| annexb_sig5 | 2.712e-5 | 6.235e-5 | 3.147e-2 |
+| annexb_sig10 | 9.795e-8 | 1.097e-4 | 3.842e-3 |
+| annexb_c01_sig18 | 6.614e-6 | 9.397e-5 | 4.377e-2 |
+| annexb_c01_sig23 | 3.248e-7 | 8.249e-5 | 3.508e-2 |
+| annexb_c01_sig24 | 1.753e-6 | 6.217e-5 | 3.485e-2 |
+| annexb_c01_sig25 | 7.781e-7 | 8.249e-5 | 2.639e-2 |
 
-1. **Whole-series 1e-10 is not achievable.** Over whole series of the nine signals and the four C-01 signals, Rust 0.4.0 against the C golden differs by up to 2.7e-5 sone in total loudness (annexb_sig5) and up to 4.4e-2 sone/Bark in specific loudness (signal 18). The total difference comes from the official C program itself (`_ZUP += .0001f` and float32 literals; on identical NL input its slope stage already differs from Rust by up to 9.7e-6 per frame). The specific difference comes from the cell where a slope meets the core loudness: the MoSQITo rule extrapolates the slope below the core value, the C program writes the core value (e.g. signal 18 point 391 bark 36: Rust 0.7701, C 0.8139). That is another specific-pattern difference inherited from MoSQITo, left unchanged in this phase as planned. The 1e-10 gate is therefore enforced on the C-01 tail points only; the whole-series comparisons are kept as `#[ignore]`d strict tests.
-2. **MoSQITo specific compatibility exceeds D-E.** F-05 changes the time-varying specific loudness of the next band; against MoSQITo white_60 / annexb_sig5 reach 1.13e-2 / 9.0e-3 sone/Bark, above 5e-3. The two Python parity cases are strict `xfail`; the Rust `golden_zwtv` end-to-end comparison never included these two signals. Whether to widen the compatibility bound is the decision owner's call.
-3. **The Python `n` hash holds only on this Windows machine.** `test_smoke.py` now keeps per-platform `n` hashes; the Linux value uses the same glibc as GitHub runners, the Windows value only holds on the freezing machine. The CI py job does not set `HASH_GATE_DUMP_ONLY`, so windows-latest will probably fail; CI needs that variable (as in the Rust job) or a value measured on CI. CI was not changed in this phase.
+Stationary (main loudness + slopes on the C golden's levels, nine signals): total up to 1.530e-5 sone (annexb_sig5), specific up to 1.500e-4 sone/Bark (sine_250_80; 7.960e-3 before F-07). The total numbers are the same before and after F-07.
+
+## Specific loudness against MoSQITo (D-H: recorded, not gated)
+
+| source | maximum difference (sone/Bark) |
+|---|---|
+| Rust `golden_zwtv` (`NlInit::MosqitoTail`) | sine_1k_60 3.582e-3, pulse_1k_70 1.287e-2, step_60_80 2.209e-2, annexb_sig10 3.842e-3 |
+| Rust `golden_zwst` (end to end) | sine_1k_60 6.3e-14, sine_250_80 3.922e-5, sine_4k_60 1.3e-14, white_60 1.8e-15, annexb_sig3 1.0e-14, annexb_sig5 7.960e-3 |
+| Rust `golden_core` / `golden_zwst` (slopes only) | sine_250_80 3.922e-5, the other three 0 |
+| Python parity, time-varying (mosqito_tail and default + silent tail give the same numbers) | sine_1k_60 3.582e-3, sine_250_80 2.496e-3, sine_4k_60 2.867e-3, white_60 3.112e-2, pulse_1k_70 1.287e-2, step_60_80 2.209e-2, annexb_sig3 3.527e-3, annexb_sig5 3.147e-2, annexb_sig10 3.842e-3 |
+| Python parity, stationary | sine_250_80 3.922e-5, step_60_80 1.033e-3, annexb_sig5 7.960e-3, the other six ≤ 6.3e-14 |
+| `tools/compare_mosqito.py`, 3 s | `nl_init="mosqito_tail"` 1.86e-3 (0.3.1: 3.46e-15); default 3.25e-2 (F-02 start, unchanged) |
+
+Total loudness against MoSQITo keeps the 5e-3 sone gate; its numbers are the same before and after F-07.
+
+## Round 1 findings, resolved
+
+1. **Whole-series 1e-10 is not achievable.** Replaced by the three gate tiers of decision memo §7 (above). The 4.4e-2 specific difference was F-07, fixed in Round 2; the remaining ≤ 2.1e-4 is the C program's band-edge epsilon.
+2. **MoSQITo specific compatibility exceeds D-E.** Per D-H, specific loudness against MoSQITo is recorded, not gated; the two strict Python `xfail`s are removed.
+3. **The Python `n` hash holds only on this Windows machine.** The CI py job now sets `HASH_GATE_DUMP_ONLY=1` on windows-latest, as the Rust job does.
 
 ## Not done / open
 
 - No tag, no push, no GitHub CI run, no release artifacts.
 - `CITATION.cff` still says 0.3.1: version and `date-released` were updated in the release commit in the past, and the release date is not known yet.
-- `tools/doc_pairs.py --check` reports one pre-existing error: the pair line of `C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md` reads "Pair／對照"; it already exists at `5cb036a` and the decision memo was not edited in this phase.
+- The Round 2 RED commit `a1a261d` does not pass `clippy -D warnings` on its own (the 17-significant-digit test constants trigger `excessive_precision`); `0bb2272` adds the `#[allow]` and is clean again.
 - F-03 (Table A.9) remains PENDING; the stationary front end is still undecided.

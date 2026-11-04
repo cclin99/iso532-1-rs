@@ -23,9 +23,19 @@ dispatch, C ABI or Python shape changes.
   (flat remainder, or further slope segments clamped to `ZUP`) instead of being
   back-filled by the next band. This affected about 1% of time-varying frames
   by 1e-3 to 2.6e-2 sone each. Because the next band now starts from `ZUP`, the
-  time-varying specific loudness of that next band changes too (towards Annex A;
-  up to 1.13e-2 sone/Bark against MoSQITo on the white-noise and pink-noise
-  fixtures); the specific value written in the completed cell is unchanged.
+  time-varying specific loudness of that next band changes too (towards Annex
+  A); the specific value written in the completed cell is unchanged.
+- F-07: specific loudness in the 0.1 Bark cell where a slope segment ends
+  before the cell's sample. The rule kept from MoSQITo wrote the segment that
+  started in that cell extrapolated past its end (below the core loudness);
+  Annex A (`for (ZK = Z; ZK <= Z2; ...)`) writes each sample from the segment
+  or flat part that contains it. Example: Annex B signal 18, frame 1564,
+  Z = 3.7 Bark: 0.77011 -> 0.81388 sone/Bark (the band-4 core loudness, as the
+  C program). Total loudness is bitwise unchanged (the `n` hashes did not
+  move). Specific loudness against the Annex A C golden over whole series:
+  4.4e-2 -> 2.1e-4 sone/Bark; against MoSQITo it now differs by design, up to
+  3.1e-2 sone/Bark (time-varying, white_60 / annexb_sig5) and 8.0e-3
+  (stationary, annexb_sig5).
 - On 19,364 NL frames of Annex B signals 18/23/24/25 the slope stage equals the
   reference port `rust_slopes_fixed` (cross-analysis) bitwise and the Annex A
   algorithm with epsilon 0 and binary64 tables to <= 1.42e-14 sone.
@@ -33,28 +43,49 @@ dispatch, C ABI or Python shape changes.
   `ISO_532-1.c` (SHA-256 `a74b45ed...834491`) with only `USL[12][4]` changed
   0.22f -> 0.24f (`tools/golden-c-usl12-4.diff`), MSVC x64 `/O2 /fp:precise`,
   and writes `data/golden-c/` (gitignored; manifest `tools/golden-c.sha256`).
-  New `tests/golden_c.rs` gates the C-01 tail points (last output point of
-  Annex B signals 18/23/24/25) at 1e-10 sone for total and specific loudness
-  (measured <= 9.0e-11 and <= 3.3e-23). Whole-series agreement is limited by the
-  C program itself (band-edge epsilon `_ZUP += .0001f` and float32 literals:
-  totals up to 2.7e-5 sone) and by the specific-loudness cell rule kept from
-  MoSQITo (up to 4.4e-2 sone/Bark where a slope meets the core loudness); those
-  1e-10 comparisons are kept as ignored strict tests and reported as findings.
+  New `tests/golden_c.rs`, three tiers: the C-01 tail points (last output
+  point of Annex B signals 18/23/24/25) at 1e-10 sone for total and specific
+  loudness (measured <= 9.0e-11 and <= 3.3e-23); whole series, total, at 1e-4
+  sone; whole series, specific, at 3e-4 sone/Bark. Whole-series agreement is
+  limited by the C program itself (band-edge epsilon `_ZUP += .0001f` and
+  float32 literals). Measured maxima over the nine golden signals and the four
+  C-01 signals (Rust vs C with `USL[12][4]` = 0.24f, time-varying):
+
+  | signal | total (sone) | specific (sone/Bark) |
+  |---|---:|---:|
+  | sine_1k_60 | 1.471e-7 | 6.184e-5 |
+  | sine_250_80 | 2.022e-5 | 2.100e-4 |
+  | sine_4k_60 | 4.987e-8 | 8.214e-5 |
+  | white_60 | 1.915e-6 | 6.235e-5 |
+  | pulse_1k_70 | 1.465e-7 | 1.097e-4 |
+  | step_60_80 | 1.645e-6 | 1.297e-4 |
+  | annexb_sig3 | 1.472e-7 | 6.184e-5 |
+  | annexb_sig5 | 2.712e-5 | 6.235e-5 |
+  | annexb_sig10 | 9.795e-8 | 1.097e-4 |
+  | annexb_c01_sig18 | 6.614e-6 | 9.397e-5 |
+  | annexb_c01_sig23 | 3.248e-7 | 8.249e-5 |
+  | annexb_c01_sig24 | 1.753e-6 | 6.217e-5 |
+  | annexb_c01_sig25 | 7.781e-7 | 8.249e-5 |
+
+  Stationary (main loudness + slopes on the C golden's levels): total <=
+  1.530e-5 sone, specific <= 1.500e-4 sone/Bark. The specific bound is the
+  measured maximum rounded up to one significant digit.
 - MoSQITo goldens are a compatibility check: `tests/golden_zwtv.rs`,
   `tests/golden_zwst.rs`, the slope total in `tests/golden_core.rs`, the sig10
   MoSQITo line in `tests/annexb.rs` and `iso532-py/tests/test_parity_mosqito.py`
-  use a 5e-3 sone bound for total (and, where the plan says so, specific)
-  loudness; stage goldens keep their tolerances. The Python white-noise and
-  pink-noise time-varying specific comparisons exceed 5e-3 and are strict
-  `xfail`. Annex B verdicts are unchanged and pass.
+  use a 5e-3 sone bound for the total loudness. Specific loudness against
+  MoSQITo is recorded (maximum printed, finiteness asserted), not gated, since
+  F-07 makes it differ by design; stage goldens keep their tolerances. Annex B
+  verdicts are unchanged and pass.
 - Frozen hashes: `N(t)` now carries the same libm/FMA ULP noise as
   `N_specific(t)` (the rounding used to hide it), so scalar and AVX2 differ by
   up to 2.6e-10 sone and the `n` hashes are per OS and backend.
   `tests/hash_gate.rs` and the `tests/golden_zwtv.rs` snapshots re-froze only
-  `n` (windows: local machine; linux: ubuntu:24.04, glibc 2.39);
-  `n_specific` and `time_axis` hashes are unchanged. The Python cross-language
-  `N` hashes in `iso532-py/tests/test_smoke.py` are per platform now
-  (`HASH_GATE_DUMP_ONLY=1` turns them into a dump), `TIME_HASH` is unchanged.
+  `n` for F-04/F-05 and then only `n_specific` for F-07 (windows: local
+  machine; linux: ubuntu:24.04, glibc 2.39); `time_axis` hashes are unchanged.
+  The Python cross-language `N` hashes in `iso532-py/tests/test_smoke.py` are
+  per platform now (`HASH_GATE_DUMP_ONLY=1` turns them into a dump; the CI py
+  job sets it on windows like the Rust job), `TIME_HASH` is unchanged.
 - `tests/nl_zero_init.rs` pins the 0.4.0 MoSQITo-tail reproduction numbers and
   keeps the audited pre-F-04 numbers within the rounding bound.
 - F-03: `USL[12][4]` stays 0.24 provisionally (Table A.9 still PENDING). Against

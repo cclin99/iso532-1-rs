@@ -293,7 +293,8 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 | **分歧（發現 F-02，2026-10-31）：** 批次非線性時間衰減從零狀態起算；MoSQITo 1.2.1 因向量化後第一欄讀到第 `-1` 欄，每個頻帶都以最後一幀（`core[-1] / 24`）作為初始值 | 與官方 Annex A C 程式比對時發現，該程式的 `UoLast`／`U2Last` 由零起算。目前判斷：依 Annex A，使訊號前段的結果不受後段樣本影響；MoSQITo 的初始值仍可經 `NlInit::MosqitoTail`（Python `nl_init="mosqito_tail"`）取得，供 parity 比對 | 批次結果前 0.05–0.5 s 改變（稽核反例 0.11 sone → 0）；尾端靜音的訊號逐位元不變；批次自第 0 幀起與因果 stream 逐位元相同。Gate：`tests/nl_zero_init.rs`；證據：[`docs/F02-NL-ZERO-INIT-2026-10-31.md`](docs/F02-NL-ZERO-INIT-2026-10-31.md) |
 | **未決（發現 F-03，2026-11-03 起暫定 0.24）：** 上斜率表格 `USL[12][4]` 在 MoSQITo 1.2.1 與 SQAT 為 0.24，官方 Annex A C 程式為 0.22；這是表格唯一不同的一格 | 來源尚未裁定，ISO Table A.9 原文尚未取得，現有資料無法分辨 0.22 與 0.24。暫定判斷（D3）：維持 0.24 | 對未修改的 C 程式，Annex B 訊號 18／23／24／25 的全序列加權輸出最大差 3.5e-3 sone（尾點 1e-8 ～ 1.3e-7）。Annex A C golden 只替換這一格（`tools/golden-c-usl12-4.diff`）。狀態：[`docs/F03-USL12-4-STATUS-2026-10-31.zh-TW.md`](docs/F03-USL12-4-STATUS-2026-10-31.zh-TW.md)（PENDING） |
 | **分歧（發現 F-04，2026-11-03）：** 每幀總響度不再捨入；MoSQITo 1.2.1 `_calc_slopes` 會捨入到 0.001 sone（N ≤ 16）或 0.01 sone | 對官方 Annex A C 程式分解 C-01 尾差時發現，C 不捨入（佔尾差 67–98%）。目前判斷：依 Annex A（0.4.0） | 每幀總響度最多移動半個捨入步長；對 MoSQITo golden ≤ 4.9e-4 sone（ZWST）、≤ 3.9e-3 sone（ZWTV，含 F-05）。`N(t)` 現在與 `N_specific(t)` 一樣帶有 libm／FMA 的 ULP 雜訊，凍結 hash 因此依 OS 與後端分開。Gate：`calc_slopes::tests::f04_total_is_not_rounded`、`tests/golden_c.rs`；證據：[`docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md)、[`docs/verification/2026-11-03-C01-cross-analysis-aa379db/`](docs/verification/2026-11-03-C01-cross-analysis-aa379db/) |
-| **分歧（發現 F-05，2026-11-03）：** 某 band 的斜率段在該 band 最後一個 0.1 Bark 格點啟動、並在 `ZUP` 前碰到核心響度時，依 Annex A 補完該 band（平台段，或夾到 `ZUP` 的後續斜率段）；MoSQITo 1.2.1 的格點迴圈已無格點可處理，剩餘部分由下一 band 回填 | C-01 尾端殘差的交叉分析發現：約 1% 的幀，單幀總響度誤差 1e-3 ～ 2.6e-2 sone。目前判斷：依 Annex A（0.4.0） | slope 階段在 19,364 個 Annex B 幀上與 Annex A 演算法（epsilon 0、binary64 表格）逐幀 ≤ 1.42e-14；C-01 尾點對 Annex A C golden ≤ 9.0e-11 sone。被補完 band 的下一 band 改從 `ZUP` 起算，其時變比響度也因此往 Annex A 靠攏（對 MoSQITo 在寬頻 fixture 上最大 1.13e-2 sone/Bark）。Gate：`calc_slopes::tests::f05_last_cell_remainder_is_integrated`、`tests/golden_c.rs`；證據：[`docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md)、[`docs/verification/2026-11-03-C01-cross-analysis-aa379db/`](docs/verification/2026-11-03-C01-cross-analysis-aa379db/) |
+| **分歧（發現 F-05，2026-11-03）：** 某 band 的斜率段在該 band 最後一個 0.1 Bark 格點啟動、並在 `ZUP` 前碰到核心響度時，依 Annex A 補完該 band（平台段，或夾到 `ZUP` 的後續斜率段）；MoSQITo 1.2.1 的格點迴圈已無格點可處理，剩餘部分由下一 band 回填 | C-01 尾端殘差的交叉分析發現：約 1% 的幀，單幀總響度誤差 1e-3 ～ 2.6e-2 sone。目前判斷：依 Annex A（0.4.0） | slope 階段在 19,364 個 Annex B 幀上與 Annex A 演算法（epsilon 0、binary64 表格）逐幀 ≤ 1.42e-14；C-01 尾點對 Annex A C golden ≤ 9.0e-11 sone。被補完 band 的下一 band 改從 `ZUP` 起算，其時變比響度也因此往 Annex A 靠攏。Gate：`calc_slopes::tests::f05_last_cell_remainder_is_integrated`、`tests/golden_c.rs`；證據：[`docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md)、[`docs/verification/2026-11-03-C01-cross-analysis-aa379db/`](docs/verification/2026-11-03-C01-cross-analysis-aa379db/) |
+| **分歧（發現 F-07，2026-11-04）：** 斜率段在某 0.1 Bark 格的取樣位置之前結束時，該格的比響度取「包含取樣位置的那一段（斜率段或平台段）」的值（Annex A 的 `for (ZK = Z; ZK <= Z2; ...)`）；MoSQITo 1.2.1 寫的是在該格啟動的那一段外插到取樣位置的值，即使那一段已經結束 | 0.4.0 第一輪獨立驗證對 Annex A C golden 比對時發現（Annex B 訊號 18 第 1564 幀，3.7 Bark：0.7701，核心響度為 0.8139）。目前判斷：依 Annex A（0.4.0） | 總響度逐位元不變（凍結的 `n` hash 沒有變動）。全序列比響度對 Annex A C golden：4.4e-2 → 2.1e-4 sone/Bark（剩下的是 C 程式的 band 邊界 epsilon）；對 MoSQITo 則依設計會不同（時變最大 3.1e-2 sone/Bark、穩態 8.0e-3），因此只記錄、不設門檻。Gate：`calc_slopes::tests::f07_*`、`tests/golden_c.rs`；證據：[`docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](docs/C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md) §7 |
 
 詳細證據，以及「相容性 parity」與「ISO compliance」的區別，請見 [`docs/MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md`](docs/MOSQITO-VS-ISO-BASELINE-STRATEGY-2026-07-05.md)。
 
@@ -312,10 +313,10 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 2. `tools/gen_golden.py` 對九組合成／Annex B 訊號執行 MoSQITo public API 與選定的逐階段函式。
 3. 輸入、中間陣列與輸出以 little-endian `f64` golden artifacts 保存。
 4. Rust integration tests 逐項比對 filter／DSP、穩態響度、時變響度、總響度、比響度、Bark 軸與 shape。
-5. `iso532-py/tests/test_parity_mosqito.py` 會對同九組訊號直接執行 MoSQITo 與編譯後 Rust binding（`rtol=1e-6`、`atol=1e-9`；0.4.0 起總響度與時變比響度改用 5e-3 sone 相容性容差，白噪音與粉紅噪音的時變比響度比對因 F-05 超出該容差，列為 strict `xfail`）。
+5. `iso532-py/tests/test_parity_mosqito.py` 會對同九組訊號直接執行 MoSQITo 與編譯後 Rust binding（`rtol=1e-6`、`atol=1e-9`；0.4.0 起總響度改用 5e-3 sone 相容性容差，比響度因 F-07 依設計與 MoSQITo 不同，改為只記錄、不設門檻）。
 6. Scalar／AVX2、Rayon／sequential、deterministic hash、C ABI 與 Python bitwise-contract tests，負責偵測參照演算法以外的工程變更。
 7. `tools/golden.sha256` 驗證該環境產生的 artifacts；跨 OS／libm 重生前請先閱讀 [`docs/GOLDEN-REGEN-SOP.md`](docs/GOLDEN-REGEN-SOP.md)。
-8. 正確性參考（0.4.0）：`tools/gen_golden_c.py` 以 MSVC x64 `/O2 /fp:precise` 編譯官方 Annex A C 程式（SHA-256 固定），只把 `USL[12][4]` 改為 0.24f，對同九組訊號與 Annex B 訊號 18／23／24／25 產生 `data/golden-c/`（`tools/golden-c.sha256`）。`tests/golden_c.rs` 以 1e-10 sone 看守 C-01 尾點；全序列總響度差最大 2.7e-5 sone（C 程式的 band 邊界 epsilon 與 float32 常數），比響度差最大 4.4e-2 sone/Bark（斜率與核心響度相交的格點），以 ignored 的嚴格測試保留記錄。
+8. 正確性參考（0.4.0）：`tools/gen_golden_c.py` 以 MSVC x64 `/O2 /fp:precise` 編譯官方 Annex A C 程式（SHA-256 固定），只把 `USL[12][4]` 改為 0.24f，對同九組訊號與 Annex B 訊號 18／23／24／25 產生 `data/golden-c/`（`tools/golden-c.sha256`）。`tests/golden_c.rs` 以 1e-10 sone 看守 C-01 尾點，全序列以 1e-4 sone（總響度；實測 2.7e-5）與 3e-4 sone/Bark（比響度；實測 2.1e-4）看守。全序列殘差來自 C 程式的 band 邊界 epsilon（`_ZUP += .0001f`）與 float32 常數。
 
 時間軸差異是刻意處理的：MoSQITo 1.2.1 使用包含終點、依 duration 改變間距的時間軸；ISO532 固定回傳 `96 / 48,000 = 2 ms` 網格。響度值、Bark 軸與比響度對 MoSQITo 比較；Rust 時間軸則獨立使用 bitwise freeze 與 Annex B 測試。
 
@@ -324,16 +325,18 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 | 比較項目 | 已觀測最大絕對差異 | 解讀 |
 |---|---:|---|
 | ZWST 總響度 `N` vs MoSQITo golden | `4.9e-4` sone | F-04：MoSQITo 每幀捨入總響度；ISO532 自 0.4.0 起依 Annex A |
-| ZWST `N_specific` vs MoSQITo golden | `8.2e-14` sone/Bark | 浮點雜訊尺度 |
+| ZWST `N_specific` vs MoSQITo golden | `7.96e-3` sone/Bark | F-07（annexb_sig5；step_60_80 `1.03e-3`、sine_250_80 `3.9e-5`，其餘六組 ≤ `6.3e-14`）；只記錄、不設門檻 |
 | ZWTV `N(t)` vs MoSQITo golden（`NlInit::MosqitoTail`） | `3.9e-3` sone | F-04 與 F-05（0.4.0）；0.3.1 為 `1.6e-14` |
-| ZWTV `N_specific(t)` vs MoSQITo golden（`NlInit::MosqitoTail`） | `1.13e-2` sone/Bark | F-05 改變白噪音與粉紅噪音 fixture 上被補完 band 的下一 band；其餘七組維持 ≤ `1.3e-9` |
+| ZWTV `N_specific(t)` vs MoSQITo（`NlInit::MosqitoTail`，九組 fixture，Python parity） | `3.15e-2` sone/Bark | F-05 與 F-07（annexb_sig5；white_60 `3.11e-2`，Rust 的四組 golden fixture ≤ `2.21e-2`）；只記錄、不設門檻 |
 | ZWTV vs Annex A C golden，C-01 尾點（Annex B 18／23／24／25） | `9.0e-11` sone；比響度 `3.3e-23` | 0.4.0 驗收門檻（1e-10）。對未修改的 C 程式（`USL[12][4]` = 0.22）：`1.3e-7` sone |
+| ZWTV vs Annex A C golden，全序列（九組 golden ＋ 四組 C-01 訊號） | `2.7e-5` sone；比響度 `2.1e-4` sone/Bark | 門檻 1e-4／3e-4。來自 C 程式的 band 邊界 epsilon 與 float32 常數；F-07 之前比響度最大為 `4.4e-2` |
+| ZWST vs Annex A C golden（以 C 的頻帶位準跑 main loudness ＋ slopes，九組訊號） | `1.5e-5` sone；比響度 `1.5e-4` sone/Bark | 同上門檻與原因 |
 | AVX2 vs Rust scalar `N(t)` | `2.6e-10` | 不再 bit-identical：F-04 移除的每幀捨入原本遮蔽了 FMA 殘差 |
 | AVX2 vs Rust scalar `N_specific(t)` | `1.4e-9` sone/Bark | FMA／rounding 殘差，由測試看守 |
 | 2026-11-04 直接 3 秒比對，預設 `nl_init="zero"`，`N(t)` | `5.81e-3` sone | 與效能量測相同訊號；差異來自 F-02 初始化，位於 t = 2 ms |
 | 2026-11-04 直接 3 秒比對，預設 `nl_init="zero"`，`N_specific(t)` | `3.25e-2` sone/Bark | 同一原因；該訊號開頭沒有靜音，MoSQITo 的 seed 不為零 |
 | 2026-11-04 直接 3 秒比對，`nl_init="mosqito_tail"`，`N(t)` | `1.15e-4` sone | F-04／F-05（0.4.0）；0.3.1 為 `2.66e-15` |
-| 2026-11-04 直接 3 秒比對，`nl_init="mosqito_tail"`，`N_specific(t)` | `3.46e-15` sone/Bark | 與 2026-07-20 數值相同 |
+| 2026-11-04 直接 3 秒比對，`nl_init="mosqito_tail"`，`N_specific(t)` | `1.86e-3` sone/Bark | F-07（0.4.0）；0.3.1 為 `3.46e-15` |
 
 上面的直接比對列與效能表均由 `.venv\Scripts\python.exe tools\compare_mosqito.py` 產生（相容性列加 `--nl-init mosqito_tail`；效能表維持 2026-07-20 安靜機器量測，發版當時快照見 `docs/RELEASE-0.3.1-2026-11-01.md`）。腳本使用 `tools.iso532_testkit.contract_signal(3 * 48_000)`，先各 warm up 一次，再各連續量測 30 次，輸出算術平均、sample SD、min／max，以及 `N(t)` 與 `N_specific(t)` 的最大絕對差異。2026-11-04 的差異列以 0.4.0 build 加 `--iterations 1` 重測；差異值與量測次數無關。
 
