@@ -1,0 +1,5 @@
+#include "ISO_532-1.c"
+#define API __declspec(dllexport)
+API int av_signal(double*x,int len,double*n,double*s){struct InputData in={len,48000,x};double*rows[240];int b,k=len/24;for(b=0;b<240;b++)rows[b]=s+b*k;return f_loudness_from_signal(&in,SoundFieldFree,LoudnessMethodTimeVarying,0,n,rows,k);}
+API void av_slopes(double*nm,int k,double*n,double*s){double*nr[21];double*sr[240];int b,t;for(b=0;b<21;b++)nr[b]=nm+b*k;for(b=0;b<240;b++)sr[b]=s+b*k;for(t=0;t<k;t++)f_calc_slopes(nr,n,sr,t);}
+API void av_levels(double*x,double*n,double*s){double*lr[28];double*sr[240];double work[28];int b;for(b=0;b<28;b++){work[b]=x[b];lr[b]=work+b;}for(b=0;b<240;b++)sr[b]=s+b;f_loudness_from_levels(lr,1,SoundFieldFree,LoudnessMethodStationary,n,sr);}

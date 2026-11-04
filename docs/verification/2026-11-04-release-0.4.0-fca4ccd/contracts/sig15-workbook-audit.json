@@ -1,0 +1,417 @@
+{
+  "workbook_name": "Results and tests for technical signals (time varying loudness).xlsx",
+  "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+  "sheet": "Test signal 15",
+  "xml_member": "xl/worksheets/sheet2.xml",
+  "selected_cells": {
+    "A1": {
+      "value": "Loudness calculation according to ISO 532-1 for time varying sounds (diffuse field)",
+      "formula": null
+    },
+    "L1": {
+      "value": "Test",
+      "formula": null
+    },
+    "A3": {
+      "value": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "formula": null
+    },
+    "A5": {
+      "value": "Nmax / sone (diffuse field)",
+      "formula": null
+    },
+    "B5": {
+      "value": "9.6059000000000001",
+      "formula": null
+    },
+    "A6": {
+      "value": "N5 / sone (diffuse field)",
+      "formula": null
+    },
+    "B6": {
+      "value": "8.7550099999999986",
+      "formula": "PERCENTILE(B61:B5528,0.95)"
+    },
+    "L6": {
+      "value": "0",
+      "formula": "SUM(N11:N5778)/COUNT(N11:N5778)*100+SUM(O11:O5778)"
+    },
+    "A7": {
+      "value": null,
+      "formula": null
+    },
+    "C7": {
+      "value": "5% tolerance",
+      "formula": null
+    },
+    "D7": {
+      "value": null,
+      "formula": null
+    },
+    "G7": {
+      "value": "10% tolerance",
+      "formula": null
+    },
+    "H7": {
+      "value": null,
+      "formula": null
+    },
+    "A8": {
+      "value": "time",
+      "formula": null
+    },
+    "B8": {
+      "value": " N",
+      "formula": null
+    },
+    "C8": {
+      "value": "Nmin",
+      "formula": null
+    },
+    "D8": {
+      "value": "Nmax",
+      "formula": null
+    },
+    "E8": {
+      "value": null,
+      "formula": null
+    },
+    "F8": {
+      "value": null,
+      "formula": null
+    },
+    "G8": {
+      "value": "Nmin",
+      "formula": null
+    },
+    "H8": {
+      "value": "Nmax",
+      "formula": null
+    },
+    "I8": {
+      "value": null,
+      "formula": null
+    },
+    "J8": {
+      "value": null,
+      "formula": null
+    },
+    "L8": {
+      "value": " N",
+      "formula": null
+    },
+    "A9": {
+      "value": null,
+      "formula": null
+    },
+    "B9": {
+      "value": null,
+      "formula": null
+    },
+    "C9": {
+      "value": null,
+      "formula": null
+    },
+    "D9": {
+      "value": null,
+      "formula": null
+    },
+    "E9": {
+      "value": null,
+      "formula": null
+    },
+    "F9": {
+      "value": null,
+      "formula": null
+    },
+    "G9": {
+      "value": null,
+      "formula": null
+    },
+    "H9": {
+      "value": null,
+      "formula": null
+    },
+    "I9": {
+      "value": null,
+      "formula": null
+    },
+    "J9": {
+      "value": null,
+      "formula": null
+    },
+    "L9": {
+      "value": null,
+      "formula": null
+    },
+    "A10": {
+      "value": "s",
+      "formula": null
+    },
+    "B10": {
+      "value": "sone",
+      "formula": null
+    },
+    "C10": {
+      "value": "sone",
+      "formula": null
+    },
+    "D10": {
+      "value": "sone",
+      "formula": null
+    },
+    "E10": {
+      "value": "min",
+      "formula": null
+    },
+    "F10": {
+      "value": "max",
+      "formula": null
+    },
+    "G10": {
+      "value": "sone",
+      "formula": null
+    },
+    "H10": {
+      "value": "sone",
+      "formula": null
+    },
+    "I10": {
+      "value": "min",
+      "formula": null
+    },
+    "J10": {
+      "value": "max",
+      "formula": null
+    },
+    "L10": {
+      "value": "sone",
+      "formula": null
+    },
+    "A11": {
+      "value": "0",
+      "formula": null
+    },
+    "B11": {
+      "value": "0",
+      "formula": null
+    },
+    "C11": {
+      "value": "0",
+      "formula": "MINA(E11,E12)"
+    },
+    "D11": {
+      "value": "0.1",
+      "formula": "MAXA(F11,F12)"
+    },
+    "E11": {
+      "value": "0",
+      "formula": "IF(0.05*B11>0.1,0.95*B11,IF(B11<0.1,0,B11-0.1))"
+    },
+    "F11": {
+      "value": "0.1",
+      "formula": "IF(0.05*B11>0.1,1.05*B11,B11+0.1)"
+    },
+    "G11": {
+      "value": "0",
+      "formula": "MINA(I11,I12)"
+    },
+    "H11": {
+      "value": "0.2",
+      "formula": "MAXA(J11,J12)"
+    },
+    "I11": {
+      "value": "0",
+      "formula": "IF(0.1*B11>0.2,0.9*B11,IF(B11<0.2,0,B11-0.2))"
+    },
+    "J11": {
+      "value": "0.2",
+      "formula": "IF(0.1*B11>0.2,1.1*B11,B11+0.2)"
+    },
+    "L11": {
+      "value": "0",
+      "formula": null
+    },
+    "N11": {
+      "value": "0",
+      "formula": "IF(AND(L11>=C11,L11<=D11),0,1)"
+    },
+    "O11": {
+      "value": "0",
+      "formula": "IF(AND(L11>=G11,L11<=H11),0,1)"
+    },
+    "A68": {
+      "value": "0.114",
+      "formula": null
+    },
+    "B68": {
+      "value": "0.84809999999999997",
+      "formula": null
+    },
+    "C68": {
+      "value": "0.45200000000000007",
+      "formula": null
+    },
+    "D68": {
+      "value": "1.2842",
+      "formula": null
+    },
+    "E68": {
+      "value": "0.74809999999999999",
+      "formula": null
+    },
+    "F68": {
+      "value": "0.94809999999999994",
+      "formula": null
+    },
+    "G68": {
+      "value": "0.35200000000000004",
+      "formula": null
+    },
+    "H68": {
+      "value": "1.3841999999999999",
+      "formula": null
+    },
+    "I68": {
+      "value": "0.6480999999999999",
+      "formula": null
+    },
+    "J68": {
+      "value": "1.0481",
+      "formula": null
+    },
+    "L68": {
+      "value": "0.84809999999999997",
+      "formula": null
+    },
+    "N68": {
+      "value": "0",
+      "formula": null
+    },
+    "O68": {
+      "value": "0",
+      "formula": null
+    },
+    "A2245": {
+      "value": "4.468",
+      "formula": null
+    },
+    "B2245": {
+      "value": "8.1220999999999997",
+      "formula": null
+    },
+    "C2245": {
+      "value": "7.6845499999999998",
+      "formula": null
+    },
+    "D2245": {
+      "value": "8.5282049999999998",
+      "formula": null
+    },
+    "E2245": {
+      "value": "7.7159949999999995",
+      "formula": null
+    },
+    "F2245": {
+      "value": "8.5282049999999998",
+      "formula": null
+    },
+    "G2245": {
+      "value": "7.2801000000000009",
+      "formula": null
+    },
+    "H2245": {
+      "value": "8.93431",
+      "formula": null
+    },
+    "I2245": {
+      "value": "7.3098900000000002",
+      "formula": null
+    },
+    "J2245": {
+      "value": "8.93431",
+      "formula": null
+    },
+    "L2245": {
+      "value": "8.1220999999999997",
+      "formula": null
+    },
+    "N2245": {
+      "value": "0",
+      "formula": null
+    },
+    "O2245": {
+      "value": "0",
+      "formula": null
+    }
+  },
+  "notes": {
+    "L1": {
+      "value": "Test",
+      "formula": null
+    },
+    "A3": {
+      "value": "The test signal contains 100 ms silence at the beginning and 500 ms silence at the end. N5 is calculated without considering these silent intervals.",
+      "formula": null
+    },
+    "C7": {
+      "value": "5% tolerance",
+      "formula": null
+    },
+    "G7": {
+      "value": "10% tolerance",
+      "formula": null
+    }
+  },
+  "comparison": "The release brief freezes max(0.1, 0.05*abs(ref)). Workbook columns C/D are 5% tolerance; G/H are separate 10% tolerance. N reference is B, time A. Row 2245 corresponds to output j=2234, t=4.468 s.",
+  "candidate": {
+    "got": 8.13657072836947,
+    "got_bits": "402045ec9937e024",
+    "reference": 8.1221,
+    "reference_bits": "40203e83e425aee6",
+    "absolute_error": 0.01447072836947072,
+    "tolerance": 0.406105,
+    "margin": 0.3916342716305293,
+    "workbook_5percent_min": {
+      "value": "7.6845499999999998",
+      "formula": null
+    },
+    "workbook_5percent_max": {
+      "value": "8.5282049999999998",
+      "formula": null
+    },
+    "workbook_10percent_min": {
+      "value": "7.2801000000000009",
+      "formula": null
+    },
+    "workbook_10percent_max": {
+      "value": "8.93431",
+      "formula": null
+    }
+  },
+  "baseline": {
+    "got": 8.136542409240885,
+    "got_bits": "402045e8e2fc69ce",
+    "reference": 8.1221,
+    "reference_bits": "40203e83e425aee6",
+    "absolute_error": 0.014442409240885468,
+    "tolerance": 0.406105,
+    "margin": 0.3916625907591145,
+    "workbook_5percent_min": {
+      "value": "7.6845499999999998",
+      "formula": null
+    },
+    "workbook_5percent_max": {
+      "value": "8.5282049999999998",
+      "formula": null
+    },
+    "workbook_10percent_min": {
+      "value": "7.2801000000000009",
+      "formula": null
+    },
+    "workbook_10percent_max": {
+      "value": "8.93431",
+      "formula": null
+    }
+  }
+}

@@ -1,0 +1,6 @@
+
+<REPO>\tmp\acceptance-040-astra\numeric\official>call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"   1>nul  && cl /nologo /O2 /fp:precise /LD wrapper.c /link /OUT:wrapper.dll 
+wrapper.c
+   正在建立程式庫 wrapper.lib 和物件 wrapper.exp
+'vswhere.exe' is not recognized as an internal or external command,
+operable program or batch file.

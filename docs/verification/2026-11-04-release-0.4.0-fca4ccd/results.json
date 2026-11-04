@@ -1,0 +1,253 @@
+{
+  "tested_commit": "fca4ccda18a8fbada77031425e5e683f1acd5a8d",
+  "overall": "PARTIAL",
+  "release_blockers": [],
+  "qualification": "No numerical/API regression blocker found. The requested public stream-specific proof is unavailable in both versions. Record discrepancies require accurate disclosure; this is not complete nine-item acceptance.",
+  "items": [
+    {
+      "item": 1,
+      "status": "passed",
+      "title": "Frozen snapshot",
+      "counts": {
+        "tracked_files": 560,
+        "tracked_differences": 0
+      },
+      "first_difference": null,
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "source-integrity.json",
+      "release_blocker": false
+    },
+    {
+      "item": 2,
+      "status": "passed",
+      "title": "C golden reproducibility",
+      "counts": {
+        "binary_files": 123,
+        "binary_hash_matches": 123,
+        "negative_control_exit": 1
+      },
+      "first_difference": {
+        "file": "meta.json",
+        "detail_file": "golden-meta-differences.json",
+        "data_file_differences": 0
+      },
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "golden-results.json",
+      "release_blocker": false
+    },
+    {
+      "item": 3,
+      "status": "passed",
+      "title": "Gates",
+      "counts": {
+        "rust": {
+          "passed": 146,
+          "failed": 0,
+          "ignored": 3,
+          "binaries": 26
+        },
+        "python_passed": 87,
+        "python_xfailed": 0
+      },
+      "first_difference": null,
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "gates/gates-results.json",
+      "release_blocker": false
+    },
+    {
+      "item": 4,
+      "status": "passed",
+      "title": "F-04 through F-07 independent numerics",
+      "counts": {
+        "signals": 13,
+        "single_frames": 3,
+        "round_comparison_inputs": 25,
+        "output_frames": 70219,
+        "n_bit_differences": 0,
+        "time_bit_differences": 0,
+        "specific_changed_cells": 16902,
+        "changes_outside_f07_branch": 0,
+        "max_total": 2.7118027825068225e-05,
+        "max_specific": 0.0002099726527324819,
+        "max_tail_total": 8.987306298474662e-11,
+        "max_tail_specific": 3.2598605043503344e-23
+      },
+      "first_difference": {
+        "max_abs": 0.002491828854928879,
+        "max_coordinate": [
+          153,
+          3
+        ],
+        "max_a_bits": "3fc2e58435949c97",
+        "max_b_bits": "3fc293dd3bdc6691",
+        "bitwise_differences": 3,
+        "first_coordinate": [
+          72,
+          5
+        ],
+        "first_a_bits": "3fd9e773e3d6e1b4",
+        "first_b_bits": "3fd9e65999d0dfc9"
+      },
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "numeric-results.json",
+      "release_blocker": false
+    },
+    {
+      "item": 5,
+      "status": "passed",
+      "title": "Diagnostic attribution",
+      "counts": {
+        "same_nl_total_max": 1.4210854715202004e-14,
+        "same_nl_specific_max": 4.256335620811799,
+        "indexed_grid_specific_max": 1.2656542480726785e-14,
+        "all_constants_double_pipeline_total_max": 5.917932810461934e-11
+      },
+      "first_difference": {
+        "signal": "annexb_c01_sig18",
+        "same_nl_specific": {
+          "max_abs": 1.1875820560422514,
+          "max_coordinate": [
+            17,
+            2106
+          ],
+          "max_a_bits": "3fd6af6d4e13e6ed",
+          "max_b_bits": "3ff8ac315e454316",
+          "bitwise_differences": 271910,
+          "first_coordinate": [
+            8,
+            263
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f67d333bd8097be"
+        }
+      },
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "diagnostic-controls.json",
+      "release_blocker": false
+    },
+    {
+      "item": 6,
+      "status": "partial",
+      "title": "Contracts",
+      "counts": {
+        "annexb": {
+          "candidate": {
+            "points": 73116,
+            "passed": 73116,
+            "failed": 0,
+            "minimum_margin": 0.059702781183555126
+          },
+          "baseline": {
+            "points": 73116,
+            "passed": 73116,
+            "failed": 0,
+            "minimum_margin": 0.059702781183555126
+          }
+        },
+        "stream_frames_per_version": 4136,
+        "grid_lengths": 7,
+        "dll_exports": 9,
+        "stream_specific_available": false
+      },
+      "first_difference": null,
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "contracts/contracts-results.json",
+      "release_blocker": false
+    },
+    {
+      "item": 7,
+      "status": "passed",
+      "title": "Hash gate",
+      "counts": {
+        "windows_all_equal": true,
+        "linux_all_equal": true,
+        "python_all_equal": true
+      },
+      "first_difference": null,
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "gates/gates-results.json",
+      "release_blocker": false
+    },
+    {
+      "item": 8,
+      "status": "passed",
+      "title": "MoSQITo compatibility",
+      "counts": {
+        "signals": 9,
+        "time_varying_total_max": 0.003941967124511336,
+        "time_varying_specific_max": 0.03147029899252968,
+        "stationary_total_max": 0.00048800598466103295,
+        "stationary_specific_max": 0.007959658039372819
+      },
+      "first_difference": {
+        "signal": "annexb_sig10",
+        "total": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.00016148967693740968,
+          "max_coordinate": [
+            77
+          ],
+          "bit_differences": 493,
+          "first_coordinate": [
+            7
+          ],
+          "first_got_hex": "3f9c35e39d140001",
+          "first_want_hex": "3f9c33477cd62352"
+        }
+      },
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "gates/mosqito-measurements.json",
+      "release_blocker": false
+    },
+    {
+      "item": 9,
+      "status": "failed",
+      "title": "Record consistency",
+      "counts": {
+        "numeric_table_entries": 54,
+        "numeric_table_rounding_matches": 54,
+        "commit_entries": 12,
+        "represented": 11,
+        "missing_commit": "5bbbb93228b9972c0277415bebd565364de974fc"
+      },
+      "first_difference": {
+        "kind": "missing_commit_table_entry",
+        "commit": "5bbbb93228b9972c0277415bebd565364de974fc"
+      },
+      "hash": {
+        "candidate_archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+      },
+      "evidence": "release-numeric-comparison.json",
+      "release_blocker": false
+    }
+  ],
+  "thresholds": {
+    "full_total": 0.0001,
+    "full_specific": 0.0003,
+    "tail": 1e-10,
+    "mosqito_total": 0.005
+  },
+  "source_hashes": {
+    "official": "a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491",
+    "patched": "739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9",
+    "diagnostic": "ab1530162b17bb223797db80cd064289e24128e60d700e274ddf17e2707d2d11"
+  }
+}

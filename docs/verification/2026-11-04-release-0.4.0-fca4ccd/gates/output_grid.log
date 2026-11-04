@@ -1,0 +1,16 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "output_grid", "--", "--nocapture"]
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.01s
+     Running tests\output_grid.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\output_grid-e996c19bc9b3803d.exe)
+
+running 7 tests
+test cli_grids_are_prefixes_of_the_rust_grid ... ok
+test shortest_legal_input_is_4800_samples_and_50_points ... ok
+test time_axis_is_an_exact_2ms_grid_from_zero ... ok
+test frame_count_is_ceil_of_ceil_for_every_field ... ok
+test every_point_is_prefix_determined_under_real_continuation ... ok
+test every_point_is_prefix_determined_under_zero_padding ... ok
+test stream_frame_count_equals_batch_for_any_chunking ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 25.07s
+

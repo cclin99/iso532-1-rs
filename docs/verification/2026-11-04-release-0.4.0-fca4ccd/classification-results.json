@@ -1,0 +1,152 @@
+{
+  "Test signal 2 (250 Hz 80 dB)": {
+    "changed": 3,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 3,
+    "output_frames": 5000
+  },
+  "Test signal 3 (1 kHz 60 dB)": {
+    "changed": 7,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 7,
+    "output_frames": 5000
+  },
+  "Test signal 4 (4 kHz 40 dB)": {
+    "changed": 0,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 0,
+    "output_frames": 5000
+  },
+  "Test signal 5 (pinknoise 60 dB)": {
+    "changed": 3598,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 3598,
+    "output_frames": 5000
+  },
+  "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB)": {
+    "changed": 2,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 2,
+    "output_frames": 500
+  },
+  "Test signal 11 (tone pulse 1 kHz 50 ms 70 dB)": {
+    "changed": 1,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 1,
+    "output_frames": 500
+  },
+  "Test signal 12 (tone pulse 1 kHz 500 ms 70 dB)": {
+    "changed": 1,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 1,
+    "output_frames": 500
+  },
+  "Test signal 13 (combined tone pulses 1 kHz)": {
+    "changed": 2,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 2,
+    "output_frames": 500
+  },
+  "Test signal 6 (tone 250 Hz 30 dB - 80 dB)": {
+    "changed": 0,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 0,
+    "output_frames": 5300
+  },
+  "Test signal 7 (tone 1 kHz 30 dB - 80 dB)": {
+    "changed": 0,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 0,
+    "output_frames": 5300
+  },
+  "Test signal 8 (tone 4 kHz 30 dB - 80 dB)": {
+    "changed": 0,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 0,
+    "output_frames": 5300
+  },
+  "Test signal 9 (pink noise 0 dB - 50 dB)": {
+    "changed": 2286,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 2286,
+    "output_frames": 5300
+  },
+  "Test signal 14 (propeller-driven airplane)": {
+    "changed": 3114,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 3114,
+    "output_frames": 6578
+  },
+  "Test signal 15 (vehicle interior 40 kmh)": {
+    "changed": 3381,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 3381,
+    "output_frames": 5769
+  },
+  "Test signal 16 (hairdryer)": {
+    "changed": 730,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 730,
+    "output_frames": 2055
+  },
+  "Test signal 17 (machine gun)": {
+    "changed": 362,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 362,
+    "output_frames": 1455
+  },
+  "Test signal 18 (hammer)": {
+    "changed": 424,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 424,
+    "output_frames": 1084
+  },
+  "Test signal 19 (door creak)": {
+    "changed": 481,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 481,
+    "output_frames": 1300
+  },
+  "Test signal 20 (shaking coins)": {
+    "changed": 442,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 442,
+    "output_frames": 1300
+  },
+  "Test signal 21 (jackhammer)": {
+    "changed": 520,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 520,
+    "output_frames": 1300
+  },
+  "Test signal 22 (ratchet wheel (large))": {
+    "changed": 127,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 127,
+    "output_frames": 925
+  },
+  "Test signal 23 (typewriter)": {
+    "changed": 508,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 508,
+    "output_frames": 1276
+  },
+  "Test signal 24 (woodpecker)": {
+    "changed": 446,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 446,
+    "output_frames": 1201
+  },
+  "Test signal 25 (full can rattle)": {
+    "changed": 237,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 237,
+    "output_frames": 1276
+  },
+  "contract_3s": {
+    "changed": 230,
+    "outside_after_segment_branch": 0,
+    "branch_cells": 230,
+    "output_frames": 1500
+  }
+}

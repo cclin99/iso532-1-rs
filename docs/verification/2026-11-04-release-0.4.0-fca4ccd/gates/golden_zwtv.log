@@ -1,0 +1,22 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "golden_zwtv", "--", "--nocapture"]
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.09s
+     Running tests\golden_zwtv.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_zwtv-39e25ebd04f25cb0.exe)
+
+running 9 tests
+test dump_zwtv_output_hashes ... ignored, manual helper: bitwise output snapshot for refactor verification
+test temporal_weighting_matches_mosqito ... ok
+test nl_loudness_matches_mosqito_under_tail_init ... ok
+test nl_loudness_zero_init_equals_golden_when_the_fixture_ends_in_silence ... ok
+sine_1k_60/N_spec_time vs MoSQITo: max |diff| 3.582e-3 at index 19010 (recorded, not gated)
+test third_octave_levels_matches_mosqito ... ok
+pulse_1k_70/N_spec_time vs MoSQITo: max |diff| 1.287e-2 at index 33261 (recorded, not gated)
+step_60_80/N_spec_time vs MoSQITo: max |diff| 2.209e-2 at index 27256 (recorded, not gated)
+test zwtv_default_equals_golden_for_silent_tail_fixtures ... ok
+annexb_sig10/N_spec_time vs MoSQITo: max |diff| 3.842e-3 at index 46507 (recorded, not gated)
+test zwtv_end_to_end_compat_mosqito_under_tail_init ... ok
+test zwtv_output_hashes_match_frozen_snapshots ... ok
+test zwtv_default_converges_to_golden_once_the_tail_seed_has_decayed ... ok
+
+test result: ok. 8 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 2.91s
+

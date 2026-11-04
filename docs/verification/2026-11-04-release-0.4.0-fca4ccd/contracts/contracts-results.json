@@ -1,0 +1,1911 @@
+{
+  "input_hashes": {
+    "calibration": "a65e5d0a0e6dd1cb6e021331005b2ea4f05bd412ff637d419bc72dbde134f698",
+    "calibration_factor": 2.835797716391444,
+    "calibration_factor_bits": "4006afb6b68fc829",
+    "1": {
+      "source_name": "Test signal 1.txt",
+      "source_sha256": "a5751ae3b9f85a84708b96399081cb6685aa827592bb7d91312a08e950ed8b74",
+      "decoded_sha256": "9833b74c08b5ca2204fea5f9d52b5944bc4b43e77d011c3eaaf646946baf5eb1",
+      "samples": 28
+    },
+    "2": {
+      "source_name": "Test signal 2 (250 Hz 80 dB).wav",
+      "source_sha256": "a1173d0a5334276340302d6944672c9a26feb4437f5e09c2afa7a60656b2602d",
+      "decoded_sha256": "80ec5f589a8fb212cab2880408fe4b57459c9f3b8196f3057e1c7510c135f133",
+      "samples": 480000
+    },
+    "3": {
+      "source_name": "Test signal 3 (1 kHz 60 dB).wav",
+      "source_sha256": "4a1fd96e5235294a73471a8fb18f75b1ac67c2c3a3c5f7f31da96b04d815f69a",
+      "decoded_sha256": "ae930604a1e4cf3b43550736fcbc00d2641e6c7d3e43c5e855e9db2cc046eff5",
+      "samples": 480000
+    },
+    "4": {
+      "source_name": "Test signal 4 (4 kHz 40 dB).wav",
+      "source_sha256": "f66dc745cfd899307731134afafa8b536dc8cb79a28b2d301013529d7c9dbeb9",
+      "decoded_sha256": "2f16116d78bc3fe321c5a561e1fb2bff3f86d0709dd34b6cfe95bd22bd86f50d",
+      "samples": 480000
+    },
+    "5": {
+      "source_name": "Test signal 5 (pinknoise 60 dB).wav",
+      "source_sha256": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e",
+      "decoded_sha256": "8c7f84109f4861107eb14e6e22b4127770597da00cbe25c97fb203854faee93d",
+      "samples": 480000
+    },
+    "6": {
+      "source_name": "Test signal 6 (tone 250 Hz 30 dB - 80 dB).wav",
+      "source_sha256": "160061507221a59dab0e5ccca64fa6d09ca1796bd3eece6d3f77d710eb16d3e5",
+      "decoded_sha256": "4e8b0823f4a902dca07ba86ccaa744aa8441f63916c9a589ed5eacdd9ab8dd66",
+      "samples": 508800
+    },
+    "7": {
+      "source_name": "Test signal 7 (tone 1 kHz 30 dB - 80 dB).wav",
+      "source_sha256": "fc6a727dc55cc518224a6495ee88d3c52606988b2be5fb5ac7f0670b8c0c9ec2",
+      "decoded_sha256": "05d155a3b10a5955431013de012fb0364b921add4a016643f8797bb8434c3e08",
+      "samples": 508800
+    },
+    "8": {
+      "source_name": "Test signal 8 (tone 4 kHz 30 dB - 80 dB).wav",
+      "source_sha256": "3bf8f362c5a40a5413758e2d32d4f9b0b6cae21f9d030e59ddeb1b735ed4eea0",
+      "decoded_sha256": "561188f45ed24829bfcd6af1588d0d01885e7dcab429e6755e1ce576463eb481",
+      "samples": 508800
+    },
+    "9": {
+      "source_name": "Test signal 9 (pink noise 0 dB - 50 dB).wav",
+      "source_sha256": "0397a8463ee89b9620bb0dcbf490489384df10aa6e2820bb230b9cadd14fd1d9",
+      "decoded_sha256": "15a4d1cc823b01c412c7cb6093344e6421894907114bef660526aebbf460100c",
+      "samples": 508800
+    },
+    "10": {
+      "source_name": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+      "source_sha256": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907",
+      "decoded_sha256": "72789eccb3ca8a3dbc08c4fffbe5b4cfcd49ce64d011ced1b9d8a0b46847615d",
+      "samples": 48000
+    },
+    "11": {
+      "source_name": "Test signal 11 (tone pulse 1 kHz 50 ms 70 dB).wav",
+      "source_sha256": "2093bf1ca4b4f40cd9b3bc1ca37cb7e73292c4c8c660c6a3afebf9106abd5d6b",
+      "decoded_sha256": "8304423950e70f60fa9f5f132b05d000911adc938523aa63c690039dca67b42a",
+      "samples": 48000
+    },
+    "12": {
+      "source_name": "Test signal 12 (tone pulse 1 kHz 500 ms 70 dB).wav",
+      "source_sha256": "718bfe5246023c2b4ea6978183e638d2f76ac0d30d1bd402bf0d769dd400e571",
+      "decoded_sha256": "2ee750b996f255244c60fb3ac5d8655c58df336e62cd3f66b26354c73bb93e8f",
+      "samples": 48000
+    },
+    "13": {
+      "source_name": "Test signal 13 (combined tone pulses 1 kHz).wav",
+      "source_sha256": "37f33a68080c4c66baa7a15476432b537761ca70ee49a739d722ca6da054d2f6",
+      "decoded_sha256": "b2fa0c5162567d500c8e674cac67948f2141f69a457154739c7ffd466c865369",
+      "samples": 48000
+    },
+    "14": {
+      "source_name": "Test signal 14 (propeller-driven airplane).wav",
+      "source_sha256": "03ef3d50d608d74d1f7d0ffdf31a863d410d7871849c5abd920eaa30e5e09e5f",
+      "decoded_sha256": "63b1067a4f46b9307215d2db722166adcf4a80123326f586de43b480998fa76b",
+      "samples": 631417
+    },
+    "15": {
+      "source_name": "Test signal 15 (vehicle interior 40 kmh).wav",
+      "source_sha256": "5fdc83c79d961b7405c1f568b62f911f227daee248eaa8848fb3630891ce7eab",
+      "decoded_sha256": "deb1e7a1b4de532d08fc99ef8776606823348487a4de7828e7b5d41388ffb0af",
+      "samples": 553800
+    },
+    "16": {
+      "source_name": "Test signal 16 (hairdryer).wav",
+      "source_sha256": "fc934315b9654ba9dd4fce053ffca06fe773ed286c4fa627267346287504c2ea",
+      "decoded_sha256": "60737fa105cdde5005587a43950714f1b5d0a515dacaa6804a8a4ba0d2a22952",
+      "samples": 197270
+    },
+    "17": {
+      "source_name": "Test signal 17 (machine gun).wav",
+      "source_sha256": "6ed3b58faf76b28a94c1c4205f1154913aeadac589ac777ba645a56c7fb23e8d",
+      "decoded_sha256": "9286010e24426ecbd0055140f2b0dc0b50ee6916b69ed7634a9bb3b864b64404",
+      "samples": 139639
+    },
+    "18": {
+      "source_name": "Test signal 18 (hammer).wav",
+      "source_sha256": "7cfca7001bff2a0746cdc7d39e0ebfaa631b60d3d99726847db2d6914da13904",
+      "decoded_sha256": "b16a82ee3b9f3eeec6261da60083d4de9af6a85c373b7f96a4ae024a5d5aef7a",
+      "samples": 103969
+    },
+    "19": {
+      "source_name": "Test signal 19 (door creak).wav",
+      "source_sha256": "56fffe81fd0bcebc8db7cee42ecf89b3c22e37154914058ceaa3da1e47bf8c24",
+      "decoded_sha256": "fffee6aad1c7316aa6668b268650fcc9bbcf789862b1a994ac723b3dea1e28b8",
+      "samples": 124800
+    },
+    "20": {
+      "source_name": "Test signal 20 (shaking coins).wav",
+      "source_sha256": "07bd62f41934bcfdc6a18667c3bb0bb46f57d2a63975562d3a88d239bd70c066",
+      "decoded_sha256": "190120b12dbe71c0f4550160be21e00ac3463a0ab8f784f5c61669bd0151818f",
+      "samples": 124800
+    },
+    "21": {
+      "source_name": "Test signal 21 (jackhammer).wav",
+      "source_sha256": "ecd777b7aa0d4b6b4eae1d7ca957357c45f3f5afccf4da811a28cfe8bb54310c",
+      "decoded_sha256": "2b763ef4b23b5718e47765b0046a4e3a0d8b0a9886f59aaa277aeaad3637090c",
+      "samples": 124800
+    },
+    "22": {
+      "source_name": "Test signal 22 (ratchet wheel (large)).wav",
+      "source_sha256": "82ce49e18d0eedff3a7cade98bc75fde41faa772aeb676a0f3d4051166f577d8",
+      "decoded_sha256": "f18c5f035a55bb26441b1fe5ecfbd05d20b9b0ddd973242794f716dc00e7139f",
+      "samples": 88800
+    },
+    "23": {
+      "source_name": "Test signal 23 (typewriter).wav",
+      "source_sha256": "51d9daea3810c4e32efbe43abcfec74960be74e58f5403bdf20ff9c9a7d26f26",
+      "decoded_sha256": "c67d32d7146dbf2a83791ff439973642f0089a9c17e1ae133502b80827837433",
+      "samples": 122401
+    },
+    "24": {
+      "source_name": "Test signal 24 (woodpecker).wav",
+      "source_sha256": "85e566d2ba104b1b5f8b380720b37083448abca8d8913d159710e94a7c184fd4",
+      "decoded_sha256": "2f20c961bb76b3f29e8d36a3a80edddfc56336c4784bfefece75831e474d1298",
+      "samples": 115202
+    },
+    "25": {
+      "source_name": "Test signal 25 (full can rattle).wav",
+      "source_sha256": "972e87bbecb4531ab5b53255dbb9c13c11f59a769a726e37002875bc424c75a8",
+      "decoded_sha256": "0f2ecae2a233732ad0763da35c20168aaa19db3af8298f88539b1faf358babcb",
+      "samples": 122401
+    }
+  },
+  "versions": {
+    "iso532": "0.4.0",
+    "iso532-ffi": "0.4.0",
+    "iso532-py": "0.4.0"
+  },
+  "annexb": {
+    "candidate": {
+      "1": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 4.164213436046742,
+          "minimum_margin_index": 0,
+          "got": 83.29512843604674,
+          "reference": 83.2957,
+          "got_bits": "4054d2e362613c2f",
+          "reference_bits": "4054d2ecbfb15b57",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.09990032084038439,
+          "minimum_margin_index": 226,
+          "got": 0.9834003208403844,
+          "reference": 0.9835,
+          "got_bits": "3fef7803f31c54db",
+          "reference_bits": "3fef78d4fdf3b646",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "2": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.6767373524164382,
+          "minimum_margin_index": 0,
+          "got": 14.710487647583562,
+          "reference": 14.6545,
+          "got_bits": "402d6bc509752ab0",
+          "reference_bits": "402d4f1a9fbe76c9",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.059702781183555126,
+          "minimum_margin_index": 9,
+          "got": 0.3688972188164449,
+          "reference": 0.3286,
+          "got_bits": "3fd79c031499ba26",
+          "reference_bits": "3fd507c84b5dcc64",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "3": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.16128355459473973,
+          "minimum_margin_index": 0,
+          "got": 4.05887644540526,
+          "reference": 4.0192,
+          "got_bits": "40103c4a1b5e14cf",
+          "reference_bits": "401013a92a305532",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.08457504412742708,
+          "minimum_margin_index": 66,
+          "got": 0.3571249558725729,
+          "reference": 0.3417,
+          "got_bits": "3fd6db22a183b8a1",
+          "reference_bits": "3fd5de69ad42c3ca",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "4": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.09118386830450934,
+          "minimum_margin_index": 0,
+          "got": 1.5582161316954908,
+          "reference": 1.5494,
+          "got_bits": "3ff8ee7409dbb54c",
+          "reference_bits": "3ff8ca57a786c227",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.09540525256655169,
+          "minimum_margin_index": 152,
+          "got": 0.10079474743344831,
+          "reference": 0.0962,
+          "got_bits": "3fb9cdaf3fd5d251",
+          "reference_bits": "3fb8a0902de00d1b",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "5": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.4607242527110572,
+          "minimum_margin_index": 0,
+          "got": 10.433634252711057,
+          "reference": 10.4978,
+          "got_bits": "4024de054f0ba387",
+          "reference_bits": "4024fedfa43fe5c9",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.09305896004382783,
+          "minimum_margin_index": 9,
+          "got": 0.4436589600438278,
+          "reference": 0.4506,
+          "got_bits": "3fdc64e88cfdcc93",
+          "reference_bits": "3fdcd6a161e4f766",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "6": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09678093358453368,
+          "minimum_margin_index": 2271,
+          "got": 1.8779190664154664,
+          "reference": 1.8747,
+          "got_bits": "3ffe0bf4dceca0e4",
+          "reference_bits": "3ffdfec56d5cfaad",
+          "minimum_margin_time": 4.542,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09719099318143334,
+          "minimum_margin_index": 3674,
+          "got": 1.9978090068185668,
+          "reference": 1.995,
+          "got_bits": "3ffff70693bf0a2e",
+          "reference_bits": "3fffeb851eb851ec",
+          "minimum_margin_time": 7.348,
+          "first_failure": null
+        }
+      },
+      "7": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.0967373755420963,
+          "minimum_margin_index": 5105,
+          "got": 1.9831626244579037,
+          "reference": 1.9799,
+          "got_bits": "3fffbb08bb6b23be",
+          "reference_bits": "3fffadab9f559b3d",
+          "minimum_margin_time": 10.21,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09725818340508621,
+          "minimum_margin_index": 3858,
+          "got": 1.9986418165949138,
+          "reference": 1.9959,
+          "got_bits": "3ffffa6fd76b1749",
+          "reference_bits": "3fffef34d6a161e5",
+          "minimum_margin_time": 7.716,
+          "first_failure": null
+        }
+      },
+      "8": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09683343031581795,
+          "minimum_margin_index": 1436,
+          "got": 1.989966569684182,
+          "reference": 1.9868,
+          "got_bits": "3fffd6e72f8ed472",
+          "reference_bits": "3fffc9eecbfb15b5",
+          "minimum_margin_time": 2.872,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.0972632321875885,
+          "minimum_margin_index": 3287,
+          "got": 1.9981367678124116,
+          "reference": 1.9954,
+          "got_bits": "3ffff85e426b0800",
+          "reference_bits": "3fffed288ce703b0",
+          "minimum_margin_time": 6.574,
+          "first_failure": null
+        }
+      },
+      "9": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.0952355131822539,
+          "minimum_margin_index": 1457,
+          "got": 1.9958644868177462,
+          "reference": 1.9911,
+          "got_bits": "3fffef0f99a214a8",
+          "reference_bits": "3fffdb8bac710cb3",
+          "minimum_margin_time": 2.914,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09734431930704748,
+          "minimum_margin_index": 5034,
+          "got": 1.9294556806929526,
+          "reference": 1.9268,
+          "got_bits": "3ffedf0ceb7a85bc",
+          "reference_bits": "3ffed42c3c9eecc0",
+          "minimum_margin_time": 10.068,
+          "first_failure": null
+        }
+      },
+      "10": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09705425924160274,
+          "minimum_margin_index": 20,
+          "got": 1.8756457407583973,
+          "reference": 1.8727,
+          "got_bits": "3ffe02a51bb70630",
+          "reference_bits": "3ffdf694467381d8",
+          "minimum_margin_time": 0.04,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09733815162116413,
+          "minimum_margin_index": 14,
+          "got": 1.999861848378836,
+          "reference": 1.9972,
+          "got_bits": "3fffff6f2334e225",
+          "reference_bits": "3ffff487fcb923a3",
+          "minimum_margin_time": 0.028,
+          "first_failure": null
+        }
+      },
+      "11": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09728078722851233,
+          "minimum_margin_index": 53,
+          "got": 1.9313192127714878,
+          "reference": 1.9286,
+          "got_bits": "3ffee6aef98fd710",
+          "reference_bits": "3ffedb8bac710cb3",
+          "minimum_margin_time": 0.106,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09790370900293686,
+          "minimum_margin_index": 34,
+          "got": 2.0154312909970633,
+          "reference": 2.0127,
+          "got_bits": "40001f9a70d156ee",
+          "reference_bits": "40001a027525460b",
+          "minimum_margin_time": 0.068,
+          "first_failure": null
+        }
+      },
+      "12": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09714360087990417,
+          "minimum_margin_index": 294,
+          "got": 1.9903563991200959,
+          "reference": 1.9875,
+          "got_bits": "3fffd87ff399aea2",
+          "reference_bits": "3fffcccccccccccd",
+          "minimum_margin_time": 0.588,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.0975564422366614,
+          "minimum_margin_index": 260,
+          "got": 1.7762435577633386,
+          "reference": 1.7738,
+          "got_bits": "3ffc6b7e5d653008",
+          "reference_bits": "3ffc617c1bda511a",
+          "minimum_margin_time": 0.52,
+          "first_failure": null
+        }
+      },
+      "13": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09690536064637048,
+          "minimum_margin_index": 94,
+          "got": 1.9436946393536296,
+          "reference": 1.9406,
+          "got_bits": "3fff195f8cd6f31d",
+          "reference_bits": "3fff0cb295e9e1b1",
+          "minimum_margin_time": 0.188,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09764859036802834,
+          "minimum_margin_index": 70,
+          "got": 1.7755514096319718,
+          "reference": 1.7732,
+          "got_bits": "3ffc68a8984bc6bb",
+          "reference_bits": "3ffc5f06f6944674",
+          "minimum_margin_time": 0.14,
+          "first_failure": null
+        }
+      },
+      "14": {
+        "n": {
+          "points": 6577,
+          "passed": 6577,
+          "failed": 0,
+          "minimum_margin": 0.09626525454419013,
+          "minimum_margin_index": 6369,
+          "got": 1.9837347454558099,
+          "reference": 1.98,
+          "got_bits": "3fffbd60a4fabed3",
+          "reference_bits": "3fffae147ae147ae",
+          "minimum_margin_time": 12.738,
+          "first_failure": null
+        }
+      },
+      "15": {
+        "n": {
+          "points": 5768,
+          "passed": 5768,
+          "failed": 0,
+          "minimum_margin": 0.09611805002755905,
+          "minimum_margin_index": 5590,
+          "got": 1.983281949972441,
+          "reference": 1.9794,
+          "got_bits": "3fffbb85da9e0f54",
+          "reference_bits": "3fffab9f559b3d08",
+          "minimum_margin_time": 11.18,
+          "first_failure": null
+        }
+      },
+      "16": {
+        "n": {
+          "points": 2054,
+          "passed": 2054,
+          "failed": 0,
+          "minimum_margin": 0.09714308332474322,
+          "minimum_margin_index": 1891,
+          "got": 1.9712569166752567,
+          "reference": 1.9684,
+          "got_bits": "3fff8a44b15224f7",
+          "reference_bits": "3fff7e90ff972474",
+          "minimum_margin_time": 3.782,
+          "first_failure": null
+        }
+      },
+      "17": {
+        "n": {
+          "points": 1454,
+          "passed": 1454,
+          "failed": 0,
+          "minimum_margin": 0.09538065854891001,
+          "minimum_margin_index": 443,
+          "got": 1.96011934145109,
+          "reference": 1.9555,
+          "got_bits": "3fff5ca6193ca1bf",
+          "reference_bits": "3fff49ba5e353f7d",
+          "minimum_margin_time": 0.886,
+          "first_failure": null
+        }
+      },
+      "18": {
+        "n": {
+          "points": 1083,
+          "passed": 1083,
+          "failed": 0,
+          "minimum_margin": 0.09556174521068175,
+          "minimum_margin_index": 214,
+          "got": 1.9915382547893183,
+          "reference": 1.9871,
+          "got_bits": "3fffdd573790d93e",
+          "reference_bits": "3fffcb295e9e1b09",
+          "minimum_margin_time": 0.428,
+          "first_failure": null
+        }
+      },
+      "19": {
+        "n": {
+          "points": 1300,
+          "passed": 1300,
+          "failed": 0,
+          "minimum_margin": 0.09636634481927722,
+          "minimum_margin_index": 1081,
+          "got": 1.988533655180723,
+          "reference": 1.9849,
+          "got_bits": "3fffd108aa7ff1da",
+          "reference_bits": "3fffc226809d4952",
+          "minimum_margin_time": 2.162,
+          "first_failure": null
+        }
+      },
+      "20": {
+        "n": {
+          "points": 1300,
+          "passed": 1300,
+          "failed": 0,
+          "minimum_margin": 0.09635603762350456,
+          "minimum_margin_index": 64,
+          "got": 1.9782439623764954,
+          "reference": 1.9746,
+          "got_bits": "3fffa6e3241ea9fe",
+          "reference_bits": "3fff97f62b6ae7d5",
+          "minimum_margin_time": 0.128,
+          "first_failure": null
+        }
+      },
+      "21": {
+        "n": {
+          "points": 1300,
+          "passed": 1300,
+          "failed": 0,
+          "minimum_margin": 0.09642114976470886,
+          "minimum_margin_index": 60,
+          "got": 1.905478850235291,
+          "reference": 1.9019,
+          "got_bits": "3ffe7cd7640faf22",
+          "reference_bits": "3ffe6e2eb1c432ca",
+          "minimum_margin_time": 0.12,
+          "first_failure": null
+        }
+      },
+      "22": {
+        "n": {
+          "points": 925,
+          "passed": 925,
+          "failed": 0,
+          "minimum_margin": 0.09626062805824667,
+          "minimum_margin_index": 292,
+          "got": 1.9961393719417533,
+          "reference": 1.9924,
+          "got_bits": "3ffff02fd68bf708",
+          "reference_bits": "3fffe0ded288ce70",
+          "minimum_margin_time": 0.584,
+          "first_failure": null
+        }
+      },
+      "23": {
+        "n": {
+          "points": 1275,
+          "passed": 1275,
+          "failed": 0,
+          "minimum_margin": 0.09677631692318825,
+          "minimum_margin_index": 68,
+          "got": 1.6102236830768117,
+          "reference": 1.607,
+          "got_bits": "3ff9c379e8a0f405",
+          "reference_bits": "3ff9b645a1cac083",
+          "minimum_margin_time": 0.136,
+          "first_failure": null
+        }
+      },
+      "24": {
+        "n": {
+          "points": 1200,
+          "passed": 1200,
+          "failed": 0,
+          "minimum_margin": 0.0955783459087022,
+          "minimum_margin_index": 946,
+          "got": 2.001921654091298,
+          "reference": 1.9975,
+          "got_bits": "400003ef800bcf90",
+          "reference_bits": "3ffff5c28f5c28f6",
+          "minimum_margin_time": 1.892,
+          "first_failure": null
+        }
+      },
+      "25": {
+        "n": {
+          "points": 1275,
+          "passed": 1275,
+          "failed": 0,
+          "minimum_margin": 0.09583497166217395,
+          "minimum_margin_index": 353,
+          "got": 1.9810650283378262,
+          "reference": 1.9769,
+          "got_bits": "3fffb2713e3f5d4b",
+          "reference_bits": "3fffa161e4f765fe",
+          "minimum_margin_time": 0.706,
+          "first_failure": null
+        }
+      }
+    },
+    "baseline": {
+      "1": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 4.1604849999999995,
+          "minimum_margin_index": 0,
+          "got": 83.3,
+          "reference": 83.2957,
+          "got_bits": "4054d33333333333",
+          "reference_bits": "4054d2ecbfb15b57",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.09990032084038439,
+          "minimum_margin_index": 226,
+          "got": 0.9834003208403844,
+          "reference": 0.9835,
+          "got_bits": "3fef7803f31c54db",
+          "reference_bits": "3fef78d4fdf3b646",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "2": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.6772249999999997,
+          "minimum_margin_index": 0,
+          "got": 14.71,
+          "reference": 14.6545,
+          "got_bits": "402d6b851eb851ec",
+          "reference_bits": "402d4f1a9fbe76c9",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.059702781183555126,
+          "minimum_margin_index": 9,
+          "got": 0.3688972188164449,
+          "reference": 0.3286,
+          "got_bits": "3fd79c031499ba26",
+          "reference_bits": "3fd507c84b5dcc64",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "3": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.1611599999999995,
+          "minimum_margin_index": 0,
+          "got": 4.059,
+          "reference": 4.0192,
+          "got_bits": "40103c6a7ef9db23",
+          "reference_bits": "401013a92a305532",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.08457504412742708,
+          "minimum_margin_index": 66,
+          "got": 0.3571249558725729,
+          "reference": 0.3417,
+          "got_bits": "3fd6db22a183b8a1",
+          "reference_bits": "3fd5de69ad42c3ca",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "4": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.09140000000000006,
+          "minimum_margin_index": 0,
+          "got": 1.558,
+          "reference": 1.5494,
+          "got_bits": "3ff8ed916872b021",
+          "reference_bits": "3ff8ca57a786c227",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.09540525256655169,
+          "minimum_margin_index": 152,
+          "got": 0.10079474743344831,
+          "reference": 0.0962,
+          "got_bits": "3fb9cdaf3fd5d251",
+          "reference_bits": "3fb8a0902de00d1b",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "5": {
+        "n": {
+          "points": 1,
+          "passed": 1,
+          "failed": 0,
+          "minimum_margin": 0.46108999999999944,
+          "minimum_margin_index": 0,
+          "got": 10.434,
+          "reference": 10.4978,
+          "got_bits": "4024de353f7ced91",
+          "reference_bits": "4024fedfa43fe5c9",
+          "minimum_margin_time": null,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 240,
+          "passed": 240,
+          "failed": 0,
+          "minimum_margin": 0.09039399448005683,
+          "minimum_margin_index": 66,
+          "got": 0.40549399448005685,
+          "reference": 0.4151,
+          "got_bits": "3fd9f39d15410a38",
+          "reference_bits": "3fda90ff97247454",
+          "minimum_margin_time": null,
+          "first_failure": null
+        }
+      },
+      "6": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09677368414184975,
+          "minimum_margin_index": 2271,
+          "got": 1.8779263158581503,
+          "reference": 1.8747,
+          "got_bits": "3ffe0bfc76ee894e",
+          "reference_bits": "3ffdfec56d5cfaad",
+          "minimum_margin_time": 4.542,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09719099318143334,
+          "minimum_margin_index": 3674,
+          "got": 1.9978090068185668,
+          "reference": 1.995,
+          "got_bits": "3ffff70693bf0a2e",
+          "reference_bits": "3fffeb851eb851ec",
+          "minimum_margin_time": 7.348,
+          "first_failure": null
+        }
+      },
+      "7": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09674864515785778,
+          "minimum_margin_index": 5105,
+          "got": 1.9831513548421422,
+          "reference": 1.9799,
+          "got_bits": "3fffbafcea410a9e",
+          "reference_bits": "3fffadab9f559b3d",
+          "minimum_margin_time": 10.21,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09725818340508621,
+          "minimum_margin_index": 3858,
+          "got": 1.9986418165949138,
+          "reference": 1.9959,
+          "got_bits": "3ffffa6fd76b1749",
+          "reference_bits": "3fffef34d6a161e5",
+          "minimum_margin_time": 7.716,
+          "first_failure": null
+        }
+      },
+      "8": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09672524338736746,
+          "minimum_margin_index": 1435,
+          "got": 1.9884747566126326,
+          "reference": 1.9852,
+          "got_bits": "3fffd0cae8092a42",
+          "reference_bits": "3fffc36113404ea5",
+          "minimum_margin_time": 2.87,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.0972632321875885,
+          "minimum_margin_index": 3287,
+          "got": 1.9981367678124116,
+          "reference": 1.9954,
+          "got_bits": "3ffff85e426b0800",
+          "reference_bits": "3fffed288ce703b0",
+          "minimum_margin_time": 6.574,
+          "first_failure": null
+        }
+      },
+      "9": {
+        "n": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09518643438381749,
+          "minimum_margin_index": 1507,
+          "got": 1.9519135656161826,
+          "reference": 1.9471,
+          "got_bits": "3fff3b09b80f0b48",
+          "reference_bits": "3fff27525460aa65",
+          "minimum_margin_time": 3.014,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 5300,
+          "passed": 5300,
+          "failed": 0,
+          "minimum_margin": 0.09734431930704748,
+          "minimum_margin_index": 5034,
+          "got": 1.9294556806929526,
+          "reference": 1.9268,
+          "got_bits": "3ffedf0ceb7a85bc",
+          "reference_bits": "3ffed42c3c9eecc0",
+          "minimum_margin_time": 10.068,
+          "first_failure": null
+        }
+      },
+      "10": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.0970519322776339,
+          "minimum_margin_index": 20,
+          "got": 1.8756480677223661,
+          "reference": 1.8727,
+          "got_bits": "3ffe02a78c5ac53f",
+          "reference_bits": "3ffdf694467381d8",
+          "minimum_margin_time": 0.04,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09733815162116413,
+          "minimum_margin_index": 14,
+          "got": 1.999861848378836,
+          "reference": 1.9972,
+          "got_bits": "3fffff6f2334e225",
+          "reference_bits": "3ffff487fcb923a3",
+          "minimum_margin_time": 0.028,
+          "first_failure": null
+        }
+      },
+      "11": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09731738787565827,
+          "minimum_margin_index": 53,
+          "got": 1.9312826121243418,
+          "reference": 1.9286,
+          "got_bits": "3ffee68898a68520",
+          "reference_bits": "3ffedb8bac710cb3",
+          "minimum_margin_time": 0.106,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09790370900293686,
+          "minimum_margin_index": 34,
+          "got": 2.0154312909970633,
+          "reference": 2.0127,
+          "got_bits": "40001f9a70d156ee",
+          "reference_bits": "40001a027525460b",
+          "minimum_margin_time": 0.068,
+          "first_failure": null
+        }
+      },
+      "12": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.0970783490393862,
+          "minimum_margin_index": 294,
+          "got": 1.9904216509606139,
+          "reference": 1.9875,
+          "got_bits": "3fffd8c45f8204c4",
+          "reference_bits": "3fffcccccccccccd",
+          "minimum_margin_time": 0.588,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.0975564422366614,
+          "minimum_margin_index": 260,
+          "got": 1.7762435577633386,
+          "reference": 1.7738,
+          "got_bits": "3ffc6b7e5d653008",
+          "reference_bits": "3ffc617c1bda511a",
+          "minimum_margin_time": 0.52,
+          "first_failure": null
+        }
+      },
+      "13": {
+        "n": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09694361086200357,
+          "minimum_margin_index": 94,
+          "got": 1.9436563891379965,
+          "reference": 1.9406,
+          "got_bits": "3fff193771202575",
+          "reference_bits": "3fff0cb295e9e1b1",
+          "minimum_margin_time": 0.188,
+          "first_failure": null
+        },
+        "sp": {
+          "points": 500,
+          "passed": 500,
+          "failed": 0,
+          "minimum_margin": 0.09764859036802834,
+          "minimum_margin_index": 70,
+          "got": 1.7755514096319718,
+          "reference": 1.7732,
+          "got_bits": "3ffc68a8984bc6bb",
+          "reference_bits": "3ffc5f06f6944674",
+          "minimum_margin_time": 0.14,
+          "first_failure": null
+        }
+      },
+      "14": {
+        "n": {
+          "points": 6577,
+          "passed": 6577,
+          "failed": 0,
+          "minimum_margin": 0.09629753434162072,
+          "minimum_margin_index": 60,
+          "got": 1.9277024656583792,
+          "reference": 1.924,
+          "got_bits": "3ffed7de8a66bda7",
+          "reference_bits": "3ffec8b439581062",
+          "minimum_margin_time": 0.12,
+          "first_failure": null
+        }
+      },
+      "15": {
+        "n": {
+          "points": 5768,
+          "passed": 5768,
+          "failed": 0,
+          "minimum_margin": 0.09611307069993927,
+          "minimum_margin_index": 5590,
+          "got": 1.9832869293000608,
+          "reference": 1.9794,
+          "got_bits": "3fffbb8b133ed931",
+          "reference_bits": "3fffab9f559b3d08",
+          "minimum_margin_time": 11.18,
+          "first_failure": null
+        }
+      },
+      "16": {
+        "n": {
+          "points": 2054,
+          "passed": 2054,
+          "failed": 0,
+          "minimum_margin": 0.09698045957289883,
+          "minimum_margin_index": 1891,
+          "got": 1.971419540427101,
+          "reference": 1.9684,
+          "got_bits": "3fff8aef374d46a7",
+          "reference_bits": "3fff7e90ff972474",
+          "minimum_margin_time": 3.782,
+          "first_failure": null
+        }
+      },
+      "17": {
+        "n": {
+          "points": 1454,
+          "passed": 1454,
+          "failed": 0,
+          "minimum_margin": 0.0954031619174133,
+          "minimum_margin_index": 443,
+          "got": 1.9600968380825867,
+          "reference": 1.9555,
+          "got_bits": "3fff5c8e8088ec69",
+          "reference_bits": "3fff49ba5e353f7d",
+          "minimum_margin_time": 0.886,
+          "first_failure": null
+        }
+      },
+      "18": {
+        "n": {
+          "points": 1083,
+          "passed": 1083,
+          "failed": 0,
+          "minimum_margin": 0.09552756903834339,
+          "minimum_margin_index": 214,
+          "got": 1.9915724309616567,
+          "reference": 1.9871,
+          "got_bits": "3fffdd7b0da9874e",
+          "reference_bits": "3fffcb295e9e1b09",
+          "minimum_margin_time": 0.428,
+          "first_failure": null
+        }
+      },
+      "19": {
+        "n": {
+          "points": 1300,
+          "passed": 1300,
+          "failed": 0,
+          "minimum_margin": 0.09642540092300914,
+          "minimum_margin_index": 1081,
+          "got": 1.988474599076991,
+          "reference": 1.9849,
+          "got_bits": "3fffd0cabdbf65f1",
+          "reference_bits": "3fffc226809d4952",
+          "minimum_margin_time": 2.162,
+          "first_failure": null
+        }
+      },
+      "20": {
+        "n": {
+          "points": 1300,
+          "passed": 1300,
+          "failed": 0,
+          "minimum_margin": 0.09646609164322775,
+          "minimum_margin_index": 64,
+          "got": 1.9781339083567722,
+          "reference": 1.9746,
+          "got_bits": "3fffa66fbdb80416",
+          "reference_bits": "3fff97f62b6ae7d5",
+          "minimum_margin_time": 0.128,
+          "first_failure": null
+        }
+      },
+      "21": {
+        "n": {
+          "points": 1300,
+          "passed": 1300,
+          "failed": 0,
+          "minimum_margin": 0.09641714118982928,
+          "minimum_margin_index": 60,
+          "got": 1.9054828588101707,
+          "reference": 1.9019,
+          "got_bits": "3ffe7cdb981ada30",
+          "reference_bits": "3ffe6e2eb1c432ca",
+          "minimum_margin_time": 0.12,
+          "first_failure": null
+        }
+      },
+      "22": {
+        "n": {
+          "points": 925,
+          "passed": 925,
+          "failed": 0,
+          "minimum_margin": 0.09624872291058142,
+          "minimum_margin_index": 292,
+          "got": 1.9961512770894185,
+          "reference": 1.9924,
+          "got_bits": "3ffff03c524f7ba5",
+          "reference_bits": "3fffe0ded288ce70",
+          "minimum_margin_time": 0.584,
+          "first_failure": null
+        }
+      },
+      "23": {
+        "n": {
+          "points": 1275,
+          "passed": 1275,
+          "failed": 0,
+          "minimum_margin": 0.09674341742748407,
+          "minimum_margin_index": 68,
+          "got": 1.610256582572516,
+          "reference": 1.607,
+          "got_bits": "3ff9c39c68051537",
+          "reference_bits": "3ff9b645a1cac083",
+          "minimum_margin_time": 0.136,
+          "first_failure": null
+        }
+      },
+      "24": {
+        "n": {
+          "points": 1200,
+          "passed": 1200,
+          "failed": 0,
+          "minimum_margin": 0.09555991579929737,
+          "minimum_margin_index": 946,
+          "got": 2.0019400842007027,
+          "reference": 1.9975,
+          "got_bits": "400003f929b18c4c",
+          "reference_bits": "3ffff5c28f5c28f6",
+          "minimum_margin_time": 1.892,
+          "first_failure": null
+        }
+      },
+      "25": {
+        "n": {
+          "points": 1275,
+          "passed": 1275,
+          "failed": 0,
+          "minimum_margin": 0.09579824192855094,
+          "minimum_margin_index": 353,
+          "got": 1.9811017580714492,
+          "reference": 1.9769,
+          "got_bits": "3fffb297c1cf708d",
+          "reference_bits": "3fffa161e4f765fe",
+          "minimum_margin_time": 0.706,
+          "first_failure": null
+        }
+      }
+    }
+  },
+  "stream": {
+    "candidate-10": {
+      "n": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "candidate-18": {
+      "n": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "candidate-23": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "candidate-25": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-10": {
+      "n": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-18": {
+      "n": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-23": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-25": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    }
+  },
+  "grid": {
+    "candidate": [
+      {
+        "samples": 4800,
+        "frames": 50,
+        "expected": 50
+      },
+      {
+        "samples": 4801,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 4823,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 4824,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 4825,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 47999,
+        "frames": 500,
+        "expected": 500
+      },
+      {
+        "samples": 48000,
+        "frames": 500,
+        "expected": 500
+      }
+    ],
+    "baseline": [
+      {
+        "samples": 4800,
+        "frames": 50,
+        "expected": 50
+      },
+      {
+        "samples": 4801,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 4823,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 4824,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 4825,
+        "frames": 51,
+        "expected": 51
+      },
+      {
+        "samples": 47999,
+        "frames": 500,
+        "expected": 500
+      },
+      {
+        "samples": 48000,
+        "frames": 500,
+        "expected": 500
+      }
+    ]
+  },
+  "abi": {
+    "candidate": {
+      "header_sha256": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+      "dll_sha256": "5982d00f139cb9e9351cf102ae18a83f28bdb24e27c8860e17bb8f99aad43dca",
+      "exports": [
+        "iso532_loudness_zwst",
+        "iso532_loudness_zwtv",
+        "iso532_stream_flush",
+        "iso532_stream_free",
+        "iso532_stream_max_frames",
+        "iso532_stream_new",
+        "iso532_stream_push",
+        "iso532_stream_residual_flags",
+        "iso532_zwtv_out_frames"
+      ]
+    },
+    "baseline": {
+      "header_sha256": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+      "dll_sha256": "4d309eb4cc67746afa4cf7d142d86c69ff7850fd3c8455ed64e5149c1fa482d8",
+      "exports": [
+        "iso532_loudness_zwst",
+        "iso532_loudness_zwtv",
+        "iso532_stream_flush",
+        "iso532_stream_free",
+        "iso532_stream_max_frames",
+        "iso532_stream_new",
+        "iso532_stream_push",
+        "iso532_stream_residual_flags",
+        "iso532_zwtv_out_frames"
+      ]
+    }
+  },
+  "static": {
+    "lock_versions": {
+      "iso532": "0.4.0",
+      "iso532-ffi": "0.4.0",
+      "iso532-py": "0.4.0"
+    },
+    "citation_version": "0.3.1",
+    "changelog_markers": {
+      "F-04": true,
+      "F-05": true,
+      "F-06": true,
+      "F-07": true,
+      "Annex A": true
+    },
+    "ci_py_dump_only": true,
+    "commit_table": [
+      {
+        "commit": "fca4ccd",
+        "present": true
+      },
+      {
+        "commit": "0bb2272",
+        "present": true
+      },
+      {
+        "commit": "a1a261d",
+        "present": true
+      },
+      {
+        "commit": "9301c0d",
+        "present": true
+      },
+      {
+        "commit": "fe3d0b2",
+        "present": true
+      },
+      {
+        "commit": "5bbbb93",
+        "present": false
+      },
+      {
+        "commit": "2fc1708",
+        "present": true
+      },
+      {
+        "commit": "8beeb90",
+        "present": true
+      },
+      {
+        "commit": "777d8e8",
+        "present": true
+      },
+      {
+        "commit": "9d8ae5a",
+        "present": true
+      },
+      {
+        "commit": "d011921",
+        "present": true
+      },
+      {
+        "commit": "93ba5e4",
+        "present": true
+      }
+    ]
+  },
+  "stream_specific": {
+    "status": "partial",
+    "release_blocker": false,
+    "reason": "Both candidate and v0.3.1 Public StreamFrame have no n_specific output and use calc_slopes_n_only. This is a pre-existing API limitation, not a regression. No source instrumentation or product modification performed."
+  },
+  "stream_frame_source": {
+    "candidate": "pub struct StreamFrame {\n    pub t_frame_index: u64,\n    pub n: f64,\n    pub n_phon: f64,\n    pub flags: FrameFlags,\n    pub _reserved: u32,\n}",
+    "baseline": "pub struct StreamFrame {\n    pub t_frame_index: u64,\n    pub n: f64,\n    pub n_phon: f64,\n    pub flags: FrameFlags,\n    pub _reserved: u32,\n}"
+  },
+  "raw_output_sha256": {
+    "candidate": {
+      "sig1-n.bin": "c077cadf0bf85c8f42bf8e1fa6fe3ff8b8ebd2e56c30e329c4f25c1ba64fe526",
+      "sig1-sp.bin": "d16d90c0cb2329a988fff14143b14aad7ed7061790410f39f2c8afae83631355",
+      "sig1-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig10-n.bin": "4470e05f06ddf321813167389448bc0db992cc8e61518df34038466678747a3d",
+      "sig10-sp.bin": "5f7a0dccf34dcfee7056eba906070a5988d74572982cea183e1e841a3c4b6810",
+      "sig10-stream-n.bin": "4470e05f06ddf321813167389448bc0db992cc8e61518df34038466678747a3d",
+      "sig10-stream-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig10-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig11-n.bin": "a279c6c73f99a8f05fc74bc562c6a266de8d60b70633b90aaf7b0184fa91f297",
+      "sig11-sp.bin": "33573c30671a237c3b3218e3da92548f603e2c693afd6b5e237296a8966885d7",
+      "sig11-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig12-n.bin": "0a1e1e445a49d422a6d2c44732731900752f883df80281db2d21f72aa3133e53",
+      "sig12-sp.bin": "1c33c8b2f7b1517a2a639a62213e6dfd8a0759e91862e9520c95c22df7926c51",
+      "sig12-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig13-n.bin": "16b0c22e30b255bc91224f3ccd84d795a63791fe50c20b9563c246f391855628",
+      "sig13-sp.bin": "fa059ada2c7404c316b6c5b6779b61776f53ef5f988eef5a4fa039c194599095",
+      "sig13-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig14-n.bin": "9ecb0b27e60c6509e86c022d7f8613aae550fc7a3f4a66b6d3b253360f9bb760",
+      "sig14-sp.bin": "02b86ac73ac5e7b0d5000609a3021e019dbcd414d4795db9656fd53d0e8610f4",
+      "sig14-time.bin": "52bdeb6ac2e598ac8be206d91c3d6acb592c102f085bdefe1904eb8ebce17793",
+      "sig15-n.bin": "89f96866669bfd7fb76d666e1b822e906c3ba8257cdf77e9b61e113ab702ad2a",
+      "sig15-sp.bin": "d315d8a78b238ff5b33d6e182664acaed57b258115c44b29ab7bd50eeaa571e8",
+      "sig15-time.bin": "6868d94e05e487e17e367dd79ba67a59815d05c9c3d6442e1ef06807d5bf8825",
+      "sig16-n.bin": "77e688933c9e287f79a62cff1f60dae7c537f493cbaae4fd76c79dada2f1c26c",
+      "sig16-sp.bin": "33a9181d9f1129a814bb7676f15d16319be6616994a61697c44c9424727036fa",
+      "sig16-time.bin": "37ca41a3fd2f1fc420f185ccd89aabce43bec9cf416399875bae7de8483e4916",
+      "sig17-n.bin": "f7bcff1f3d3f59cb8af32bf013df5edea1d7bc3f9f9dd7e2bc6dd46a72868322",
+      "sig17-sp.bin": "2c9397aa1e808f6b427c756614e6ac4990a8bc51f835c93291c3fbe5f5145a7a",
+      "sig17-time.bin": "76546c33f1b6894609258379e92f6b9bec0a09dfe3bc0850ac4207236de8afc0",
+      "sig18-n.bin": "53660030693d41175207adc301be6460b5907856eeb343362ce9fea1dfcdd59b",
+      "sig18-sp.bin": "05c78064f4b13bd60d0ca4db626ee50bed7624e7a1135e5d7ee5f11e6845169d",
+      "sig18-stream-n.bin": "53660030693d41175207adc301be6460b5907856eeb343362ce9fea1dfcdd59b",
+      "sig18-stream-time.bin": "1adab14a62cf20f002945ce1b850aede5fca439c71184ee098145286cdcb52de",
+      "sig18-time.bin": "1adab14a62cf20f002945ce1b850aede5fca439c71184ee098145286cdcb52de",
+      "sig19-n.bin": "211ed26b397661cf72dd11dd5fe7d2d3f7a963464fa3e40eda96a5096d99d78d",
+      "sig19-sp.bin": "6c58089ec34616ed878a77d17130aa65dd810514b5e539f1b34ab87710f64ba7",
+      "sig19-time.bin": "4defb96a628fa3e85178a4b170821bab5200ddfa2536c790b90e6c4ad5e39ee0",
+      "sig2-n.bin": "467f7a9a38d80bb1aeee76620524fce5fc7a9874aa40ab45e62434b03afdf220",
+      "sig2-sp.bin": "a73cbfd06910471628381c615305de4ce8d73dc36c11d499c56a4715c2cf0301",
+      "sig2-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig20-n.bin": "eeae8742af4a6737518383d17706f22a8468cbf3bc5fe4bb468b8ac0781d3c5d",
+      "sig20-sp.bin": "504459db681820e223f784e7c3e9aa56d0367a9c5c74031687128da9b014061e",
+      "sig20-time.bin": "4defb96a628fa3e85178a4b170821bab5200ddfa2536c790b90e6c4ad5e39ee0",
+      "sig21-n.bin": "25fd9fced9d602a9cdfbe1f7f0d28e04b5f38a425b8ca767c1c484fce25e1261",
+      "sig21-sp.bin": "6daddcc47bdde1238bfcd8ec5ce2be40e1fe531a5eb8ea23465e9063d7554982",
+      "sig21-time.bin": "4defb96a628fa3e85178a4b170821bab5200ddfa2536c790b90e6c4ad5e39ee0",
+      "sig22-n.bin": "09c17111bee4e78052d49e6e8428fdef6ccecbecfb3fedd8e020caa9f456a91d",
+      "sig22-sp.bin": "225547d74961b7158351a5fe978bb56482cb212b3fb35c5bca31f98721834800",
+      "sig22-time.bin": "a6822a871a7f9b1e85b3cdec042147acebef424d1ec26bec4e309cdec79db7cc",
+      "sig23-n.bin": "0799905d79491dcd2debb162f23a083a961da9a3924215a4d992b9f9a7636ff9",
+      "sig23-sp.bin": "aa6de7d9ec5432fb3a4eb706fdc50cb353e1f1a1a5bc6af9fcf11cf1edadcec2",
+      "sig23-stream-n.bin": "0799905d79491dcd2debb162f23a083a961da9a3924215a4d992b9f9a7636ff9",
+      "sig23-stream-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig23-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig24-n.bin": "9e6dc6ac193fbe1a66b79a5810705a6cd655117f7f59d7254974fd8a2e7269a4",
+      "sig24-sp.bin": "dd735fcffad242ea293274d7ffd558258323622a100b687dbc8d7fa3075e661a",
+      "sig24-time.bin": "e02214a308b5047b68ef555c698aca0da42dbc613db86a58c0c3478422558ca0",
+      "sig25-n.bin": "b0677ed32e1ef30ded53a12ebe0692081338750ed6ef11c7989d231c1e5f78be",
+      "sig25-sp.bin": "fed24e04f8d2ffa04b2f705d5387bfad569542a2d30fdde14a62810e9b408b92",
+      "sig25-stream-n.bin": "b0677ed32e1ef30ded53a12ebe0692081338750ed6ef11c7989d231c1e5f78be",
+      "sig25-stream-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig25-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig3-n.bin": "13b279cfc5a3178bbf23202c7ebb16ce7d6424c689b25d14fb42a7e5209d5b25",
+      "sig3-sp.bin": "4b74a544b700ec1e0548b5f0cd798a596d2e46008c224e829a9bc27310509677",
+      "sig3-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig4-n.bin": "f170e6323720e45f18165b8d07b11628fa0fbc56f2d3bd663ee6e4be6bb59d23",
+      "sig4-sp.bin": "f3ab3c9704b34a3fa5be7c4fed3b62e39a350e0ed766eee8c37358b172373e85",
+      "sig4-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig5-n.bin": "4f2cefb5868ebf82a0632c07129cc049ed59dcc14592c09b57dfb281f9d9a4e9",
+      "sig5-sp.bin": "3fd49f441cc41da3d1904a9dab7f9878eefec868d8296f16063261b4a3cc4d27",
+      "sig5-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig6-n.bin": "c4762c7a2da9a86ca0d1ea9bbc0d8ff126d040f029ad5a5e664757bd581fdd7e",
+      "sig6-sp.bin": "5c15abd6236ac4e21caefcfc4c9945bf32a4d37a6b4bdfd671ec024fd8256e30",
+      "sig6-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3",
+      "sig7-n.bin": "0a932c1810101ef4d8eb069a0bb74e5304b070e870825d7abcc6c37d52f960b2",
+      "sig7-sp.bin": "3a7916a07d411039c95986cbc56118a20275b81b109099ce9bcef369a9071a2c",
+      "sig7-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3",
+      "sig8-n.bin": "aaa3d7f078f1f7806897e330c57d884f1228efe5a3f84ebfdba126b6958c7b65",
+      "sig8-sp.bin": "37195eb7c2ebd0896d2c6ad1dafe5994010cfd75130fbe113a07406040f01c5f",
+      "sig8-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3",
+      "sig9-n.bin": "c820d2fa3955e8e2d678fb0339531263d29f064a4a5eb766917938d5c2879d90",
+      "sig9-sp.bin": "3456adb0d742a7956b736624312d39aa4d32b584de06cfc309bdac25932c03c3",
+      "sig9-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3"
+    },
+    "baseline": {
+      "sig1-n.bin": "dd8f08dc0e17311d6769ade8dae3873c70249f8e8f422828a80d19084cabbf06",
+      "sig1-sp.bin": "d16d90c0cb2329a988fff14143b14aad7ed7061790410f39f2c8afae83631355",
+      "sig1-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig10-n.bin": "80a41dc48919befb34b9969256e99f30e0283120b199bc92fa65e3e3fc0adace",
+      "sig10-sp.bin": "4a4d82151f0fe9da695bfcdd4886d742f73df0c76149eaf890153536c045becc",
+      "sig10-stream-n.bin": "80a41dc48919befb34b9969256e99f30e0283120b199bc92fa65e3e3fc0adace",
+      "sig10-stream-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig10-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig11-n.bin": "3a512e38b289903508ecd5e5d6a6f4825544fc9a500ac97c62c5240197c710b4",
+      "sig11-sp.bin": "8b5d18c40d4e1928553e51fc64e498a9db7c6ee6e2557b0b91afcb3955148e30",
+      "sig11-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig12-n.bin": "494d0e948e692cb6abc873d1274fe641bffd3e8240942597ac90971fad503217",
+      "sig12-sp.bin": "df173239a4ff00b6d41cf30225cc83a42e5a494b30d08d13f0dbf429e699ff43",
+      "sig12-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig13-n.bin": "f7f17c1fc1264dd937fbb6415adbb014150c6b5ce1ba3ec7888334b7a8163ee8",
+      "sig13-sp.bin": "71efb0b458b37525825444b60e7202235daea2272547e485206fdc23fb8a0fc5",
+      "sig13-time.bin": "b0367456f6aa4ad700182ba043eba9a4820dde4e136b98d12e7dc27bf2f44481",
+      "sig14-n.bin": "0b7e7c97913f47a57c5ceedd16498a8bd654545f023b5cad831098e2f054b86b",
+      "sig14-sp.bin": "d12c624daf28329088139b7bed7240286bb25d4e17073dcdb74f4b0b5b7f68b5",
+      "sig14-time.bin": "52bdeb6ac2e598ac8be206d91c3d6acb592c102f085bdefe1904eb8ebce17793",
+      "sig15-n.bin": "84078c7daeeba5724f8faa04ab43fa491e8f5c73f3edba2d17e8e8d9ce5c717c",
+      "sig15-sp.bin": "207e332bac602e3a69635393d85ba9cff617e45bfac793936c8be68d8b842ee7",
+      "sig15-time.bin": "6868d94e05e487e17e367dd79ba67a59815d05c9c3d6442e1ef06807d5bf8825",
+      "sig16-n.bin": "dbfa201e8f15cdeaadb88f3ab28ea99231c78c01ce0a74267919efeae4357129",
+      "sig16-sp.bin": "46d43af5f5cd089e77d61fd624c70fbe3112700a19ba018b274c3926a9c39e25",
+      "sig16-time.bin": "37ca41a3fd2f1fc420f185ccd89aabce43bec9cf416399875bae7de8483e4916",
+      "sig17-n.bin": "2bb40acb383ee6f5245f41f28a040fbcf0fb23512d8bc218f18e7faa88bfa8cc",
+      "sig17-sp.bin": "20b8c168e3313193dff1b6de1795fda1563bdf505b9da37b181e1fc6236b0f9c",
+      "sig17-time.bin": "76546c33f1b6894609258379e92f6b9bec0a09dfe3bc0850ac4207236de8afc0",
+      "sig18-n.bin": "2f7f91755c47954cad05d5fddcb86a61772aca5a17766c667fb631ef99c22567",
+      "sig18-sp.bin": "8e770195b58b17918a9f0cc132c7d234deb6027fcc41a9d7654546867d4f3978",
+      "sig18-stream-n.bin": "2f7f91755c47954cad05d5fddcb86a61772aca5a17766c667fb631ef99c22567",
+      "sig18-stream-time.bin": "1adab14a62cf20f002945ce1b850aede5fca439c71184ee098145286cdcb52de",
+      "sig18-time.bin": "1adab14a62cf20f002945ce1b850aede5fca439c71184ee098145286cdcb52de",
+      "sig19-n.bin": "c3a2ec9364530801233ada6da14c45640e1a3b25b19ed6552eb3a1fcde461fa4",
+      "sig19-sp.bin": "680a6d8ee7db2f4f4d2c775b8537aaf7e89164e083b7f82763fda51133ded311",
+      "sig19-time.bin": "4defb96a628fa3e85178a4b170821bab5200ddfa2536c790b90e6c4ad5e39ee0",
+      "sig2-n.bin": "6ef6c2467fc77dbeddb3714be221eed80a96563c1c4d4e8c40d7ad8ee9ad1cb7",
+      "sig2-sp.bin": "a73cbfd06910471628381c615305de4ce8d73dc36c11d499c56a4715c2cf0301",
+      "sig2-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig20-n.bin": "d758b118d399be714d58308c281e94227839145330b6da23e667d36e491eac1c",
+      "sig20-sp.bin": "63c44695a5ca6551479163338aa07b0c1d2d8b3807c97efd8ae9d6ec186f752c",
+      "sig20-time.bin": "4defb96a628fa3e85178a4b170821bab5200ddfa2536c790b90e6c4ad5e39ee0",
+      "sig21-n.bin": "7f8463cc86e34eb76ac764d79d301160f9805397686bd06bedaf102c3d8a97b5",
+      "sig21-sp.bin": "060addd54fe0f0a7bb4943226d4e103d194148bed2b7e920d0d5342b465c2f05",
+      "sig21-time.bin": "4defb96a628fa3e85178a4b170821bab5200ddfa2536c790b90e6c4ad5e39ee0",
+      "sig22-n.bin": "94914d99d2ce1eaee6dd8cf65e2cdc4e2f5a4067a06d3e8ed7d4eba870e738f7",
+      "sig22-sp.bin": "00e131be9965406eb8abf6b543cb9305bd548e74334c5ec2ee0886124f066b8b",
+      "sig22-time.bin": "a6822a871a7f9b1e85b3cdec042147acebef424d1ec26bec4e309cdec79db7cc",
+      "sig23-n.bin": "7eda4686fd90d0795b9f9512a3f5316380c96b8eabb15fc759eba0b0cc5a177d",
+      "sig23-sp.bin": "a0f39fc712774e27130dbd1d0b96ae08bc751de7201ecf36f064fcd2f98d7993",
+      "sig23-stream-n.bin": "7eda4686fd90d0795b9f9512a3f5316380c96b8eabb15fc759eba0b0cc5a177d",
+      "sig23-stream-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig23-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig24-n.bin": "ef5a2fde2b143d050a123c99ed8d5286e47e49e59d7dc4a7335c772a3c320fa9",
+      "sig24-sp.bin": "24bd6efed61aac88f9f6048cf2af460302388baed0b10ead41b82f746dea5176",
+      "sig24-time.bin": "e02214a308b5047b68ef555c698aca0da42dbc613db86a58c0c3478422558ca0",
+      "sig25-n.bin": "6ba1ad9fdeb0645b004422a1598e7aa58b8bd7b495a2fab2e024f1d5a93b8fe9",
+      "sig25-sp.bin": "35c95ae1fa418d0febb56267885ab0bf49a89948d63ecca997957dadc4026b2a",
+      "sig25-stream-n.bin": "6ba1ad9fdeb0645b004422a1598e7aa58b8bd7b495a2fab2e024f1d5a93b8fe9",
+      "sig25-stream-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig25-time.bin": "62ff94d0268b8009e5c29f2c45d38e889ae0506f332f3ce5bf10aba9e9501b99",
+      "sig3-n.bin": "c35874d4d2bddddeaa04eaaea715238b40b945a7895bf1fc91464ceec93617bd",
+      "sig3-sp.bin": "4b74a544b700ec1e0548b5f0cd798a596d2e46008c224e829a9bc27310509677",
+      "sig3-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig4-n.bin": "532b19ff41ad56867fc99b210a249196671ab736051360866db8d3fdc9baaa25",
+      "sig4-sp.bin": "f3ab3c9704b34a3fa5be7c4fed3b62e39a350e0ed766eee8c37358b172373e85",
+      "sig4-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig5-n.bin": "a166b08b05c238a4f6e5d9aaef5eb159f51b23f1e725e24885af4acb62f21983",
+      "sig5-sp.bin": "6a47e5a929bc919ebc1a16891fdcb9958424ee4f301690315d757bb8a49eeea6",
+      "sig5-time.bin": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "sig6-n.bin": "6049ddc4cf790438a410d98f6808e67da4b2146e086a5d93dae49c2bd343e5f6",
+      "sig6-sp.bin": "5c15abd6236ac4e21caefcfc4c9945bf32a4d37a6b4bdfd671ec024fd8256e30",
+      "sig6-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3",
+      "sig7-n.bin": "6f5c53e39027182b6b1ca84a72fbf21e7d583d1ab7047e49e9b100576659031a",
+      "sig7-sp.bin": "3a7916a07d411039c95986cbc56118a20275b81b109099ce9bcef369a9071a2c",
+      "sig7-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3",
+      "sig8-n.bin": "b385a414f53364a60aed0e8006cd31020b815968249af6b204aee51d1060ceb9",
+      "sig8-sp.bin": "37195eb7c2ebd0896d2c6ad1dafe5994010cfd75130fbe113a07406040f01c5f",
+      "sig8-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3",
+      "sig9-n.bin": "7c1e9b6573c7c7eb2773f45021ff501276d45c84bd0cd350d277e773fef7c7c9",
+      "sig9-sp.bin": "5390e15f9e6d5b0f556ff514ba3045fe88d779fe9408f2007772ac508eaa4bd9",
+      "sig9-time.bin": "05536aac675ae1f9c3ad83ec801f755726d42ad85436f43c573e32f29b7fabe3"
+    }
+  },
+  "annexb_reference_metadata": {
+    "1": {
+      "workbook_sha256": "cc4d303534882e2821f0e4b2d56bb48bfeb852b5050b66570436df0821b86174",
+      "field": "free",
+      "worksheet": "Test signal 1.txt",
+      "reference_cells": "B8;G8:G247"
+    },
+    "2": {
+      "workbook_sha256": "6b7326c410cec05bbcff84dd5cc90a028566a4be747f95e5c617e1c1dd678804",
+      "field": "free",
+      "worksheet": "Test signal 2",
+      "reference_cells": "B8;G8:G247"
+    },
+    "3": {
+      "workbook_sha256": "6b7326c410cec05bbcff84dd5cc90a028566a4be747f95e5c617e1c1dd678804",
+      "field": "free",
+      "worksheet": "Test signal 3",
+      "reference_cells": "B8;G8:G247"
+    },
+    "4": {
+      "workbook_sha256": "6b7326c410cec05bbcff84dd5cc90a028566a4be747f95e5c617e1c1dd678804",
+      "field": "free",
+      "worksheet": "Test signal 4",
+      "reference_cells": "B8;G8:G247"
+    },
+    "5": {
+      "workbook_sha256": "6b7326c410cec05bbcff84dd5cc90a028566a4be747f95e5c617e1c1dd678804",
+      "field": "free",
+      "worksheet": "Test signal 5",
+      "reference_cells": "B8;G8:G247"
+    },
+    "6": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 2,5 Bark",
+      "bark_index": 24,
+      "field": "free",
+      "worksheet": "Test signal 6",
+      "reference_cells": "A11:B5310"
+    },
+    "7": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 8,5 Bark",
+      "bark_index": 84,
+      "field": "free",
+      "worksheet": "Test signal 7",
+      "reference_cells": "A11:B5310"
+    },
+    "8": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 17,5 Bark",
+      "bark_index": 174,
+      "field": "free",
+      "worksheet": "Test signal 8",
+      "reference_cells": "A11:B5310"
+    },
+    "9": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 17,5 Bark",
+      "bark_index": 174,
+      "field": "free",
+      "worksheet": "Test signal 9",
+      "reference_cells": "A11:B5310"
+    },
+    "10": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 8,5 Bark",
+      "bark_index": 84,
+      "field": "free",
+      "worksheet": "Test signal 10",
+      "reference_cells": "A11:B510"
+    },
+    "11": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 8,5 Bark",
+      "bark_index": 84,
+      "field": "free",
+      "worksheet": "Test signal 11",
+      "reference_cells": "A11:B510"
+    },
+    "12": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 8,5 Bark",
+      "bark_index": 84,
+      "field": "free",
+      "worksheet": "Test signal 12",
+      "reference_cells": "A11:B510"
+    },
+    "13": {
+      "workbook_sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+      "bark_label": "at 8,5 Bark",
+      "bark_index": 84,
+      "field": "free",
+      "worksheet": "Test signal 13",
+      "reference_cells": "A11:B510"
+    },
+    "14": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 14",
+      "reference_cells": "A11:B6587"
+    },
+    "15": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "diffuse",
+      "worksheet": "Test signal 15",
+      "reference_cells": "A11:B5778"
+    },
+    "16": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 16",
+      "reference_cells": "A11:B2064"
+    },
+    "17": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 17",
+      "reference_cells": "A11:B1464"
+    },
+    "18": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 18",
+      "reference_cells": "A11:B1093"
+    },
+    "19": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 19",
+      "reference_cells": "A11:B1310"
+    },
+    "20": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 20",
+      "reference_cells": "A11:B1310"
+    },
+    "21": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 21",
+      "reference_cells": "A11:B1310"
+    },
+    "22": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 22",
+      "reference_cells": "A11:B935"
+    },
+    "23": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 23",
+      "reference_cells": "A11:B1285"
+    },
+    "24": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 24",
+      "reference_cells": "A11:B1210"
+    },
+    "25": {
+      "workbook_sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6",
+      "field": "free",
+      "worksheet": "Test signal 25",
+      "reference_cells": "A11:B1285"
+    }
+  },
+  "annexb_summary": {
+    "candidate": {
+      "points": 73116,
+      "passed": 73116,
+      "failed": 0,
+      "minimum_margin": 0.059702781183555126
+    },
+    "baseline": {
+      "points": 73116,
+      "passed": 73116,
+      "failed": 0,
+      "minimum_margin": 0.059702781183555126
+    }
+  },
+  "comparator_negative_controls": {
+    "bitwise_one_bit_mutation_detected": true,
+    "max_tolerance_rejects_10p55_vs_10": true
+  }
+}

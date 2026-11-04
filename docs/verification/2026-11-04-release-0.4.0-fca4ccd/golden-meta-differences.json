@@ -1,0 +1,26 @@
+{
+  "old_meta_sha256": "2bbe3395e5140c9c1e82f61e675b8314525d53a95c670f48d765863240886c3e",
+  "new_meta_sha256": "b1e394192fe6efc790dbfda1b1c8b0016091a86f6eed338bdc5234c370c83e05",
+  "differences": [
+    {
+      "field": "/dll_sha256/official",
+      "old": "146d4c84bcec3ef7d467f1005dd0ffa0a11a5bb7a415d5c8285d68c9c98c0351",
+      "new": "2f9cebc1fd875e42dfb113f216f125aeb7b11dfad39bc75d9efe6dabd1c76721"
+    },
+    {
+      "field": "/dll_sha256/usl12-4-024",
+      "old": "fe69a1af910b864cd25d3498897008c61bcf6bcfd0aa82ce26ecc21bc36be102",
+      "new": "bdc287683035cf03fcb0ec9a5b2349c72ad784accc1c725a9a9759e1150d5d68"
+    },
+    {
+      "field": "/generated",
+      "old": "2026-11-04T07:04:31+08:00",
+      "new": "2026-11-04T08:25:24+08:00"
+    },
+    {
+      "field": "/substitution_diff_sha256",
+      "old": "2370552dc9e5b6f91a3ab27ef14fe859b70062ac233ab2153da523d0dbff3d6d",
+      "new": "042f0be66d8be0de71e43e6ba376a62203bb71163a533ee385164e2aad87c5f1"
+    }
+  ]
+}

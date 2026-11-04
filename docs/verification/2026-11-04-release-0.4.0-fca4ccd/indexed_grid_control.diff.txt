@@ -1,0 +1,29 @@
+--- diagnostic.c
++++ indexed_grid_control.c
+@@ -847,7 +847,7 @@
+     double  NS[N_BARK_BANDS];
+ 
+     N1          = 0.;
+-    Z           = 0.1f;
++    Z           = 0.1;
+     Z1          = 0.;
+     IdxRNS      = 0;
+     IdxNS       = 0;
+@@ -887,7 +887,7 @@
+                     associated interpolated values NS(IdxNS) in the 
+                     interval Z=IdxNS*O.1 BARK                           */
+                 *pLoudness += DZ * (N1 + N2) / 2.;
+-                for (ZK = Z; ZK <= Z2; ZK = ZK + 0.1f)
++                for (ZK = Z; ZK <= Z2; ZK = ((double)IdxNS+1.)/10.)
+                 {
+                     NS[IdxNS] = N1 - (ZK - Z1) * _USL;
+                     SpecLoudness[IdxNS][IdxTime] = NS[IdxNS];
+@@ -918,7 +918,7 @@
+                     NS[IdxNS] = N2;
+                     SpecLoudness[IdxNS][IdxTime] = NS[IdxNS];
+                     IdxNS++;
+-                    ZK  = ZK + 0.1f;
++                    ZK  = ((double)IdxNS+1.)/10.;
+                 }
+                 Z   = ZK;
+             }

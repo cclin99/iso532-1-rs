@@ -1,0 +1,12 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "annexb", "--", "--nocapture"]
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.53s
+     Running tests\annexb.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\annexb-d37c0e94e22e2545.exe)
+
+running 3 tests
+test annexb_timevarying_signal10 ... ok
+test annexb_stationary_signal5_pinknoise_60db ... ok
+test annexb_stationary_signal3_1khz_60db ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.72s
+

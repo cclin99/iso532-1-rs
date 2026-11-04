@@ -1,0 +1,15 @@
+use iso532::{FieldType,ZwtvStream,StreamFrame};
+use std::{fs,path::Path};
+fn read(p:&Path)->Vec<f64>{fs::read(p).unwrap().chunks_exact(8).map(|v|f64::from_le_bytes(v.try_into().unwrap())).collect()}
+fn write(p:&Path,a:&[f64]){fs::write(p,a.iter().flat_map(|v|v.to_le_bytes()).collect::<Vec<_>>()).unwrap()}
+fn main(){
+ let args:Vec<String>=std::env::args().collect();let inp=Path::new(&args[1]);let out=Path::new(&args[2]);fs::create_dir_all(out).unwrap();
+ for l in [4800usize,4801,4823,4824,4825,47999,48000]{println!("GRID,{l},{}",iso532::zwtv_out_frames(l));}
+ for s in 1..=25 {
+ let x=read(&inp.join(format!("sig{s}.bin")));
+ let (n,sp,t)=if s==1 {let nm=iso532::core::main_loudness::main_loudness(&x,FieldType::Free).unwrap();let(n,sp)=iso532::core::calc_slopes::calc_slopes(&nm);(vec![n],sp.to_vec(),vec![0.])}else if s<=5 {let r=iso532::loudness_zwst(&x,48000.,FieldType::Free).unwrap();(vec![r.n],r.n_specific,vec![0.])}else {let field=if s==15 {FieldType::Diffuse}else{FieldType::Free};let r=iso532::loudness_zwtv(&x,48000.,field).unwrap();(r.n,r.n_specific,r.time_axis)};
+ write(&out.join(format!("sig{s}-n.bin")),&n);write(&out.join(format!("sig{s}-sp.bin")),&sp);write(&out.join(format!("sig{s}-time.bin")),&t);
+ if [10,18,23,25].contains(&s){let mut st=ZwtvStream::new(FieldType::Free);let sizes=[1usize,193,7,4097,24,97,2,511];let mut pos=0;let mut it=0;let mut got=Vec::new();let mut buf=vec![StreamFrame::default();ZwtvStream::max_frames_for_chunk(4097)];while pos<x.len(){let end=(pos+sizes[it%sizes.len()]).min(x.len());let k=st.push(&x[pos..end],&mut buf);got.extend_from_slice(&buf[..k]);pos=end;it+=1;}let k=st.flush(&mut buf);got.extend_from_slice(&buf[..k]);let sn:Vec<_>=got.iter().map(|f|f.n).collect();let ti:Vec<_>=got.iter().map(|f|((96*f.t_frame_index)as f64)/48000.).collect();write(&out.join(format!("sig{s}-stream-n.bin")),&sn);write(&out.join(format!("sig{s}-stream-time.bin")),&ti);println!("STREAM,{s},{},{},{}",x.len(),n.len(),got.len());}
+ println!("SIGNAL,{s},{},{}",x.len(),n.len());
+ }
+}

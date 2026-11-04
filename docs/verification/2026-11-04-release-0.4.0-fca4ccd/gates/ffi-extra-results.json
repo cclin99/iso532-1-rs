@@ -1,0 +1,22 @@
+[
+  {
+    "name": "cbindgen-version",
+    "exit_code": 0,
+    "seconds": 0.010000467300415039
+  },
+  {
+    "name": "header-regen",
+    "exit_code": 0,
+    "seconds": 0.24155116081237793
+  },
+  {
+    "name": "c-smoke",
+    "exit_code": 9009,
+    "seconds": 3.103804111480713
+  },
+  {
+    "name": "ffi-test-panic",
+    "exit_code": 0,
+    "seconds": 7.120795965194702
+  }
+]

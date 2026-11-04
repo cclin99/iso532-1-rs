@@ -1,0 +1,2 @@
+COMMAND ["<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "--version"]
+Python 3.11.9

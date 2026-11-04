@@ -1,0 +1,14 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "hash_gate", "--", "--nocapture"]
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
+     Running tests\hash_gate.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\hash_gate-45bc01f11056feac.exe)
+
+running 1 test
+scalar: n=0xde3ccbba47ec9dd5 spec=0x80e89aeeafaf2164 time=0xf076bcb342595537
+scalar mosqito_tail: n=0xb62e33532ef3019a spec=0xb2247c2f9f943399 time=0xf076bcb342595537
+avx2: n=0x917cc80e33295cc3 spec=0x38b0cdbd447978d7 time=0xf076bcb342595537
+avx2 mosqito_tail: n=0x441d7721a9a22ffc spec=0xced0f74f725403e1 time=0xf076bcb342595537
+hash gate: dump-only run (no frozen snapshot for this environment)
+test zwtv_backend_hashes_match_frozen_snapshot ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.34s
+

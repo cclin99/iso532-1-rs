@@ -1,0 +1,335 @@
+COMMAND ["cargo", "test", "--workspace", "--no-fail-fast"]
+   Compiling num-traits v0.2.19
+   Compiling thiserror v1.0.69
+   Compiling zerocopy v0.8.52
+   Compiling serde v1.0.228
+   Compiling rawpointer v0.2.1
+   Compiling unindent v0.2.4
+   Compiling rustc-hash v2.1.3
+   Compiling libc v0.2.186
+   Compiling memoffset v0.9.1
+   Compiling pyo3-build-config v0.23.5
+   Compiling matrixmultiply v0.3.10
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+   Compiling tinytemplate v1.2.1
+   Compiling pyo3-ffi v0.23.5
+   Compiling pyo3-macros-backend v0.23.5
+   Compiling pyo3 v0.23.5
+   Compiling plotters v0.3.7
+   Compiling num-integer v0.1.46
+   Compiling num-complex v0.4.6
+   Compiling ndarray v0.16.1
+   Compiling iso532-ffi v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532-ffi)
+   Compiling half v2.7.1
+   Compiling ciborium-ll v0.2.2
+   Compiling ciborium v0.2.2
+   Compiling pyo3-macros v0.23.5
+   Compiling criterion v0.5.1
+   Compiling numpy v0.23.0
+   Compiling iso532-py v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532-py)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 17.94s
+     Running unittests src\lib.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\iso532-369d2a03903f6478.exe)
+
+running 30 tests
+test core::calc_slopes::tests::f07_sample_after_walks_the_segment_chain ... ok
+test core::calc_slopes::tests::f06_band0_ignores_band20 ... ok
+test core::calc_slopes::tests::calc_slopes_into_writes_same_specific_loudness ... ok
+test core::calc_slopes::tests::f05_last_cell_remainder_is_integrated ... ok
+test core::calc_slopes::tests::f04_total_is_not_rounded ... ok
+test core::calc_slopes::tests::f07_sample_after_segment_end_is_core_or_next_segment ... ok
+test core::main_loudness::tests::clamped_variant_shares_the_row_selection_below_the_clamp ... ok
+test core::calc_slopes::tests::f07_slope_followed_by_slope_keeps_the_segment_values ... ok
+test core::main_loudness::tests::clamped_variant_flags_and_matches_at_120 ... ok
+test core::calc_slopes::tests::n_only_matches_full_calc_slopes_total ... ok
+test core::main_loudness::tests::low_freq_dll_row_matches_annex_a_at_every_threshold ... ok
+test core::main_loudness::tests::low_freq_last_row_is_reachable_below_120_db ... ok
+test core::main_loudness::tests::low_freq_thresholds_are_strictly_increasing_per_band ... ok
+test error::tests::check_finite_reports_first_offending_index ... ok
+test error::tests::error_codes_are_frozen ... ok
+test field_type_tests::from_str_matches_py_vocabulary ... ok
+test field_type_tests::try_from_i32_matches_abi_table ... ok
+test core::main_loudness::tests::frame_major_batch_matches_per_frame_main_loudness ... ok
+test tables::tests::table_shapes_and_spot_values ... ok
+test zwtv::nonlinear_decay::tests::single_and_two_frame_inputs_do_not_panic_and_start_from_zero ... ok
+test zwtv::nonlinear_decay::tests::zero_init_default_and_mosqito_seed_formula ... ok
+test zwtv::stream::tests::flag_bits_and_frame_layout_are_frozen ... ok
+test zwtv::nonlinear_decay::tests::silent_tail_makes_both_initialisations_identical ... ok
+test sone2phon::tests::anchors_and_branch_monotonicity ... ok
+test zwtv::nonlinear_decay::tests::tail_seed_only_changes_the_start_of_the_output ... ok
+test zwtv::nonlinear_decay::tests::avx2_and_scalar_agree_for_both_initialisations ... ok
+test core::calc_slopes::tests::n_only_matches_into_for_edge_and_random_frames ... ok
+test core::calc_slopes::tests::f07_specific_matches_the_annex_a_reference_port ... ok
+test zwtv::tests::processor_matches_free_function_and_reuses_scratch_capacity ... ok
+test zwtv::tests::zwtv_out_frames_matches_pipeline_output ... ok
+
+test result: ok. 30 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests\annexb.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\annexb-7decde8aff610a98.exe)
+
+running 3 tests
+test annexb_timevarying_signal10 ... ok
+test annexb_stationary_signal3_1khz_60db ... ok
+test annexb_stationary_signal5_pinknoise_60db ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.74s
+
+     Running tests\annexb_validator.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\annexb_validator-b82ab6801174fd20.exe)
+
+running 24 tests
+test bin_1_byte_panics - should panic ... ok
+test invalid_empty ... ok
+test bin_15_bytes_panics - should panic ... ok
+test bin_9_bytes_panics - should panic ... ok
+test invalid_length_mismatch_has_no_common_range_pass ... ok
+test invalid_negative_reference ... ok
+test invalid_non_finite_reference ... ok
+test invalid_non_finite_got ... ok
+test bin_17_bytes_panics - should panic ... ok
+test short_curves_are_compared_normally ... ok
+test tolerance_at_the_crossover_reference_2 ... ok
+test tolerance_floor_at_zero_reference ... ok
+test bin_7_bytes_panics - should panic ... ok
+test tolerance_is_max_not_additive ... ok
+test tolerance_relative_branch_reference_100 ... ok
+test csv_header_bom_is_tolerated ... ok
+test tolerance_relative_branch_reference_8 ... ok
+test csv_missing_row_is_caught_by_the_callers_row_count_check ... ok
+test csv_bom_on_a_data_row_panics - should panic ... ok
+test worst_point_is_the_largest_excess ... ok
+test bin_whole_words_are_read ... ok
+test csv_copy_of_signal3_matches_the_name_based_reader_bitwise ... ok
+test csv_blank_row_panics_not_skipped - should panic ... ok
+test csv_unparsable_row_panics_with_line_number - should panic ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\api_errors.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\api_errors-cce1fc0cd8cde1d1.exe)
+
+running 10 tests
+test loudness_zwst_rejects_unsupported_sample_rate ... ok
+test loudness_zwst_rejects_short_signal ... ok
+test loudness_zwtv_rejects_short_signal ... ok
+test nonfinite_error_code_is_frozen_at_4 ... ok
+test loudness_zwtv_rejects_unsupported_sample_rate ... ok
+test batch_reports_the_first_offending_sample ... ok
+test sample_rate_and_length_errors_take_precedence_over_finiteness ... ok
+test batch_rejects_nan_and_infinities_at_head_middle_and_tail ... ok
+test subnormal_zero_and_large_finite_samples_are_not_rejected_as_nonfinite ... ok
+test stream_still_flags_instead_of_failing ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.32s
+
+     Running tests\determinism.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\determinism-439f104f777bfcda.exe)
+
+running 1 test
+test zwtv_output_is_bitwise_deterministic_over_20_runs ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.49s
+
+     Running tests\golden_c.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_c-1eb22f4e26e8decc.exe)
+
+running 4 tests
+test zwst_matches_annex_a_c ... ok
+test c01_tail_points_match_annex_a_c_within_1e_10 ... ok
+test golden_c_data_is_complete_and_on_the_output_grid ... ok
+test zwtv_whole_series_matches_annex_a_c ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.03s
+
+     Running tests\golden_core.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_core-b32f8a09d45e5489.exe)
+
+running 3 tests
+test main_loudness_rejects_low_frequency_third_octave_level_above_120_db ... ok
+test main_loudness_matches_mosqito_free_and_diffuse_core_loudness ... ok
+test calc_slopes_compat_mosqito_total_and_specific_loudness ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\golden_dsp.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_dsp-bfec3639e4daa440.exe)
+
+running 3 tests
+test sosfilt_matches_scipy ... ok
+test decimate_matches_scipy ... ok
+test sosfiltfilt_matches_scipy ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\golden_zwst.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_zwst-c0b5efacd97fec3d.exe)
+
+running 6 tests
+test main_loudness_rejects_over_120db ... ok
+test spec_to_db_matches_mosqito_amp2db ... ok
+test main_loudness_matches_mosqito ... ok
+test calc_slopes_compat_mosqito ... ok
+test noct_spectrum_matches_mosqito ... ok
+test zwst_end_to_end_compat_mosqito ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.51s
+
+     Running tests\golden_zwtv.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_zwtv-ad8658543490cd8b.exe)
+
+running 9 tests
+test dump_zwtv_output_hashes ... ignored, manual helper: bitwise output snapshot for refactor verification
+test temporal_weighting_matches_mosqito ... ok
+test nl_loudness_zero_init_equals_golden_when_the_fixture_ends_in_silence ... ok
+test nl_loudness_matches_mosqito_under_tail_init ... ok
+test zwtv_end_to_end_compat_mosqito_under_tail_init ... ok
+test third_octave_levels_matches_mosqito ... ok
+test zwtv_default_equals_golden_for_silent_tail_fixtures ... ok
+test zwtv_output_hashes_match_frozen_snapshots ... ok
+test zwtv_default_converges_to_golden_once_the_tail_seed_has_decayed ... ok
+
+test result: ok. 8 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 2.70s
+
+     Running tests\hash_gate.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\hash_gate-8daf5b7e3da05881.exe)
+
+running 1 test
+test zwtv_backend_hashes_match_frozen_snapshot ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+     Running tests\low_freq_correction.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\low_freq_correction-6971fc312585656a.exe)
+
+running 6 tests
+test core_band0_118_000001_db_matches_annex_a_reference ... ok
+test core_diffuse_field_uses_the_same_row_selection ... ok
+test core_band0_threshold_118_db_is_strict_and_last_row_applies_above_it ... ok
+test zwtv_25hz_119db_sine_max_matches_annex_a_reference ... ok
+test zwst_25hz_119db_sine_matches_annex_a_reference ... ok
+test stream_25hz_119db_sine_matches_batch_and_is_not_clamped ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.80s
+
+     Running tests\nl_zero_init.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\nl_zero_init-19d2e3c16bbaece7.exe)
+
+running 6 tests
+test silent_prefix_yields_exactly_zero_loudness_before_the_tone_starts ... ok
+test both_initialisations_agree_when_the_signal_ends_in_silence ... ok
+test processor_reuse_does_not_leak_state_between_calls ... ok
+test mosqito_tail_init_reproduces_the_audited_pre_fix_numbers ... ok
+test batch_prefix_is_invariant_to_the_future_tail ... ok
+test batch_matches_the_causal_stream_bitwise_from_frame_zero ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.95s
+
+     Running tests\output_grid.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\output_grid-8bb1ee3a8aa0811d.exe)
+
+running 7 tests
+test cli_grids_are_prefixes_of_the_rust_grid ... ok
+test shortest_legal_input_is_4800_samples_and_50_points ... ok
+test frame_count_is_ceil_of_ceil_for_every_field ... ok
+test time_axis_is_an_exact_2ms_grid_from_zero ... ok
+test every_point_is_prefix_determined_under_real_continuation ... ok
+test every_point_is_prefix_determined_under_zero_padding ... ok
+test stream_frame_count_equals_batch_for_any_chunking ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 22.83s
+
+     Running tests\py_contract_dump.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\py_contract_dump-8dbd104c01a0a2c2.exe)
+
+running 2 tests
+test dump_py_bitwise_contract_hashes ... ignored, manual: freeze constants for iso532-py/tests/test_smoke.py (R3-P3)
+test fnv1a_known_answer_matches_python_testkit ... ok
+
+test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\simd_dispatch.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\simd_dispatch-9d53a1bff6e835df.exe)
+
+running 1 test
+test force_scalar_overrides_runtime_detection ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\simd_parity.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\simd_parity-e31ce6bf2b638f8a.exe)
+
+running 2 tests
+test nl_loudness_avx2_matches_scalar ... ok
+test filter_bank_avx2_matches_scalar ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+
+     Running tests\stream.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\stream-47e4f083aee75a56.exe)
+
+running 12 tests
+test silence_throughput_within_20pct_of_sine ... ignored
+test warmup_constant_is_frozen ... ok
+test push_and_flush_restore_mxcsr ... ok
+test tail_nonfinite_input_is_reported_as_residual_flag ... ok
+test over_120db_is_clamped_and_stream_continues ... ok
+test stream_constants_and_single_push_reference ... ok
+test reset_matches_a_new_stream ... ok
+test flush_reset_after_partial_nonfinite_chunk_matches_a_new_stream ... ok
+test nonfinite_input_flags_and_recovers ... ok
+test batch_zerostate_reference_and_stream_are_bitwise_identical_from_frame_zero ... ok
+test chunk_size_invariance_is_bitwise ... ok
+test nine_golden_signals_match_zerostate_and_batch_bitwise ... ok
+
+test result: ok. 11 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 51.15s
+
+     Running tests\stream_alloc.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\stream_alloc-00b2323ad7c7bedc.exe)
+
+running 1 test
+test push_and_flush_do_not_allocate ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.33s
+
+     Running tests\stream_no_rayon.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\stream_no_rayon-9ebfaddcf1dab2ab.exe)
+
+running 1 test
+test stream_does_not_initialize_rayon_pool ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s
+
+     Running tests\stream_scalar.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\stream_scalar-cff1b1ca9f60a859.exe)
+
+running 1 test
+test forced_scalar_stream_matches_scalar_zerostate_reference ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.71s
+
+     Running unittests src\lib.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\iso532_ffi-f46669c17d89457f.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\ffi.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\ffi-a75d171f2deacce9.exe)
+
+running 14 tests
+test field_constants_are_frozen ... ok
+test out_frames_query_forwards_core_at_representative_boundaries ... ok
+test out_frames_query_never_panics_below_min_length ... ok
+test stream_layout_flags_and_null_paths_are_frozen ... ok
+test null_pointers_return_err_null ... ok
+test stream_max_frames_forwards_rust_contract ... ok
+test stream_residual_flags_null_handle_returns_zero ... ok
+test stream_rejects_small_output_without_consuming_input ... ok
+test error_mapping_matches_spec_table ... ok
+test zwtv_diffuse_field_matches_rust_api ... ok
+test zwtv_happy_path_matches_rust_api_bitwise ... ok
+test zwst_happy_path_matches_rust_api_bitwise ... ok
+test stream_tail_nonfinite_is_exposed_as_residual_flag ... ok
+test stream_matches_rust_stream_bitwise ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.63s
+
+     Running unittests src\lib.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\iso532-420c9020116008d3.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests iso532
+
+running 2 tests
+test iso532\src\lib.rs - (line 11) - compile ... ok
+test iso532\src\lib.rs - (line 24) - compile ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+   Doc-tests iso532_ffi
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,7 @@
+{
+  "checkout_sha256": "2370552dc9e5b6f91a3ab27ef14fe859b70062ac233ab2153da523d0dbff3d6d",
+  "archive_sha256": "042f0be66d8be0de71e43e6ba376a62203bb71163a533ee385164e2aad87c5f1",
+  "normalized_equal": true,
+  "checkout_crlf": 0,
+  "archive_crlf": 11
+}

@@ -1,0 +1,5 @@
+COMMAND ["<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe", "-m", "pip", "install", "<REPO>\\tmp\\acceptance-040-astra\\wheels\\iso532-0.4.0-cp39-abi3-win_amd64.whl"]
+Processing <REPO>\tmp\acceptance-040-astra\wheels\iso532-0.4.0-cp39-abi3-win_amd64.whl
+Requirement already satisfied: numpy>=1.24 in <REPO>\tmp\acceptance-040-astra\fresh-venv\lib\site-packages (from iso532==0.4.0) (2.4.6)
+Installing collected packages: iso532
+Successfully installed iso532-0.4.0

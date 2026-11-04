@@ -1,0 +1,125 @@
+COMMAND ["<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe", "-m", "pytest", "iso532-py/tests", "-v", "-s"]
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.7.0 -- <REPO>\tmp\acceptance-040-astra\fresh-venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: <REPO>\tmp\acceptance-040-astra\candidate\iso532-py
+configfile: pyproject.toml
+collecting ... collected 87 items
+
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[sine_1k_60] [Info] Signal resampled to 48 kHz to allow calculation.
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[sine_250_80] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[sine_4k_60] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[white_60] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[pulse_1k_70] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[step_60_80] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[annexb_sig3] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[annexb_sig5] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_parity[annexb_sig10] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[sine_1k_60] sine_1k_60/N_specific zwtv: max |diff| 3.582e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[sine_250_80] sine_250_80/N_specific zwtv: max |diff| 2.496e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[sine_4k_60] sine_4k_60/N_specific zwtv: max |diff| 2.867e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[white_60] white_60/N_specific zwtv: max |diff| 3.112e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[pulse_1k_70] pulse_1k_70/N_specific zwtv: max |diff| 1.287e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[step_60_80] step_60_80/N_specific zwtv: max |diff| 2.209e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[annexb_sig3] annexb_sig3/N_specific zwtv: max |diff| 3.527e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[annexb_sig5] annexb_sig5/N_specific zwtv: max |diff| 3.147e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_specific_parity[annexb_sig10] annexb_sig10/N_specific zwtv: max |diff| 3.842e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[sine_1k_60] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[sine_250_80] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[sine_4k_60] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[white_60] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[pulse_1k_70] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[step_60_80] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[annexb_sig3] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[annexb_sig5] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_matches_mosqito_given_a_silent_tail[annexb_sig10] PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[sine_1k_60] sine_1k_60/N_specific zwtv default: max |diff| 3.582e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[sine_250_80] sine_250_80/N_specific zwtv default: max |diff| 2.496e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[sine_4k_60] sine_4k_60/N_specific zwtv default: max |diff| 2.867e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[white_60] white_60/N_specific zwtv default: max |diff| 3.112e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[pulse_1k_70] pulse_1k_70/N_specific zwtv default: max |diff| 1.287e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[step_60_80] step_60_80/N_specific zwtv default: max |diff| 2.209e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[annexb_sig3] annexb_sig3/N_specific zwtv default: max |diff| 3.527e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[annexb_sig5] annexb_sig5/N_specific zwtv default: max |diff| 3.147e-02 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwtv_default_specific_matches_mosqito_given_a_silent_tail[annexb_sig10] annexb_sig10/N_specific zwtv default: max |diff| 3.842e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[sine_1k_60] sine_1k_60/N_specific zwst: max |diff| 6.306e-14 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[sine_250_80] sine_250_80/N_specific zwst: max |diff| 3.922e-05 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[sine_4k_60] sine_4k_60/N_specific zwst: max |diff| 1.310e-14 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[white_60] white_60/N_specific zwst: max |diff| 1.776e-15 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[pulse_1k_70] pulse_1k_70/N_specific zwst: max |diff| 5.621e-16 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[step_60_80] step_60_80/N_specific zwst: max |diff| 1.033e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[annexb_sig3] annexb_sig3/N_specific zwst: max |diff| 1.021e-14 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[annexb_sig5] annexb_sig5/N_specific zwst: max |diff| 7.960e-03 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_parity_mosqito.py::test_zwst_parity[annexb_sig10] annexb_sig10/N_specific zwst: max |diff| 4.996e-16 vs MoSQITo (recorded, not gated)
+PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_shapes_and_axes PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_diffuse_accepted PASSED
+iso532-py\tests\test_smoke.py::test_zwst_shapes PASSED
+iso532-py\tests\test_smoke.py::test_bitwise_contract_n_and_time_axis PASSED
+iso532-py\tests\test_smoke.py::test_bitwise_contract_mosqito_tail_init PASSED
+iso532-py\tests\test_smoke.py::test_nl_init_rejects_unknown_value PASSED
+iso532-py\tests\test_smoke.py::test_error_mapping PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[0-nan] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[0-inf] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[0--inf] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[24000-nan] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[24000-inf] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[24000--inf] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[47999-nan] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[47999-inf] PASSED
+iso532-py\tests\test_smoke.py::test_batch_rejects_nonfinite_input[47999--inf] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4800] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4801] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4823] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4824] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4825] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4895] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4896] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[4897] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[47905] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[47927] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[47928] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[47999] PASSED
+iso532-py\tests\test_smoke.py::test_zwtv_output_grid_contract[48000] PASSED
+iso532-py\tests\test_smoke.py::test_strict_input_contract PASSED
+iso532-py\tests\test_smoke.py::test_sone2phon_matches_frozen_formula PASSED
+iso532-py\tests\test_smoke.py::test_sone2phon_rejects_negative_sone PASSED
+iso532-py\tests\test_smoke.py::test_sone2phon_rejects_nonfinite_sone[nan] PASSED
+iso532-py\tests\test_smoke.py::test_sone2phon_rejects_nonfinite_sone[inf] PASSED
+iso532-py\tests\test_stream.py::test_constants_are_frozen PASSED
+iso532-py\tests\test_stream.py::test_max_frames_for_chunk_bounds_push_output PASSED
+iso532-py\tests\test_stream.py::test_chunk_invariance_bitwise PASSED
+iso532-py\tests\test_stream.py::test_stream_matches_batch_after_warmup PASSED
+iso532-py\tests\test_stream.py::test_nan_is_flagged_not_raised PASSED
+iso532-py\tests\test_stream.py::test_tail_nan_surfaces_in_residual_flags PASSED
+iso532-py\tests\test_stream.py::test_push_after_flush_raises_and_reset_recovers PASSED
+iso532-py\tests\test_stream.py::test_input_validation PASSED
+
+======================= 87 passed in 172.32s (0:02:52) ========================

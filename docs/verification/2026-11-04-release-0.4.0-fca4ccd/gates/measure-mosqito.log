@@ -1,0 +1,19 @@
+COMMAND ["<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe", "<REPO>\\docs\\verification\\2026-11-04-release-0.4.0-fca4ccd\\gates\\measure_mosqito.py"]
+{
+  "max_zwtv_n": 0.003941967124511336,
+  "max_zwtv_specific": 0.03147029899252968,
+  "max_zwst_n": 0.00048800598466103295,
+  "max_zwst_specific": 0.007959658039372819,
+  "hashes": {
+    "zero": {
+      "n": "ff2754e949a15287",
+      "time_axis": "f076bcb342595537",
+      "first_n_f64_hex": "0000000000000000"
+    },
+    "mosqito_tail": {
+      "n": "aa3d499447b9a2c4",
+      "time_axis": "f076bcb342595537",
+      "first_n_f64_hex": "3f3b97eeb486137b"
+    }
+  }
+}

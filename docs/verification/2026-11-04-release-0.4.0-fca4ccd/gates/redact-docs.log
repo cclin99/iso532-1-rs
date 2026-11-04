@@ -1,0 +1,2 @@
+COMMAND ["<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "tools/redact_paths.py", "--check", "docs"]
+clean

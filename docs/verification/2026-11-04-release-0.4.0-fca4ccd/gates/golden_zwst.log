@@ -1,0 +1,25 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "golden_zwst", "--", "--nocapture"]
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.97s
+     Running tests\golden_zwst.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_zwst-c35bdf7f9281502a.exe)
+
+running 6 tests
+test main_loudness_rejects_over_120db ... ok
+sine_1k_60/N_specific vs MoSQITo: max |diff| 0.000e0 at index 0 (recorded, not gated)
+test spec_to_db_matches_mosqito_amp2db ... ok
+sine_250_80/N_specific vs MoSQITo: max |diff| 3.922e-5 at index 109test main_loudness_matches_mosqito ... ok
+ (recorded, not gated)
+sine_4k_60/N_specific vs MoSQITo: max |diff| 0.000e0 at index 0 (recorded, not gated)
+white_60/N_specific vs MoSQITo: max |diff| 0.000e0 at index 0 (recorded, not gated)
+test calc_slopes_compat_mosqito ... ok
+sine_1k_60/spec vs MoSQITo: max |diff| 6.306e-14 at index 79 (recorded, not gated)
+sine_250_80/spec vs MoSQITo: max |diff| 3.922e-5 at index 109 (recorded, not gated)
+test noct_spectrum_matches_mosqito ... ok
+sine_4k_60/spec vs MoSQITo: max |diff| 1.310e-14 at index 167 (recorded, not gated)
+white_60/spec vs MoSQITo: max |diff| 1.776e-15 at index 138 (recorded, not gated)
+annexb_sig3/spec vs MoSQITo: max |diff| 1.021e-14 at index 79 (recorded, not gated)
+annexb_sig5/spec vs MoSQITo: max |diff| 7.960e-3 at index 66 (recorded, not gated)
+test zwst_end_to_end_compat_mosqito ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.55s
+

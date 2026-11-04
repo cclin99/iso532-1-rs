@@ -1,0 +1,17 @@
+   Compiling classify-f07 v0.0.0 (<REPO>\tmp\acceptance-040-astra\classification)
+warning: function `calc_slopes_n_only` is never used
+  --> src\new.rs:19:8
+   |
+19 | pub fn calc_slopes_n_only(nm: &[f64; 21]) -> f64 {
+   |        ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `calc_slopes_n_only` is never used
+  --> src\old.rs:18:8
+   |
+18 | pub fn calc_slopes_n_only(nm: &[f64; 21]) -> f64 {
+   |        ^^^^^^^^^^^^^^^^^^
+
+warning: `classify-f07` (bin "classify-f07") generated 2 warnings
+    Finished `release` profile [optimized] target(s) in 1.45s

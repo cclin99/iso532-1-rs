@@ -1,0 +1,40 @@
+Collecting matplotlib
+  Downloading matplotlib-3.11.2-cp311-cp311-win_amd64.whl.metadata (80 kB)
+     -------------------------------------- 80.3/80.3 kB 744.9 kB/s eta 0:00:00
+Collecting contourpy>=1.0.1 (from matplotlib)
+  Using cached contourpy-1.3.3-cp311-cp311-win_amd64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib)
+  Downloading fonttools-4.68.0-cp311-cp311-win_amd64.whl.metadata (142 kB)
+     -------------------------------------- 142.6/142.6 kB 2.8 MB/s eta 0:00:00
+Collecting kiwisolver>=1.3.1 (from matplotlib)
+  Downloading kiwisolver-1.5.1-cp311-cp311-win_amd64.whl.metadata (5.2 kB)
+Requirement already satisfied: numpy>=1.25 in <REPO>\tmp\acceptance-040-astra\fresh-venv\lib\site-packages (from matplotlib) (2.4.6)
+Requirement already satisfied: packaging>=20.0 in <REPO>\tmp\acceptance-040-astra\fresh-venv\lib\site-packages (from matplotlib) (26.3)
+Collecting pillow>=9 (from matplotlib)
+  Using cached pillow-13.0.0-cp311-cp311-win_amd64.whl.metadata (9.3 kB)
+Collecting pyparsing>=3 (from matplotlib)
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting tzdata (from python-dateutil>=2.7->matplotlib)
+  Using cached tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading matplotlib-3.11.2-cp311-cp311-win_amd64.whl (9.3 MB)
+   ---------------------------------------- 9.3/9.3 MB 33.2 MB/s eta 0:00:00
+Using cached contourpy-1.3.3-cp311-cp311-win_amd64.whl (225 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.68.0-cp311-cp311-win_amd64.whl (1.7 MB)
+   ---------------------------------------- 1.7/1.7 MB 6.3 MB/s eta 0:00:00
+Downloading kiwisolver-1.5.1-cp311-cp311-win_amd64.whl (70 kB)
+   ---------------------------------------- 70.7/70.7 kB 4.0 MB/s eta 0:00:00
+Using cached pillow-13.0.0-cp311-cp311-win_amd64.whl (7.3 MB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+   ---------------------------------------- 92.9/92.9 kB 5.5 MB/s eta 0:00:00
+Using cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, pyparsing, pillow, kiwisolver, fonttools, cycler, contourpy, python-dateutil, matplotlib
+Successfully installed contourpy-1.3.3 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.11.2 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-4.0.0 tzdata-2026.6
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: <REPO>\tmp\acceptance-040-astra\fresh-venv\Scripts\python.exe -m pip install --upgrade pip

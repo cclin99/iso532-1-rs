@@ -1,0 +1,162 @@
+<REPO>\.venv\Lib\site-packages\openpyxl\worksheet\_reader.py:329: UserWarning: Conditional Formatting extension is not supported and will be removed
+  warn(msg)
+{
+  "annexb": {
+    "candidate": {
+      "points": 73116,
+      "failed": 0,
+      "minimum_margin": 0.059702781183555126
+    },
+    "baseline": {
+      "points": 73116,
+      "failed": 0,
+      "minimum_margin": 0.059702781183555126
+    }
+  },
+  "abi": {
+    "candidate": {
+      "header_sha256": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+      "dll_sha256": "5982d00f139cb9e9351cf102ae18a83f28bdb24e27c8860e17bb8f99aad43dca",
+      "exports": [
+        "iso532_loudness_zwst",
+        "iso532_loudness_zwtv",
+        "iso532_stream_flush",
+        "iso532_stream_free",
+        "iso532_stream_max_frames",
+        "iso532_stream_new",
+        "iso532_stream_push",
+        "iso532_stream_residual_flags",
+        "iso532_zwtv_out_frames"
+      ]
+    },
+    "baseline": {
+      "header_sha256": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+      "dll_sha256": "4d309eb4cc67746afa4cf7d142d86c69ff7850fd3c8455ed64e5149c1fa482d8",
+      "exports": [
+        "iso532_loudness_zwst",
+        "iso532_loudness_zwtv",
+        "iso532_stream_flush",
+        "iso532_stream_free",
+        "iso532_stream_max_frames",
+        "iso532_stream_new",
+        "iso532_stream_push",
+        "iso532_stream_residual_flags",
+        "iso532_zwtv_out_frames"
+      ]
+    }
+  },
+  "stream": {
+    "candidate-10": {
+      "n": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "candidate-18": {
+      "n": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "candidate-23": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "candidate-25": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-10": {
+      "n": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 500,
+        "stream_count": 500,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-18": {
+      "n": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1084,
+        "stream_count": 1084,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-23": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    },
+    "baseline-25": {
+      "n": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      },
+      "time": {
+        "count": 1276,
+        "stream_count": 1276,
+        "mismatches": 0,
+        "first": null
+      }
+    }
+  }
+}

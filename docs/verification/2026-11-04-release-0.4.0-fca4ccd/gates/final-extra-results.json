@@ -1,0 +1,12 @@
+[
+  {
+    "name": "c-smoke-explicit",
+    "exit_code": 0,
+    "seconds": 0.41329526901245117
+  },
+  {
+    "name": "round1-hash",
+    "exit_code": 0,
+    "seconds": 204.30112528800964
+  }
+]

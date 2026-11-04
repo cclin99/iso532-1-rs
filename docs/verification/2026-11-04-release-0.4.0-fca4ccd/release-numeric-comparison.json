@@ -1,0 +1,438 @@
+{
+  "rows": [
+    {
+      "scope": "time_varying",
+      "name": "sine_1k_60:N",
+      "printed": "1.471e-7",
+      "measured": 1.4714433493878687e-07,
+      "rounding_half_unit": 5e-11,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_1k_60:specific_new",
+      "printed": "6.184e-5",
+      "measured": 6.183565230100108e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_1k_60:specific_round1",
+      "printed": "3.582e-3",
+      "measured": 0.0035822815672630903,
+      "rounding_half_unit": 5e-07,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_250_80:N",
+      "printed": "2.022e-5",
+      "measured": 2.0220919413560523e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_250_80:specific_new",
+      "printed": "2.100e-4",
+      "measured": 0.0002099726527324819,
+      "rounding_half_unit": 5e-08,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_250_80:specific_round1",
+      "printed": "2.496e-3",
+      "measured": 0.0024955919543183658,
+      "rounding_half_unit": 5e-07,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_4k_60:N",
+      "printed": "4.987e-8",
+      "measured": 4.9873342788941954e-08,
+      "rounding_half_unit": 5e-12,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_4k_60:specific_new",
+      "printed": "8.214e-5",
+      "measured": 8.213898854303459e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "sine_4k_60:specific_round1",
+      "printed": "2.867e-3",
+      "measured": 0.0028671471151011096,
+      "rounding_half_unit": 5e-07,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "white_60:N",
+      "printed": "1.915e-6",
+      "measured": 1.915379471029155e-06,
+      "rounding_half_unit": 5e-10,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "white_60:specific_new",
+      "printed": "6.235e-5",
+      "measured": 6.235281873301357e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "white_60:specific_round1",
+      "printed": "3.112e-2",
+      "measured": 0.03111792680884362,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "pulse_1k_70:N",
+      "printed": "1.465e-7",
+      "measured": 1.4645433754623127e-07,
+      "rounding_half_unit": 5e-11,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "pulse_1k_70:specific_new",
+      "printed": "1.097e-4",
+      "measured": 0.00010970891781614256,
+      "rounding_half_unit": 5e-08,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "pulse_1k_70:specific_round1",
+      "printed": "1.287e-2",
+      "measured": 0.012868712400888771,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "step_60_80:N",
+      "printed": "1.645e-6",
+      "measured": 1.6453935742788417e-06,
+      "rounding_half_unit": 5e-10,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "step_60_80:specific_new",
+      "printed": "1.297e-4",
+      "measured": 0.0001297287709904893,
+      "rounding_half_unit": 5e-08,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "step_60_80:specific_round1",
+      "printed": "2.209e-2",
+      "measured": 0.022088742363139402,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig3:N",
+      "printed": "1.472e-7",
+      "measured": 1.471770909589054e-07,
+      "rounding_half_unit": 5e-11,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig3:specific_new",
+      "printed": "6.184e-5",
+      "measured": 6.183566522466322e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig3:specific_round1",
+      "printed": "3.527e-3",
+      "measured": 0.003526614606738268,
+      "rounding_half_unit": 5e-07,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig5:N",
+      "printed": "2.712e-5",
+      "measured": 2.7118027825068225e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig5:specific_new",
+      "printed": "6.235e-5",
+      "measured": 6.235161843215486e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig5:specific_round1",
+      "printed": "3.147e-2",
+      "measured": 0.03147031276093626,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig10:N",
+      "printed": "9.795e-8",
+      "measured": 9.794874511470653e-08,
+      "rounding_half_unit": 5e-12,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig10:specific_new",
+      "printed": "1.097e-4",
+      "measured": 0.00010970841248436614,
+      "rounding_half_unit": 5e-08,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_sig10:specific_round1",
+      "printed": "3.842e-3",
+      "measured": 0.0038422400666107276,
+      "rounding_half_unit": 5e-07,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig18:N",
+      "printed": "6.614e-6",
+      "measured": 6.613789615528276e-06,
+      "rounding_half_unit": 5e-10,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig18:specific_new",
+      "printed": "9.397e-5",
+      "measured": 9.39654293721226e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig18:specific_round1",
+      "printed": "4.377e-2",
+      "measured": 0.0437728528172292,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig23:N",
+      "printed": "3.248e-7",
+      "measured": 3.248153461754555e-07,
+      "rounding_half_unit": 5e-11,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig23:specific_new",
+      "printed": "8.249e-5",
+      "measured": 8.24861920183384e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig23:specific_round1",
+      "printed": "3.508e-2",
+      "measured": 0.03508193084449651,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig24:N",
+      "printed": "1.753e-6",
+      "measured": 1.7532515741436328e-06,
+      "rounding_half_unit": 5e-10,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig24:specific_new",
+      "printed": "6.217e-5",
+      "measured": 6.217173583822344e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig24:specific_round1",
+      "printed": "3.485e-2",
+      "measured": 0.03485164720526113,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig25:N",
+      "printed": "7.781e-7",
+      "measured": 7.781257789218898e-07,
+      "rounding_half_unit": 5e-11,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig25:specific_new",
+      "printed": "8.249e-5",
+      "measured": 8.2490868272167e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "time_varying",
+      "name": "annexb_c01_sig25:specific_round1",
+      "printed": "2.639e-2",
+      "measured": 0.02639265176253769,
+      "rounding_half_unit": 5e-06,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "18:N",
+      "printed": "-6.61e-11",
+      "measured": -6.609615925325801e-11,
+      "rounding_half_unit": 5e-14,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "18:specific",
+      "printed": "9.1e-24",
+      "measured": 9.111338130491576e-24,
+      "rounding_half_unit": 5e-26,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "18:official_delta",
+      "printed": "-1.43e-8",
+      "measured": -1.4293139028137385e-08,
+      "rounding_half_unit": 5e-11,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "23:N",
+      "printed": "-5.16e-11",
+      "measured": -5.1557667857249356e-11,
+      "rounding_half_unit": 5e-14,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "23:specific",
+      "printed": "3.3e-23",
+      "measured": 3.2598605043503344e-23,
+      "rounding_half_unit": 5e-25,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "23:official_delta",
+      "printed": "-1.28e-7",
+      "measured": -1.280202367244694e-07,
+      "rounding_half_unit": 5e-10,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "24:N",
+      "printed": "-8.99e-11",
+      "measured": -8.987306298474662e-11,
+      "rounding_half_unit": 5e-14,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "24:specific",
+      "printed": "2.2e-23",
+      "measured": 2.1604372979486025e-23,
+      "rounding_half_unit": 5e-25,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "24:official_delta",
+      "printed": "-9.33e-9",
+      "measured": -9.333105559011443e-09,
+      "rounding_half_unit": 5e-12,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "25:N",
+      "printed": "-7.41e-11",
+      "measured": -7.405702266705116e-11,
+      "rounding_half_unit": 5e-14,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "25:specific",
+      "printed": "4.7e-24",
+      "measured": 4.674216395024943e-24,
+      "rounding_half_unit": 5e-26,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "tail",
+      "name": "25:official_delta",
+      "printed": "-7.41e-11",
+      "measured": -7.405702266705116e-11,
+      "rounding_half_unit": 5e-14,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "stationary",
+      "name": "N",
+      "printed": "1.530e-5",
+      "measured": 1.5299428973492013e-05,
+      "rounding_half_unit": 5e-09,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "stationary",
+      "name": "specific_new",
+      "printed": "1.500e-4",
+      "measured": 0.00015000284564425925,
+      "rounding_half_unit": 5e-08,
+      "matches_printed_rounding": true
+    },
+    {
+      "scope": "stationary",
+      "name": "specific_round1",
+      "printed": "7.960e-3",
+      "measured": 0.007959670546980768,
+      "rounding_half_unit": 5e-07,
+      "matches_printed_rounding": true
+    }
+  ],
+  "all_rounding_matches": true,
+  "historical_claims": "Historical RED execution and old Linux run are not rerun as historical events. Candidate tests, Round1 output and fresh Linux gates provide current evidence; the 507-frame assertion is exercised by the candidate unit test."
+}

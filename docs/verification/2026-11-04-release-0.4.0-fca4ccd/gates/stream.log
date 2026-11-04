@@ -1,0 +1,21 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "stream", "--", "--nocapture"]
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.86s
+     Running tests\stream.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\stream-4d23ce9b24ee5052.exe)
+
+running 12 tests
+test silence_throughput_within_20pct_of_sine ... ignored
+test warmup_constant_is_frozen ... ok
+test push_and_flush_restore_mxcsr ... ok
+test tail_nonfinite_input_is_reported_as_residual_flag ... ok
+test over_120db_is_clamped_and_stream_continues ... ok
+test reset_matches_a_new_stream ... ok
+test stream_constants_and_single_push_reference ... ok
+test flush_reset_after_partial_nonfinite_chunk_matches_a_new_stream ... ok
+test nonfinite_input_flags_and_recovers ... ok
+test batch_zerostate_reference_and_stream_are_bitwise_identical_from_frame_zero ... ok
+test chunk_size_invariance_is_bitwise ... ok
+test nine_golden_signals_match_zerostate_and_batch_bitwise ... ok
+
+test result: ok. 11 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 57.00s
+

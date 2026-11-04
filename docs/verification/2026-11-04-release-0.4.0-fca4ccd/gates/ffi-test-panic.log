@@ -1,0 +1,52 @@
+COMMAND ["cargo", "test", "-p", "iso532-ffi", "--features", "test-panic", "--", "--nocapture"]
+   Compiling either v1.16.0
+   Compiling thiserror v1.0.69
+   Compiling rayon v1.12.0
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+   Compiling iso532-ffi v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532-ffi)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.63s
+     Running unittests src\lib.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\iso532_ffi-d8b8b1c061d67732.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\ffi.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\ffi-5d05161a97a86b9d.exe)
+
+running 17 tests
+
+thread 'injected_panic_returns_err_panic_not_abort' (131312) panicked at iso532-ffi\src\lib.rs:356:16:
+test-panic: direct
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test field_constants_are_frozen ... ok
+test stream_layout_flags_and_null_paths_are_frozen ... ok
+test out_frames_query_never_panics_below_min_length ... ok
+test null_pointers_return_err_null ... ok
+thread 'stream_path_panic_is_caught_at_ffi_boundary' (118312) panicked at iso532-ffi\src\lib.rs:379:9:
+test-panic: stream path
+
+test out_frames_query_forwards_core_at_representative_boundaries ... ok
+test injected_panic_returns_err_panic_not_abort ... ok
+test stream_max_frames_forwards_rust_contract ... 
+thread '<unnamed>' (73136) panicked at iso532-ffi\src\lib.rs:367:17:
+test-panic: inside rayon worker
+ok
+test stream_residual_flags_null_handle_returns_zero ... ok
+test stream_path_panic_is_caught_at_ffi_boundary ... ok
+test rayon_worker_panic_is_caught_at_ffi_boundary ... ok
+test stream_rejects_small_output_without_consuming_input ... ok
+test error_mapping_matches_spec_table ... ok
+test zwtv_diffuse_field_matches_rust_api ... ok
+test zwtv_happy_path_matches_rust_api_bitwise ... ok
+test zwst_happy_path_matches_rust_api_bitwise ... ok
+test stream_tail_nonfinite_is_exposed_as_residual_flag ... ok
+test stream_matches_rust_stream_bitwise ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.65s
+
+   Doc-tests iso532_ffi
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

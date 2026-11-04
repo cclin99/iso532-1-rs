@@ -1,0 +1,39 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "golden_c", "--", "--nocapture"]
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.15s
+     Running tests\golden_c.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\golden_c-d09becff5f0ac088.exe)
+
+running 4 tests
+test zwst_matches_annex_a_c ... ok
+sine_1k_60: zwtv vs C(0.24f) total max 1.471e-7 (point 498), specific max 6.184e-5 (bark 92, point 5); vs unmodified C total 1.471e-7, specific 6.184e-5
+sine_1k_60: zwst (main_loudness + calc_slopes on the golden levels) total diff 1.415e-7, specific max 6.183e-5 (bark 92)
+annexb_c01_sig18 point 1083: Rust 9.55418345872882939e-4 C(0.24f) 9.55418411969042192e-4 diff -6.610e-11; vs unmodified C -1.429e-8; specific max 9.111e-24 (bark 18)
+sine_250_80: zwtv vs C(0.24f) total max 2.022e-5 (point 38), specific max 2.100e-4 (bark 28, point 19); vs unmodified C total 2.022e-5, specific 2.100e-4
+sine_250_80: zwst (main_loudness + calc_slopes on the golden levels) total diff 4.650e-6, specific max 1.500e-4 (bark 28)
+annexb_c01_sig23 point 1275: Rust 3.49122507067546302e-3 C(0.24f) 3.49122512223313088e-3 diff -5.156e-11; vs unmodified C -1.280e-7; specific max 3.260e-23 (bark 35)
+sine_4k_60: zwtv vs C(0.24f) total max 4.987e-8 (point 474), specific max 8.214e-5 (bark 181, point 11); vs unmodified C total 4.987e-8, specific 8.214e-5
+sine_4k_60: zwst (main_loudness + calc_slopes on the golden levels) total diff 3.802e-8, specific max 8.214e-5 (bark 181)
+white_60: zwtv vs C(0.24f) total max 1.915e-6 (point 191), specific max 6.235e-5 (bark 167, point 206); vs unmodified C total 1.962e-3, specific 9.768e-3
+white_60: zwst (main_loudness + calc_slopes on the golden levels) total diff 3.688e-7, specific max 4.220e-5 (bark 228)
+annexb_c01_sig24 point 1200: Rust 1.06592338443765931e-3 C(0.24f) 1.06592347431072230e-3 diff -8.987e-11; vs unmodified C -9.333e-9; specific max 2.160e-23 (bark 18)
+pulse_1k_70: zwtv vs C(0.24f) total max 1.465e-7 (point 260), specific max 1.097e-4 (bark 92, point 255); vs unmodified C total 2.338e-4, specific 4.022e-3
+pulse_1k_70: zwst (main_loudness + calc_slopes on the golden levels) total diff 6.723e-8, specific max 4.189e-5 (bark 96)
+step_60_80: zwtv vs C(0.24f) total max 1.645e-6 (point 286), specific max 1.297e-4 (bark 99, point 255); vs unmodified C total 3.253e-4, specific 6.022e-3
+step_60_80: zwst (main_loudness + calc_slopes on the golden levels) total diff 2.371e-7, specific max 1.297e-4 (bark 93)
+annexb_c01_sig25 point 1275: Rust 1.19477892795112855e-3 C(0.24f) 1.19477900200815122e-3 diff -7.406e-11; vs unmodified C -7.406e-11; specific max 4.674e-24 (bark 152)
+test c01_tail_points_match_annex_a_c_within_1e_10 ... ok
+annexb_sig3: zwtv vs C(0.24f) total max 1.472e-7 (point 2308), specific max 6.184e-5 (bark 92, point 5); vs unmodified C total 1.472e-7, specific 6.184e-5
+annexb_sig3: zwst (main_loudness + calc_slopes on the golden levels) total diff 1.448e-7, specific max 6.183e-5 (bark 92)
+annexb_sig5: zwtv vs C(0.24f) total max 2.712e-5 (point 2013), specific max 6.235e-5 (bark 167, point 1210); vs unmodified C total 3.218e-3, specific 1.002e-2
+annexb_sig5: zwst (main_loudness + calc_slopes on the golden levels) total diff 1.530e-5, specific max 4.206e-5 (bark 181)
+annexb_sig10: zwtv vs C(0.24f) total max 9.795e-8 (point 9), specific max 1.097e-4 (bark 92, point 12); vs unmodified C total 9.795e-8, specific 1.097e-4
+annexb_sig10: zwst (main_loudness + calc_slopes on the golden levels) total diff 7.257e-8, specific max 4.189e-5 (bark 96)
+annexb_c01_sig18: zwtv vs C(0.24f) total max 6.614e-6 (point 407), specific max 9.397e-5 (bark 28, point 528); vs unmodified C total 2.968e-3, specific 1.000e-2
+test zwtv_whole_series_matches_annex_a_c ... ok
+annexb_c01_sig23: zwtv vs C(0.24f) total max 3.248e-7 (point 482), specific max 8.249e-5 (bark 167, point 952); vs unmodified C total 1.529e-3, specific 9.333e-3
+annexb_c01_sig24: zwtv vs C(0.24f) total max 1.753e-6 (point 364), specific max 6.217e-5 (bark 106, point 206); vs unmodified C total 3.530e-3, specific 1.001e-2
+annexb_c01_sig25: zwtv vs C(0.24f) total max 7.781e-7 (point 129), specific max 8.249e-5 (bark 167, point 127); vs unmodified C total 7.781e-7, specific 8.249e-5
+test golden_c_data_is_complete_and_on_the_output_grid ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.00s
+

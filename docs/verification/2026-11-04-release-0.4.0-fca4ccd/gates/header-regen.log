@@ -1,0 +1,2 @@
+COMMAND ["cbindgen", "--config", "cbindgen.toml", "--crate", "iso532-ffi", "--output", "<REPO>\\tmp\\acceptance-040-astra\\ffi-smoke\\iso532.h"]
+WARN: Skip iso532-ffi::_ - (not `pub`).

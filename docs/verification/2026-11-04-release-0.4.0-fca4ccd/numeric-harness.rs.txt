@@ -1,0 +1,12 @@
+use std::{env,fs,path::Path};
+use iso532::{FieldType,core::{calc_slopes::calc_slopes,main_loudness::{main_loudness,main_loudness_frames_into}},zwtv::{third_octave_levels,nonlinear_decay,ParMode,NlInit}};
+fn read(p:&str)->Vec<f64>{fs::read(p).unwrap().chunks_exact(8).map(|b|f64::from_le_bytes(b.try_into().unwrap())).collect()}
+fn write(p:&Path,x:&[f64]){fs::write(p,x.iter().flat_map(|v|v.to_le_bytes()).collect::<Vec<_>>()).unwrap()}
+fn main(){let a:Vec<String>=env::args().collect();let field=if a[1].ends_with("_diffuse"){FieldType::Diffuse}else{FieldType::Free};let x=read(&a[2]);let out=Path::new(&a[3]);fs::create_dir_all(out).unwrap();
+if a[1]=="slope" {let nm:[f64;21]=x.try_into().unwrap();let(n,s)=calc_slopes(&nm);write(&out.join("n.bin"),&[n]);write(&out.join("s.bin"),&s);return}
+if a[1]=="levels" {let nm=main_loudness(&x,field).unwrap();let(n,s)=calc_slopes(&nm);write(&out.join("n.bin"),&[n]);write(&out.join("s.bin"),&s);return}
+let r=iso532::loudness_zwtv(&x,48000.,field).unwrap();write(&out.join("n.bin"),&r.n);write(&out.join("s.bin"),&r.n_specific);write(&out.join("t.bin"),&r.time_axis);
+if a[1]=="stages" {let(tol,k)=third_octave_levels::third_octave_levels(&x);let mut tm=vec![0.;28*k];for t in 0..k{for b in 0..28{tm[t*28+b]=tol[b*k+t];}}
+let mut core=vec![0.;21*k];main_loudness_frames_into(&tm,k,field,&mut core).unwrap();let nl=nonlinear_decay::nl_loudness_with(&core,k,ParMode::Rayon,NlInit::Zero);write(&out.join("nl.bin"),&nl);
+let mut n=vec![0.;k];let mut s=vec![0.;240*k];for t in 0..k{let nm=std::array::from_fn(|b|nl[b*k+t]);let(nt,st)=calc_slopes(&nm);n[t]=nt;for b in 0..240{s[b*k+t]=st[b];}}write(&out.join("slope-n.bin"),&n);write(&out.join("slope-s.bin"),&s);}
+}

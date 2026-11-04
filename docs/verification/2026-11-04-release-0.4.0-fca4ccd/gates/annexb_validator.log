@@ -1,0 +1,63 @@
+COMMAND ["cargo", "test", "-p", "iso532", "--test", "annexb_validator", "--", "--nocapture"]
+   Compiling iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.22s
+     Running tests\annexb_validator.rs (<REPO>\tmp\acceptance-040-astra\gates-target\debug\deps\annexb_validator-9f7f586c6c780f7f.exe)
+
+running 24 tests
+
+thread 'bin_1_byte_panics' (74076) panicked at iso532\tests\common\mod.rs:79:5:
+golden "<USER_HOME>\\AppData\\Local\\Temp\\iso532-v01-41904-2-bin_1_byte_panics.bin\\bin_1_byte_panics.bin": 1 trailing bytes, not a whole number of f64
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'bin_15_bytes_panics' (110684) panicked at iso532\tests\common\mod.rs:79:5:
+golden "<USER_HOME>\\AppData\\Local\\Temp\\iso532-v01-41904-1-bin_15_bytes_panics.bin\\bin_15_bytes_panics.bin": 7 trailing bytes, not a whole number of f64
+
+thread 'bin_7_bytes_panics' (87084) panicked at iso532\tests\common\mod.rs:79:5:
+golden "<USER_HOME>\\AppData\\Local\\Temp\\iso532-v01-41904-3-bin_7_bytes_panics.bin\\bin_7_bytes_panics.bin": 7 trailing bytes, not a whole number of f64
+
+thread 'bin_9_bytes_panics' (84916) panicked at iso532\tests\common\mod.rs:79:5:
+golden "<USER_HOME>\\AppData\\Local\\Temp\\iso532-v01-41904-4-bin_9_bytes_panics.bin\\bin_9_bytes_panics.bin": 1 trailing bytes, not a whole number of f64
+
+thread 'bin_17_bytes_panics' (130156) panicked at iso532\tests\common\mod.rs:79:5:
+golden "<USER_HOME>\\AppData\\Local\\Temp\\iso532-v01-41904-0-bin_17_bytes_panics.bin\\bin_17_bytes_panics.bin": 1 trailing bytes, not a whole number of f64
+test bin_1_byte_panics - should panic ... ok
+test bin_15_bytes_panics - should panic ... ok
+test bin_7_bytes_panics - should panic ... ok
+test bin_9_bytes_panics - should panic ... ok
+test bin_17_bytes_panics - should panic ... ok
+test invalid_empty ... ok
+test invalid_length_mismatch_has_no_common_range_pass ... ok
+test invalid_negative_reference ... ok
+test invalid_non_finite_got ... ok
+test invalid_non_finite_reference ... ok
+test short_curves_are_compared_normally ... ok
+test tolerance_at_the_crossover_reference_2 ... ok
+test tolerance_floor_at_zero_reference ... ok
+test tolerance_is_max_not_additive ... ok
+test tolerance_relative_branch_reference_100 ... ok
+test tolerance_relative_branch_reference_8 ... ok
+test worst_point_is_the_largest_excess ... ok
+test csv_header_bom_is_tolerated ... ok
+test csv_copy_of_signal3_matches_the_name_based_reader_bitwise ... ok
+
+thread 'csv_bom_on_a_data_row_panics' (81216) panicked at iso532\tests\common\annexb_check.rs:137:9:
+<USER_HOME>\AppData\Local\Temp\iso532-v01-41904-10-bom_row.csv\bom_row.csv:121: BOM outside the header line
+test csv_bom_on_a_data_row_panics - should panic ... ok
+thread 'csv_missing_row_is_caught_by_the_callers_row_count_check' (67940) panicked at iso532\tests\annexb_validator.rs:273:9:
+assertion `left == right` failed: Annex B specific loudness must have 240 rows
+  left: 239
+ right: 240
+
+test csv_missing_row_is_caught_by_the_callers_row_count_check ... ok
+
+thread 'csv_unparsable_row_panics_with_line_number' (143132) panicked at iso532\tests\common\annexb_check.rs:150:33:
+<USER_HOME>\AppData\Local\Temp\iso532-v01-41904-11-bad_row.csv\bad_row.csv:121: cannot parse "abc"
+
+thread 'csv_blank_row_panics_not_skipped' (109772) panicked at iso532\tests\common\annexb_check.rs:143:9:
+<USER_HOME>\AppData\Local\Temp\iso532-v01-41904-9-blank_row.csv\blank_row.csv:121: blank line is not a valid Annex B row
+test csv_unparsable_row_panics_with_line_number - should panic ... ok
+test csv_blank_row_panics_not_skipped - should panic ... ok
+test bin_whole_words_are_read ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

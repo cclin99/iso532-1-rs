@@ -1,0 +1,61 @@
+[
+  {
+    "name": "pip-freeze-final",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "freeze"
+    ],
+    "exit_code": 0,
+    "seconds": 0.8666737079620361
+  },
+  {
+    "name": "maturin-retry",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "-m",
+      "maturin",
+      "build",
+      "--release",
+      "--out",
+      "<REPO>\\tmp\\acceptance-040-astra\\wheels"
+    ],
+    "exit_code": 0,
+    "seconds": 27.416159868240356
+  },
+  {
+    "name": "wheel-install",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "<REPO>\\tmp\\acceptance-040-astra\\wheels\\iso532-0.4.0-cp39-abi3-win_amd64.whl"
+    ],
+    "exit_code": 0,
+    "seconds": 0.9384236335754395
+  },
+  {
+    "name": "pytest",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "iso532-py/tests",
+      "-v",
+      "-s"
+    ],
+    "exit_code": 2,
+    "seconds": 21.176950216293335
+  },
+  {
+    "name": "measure-mosqito",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "<REPO>\\docs\\verification\\2026-11-04-release-0.4.0-fca4ccd\\gates\\measure_mosqito.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.1523308753967285
+  }
+]

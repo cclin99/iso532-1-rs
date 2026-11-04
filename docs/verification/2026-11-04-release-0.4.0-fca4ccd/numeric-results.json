@@ -1,0 +1,3999 @@
+{
+  "sources": {
+    "official": "a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491",
+    "patched": "739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9",
+    "diagnostic": "ab1530162b17bb223797db80cd064289e24128e60d700e274ddf17e2707d2d11"
+  },
+  "dlls": {
+    "official": "4422c5b3115039b464e6978f5a18b01d8bd252e6a53eb3919132ff159f224f6a",
+    "patched": "e88675f006b7da8f7acf63e0034eb5c73aaf46453dfcccfddef6e8fed1097f0b",
+    "diagnostic": "fc4ce339df6fabbdaf4c2384ce0052e788688709a45c3bf468fcd5941022266a"
+  },
+  "rust_executables": {
+    "candidate": "1d5d84822022fdd925abc7a6ad757681f5f0955e94ec8f490390aa874e31e731",
+    "round1": "7a214e6e589425a19f48c1484e57d9d9d249ac054feb959c9b801362403f745e"
+  },
+  "single": {
+    "SIG18_FRAME1564": {
+      "total": 7.940761510726896,
+      "total_bits": "401fc356fc47a15a",
+      "cell35": 0.8201342464748338,
+      "cell36": 0.8138793716641407,
+      "nm4": 0.8138793716641407,
+      "band0_all_zero": false,
+      "C": {
+        "official": {
+          "total": 7.9418534354775945,
+          "total_delta": -0.0010919247506988583,
+          "specific": {
+            "max_abs": 0.0012658429935332727,
+            "max_coordinate": [
+              53
+            ],
+            "max_a_bits": "3fd9ecbb30df52fb",
+            "max_b_bits": "3fda0178856fe803",
+            "bitwise_differences": 72,
+            "first_coordinate": [
+              35
+            ],
+            "first_a_bits": "3fea3e8a2cde0c68",
+            "first_b_bits": "3fea3f0e39d88146"
+          }
+        },
+        "patched": {
+          "total": 7.940768088541021,
+          "total_delta": -6.577814125385828e-06,
+          "specific": {
+            "max_abs": 6.296667893557206e-05,
+            "max_coordinate": [
+              35
+            ],
+            "max_a_bits": "3fea3e8a2cde0c68",
+            "max_b_bits": "3fea3f0e39d88146",
+            "bitwise_differences": 72,
+            "first_coordinate": [
+              35
+            ],
+            "first_a_bits": "3fea3e8a2cde0c68",
+            "first_b_bits": "3fea3f0e39d88146"
+          }
+        },
+        "diagnostic": {
+          "total": 7.940761510726897,
+          "total_delta": -1.7763568394002505e-15,
+          "specific": {
+            "max_abs": 0.5354429262229439,
+            "max_coordinate": [
+              8
+            ],
+            "max_a_bits": "3fb07c777b21ac5c",
+            "max_b_bits": "3fe331e8238446a0",
+            "bitwise_differences": 89,
+            "first_coordinate": [
+              8
+            ],
+            "first_a_bits": "3fb07c777b21ac5c",
+            "first_b_bits": "3fe331e8238446a0"
+          }
+        }
+      }
+    },
+    "SIG23_FRAME3893": {
+      "total": 4.7508434035893385,
+      "total_bits": "401300dd17db558b",
+      "cell35": 0.3233949923141389,
+      "cell36": 0.3233949923141389,
+      "nm4": 0.3233949923141389,
+      "band0_all_zero": true,
+      "C": {
+        "official": {
+          "total": 4.7515873956819235,
+          "total_delta": -0.0007439920925849108,
+          "specific": {
+            "max_abs": 0.001845545772176771,
+            "max_coordinate": [
+              44
+            ],
+            "max_a_bits": "3fd32c2dbe3e59f4",
+            "max_b_bits": "3fd34a6a85ed606e",
+            "bitwise_differences": 53,
+            "first_coordinate": [
+              28
+            ],
+            "first_a_bits": "3fc3c14027e406bf",
+            "first_b_bits": "3fc3c1b57d3485ea"
+          }
+        },
+        "patched": {
+          "total": 4.750843279287661,
+          "total_delta": 1.243016773955219e-07,
+          "specific": {
+            "max_abs": 1.7089761390032265e-05,
+            "max_coordinate": [
+              167
+            ],
+            "max_a_bits": "3fd2785552f227fb",
+            "max_b_bits": "3fd2789d00efff4b",
+            "bitwise_differences": 53,
+            "first_coordinate": [
+              28
+            ],
+            "first_a_bits": "3fc3c14027e406bf",
+            "first_b_bits": "3fc3c1b57d3485ea"
+          }
+        },
+        "diagnostic": {
+          "total": 4.750843403589338,
+          "total_delta": 8.881784197001252e-16,
+          "specific": {
+            "max_abs": 0.22391007244075112,
+            "max_coordinate": [
+              34
+            ],
+            "max_a_bits": "3fb977d7fd4d274c",
+            "max_b_bits": "3fd4b280e8eb7b41",
+            "bitwise_differences": 71,
+            "first_coordinate": [
+              8
+            ],
+            "first_a_bits": "0000000000000000",
+            "first_b_bits": "3fb88dad1be63780"
+          }
+        }
+      }
+    },
+    "BAND20_ONLY": {
+      "total": 0.3999999999999986,
+      "total_bits": "3fd9999999999980",
+      "cell35": 0.0,
+      "cell36": 0.0,
+      "nm4": 0.0,
+      "band0_all_zero": true,
+      "C": {
+        "official": {
+          "total": 0.39999961853027344,
+          "total_delta": 3.8146972514141453e-07,
+          "specific": {
+            "max_abs": 0.0,
+            "max_coordinate": [
+              0
+            ],
+            "max_a_bits": "0000000000000000",
+            "max_b_bits": "0000000000000000",
+            "bitwise_differences": 0,
+            "first_coordinate": null,
+            "first_a_bits": null,
+            "first_b_bits": null
+          }
+        },
+        "patched": {
+          "total": 0.39999961853027344,
+          "total_delta": 3.8146972514141453e-07,
+          "specific": {
+            "max_abs": 0.0,
+            "max_coordinate": [
+              0
+            ],
+            "max_a_bits": "0000000000000000",
+            "max_b_bits": "0000000000000000",
+            "bitwise_differences": 0,
+            "first_coordinate": null,
+            "first_a_bits": null,
+            "first_b_bits": null
+          }
+        },
+        "diagnostic": {
+          "total": 0.3999999999999986,
+          "total_delta": 0.0,
+          "specific": {
+            "max_abs": 1.0,
+            "max_coordinate": [
+              235
+            ],
+            "max_a_bits": "0000000000000000",
+            "max_b_bits": "3ff0000000000000",
+            "bitwise_differences": 2,
+            "first_coordinate": [
+              235
+            ],
+            "first_a_bits": "0000000000000000",
+            "first_b_bits": "3ff0000000000000"
+          }
+        }
+      }
+    }
+  },
+  "sequences": {
+    "annexb_c01_sig18": {
+      "official": {
+        "n": {
+          "max_abs": 0.002968420086649104,
+          "max_coordinate": [
+            685
+          ],
+          "max_a_bits": "4020a56d88454bd0",
+          "max_b_bits": "4020a6f29bebae9a",
+          "bitwise_differences": 1030,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f7142968f741233",
+          "first_b_bits": "3f714297070d97dd"
+        },
+        "specific": {
+          "max_abs": 0.01000016603300019,
+          "max_coordinate": [
+            49,
+            681
+          ],
+          "max_a_bits": "3fd331fc05195197",
+          "max_b_bits": "3fd3d5d3c19d8ff2",
+          "bitwise_differences": 243921,
+          "first_coordinate": [
+            0,
+            81
+          ],
+          "first_a_bits": "3f62941adaab9b79",
+          "first_b_bits": "3f62941ae735fd43"
+        },
+        "tail_total_delta": -1.4293139028137385e-08,
+        "tail_specific_max": 9.111338130491576e-24
+      },
+      "patched": {
+        "n": {
+          "max_abs": 6.613789615528276e-06,
+          "max_coordinate": [
+            407
+          ],
+          "max_a_bits": "401e34e4204a7b60",
+          "max_b_bits": "401e34e5dc2285b8",
+          "bitwise_differences": 1030,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f7142968f741233",
+          "first_b_bits": "3f714297070d97dd"
+        },
+        "specific": {
+          "max_abs": 9.39654293721226e-05,
+          "max_coordinate": [
+            28,
+            528
+          ],
+          "max_a_bits": "3ff74e2c7fbd2ca4",
+          "max_b_bits": "3ff74e8f07644fe6",
+          "bitwise_differences": 243921,
+          "first_coordinate": [
+            0,
+            81
+          ],
+          "first_a_bits": "3f62941adaab9b79",
+          "first_b_bits": "3f62941ae735fd43"
+        },
+        "tail_total_delta": -6.609615925325801e-11,
+        "tail_specific_max": 9.111338130491576e-24
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 4.1277607110146164e-07,
+          "max_coordinate": [
+            372
+          ],
+          "max_a_bits": "402954cf2916cf1a",
+          "max_b_bits": "402954cf36f08748",
+          "bitwise_differences": 1030,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f7142968f741233",
+          "first_b_bits": "3f7142969c7a89d8"
+        },
+        "specific": {
+          "max_abs": 1.183530509496113,
+          "max_coordinate": [
+            17,
+            527
+          ],
+          "max_a_bits": "3fd7e52c2dc3f2b3",
+          "max_b_bits": "3ff8e908bb72a6c1",
+          "bitwise_differences": 243950,
+          "first_coordinate": [
+            0,
+            81
+          ],
+          "first_a_bits": "3f62941adaab9b79",
+          "first_b_bits": "3f62941ae735fd43"
+        },
+        "tail_total_delta": -3.1539100758121164e-11,
+        "tail_specific_max": 1.7313563722840553e-16
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 1.4210854715202004e-14,
+          "max_coordinate": [
+            891
+          ],
+          "max_a_bits": "4033ea05f24eb1ac",
+          "max_b_bits": "4033ea05f24eb1b0",
+          "bitwise_differences": 2990,
+          "first_coordinate": [
+            214
+          ],
+          "first_a_bits": "3f8f460ba9f314de",
+          "first_b_bits": "3f8f460ba9f314df"
+        },
+        "specific": {
+          "max_abs": 1.1875820560422514,
+          "max_coordinate": [
+            17,
+            2106
+          ],
+          "max_a_bits": "3fd6af6d4e13e6ed",
+          "max_b_bits": "3ff8ac315e454316",
+          "bitwise_differences": 271910,
+          "first_coordinate": [
+            8,
+            263
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f67d333bd8097be"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 6.613789615528276e-06,
+          "max_coordinate": [
+            407
+          ],
+          "max_a_bits": "401e34e4204a7b60",
+          "max_b_bits": "401e34e5dc2285b8",
+          "bitwise_differences": 1030,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f7142968f741233",
+          "first_b_bits": "3f714297070d97dd"
+        },
+        "specific": {
+          "max_abs": 0.0437728528172292,
+          "max_coordinate": [
+            36,
+            391
+          ],
+          "max_a_bits": "3fe8a4b67b0e2d47",
+          "max_b_bits": "3fea0b4cce77dc59",
+          "bitwise_differences": 243921,
+          "first_coordinate": [
+            0,
+            81
+          ],
+          "first_a_bits": "3f62941adaab9b79",
+          "first_b_bits": "3f62941ae735fd43"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "annexb_c01_sig23": {
+      "official": {
+        "n": {
+          "max_abs": 0.001528598954822158,
+          "max_coordinate": [
+            798
+          ],
+          "max_a_bits": "4018d8011574113e",
+          "max_b_bits": "4018d991cbfe2560",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f83e722a480f1d6",
+          "first_b_bits": "3f83e72305c25f61"
+        },
+        "specific": {
+          "max_abs": 0.009332949215528963,
+          "max_coordinate": [
+            49,
+            1010
+          ],
+          "max_a_bits": "3fd3baaca74df3d9",
+          "max_b_bits": "3fd45395e137ee89",
+          "bitwise_differences": 280403,
+          "first_coordinate": [
+            9,
+            90
+          ],
+          "first_a_bits": "3f668e20a1492bbd",
+          "first_b_bits": "3f668e20b7747ede"
+        },
+        "tail_total_delta": -1.280202367244694e-07,
+        "tail_specific_max": 3.2598605043503344e-23
+      },
+      "patched": {
+        "n": {
+          "max_abs": 3.248153461754555e-07,
+          "max_coordinate": [
+            482
+          ],
+          "max_a_bits": "401d6f3a586b2282",
+          "max_b_bits": "401d6f3a6e376b82",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f83e722a480f1d6",
+          "first_b_bits": "3f83e72305c25f61"
+        },
+        "specific": {
+          "max_abs": 8.24861920183384e-05,
+          "max_coordinate": [
+            167,
+            952
+          ],
+          "max_a_bits": "3ffb7aa55358b665",
+          "max_b_bits": "3ffb7afbd190aa7a",
+          "bitwise_differences": 280403,
+          "first_coordinate": [
+            9,
+            90
+          ],
+          "first_a_bits": "3f668e20a1492bbd",
+          "first_b_bits": "3f668e20b7747ede"
+        },
+        "tail_total_delta": -5.1557667857249356e-11,
+        "tail_specific_max": 3.2598605043503344e-23
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 3.606272969136626e-07,
+          "max_coordinate": [
+            445
+          ],
+          "max_a_bits": "4026674e829bcbf6",
+          "max_b_bits": "4026674e8eb58fc6",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f83e722a480f1d6",
+          "first_b_bits": "3f83e722b1421378"
+        },
+        "specific": {
+          "max_abs": 1.257324095070985,
+          "max_coordinate": [
+            151,
+            570
+          ],
+          "max_a_bits": "3fe56e89ee249c09",
+          "max_b_bits": "3ffed544d5df25c7",
+          "bitwise_differences": 281627,
+          "first_coordinate": [
+            8,
+            90
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f668e20b7747ede"
+        },
+        "tail_total_delta": -1.1206394145979459e-10,
+        "tail_specific_max": 6.031473295447149e-16
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 1.0658141036401503e-14,
+          "max_coordinate": [
+            1185
+          ],
+          "max_a_bits": "402fc562ea005eb7",
+          "max_b_bits": "402fc562ea005ebd",
+          "bitwise_differences": 3585,
+          "first_coordinate": [
+            213
+          ],
+          "first_a_bits": "3f79c7e142f05b91",
+          "first_b_bits": "3f79c7e142f05b93"
+        },
+        "specific": {
+          "max_abs": 1.3056080861576256,
+          "max_coordinate": [
+            151,
+            3585
+          ],
+          "max_a_bits": "3fe7cb23853d7ebe",
+          "max_b_bits": "400064ab884ae51e",
+          "bitwise_differences": 259662,
+          "first_coordinate": [
+            8,
+            360
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f668e20a1492bbd"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 3.248153461754555e-07,
+          "max_coordinate": [
+            482
+          ],
+          "max_a_bits": "401d6f3a586b2282",
+          "max_b_bits": "401d6f3a6e376b82",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f83e722a480f1d6",
+          "first_b_bits": "3f83e72305c25f61"
+        },
+        "specific": {
+          "max_abs": 0.03508193084449651,
+          "max_coordinate": [
+            198,
+            899
+          ],
+          "max_a_bits": "3fe8fa11e92c06cd",
+          "max_b_bits": "3fea19760d61123d",
+          "bitwise_differences": 280403,
+          "first_coordinate": [
+            9,
+            90
+          ],
+          "first_a_bits": "3f668e20a1492bbd",
+          "first_b_bits": "3f668e20b7747ede"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "annexb_c01_sig24": {
+      "official": {
+        "n": {
+          "max_abs": 0.003530027535897595,
+          "max_coordinate": [
+            544
+          ],
+          "max_a_bits": "401c4572ace609f2",
+          "max_b_bits": "401c49100d09524d",
+          "bitwise_differences": 1147,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f78917c13d0cae8",
+          "first_b_bits": "3f78917c05a04843"
+        },
+        "specific": {
+          "max_abs": 0.010005259508607534,
+          "max_coordinate": [
+            48,
+            450
+          ],
+          "max_a_bits": "3fd3367e17f79315",
+          "max_b_bits": "3fd3da6b318fbb6d",
+          "bitwise_differences": 268730,
+          "first_coordinate": [
+            0,
+            158
+          ],
+          "first_a_bits": "3f4739eb0242208e",
+          "first_b_bits": "3f4739eb125c0c96"
+        },
+        "tail_total_delta": -9.333105559011443e-09,
+        "tail_specific_max": 2.1604372979486025e-23
+      },
+      "patched": {
+        "n": {
+          "max_abs": 1.7532515741436328e-06,
+          "max_coordinate": [
+            364
+          ],
+          "max_a_bits": "401b7ee431ab41a6",
+          "max_b_bits": "401b7ee4a753e39e",
+          "bitwise_differences": 1147,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f78917c13d0cae8",
+          "first_b_bits": "3f78917c05a04843"
+        },
+        "specific": {
+          "max_abs": 6.217173583822344e-05,
+          "max_coordinate": [
+            106,
+            206
+          ],
+          "max_a_bits": "3ff213a453794825",
+          "max_b_bits": "3ff213e584926fb7",
+          "bitwise_differences": 268730,
+          "first_coordinate": [
+            0,
+            158
+          ],
+          "first_a_bits": "3f4739eb0242208e",
+          "first_b_bits": "3f4739eb125c0c96"
+        },
+        "tail_total_delta": -8.987306298474662e-11,
+        "tail_specific_max": 2.1604372979486025e-23
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 2.9993564965025143e-07,
+          "max_coordinate": [
+            324
+          ],
+          "max_a_bits": "4022940396e9c7b6",
+          "max_b_bits": "40229403a0fa352e",
+          "bitwise_differences": 1147,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f78917c13d0cae8",
+          "first_b_bits": "3f78917c2296f8c2"
+        },
+        "specific": {
+          "max_abs": 0.5762047093099096,
+          "max_coordinate": [
+            78,
+            503
+          ],
+          "max_a_bits": "3fe50535c0baf60a",
+          "max_b_bits": "3ff3babd4e421397",
+          "bitwise_differences": 268835,
+          "first_coordinate": [
+            0,
+            158
+          ],
+          "first_a_bits": "3f4739eb0242208e",
+          "first_b_bits": "3f4739eb125c0c96"
+        },
+        "tail_total_delta": -3.54782240911955e-11,
+        "tail_specific_max": 3.45725230700456e-16
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 8.881784197001252e-15,
+          "max_coordinate": [
+            824
+          ],
+          "max_a_bits": "402b1c58695f5017",
+          "max_b_bits": "402b1c58695f5012",
+          "bitwise_differences": 3314,
+          "first_coordinate": [
+            216
+          ],
+          "first_a_bits": "3fb457cebb71c0ef",
+          "first_b_bits": "3fb457cebb71c0f0"
+        },
+        "specific": {
+          "max_abs": 0.5807445490085927,
+          "max_coordinate": [
+            78,
+            2013
+          ],
+          "max_a_bits": "3fe4cd7189553812",
+          "max_b_bits": "3ff3b173907fc3aa",
+          "bitwise_differences": 302074,
+          "first_coordinate": [
+            8,
+            263
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f6513449b89b621"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 1.7532515741436328e-06,
+          "max_coordinate": [
+            364
+          ],
+          "max_a_bits": "401b7ee431ab41a6",
+          "max_b_bits": "401b7ee4a753e39e",
+          "bitwise_differences": 1147,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f78917c13d0cae8",
+          "first_b_bits": "3f78917c05a04843"
+        },
+        "specific": {
+          "max_abs": 0.03485164720526113,
+          "max_coordinate": [
+            108,
+            238
+          ],
+          "max_a_bits": "3fe9180fedbd55a9",
+          "max_b_bits": "3fea3591215c0045",
+          "bitwise_differences": 268730,
+          "first_coordinate": [
+            0,
+            158
+          ],
+          "first_a_bits": "3f4739eb0242208e",
+          "first_b_bits": "3f4739eb125c0c96"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "annexb_c01_sig25": {
+      "official": {
+        "n": {
+          "max_abs": 7.781257789218898e-07,
+          "max_coordinate": [
+            129
+          ],
+          "max_a_bits": "401add8489f07a5c",
+          "max_b_bits": "401add84be2893ba",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f3027ab0f3c0c3b",
+          "first_b_bits": "3f3027abd0b89050"
+        },
+        "specific": {
+          "max_abs": 8.2490868272167e-05,
+          "max_coordinate": [
+            167,
+            127
+          ],
+          "max_a_bits": "3ffd8e3b7fe384d7",
+          "max_b_bits": "3ffd8e91ff5cd273",
+          "bitwise_differences": 276772,
+          "first_coordinate": [
+            9,
+            205
+          ],
+          "first_a_bits": "3f6898b4cff02b19",
+          "first_b_bits": "3f6898b4e758bd56"
+        },
+        "tail_total_delta": -7.405702266705116e-11,
+        "tail_specific_max": 4.674216395024943e-24
+      },
+      "patched": {
+        "n": {
+          "max_abs": 7.781257789218898e-07,
+          "max_coordinate": [
+            129
+          ],
+          "max_a_bits": "401add8489f07a5c",
+          "max_b_bits": "401add84be2893ba",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f3027ab0f3c0c3b",
+          "first_b_bits": "3f3027abd0b89050"
+        },
+        "specific": {
+          "max_abs": 8.2490868272167e-05,
+          "max_coordinate": [
+            167,
+            127
+          ],
+          "max_a_bits": "3ffd8e3b7fe384d7",
+          "max_b_bits": "3ffd8e91ff5cd273",
+          "bitwise_differences": 276772,
+          "first_coordinate": [
+            9,
+            205
+          ],
+          "first_a_bits": "3f6898b4cff02b19",
+          "first_b_bits": "3f6898b4e758bd56"
+        },
+        "tail_total_delta": -7.405702266705116e-11,
+        "tail_specific_max": 4.674216395024943e-24
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 2.3780904534476122e-07,
+          "max_coordinate": [
+            251
+          ],
+          "max_a_bits": "401d151e4a71c840",
+          "max_b_bits": "401d151e5a674f7e",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f3027ab0f3c0c3b",
+          "first_b_bits": "3f3027ab28ddced6"
+        },
+        "specific": {
+          "max_abs": 1.1207549773514167,
+          "max_coordinate": [
+            151,
+            128
+          ],
+          "max_a_bits": "3fe84c87426eac1e",
+          "max_b_bits": "3ffe14e066a0316c",
+          "bitwise_differences": 277996,
+          "first_coordinate": [
+            8,
+            205
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f6898b4e758bd56"
+        },
+        "tail_total_delta": -3.9369560779836665e-11,
+        "tail_specific_max": 7.978815971523506e-17
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 8.881784197001252e-15,
+          "max_coordinate": [
+            989
+          ],
+          "max_a_bits": "4026172cc1e1bb7f",
+          "max_b_bits": "4026172cc1e1bb84",
+          "bitwise_differences": 3496,
+          "first_coordinate": [
+            220
+          ],
+          "first_a_bits": "3fa13e62b752ed98",
+          "first_b_bits": "3fa13e62b752ed99"
+        },
+        "specific": {
+          "max_abs": 1.1709963668157681,
+          "max_coordinate": [
+            151,
+            510
+          ],
+          "max_a_bits": "3feb2c1b2865c3df",
+          "max_b_bits": "4000293a21f31c11",
+          "bitwise_differences": 282791,
+          "first_coordinate": [
+            8,
+            819
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f61b0ccb9efa8ba"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 7.781257789218898e-07,
+          "max_coordinate": [
+            129
+          ],
+          "max_a_bits": "401add8489f07a5c",
+          "max_b_bits": "401add84be2893ba",
+          "bitwise_differences": 1222,
+          "first_coordinate": [
+            54
+          ],
+          "first_a_bits": "3f3027ab0f3c0c3b",
+          "first_b_bits": "3f3027abd0b89050"
+        },
+        "specific": {
+          "max_abs": 0.02639265176253769,
+          "max_coordinate": [
+            152,
+            198
+          ],
+          "max_a_bits": "3fe90f58d1bc6fc0",
+          "max_b_bits": "3fe9e78e38c207d8",
+          "bitwise_differences": 276772,
+          "first_coordinate": [
+            9,
+            205
+          ],
+          "first_a_bits": "3f6898b4cff02b19",
+          "first_b_bits": "3f6898b4e758bd56"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "annexb_sig10": {
+      "official": {
+        "n": {
+          "max_abs": 9.794874511470653e-08,
+          "max_coordinate": [
+            9
+          ],
+          "max_a_bits": "3ff52edb19697f82",
+          "max_b_bits": "3ff52edb33b47c0e",
+          "bitwise_differences": 493,
+          "first_coordinate": [
+            7
+          ],
+          "first_a_bits": "3f9c35e39d140001",
+          "first_b_bits": "3f9c35e3c9217836"
+        },
+        "specific": {
+          "max_abs": 0.00010970841248436614,
+          "max_coordinate": [
+            92,
+            12
+          ],
+          "max_a_bits": "40016e1bd745fea7",
+          "max_b_bits": "40016e555c16582f",
+          "bitwise_differences": 68457,
+          "first_coordinate": [
+            28,
+            14
+          ],
+          "first_a_bits": "3f5b98aab10f2c13",
+          "first_b_bits": "3f5b98aac596f1c0"
+        },
+        "tail_total_delta": -1.7561397511360664e-14,
+        "tail_specific_max": 1.73717413499494e-36
+      },
+      "patched": {
+        "n": {
+          "max_abs": 9.794874511470653e-08,
+          "max_coordinate": [
+            9
+          ],
+          "max_a_bits": "3ff52edb19697f82",
+          "max_b_bits": "3ff52edb33b47c0e",
+          "bitwise_differences": 493,
+          "first_coordinate": [
+            7
+          ],
+          "first_a_bits": "3f9c35e39d140001",
+          "first_b_bits": "3f9c35e3c9217836"
+        },
+        "specific": {
+          "max_abs": 0.00010970841248436614,
+          "max_coordinate": [
+            92,
+            12
+          ],
+          "max_a_bits": "40016e1bd745fea7",
+          "max_b_bits": "40016e555c16582f",
+          "bitwise_differences": 68457,
+          "first_coordinate": [
+            28,
+            14
+          ],
+          "first_a_bits": "3f5b98aab10f2c13",
+          "first_b_bits": "3f5b98aac596f1c0"
+        },
+        "tail_total_delta": -1.7561397511360664e-14,
+        "tail_specific_max": 1.73717413499494e-36
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 1.48719580650436e-07,
+          "max_coordinate": [
+            14
+          ],
+          "max_a_bits": "40113310b09e1f92",
+          "max_b_bits": "40113310ba991b34",
+          "bitwise_differences": 493,
+          "first_coordinate": [
+            7
+          ],
+          "first_a_bits": "3f9c35e39d140001",
+          "first_b_bits": "3f9c35e3ab559f26"
+        },
+        "specific": {
+          "max_abs": 1.6297952232526671,
+          "max_coordinate": [
+            78,
+            12
+          ],
+          "max_a_bits": "3fe51645ecbf8523",
+          "max_b_bits": "40024f638f284200",
+          "bitwise_differences": 68950,
+          "first_coordinate": [
+            27,
+            14
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f5b98aac596f1c0"
+        },
+        "tail_total_delta": -3.766071727917379e-14,
+        "tail_specific_max": 3.027955476584641e-29
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 1.7763568394002505e-15,
+          "max_coordinate": [
+            35
+          ],
+          "max_a_bits": "40162827b3ce40b8",
+          "max_b_bits": "40162827b3ce40b6",
+          "bitwise_differences": 954,
+          "first_coordinate": [
+            28
+          ],
+          "first_a_bits": "3fdf106a82553301",
+          "first_b_bits": "3fdf106a82553300"
+        },
+        "specific": {
+          "max_abs": 1.6297951502083654,
+          "max_coordinate": [
+            78,
+            48
+          ],
+          "max_a_bits": "3fe51645ecbf8523",
+          "max_b_bits": "40024f63855a7987",
+          "bitwise_differences": 29130,
+          "first_coordinate": [
+            27,
+            56
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f5b98aab10f2c13"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 7.257493850332253e-08,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "400127f5e78167b6",
+          "max_b_bits": "400127f5ddc3bfcd",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "400127f5e78167b6",
+          "first_b_bits": "400127f5ddc3bfcd"
+        },
+        "specific": {
+          "max_abs": 4.1886576687799604e-05,
+          "max_coordinate": [
+            96
+          ],
+          "max_a_bits": "3fdc59553386e55a",
+          "max_b_bits": "3fdc5a04e2e56cc6",
+          "bitwise_differences": 106,
+          "first_coordinate": [
+            44
+          ],
+          "first_a_bits": "3f496e9dc3befbcb",
+          "first_b_bits": "3f496e9dd15cfb9b"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 9.794874511470653e-08,
+          "max_coordinate": [
+            9
+          ],
+          "max_a_bits": "3ff52edb19697f82",
+          "max_b_bits": "3ff52edb33b47c0e",
+          "bitwise_differences": 493,
+          "first_coordinate": [
+            7
+          ],
+          "first_a_bits": "3f9c35e39d140001",
+          "first_b_bits": "3f9c35e3c9217836"
+        },
+        "specific": {
+          "max_abs": 0.0038422400666107276,
+          "max_coordinate": [
+            93,
+            7
+          ],
+          "max_a_bits": "3fb87cb18153cdd7",
+          "max_b_bits": "3fb9787f98c1bfd8",
+          "bitwise_differences": 68457,
+          "first_coordinate": [
+            28,
+            14
+          ],
+          "first_a_bits": "3f5b98aab10f2c13",
+          "first_b_bits": "3f5b98aac596f1c0"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "annexb_sig3": {
+      "official": {
+        "n": {
+          "max_abs": 1.471770909589054e-07,
+          "max_coordinate": [
+            2308
+          ],
+          "max_a_bits": "401014e108e8a9a5",
+          "max_b_bits": "401014e0ff082df4",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca44e1ae9cc8cd",
+          "first_b_bits": "3fca44e1bcc406fd"
+        },
+        "specific": {
+          "max_abs": 6.183566522466322e-05,
+          "max_coordinate": [
+            92,
+            5
+          ],
+          "max_a_bits": "3ff338b8cf714e56",
+          "max_b_bits": "3ff338f9a653dd26",
+          "bitwise_differences": 1089666,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_a_bits": "3f60930764a51386",
+          "first_b_bits": "3f609307772e1c37"
+        },
+        "tail_total_delta": 1.4717472929248743e-07,
+        "tail_specific_max": 6.183452868313566e-05
+      },
+      "patched": {
+        "n": {
+          "max_abs": 1.471770909589054e-07,
+          "max_coordinate": [
+            2308
+          ],
+          "max_a_bits": "401014e108e8a9a5",
+          "max_b_bits": "401014e0ff082df4",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca44e1ae9cc8cd",
+          "first_b_bits": "3fca44e1bcc406fd"
+        },
+        "specific": {
+          "max_abs": 6.183566522466322e-05,
+          "max_coordinate": [
+            92,
+            5
+          ],
+          "max_a_bits": "3ff338b8cf714e56",
+          "max_b_bits": "3ff338f9a653dd26",
+          "bitwise_differences": 1089666,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_a_bits": "3f60930764a51386",
+          "first_b_bits": "3f609307772e1c37"
+        },
+        "tail_total_delta": 1.4717472929248743e-07,
+        "tail_specific_max": 6.183452868313566e-05
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 1.446152531059397e-07,
+          "max_coordinate": [
+            3247
+          ],
+          "max_a_bits": "401014f213ca30d2",
+          "max_b_bits": "401014f21d7ea96e",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca44e1ae9cc8cd",
+          "first_b_bits": "3fca44e1bcfe0040"
+        },
+        "specific": {
+          "max_abs": 0.8913110603918388,
+          "max_coordinate": [
+            78,
+            5
+          ],
+          "max_a_bits": "3fd7cf74b669f891",
+          "max_b_bits": "3ff436ac9089a113",
+          "bitwise_differences": 1094665,
+          "first_coordinate": [
+            8,
+            9
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f609307772e1c37"
+        },
+        "tail_total_delta": -1.4461098718498988e-07,
+        "tail_specific_max": 0.886068041736834
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 3.552713678800501e-15,
+          "max_coordinate": [
+            397
+          ],
+          "max_a_bits": "401014e4b9c1cad5",
+          "max_b_bits": "401014e4b9c1cad9",
+          "bitwise_differences": 9441,
+          "first_coordinate": [
+            2
+          ],
+          "first_a_bits": "3fe3a7bb5fbf100b",
+          "first_b_bits": "3fe3a7bb5fbf100a"
+        },
+        "specific": {
+          "max_abs": 0.9081022853374559,
+          "max_coordinate": [
+            78,
+            22
+          ],
+          "max_a_bits": "3fd5e3ae569f5d3c",
+          "max_b_bits": "3ff40081d8b6ff2d",
+          "bitwise_differences": 1679803,
+          "first_coordinate": [
+            8,
+            36
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f60930764a51386"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 1.447766209139445e-07,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "4010359d3d474dbb",
+          "max_b_bits": "4010359d33900f6b",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "4010359d3d474dbb",
+          "first_b_bits": "4010359d33900f6b"
+        },
+        "specific": {
+          "max_abs": 6.183451359453862e-05,
+          "max_coordinate": [
+            92
+          ],
+          "max_a_bits": "3ff2a4eab2cd526c",
+          "max_b_bits": "3ff2a52b8960bd8b",
+          "bitwise_differences": 117,
+          "first_coordinate": [
+            44
+          ],
+          "first_a_bits": "3f8500435c0a0314",
+          "first_b_bits": "3f8500436748a41f"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 1.471770909589054e-07,
+          "max_coordinate": [
+            2308
+          ],
+          "max_a_bits": "401014e108e8a9a5",
+          "max_b_bits": "401014e0ff082df4",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca44e1ae9cc8cd",
+          "first_b_bits": "3fca44e1bcc406fd"
+        },
+        "specific": {
+          "max_abs": 0.003526614606738268,
+          "max_coordinate": [
+            38,
+            10
+          ],
+          "max_a_bits": "3fb821fb83af0199",
+          "max_b_bits": "3fb9091a4a15ccb6",
+          "bitwise_differences": 1089666,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_a_bits": "3f60930764a51386",
+          "first_b_bits": "3f609307772e1c37"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "annexb_sig5": {
+      "official": {
+        "n": {
+          "max_abs": 0.0032182435442003055,
+          "max_coordinate": [
+            2618
+          ],
+          "max_a_bits": "40241192ff02f6aa",
+          "max_b_bits": "40241338d1588264",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdafe80ad19b6fe",
+          "first_b_bits": "3fdafe80cbc0d240"
+        },
+        "specific": {
+          "max_abs": 0.01002142397526845,
+          "max_coordinate": [
+            48,
+            2582
+          ],
+          "max_a_bits": "3fd3335082449479",
+          "max_b_bits": "3fd3d7816853800c",
+          "bitwise_differences": 1199488,
+          "first_coordinate": [
+            0,
+            20
+          ],
+          "first_a_bits": "3f4e4a83dea14bfd",
+          "first_b_bits": "3f4e4a83f3822249"
+        },
+        "tail_total_delta": -0.0014965000701891995,
+        "tail_specific_max": 5.097533952486133e-05
+      },
+      "patched": {
+        "n": {
+          "max_abs": 2.7118027825068225e-05,
+          "max_coordinate": [
+            2013
+          ],
+          "max_a_bits": "40244a7a96f21e03",
+          "max_b_bits": "40244a7e24e033d8",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdafe80ad19b6fe",
+          "first_b_bits": "3fdafe80cbc0d240"
+        },
+        "specific": {
+          "max_abs": 6.235161843215486e-05,
+          "max_coordinate": [
+            167,
+            1210
+          ],
+          "max_a_bits": "3fec3038f7b12483",
+          "max_b_bits": "3fec30bbba7653c5",
+          "bitwise_differences": 1199488,
+          "first_coordinate": [
+            0,
+            20
+          ],
+          "first_a_bits": "3f4e4a83dea14bfd",
+          "first_b_bits": "3f4e4a83f3822249"
+        },
+        "tail_total_delta": -1.726917759015123e-05,
+        "tail_specific_max": 5.097533952486133e-05
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 3.6061329744541126e-07,
+          "max_coordinate": [
+            2830
+          ],
+          "max_a_bits": "402663e8485b6fb1",
+          "max_b_bits": "402663e8547514b8",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdafe80ad19b6fe",
+          "first_b_bits": "3fdafe80bbf3ab68"
+        },
+        "specific": {
+          "max_abs": 0.6006295020733352,
+          "max_coordinate": [
+            8,
+            1488
+          ],
+          "max_a_bits": "3fb234cf4feb7550",
+          "max_b_bits": "3fe57ef5468accc8",
+          "bitwise_differences": 1199507,
+          "first_coordinate": [
+            0,
+            20
+          ],
+          "first_a_bits": "3f4e4a83dea14bfd",
+          "first_b_bits": "3f4e4a83f3822249"
+        },
+        "tail_total_delta": -3.3514449526705903e-07,
+        "tail_specific_max": 0.28924996574193007
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 1.0658141036401503e-14,
+          "max_coordinate": [
+            1463
+          ],
+          "max_a_bits": "40243a5d063bd9d3",
+          "max_b_bits": "40243a5d063bd9d9",
+          "bitwise_differences": 14494,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fcafc77053e701b",
+          "first_b_bits": "3fcafc77053e701c"
+        },
+        "specific": {
+          "max_abs": 0.6009647299070677,
+          "max_coordinate": [
+            8,
+            5951
+          ],
+          "max_a_bits": "3fb1feb9b971df31",
+          "max_b_bits": "3fe57af199ce3e98",
+          "bitwise_differences": 1102091,
+          "first_coordinate": [
+            8,
+            21
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f6b44842cfc22ed"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 1.5299428973492013e-05,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "4024d5c5caf79af6",
+          "max_b_bits": "4024d5c7cc54b312",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "4024d5c5caf79af6",
+          "first_b_bits": "4024d5c7cc54b312"
+        },
+        "specific": {
+          "max_abs": 4.206389554783918e-05,
+          "max_coordinate": [
+            181
+          ],
+          "max_a_bits": "3fe1bf72251c4b7f",
+          "max_b_bits": "3fe1bfca5bfe13f5",
+          "bitwise_differences": 240,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "3fc3153a4c70f90b",
+          "first_b_bits": "3fc3153a57bb3d71"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 2.7118027825068225e-05,
+          "max_coordinate": [
+            2013
+          ],
+          "max_a_bits": "40244a7a96f21e03",
+          "max_b_bits": "40244a7e24e033d8",
+          "bitwise_differences": 4999,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdafe80ad19b6fe",
+          "first_b_bits": "3fdafe80cbc0d240"
+        },
+        "specific": {
+          "max_abs": 0.03147031276093626,
+          "max_coordinate": [
+            19,
+            4298
+          ],
+          "max_a_bits": "3fd8d8ae6a0e3b23",
+          "max_b_bits": "3fdadc4a7914d489",
+          "bitwise_differences": 1199488,
+          "first_coordinate": [
+            0,
+            20
+          ],
+          "first_a_bits": "3f4e4a83dea14bfd",
+          "first_b_bits": "3f4e4a83f3822249"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "pulse_1k_70": {
+      "official": {
+        "n": {
+          "max_abs": 0.00023382988574471852,
+          "max_coordinate": [
+            264
+          ],
+          "max_a_bits": "4007a1a4b3aba836",
+          "max_b_bits": "4007a21f4bc95a98",
+          "bitwise_differences": 249,
+          "first_coordinate": [
+            251
+          ],
+          "first_a_bits": "3fe0b0cb5513a4d3",
+          "first_b_bits": "3fe0b0cb5edf0cd6"
+        },
+        "specific": {
+          "max_abs": 0.004022018277390238,
+          "max_coordinate": [
+            45,
+            263
+          ],
+          "max_a_bits": "3fd5455223a67eab",
+          "max_b_bits": "3fd58737b4e4463b",
+          "bitwise_differences": 56478,
+          "first_coordinate": [
+            9,
+            256
+          ],
+          "first_a_bits": "3f8ad9a882214287",
+          "first_b_bits": "3f8ad9a89471b444"
+        },
+        "tail_total_delta": -2.520248312126716e-08,
+        "tail_specific_max": 7.52750314501646e-22
+      },
+      "patched": {
+        "n": {
+          "max_abs": 1.4645433754623127e-07,
+          "max_coordinate": [
+            260
+          ],
+          "max_a_bits": "4012eaf37445adc7",
+          "max_b_bits": "4012eaf37e19bec4",
+          "bitwise_differences": 249,
+          "first_coordinate": [
+            251
+          ],
+          "first_a_bits": "3fe0b0cb5513a4d3",
+          "first_b_bits": "3fe0b0cb5edf0cd6"
+        },
+        "specific": {
+          "max_abs": 0.00010970891781614256,
+          "max_coordinate": [
+            92,
+            255
+          ],
+          "max_a_bits": "40018e895776f218",
+          "max_b_bits": "40018ec2dc58a892",
+          "bitwise_differences": 56478,
+          "first_coordinate": [
+            9,
+            256
+          ],
+          "first_a_bits": "3f8ad9a882214287",
+          "first_b_bits": "3f8ad9a89471b444"
+        },
+        "tail_total_delta": -5.7051562259158306e-11,
+        "tail_specific_max": 7.52750314501646e-22
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 1.9558923103346615e-07,
+          "max_coordinate": [
+            257
+          ],
+          "max_a_bits": "401750ac1c910fa1",
+          "max_b_bits": "401750ac29b1422a",
+          "bitwise_differences": 249,
+          "first_coordinate": [
+            251
+          ],
+          "first_a_bits": "3fe0b0cb5513a4d3",
+          "first_b_bits": "3fe0b0cb5e2dfcc1"
+        },
+        "specific": {
+          "max_abs": 1.5812464129203967,
+          "max_coordinate": [
+            78,
+            255
+          ],
+          "max_a_bits": "3fe725b229dd276c",
+          "max_b_bits": "40026fd10f6a9263",
+          "bitwise_differences": 56727,
+          "first_coordinate": [
+            8,
+            256
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f8ad9a89471b444"
+        },
+        "tail_total_delta": -6.547624204975011e-11,
+        "tail_specific_max": 2.112225134213257e-14
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 8.881784197001252e-15,
+          "max_coordinate": [
+            1011
+          ],
+          "max_a_bits": "402360198309259e",
+          "max_b_bits": "40236019830925a3",
+          "bitwise_differences": 800,
+          "first_coordinate": [
+            1001
+          ],
+          "first_a_bits": "3fd39db2cd28e85a",
+          "first_b_bits": "3fd39db2cd28e858"
+        },
+        "specific": {
+          "max_abs": 1.6087622955194607,
+          "max_coordinate": [
+            78,
+            1022
+          ],
+          "max_a_bits": "3fe57abb6f48c4e6",
+          "max_b_bits": "40023d6da0048b47",
+          "bitwise_differences": 26169,
+          "first_coordinate": [
+            8,
+            1021
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f645b575a90adf1"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 6.723480439063678e-08,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "4006f3fda754c736",
+          "max_b_bits": "4006f3fdb05af2ce",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "4006f3fda754c736",
+          "first_b_bits": "4006f3fdb05af2ce"
+        },
+        "specific": {
+          "max_abs": 4.188613802125207e-05,
+          "max_coordinate": [
+            96
+          ],
+          "max_a_bits": "3fdb7821e84e46b8",
+          "max_b_bits": "3fdb78d1973439ba",
+          "bitwise_differences": 197,
+          "first_coordinate": [
+            9
+          ],
+          "first_a_bits": "3f923ddf7947d661",
+          "first_b_bits": "3f923ddf854e8d72"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 1.4645433754623127e-07,
+          "max_coordinate": [
+            260
+          ],
+          "max_a_bits": "4012eaf37445adc7",
+          "max_b_bits": "4012eaf37e19bec4",
+          "bitwise_differences": 249,
+          "first_coordinate": [
+            251
+          ],
+          "first_a_bits": "3fe0b0cb5513a4d3",
+          "first_b_bits": "3fe0b0cb5edf0cd6"
+        },
+        "specific": {
+          "max_abs": 0.012868712400888771,
+          "max_coordinate": [
+            66,
+            261
+          ],
+          "max_a_bits": "3fd9b27b39d9fa82",
+          "max_b_bits": "3fda85528493cc95",
+          "bitwise_differences": 56478,
+          "first_coordinate": [
+            9,
+            256
+          ],
+          "first_a_bits": "3f8ad9a882214287",
+          "first_b_bits": "3f8ad9a89471b444"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "sine_1k_60": {
+      "official": {
+        "n": {
+          "max_abs": 1.4714433493878687e-07,
+          "max_coordinate": [
+            498
+          ],
+          "max_a_bits": "4010134c4cfef925",
+          "max_b_bits": "4010134c431f0d84",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc702c26a"
+        },
+        "specific": {
+          "max_abs": 6.183565230100108e-05,
+          "max_coordinate": [
+            92,
+            5
+          ],
+          "max_a_bits": "3ff3370fdde84070",
+          "max_b_bits": "3ff33750b4c9ebe5",
+          "bitwise_differences": 108667,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_a_bits": "3f604a2bdfcbcd27",
+          "first_b_bits": "3f604a2bf2288811"
+        },
+        "tail_total_delta": 1.4714433493878687e-07,
+        "tail_specific_max": 6.183451593644307e-05
+      },
+      "patched": {
+        "n": {
+          "max_abs": 1.4714433493878687e-07,
+          "max_coordinate": [
+            498
+          ],
+          "max_a_bits": "4010134c4cfef925",
+          "max_b_bits": "4010134c431f0d84",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc702c26a"
+        },
+        "specific": {
+          "max_abs": 6.183565230100108e-05,
+          "max_coordinate": [
+            92,
+            5
+          ],
+          "max_a_bits": "3ff3370fdde84070",
+          "max_b_bits": "3ff33750b4c9ebe5",
+          "bitwise_differences": 108667,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_a_bits": "3f604a2bdfcbcd27",
+          "first_b_bits": "3f604a2bf2288811"
+        },
+        "tail_total_delta": 1.4714433493878687e-07,
+        "tail_specific_max": 6.183451593644307e-05
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 1.4453811836290242e-07,
+          "max_coordinate": [
+            499
+          ],
+          "max_a_bits": "4010134c4f860191",
+          "max_b_bits": "4010134c593926ef",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc68a8588"
+        },
+        "specific": {
+          "max_abs": 0.8910848711468651,
+          "max_coordinate": [
+            78,
+            5
+          ],
+          "max_a_bits": "3fd7cc85a51c6ed7",
+          "max_b_bits": "3ff435039effafd2",
+          "bitwise_differences": 109166,
+          "first_coordinate": [
+            8,
+            9
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f604a2bf2288811"
+        },
+        "tail_total_delta": -1.4453811836290242e-07,
+        "tail_specific_max": 0.885767698411014
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 3.552713678800501e-15,
+          "max_coordinate": [
+            430
+          ],
+          "max_a_bits": "4010134cc8c377ec",
+          "max_b_bits": "4010134cc8c377f0",
+          "bitwise_differences": 1059,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3f9610917665292a",
+          "first_b_bits": "3f9610917665292c"
+        },
+        "specific": {
+          "max_abs": 0.9078783035653608,
+          "max_coordinate": [
+            78,
+            22
+          ],
+          "max_a_bits": "3fd5e0c456687ce4",
+          "max_b_bits": "3ff3fedc7c0319d6",
+          "bitwise_differences": 167803,
+          "first_coordinate": [
+            8,
+            36
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f604a2bdfcbcd27"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 1.414636638941147e-07,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "40105c6aeca4d699",
+          "max_b_bits": "40105c6ae32682d3",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "40105c6aeca4d699",
+          "first_b_bits": "40105c6ae32682d3"
+        },
+        "specific": {
+          "max_abs": 6.183446948715421e-05,
+          "max_coordinate": [
+            92
+          ],
+          "max_a_bits": "3ff29f4180b70664",
+          "max_b_bits": "3ff29f8257476991",
+          "bitwise_differences": 140,
+          "first_coordinate": [
+            28
+          ],
+          "first_a_bits": "3f731533a68569ba",
+          "first_b_bits": "3f731533b298c496"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 1.4714433493878687e-07,
+          "max_coordinate": [
+            498
+          ],
+          "max_a_bits": "4010134c4cfef925",
+          "max_b_bits": "4010134c431f0d84",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc702c26a"
+        },
+        "specific": {
+          "max_abs": 0.0035822815672630903,
+          "max_coordinate": [
+            38,
+            10
+          ],
+          "max_a_bits": "3fb81a62e38b1b76",
+          "max_b_bits": "3fb9052799b847da",
+          "bitwise_differences": 108667,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_a_bits": "3f604a2bdfcbcd27",
+          "first_b_bits": "3f604a2bf2288811"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "sine_250_80": {
+      "official": {
+        "n": {
+          "max_abs": 2.0220919413560523e-05,
+          "max_coordinate": [
+            38
+          ],
+          "max_a_bits": "4027ea5f0fcd3470",
+          "max_b_bits": "4027ea61b64d947a",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fd93fefe3789714",
+          "first_b_bits": "3fd93feff1151b89"
+        },
+        "specific": {
+          "max_abs": 0.0002099726527324819,
+          "max_coordinate": [
+            28,
+            19
+          ],
+          "max_a_bits": "40120be8b98136ce",
+          "max_b_bits": "40120c1fc487eb95",
+          "bitwise_differences": 117687,
+          "first_coordinate": [
+            0,
+            9
+          ],
+          "first_a_bits": "3f7dd1c19f0d711e",
+          "first_b_bits": "3f7dd1c1b29120b6"
+        },
+        "tail_total_delta": -6.593437760216148e-07,
+        "tail_specific_max": 0.00015000369880180386
+      },
+      "patched": {
+        "n": {
+          "max_abs": 2.0220919413560523e-05,
+          "max_coordinate": [
+            38
+          ],
+          "max_a_bits": "4027ea5f0fcd3470",
+          "max_b_bits": "4027ea61b64d947a",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fd93fefe3789714",
+          "first_b_bits": "3fd93feff1151b89"
+        },
+        "specific": {
+          "max_abs": 0.0002099726527324819,
+          "max_coordinate": [
+            28,
+            19
+          ],
+          "max_a_bits": "40120be8b98136ce",
+          "max_b_bits": "40120c1fc487eb95",
+          "bitwise_differences": 117687,
+          "first_coordinate": [
+            0,
+            9
+          ],
+          "first_a_bits": "3f7dd1c19f0d711e",
+          "first_b_bits": "3f7dd1c1b29120b6"
+        },
+        "tail_total_delta": -6.593437760216148e-07,
+        "tail_specific_max": 0.00015000369880180386
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 5.219808514311808e-07,
+          "max_coordinate": [
+            490
+          ],
+          "max_a_bits": "402d4edf7176c7ee",
+          "max_b_bits": "402d4edf82fa8ff6",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fd93fefe3789714",
+          "first_b_bits": "3fd93feff12d37ed"
+        },
+        "specific": {
+          "max_abs": 4.255922119674008,
+          "max_coordinate": [
+            17,
+            124
+          ],
+          "max_a_bits": "3fd506eedea1ed66",
+          "max_b_bits": "4012567f60a36972",
+          "bitwise_differences": 117695,
+          "first_coordinate": [
+            0,
+            9
+          ],
+          "first_a_bits": "3f7dd1c19f0d711e",
+          "first_b_bits": "3f7dd1c1b29120b6"
+        },
+        "tail_total_delta": -5.219806364920032e-07,
+        "tail_specific_max": 4.255921987707686
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 1.0658141036401503e-14,
+          "max_coordinate": [
+            477
+          ],
+          "max_a_bits": "402d51cb73284401",
+          "max_b_bits": "402d51cb732843fb",
+          "bitwise_differences": 1370,
+          "first_coordinate": [
+            2
+          ],
+          "first_a_bits": "3ff74dffd1921eec",
+          "first_b_bits": "3ff74dffd1921eed"
+        },
+        "specific": {
+          "max_abs": 4.256335620811799,
+          "max_coordinate": [
+            17,
+            497
+          ],
+          "max_a_bits": "3fd50767a356a737",
+          "max_b_bits": "401256f352862976",
+          "bitwise_differences": 220399,
+          "first_coordinate": [
+            8,
+            8
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f634d8dd05d4dcf"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 4.6499470123251285e-06,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "402dcd27c2b864c8",
+          "max_b_bits": "402dcd285ebf2266",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "402dcd27c2b864c8",
+          "first_b_bits": "402dcd285ebf2266"
+        },
+        "specific": {
+          "max_abs": 0.00015000284564425925,
+          "max_coordinate": [
+            28
+          ],
+          "max_a_bits": "40117bbab15f230e",
+          "max_b_bits": "40117be203e466ff",
+          "bitwise_differences": 193,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "3fa4610bdaefc398",
+          "first_b_bits": "3fa4610be7953132"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 2.0220919413560523e-05,
+          "max_coordinate": [
+            38
+          ],
+          "max_a_bits": "4027ea5f0fcd3470",
+          "max_b_bits": "4027ea61b64d947a",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fd93fefe3789714",
+          "first_b_bits": "3fd93feff1151b89"
+        },
+        "specific": {
+          "max_abs": 0.0024955919543183658,
+          "max_coordinate": [
+            153,
+            3
+          ],
+          "max_a_bits": "3fc288e19567dab7",
+          "max_b_bits": "3fc2daa82051d53f",
+          "bitwise_differences": 117687,
+          "first_coordinate": [
+            0,
+            9
+          ],
+          "first_a_bits": "3f7dd1c19f0d711e",
+          "first_b_bits": "3f7dd1c1b29120b6"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "sine_4k_60": {
+      "official": {
+        "n": {
+          "max_abs": 4.9873342788941954e-08,
+          "max_coordinate": [
+            474
+          ],
+          "max_a_bits": "40186b4a0855506a",
+          "max_b_bits": "40186b4a04fc7f22",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fe36054ec822489",
+          "first_b_bits": "3fe36054e1391e50"
+        },
+        "specific": {
+          "max_abs": 8.213898854303459e-05,
+          "max_coordinate": [
+            181,
+            11
+          ],
+          "max_a_bits": "3ffa69ac776b7885",
+          "max_b_bits": "3ffa6a02986fc878",
+          "bitwise_differences": 110657,
+          "first_coordinate": [
+            18,
+            7
+          ],
+          "first_a_bits": "3f662956ad15cc93",
+          "first_b_bits": "3f662956bcbe8789"
+        },
+        "tail_total_delta": 4.987330104455623e-08,
+        "tail_specific_max": 8.2138988540148e-05
+      },
+      "patched": {
+        "n": {
+          "max_abs": 4.9873342788941954e-08,
+          "max_coordinate": [
+            474
+          ],
+          "max_a_bits": "40186b4a0855506a",
+          "max_b_bits": "40186b4a04fc7f22",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fe36054ec822489",
+          "first_b_bits": "3fe36054e1391e50"
+        },
+        "specific": {
+          "max_abs": 8.213898854303459e-05,
+          "max_coordinate": [
+            181,
+            11
+          ],
+          "max_a_bits": "3ffa69ac776b7885",
+          "max_b_bits": "3ffa6a02986fc878",
+          "bitwise_differences": 110657,
+          "first_coordinate": [
+            18,
+            7
+          ],
+          "first_a_bits": "3f662956ad15cc93",
+          "first_b_bits": "3f662956bcbe8789"
+        },
+        "tail_total_delta": 4.987330104455623e-08,
+        "tail_specific_max": 8.2138988540148e-05
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 1.9631681880127871e-07,
+          "max_coordinate": [
+            494
+          ],
+          "max_a_bits": "40186b4a8347753f",
+          "max_b_bits": "40186b4a907427bf",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fe36054ec822489",
+          "first_b_bits": "3fe36054f680a20b"
+        },
+        "specific": {
+          "max_abs": 1.267129396166208,
+          "max_coordinate": [
+            166,
+            13
+          ],
+          "max_a_bits": "3fddcd89198d1ec5",
+          "max_b_bits": "3ffbb98bbfa8a021",
+          "bitwise_differences": 111156,
+          "first_coordinate": [
+            17,
+            7
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f662956bcbe8789"
+        },
+        "tail_total_delta": -1.9631680547860242e-07,
+        "tail_specific_max": 1.267129396166072
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 3.552713678800501e-15,
+          "max_coordinate": [
+            16
+          ],
+          "max_a_bits": "401b1efec6343690",
+          "max_b_bits": "401b1efec634368c",
+          "bitwise_differences": 1556,
+          "first_coordinate": [
+            2
+          ],
+          "first_a_bits": "4003b2bfdde79672",
+          "first_b_bits": "4003b2bfdde79674"
+        },
+        "specific": {
+          "max_abs": 1.26712934831041,
+          "max_coordinate": [
+            166,
+            50
+          ],
+          "max_a_bits": "3fddcd89198d1a7e",
+          "max_b_bits": "3ffbb98bb2cffef5",
+          "bitwise_differences": 145949,
+          "first_coordinate": [
+            17,
+            27
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f5d8d990a056245"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 3.8018704628939304e-08,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "4018a289ca6c63d8",
+          "max_b_bits": "4018a289c7df3bd0",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "4018a289ca6c63d8",
+          "first_b_bits": "4018a289c7df3bd0"
+        },
+        "specific": {
+          "max_abs": 8.213897754161259e-05,
+          "max_coordinate": [
+            181
+          ],
+          "max_a_bits": "3ffa680d90b1e9f0",
+          "max_b_bits": "3ffa6863b1b57859",
+          "bitwise_differences": 134,
+          "first_coordinate": [
+            106
+          ],
+          "first_a_bits": "3f65f6d8ae3ce16a",
+          "first_b_bits": "3f65f6d8c440334a"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 4.9873342788941954e-08,
+          "max_coordinate": [
+            474
+          ],
+          "max_a_bits": "40186b4a0855506a",
+          "max_b_bits": "40186b4a04fc7f22",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fe36054ec822489",
+          "first_b_bits": "3fe36054e1391e50"
+        },
+        "specific": {
+          "max_abs": 0.0028671471151011096,
+          "max_coordinate": [
+            92,
+            3
+          ],
+          "max_a_bits": "3fb8549886385172",
+          "max_b_bits": "3fb9107f454fea8e",
+          "bitwise_differences": 110657,
+          "first_coordinate": [
+            18,
+            7
+          ],
+          "first_a_bits": "3f662956ad15cc93",
+          "first_b_bits": "3f662956bcbe8789"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "step_60_80": {
+      "official": {
+        "n": {
+          "max_abs": 0.0003252709896823802,
+          "max_coordinate": [
+            262
+          ],
+          "max_a_bits": "4029754bc7718e25",
+          "max_b_bits": "4029757669ba14d0",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc702c26a"
+        },
+        "specific": {
+          "max_abs": 0.006022018219533243,
+          "max_coordinate": [
+            46,
+            261
+          ],
+          "max_a_bits": "3fd4097f4eb45cec",
+          "max_b_bits": "3fd46c297b88207d",
+          "bitwise_differences": 113020,
+          "first_coordinate": [
+            0,
+            268
+          ],
+          "first_a_bits": "3f6a5c4338100254",
+          "first_b_bits": "3f6a5c4349b32963"
+        },
+        "tail_total_delta": 1.989049174255797e-07,
+        "tail_specific_max": 0.00012972271012445802
+      },
+      "patched": {
+        "n": {
+          "max_abs": 1.6453935742788417e-06,
+          "max_coordinate": [
+            286
+          ],
+          "max_a_bits": "402c953947c4371a",
+          "max_b_bits": "402c95397efa09d6",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc702c26a"
+        },
+        "specific": {
+          "max_abs": 0.0001297287709904893,
+          "max_coordinate": [
+            99,
+            255
+          ],
+          "max_a_bits": "4008d82ce5a379b8",
+          "max_b_bits": "4008d870e98a1b02",
+          "bitwise_differences": 113020,
+          "first_coordinate": [
+            0,
+            268
+          ],
+          "first_a_bits": "3f6a5c4338100254",
+          "first_b_bits": "3f6a5c4349b32963"
+        },
+        "tail_total_delta": 2.3551583439029855e-07,
+        "tail_specific_max": 0.00012972271012445802
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 6.400798326922086e-07,
+          "max_coordinate": [
+            499
+          ],
+          "max_a_bits": "403042ea160e2208",
+          "max_b_bits": "403042ea20cb4140",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc68a8588"
+        },
+        "specific": {
+          "max_abs": 2.8234402445416684,
+          "max_coordinate": [
+            78,
+            255
+          ],
+          "max_a_bits": "3ff527614b7fe157",
+          "max_b_bits": "4010950c3e420972",
+          "bitwise_differences": 113287,
+          "first_coordinate": [
+            0,
+            268
+          ],
+          "first_a_bits": "3f6a5c4338100254",
+          "first_b_bits": "3f6a5c4349b32963"
+        },
+        "tail_total_delta": -6.400798326922086e-07,
+        "tail_specific_max": 2.7916856797331686
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 1.0658141036401503e-14,
+          "max_coordinate": [
+            1048
+          ],
+          "max_a_bits": "4031d13bab764973",
+          "max_b_bits": "4031d13bab764976",
+          "bitwise_differences": 1215,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3f9610917665292a",
+          "first_b_bits": "3f9610917665292c"
+        },
+        "specific": {
+          "max_abs": 2.8650660351734567,
+          "max_coordinate": [
+            78,
+            1022
+          ],
+          "max_a_bits": "3ff3e2f50bfb1d51",
+          "max_b_bits": "40106e9121e69485",
+          "bitwise_differences": 194984,
+          "first_coordinate": [
+            8,
+            36
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f604a2bdfcbcd27"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 2.3710495433704182e-07,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "402bf8f291944bda",
+          "max_b_bits": "402bf8f2899f948b",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "402bf8f291944bda",
+          "first_b_bits": "402bf8f2899f948b"
+        },
+        "specific": {
+          "max_abs": 0.0001296876995984242,
+          "max_coordinate": [
+            93
+          ],
+          "max_a_bits": "40090c18c6b73572",
+          "max_b_bits": "40090c5cc51aa2f3",
+          "bitwise_differences": 209,
+          "first_coordinate": [
+            9
+          ],
+          "first_a_bits": "3fabff6b630ee6df",
+          "first_b_bits": "3fabff6b7417b22f"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 1.6453935742788417e-06,
+          "max_coordinate": [
+            286
+          ],
+          "max_a_bits": "402c953947c4371a",
+          "max_b_bits": "402c95397efa09d6",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fca735fb80d2617",
+          "first_b_bits": "3fca735fc702c26a"
+        },
+        "specific": {
+          "max_abs": 0.022088742363139402,
+          "max_coordinate": [
+            54,
+            256
+          ],
+          "max_a_bits": "3fe90ecf1e86debe",
+          "max_b_bits": "3fe9c3c291c8c5c9",
+          "bitwise_differences": 113020,
+          "first_coordinate": [
+            0,
+            268
+          ],
+          "first_a_bits": "3f6a5c4338100254",
+          "first_b_bits": "3f6a5c4349b32963"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "white_60": {
+      "official": {
+        "n": {
+          "max_abs": 0.0019615395430090388,
+          "max_coordinate": [
+            183
+          ],
+          "max_a_bits": "4023e6b23acb6bf1",
+          "max_b_bits": "4023e7b35523cbb4",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdb84914b40a4c7",
+          "first_b_bits": "3fdb849171820723"
+        },
+        "specific": {
+          "max_abs": 0.009767921092046272,
+          "max_coordinate": [
+            48,
+            499
+          ],
+          "max_a_bits": "3fd32916eadd869c",
+          "max_b_bits": "3fd3c9208c46806c",
+          "bitwise_differences": 118552,
+          "first_coordinate": [
+            0,
+            115
+          ],
+          "first_a_bits": "3f5006f9be230d58",
+          "first_b_bits": "3f5006f9c92b6dc6"
+        },
+        "tail_total_delta": -0.0011264982299952209,
+        "tail_specific_max": 0.009767921092046272
+      },
+      "patched": {
+        "n": {
+          "max_abs": 1.915379471029155e-06,
+          "max_coordinate": [
+            191
+          ],
+          "max_a_bits": "40242731ddc2ac00",
+          "max_b_bits": "402427321e07a800",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdb84914b40a4c7",
+          "first_b_bits": "3fdb849171820723"
+        },
+        "specific": {
+          "max_abs": 6.235281873301357e-05,
+          "max_coordinate": [
+            167,
+            206
+          ],
+          "max_a_bits": "3fed411d9c586bfa",
+          "max_b_bits": "3fed41a05fc29311",
+          "bitwise_differences": 118552,
+          "first_coordinate": [
+            0,
+            115
+          ],
+          "first_a_bits": "3f5006f9be230d58",
+          "first_b_bits": "3f5006f9c92b6dc6"
+        },
+        "tail_total_delta": -6.668302638956902e-07,
+        "tail_specific_max": 4.206354017755043e-05
+      },
+      "diagnostic": {
+        "n": {
+          "max_abs": 3.32069667763335e-07,
+          "max_coordinate": [
+            262
+          ],
+          "max_a_bits": "4024d8a132bc9368",
+          "max_b_bits": "4024d8a13de10854",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdb84914b40a4c7",
+          "first_b_bits": "3fdb849159ef8d9d"
+        },
+        "specific": {
+          "max_abs": 0.5071492454597046,
+          "max_coordinate": [
+            151,
+            314
+          ],
+          "max_a_bits": "3fd86833c98ff89b",
+          "max_b_bits": "3fec6eaaf2b614f2",
+          "bitwise_differences": 118666,
+          "first_coordinate": [
+            0,
+            115
+          ],
+          "first_a_bits": "3f5006f9be230d58",
+          "first_b_bits": "3f5006f9c92b6dc6"
+        },
+        "tail_total_delta": -3.1846297865456563e-07,
+        "tail_specific_max": 0.2778621863640778
+      },
+      "diagnostic_same_nl": {
+        "n": {
+          "max_abs": 8.881784197001252e-15,
+          "max_coordinate": [
+            367
+          ],
+          "max_a_bits": "4025abd83fc28f5d",
+          "max_b_bits": "4025abd83fc28f62",
+          "bitwise_differences": 1329,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fcfa61868d87409",
+          "first_b_bits": "3fcfa61868d87407"
+        },
+        "specific": {
+          "max_abs": 0.5328906265770619,
+          "max_coordinate": [
+            166,
+            1855
+          ],
+          "max_a_bits": "3fddeb4155d4d5d7",
+          "max_b_bits": "3ff00188a7cd1a8c",
+          "bitwise_differences": 92751,
+          "first_coordinate": [
+            8,
+            37
+          ],
+          "first_a_bits": "0000000000000000",
+          "first_b_bits": "3f5fc298c0debd5a"
+        }
+      },
+      "stationary": {
+        "n": {
+          "max_abs": 3.6879412590451466e-07,
+          "max_coordinate": [
+            0
+          ],
+          "max_a_bits": "40246727891860a6",
+          "max_b_bits": "4024672795784b82",
+          "bitwise_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_a_bits": "40246727891860a6",
+          "first_b_bits": "4024672795784b82"
+        },
+        "specific": {
+          "max_abs": 4.2196191352816825e-05,
+          "max_coordinate": [
+            228
+          ],
+          "max_a_bits": "3fdb9fcd58f44c7a",
+          "max_b_bits": "3fdba07e54c50f0e",
+          "bitwise_differences": 231,
+          "first_coordinate": [
+            9
+          ],
+          "first_a_bits": "3fc359986a559ace",
+          "first_b_bits": "3fc35998759ae22a"
+        }
+      },
+      "round1_vs_patched": {
+        "n": {
+          "max_abs": 1.915379471029155e-06,
+          "max_coordinate": [
+            191
+          ],
+          "max_a_bits": "40242731ddc2ac00",
+          "max_b_bits": "402427321e07a800",
+          "bitwise_differences": 499,
+          "first_coordinate": [
+            1
+          ],
+          "first_a_bits": "3fdb84914b40a4c7",
+          "first_b_bits": "3fdb849171820723"
+        },
+        "specific": {
+          "max_abs": 0.03111792680884362,
+          "max_coordinate": [
+            167,
+            342
+          ],
+          "max_a_bits": "3fe918dcf62f157f",
+          "max_b_bits": "3fea17c7fbede8e4",
+          "bitwise_differences": 118552,
+          "first_coordinate": [
+            0,
+            115
+          ],
+          "first_a_bits": "3f5006f9be230d58",
+          "first_b_bits": "3f5006f9c92b6dc6"
+        }
+      },
+      "round1_n_unchanged": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    }
+  },
+  "round1": {
+    "Test signal 2 (250 Hz 80 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.002491828854928879,
+        "max_coordinate": [
+          153,
+          3
+        ],
+        "max_a_bits": "3fc2e58435949c97",
+        "max_b_bits": "3fc293dd3bdc6691",
+        "bitwise_differences": 3,
+        "first_coordinate": [
+          72,
+          5
+        ],
+        "first_a_bits": "3fd9e773e3d6e1b4",
+        "first_b_bits": "3fd9e65999d0dfc9"
+      }
+    },
+    "Test signal 3 (1 kHz 60 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0036148401034168387,
+        "max_coordinate": [
+          38,
+          10
+        ],
+        "max_a_bits": "3fb91808020c0b15",
+        "max_b_bits": "3fb82b210e05c915",
+        "bitwise_differences": 7,
+        "first_coordinate": [
+          38,
+          10
+        ],
+        "first_a_bits": "3fb91808020c0b15",
+        "first_b_bits": "3fb82b210e05c915"
+      }
+    },
+    "Test signal 4 (4 kHz 40 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0,
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "Test signal 5 (pinknoise 60 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.030280005654826025,
+        "max_coordinate": [
+          19,
+          2916
+        ],
+        "max_a_bits": "3fdabf79e2ed2e02",
+        "max_b_bits": "3fd8cf5e566c8756",
+        "bitwise_differences": 3598,
+        "first_coordinate": [
+          18,
+          175
+        ],
+        "first_a_bits": "3fd9c07e087d77cf",
+        "first_b_bits": "3fd8c954e31dfff2"
+      }
+    },
+    "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0039162617832791125,
+        "max_coordinate": [
+          93,
+          7
+        ],
+        "max_a_bits": "3fb986df00c77df1",
+        "max_b_bits": "3fb88637087f5c9f",
+        "bitwise_differences": 2,
+        "first_coordinate": [
+          93,
+          7
+        ],
+        "first_a_bits": "3fb986df00c77df1",
+        "first_b_bits": "3fb88637087f5c9f"
+      }
+    },
+    "Test signal 11 (tone pulse 1 kHz 50 ms 70 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0039162617832791125,
+        "max_coordinate": [
+          93,
+          7
+        ],
+        "max_a_bits": "3fb986df00c77df1",
+        "max_b_bits": "3fb88637087f5c9f",
+        "bitwise_differences": 1,
+        "first_coordinate": [
+          93,
+          7
+        ],
+        "first_a_bits": "3fb986df00c77df1",
+        "first_b_bits": "3fb88637087f5c9f"
+      }
+    },
+    "Test signal 12 (tone pulse 1 kHz 500 ms 70 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0039162617832791125,
+        "max_coordinate": [
+          93,
+          7
+        ],
+        "max_a_bits": "3fb986df00c77df1",
+        "max_b_bits": "3fb88637087f5c9f",
+        "bitwise_differences": 1,
+        "first_coordinate": [
+          93,
+          7
+        ],
+        "first_a_bits": "3fb986df00c77df1",
+        "first_b_bits": "3fb88637087f5c9f"
+      }
+    },
+    "Test signal 13 (combined tone pulses 1 kHz)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0015819349612982148,
+        "max_coordinate": [
+          103,
+          73
+        ],
+        "max_a_bits": "3fd9cf65d85486fa",
+        "max_b_bits": "3fd9b57aba9971ae",
+        "bitwise_differences": 2,
+        "first_coordinate": [
+          103,
+          73
+        ],
+        "first_a_bits": "3fd9cf65d85486fa",
+        "first_b_bits": "3fd9b57aba9971ae"
+      }
+    },
+    "Test signal 6 (tone 250 Hz 30 dB - 80 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0,
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "Test signal 7 (tone 1 kHz 30 dB - 80 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0,
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "Test signal 8 (tone 4 kHz 30 dB - 80 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0,
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      }
+    },
+    "Test signal 9 (pink noise 0 dB - 50 dB)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.05932733800712686,
+        "max_coordinate": [
+          18,
+          4847
+        ],
+        "max_a_bits": "3ff5c08befcabe68",
+        "max_b_bits": "3ff4cd8ab6c2c114",
+        "bitwise_differences": 2286,
+        "first_coordinate": [
+          9,
+          4723
+        ],
+        "first_a_bits": "3fe8dd032142e6f7",
+        "first_b_bits": "3fe8a79e30c541a7"
+      }
+    },
+    "Test signal 14 (propeller-driven airplane)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.05082314743369187,
+        "max_coordinate": [
+          9,
+          5905
+        ],
+        "max_a_bits": "3fea2081382de75d",
+        "max_b_bits": "3fe880295aaa76c8",
+        "bitwise_differences": 3114,
+        "first_coordinate": [
+          9,
+          5662
+        ],
+        "first_a_bits": "3ff5b1e6390f8bac",
+        "first_b_bits": "3ff4ec93171b0790"
+      }
+    },
+    "Test signal 15 (vehicle interior 40 kmh)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.056789645481876594,
+        "max_coordinate": [
+          13,
+          2925
+        ],
+        "max_a_bits": "3fea38c8e92bb002",
+        "max_b_bits": "3fe8679064689cce",
+        "bitwise_differences": 3381,
+        "first_coordinate": [
+          9,
+          357
+        ],
+        "first_a_bits": "3fe9611400e08b82",
+        "first_b_bits": "3fe9386ddcc8ad5d"
+      }
+    },
+    "Test signal 16 (hairdryer)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.07607436987094829,
+        "max_coordinate": [
+          125,
+          796
+        ],
+        "max_a_bits": "4000fe9fb42cab1e",
+        "max_b_bits": "400062d2d3176466",
+        "bitwise_differences": 730,
+        "first_coordinate": [
+          21,
+          664
+        ],
+        "first_a_bits": "3fea2aa7ecd5be17",
+        "first_b_bits": "3fe9ecb1409fd2b9"
+      }
+    },
+    "Test signal 17 (machine gun)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.035822120332176466,
+        "max_coordinate": [
+          81,
+          273
+        ],
+        "max_a_bits": "3fea14989ed563e9",
+        "max_b_bits": "3fe8ef24306bc9b3",
+        "bitwise_differences": 362,
+        "first_coordinate": [
+          9,
+          114
+        ],
+        "first_a_bits": "3fcac16daf281162",
+        "first_b_bits": "3fca88a17e9c1e14"
+      }
+    },
+    "Test signal 18 (hammer)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.043772826842844115,
+        "max_coordinate": [
+          36,
+          391
+        ],
+        "max_a_bits": "3fea0b4cc085f7eb",
+        "max_b_bits": "3fe8a4b67b0e2d47",
+        "bitwise_differences": 424,
+        "first_coordinate": [
+          18,
+          166
+        ],
+        "first_a_bits": "3fd30521d50b906a",
+        "first_b_bits": "3fd2993f9349f0c5"
+      }
+    },
+    "Test signal 19 (door creak)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.03992119616164691,
+        "max_coordinate": [
+          29,
+          450
+        ],
+        "max_a_bits": "3fea2b6062b323e7",
+        "max_b_bits": "3fe8e45791b55544",
+        "bitwise_differences": 481,
+        "first_coordinate": [
+          19,
+          461
+        ],
+        "first_a_bits": "3fda86180b50b2ad",
+        "first_b_bits": "3fda3df92dbe2d0c"
+      }
+    },
+    "Test signal 20 (shaking coins)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.03961725857931753,
+        "max_coordinate": [
+          218,
+          126
+        ],
+        "max_a_bits": "3ff5a9aed0f3c10b",
+        "max_b_bits": "3ff507691c1477f4",
+        "bitwise_differences": 442,
+        "first_coordinate": [
+          18,
+          290
+        ],
+        "first_a_bits": "3fd2b097d5a0e88d",
+        "first_b_bits": "3fd26505e1cf9252"
+      }
+    },
+    "Test signal 21 (jackhammer)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.03444120508003523,
+        "max_coordinate": [
+          198,
+          110
+        ],
+        "max_a_bits": "3fea333617cd7663",
+        "max_b_bits": "3fe91911a69ef2a8",
+        "bitwise_differences": 520,
+        "first_coordinate": [
+          18,
+          159
+        ],
+        "first_a_bits": "3fc2f85908d34659",
+        "first_b_bits": "3fc2688fe022dc33"
+      }
+    },
+    "Test signal 22 (ratchet wheel (large))": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.037741912830478896,
+        "max_coordinate": [
+          181,
+          307
+        ],
+        "max_a_bits": "3fea29864fe898a4",
+        "max_b_bits": "3fe8f457c8bf24cf",
+        "bitwise_differences": 127,
+        "first_coordinate": [
+          92,
+          219
+        ],
+        "first_a_bits": "3fa1c778aceb8921",
+        "first_b_bits": "3fa12aa078dc560e"
+      }
+    },
+    "Test signal 23 (typewriter)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.035081905426394,
+        "max_coordinate": [
+          198,
+          899
+        ],
+        "max_a_bits": "3fea1975ffbba243",
+        "max_b_bits": "3fe8fa11e92c06cd",
+        "bitwise_differences": 508,
+        "first_coordinate": [
+          18,
+          930
+        ],
+        "first_a_bits": "3fb8a05366373104",
+        "first_b_bits": "3fb83a4b556dab86"
+      }
+    },
+    "Test signal 24 (woodpecker)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.03485161861096853,
+        "max_coordinate": [
+          108,
+          238
+        ],
+        "max_a_bits": "3fea35911202080a",
+        "max_b_bits": "3fe9180fedbd55a9",
+        "bitwise_differences": 446,
+        "first_coordinate": [
+          18,
+          85
+        ],
+        "first_a_bits": "3fb90675e0655d95",
+        "first_b_bits": "3fb7b6cde75fc540"
+      }
+    },
+    "Test signal 25 (full can rattle)": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.026392622283754608,
+        "max_coordinate": [
+          152,
+          198
+        ],
+        "max_a_bits": "3fe9e78e28ee7f5f",
+        "max_b_bits": "3fe90f58d1bc6fc0",
+        "bitwise_differences": 237,
+        "first_coordinate": [
+          18,
+          577
+        ],
+        "first_a_bits": "3fa0a6426ee0050f",
+        "first_b_bits": "3fa04421df5262ba"
+      }
+    },
+    "contract_3s": {
+      "n": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "time": {
+        "max_abs": 0.0,
+        "max_coordinate": [
+          0
+        ],
+        "max_a_bits": "0000000000000000",
+        "max_b_bits": "0000000000000000",
+        "bitwise_differences": 0,
+        "first_coordinate": null,
+        "first_a_bits": null,
+        "first_b_bits": null
+      },
+      "specific": {
+        "max_abs": 0.00185586884562719,
+        "max_coordinate": [
+          233,
+          1
+        ],
+        "max_a_bits": "3fb9602187af21e3",
+        "max_b_bits": "3fb8e68137afbcf1",
+        "bitwise_differences": 230,
+        "first_coordinate": [
+          77,
+          6
+        ],
+        "first_a_bits": "3fa1c9664c4db628",
+        "first_b_bits": "3fa15d964b827404"
+      }
+    }
+  },
+  "inputs": {
+    "annexb_c01_sig18": "b16a82ee3b9f3eeec6261da60083d4de9af6a85c373b7f96a4ae024a5d5aef7a",
+    "annexb_c01_sig23": "c67d32d7146dbf2a83791ff439973642f0089a9c17e1ae133502b80827837433",
+    "annexb_c01_sig24": "2f20c961bb76b3f29e8d36a3a80edddfc56336c4784bfefece75831e474d1298",
+    "annexb_c01_sig25": "0f2ecae2a233732ad0763da35c20168aaa19db3af8298f88539b1faf358babcb",
+    "annexb_sig10": "a849fcf48d4ee544a257a669059fac8a961de5283272cb9041734fc593b5e890",
+    "annexb_sig3": "7b23fad6aebdff5156fa010310753b8ac20f3e1ab3b3298483f8cbe111f78c33",
+    "annexb_sig5": "20e036c556aa08b2fdc3409bfa404fa1325dbe2962651b6ae808f95b260be19b",
+    "pulse_1k_70": "1497468c922275fa8eb443eefe881d1c83d41a2ed8dcd1cd4a10f44bd1d75003",
+    "sine_1k_60": "8f5db79d324ebf2863086cc1199bb6d58ad451882b387f37f23ab5fc3984fe54",
+    "sine_250_80": "cec355feb2635fc4187d1a494c8b60313aef35b9fb64d123a810bcecde6a3a00",
+    "sine_4k_60": "57ad1fff30c037f6f73cc40b5250145bc18ec14954a1ae44e654670228db752e",
+    "step_60_80": "1c3dce0894eb03d9fa4a062940ba2a8a614d2cc5c6e35c233094e71974049504",
+    "white_60": "88d78b26a2a7430aaa51869be01b55029888e1b4e3aa1dc049fd0dc895aa7266",
+    "Test signal 2 (250 Hz 80 dB)": {
+      "wav_sha256": "a1173d0a5334276340302d6944672c9a26feb4437f5e09c2afa7a60656b2602d",
+      "input_sha256": "80ec5f589a8fb212cab2880408fe4b57459c9f3b8196f3057e1c7510c135f133",
+      "samples": 480000
+    },
+    "Test signal 3 (1 kHz 60 dB)": {
+      "wav_sha256": "4a1fd96e5235294a73471a8fb18f75b1ac67c2c3a3c5f7f31da96b04d815f69a",
+      "input_sha256": "ae930604a1e4cf3b43550736fcbc00d2641e6c7d3e43c5e855e9db2cc046eff5",
+      "samples": 480000
+    },
+    "Test signal 4 (4 kHz 40 dB)": {
+      "wav_sha256": "f66dc745cfd899307731134afafa8b536dc8cb79a28b2d301013529d7c9dbeb9",
+      "input_sha256": "2f16116d78bc3fe321c5a561e1fb2bff3f86d0709dd34b6cfe95bd22bd86f50d",
+      "samples": 480000
+    },
+    "Test signal 5 (pinknoise 60 dB)": {
+      "wav_sha256": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e",
+      "input_sha256": "8c7f84109f4861107eb14e6e22b4127770597da00cbe25c97fb203854faee93d",
+      "samples": 480000
+    },
+    "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB)": {
+      "wav_sha256": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907",
+      "input_sha256": "72789eccb3ca8a3dbc08c4fffbe5b4cfcd49ce64d011ced1b9d8a0b46847615d",
+      "samples": 48000
+    },
+    "Test signal 11 (tone pulse 1 kHz 50 ms 70 dB)": {
+      "wav_sha256": "2093bf1ca4b4f40cd9b3bc1ca37cb7e73292c4c8c660c6a3afebf9106abd5d6b",
+      "input_sha256": "8304423950e70f60fa9f5f132b05d000911adc938523aa63c690039dca67b42a",
+      "samples": 48000
+    },
+    "Test signal 12 (tone pulse 1 kHz 500 ms 70 dB)": {
+      "wav_sha256": "718bfe5246023c2b4ea6978183e638d2f76ac0d30d1bd402bf0d769dd400e571",
+      "input_sha256": "2ee750b996f255244c60fb3ac5d8655c58df336e62cd3f66b26354c73bb93e8f",
+      "samples": 48000
+    },
+    "Test signal 13 (combined tone pulses 1 kHz)": {
+      "wav_sha256": "37f33a68080c4c66baa7a15476432b537761ca70ee49a739d722ca6da054d2f6",
+      "input_sha256": "b2fa0c5162567d500c8e674cac67948f2141f69a457154739c7ffd466c865369",
+      "samples": 48000
+    },
+    "Test signal 6 (tone 250 Hz 30 dB - 80 dB)": {
+      "wav_sha256": "160061507221a59dab0e5ccca64fa6d09ca1796bd3eece6d3f77d710eb16d3e5",
+      "input_sha256": "4e8b0823f4a902dca07ba86ccaa744aa8441f63916c9a589ed5eacdd9ab8dd66",
+      "samples": 508800
+    },
+    "Test signal 7 (tone 1 kHz 30 dB - 80 dB)": {
+      "wav_sha256": "fc6a727dc55cc518224a6495ee88d3c52606988b2be5fb5ac7f0670b8c0c9ec2",
+      "input_sha256": "05d155a3b10a5955431013de012fb0364b921add4a016643f8797bb8434c3e08",
+      "samples": 508800
+    },
+    "Test signal 8 (tone 4 kHz 30 dB - 80 dB)": {
+      "wav_sha256": "3bf8f362c5a40a5413758e2d32d4f9b0b6cae21f9d030e59ddeb1b735ed4eea0",
+      "input_sha256": "561188f45ed24829bfcd6af1588d0d01885e7dcab429e6755e1ce576463eb481",
+      "samples": 508800
+    },
+    "Test signal 9 (pink noise 0 dB - 50 dB)": {
+      "wav_sha256": "0397a8463ee89b9620bb0dcbf490489384df10aa6e2820bb230b9cadd14fd1d9",
+      "input_sha256": "15a4d1cc823b01c412c7cb6093344e6421894907114bef660526aebbf460100c",
+      "samples": 508800
+    },
+    "Test signal 14 (propeller-driven airplane)": {
+      "wav_sha256": "03ef3d50d608d74d1f7d0ffdf31a863d410d7871849c5abd920eaa30e5e09e5f",
+      "input_sha256": "63b1067a4f46b9307215d2db722166adcf4a80123326f586de43b480998fa76b",
+      "samples": 631417
+    },
+    "Test signal 15 (vehicle interior 40 kmh)": {
+      "wav_sha256": "5fdc83c79d961b7405c1f568b62f911f227daee248eaa8848fb3630891ce7eab",
+      "input_sha256": "deb1e7a1b4de532d08fc99ef8776606823348487a4de7828e7b5d41388ffb0af",
+      "samples": 553800
+    },
+    "Test signal 16 (hairdryer)": {
+      "wav_sha256": "fc934315b9654ba9dd4fce053ffca06fe773ed286c4fa627267346287504c2ea",
+      "input_sha256": "60737fa105cdde5005587a43950714f1b5d0a515dacaa6804a8a4ba0d2a22952",
+      "samples": 197270
+    },
+    "Test signal 17 (machine gun)": {
+      "wav_sha256": "6ed3b58faf76b28a94c1c4205f1154913aeadac589ac777ba645a56c7fb23e8d",
+      "input_sha256": "9286010e24426ecbd0055140f2b0dc0b50ee6916b69ed7634a9bb3b864b64404",
+      "samples": 139639
+    },
+    "Test signal 18 (hammer)": {
+      "wav_sha256": "7cfca7001bff2a0746cdc7d39e0ebfaa631b60d3d99726847db2d6914da13904",
+      "input_sha256": "b16a82ee3b9f3eeec6261da60083d4de9af6a85c373b7f96a4ae024a5d5aef7a",
+      "samples": 103969
+    },
+    "Test signal 19 (door creak)": {
+      "wav_sha256": "56fffe81fd0bcebc8db7cee42ecf89b3c22e37154914058ceaa3da1e47bf8c24",
+      "input_sha256": "fffee6aad1c7316aa6668b268650fcc9bbcf789862b1a994ac723b3dea1e28b8",
+      "samples": 124800
+    },
+    "Test signal 20 (shaking coins)": {
+      "wav_sha256": "07bd62f41934bcfdc6a18667c3bb0bb46f57d2a63975562d3a88d239bd70c066",
+      "input_sha256": "190120b12dbe71c0f4550160be21e00ac3463a0ab8f784f5c61669bd0151818f",
+      "samples": 124800
+    },
+    "Test signal 21 (jackhammer)": {
+      "wav_sha256": "ecd777b7aa0d4b6b4eae1d7ca957357c45f3f5afccf4da811a28cfe8bb54310c",
+      "input_sha256": "2b763ef4b23b5718e47765b0046a4e3a0d8b0a9886f59aaa277aeaad3637090c",
+      "samples": 124800
+    },
+    "Test signal 22 (ratchet wheel (large))": {
+      "wav_sha256": "82ce49e18d0eedff3a7cade98bc75fde41faa772aeb676a0f3d4051166f577d8",
+      "input_sha256": "f18c5f035a55bb26441b1fe5ecfbd05d20b9b0ddd973242794f716dc00e7139f",
+      "samples": 88800
+    },
+    "Test signal 23 (typewriter)": {
+      "wav_sha256": "51d9daea3810c4e32efbe43abcfec74960be74e58f5403bdf20ff9c9a7d26f26",
+      "input_sha256": "c67d32d7146dbf2a83791ff439973642f0089a9c17e1ae133502b80827837433",
+      "samples": 122401
+    },
+    "Test signal 24 (woodpecker)": {
+      "wav_sha256": "85e566d2ba104b1b5f8b380720b37083448abca8d8913d159710e94a7c184fd4",
+      "input_sha256": "2f20c961bb76b3f29e8d36a3a80edddfc56336c4784bfefece75831e474d1298",
+      "samples": 115202
+    },
+    "Test signal 25 (full can rattle)": {
+      "wav_sha256": "972e87bbecb4531ab5b53255dbb9c13c11f59a769a726e37002875bc424c75a8",
+      "input_sha256": "0f2ecae2a233732ad0763da35c20168aaa19db3af8298f88539b1faf358babcb",
+      "samples": 122401
+    },
+    "contract_3s": {
+      "wav_sha256": null,
+      "input_sha256": "d27b1e863dae1270d78e61ed154daf4b9bdaae6b24aabc1454ee0facbef94d0a",
+      "samples": 144000
+    }
+  },
+  "calibration_bits": "4006afb6b68fc829"
+}

@@ -1,0 +1,1270 @@
+{
+  "commands": [
+    {
+      "name": "rustc",
+      "args": [
+        "rustc",
+        "-Vv"
+      ],
+      "exit_code": 0,
+      "seconds": 0.038999319076538086
+    },
+    {
+      "name": "cargo",
+      "args": [
+        "cargo",
+        "-V"
+      ],
+      "exit_code": 0,
+      "seconds": 0.03500080108642578
+    },
+    {
+      "name": "python",
+      "args": [
+        "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.011518716812133789
+    },
+    {
+      "name": "fmt",
+      "args": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.30748891830444336
+    },
+    {
+      "name": "clippy",
+      "args": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "seconds": 166.50511288642883
+    },
+    {
+      "name": "clippy-ffi",
+      "args": [
+        "cargo",
+        "clippy",
+        "-p",
+        "iso532-ffi",
+        "--all-targets",
+        "--all-features",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "seconds": 6.716184854507446
+    },
+    {
+      "name": "doc-pairs",
+      "args": [
+        "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/doc_pairs.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.14584755897521973
+    },
+    {
+      "name": "redact-docs",
+      "args": [
+        "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "tools/redact_paths.py",
+        "--check",
+        "docs"
+      ],
+      "exit_code": 0,
+      "seconds": 1.678403615951538
+    },
+    {
+      "name": "venv",
+      "args": [
+        "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "venv",
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv"
+      ],
+      "exit_code": 0,
+      "seconds": 8.963593006134033
+    },
+    {
+      "name": "pip-dependencies",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "numpy==2.4.6",
+        "mosqito==1.2.1",
+        "pytest==9.1.1",
+        "maturin==1.14.1"
+      ],
+      "exit_code": 1,
+      "seconds": 2.2355828285217285
+    },
+    {
+      "name": "pip-freeze",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8030779361724854
+    },
+    {
+      "name": "maturin",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "-m",
+        "maturin",
+        "build",
+        "--release",
+        "--out",
+        "<REPO>\\tmp\\acceptance-040-astra\\wheels"
+      ],
+      "exit_code": 1,
+      "seconds": 0.08558082580566406
+    },
+    {
+      "name": "hash_gate",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "hash_gate",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 18.494009971618652
+    },
+    {
+      "name": "output_grid",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "output_grid",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 26.50873875617981
+    },
+    {
+      "name": "stream",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "stream",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 59.282325983047485
+    },
+    {
+      "name": "annexb",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "annexb",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 14.62166452407837
+    },
+    {
+      "name": "annexb_validator",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "annexb_validator",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 15.122355222702026
+    },
+    {
+      "name": "golden_zwtv",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "golden_zwtv",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 16.282684803009033
+    },
+    {
+      "name": "golden_zwst",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "golden_zwst",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 14.940346479415894
+    },
+    {
+      "name": "hash-dump",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "hash_gate",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 12.687467575073242
+    },
+    {
+      "name": "bench-build",
+      "args": [
+        "cargo",
+        "bench",
+        "--workspace",
+        "--no-run"
+      ],
+      "exit_code": 0,
+      "seconds": 123.16416907310486
+    },
+    {
+      "name": "golden_c",
+      "args": [
+        "cargo",
+        "test",
+        "-p",
+        "iso532",
+        "--test",
+        "golden_c",
+        "--",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "seconds": 6.611826419830322
+    },
+    {
+      "name": "workspace",
+      "args": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--no-fail-fast"
+      ],
+      "exit_code": 0,
+      "seconds": 188.55865812301636
+    }
+  ],
+  "python_commands": [
+    {
+      "name": "pip-freeze-final",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8666737079620361
+    },
+    {
+      "name": "maturin-retry",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "-m",
+        "maturin",
+        "build",
+        "--release",
+        "--out",
+        "<REPO>\\tmp\\acceptance-040-astra\\wheels"
+      ],
+      "exit_code": 0,
+      "seconds": 27.416159868240356
+    },
+    {
+      "name": "wheel-install",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "<REPO>\\tmp\\acceptance-040-astra\\wheels\\iso532-0.4.0-cp39-abi3-win_amd64.whl"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9384236335754395
+    },
+    {
+      "name": "pytest",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "iso532-py/tests",
+        "-v",
+        "-s"
+      ],
+      "exit_code": 2,
+      "seconds": 21.176950216293335
+    },
+    {
+      "name": "measure-mosqito",
+      "args": [
+        "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+        "<REPO>\\docs\\verification\\2026-11-04-release-0.4.0-fca4ccd\\gates\\measure_mosqito.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.1523308753967285
+    }
+  ],
+  "tests": {
+    "annexb": {
+      "passed": 3,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "annexb_validator": {
+      "passed": 24,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "ffi-test-panic": {
+      "passed": 17,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 3
+    },
+    "golden_c": {
+      "passed": 4,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "golden_zwst": {
+      "passed": 6,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "golden_zwtv": {
+      "passed": 8,
+      "failed": 0,
+      "ignored": 1,
+      "binaries": 1
+    },
+    "hash-dump": {
+      "passed": 1,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "hash_gate": {
+      "passed": 1,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "linux": {
+      "passed": 61,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 12
+    },
+    "output_grid": {
+      "passed": 7,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "pytest": {
+      "passed": 87,
+      "failed": 0,
+      "xfailed": 0,
+      "seconds": 172.32
+    },
+    "round1-hash": {
+      "passed": 1,
+      "failed": 0,
+      "ignored": 0,
+      "binaries": 1
+    },
+    "stream": {
+      "passed": 11,
+      "failed": 0,
+      "ignored": 1,
+      "binaries": 1
+    },
+    "workspace": {
+      "passed": 146,
+      "failed": 0,
+      "ignored": 3,
+      "binaries": 26
+    }
+  },
+  "hashes": {
+    "windows": {
+      "got": {
+        "scalar": {
+          "n": "de3ccbba47ec9dd5",
+          "specific": "80e89aeeafaf2164",
+          "time": "f076bcb342595537"
+        },
+        "scalar mosqito_tail": {
+          "n": "b62e33532ef3019a",
+          "specific": "b2247c2f9f943399",
+          "time": "f076bcb342595537"
+        },
+        "avx2": {
+          "n": "917cc80e33295cc3",
+          "specific": "38b0cdbd447978d7",
+          "time": "f076bcb342595537"
+        },
+        "avx2 mosqito_tail": {
+          "n": "441d7721a9a22ffc",
+          "specific": "ced0f74f725403e1",
+          "time": "f076bcb342595537"
+        }
+      },
+      "expected": {
+        "scalar": {
+          "n": "de3ccbba47ec9dd5",
+          "specific": "80e89aeeafaf2164",
+          "time": "f076bcb342595537"
+        },
+        "avx2": {
+          "n": "917cc80e33295cc3",
+          "specific": "38b0cdbd447978d7",
+          "time": "f076bcb342595537"
+        },
+        "scalar mosqito_tail": {
+          "n": "b62e33532ef3019a",
+          "specific": "b2247c2f9f943399",
+          "time": "f076bcb342595537"
+        },
+        "avx2 mosqito_tail": {
+          "n": "441d7721a9a22ffc",
+          "specific": "ced0f74f725403e1",
+          "time": "f076bcb342595537"
+        }
+      },
+      "all_equal": true
+    },
+    "linux": {
+      "got": {
+        "scalar": {
+          "n": "6b40a36a3d846e23",
+          "specific": "3065b74438e81ca6",
+          "time": "f076bcb342595537"
+        },
+        "scalar mosqito_tail": {
+          "n": "00af090992c2d076",
+          "specific": "062926a7788343e3",
+          "time": "f076bcb342595537"
+        },
+        "avx2": {
+          "n": "284854f5f5758f91",
+          "specific": "e510c9ec5b5244c3",
+          "time": "f076bcb342595537"
+        },
+        "avx2 mosqito_tail": {
+          "n": "a59f12960442c5cc",
+          "specific": "10130ca6b26aa5af",
+          "time": "f076bcb342595537"
+        }
+      },
+      "expected": {
+        "scalar": {
+          "n": "6b40a36a3d846e23",
+          "specific": "3065b74438e81ca6",
+          "time": "f076bcb342595537"
+        },
+        "avx2": {
+          "n": "284854f5f5758f91",
+          "specific": "e510c9ec5b5244c3",
+          "time": "f076bcb342595537"
+        },
+        "scalar mosqito_tail": {
+          "n": "00af090992c2d076",
+          "specific": "062926a7788343e3",
+          "time": "f076bcb342595537"
+        },
+        "avx2 mosqito_tail": {
+          "n": "a59f12960442c5cc",
+          "specific": "10130ca6b26aa5af",
+          "time": "f076bcb342595537"
+        }
+      },
+      "all_equal": true
+    }
+  },
+  "round1_hashes": {
+    "got": {
+      "scalar": {
+        "n": "de3ccbba47ec9dd5",
+        "specific": "16937b45e6e4155d",
+        "time": "f076bcb342595537"
+      },
+      "scalar mosqito_tail": {
+        "n": "b62e33532ef3019a",
+        "specific": "ff98c57f3018ef94",
+        "time": "f076bcb342595537"
+      },
+      "avx2": {
+        "n": "917cc80e33295cc3",
+        "specific": "3d4b4b2df9073e48",
+        "time": "f076bcb342595537"
+      },
+      "avx2 mosqito_tail": {
+        "n": "441d7721a9a22ffc",
+        "specific": "3f241da3fe334097",
+        "time": "f076bcb342595537"
+      }
+    },
+    "expected": {
+      "scalar": {
+        "n": "de3ccbba47ec9dd5",
+        "specific": "16937b45e6e4155d",
+        "time": "f076bcb342595537"
+      },
+      "avx2": {
+        "n": "917cc80e33295cc3",
+        "specific": "3d4b4b2df9073e48",
+        "time": "f076bcb342595537"
+      },
+      "scalar mosqito_tail": {
+        "n": "b62e33532ef3019a",
+        "specific": "ff98c57f3018ef94",
+        "time": "f076bcb342595537"
+      },
+      "avx2 mosqito_tail": {
+        "n": "441d7721a9a22ffc",
+        "specific": "3f241da3fe334097",
+        "time": "f076bcb342595537"
+      }
+    },
+    "all_equal": true,
+    "status": "passed"
+  },
+  "mosqito": {
+    "comparisons": {
+      "annexb_sig10": {
+        "zwtv_n": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.00016148967693740968,
+          "max_coordinate": [
+            77
+          ],
+          "bit_differences": 493,
+          "first_coordinate": [
+            7
+          ],
+          "first_got_hex": "3f9c35e39d140001",
+          "first_want_hex": "3f9c33477cd62352"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            500
+          ],
+          "max_abs": 0.0038422373590917686,
+          "max_coordinate": [
+            93,
+            7
+          ],
+          "bit_differences": 63055,
+          "first_coordinate": [
+            28,
+            14
+          ],
+          "first_got_hex": "3f5b98aab10f2c13",
+          "first_want_hex": "3f5b98aab10fd6c2"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.00048800598466103295,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "400127f5e78167b0",
+          "first_want_hex": "400128f5c28f5c29"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 4.996003610813204e-16,
+          "max_coordinate": [
+            98
+          ],
+          "bit_differences": 106,
+          "first_coordinate": [
+            44
+          ],
+          "first_got_hex": "3f496e9dc3befa5c",
+          "first_want_hex": "3f496e9dc3befbcb"
+        }
+      },
+      "annexb_sig3": {
+        "zwtv_n": {
+          "shape": [
+            5000
+          ],
+          "max_abs": 0.00042032051235274537,
+          "max_coordinate": [
+            4921
+          ],
+          "bit_differences": 5000,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3f3a5d3993ee2d14",
+          "first_want_hex": "3f3a75abe05c59ba"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            5000
+          ],
+          "max_abs": 0.003526611485671627,
+          "max_coordinate": [
+            38,
+            10
+          ],
+          "bit_differences": 775998,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_got_hex": "3f60930764a51386",
+          "first_want_hex": "3f60930764a4f965"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.0003576330919221604,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "4010359d3d474d97",
+          "first_want_hex": "4010353f7ced9168"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 1.021405182655144e-14,
+          "max_coordinate": [
+            79
+          ],
+          "bit_differences": 117,
+          "first_coordinate": [
+            44
+          ],
+          "first_got_hex": "3f8500435c0a02b9",
+          "first_want_hex": "3f8500435c0a0314"
+        }
+      },
+      "annexb_sig5": {
+        "zwtv_n": {
+          "shape": [
+            5000
+          ],
+          "max_abs": 0.003560743287430057,
+          "max_coordinate": [
+            2140
+          ],
+          "bit_differences": 5000,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3f55975e78f1e1a5",
+          "first_want_hex": "3f55953d3fe2aff6"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            5000
+          ],
+          "max_abs": 0.03147029899252968,
+          "max_coordinate": [
+            19,
+            4298
+          ],
+          "bit_differences": 826477,
+          "first_coordinate": [
+            0,
+            0
+          ],
+          "first_got_hex": "3f778e418f21b0c3",
+          "first_want_hex": "3f778e418f21b36e"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.00047533538316280044,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "4024d5c5caf79af9",
+          "first_want_hex": "4024d604189374bc"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 0.007959658039372819,
+          "max_coordinate": [
+            66
+          ],
+          "bit_differences": 226,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3fc3153a4c70f916",
+          "first_want_hex": "3fc3153a4c70f90b"
+        }
+      },
+      "pulse_1k_70": {
+        "zwtv_n": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.0001747774371299582,
+          "max_coordinate": [
+            329
+          ],
+          "bit_differences": 249,
+          "first_coordinate": [
+            251
+          ],
+          "first_got_hex": "3fe0b0cb5513a4d3",
+          "first_want_hex": "3fe0b10b66fd10ec"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            500
+          ],
+          "max_abs": 0.012868699854099941,
+          "max_coordinate": [
+            66,
+            261
+          ],
+          "bit_differences": 45947,
+          "first_coordinate": [
+            9,
+            256
+          ],
+          "first_got_hex": "3f8ad9a882214287",
+          "first_want_hex": "3f8ad9a882213e81"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.0001361496684246788,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "4006f3fda754c729",
+          "first_want_hex": "4006f3b645a1cac1"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 5.620504062164855e-16,
+          "max_coordinate": [
+            18
+          ],
+          "bit_differences": 154,
+          "first_coordinate": [
+            9
+          ],
+          "first_got_hex": "3f923ddf7947d5ee",
+          "first_want_hex": "3f923ddf7947d661"
+        }
+      },
+      "sine_1k_60": {
+        "zwtv_n": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.00015291061731659283,
+          "max_coordinate": [
+            499
+          ],
+          "bit_differences": 500,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3f3a5ad3eb6aa989",
+          "first_want_hex": "3f3a443a814adbdf"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            500
+          ],
+          "max_abs": 0.0035822784481257253,
+          "max_coordinate": [
+            38,
+            10
+          ],
+          "bit_differences": 76383,
+          "first_coordinate": [
+            9,
+            9
+          ],
+          "first_got_hex": "3f604a2bdfcbcd27",
+          "first_want_hex": "3f604a2bdfcbc4ec"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.0002516341792544452,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "40105c6aeca4d781",
+          "first_want_hex": "40105c28f5c28f5c"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 6.306066779870889e-14,
+          "max_coordinate": [
+            79
+          ],
+          "bit_differences": 140,
+          "first_coordinate": [
+            28
+          ],
+          "first_got_hex": "3f731533a6856c8b",
+          "first_want_hex": "3f731533a68569ba"
+        }
+      },
+      "sine_250_80": {
+        "zwtv_n": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.0007605136756581032,
+          "max_coordinate": [
+            19
+          ],
+          "bit_differences": 500,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3f545299ef547321",
+          "first_want_hex": "3f5453dc55f0fdec"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            500
+          ],
+          "max_abs": 0.0024955864605324396,
+          "max_coordinate": [
+            153,
+            3
+          ],
+          "bit_differences": 114898,
+          "first_coordinate": [
+            0,
+            9
+          ],
+          "first_got_hex": "3f7dd1c19f0d711e",
+          "first_want_hex": "3f7dd1c19f0d5937"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.0003060254961901876,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "402dcd27c2b86570",
+          "first_want_hex": "402dcd4fdf3b645a"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 3.921884166172007e-05,
+          "max_coordinate": [
+            109
+          ],
+          "bit_differences": 193,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3fa4610bdaefc2ac",
+          "first_want_hex": "3fa4610bdaefc398"
+        }
+      },
+      "sine_4k_60": {
+        "zwtv_n": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.0002211913987890668,
+          "max_coordinate": [
+            499
+          ],
+          "bit_differences": 500,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3f43ecfec452c46f",
+          "first_want_hex": "3f43e49d4009a2c0"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            500
+          ],
+          "max_abs": 0.0028671444348782466,
+          "max_coordinate": [
+            92,
+            3
+          ],
+          "bit_differences": 64383,
+          "first_coordinate": [
+            18,
+            7
+          ],
+          "first_got_hex": "3f662956ad15cc93",
+          "first_want_hex": "3f662956ad15cedb"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.0002712451308974906,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "4018a289ca6c63f0",
+          "first_want_hex": "4018a2d0e5604189"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 1.3100631690576847e-14,
+          "max_coordinate": [
+            167
+          ],
+          "bit_differences": 134,
+          "first_coordinate": [
+            106
+          ],
+          "first_got_hex": "3f65f6d8ae3ce11d",
+          "first_want_hex": "3f65f6d8ae3ce16a"
+        }
+      },
+      "step_60_80": {
+        "zwtv_n": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.003941967124511336,
+          "max_coordinate": [
+            499
+          ],
+          "bit_differences": 500,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3f5a9a4a74a02ff3",
+          "first_want_hex": "3f5a9ac0e7a9781d"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            500
+          ],
+          "max_abs": 0.022088716667464592,
+          "max_coordinate": [
+            54,
+            256
+          ],
+          "bit_differences": 86870,
+          "first_coordinate": [
+            0,
+            268
+          ],
+          "first_got_hex": "3f6a5c4338100254",
+          "first_want_hex": "3f6a5c4338101a34"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.00022565207676095156,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "402bf8f291944abc",
+          "first_want_hex": "402bf8d4fdf3b646"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 0.0010330090855352886,
+          "max_coordinate": [
+            154
+          ],
+          "bit_differences": 195,
+          "first_coordinate": [
+            9
+          ],
+          "first_got_hex": "3fabff6b630ee408",
+          "first_want_hex": "3fabff6b630ee6df"
+        }
+      },
+      "white_60": {
+        "zwtv_n": {
+          "shape": [
+            500
+          ],
+          "max_abs": 0.000689666471943795,
+          "max_coordinate": [
+            493
+          ],
+          "bit_differences": 500,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "3f544c4d9aa166c8",
+          "first_want_hex": "3f54477ffe2c9e75"
+        },
+        "zwtv_specific": {
+          "shape": [
+            240,
+            500
+          ],
+          "max_abs": 0.031117904453718426,
+          "max_coordinate": [
+            167,
+            342
+          ],
+          "bit_differences": 79213,
+          "first_coordinate": [
+            0,
+            115
+          ],
+          "first_got_hex": "3f5006f9be230d58",
+          "first_want_hex": "3f5006f9be23558e"
+        },
+        "zwst_n": {
+          "shape": [
+            1
+          ],
+          "max_abs": 0.00047350714280725015,
+          "max_coordinate": [
+            0
+          ],
+          "bit_differences": 1,
+          "first_coordinate": [
+            0
+          ],
+          "first_got_hex": "40246727891860a8",
+          "first_want_hex": "402466e978d4fdf4"
+        },
+        "zwst_specific": {
+          "shape": [
+            240
+          ],
+          "max_abs": 1.7763568394002505e-15,
+          "max_coordinate": [
+            138
+          ],
+          "bit_differences": 204,
+          "first_coordinate": [
+            9
+          ],
+          "first_got_hex": "3fc359986a559abc",
+          "first_want_hex": "3fc359986a559ace"
+        }
+      }
+    },
+    "python_contract_hashes": {
+      "zero": {
+        "n": "ff2754e949a15287",
+        "time_axis": "f076bcb342595537",
+        "first_n_f64_hex": "0000000000000000"
+      },
+      "mosqito_tail": {
+        "n": "aa3d499447b9a2c4",
+        "time_axis": "f076bcb342595537",
+        "first_n_f64_hex": "3f3b97eeb486137b"
+      }
+    },
+    "module": "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Lib\\site-packages\\iso532\\__init__.py"
+  },
+  "python_hashes_equal": true,
+  "invalid_evidence": {
+    "round1-shared-target-invalid.log": "Excluded: shared target reused candidate binary; replaced by isolated round1-hash-target rebuild."
+  },
+  "ffi_extra": [
+    {
+      "name": "cbindgen-version",
+      "exit_code": 0,
+      "seconds": 0.010000467300415039
+    },
+    {
+      "name": "header-regen",
+      "exit_code": 0,
+      "seconds": 0.24155116081237793
+    },
+    {
+      "name": "c-smoke",
+      "exit_code": 9009,
+      "seconds": 3.103804111480713
+    },
+    {
+      "name": "ffi-test-panic",
+      "exit_code": 0,
+      "seconds": 7.120795965194702
+    }
+  ],
+  "final_extra": [
+    {
+      "name": "c-smoke-explicit",
+      "exit_code": 0,
+      "seconds": 0.41329526901245117
+    },
+    {
+      "name": "round1-hash",
+      "exit_code": 0,
+      "seconds": 204.30112528800964
+    }
+  ],
+  "header_regeneration": {
+    "equal": false,
+    "regenerated_sha256": "8be37ae50b592d1b78f2ffb3a07e901d886af680d5acced564fb7248b5231255",
+    "committed_sha256": "2f1b299a8c3a162ca3dda68b2899ed602c7c28f8c1d4e9a8fa409dfde38b3661",
+    "normalized_lf_equal": true,
+    "regenerated_crlf_count": 2,
+    "committed_crlf_count": 207,
+    "regenerated_bytes": 7217,
+    "committed_bytes": 7422
+  },
+  "python_recovery": [
+    {
+      "name": "pip-freeze-complete",
+      "exit_code": 0,
+      "seconds": 0.6987152099609375
+    },
+    {
+      "name": "pytest",
+      "exit_code": 0,
+      "seconds": 172.97523522377014
+    }
+  ],
+  "linux_exit": 0,
+  "environment_recovery": {
+    "initial_pip_failure": "PIP_NO_INDEX=1 inherited; no distributions visible",
+    "recovery": "PIP_NO_INDEX=0; pinned packages installed into the same fresh venv; run_python.py builds and installs the candidate wheel",
+    "pytest_initial_failure": "MoSQITo undeclared matplotlib import caused collection error; installed matplotlib 3.11.2 and reran pytest without rebuild",
+    "docker_initial_failure": "npipe ACL denied; scoped escalation allowed isolated local Linux verification"
+  },
+  "final_status": {
+    "required_gates": "passed",
+    "windows_hashes": "passed",
+    "linux_hashes": "passed",
+    "mosqito_compatibility": "passed",
+    "ffi_smoke": "passed",
+    "header_semantics": "passed"
+  }
+}

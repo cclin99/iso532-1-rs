@@ -1,0 +1,755 @@
+{
+  "all_utf8": true,
+  "unhandled_suffixes": [],
+  "non_utf8": [],
+  "binary_or_cache": [],
+  "suffix_counts_before_inventory_manifest": {
+    ".log": 58,
+    ".txt": 13,
+    ".py": 19,
+    ".json": 24,
+    ".md": 6,
+    ".ps1": 2,
+    ".sh": 1
+  },
+  "files_before_inventory_manifest": [
+    {
+      "file": "all_constants_binary64-build.log",
+      "bytes": 412,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "all_constants_binary64.diff.txt",
+      "bytes": 3102,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "audit-freeze.py",
+      "bytes": 1165,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "classification-build.log",
+      "bytes": 625,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "classification-main.rs.txt",
+      "bytes": 1458,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "classification-new.rs.txt",
+      "bytes": 10522,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "classification-old.rs.txt",
+      "bytes": 8641,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "classification-results.json",
+      "bytes": 4021,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "classify-f07.py",
+      "bytes": 3934,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "compare-release.py",
+      "bytes": 2418,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "contracts/audit_sig15.py",
+      "bytes": 2671,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "contracts/baseline-ffi-build.log",
+      "bytes": 63,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "contracts/baseline-harness-Cargo.lock.txt",
+      "bytes": 3053,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "contracts/baseline-harness.log",
+      "bytes": 1071,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "contracts/candidate-ffi-build.log",
+      "bytes": 63,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "contracts/candidate-harness-Cargo.lock.txt",
+      "bytes": 3053,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "contracts/candidate-harness.log",
+      "bytes": 1073,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "contracts/contracts-results.json",
+      "bytes": 69899,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "contracts/harness.rs.txt",
+      "bytes": 2044,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "contracts/notes.md",
+      "bytes": 4203,
+      "suffix": ".md",
+      "utf8": true
+    },
+    {
+      "file": "contracts/release-commits.log",
+      "bytes": 1137,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "contracts/run.log",
+      "bytes": 3677,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "contracts/run_contracts.py",
+      "bytes": 9540,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "contracts/sig15-audit.log",
+      "bytes": 8920,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "contracts/sig15-workbook-audit.json",
+      "bytes": 8918,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "delivery-check.md",
+      "bytes": 4559,
+      "suffix": ".md",
+      "utf8": true
+    },
+    {
+      "file": "diagnostic-controls.json",
+      "bytes": 25912,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "diagnostic-controls.py",
+      "bytes": 3080,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "finalize-delivery.py",
+      "bytes": 4828,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "freeze.json",
+      "bytes": 600,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/annexb.log",
+      "bytes": 603,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/annexb_validator.log",
+      "bytes": 3816,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/bench-build.log",
+      "bytes": 3046,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/c-smoke-explicit.log",
+      "bytes": 252,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/c-smoke-hashes.json",
+      "bytes": 258,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/c-smoke-run.log",
+      "bytes": 94,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/c-smoke.log",
+      "bytes": 990,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/cargo.log",
+      "bytes": 61,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/cbindgen-version.log",
+      "bytes": 51,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/clippy-ffi.log",
+      "bytes": 491,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/clippy.log",
+      "bytes": 2601,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/command-results.json",
+      "bytes": 5203,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/doc-pairs.log",
+      "bytes": 768,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/ffi-extra-results.json",
+      "bytes": 392,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/ffi-test-panic.log",
+      "bytes": 2369,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/final-extra-results.json",
+      "bytes": 199,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/fmt.log",
+      "bytes": 52,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/gates-results.json",
+      "bytes": 29625,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/golden_c.log",
+      "bytes": 4473,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/golden_zwst.log",
+      "bytes": 1580,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/golden_zwtv.log",
+      "bytes": 1440,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/hash-dump.log",
+      "bytes": 843,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/hash_gate.log",
+      "bytes": 2365,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/header-regen.log",
+      "bytes": 185,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/header-regeneration.json",
+      "bytes": 360,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/input-hashes.json",
+      "bytes": 19776,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/linux-exit.txt",
+      "bytes": 3,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "gates/linux-image.txt",
+      "bytes": 73,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "gates/linux.log",
+      "bytes": 49194,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/maturin-retry.log",
+      "bytes": 1632,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/maturin.log",
+      "bytes": 259,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/measure-mosqito.log",
+      "bytes": 636,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/measure_mosqito.py",
+      "bytes": 2309,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "gates/mosqito-measurements.json",
+      "bytes": 13435,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/output_grid.log",
+      "bytes": 896,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pip-dependencies-retry.log",
+      "bytes": 2384,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pip-dependencies.log",
+      "bytes": 326,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pip-freeze-complete.log",
+      "bytes": 589,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pip-freeze-final.log",
+      "bytes": 267,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pip-freeze.log",
+      "bytes": 102,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pip-matplotlib.log",
+      "bytes": 2788,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pytest-missing-matplotlib.log",
+      "bytes": 2371,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/pytest.log",
+      "bytes": 10348,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/python-command-results.json",
+      "bytes": 1415,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/python-recovery-results.json",
+      "bytes": 196,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/python.log",
+      "bytes": 108,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/README.md",
+      "bytes": 3675,
+      "suffix": ".md",
+      "utf8": true
+    },
+    {
+      "file": "gates/recover_python.ps1",
+      "bytes": 651,
+      "suffix": ".ps1",
+      "utf8": true
+    },
+    {
+      "file": "gates/redact-docs.log",
+      "bytes": 131,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/round1-hash.log",
+      "bytes": 2559,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/round1-shared-target-invalid.log",
+      "bytes": 843,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/run_ffi_extra.py",
+      "bytes": 2450,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "gates/run_final_extra.py",
+      "bytes": 881,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "gates/run_gates.py",
+      "bytes": 3121,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "gates/run_linux.ps1",
+      "bytes": 888,
+      "suffix": ".ps1",
+      "utf8": true
+    },
+    {
+      "file": "gates/run_linux.sh",
+      "bytes": 747,
+      "suffix": ".sh",
+      "utf8": true
+    },
+    {
+      "file": "gates/run_python.py",
+      "bytes": 1394,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "gates/run_python_tests.py",
+      "bytes": 854,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "gates/rustc.log",
+      "bytes": 220,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/stream.log",
+      "bytes": 1132,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/summarize.py",
+      "bytes": 5376,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "gates/venv.log",
+      "bytes": 144,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/wheel-hashes.json",
+      "bytes": 114,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "gates/wheel-install.log",
+      "bytes": 483,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "gates/workspace.log",
+      "bytes": 16107,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "generate-golden.py",
+      "bytes": 2708,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "golden-diff-line-endings.json",
+      "bytes": 257,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "golden-generation.log",
+      "bytes": 687,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "golden-meta-differences.json",
+      "bytes": 1000,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "golden-negative.log",
+      "bytes": 179,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "golden-results.json",
+      "bytes": 31913,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "indexed_grid_control-build.log",
+      "bytes": 410,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "indexed_grid_control.diff.txt",
+      "bytes": 1046,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "make-reports.py",
+      "bytes": 19915,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "numeric-build-candidate.log",
+      "bytes": 153,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "numeric-build-round1.log",
+      "bytes": 150,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "numeric-c-build-diagnostic.log",
+      "bytes": 400,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "numeric-c-build-official.log",
+      "bytes": 398,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "numeric-c-build-patched.log",
+      "bytes": 397,
+      "suffix": ".log",
+      "utf8": true
+    },
+    {
+      "file": "numeric-diagnostic.diff.txt",
+      "bytes": 3515,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "numeric-harness.rs.txt",
+      "bytes": 1717,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "numeric-results.json",
+      "bytes": 118160,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "numeric-wrapper.c.txt",
+      "bytes": 740,
+      "suffix": ".txt",
+      "utf8": true
+    },
+    {
+      "file": "prepare.py",
+      "bytes": 608,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "release-numeric-comparison.json",
+      "bytes": 12794,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "replay.md",
+      "bytes": 3473,
+      "suffix": ".md",
+      "utf8": true
+    },
+    {
+      "file": "report.en.md",
+      "bytes": 8803,
+      "suffix": ".md",
+      "utf8": true
+    },
+    {
+      "file": "report.md",
+      "bytes": 8016,
+      "suffix": ".md",
+      "utf8": true
+    },
+    {
+      "file": "results.json",
+      "bytes": 7885,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "run-numerics.py",
+      "bytes": 8344,
+      "suffix": ".py",
+      "utf8": true
+    },
+    {
+      "file": "source-integrity.json",
+      "bytes": 354374,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "supplemental-release-numbers.json",
+      "bytes": 1060,
+      "suffix": ".json",
+      "utf8": true
+    },
+    {
+      "file": "supplemental-release-numbers.py",
+      "bytes": 1097,
+      "suffix": ".py",
+      "utf8": true
+    }
+  ]
+}

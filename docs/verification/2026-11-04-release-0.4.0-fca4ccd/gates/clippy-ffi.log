@@ -1,0 +1,9 @@
+COMMAND ["cargo", "clippy", "-p", "iso532-ffi", "--all-targets", "--all-features", "--", "-D", "warnings"]
+    Checking either v1.16.0
+   Compiling syn v2.0.119
+    Checking rayon v1.12.0
+   Compiling thiserror-impl v1.0.69
+    Checking thiserror v1.0.69
+    Checking iso532 v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532)
+    Checking iso532-ffi v0.4.0 (<REPO>\tmp\acceptance-040-astra\candidate\iso532-ffi)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 6.45s

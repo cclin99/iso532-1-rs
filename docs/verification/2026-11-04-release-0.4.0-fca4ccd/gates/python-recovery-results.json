@@ -1,0 +1,12 @@
+[
+  {
+    "name": "pip-freeze-complete",
+    "exit_code": 0,
+    "seconds": 0.6987152099609375
+  },
+  {
+    "name": "pytest",
+    "exit_code": 0,
+    "seconds": 172.97523522377014
+  }
+]

@@ -1,0 +1,300 @@
+thread_local! {pub static FLAGS: std::cell::RefCell<[bool;240]> = const {std::cell::RefCell::new([false;240])};}
+use iso532::tables::{RNS, USL, ZUP};
+
+pub fn calc_slopes(nm: &[f64; 21]) -> (f64, [f64; 240]) {
+    let mut n_specific = [0.0; 240];
+    let total = calc_slopes_into(nm, &mut n_specific);
+    (total, n_specific)
+}
+
+pub fn calc_slopes_into(nm: &[f64; 21], n_specific: &mut [f64]) -> f64 {
+    assert_eq!(
+        n_specific.len(),
+        240,
+        "calc_slopes_into expects 240 Bark steps"
+    );
+    calc_slopes_impl(nm, Some(n_specific))
+}
+
+pub fn calc_slopes_n_only(nm: &[f64; 21]) -> f64 {
+    calc_slopes_impl(nm, None)
+}
+
+fn calc_slopes_impl(nm: &[f64; 21], mut n_specific: Option<&mut [f64]>) -> f64 {
+    let zup_ea = zup_indices();
+    if let Some(spec) = n_specific.as_mut() {
+        for i in 0..21 {
+            for item in &mut spec[prev_zup_index(&zup_ea, i)..zup_ea[i]] {
+                *item = nm[i];
+            }
+        }
+    }
+    let mut n2 = [1.0; 240];
+    let mut z2 = [1.0; 240];
+    let mut usl = [1.0; 240];
+    let mut dz = [1.0; 240];
+    let mut rns_values = [1.0; 240];
+
+    let mut rns_ind = [0usize; 21];
+    let mut rns_for_nm = [0.0; 21];
+    let mut usl_for_nm = [0.0; 21];
+    for i in 0..21 {
+        rns_ind[i] = get_rns_index(nm[i], false);
+        rns_for_nm[i] = RNS[rns_ind[i]];
+        usl_for_nm[i] = usl_value(rns_ind[i], i);
+    }
+
+    for i in 0..21 {
+        let band_dz = if i < 2 { ZUP[1] } else { ZUP[i] - ZUP[i - 1] };
+        for j in prev_zup_index(&zup_ea, i)..zup_ea[i] {
+            n2[j] = nm[i];
+            dz[j] = band_dz;
+            z2[j] = ZUP[i];
+            usl[j] = usl_for_nm[i];
+            rns_values[j] = rns_for_nm[i];
+        }
+    }
+
+    let mut total = 0.0;
+    let mut n1_aux = 0.0;
+    let mut z1_aux = 0.0;
+
+    for i in 0..21 {
+        let j0 = prev_zup_index(&zup_ea, i);
+        // F-06: band 0 starts from N1 = 0 (Annex A), so it never has a slope
+        // to continue and must not look at band 20 through a wrap-around.
+        let mut mask_n1_bigger_nm = false;
+        let mut before = j0;
+        if i > 0 {
+            before = j0 - 1;
+            let idx = get_rns_index(n2[before], false);
+            rns_values[j0] = RNS[idx];
+            usl[j0] = usl_value(idx, i - 1);
+            mask_n1_bigger_nm = r8(n2[before]) > r8(nm[i]);
+        }
+        if !mask_n1_bigger_nm {
+            total += n2[j0] * (z2[j0] - z1_aux);
+            n1_aux = n2[j0];
+            z1_aux = z2[j0];
+        }
+
+        if mask_n1_bigger_nm {
+            let max_rns_nm = rns_values[before].max(nm[i]);
+            z2[j0] = ((n1_aux - max_rns_nm) / usl[j0] + z1_aux).min(ZUP[i]);
+            dz[j0] = z2[j0] - z1_aux;
+            n2[j0] = n1_aux - dz[j0] * usl[j0];
+
+            total += dz[j0] * (n1_aux + n2[j0]) / 2.0;
+
+            let mut z_array = ZUP[i - 1] + 0.1;
+            let mut last_mask_z_bigger_z2 = false;
+            let mut last_j = j0;
+
+            for j in j0..zup_ea[i] {
+                last_j = j;
+                if j != j0 {
+                    z2[j] = z2[j - 1];
+                    n2[j] = n2[j - 1];
+                    dz[j] = dz[j - 1];
+                    usl[j] = usl[j - 1];
+                    rns_values[j] = rns_values[j - 1];
+                }
+
+                let mask_z_bigger_z2 = mask_n1_bigger_nm && r8(z2[j]) <= r8(z_array);
+                last_mask_z_bigger_z2 = mask_z_bigger_z2;
+                if mask_z_bigger_z2 {
+                    let idx = get_rns_index(n2[j], true);
+                    rns_values[j] = RNS[idx];
+                    usl[j] = usl_value(idx, i.wrapping_sub(1));
+                    n1_aux = n2[j];
+                    z1_aux = z2[j];
+
+                    let mask_z_bigger_z2_1 = r8(n1_aux) <= r8(nm[i]);
+                    if mask_z_bigger_z2_1 {
+                        n2[j] = nm[i];
+                        z2[j] = ZUP[i];
+                        dz[j] = z2[j] - z1_aux;
+                        total += n2[j] * (z2[j] - z1_aux);
+                    } else {
+                        let max_rns_nm = rns_values[j].max(nm[i]);
+                        z2[j] = ((n1_aux - max_rns_nm) / usl[j] + z1_aux).min(ZUP[i]);
+                        dz[j] = z2[j] - z1_aux;
+                        n2[j] = n1_aux - dz[j] * usl[j];
+                        total += dz[j] * (n1_aux + n2[j]) / 2.0;
+                    }
+
+                    if !mask_z_bigger_z2_1 {
+                        if let Some(spec) = n_specific.as_mut() {
+                            spec[j] = segment_sample(
+                                z_array, z1_aux, n1_aux, usl[j], z2[j], n2[j], nm[i], i,
+                            );
+                        }
+                    }
+                    z_array += 0.1;
+                    if mask_z_bigger_z2_1 {
+                        mask_n1_bigger_nm = false;
+                    }
+                } else {
+                    if let Some(spec) = n_specific.as_mut() {
+                        spec[j] =
+                            segment_sample(z_array, z1_aux, n1_aux, usl[j], z2[j], n2[j], nm[i], i);
+                    }
+                    z_array += 0.1;
+                }
+
+                z1_aux = z2[j];
+                n1_aux = n2[j];
+
+                if !mask_n1_bigger_nm {
+                    break;
+                }
+            }
+
+            let last = zup_ea[i] - 1;
+            if mask_n1_bigger_nm && z2[last] < ZUP[i] {
+                // F-05: the grid loop ran out of 0.1 Bark cells while the slope
+                // was still active. Complete the band the Annex A way, from the
+                // end of the last segment up to ZUP[i]; the specific loudness of
+                // the band is already final and is not touched.
+                let (z_end, n_end) = complete_band(nm[i], i, z2[last], n2[last], &mut total);
+                z2[last] = z_end;
+                n2[last] = n_end;
+            }
+            z1_aux = z2[last];
+            n1_aux = n2[last];
+
+            if last_mask_z_bigger_z2 {
+                let idx = get_rns_index(n2[last_j], true);
+                rns_values[last_j] = RNS[idx];
+                usl[last_j] = usl_value(idx, i.wrapping_sub(1));
+            }
+        }
+    }
+
+    // F-04: no per-frame rounding of the total (Annex A has none); only the
+    // negative clamp is kept.
+    if total < 0.0 {
+        total = 0.0;
+    }
+
+    total
+}
+
+/// Annex A band completion (F-05): starting at `(z1, n1)` inside band `band`,
+/// keep attaching upper-slope segments until the slope meets the core loudness
+/// `nm_band` (then add the flat remainder `nm_band * (ZUP - z)`) or reaches
+/// ZUP[band] (last segment clamped to ZUP). Each segment adds
+/// `dz * (n1 + n2) / 2` to `total`. Returns the end point of the band.
+///
+/// Every slope segment ends at the next RNS boundary, so the loop finishes in
+/// at most `RNS.len()` segments plus the flat remainder; the bound only guards
+/// direct callers of the public `calc_slopes*` with negative core loudness.
+fn complete_band(nm_band: f64, band: usize, z1: f64, n1: f64, total: &mut f64) -> (f64, f64) {
+    let zup = ZUP[band];
+    let (mut z, mut n) = (z1, n1);
+    for _ in 0..=RNS.len() + 1 {
+        if r8(n) <= r8(nm_band) {
+            *total += nm_band * (zup - z);
+            return (zup, nm_band);
+        }
+        let idx = get_rns_index(n, true);
+        let slope = usl_value(idx, band - 1);
+        let max_rns_nm = RNS[idx].max(nm_band);
+        let z_next = ((n - max_rns_nm) / slope + z).min(zup);
+        let dz = z_next - z;
+        let n_next = n - dz * slope;
+        *total += dz * (n + n_next) / 2.0;
+        z = z_next;
+        n = n_next;
+        if z >= zup {
+            break;
+        }
+    }
+    (z, n)
+}
+
+/// Specific loudness at the 0.1 Bark sample `z_array` of the slope segment
+/// running from `(z1, n1)` with steepness `slope` to `(z2, n2)` in band `band`
+/// (F-07). Inside the segment (`z_array <= z2`) this is the segment itself.
+/// After it, Annex A (`for (ZK = Z; ZK <= Z2; ...)`) leaves the sample to the
+/// segment that contains it, which `sample_after` finds.
+#[allow(clippy::too_many_arguments)]
+#[inline]
+fn segment_sample(
+    z_array: f64,
+    z1: f64,
+    n1: f64,
+    slope: f64,
+    z2: f64,
+    n2: f64,
+    nm_band: f64,
+    band: usize,
+) -> f64 {
+    if r8(z_array) <= r8(z2) {
+        n1 - (z_array - z1) * slope
+    } else {
+        FLAGS.with(|f|f.borrow_mut()[(z_array*10.0).round() as usize-1]=true);
+        sample_after(z_array, z2, n2, nm_band, band)
+    }
+}
+
+/// Annex A value at `z_array`, a sample past the end `(z, n)` of a slope
+/// segment of band `band` (F-07): follow the segment chain of
+/// `complete_band` from `(z, n)` and return the value of the segment that
+/// contains `z_array`, or the core loudness `nm_band` once the slope has met
+/// it. Pure: `total` is integrated by the caller and is not touched here.
+fn sample_after(z_array: f64, z: f64, n: f64, nm_band: f64, band: usize) -> f64 {
+    let zup = ZUP[band];
+    let (mut z, mut n) = (z, n);
+    for _ in 0..=RNS.len() + 1 {
+        if r8(n) <= r8(nm_band) {
+            return nm_band;
+        }
+        let idx = get_rns_index(n, true);
+        let slope = usl_value(idx, band - 1);
+        let z_next = ((n - RNS[idx].max(nm_band)) / slope + z).min(zup);
+        if r8(z_array) <= r8(z_next) {
+            return n - (z_array - z) * slope;
+        }
+        n -= (z_next - z) * slope;
+        z = z_next;
+    }
+    n
+}
+
+fn zup_indices() -> [usize; 21] {
+    let mut indices = [0; 21];
+    for (idx, zup) in ZUP.iter().enumerate() {
+        indices[idx] = (zup * 10.0) as usize;
+    }
+    indices
+}
+
+fn prev_zup_index(zup_ea: &[usize; 21], idx: usize) -> usize {
+    if idx == 0 {
+        0
+    } else {
+        zup_ea[idx - 1]
+    }
+}
+
+fn get_rns_index(value: f64, equal_too: bool) -> usize {
+    let value = r8(value);
+    let mut index = 0;
+    for &rns in &RNS {
+        let rns = r8(rns);
+        if if equal_too { value <= rns } else { value < rns } {
+            index += 1;
+        }
+    }
+    index.min(RNS.len() - 1)
+}
+
+fn usl_value(rns_idx: usize, band_idx: usize) -> f64 {
+    USL[rns_idx][band_idx.min(7)]
+}
+
+fn r8(value: f64) -> f64 {
+    (value * 100_000_000.0).round() / 100_000_000.0
+}
+

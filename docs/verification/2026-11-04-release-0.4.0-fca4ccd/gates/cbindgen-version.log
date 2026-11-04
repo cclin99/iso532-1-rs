@@ -1,0 +1,2 @@
+COMMAND ["cbindgen", "--version"]
+cbindgen 0.29.4

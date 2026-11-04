@@ -1,0 +1,300 @@
+[
+  {
+    "name": "rustc",
+    "args": [
+      "rustc",
+      "-Vv"
+    ],
+    "exit_code": 0,
+    "seconds": 0.038999319076538086
+  },
+  {
+    "name": "cargo",
+    "args": [
+      "cargo",
+      "-V"
+    ],
+    "exit_code": 0,
+    "seconds": 0.03500080108642578
+  },
+  {
+    "name": "python",
+    "args": [
+      "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "--version"
+    ],
+    "exit_code": 0,
+    "seconds": 0.011518716812133789
+  },
+  {
+    "name": "fmt",
+    "args": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.30748891830444336
+  },
+  {
+    "name": "clippy",
+    "args": [
+      "cargo",
+      "clippy",
+      "--workspace",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0,
+    "seconds": 166.50511288642883
+  },
+  {
+    "name": "clippy-ffi",
+    "args": [
+      "cargo",
+      "clippy",
+      "-p",
+      "iso532-ffi",
+      "--all-targets",
+      "--all-features",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0,
+    "seconds": 6.716184854507446
+  },
+  {
+    "name": "doc-pairs",
+    "args": [
+      "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "tools/doc_pairs.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.14584755897521973
+  },
+  {
+    "name": "redact-docs",
+    "args": [
+      "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "tools/redact_paths.py",
+      "--check",
+      "docs"
+    ],
+    "exit_code": 0,
+    "seconds": 1.678403615951538
+  },
+  {
+    "name": "venv",
+    "args": [
+      "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-m",
+      "venv",
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv"
+    ],
+    "exit_code": 0,
+    "seconds": 8.963593006134033
+  },
+  {
+    "name": "pip-dependencies",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "numpy==2.4.6",
+      "mosqito==1.2.1",
+      "pytest==9.1.1",
+      "maturin==1.14.1"
+    ],
+    "exit_code": 1,
+    "seconds": 2.2355828285217285
+  },
+  {
+    "name": "pip-freeze",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "freeze"
+    ],
+    "exit_code": 0,
+    "seconds": 0.8030779361724854
+  },
+  {
+    "name": "maturin",
+    "args": [
+      "<REPO>\\tmp\\acceptance-040-astra\\fresh-venv\\Scripts\\python.exe",
+      "-m",
+      "maturin",
+      "build",
+      "--release",
+      "--out",
+      "<REPO>\\tmp\\acceptance-040-astra\\wheels"
+    ],
+    "exit_code": 1,
+    "seconds": 0.08558082580566406
+  },
+  {
+    "name": "hash_gate",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "hash_gate",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 18.494009971618652
+  },
+  {
+    "name": "output_grid",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "output_grid",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 26.50873875617981
+  },
+  {
+    "name": "stream",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "stream",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 59.282325983047485
+  },
+  {
+    "name": "annexb",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "annexb",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 14.62166452407837
+  },
+  {
+    "name": "annexb_validator",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "annexb_validator",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 15.122355222702026
+  },
+  {
+    "name": "golden_zwtv",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "golden_zwtv",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 16.282684803009033
+  },
+  {
+    "name": "golden_zwst",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "golden_zwst",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 14.940346479415894
+  },
+  {
+    "name": "hash-dump",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "hash_gate",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 12.687467575073242
+  },
+  {
+    "name": "bench-build",
+    "args": [
+      "cargo",
+      "bench",
+      "--workspace",
+      "--no-run"
+    ],
+    "exit_code": 0,
+    "seconds": 123.16416907310486
+  },
+  {
+    "name": "golden_c",
+    "args": [
+      "cargo",
+      "test",
+      "-p",
+      "iso532",
+      "--test",
+      "golden_c",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "seconds": 6.611826419830322
+  },
+  {
+    "name": "workspace",
+    "args": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--no-fail-fast"
+    ],
+    "exit_code": 0,
+    "seconds": 188.55865812301636
+  }
+]

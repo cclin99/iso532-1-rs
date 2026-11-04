@@ -1,0 +1,18 @@
+# Gate evidence reproduction
+
+All product commands use the candidate archive at `tmp/acceptance-040-astra/candidate`, fixed at `fca4ccda18a8fbada77031425e5e683f1acd5a8d`. No product source, tests, or checked-in golden manifests were changed by these gate scripts.
+
+1. The parent freeze script creates the candidate archive. `run_gates.py` copies the ignored MoSQITo inputs from the repository's `data/golden` and `data/annexb`, recording every input SHA-256 in `input-hashes.json`. The parent's independent C golden generation writes `golden-ready` after completion.
+2. Run `python docs/verification/2026-11-04-release-0.4.0-fca4ccd/gates/run_gates.py` from the repository root. It records each command, exit code, and elapsed time and waits for the C-golden marker before its last gates.
+3. In this session, inherited `PIP_NO_INDEX=1` made dependency installation fail. `recover_python.ps1` records the recovery: enable the package index, install the pinned dependencies into the same new venv, build the candidate wheel into a separate release target, and install that wheel. MoSQITo additionally imports matplotlib despite omitting it from its dependency metadata; this caused the preserved first collection error. After installing matplotlib 3.11.2, `run_python_tests.py` reran only freeze and pytest. `pip-freeze-complete.log` is the exact successful environment.
+4. `measure_mosqito.py` uses that installed wheel and the independently hashed golden arrays to calculate full-precision maxima, first differing coordinates, and first differing f64 hex. These compatibility checks are additional to the required direct MoSQITo pytest comparisons.
+5. `run_linux.ps1` and `run_linux.sh` use a disposable Ubuntu 24.04 container, a separate frozen source archive, rustc 1.99.1, and strict frozen Linux hash assertions. `linux-image.txt` fixes the image identity; `linux.log` records compiler/glibc and complete output. Initial Docker npipe access required scoped escalation, after which the run succeeded.
+6. Run `summarize.py` after all commands finish to regenerate `gates-results.json` from logs and the checked-in expected constants. Raw failure logs represent corrected environment setup, not candidate gate failures. The installed wheel's SHA-256 is in `wheel-hashes.json`; the wheel itself is deliberately excluded from delivery.
+
+The original command logs retain their outcomes. Retrying the whole script is unnecessary after successful gates; the recovery scripts document the narrower reruns actually used.
+
+## Supplementary FFI and Round 1 checks
+
+`run_ffi_extra.py` uses cbindgen 0.29.4 to write a header outside the candidate tree. Raw bytes differ only because cbindgen preserves two CRLF lines in injected text but emits LF elsewhere, while the archive header has 207 CRLF lines. Normalizing line endings yields identical bytes; both original hashes are retained. The C smoke compile succeeded with C4819 source-code-page warnings and a harmless vcvars `vswhere.exe` lookup warning. The environment disables implicit current-directory executable lookup, so the first bare `smoke.exe` launch failed; `run_final_extra.py` invokes its full path and succeeds. `ffi-test-panic.log` records all 17 tests passing.
+
+A first Round 1 hash attempt shared the candidate Cargo target and incorrectly reused its test binary. `round1-shared-target-invalid.log` is explicitly excluded from numerical acceptance. `run_final_extra.py` uses a new `round1-hash-target` for the valid repeat, and `round1-hash.log` records the rebuilt Round 1 result. The separate target is necessary when multiple archive copies have matching relative paths and archive timestamps.

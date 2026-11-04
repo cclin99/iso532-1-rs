@@ -1,0 +1,5 @@
+COMMAND ["<REPO>\\tmp\\acceptance-040-astra\\ffi-smoke\\smoke.exe"]
+stream[0]: t=0 n=0.000000 phon=2.797045 flags=4
+stream[1]: t=1 n=0.173680 phon=21.697472 flags=4
+stream[2]: t=2 n=0.508414 phon=31.578075 flags=4
+smoke ok: frames=500 zwtv_n0=3.778508

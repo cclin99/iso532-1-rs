@@ -1,0 +1,16 @@
+{
+  "candidate": {
+    "commit": "fca4ccda18a8fbada77031425e5e683f1acd5a8d",
+    "archive_sha256": "e883b3b19a3c9139ee37bdd2ec47805672d5801e6622364a4dc9b2d011e697fb"
+  },
+  "round1": {
+    "commit": "2fc1708c5629b173b5f7f582110ba9f61c99d23c",
+    "archive_sha256": "4f62583414defc420f7c810f63fae5dce75efad52fc2991987de48b1e44ec474"
+  },
+  "baseline": {
+    "commit": "96a87647f81cb25829c6afb860a506471df5d783",
+    "archive_sha256": "77ab582e31fcbd229dd307f6e16a03aa7bd2ebc76b6fcbb16a6c5573204abcaa"
+  },
+  "main_status": "",
+  "main_head": "7900035c7ac318d789310fe817552a413c154b41"
+}

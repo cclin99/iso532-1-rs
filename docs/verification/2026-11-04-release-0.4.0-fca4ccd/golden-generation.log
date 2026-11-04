@@ -1,0 +1,14 @@
+done sine_1k_60: 48000 samples, 500 points
+done sine_250_80: 48000 samples, 500 points
+done sine_4k_60: 48000 samples, 500 points
+done white_60: 48000 samples, 500 points
+done pulse_1k_70: 48000 samples, 500 points
+done step_60_80: 48000 samples, 500 points
+done annexb_sig3: 480000 samples, 5000 points
+done annexb_sig5: 480000 samples, 5000 points
+done annexb_sig10: 48000 samples, 500 points
+done annexb_c01_sig18: 103969 samples, 1084 points
+done annexb_c01_sig23: 122401 samples, 1276 points
+done annexb_c01_sig24: 115202 samples, 1201 points
+done annexb_c01_sig25: 122401 samples, 1276 points
+wrote <REPO>\tmp\acceptance-040-astra\candidate\data\golden-c and tools\golden-c.sha256

@@ -1,0 +1,80 @@
+--- diagnostic.c
++++ all_constants_binary64.c
+@@ -657,23 +657,23 @@
+ /*  Level correction in accordance with the ear's transmission
+     characteristics (AO)                                                */
+ static double A0[] =
+-{   0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,
+-    -0.5f,-1.6f,-3.2f,-5.4f,-5.6f,-4.0f,-1.5f,2.0f,5.0f,12.0f
++{   0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
++    -0.5,-1.6,-3.2,-5.4,-5.6,-4.0,-1.5,2.0,5.0,12.0
+ };
+ 
+ /*  Level difference between free and diffuse sound
+     field (DDF)                                                         */
+ static double DDF[] = 
+-{   0.0f, 0.0f, 0.5f, 0.9f, 1.2f, 1.6f, 2.3f, 2.8f,
+-    3.0f, 2.0f, 0.0f,-1.4f,-2.0f,-1.9f,-1.0f, 0.5f,
+-    3.0f, 4.0f, 4.3f, 4.0f
++{   0.0, 0.0, 0.5, 0.9, 1.2, 1.6, 2.3, 2.8,
++    3.0, 2.0, 0.0,-1.4,-2.0,-1.9,-1.0, 0.5,
++    3.0, 4.0, 4.3, 4.0
+ };
+ 
+ /*  Adaptation of the third octave band levels to the corresponding
+     critical band levels due to different bandwidth (DCB)               */
+ static double DCB[] =
+-{   -.25f,-0.6f,-0.8f,-0.8f,-0.5f,0.0f,0.5f,1.1f,1.5f,1.7f,
+-    1.8f,1.8f,1.7f,1.6f,1.4f,1.2f,0.8f,0.5f,0.0f,-0.5f
++{   -.25,-0.6,-0.8,-0.8,-0.5,0.0,0.5,1.1,1.5,1.7,
++    1.8,1.8,1.7,1.6,1.4,1.2,0.8,0.5,0.0,-0.5
+ };
+ 
+ /*  Upper limits of the approximated critical bands
+@@ -808,8 +808,8 @@
+         {
+             *pLe += -DCB[IdxCL];
+             S = .25;
+-            MP1 = .0635f * (double)pow(10., 0.025 * (*pLtq));
+-            MP2 = (double)pow((1. - S + S * pow(10., 0.1 * (*pLe - *pLtq))), .25) - 1.0f;
++            MP1 = .0635 * (double)pow(10., 0.025 * (*pLtq));
++            MP2 = (double)pow((1. - S + S * pow(10., 0.1 * (*pLe - *pLtq))), .25) - 1.0;
+             *pCoreL = MP1 * MP2;
+             if (*pCoreL <= 0.) 
+                 *pCoreL = 0.;
+@@ -830,7 +830,7 @@
+     double  CorrCL, *pCoreLoudness;
+     
+     pCoreLoudness = CoreLoudness[0]+IdxTime;
+-    CorrCL = 0.4f + 0.32f * (double)pow(*pCoreLoudness, .2);
++    CorrCL = 0.4 + 0.32 * (double)pow(*pCoreLoudness, .2);
+     if (CorrCL < 1.) *pCoreLoudness *= CorrCL;
+ }
+ 
+@@ -847,7 +847,7 @@
+     double  NS[N_BARK_BANDS];
+ 
+     N1          = 0.;
+-    Z           = 0.1f;
++    Z           = 0.1;
+     Z1          = 0.;
+     IdxRNS      = 0;
+     IdxNS       = 0;
+@@ -887,7 +887,7 @@
+                     associated interpolated values NS(IdxNS) in the 
+                     interval Z=IdxNS*O.1 BARK                           */
+                 *pLoudness += DZ * (N1 + N2) / 2.;
+-                for (ZK = Z; ZK <= Z2; ZK = ZK + 0.1f)
++                for (ZK = Z; ZK <= Z2; ZK = ZK + 0.1)
+                 {
+                     NS[IdxNS] = N1 - (ZK - Z1) * _USL;
+                     SpecLoudness[IdxNS][IdxTime] = NS[IdxNS];
+@@ -918,7 +918,7 @@
+                     NS[IdxNS] = N2;
+                     SpecLoudness[IdxNS][IdxTime] = NS[IdxNS];
+                     IdxNS++;
+-                    ZK  = ZK + 0.1f;
++                    ZK  = ZK + 0.1;
+                 }
+                 Z   = ZK;
+             }

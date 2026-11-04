@@ -1,0 +1,12 @@
+fca4ccd docs(release): record F-07, the tiered C-golden gates and the recorded MoSQITo specific loudness for 0.4.0
+0bb2272 fix(calc_slopes): write the Annex A value in the cell after a slope segment ends (F-07)
+a1a261d test(calc_slopes): add RED tests for F-07 (specific value after a segment ends inside a cell)
+9301c0d docs: sync date of the zh decision memo
+fe3d0b2 docs: revise the slope-alignment decision after round-1 verification (F-07, tiered C-golden thresholds) and add round 2 to the 0.4.0 plan
+5bbbb93 docs: fix the pair line of the English slope-alignment decision memo
+2fc1708 docs(release): draft the 0.4.0 release record (pending independent verification)
+8beeb90 release(0.4.0): MoSQITo goldens become compatibility checks; re-freeze n hashes; docs
+777d8e8 test+tools: add the Annex A C golden (USL[12][4] = 0.24f) and its 1e-10 gate
+9d8ae5a test(annexb): treat the sig10 MoSQITo comparison as a compatibility check
+d011921 fix(calc_slopes): align the slope stage with ISO 532-1 Annex A (F-04, F-05, F-06)
+93ba5e4 test(calc_slopes): add RED tests for F-04 rounding, F-05 band remainder and F-06 band-0 wrap
