@@ -62,6 +62,7 @@ Language rule: `docs/DOCUMENTATION-LANGUAGE-POLICY.md`. Paired documents exist a
 | [`verification/briefs/2026-11-01-F03-B-aarae-lineage.md`](verification/briefs/2026-11-01-F03-B-aarae-lineage.md) | brief for F-03 option B | en + zh |
 | [`verification/briefs/2026-11-01-C01-zero-pad-reference.md`](verification/briefs/2026-11-01-C01-zero-pad-reference.md) | brief for the C-01 official-C reference of the trailing point | en + zh |
 | [`verification/briefs/2026-11-01-release-0.3.1-acceptance.md`](verification/briefs/2026-11-01-release-0.3.1-acceptance.md) | brief for the pre-tag acceptance of release commit `30e4279` | en + zh |
+| [`verification/briefs/2026-11-04-release-0.4.0-acceptance.md`](verification/briefs/2026-11-04-release-0.4.0-acceptance.md) | brief for the pre-push, pre-tag acceptance of the 0.4.0 candidate `fca4ccd` | en + zh |
 | [`verification/2026-11-02-release-0.3.1-30e4279/report.en.md`](verification/2026-11-02-release-0.3.1-30e4279/report.en.md) | 0.3.1 pre-tag acceptance on `30e4279`: ACCEPT, 8/8 items passed | en + zh |
 | [`verification/2026-11-03-C01-zero-pad-aa379db/report.md`](verification/2026-11-03-C01-zero-pad-aa379db/report.md) | C-01 official-C zero-pad reference on `aa379db`: PARTIAL (specifics ≤1e-14, totals within tolerance) | en + zh |
 | [`verification/2026-11-03-C01-tail-root-cause-aa379db/report.en.md`](verification/2026-11-03-C01-tail-root-cause-aa379db/report.en.md) | C-01 tail root cause on `aa379db`: rounding explains 67–98 %, slope/main residuals quantified | en + zh |

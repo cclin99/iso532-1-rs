@@ -19,6 +19,7 @@ English summary.
 | [`briefs/2026-11-01-F03-B-aarae-lineage.md`](briefs/2026-11-01-F03-B-aarae-lineage.md) | 2026-11-01 | open: lineage of the `USL[12][4]` value 0.24 through AARAE 2015 and the 2014 C program |
 | [`briefs/2026-11-01-C01-zero-pad-reference.md`](briefs/2026-11-01-C01-zero-pad-reference.md) | 2026-11-01 | delivered 2026-11-03: [`2026-11-03-C01-zero-pad-aa379db/`](2026-11-03-C01-zero-pad-aa379db/) PARTIAL; four specific tails agree within 1e-14, but total tails only WITHIN TOLERANCE; prefix invariance, negative controls and eight boundaries pass; numerical gap remains open. Separate [tail root-cause experiment](2026-11-03-C01-tail-root-cause-aa379db/) quantifies rounding, slope and main-loudness contributions; it is not a production fix or closure |
 | [`briefs/2026-11-01-release-0.3.1-acceptance.md`](briefs/2026-11-01-release-0.3.1-acceptance.md) | 2026-11-01 | delivered 2026-11-02: [`2026-11-02-release-0.3.1-30e4279/`](2026-11-02-release-0.3.1-30e4279/) ACCEPT, 8/8 items passed; tag `v0.3.1` released on it |
+| [`briefs/2026-11-04-release-0.4.0-acceptance.md`](briefs/2026-11-04-release-0.4.0-acceptance.md) | 2026-11-04 | open: pre-push, pre-tag acceptance of the 0.4.0 candidate `fca4ccd` (slope stage aligned with Annex A: F-04…F-07, Annex A C golden with tiered gates); deliver to `<date>-release-0.4.0-fca4ccd/` |
 
 ## Evidence archives
 
