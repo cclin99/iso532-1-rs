@@ -64,6 +64,7 @@
 | [`verification/briefs/2026-11-04-release-0.4.0-acceptance.zh-TW.md`](verification/briefs/2026-11-04-release-0.4.0-acceptance.zh-TW.md) | 0.4.0 候選 `fca4ccd` 推送與打 tag 前的驗收交辦簡報 | en + zh |
 | [`verification/2026-11-02-release-0.3.1-30e4279/report.md`](verification/2026-11-02-release-0.3.1-30e4279/report.md) | 0.3.1 在 `30e4279` 的打 tag 前驗收：ACCEPT，8／8 項通過 | en + zh |
 | [`verification/2026-11-04-release-0.4.0-fca4ccd/report.md`](verification/2026-11-04-release-0.4.0-fca4ccd/report.md) | 0.4.0 在 `fca4ccd` 的推送前驗收：PARTIAL，7／9 項通過，無數值或 API 阻擋（串流沒有比響度可驗；commit 表漏列已補） | en + zh |
+| [`verification/2026-11-05-perf-compliance-118322f/report.md`](verification/2026-11-05-perf-compliance-118322f/report.md) | 0.4.0 發布後在 `118322f` 對 `v0.3.1` 的確認：效能 A/B（單核 batch +2%，其餘在雜訊內）、Annex B 73,116／73,116 點、Nmax／N5 診斷、產出物 hash | en + zh |
 
 ## 歷史審查紀錄（已結輪次；翻譯待辦 P3）
 

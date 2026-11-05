@@ -1,0 +1,49 @@
+Gnuplot not found, using plotters backend
+Benchmarking filter_bank_10s_t12/scalar/480000
+Benchmarking filter_bank_10s_t12/scalar/480000: Warming up for 3.0000 s
+Benchmarking filter_bank_10s_t12/scalar/480000: Collecting 10 samples in estimated 6.6793 s (440 iterations)
+Benchmarking filter_bank_10s_t12/scalar/480000: Analyzing
+filter_bank_10s_t12/scalar/480000
+                        time:   [15.031 ms 15.607 ms 16.098 ms]
+                        thrpt:  [29.818 Melem/s 30.756 Melem/s 31.935 Melem/s]
+Benchmarking filter_bank_10s_t12/avx2/480000
+Benchmarking filter_bank_10s_t12/avx2/480000: Warming up for 3.0000 s
+Benchmarking filter_bank_10s_t12/avx2/480000: Collecting 10 samples in estimated 6.2562 s (1100 iterations)
+Benchmarking filter_bank_10s_t12/avx2/480000: Analyzing
+filter_bank_10s_t12/avx2/480000
+                        time:   [5.5592 ms 5.6934 ms 5.8701 ms]
+                        thrpt:  [81.770 Melem/s 84.307 Melem/s 86.344 Melem/s]
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+
+Benchmarking zwtv_10s_t12/scalar/480000
+Benchmarking zwtv_10s_t12/scalar/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t12/scalar/480000: Collecting 10 samples in estimated 7.6536 s (110 iterations)
+Benchmarking zwtv_10s_t12/scalar/480000: Analyzing
+zwtv_10s_t12/scalar/480000
+                        time:   [65.564 ms 66.813 ms 68.982 ms]
+                        thrpt:  [6.9583 Melem/s 7.1842 Melem/s 7.3211 Melem/s]
+Benchmarking zwtv_10s_t12/avx2/480000
+Benchmarking zwtv_10s_t12/avx2/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t12/avx2/480000: Collecting 10 samples in estimated 8.1817 s (165 iterations)
+Benchmarking zwtv_10s_t12/avx2/480000: Analyzing
+zwtv_10s_t12/avx2/480000
+                        time:   [49.910 ms 50.591 ms 51.928 ms]
+                        thrpt:  [9.2436 Melem/s 9.4878 Melem/s 9.6172 Melem/s]
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+
+Benchmarking stream_push_10s_480chunk/scalar
+Benchmarking stream_push_10s_480chunk/scalar: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/scalar: Collecting 10 samples in estimated 6.9750 s (20 iterations)
+Benchmarking stream_push_10s_480chunk/scalar: Analyzing
+stream_push_10s_480chunk/scalar
+                        time:   [341.41 ms 346.87 ms 351.82 ms]
+Benchmarking stream_push_10s_480chunk/avx2
+Benchmarking stream_push_10s_480chunk/avx2: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/avx2: Collecting 10 samples in estimated 6.9813 s (30 iterations)
+Benchmarking stream_push_10s_480chunk/avx2: Analyzing
+stream_push_10s_480chunk/avx2
+                        time:   [233.39 ms 236.62 ms 240.06 ms]
+

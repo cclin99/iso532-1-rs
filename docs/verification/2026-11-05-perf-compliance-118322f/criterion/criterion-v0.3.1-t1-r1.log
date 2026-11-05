@@ -1,0 +1,38 @@
+Gnuplot not found, using plotters backend
+Benchmarking zwtv_10s_t1/scalar/480000
+Benchmarking zwtv_10s_t1/scalar/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t1/scalar/480000: Collecting 10 samples in estimated 7.0299 s (20 iterations)
+Benchmarking zwtv_10s_t1/scalar/480000: Analyzing
+zwtv_10s_t1/scalar/480000
+                        time:   [348.09 ms 355.15 ms 364.87 ms]
+                        thrpt:  [1.3155 Melem/s 1.3515 Melem/s 1.3789 Melem/s]
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking zwtv_10s_t1/avx2/480000
+Benchmarking zwtv_10s_t1/avx2/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t1/avx2/480000: Collecting 10 samples in estimated 7.6940 s (30 iterations)
+Benchmarking zwtv_10s_t1/avx2/480000: Analyzing
+zwtv_10s_t1/avx2/480000 time:   [255.37 ms 259.16 ms 263.08 ms]
+                        thrpt:  [1.8245 Melem/s 1.8521 Melem/s 1.8796 Melem/s]
+
+Benchmarking stream_push_10s_480chunk/scalar
+Benchmarking stream_push_10s_480chunk/scalar: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/scalar: Collecting 10 samples in estimated 7.0400 s (20 iterations)
+Benchmarking stream_push_10s_480chunk/scalar: Analyzing
+stream_push_10s_480chunk/scalar
+                        time:   [338.64 ms 347.82 ms 358.23 ms]
+                        change: [-2.8668% +0.2733% +3.6037%] (p = 0.88 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking stream_push_10s_480chunk/avx2
+Benchmarking stream_push_10s_480chunk/avx2: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/avx2: Collecting 10 samples in estimated 6.8122 s (30 iterations)
+Benchmarking stream_push_10s_480chunk/avx2: Analyzing
+stream_push_10s_480chunk/avx2
+                        time:   [224.61 ms 228.08 ms 232.21 ms]
+                        change: [-5.6096% -3.6069% -1.4817%] (p = 0.01 < 0.05)
+                        Performance has improved.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+

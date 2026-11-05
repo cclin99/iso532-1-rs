@@ -2,7 +2,7 @@
 
 > 對照／Pair: [English](RELEASE-0.4.0-2026-11-04.md) · 來源：zh · 同步 2026-11-05
 
-**狀態：** Astra 對候選 `fca4ccd` 的獨立驗收已交付，結論 PARTIAL，無數值或 API 的發布阻擋項（見「獨立驗證」節）。tag `v0.4.0` 打在記錄本節的 commit，推送後的 CI 結果記在 tag 訊息；未建置發行產出物。實作者：Claude Opus 5.5，依 [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) 與決策備忘 [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md)（D1–D5，§7 修訂）。Round 1 起點 `5cb036a`（v0.3.1 之後的文件 commit）；Round 2 起點 `9301c0d`（第一輪驗證後的決策修訂）。
+**狀態：** Astra 對候選 `fca4ccd` 的獨立驗收已交付，結論 PARTIAL，無數值或 API 的發布阻擋項（見「獨立驗證」節）。tag `v0.4.0` 打在記錄本節的 commit，推送後的 CI 結果記在 tag 訊息。2026-11-05 推送 `main`，CI run 41929707757 六個 job 全綠，`v0.4.0` 打在 `118322f`；產出物與發布後確認見下方兩節。實作者：Claude Opus 5.5，依 [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) 與決策備忘 [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.zh-TW.md)（D1–D5，§7 修訂）。Round 1 起點 `5cb036a`（v0.3.1 之後的文件 commit）；Round 2 起點 `9301c0d`（第一輪驗證後的決策修訂）。
 
 本次範圍：slope 階段（`calc_slopes_impl`）對齊 ISO 532-1:2017 Annex A，正確性參考由 MoSQITo 1.2.1 改為官方 Annex A C 程式。屬數值變更，依版號規則升 minor。API、輸出格線、串流契約、SIMD 分派、C ABI、Python shape 都不變；`USL[12][4]` 維持 0.24（F-03 暫定）。
 
@@ -69,6 +69,25 @@
 
 範圍外：F-03 權威、穩態前端、效能實測、發行封裝、遠端 CI。
 
+## 產出物（自 `v0.4.0` 建置，Windows x64，rustc 1.99.1，2026-11-05）
+
+| 檔案 | SHA-256 |
+|---|---|
+| `iso532-0.4.0-cp39-abi3-win_amd64.whl` | `724b272c86ee35b27a51852674538adeeb1979143364de89c59b5476ad244cc0` |
+| `iso532_ffi.dll` | `11a126257863df923e8ae41108fddb570f3f30a2bee0ed3be8c73b688d4ceb28` |
+| `iso532_ffi.dll.lib` | `e5b7a8f812cd9e6d8be7a22f15dd0493ef3ebda7920757f3858d1e63026c05a9` |
+| `iso532.h` | `0f548fd348cb0e3999ce8892bec05d4a5afd53740eb695428ad0eca9a45b709b` |
+
+`iso532.h` 與 import library 跟 0.3.1 發布的檔案位元相同（header 取 tag 的 Git blob 原樣；匯出符號未變）。wheel 在全新 venv 以 `ISO532_REQUIRE_PARITY=1` 跑 `iso532-py/tests`：87 passed。PE 二進位內嵌建置資訊，在另一台機器重建不期望逐位元重現 DLL 與 wheel 的 hash。防毒掃描待手動；產出物未上傳。
+
+## 發布後確認（2026-11-05，`v0.4.0`）
+
+報告：[`verification/2026-11-05-perf-compliance-118322f/report.md`](verification/2026-11-05-perf-compliance-118322f/report.md)（主代理執行，非 Astra）。
+
+- 效能：與 `v0.3.1` 同一 session 交錯 A/B，`calc_slopes` 階段本身慢 6%～12%（含比響度）／0%～4%（只算總響度）；端對端只有單核 batch 一致慢約 2%，其餘在約 ±4% 的輪間雜訊內；Python binding 3 秒處理時間兩版相同。README 效能表已改用本次量測。
+- 標準對照：Annex B 25 個訊號、73,116 個工作簿參考點，0.4.0 與 0.3.1 都 0 個超出逐點判準，最小餘裕 0.0597 sone/Bark；20 個時變訊號的 Nmax 與 N5 在 max(0.1, 5%) 內（診斷，工作簿未訂容差），一致偏高約 0.15%，兩版差 ≤ 7e-4 sone。N5 定義、恰好 1% 規則仍 UNRESOLVED，F-03 仍 PENDING。
+- `CITATION.cff` 於 tag 之後補登為 0.4.0、`date-released: "2026-11-05"`（tag 本身仍是 0.3.1）；`message` 仍寫引用 MoSQITo 參考實作，是否改措辭待決。
+
 ## Annex A C golden（D4 修訂／D-D、D-G）
 
 - 參考程式：官方 `ISO_532-1.c`（SHA-256 `a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491`），只把 `USL[12][4]` 由 `0.22f` 改為 `0.24f`（替換版 SHA-256 `739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9`）；MSVC 19.44.35228 x64，`/O2 /fp:precise`；wrapper 只呼叫 `f_loudness_from_signal` 與 `f_loudness_from_levels`。Round 2 未改 C 端，`data/golden-c/` 沿用 Round 1 產出。
@@ -123,8 +142,8 @@
 
 ## 未做／待辦
 
-- 推送、tag 與 GitHub CI 在記錄本節的 commit 之後；未建置發行產出物。
+- 產出物已建置並記 hash，尚未做防毒掃描，也未上傳 GitHub Release。
 - 公開 `StreamFrame` 不含比響度（v0.3.1 即如此），串流與批次的比響度相等無法從公開 API 驗證；串流契約的位元相等涵蓋 `n` 與由 frame index 推導的時間。
-- `CITATION.cff` 仍為 0.3.1：過去在 release commit 才更新版本與 `date-released`，發版日未定。
+- `CITATION.cff` 的版本與日期已在 tag 之後補登；`message` 的 MoSQITo 措辭待決。
 - Round 2 的 RED commit `a1a261d` 本身過不了 `clippy -D warnings`（17 位有效數字的測試常數觸發 `excessive_precision`）；`0bb2272` 加上 `#[allow]` 後恢復 clean。
 - F-03（Table A.9）仍 PENDING；穩態前端仍待決。

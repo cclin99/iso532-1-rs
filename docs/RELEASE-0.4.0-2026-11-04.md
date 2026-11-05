@@ -2,7 +2,7 @@
 
 > 對照／Pair: [中文版](RELEASE-0.4.0-2026-11-04.zh-TW.md) · source: zh · synced 2026-11-05
 
-**Status:** Astra's independent acceptance of the candidate `fca4ccd` is delivered with verdict PARTIAL and no numeric or API release blocker (see "Independent verification"). The tag `v0.4.0` goes on the commit that records that section, and the CI result after the push is recorded in the tag message; no release artifacts are built. Implementer: Claude Opus 5.5, following [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) and the decision memo [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) (D1–D5, revised in §7). Round 1 started at `5cb036a` (documentation commit after v0.3.1); Round 2 started at `9301c0d` (decision revision after the first verification).
+**Status:** Astra's independent acceptance of the candidate `fca4ccd` is delivered with verdict PARTIAL and no numeric or API release blocker (see "Independent verification"). The tag `v0.4.0` goes on the commit that records that section, and the CI result after the push is recorded in the tag message. On 2026-11-05 `main` was pushed, CI run 41929707757 passed all six jobs, and `v0.4.0` was placed on `118322f`; artifacts and the post-release check are in the two sections below. Implementer: Claude Opus 5.5, following [`superpowers/plans/phases/phase-0.4.0-slope-annexa.md`](superpowers/plans/phases/phase-0.4.0-slope-annexa.md) and the decision memo [`C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md`](C01-F03-SLOPE-ALIGNMENT-DECISION-2026-11-03.md) (D1–D5, revised in §7). Round 1 started at `5cb036a` (documentation commit after v0.3.1); Round 2 started at `9301c0d` (decision revision after the first verification).
 
 Scope: the slope stage (`calc_slopes_impl`) follows ISO 532-1:2017 Annex A, and the correctness reference changes from MoSQITo 1.2.1 to the official Annex A C program. This is a numeric change, so the minor version is raised under the versioning rule. API, output grid, stream contract, SIMD dispatch, C ABI and Python shapes are unchanged; `USL[12][4]` stays 0.24 (F-03, provisional).
 
@@ -69,6 +69,25 @@ Diagnostic findings (not acceptance gates): on the same NL vectors, C without th
 
 Out of scope: F-03 authority, the stationary front end, performance measurement, release packaging, remote CI.
 
+## Artifacts (built from `v0.4.0`, Windows x64, rustc 1.99.1, 2026-11-05)
+
+| file | SHA-256 |
+|---|---|
+| `iso532-0.4.0-cp39-abi3-win_amd64.whl` | `724b272c86ee35b27a51852674538adeeb1979143364de89c59b5476ad244cc0` |
+| `iso532_ffi.dll` | `11a126257863df923e8ae41108fddb570f3f30a2bee0ed3be8c73b688d4ceb28` |
+| `iso532_ffi.dll.lib` | `e5b7a8f812cd9e6d8be7a22f15dd0493ef3ebda7920757f3858d1e63026c05a9` |
+| `iso532.h` | `0f548fd348cb0e3999ce8892bec05d4a5afd53740eb695428ad0eca9a45b709b` |
+
+`iso532.h` and the import library are byte-identical to the files published with 0.3.1 (the header is the tag's Git blob as stored; exports unchanged). The wheel in a fresh venv with `ISO532_REQUIRE_PARITY=1` passes `iso532-py/tests`: 87 passed. The PE binaries embed build information, so a rebuild on another machine is not expected to reproduce the DLL and wheel hashes. The antivirus scan is still manual; the artifacts are not uploaded.
+
+## Post-release check (2026-11-05, `v0.4.0`)
+
+Report: [`verification/2026-11-05-perf-compliance-118322f/report.en.md`](verification/2026-11-05-perf-compliance-118322f/report.en.md) (run by the main agent, not Astra).
+
+- Performance: in an interleaved A/B with `v0.3.1` in the same session, the `calc_slopes` stage alone is 6% to 12% slower with specific loudness and 0% to 4% for total only; end to end, only single-thread batch is consistently about 2% slower, everything else lies within the round-to-round noise of about ±4%; the 3-second Python binding time is the same for both versions. The README performance tables now use this measurement.
+- Standard conformance: for the 25 Annex B signals and 73,116 workbook reference points, both 0.4.0 and 0.3.1 have 0 points outside the per-point rule, minimum margin 0.0597 sone/Bark; Nmax and N5 of the 20 time-varying signals are within max(0.1, 5%) (diagnostic, the workbook sets no tolerance), consistently about 0.15% high, and the two versions differ by ≤ 7e-4 sone. The N5 definition and the exact-1% rule remain UNRESOLVED, F-03 remains PENDING.
+- `CITATION.cff` is updated after the tag to 0.4.0 with `date-released: "2026-11-05"` (the tag itself still says 0.3.1); its `message` still asks to cite the MoSQITo reference implementation, and whether to reword it is open.
+
 ## Annex A C golden (D4 as revised / D-D, D-G)
 
 - Reference program: the official `ISO_532-1.c` (SHA-256 `a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491`) with only `USL[12][4]` changed from `0.22f` to `0.24f` (substituted source SHA-256 `739af24dee118027cb419fcdb051d8b56b274211d986140d66d7ff4b9d52a7e9`); MSVC 19.44.35228 x64, `/O2 /fp:precise`; the wrapper only calls `f_loudness_from_signal` and `f_loudness_from_levels`. Round 2 did not change the C side; `data/golden-c/` is the Round 1 output.
@@ -123,8 +142,8 @@ Total loudness against MoSQITo keeps the 5e-3 sone gate; its numbers are the sam
 
 ## Not done / open
 
-- Push, tag and GitHub CI follow the commit that records "Independent verification"; no release artifacts are built.
+- Artifacts are built and their hashes recorded; no antivirus scan yet and no upload to a GitHub Release.
 - The public `StreamFrame` carries no specific loudness (as in v0.3.1), so stream-versus-batch equality of specific loudness cannot be checked through the public API; the bitwise stream contract covers `n` and the time derived from the frame index.
-- `CITATION.cff` still says 0.3.1: version and `date-released` were updated in the release commit in the past, and the release date is not known yet.
+- `CITATION.cff` version and date are updated after the tag; the MoSQITo wording of `message` is open.
 - The Round 2 RED commit `a1a261d` does not pass `clippy -D warnings` on its own (the 17-significant-digit test constants trigger `excessive_precision`); `0bb2272` adds the `#[allow]` and is clean again.
 - F-03 (Table A.9) remains PENDING; the stationary front end is still undecided.

@@ -228,12 +228,14 @@ cargo run -p iso532 --example cli -- path\to\mono-48k.wav --calib 0.632455532
 
 ### 與 MoSQITo 1.2.1 的直接比對
 
-2026-07-20 本機量測環境：Windows、`AMD64 Family 23 Model 113`、12 logical processors、Python 3.11.9、NumPy 2.4.6。兩者處理完全相同的 3 秒、48 kHz、contiguous `float64` deterministic 聲壓訊號；各先做一次不計入統計的 warm-up，再連續量測 30 次。表格使用算術平均與 sample standard deviation。Rust 由 Python binding 呼叫，所以數字包含 binding overhead。
+2026-11-05 以 v0.4.0 wheel 本機量測，環境：Windows、`AMD64 Family 23 Model 113`、12 logical processors、Python 3.11.9、NumPy 2.4.6。兩者處理完全相同的 3 秒、48 kHz、contiguous `float64` deterministic 聲壓訊號；各先做一次不計入統計的 warm-up，再連續量測 30 次。表格使用算術平均與 sample standard deviation。Rust 由 Python binding 呼叫，所以數字包含 binding overhead。
 
 | 實作 | 3 秒輸入平均（30 次） | Sample SD | 相對輸入時間 | 相對速度 |
 |---|---:|---:|---:|---:|
-| ISO532 Rust（經 Python binding） | 12.449 ms | 0.448 ms | 240.99x real-time | 536.69x |
-| MoSQITo 1.2.1 `loudness_zwtv` | 6.681004 s | 0.092088 s | 0.4490x real-time | 1.00x |
+| ISO532 Rust（經 Python binding） | 14.963 ms | 1.262 ms | 200.50x real-time | 483.44x |
+| MoSQITo 1.2.1 `loudness_zwtv` | 7.233612 s | 0.186382 s | 0.4147x real-time | 1.00x |
+
+同一台機器 2026-07-20 的量測是 12.449 ms 與 6.681004 s。MoSQITo 也慢了同一量級，而 0.3.1 與 0.4.0 wheel 的交錯 A/B 看不出差異（兩版中位數都在 13.9～14.4 ms），所以這個變化來自機器狀態，不是 0.4.0（[`docs/verification/2026-11-05-perf-compliance-118322f/`](docs/verification/2026-11-05-perf-compliance-118322f/report.md)）。
 
 這是單機工程量測，不是跨硬體承諾。MoSQITo 的目標是具文件、模組化的科學 Python toolbox；本專案只聚焦較窄的 Rust 引擎範圍，無意宣稱取代 MoSQITo 的完整能力。
 
@@ -245,21 +247,23 @@ cargo run -p iso532 --example cli -- path\to\mono-48k.wav --calib 0.632455532
 
 ### Native Criterion 量測
 
-同一台 12 logical processors 主機上的 Criterion 量測如下。10 秒輸入會產生
-5,000 個響度 frame，因此「單幀」指一個 2 ms 輸出 frame，不是單一輸入 sample。
+同一台 12 logical processors 主機於 2026-11-05 量測 `v0.4.0`（`118322f`），取三輪
+交錯量測的中位數。10 秒輸入會產生 5,000 個響度 frame，因此「單幀」指一個 2 ms
+輸出 frame，不是單一輸入 sample。
 
-| 10 秒／480,000 samples 工作量 | Forced scalar 中位數 | Scalar／輸出 frame | AVX2 中位數 | AVX2／輸出 frame | AVX2 加速 |
+| 10 秒／480,000 samples 工作量 | Forced scalar | Scalar／輸出 frame | AVX2 | AVX2／輸出 frame | AVX2 加速 |
 |---|---:|---:|---:|---:|---:|
-| ZWTV batch，12 Rayon threads（2026-07-10） | 142.224 ms | 28.445 us | 47.461 ms | 9.492 us | 3.00x |
-| ZWTV batch，1 Rayon thread（2026-07-21） | 351.460 ms | 70.292 us | 275.410 ms | 55.082 us | 1.28x |
-| ZWTV stream，480-sample chunks（2026-07-21） | 360.930 ms | 72.186 us | 233.420 ms | 46.684 us | 1.55x |
+| ZWTV batch，12 Rayon threads | 66.577 ms | 13.315 us | 48.898 ms | 9.780 us | 1.36x |
+| ZWTV batch，1 Rayon thread | 358.990 ms | 71.798 us | 253.880 ms | 50.776 us | 1.41x |
+| ZWTV stream，480-sample chunks，1 Rayon thread | 334.320 ms | 66.864 us | 239.690 ms | 47.938 us | 1.39x |
 
-相較 README 前一版基線，單核 batch scalar 從 561.563 ms 降到 351.460 ms，
-耗時減少 37.4%；batch AVX2 則從 253.210 ms 增至 275.410 ms，耗時增加
-8.8%。Stream scalar 與 AVX2 分別增加 2.1% 與 2.9%。目前單核 AVX2 相對
-scalar 的耗時降幅為 batch 21.6%、stream 35.3%。Stream 本輪十筆量測中有
-兩筆高側 outlier，因此這些數字是本機快照，不是跨硬體保證。
-2026-07-21 兩列以 engine commit `8fde6b6`、`RAYON_NUM_THREADS=1` 量測。
+同一 session 對照 `v0.3.1`：0.4.0 的 slope 階段修正（F-04～F-07）讓單核 batch
+慢約 2%（scalar 351.350 → 358.990 ms、AVX2 248.890 → 253.880 ms），其他各列
+的變化都在約 ±4% 的輪間雜訊內。README 前一版（2026-07-10 與 2026-07-21，
+engine `8fde6b6`）為 12 threads batch 142.224／47.461 ms、單核 batch
+351.460／275.410 ms、stream 360.930／233.420 ms。這些數字是本機快照，不是
+跨硬體保證；完整 A/B、`calc_slopes` 階段量測與 log 見
+[`docs/verification/2026-11-05-perf-compliance-118322f/`](docs/verification/2026-11-05-perf-compliance-118322f/report.md)。
 
 在目標機器重跑：
 
@@ -338,9 +342,9 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 | 2026-11-04 直接 3 秒比對，`nl_init="mosqito_tail"`，`N(t)` | `1.15e-4` sone | F-04／F-05（0.4.0）；0.3.1 為 `2.66e-15` |
 | 2026-11-04 直接 3 秒比對，`nl_init="mosqito_tail"`，`N_specific(t)` | `1.86e-3` sone/Bark | F-07（0.4.0）；0.3.1 為 `3.46e-15` |
 
-上面的直接比對列與效能表均由 `.venv\Scripts\python.exe tools\compare_mosqito.py` 產生（相容性列加 `--nl-init mosqito_tail`；效能表維持 2026-07-20 安靜機器量測，發版當時快照見 `docs/RELEASE-0.3.1-2026-11-01.md`）。腳本使用 `tools.iso532_testkit.contract_signal(3 * 48_000)`，先各 warm up 一次，再各連續量測 30 次，輸出算術平均、sample SD、min／max，以及 `N(t)` 與 `N_specific(t)` 的最大絕對差異。2026-11-04 的差異列以 0.4.0 build 加 `--iterations 1` 重測；差異值與量測次數無關。
+上面的直接比對列與效能表均由 `.venv\Scripts\python.exe tools\compare_mosqito.py` 產生（相容性列加 `--nl-init mosqito_tail`；效能表為 2026-11-05 以 0.4.0 wheel 量測）。腳本使用 `tools.iso532_testkit.contract_signal(3 * 48_000)`，先各 warm up 一次，再各連續量測 30 次，輸出算術平均、sample SD、min／max，以及 `N(t)` 與 `N_specific(t)` 的最大絕對差異。2026-11-04 的差異列以 0.4.0 build 加 `--iterations 1` 重測；差異值與量測次數無關。
 
-ISO Annex B 使用寬得多的逐點接受式：`abs(error) <= max(0.1, 0.05 * abs(reference))`；此公式直接讀自官方 Annex B 工作簿（V-01，2026-10-31），不是標準條文逐條核對；`tests/annexb.rs` 以零例外、對無效資料 fail-closed 的方式套用。Signal 3／5／10 的詳細數據，以及「實作 parity」與「Annex B compliance」的差異，請見 [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md)。
+ISO Annex B 使用寬得多的逐點接受式：`abs(error) <= max(0.1, 0.05 * abs(reference))`；此公式直接讀自官方 Annex B 工作簿（V-01，2026-10-31），不是標準條文逐條核對；`tests/annexb.rs` 以零例外、對無效資料 fail-closed 的方式套用。Signal 3／5／10 的詳細數據，以及「實作 parity」與「Annex B compliance」的差異，請見 [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md)。測試套件之外，0.4.0 另以 Annex B 全部 25 個訊號（73,116 個工作簿參考點）檢查，0 個點超出判準（最小餘裕 0.0597 sone/Bark）；20 個時變訊號的工作簿 Nmax 與 N5 在同一尺度內（診斷用），一致偏高約 0.15%。N5 正式定義、恰好 1% 的例外規則與 Table A.9（F-03）仍未結，所以這不是完整符合 ISO 532-1 的宣稱（[`docs/verification/2026-11-05-perf-compliance-118322f/`](docs/verification/2026-11-05-perf-compliance-118322f/report.md)）。
 
 ### 重現驗證
 

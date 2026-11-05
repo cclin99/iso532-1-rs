@@ -1,0 +1,73 @@
+Gnuplot not found, using plotters backend
+Benchmarking filter_bank_10s_t12/scalar/480000
+Benchmarking filter_bank_10s_t12/scalar/480000: Warming up for 3.0000 s
+Benchmarking filter_bank_10s_t12/scalar/480000: Collecting 10 samples in estimated 6.7946 s (440 iterations)
+Benchmarking filter_bank_10s_t12/scalar/480000: Analyzing
+filter_bank_10s_t12/scalar/480000
+                        time:   [14.998 ms 15.204 ms 15.453 ms]
+                        thrpt:  [31.062 Melem/s 31.571 Melem/s 32.004 Melem/s]
+                 change:
+                        time:   [-6.3481% -3.3607% -0.6208%] (p = 0.04 < 0.05)
+                        thrpt:  [+0.6247% +3.4776% +6.7784%]
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking filter_bank_10s_t12/avx2/480000
+Benchmarking filter_bank_10s_t12/avx2/480000: Warming up for 3.0000 s
+Benchmarking filter_bank_10s_t12/avx2/480000: Collecting 10 samples in estimated 6.1303 s (1100 iterations)
+Benchmarking filter_bank_10s_t12/avx2/480000: Analyzing
+filter_bank_10s_t12/avx2/480000
+                        time:   [5.4958 ms 5.5288 ms 5.5729 ms]
+                        thrpt:  [86.132 Melem/s 86.819 Melem/s 87.339 Melem/s]
+                 change:
+                        time:   [-8.1766% -4.5848% -1.7017%] (p = 0.01 < 0.05)
+                        thrpt:  [+1.7311% +4.8052% +8.9047%]
+                        Performance has improved.
+
+Benchmarking zwtv_10s_t12/scalar/480000
+Benchmarking zwtv_10s_t12/scalar/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t12/scalar/480000: Collecting 10 samples in estimated 7.5123 s (110 iterations)
+Benchmarking zwtv_10s_t12/scalar/480000: Analyzing
+zwtv_10s_t12/scalar/480000
+                        time:   [64.496 ms 66.577 ms 69.274 ms]
+                        thrpt:  [6.9290 Melem/s 7.2097 Melem/s 7.4423 Melem/s]
+                 change:
+                        time:   [+4.1901% +7.0408% +9.9906%] (p = 0.00 < 0.05)
+                        thrpt:  [-9.0831% -6.5776% -4.0216%]
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+Benchmarking zwtv_10s_t12/avx2/480000
+Benchmarking zwtv_10s_t12/avx2/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t12/avx2/480000: Collecting 10 samples in estimated 8.0483 s (165 iterations)
+Benchmarking zwtv_10s_t12/avx2/480000: Analyzing
+zwtv_10s_t12/avx2/480000
+                        time:   [47.817 ms 48.546 ms 49.505 ms]
+                        thrpt:  [9.6960 Melem/s 9.8875 Melem/s 10.038 Melem/s]
+                 change:
+                        time:   [-6.2313% -1.0185% +3.1271%] (p = 0.75 > 0.05)
+                        thrpt:  [-3.0322% +1.0290% +6.6454%]
+                        No change in performance detected.
+
+Benchmarking stream_push_10s_480chunk/scalar
+Benchmarking stream_push_10s_480chunk/scalar: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/scalar: Collecting 10 samples in estimated 6.8447 s (20 iterations)
+Benchmarking stream_push_10s_480chunk/scalar: Analyzing
+stream_push_10s_480chunk/scalar
+                        time:   [338.85 ms 344.22 ms 351.16 ms]
+                        change: [-4.1423% -1.7003% +0.7778%] (p = 0.22 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking stream_push_10s_480chunk/avx2
+Benchmarking stream_push_10s_480chunk/avx2: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/avx2: Collecting 10 samples in estimated 7.3371 s (30 iterations)
+Benchmarking stream_push_10s_480chunk/avx2: Analyzing
+stream_push_10s_480chunk/avx2
+                        time:   [236.25 ms 238.78 ms 241.33 ms]
+                        change: [-2.3523% -0.3813% +1.6679%] (p = 0.72 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 10 measurements (30.00%)
+  1 (10.00%) low mild
+  2 (20.00%) high mild
+

@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-05 (Asia/Taipei)",
+  "tested": {
+    "v0.4.0": "118322f8300dc752f1d38a79db230a2db5ff2870",
+    "v0.3.1": "aa379db8f3dc37f5048ac6c8b7a6d4ba2a6c3b76",
+    "v0.4.0_crate_sources_equal_fca4ccd": "true"
+  },
+  "checkouts": "git worktree add --detach of each tag under the gitignored tmp/; separate CARGO_TARGET_DIR per version",
+  "host": {
+    "cpu": "AMD Ryzen 5 3600 6-Core Processor (AMD64 Family 23 Model 113), 12 logical processors",
+    "ram_bytes": 68612206592,
+    "os": "Windows 10 Pro 10.0.19045",
+    "power_plan": "Balanced"
+  },
+  "toolchain": {
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "criterion": "0.5.1",
+    "rayon": "1.12.0",
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "maturin": "1.14.1",
+    "mosqito": "1.2.1"
+  },
+  "wheels": {
+    "0.3.1": {
+      "file": "tmp/dist-0.3.1/iso532-0.3.1-cp39-abi3-win_amd64.whl",
+      "sha256": "841584a2741029f23d8f66b5ff8ba72af0061a5d948248a61a7ef155c095f747"
+    },
+    "0.4.0": {
+      "file": "tmp/dist-v0.4.0-tag/iso532-0.4.0-cp39-abi3-win_amd64.whl",
+      "sha256": "724b272c86ee35b27a51852674538adeeb1979143364de89c59b5476ad244cc0"
+    }
+  },
+  "venvs": "tmp/venv-py-<ver>: fresh venv, wheel installed with --no-deps --no-index; numpy/mosqito/pytest/openpyxl borrowed from the project .venv through a .pth file; the project .venv is not modified",
+  "annexb_inputs": "tmp/acceptance-040-astra/contracts-inputs/sig{1..25}.bin (decoded and calibrated by the 2026-11-04 Astra round; SHA-256 re-checked against its contracts-results.json)"
+}

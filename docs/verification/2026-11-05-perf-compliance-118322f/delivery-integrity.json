@@ -1,0 +1,154 @@
+{
+  "scope": "post-redaction UTF-8 delivery files (LF)",
+  "excluded": [
+    "delivery-integrity.json"
+  ],
+  "file_count": 29,
+  "files": [
+    {
+      "path": "artifacts-SHA256SUMS.txt",
+      "bytes": 344,
+      "sha256": "6aa954594517d382fcf5d548915d5d31c6f0a309b566b5041ac0fa63489ee278"
+    },
+    {
+      "path": "binding-ab.log",
+      "bytes": 850,
+      "sha256": "c8dd12973cdb8a356c1f4f6e5d8cfe8ac1e512cdbd378b627d458f59e75785dc"
+    },
+    {
+      "path": "binding_ab.py",
+      "bytes": 690,
+      "sha256": "4053c4d310e9b64c4d474b55684a94b95b2cee22aa500f8440da76200179ad32"
+    },
+    {
+      "path": "compare-mosqito-v0.4.0.log",
+      "bytes": 558,
+      "sha256": "cdebf2e76d645e627eb4044821fc72a357ed564dfff3cbc7e696fae030fc6faf"
+    },
+    {
+      "path": "compliance-v0.3.1.json",
+      "bytes": 31080,
+      "sha256": "3cdfcc2d1eec602d747e91d1026508ba196c6b25e804557197a3a84806aa464b"
+    },
+    {
+      "path": "compliance-v0.4.0.json",
+      "bytes": 31135,
+      "sha256": "e79b241b239edeacb19b2333bca590bebebd7fdf49b19ec526cacdb99f198741"
+    },
+    {
+      "path": "compliance.py",
+      "bytes": 9055,
+      "sha256": "e56de58f51cfe6e8922360292ca0655e048444441362e38331b3399c48558201"
+    },
+    {
+      "path": "criterion/criterion-summary.json",
+      "bytes": 2885,
+      "sha256": "d4db03e55e47ae2e85155f092b673331e52102a29c71a09941b626b46f6a8367"
+    },
+    {
+      "path": "criterion/criterion-v0.3.1-t1-r1.log",
+      "bytes": 2072,
+      "sha256": "308056c26c12ef50e82c82a9ede59c1c4dfe1f7dcf8664d049d3293c0db35474"
+    },
+    {
+      "path": "criterion/criterion-v0.3.1-t1-r2.log",
+      "bytes": 2360,
+      "sha256": "baa052c34543e109ad2f37f82ef9cb5ed0b42703f3603334a3d8aedb3a4cfd0f"
+    },
+    {
+      "path": "criterion/criterion-v0.3.1-t1-r3.log",
+      "bytes": 2383,
+      "sha256": "85ed17894d35cc854cd709341fca5f707d584c9b2743fa987c1b017a1fdbd77e"
+    },
+    {
+      "path": "criterion/criterion-v0.3.1-t12-r1.log",
+      "bytes": 2713,
+      "sha256": "ec6e109d381060266e14010b690da93cb59e9b07e8b3fb05c9bc0baa23c206eb"
+    },
+    {
+      "path": "criterion/criterion-v0.3.1-t12-r2.log",
+      "bytes": 3982,
+      "sha256": "043a93a2f233cbd40b4016fe69dcb2b7ae43b54f10228f9b2c4bcee912bc844c"
+    },
+    {
+      "path": "criterion/criterion-v0.3.1-t12-r3.log",
+      "bytes": 4010,
+      "sha256": "bdf0496da8383419a35f24589e9434940d0fa63171b039a41e24e8035fbd57a9"
+    },
+    {
+      "path": "criterion/criterion-v0.4.0-t1-r1.log",
+      "bytes": 1935,
+      "sha256": "86c20b16d4472de8f19e48b425bdb38b40f72c022b1dd2dc2de524562f988095"
+    },
+    {
+      "path": "criterion/criterion-v0.4.0-t1-r2.log",
+      "bytes": 2430,
+      "sha256": "202ffc71f629fbddf08c2f8b04ed264657bfeb4d40b4ebda1beeb0138b091f0d"
+    },
+    {
+      "path": "criterion/criterion-v0.4.0-t1-r3.log",
+      "bytes": 2514,
+      "sha256": "804cf5c5247f8153a8204047ff42910da696164bcd5df1114baa79150f1aa0e1"
+    },
+    {
+      "path": "criterion/criterion-v0.4.0-t12-r1.log",
+      "bytes": 2927,
+      "sha256": "b70d3fa67f88348df95a47cf85405aa12847af4aab1aa85579090fcb06043762"
+    },
+    {
+      "path": "criterion/criterion-v0.4.0-t12-r2.log",
+      "bytes": 4003,
+      "sha256": "c9f7074f95d958068d7e70031834a34c3b368af485e3ace7cd83e923d795cfb0"
+    },
+    {
+      "path": "criterion/criterion-v0.4.0-t12-r3.log",
+      "bytes": 4021,
+      "sha256": "fe54c9c39e47574fe6a8a52e8429a06f054cb30c0ed4ca7cb134d53a344e4cd6"
+    },
+    {
+      "path": "criterion/run_criterion.sh",
+      "bytes": 612,
+      "sha256": "0e59b975e0c5bb51a54559876a0f522810deb0fab4ec7d86a2b7127d251831e6"
+    },
+    {
+      "path": "criterion/summarize_criterion.py",
+      "bytes": 1592,
+      "sha256": "42193d81595f17ddc63b810f266ac2081fbdb10986a886df6b459286f4d4ae4c"
+    },
+    {
+      "path": "delivery-check.md",
+      "bytes": 1723,
+      "sha256": "8f2bae9bceb18440a5fb3306fd9e6557b7cab2671edec48da10b207739ef0fcf"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 1594,
+      "sha256": "f5460b8c51156948c1cbc2ef1bac517a67cb314ef2c8a0852b96f0e1edd90b94"
+    },
+    {
+      "path": "pytest-wheel-v0.4.0.log",
+      "bytes": 198,
+      "sha256": "27f12170fc25b0eb12ae66b03748c15b2ba08c59602942c52ab81d1572686a25"
+    },
+    {
+      "path": "report.en.md",
+      "bytes": 13953,
+      "sha256": "0f6c9cad7a73a4c7864917f61b18ba59e353aa039bcd6fcfb606a39569e079b9"
+    },
+    {
+      "path": "report.md",
+      "bytes": 13143,
+      "sha256": "b3e9dcbd903249e187b289789bf72b2c7782592fb30741f15d147e03ce6ffff6"
+    },
+    {
+      "path": "slopes-stage.log",
+      "bytes": 1278,
+      "sha256": "20e9cf167f77bd1cdabc1fcc049694ccbbee53de5844d922686d0969decc47db"
+    },
+    {
+      "path": "slopes_harness.rs.txt",
+      "bytes": 2741,
+      "sha256": "1b13b4a869ad14fbdaa24ac6aa4de36b3cce538ac204bcacb5cd5ffbfca79408"
+    }
+  ]
+}

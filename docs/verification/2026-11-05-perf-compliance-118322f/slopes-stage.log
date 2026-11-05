@@ -1,0 +1,6 @@
+0.3.1 round1 {"frames":274860,"repeats":30,"full_min_ns":4337.279,"full_median_ns":4614.148,"n_only_min_ns":4210.330,"n_only_median_ns":4503.110,"checksum_full":"4174c5fd5d93e98f","checksum_n":"413e80a4326ea195"}
+0.4.0 round1 {"frames":274860,"repeats":30,"full_min_ns":4699.601,"full_median_ns":4872.904,"n_only_min_ns":4380.898,"n_only_median_ns":4508.328,"checksum_full":"4174c619d3f383c5","checksum_n":"413e8093b6ac4a97"}
+0.3.1 round2 {"frames":274860,"repeats":30,"full_min_ns":4562.273,"full_median_ns":4743.038,"n_only_min_ns":4314.566,"n_only_median_ns":4593.347,"checksum_full":"4174c5fd5d93e98f","checksum_n":"413e80a4326ea195"}
+0.4.0 round2 {"frames":274860,"repeats":30,"full_min_ns":4823.253,"full_median_ns":5128.844,"n_only_min_ns":4486.066,"n_only_median_ns":4714.693,"checksum_full":"4174c619d3f383c5","checksum_n":"413e8093b6ac4a97"}
+0.3.1 round3 {"frames":274860,"repeats":30,"full_min_ns":4547.788,"full_median_ns":4718.776,"n_only_min_ns":4318.361,"n_only_median_ns":4582.170,"checksum_full":"4174c5fd5d93e98f","checksum_n":"413e80a4326ea195"}
+0.4.0 round3 {"frames":274860,"repeats":30,"full_min_ns":4778.797,"full_median_ns":5276.742,"n_only_min_ns":4417.179,"n_only_median_ns":4779.287,"checksum_full":"4174c619d3f383c5","checksum_n":"413e8093b6ac4a97"}

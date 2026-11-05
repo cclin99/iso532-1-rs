@@ -228,12 +228,14 @@ Do not infer pascals from dBFS without a traceable microphone/interface calibrat
 
 ### Direct comparison with MoSQITo 1.2.1
 
-Local measurement on 2026-07-20, Windows, `AMD64 Family 23 Model 113`, 12 logical processors, Python 3.11.9, NumPy 2.4.6. Both implementations processed the same deterministic 3-second, 48 kHz contiguous `float64` pressure signal. After one unmeasured warm-up, each path ran 30 consecutive measured iterations; the table reports the arithmetic mean and sample standard deviation. The Rust result was called through the Python binding, so binding overhead is included.
+Local measurement on 2026-11-05 with the v0.4.0 wheel, Windows, `AMD64 Family 23 Model 113`, 12 logical processors, Python 3.11.9, NumPy 2.4.6. Both implementations processed the same deterministic 3-second, 48 kHz contiguous `float64` pressure signal. After one unmeasured warm-up, each path ran 30 consecutive measured iterations; the table reports the arithmetic mean and sample standard deviation. The Rust result was called through the Python binding, so binding overhead is included.
 
 | Implementation | Mean for 3 s input (30 runs) | Sample SD | Relative to input duration | Relative speed |
 |---|---:|---:|---:|---:|
-| ISO532 Rust through Python binding | 12.449 ms | 0.448 ms | 240.99x real-time | 536.69x |
-| MoSQITo 1.2.1 `loudness_zwtv` | 6.681004 s | 0.092088 s | 0.4490x real-time | 1.00x |
+| ISO532 Rust through Python binding | 14.963 ms | 1.262 ms | 200.50x real-time | 483.44x |
+| MoSQITo 1.2.1 `loudness_zwtv` | 7.233612 s | 0.186382 s | 0.4147x real-time | 1.00x |
+
+The 2026-07-20 run on the same machine gave 12.449 ms and 6.681004 s. MoSQITo slowed down by the same order, and an interleaved A/B of the 0.3.1 and 0.4.0 wheels shows no difference (medians 13.9–14.4 ms for both), so the change is the machine state rather than 0.4.0 ([`docs/verification/2026-11-05-perf-compliance-118322f/`](docs/verification/2026-11-05-perf-compliance-118322f/report.en.md)).
 
 This is a single-machine engineering measurement, not a universal promise. MoSQITo prioritizes a documented, modular scientific Python toolbox; this project targets a narrower Rust engine and does not claim to replace the broader MoSQITo project.
 
@@ -245,24 +247,26 @@ Reproduce both the timing and the direct numerical comparison with the checked-i
 
 ### Native Criterion measurements
 
-Criterion measurements from the same 12-logical-processor host are shown below. A
-10-second input produces 5,000 loudness frames, so the per-frame columns mean one
-2 ms output frame, not one input sample.
+Criterion measurements from the same 12-logical-processor host on 2026-11-05,
+`v0.4.0` (`118322f`), median of three interleaved rounds. A 10-second input
+produces 5,000 loudness frames, so the per-frame columns mean one 2 ms output
+frame, not one input sample.
 
-| 10 s / 480,000-sample workload | Forced scalar median | Scalar / output frame | AVX2 median | AVX2 / output frame | AVX2 speedup |
+| 10 s / 480,000-sample workload | Forced scalar | Scalar / output frame | AVX2 | AVX2 / output frame | AVX2 speedup |
 |---|---:|---:|---:|---:|---:|
-| ZWTV batch, 12 Rayon threads (2026-07-10) | 142.224 ms | 28.445 us | 47.461 ms | 9.492 us | 3.00x |
-| ZWTV batch, 1 Rayon thread (2026-07-21) | 351.460 ms | 70.292 us | 275.410 ms | 55.082 us | 1.28x |
-| ZWTV stream, 480-sample chunks (2026-07-21) | 360.930 ms | 72.186 us | 233.420 ms | 46.684 us | 1.55x |
+| ZWTV batch, 12 Rayon threads | 66.577 ms | 13.315 us | 48.898 ms | 9.780 us | 1.36x |
+| ZWTV batch, 1 Rayon thread | 358.990 ms | 71.798 us | 253.880 ms | 50.776 us | 1.41x |
+| ZWTV stream, 480-sample chunks, 1 Rayon thread | 334.320 ms | 66.864 us | 239.690 ms | 47.938 us | 1.39x |
 
-Against the previous README baselines, single-thread batch scalar improved from
-561.563 ms to 351.460 ms (37.4% less time). Batch AVX2 moved from 253.210 ms to
-275.410 ms (8.8% more time), while stream scalar and AVX2 moved by +2.1% and
-+2.9% respectively. The current single-core AVX2 reduction is 21.6% for batch
-and 35.3% for stream. The stream run reported two high-side outliers among ten
-measurements, so these are a local snapshot rather than a cross-machine guarantee.
-The 2026-07-21 rows were measured from engine commit `8fde6b6` with
-`RAYON_NUM_THREADS=1`.
+Against `v0.3.1`, measured in the same session, the 0.4.0 slope-stage change
+(F-04 to F-07) costs about +2% in single-thread batch (scalar 351.350 →
+358.990 ms, AVX2 248.890 → 253.880 ms); every other row moves within the
+round-to-round noise of about ±4%. The previous README rows (2026-07-10 and
+2026-07-21, engine `8fde6b6`) were 142.224 / 47.461 ms for 12-thread batch,
+351.460 / 275.410 ms for single-thread batch and 360.930 / 233.420 ms for the
+stream. These are a local snapshot rather than a cross-machine guarantee; the
+full A/B, the stage timing of `calc_slopes` and the logs are in
+[`docs/verification/2026-11-05-perf-compliance-118322f/`](docs/verification/2026-11-05-perf-compliance-118322f/report.en.md).
 
 Re-run on your target machine:
 
@@ -341,9 +345,9 @@ The time-axis comparison is intentional: MoSQITo 1.2.1 uses a duration-dependent
 | Fresh 2026-11-04 3 s direct run, `nl_init="mosqito_tail"`, `N(t)` | `1.15e-4` sone | F-04/F-05 (0.4.0); 0.3.1 gave `2.66e-15` |
 | Fresh 2026-11-04 3 s direct run, `nl_init="mosqito_tail"`, `N_specific(t)` | `1.86e-3` sone/Bark | F-07 (0.4.0); 0.3.1 gave `3.46e-15` |
 
-The fresh-run rows and the performance table were produced by `.venv\Scripts\python.exe tools\compare_mosqito.py` (add `--nl-init mosqito_tail` for the compatibility rows; the performance table keeps the quiet-machine 2026-07-20 measurement, see `docs/RELEASE-0.3.1-2026-11-01.md` for the release-time snapshot). The script uses `tools.iso532_testkit.contract_signal(3 * 48_000)`, warms up both implementations once, runs each 30 consecutive times, and reports arithmetic mean, sample SD, min/max, and the maximum absolute `N(t)` and `N_specific(t)` differences. The 2026-11-04 difference rows were re-measured on the 0.4.0 build with `--iterations 1`; the differences do not depend on the iteration count.
+The fresh-run rows and the performance table were produced by `.venv\Scripts\python.exe tools\compare_mosqito.py` (add `--nl-init mosqito_tail` for the compatibility rows; the performance table is the 2026-11-05 run with the 0.4.0 wheel). The script uses `tools.iso532_testkit.contract_signal(3 * 48_000)`, warms up both implementations once, runs each 30 consecutive times, and reports arithmetic mean, sample SD, min/max, and the maximum absolute `N(t)` and `N_specific(t)` differences. The 2026-11-04 difference rows were re-measured on the 0.4.0 build with `--iterations 1`; the differences do not depend on the iteration count.
 
-ISO Annex B uses a much broader per-point acceptance expression, `abs(error) <= max(0.1, 0.05 * abs(reference))`; this is the formula read from the official Annex B workbook (V-01, 2026-10-31), not a clause-by-clause check of the standard text, and `tests/annexb.rs` applies it with zero exceptions allowed and fail-closed handling of invalid data. For detailed signal 3/5/10 results and the distinction between implementation parity and Annex B compliance, see [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md).
+ISO Annex B uses a much broader per-point acceptance expression, `abs(error) <= max(0.1, 0.05 * abs(reference))`; this is the formula read from the official Annex B workbook (V-01, 2026-10-31), not a clause-by-clause check of the standard text, and `tests/annexb.rs` applies it with zero exceptions allowed and fail-closed handling of invalid data. For detailed signal 3/5/10 results and the distinction between implementation parity and Annex B compliance, see [`docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md`](docs/ISO-ANNEXB-NUMERICAL-ERROR-2026-07-04.md). Outside the test suite, all 25 Annex B signals (73,116 workbook reference points) were checked for 0.4.0 with zero points outside the rule (minimum margin 0.0597 sone/Bark); the workbook Nmax and N5 values of the 20 time-varying signals are within the same scale as a diagnostic, about 0.15% high. The formal N5 definition, the exact-1% exception rule and Table A.9 (F-03) remain open, so this is not a claim of full ISO 532-1 conformance ([`docs/verification/2026-11-05-perf-compliance-118322f/`](docs/verification/2026-11-05-perf-compliance-118322f/report.en.md)).
 
 ### Reproduce the evidence
 

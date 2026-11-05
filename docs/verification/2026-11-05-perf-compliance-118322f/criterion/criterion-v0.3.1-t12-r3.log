@@ -1,0 +1,73 @@
+Gnuplot not found, using plotters backend
+Benchmarking filter_bank_10s_t12/scalar/480000
+Benchmarking filter_bank_10s_t12/scalar/480000: Warming up for 3.0000 s
+Benchmarking filter_bank_10s_t12/scalar/480000: Collecting 10 samples in estimated 6.5245 s (440 iterations)
+Benchmarking filter_bank_10s_t12/scalar/480000: Analyzing
+filter_bank_10s_t12/scalar/480000
+                        time:   [14.646 ms 14.710 ms 14.802 ms]
+                        thrpt:  [32.427 Melem/s 32.631 Melem/s 32.774 Melem/s]
+                 change:
+                        time:   [-4.0701% -1.6612% +0.9083%] (p = 0.26 > 0.05)
+                        thrpt:  [-0.9001% +1.6893% +4.2428%]
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking filter_bank_10s_t12/avx2/480000
+Benchmarking filter_bank_10s_t12/avx2/480000: Warming up for 3.0000 s
+Benchmarking filter_bank_10s_t12/avx2/480000: Collecting 10 samples in estimated 6.0924 s (1100 iterations)
+Benchmarking filter_bank_10s_t12/avx2/480000: Analyzing
+filter_bank_10s_t12/avx2/480000
+                        time:   [5.5123 ms 5.6098 ms 5.6791 ms]
+                        thrpt:  [84.521 Melem/s 85.564 Melem/s 87.078 Melem/s]
+                 change:
+                        time:   [-1.1371% +0.0988% +1.4463%] (p = 0.88 > 0.05)
+                        thrpt:  [-1.4257% -0.0987% +1.1501%]
+                        No change in performance detected.
+
+Benchmarking zwtv_10s_t12/scalar/480000
+Benchmarking zwtv_10s_t12/scalar/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t12/scalar/480000: Collecting 10 samples in estimated 6.9803 s (110 iterations)
+Benchmarking zwtv_10s_t12/scalar/480000: Analyzing
+zwtv_10s_t12/scalar/480000
+                        time:   [61.940 ms 63.187 ms 64.575 ms]
+                        thrpt:  [7.4333 Melem/s 7.5965 Melem/s 7.7494 Melem/s]
+                 change:
+                        time:   [-3.8837% -1.1167% +1.5640%] (p = 0.46 > 0.05)
+                        thrpt:  [-1.5399% +1.1293% +4.0406%]
+                        No change in performance detected.
+Benchmarking zwtv_10s_t12/avx2/480000
+Benchmarking zwtv_10s_t12/avx2/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t12/avx2/480000: Collecting 10 samples in estimated 7.7013 s (165 iterations)
+Benchmarking zwtv_10s_t12/avx2/480000: Analyzing
+zwtv_10s_t12/avx2/480000
+                        time:   [45.528 ms 46.203 ms 47.180 ms]
+                        thrpt:  [10.174 Melem/s 10.389 Melem/s 10.543 Melem/s]
+                 change:
+                        time:   [-9.8171% -7.5333% -5.4196%] (p = 0.00 < 0.05)
+                        thrpt:  [+5.7301% +8.1470% +10.886%]
+                        Performance has improved.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high severe
+
+Benchmarking stream_push_10s_480chunk/scalar
+Benchmarking stream_push_10s_480chunk/scalar: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/scalar: Collecting 10 samples in estimated 6.4839 s (20 iterations)
+Benchmarking stream_push_10s_480chunk/scalar: Analyzing
+stream_push_10s_480chunk/scalar
+                        time:   [319.30 ms 320.65 ms 322.64 ms]
+                        change: [-7.7382% -5.9189% -3.9682%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking stream_push_10s_480chunk/avx2
+Benchmarking stream_push_10s_480chunk/avx2: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/avx2: Collecting 10 samples in estimated 6.6053 s (30 iterations)
+Benchmarking stream_push_10s_480chunk/avx2: Analyzing
+stream_push_10s_480chunk/avx2
+                        time:   [225.38 ms 232.92 ms 242.57 ms]
+                        change: [-3.7560% -0.2196% +4.1578%] (p = 0.92 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+

@@ -1,0 +1,34 @@
+Gnuplot not found, using plotters backend
+Benchmarking zwtv_10s_t1/scalar/480000
+Benchmarking zwtv_10s_t1/scalar/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t1/scalar/480000: Collecting 10 samples in estimated 7.1305 s (20 iterations)
+Benchmarking zwtv_10s_t1/scalar/480000: Analyzing
+zwtv_10s_t1/scalar/480000
+                        time:   [350.03 ms 358.99 ms 372.59 ms]
+                        thrpt:  [1.2883 Melem/s 1.3371 Melem/s 1.3713 Melem/s]
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking zwtv_10s_t1/avx2/480000
+Benchmarking zwtv_10s_t1/avx2/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t1/avx2/480000: Collecting 10 samples in estimated 7.6592 s (30 iterations)
+Benchmarking zwtv_10s_t1/avx2/480000: Analyzing
+zwtv_10s_t1/avx2/480000 time:   [252.23 ms 253.88 ms 255.69 ms]
+                        thrpt:  [1.8773 Melem/s 1.8907 Melem/s 1.9030 Melem/s]
+
+Benchmarking stream_push_10s_480chunk/scalar
+Benchmarking stream_push_10s_480chunk/scalar: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/scalar: Collecting 10 samples in estimated 6.6941 s (20 iterations)
+Benchmarking stream_push_10s_480chunk/scalar: Analyzing
+stream_push_10s_480chunk/scalar
+                        time:   [344.18 ms 350.17 ms 356.56 ms]
+                        change: [+0.7288% +4.8547% +8.3209%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Benchmarking stream_push_10s_480chunk/avx2
+Benchmarking stream_push_10s_480chunk/avx2: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/avx2: Collecting 10 samples in estimated 7.1550 s (30 iterations)
+Benchmarking stream_push_10s_480chunk/avx2: Analyzing
+stream_push_10s_480chunk/avx2
+                        time:   [235.77 ms 239.69 ms 243.68 ms]
+                        change: [-1.3209% +2.4977% +5.7037%] (p = 0.21 > 0.05)
+                        No change in performance detected.
+

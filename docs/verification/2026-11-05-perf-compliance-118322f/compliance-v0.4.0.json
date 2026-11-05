@@ -1,0 +1,1135 @@
+{
+  "label": "0.4.0",
+  "wheel_version": "0.4.0",
+  "iso532_module": "__init__.py",
+  "inputs": {
+    "1": {
+      "sha256": "9833b74c08b5ca2204fea5f9d52b5944bc4b43e77d011c3eaaf646946baf5eb1",
+      "matches_astra": true
+    },
+    "2": {
+      "sha256": "80ec5f589a8fb212cab2880408fe4b57459c9f3b8196f3057e1c7510c135f133",
+      "matches_astra": true
+    },
+    "3": {
+      "sha256": "ae930604a1e4cf3b43550736fcbc00d2641e6c7d3e43c5e855e9db2cc046eff5",
+      "matches_astra": true
+    },
+    "4": {
+      "sha256": "2f16116d78bc3fe321c5a561e1fb2bff3f86d0709dd34b6cfe95bd22bd86f50d",
+      "matches_astra": true
+    },
+    "5": {
+      "sha256": "8c7f84109f4861107eb14e6e22b4127770597da00cbe25c97fb203854faee93d",
+      "matches_astra": true
+    },
+    "6": {
+      "sha256": "4e8b0823f4a902dca07ba86ccaa744aa8441f63916c9a589ed5eacdd9ab8dd66",
+      "matches_astra": true
+    },
+    "7": {
+      "sha256": "05d155a3b10a5955431013de012fb0364b921add4a016643f8797bb8434c3e08",
+      "matches_astra": true
+    },
+    "8": {
+      "sha256": "561188f45ed24829bfcd6af1588d0d01885e7dcab429e6755e1ce576463eb481",
+      "matches_astra": true
+    },
+    "9": {
+      "sha256": "15a4d1cc823b01c412c7cb6093344e6421894907114bef660526aebbf460100c",
+      "matches_astra": true
+    },
+    "10": {
+      "sha256": "72789eccb3ca8a3dbc08c4fffbe5b4cfcd49ce64d011ced1b9d8a0b46847615d",
+      "matches_astra": true
+    },
+    "11": {
+      "sha256": "8304423950e70f60fa9f5f132b05d000911adc938523aa63c690039dca67b42a",
+      "matches_astra": true
+    },
+    "12": {
+      "sha256": "2ee750b996f255244c60fb3ac5d8655c58df336e62cd3f66b26354c73bb93e8f",
+      "matches_astra": true
+    },
+    "13": {
+      "sha256": "b2fa0c5162567d500c8e674cac67948f2141f69a457154739c7ffd466c865369",
+      "matches_astra": true
+    },
+    "14": {
+      "sha256": "63b1067a4f46b9307215d2db722166adcf4a80123326f586de43b480998fa76b",
+      "matches_astra": true
+    },
+    "15": {
+      "sha256": "deb1e7a1b4de532d08fc99ef8776606823348487a4de7828e7b5d41388ffb0af",
+      "matches_astra": true
+    },
+    "16": {
+      "sha256": "60737fa105cdde5005587a43950714f1b5d0a515dacaa6804a8a4ba0d2a22952",
+      "matches_astra": true
+    },
+    "17": {
+      "sha256": "9286010e24426ecbd0055140f2b0dc0b50ee6916b69ed7634a9bb3b864b64404",
+      "matches_astra": true
+    },
+    "18": {
+      "sha256": "b16a82ee3b9f3eeec6261da60083d4de9af6a85c373b7f96a4ae024a5d5aef7a",
+      "matches_astra": true
+    },
+    "19": {
+      "sha256": "fffee6aad1c7316aa6668b268650fcc9bbcf789862b1a994ac723b3dea1e28b8",
+      "matches_astra": true
+    },
+    "20": {
+      "sha256": "190120b12dbe71c0f4550160be21e00ac3463a0ab8f784f5c61669bd0151818f",
+      "matches_astra": true
+    },
+    "21": {
+      "sha256": "2b763ef4b23b5718e47765b0046a4e3a0d8b0a9886f59aaa277aeaad3637090c",
+      "matches_astra": true
+    },
+    "22": {
+      "sha256": "f18c5f035a55bb26441b1fe5ecfbd05d20b9b0ddd973242794f716dc00e7139f",
+      "matches_astra": true
+    },
+    "23": {
+      "sha256": "c67d32d7146dbf2a83791ff439973642f0089a9c17e1ae133502b80827837433",
+      "matches_astra": true
+    },
+    "24": {
+      "sha256": "2f20c961bb76b3f29e8d36a3a80edddfc56336c4784bfefece75831e474d1298",
+      "matches_astra": true
+    },
+    "25": {
+      "sha256": "0f2ecae2a233732ad0763da35c20168aaa19db3af8298f88539b1faf358babcb",
+      "matches_astra": true
+    }
+  },
+  "cross_check": {
+    "1": {
+      "source": "astra-rust-output",
+      "hash_verified": true
+    },
+    "2": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "3": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "4": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "5": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "6": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "7": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "8": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "9": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "10": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "11": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "12": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "13": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "14": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "15": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "16": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "17": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "18": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "19": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "20": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "21": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "22": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "23": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "24": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    },
+    "25": {
+      "source": "wheel",
+      "bitwise_equal_to_astra": {
+        "n": true,
+        "sp": true,
+        "time": true
+      }
+    }
+  },
+  "points": {
+    "1": {
+      "n": {
+        "points": 1,
+        "failed": 0,
+        "min_margin": 4.164213436046742,
+        "min_margin_index": 0,
+        "got": 83.29512843604674,
+        "ref": 83.2957
+      },
+      "sp": {
+        "points": 240,
+        "failed": 0,
+        "min_margin": 0.09990032084038439,
+        "min_margin_index": 226,
+        "got": 0.9834003208403844,
+        "ref": 0.9835
+      }
+    },
+    "2": {
+      "n": {
+        "points": 1,
+        "failed": 0,
+        "min_margin": 0.6767373524164382,
+        "min_margin_index": 0,
+        "got": 14.710487647583562,
+        "ref": 14.6545
+      },
+      "sp": {
+        "points": 240,
+        "failed": 0,
+        "min_margin": 0.059702781183555126,
+        "min_margin_index": 9,
+        "got": 0.3688972188164449,
+        "ref": 0.3286
+      }
+    },
+    "3": {
+      "n": {
+        "points": 1,
+        "failed": 0,
+        "min_margin": 0.16128355459473973,
+        "min_margin_index": 0,
+        "got": 4.05887644540526,
+        "ref": 4.0192
+      },
+      "sp": {
+        "points": 240,
+        "failed": 0,
+        "min_margin": 0.08457504412742708,
+        "min_margin_index": 66,
+        "got": 0.3571249558725729,
+        "ref": 0.3417
+      }
+    },
+    "4": {
+      "n": {
+        "points": 1,
+        "failed": 0,
+        "min_margin": 0.09118386830450934,
+        "min_margin_index": 0,
+        "got": 1.5582161316954908,
+        "ref": 1.5494
+      },
+      "sp": {
+        "points": 240,
+        "failed": 0,
+        "min_margin": 0.09540525256655169,
+        "min_margin_index": 152,
+        "got": 0.10079474743344831,
+        "ref": 0.0962
+      }
+    },
+    "5": {
+      "n": {
+        "points": 1,
+        "failed": 0,
+        "min_margin": 0.4607242527110572,
+        "min_margin_index": 0,
+        "got": 10.433634252711057,
+        "ref": 10.4978
+      },
+      "sp": {
+        "points": 240,
+        "failed": 0,
+        "min_margin": 0.09305896004382783,
+        "min_margin_index": 9,
+        "got": 0.4436589600438278,
+        "ref": 0.4506
+      }
+    },
+    "6": {
+      "n": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.09678093358453368,
+        "min_margin_index": 2271,
+        "got": 1.8779190664154664,
+        "ref": 1.8747
+      },
+      "sp": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.09719099318143334,
+        "min_margin_index": 3674,
+        "got": 1.9978090068185668,
+        "ref": 1.995
+      }
+    },
+    "7": {
+      "n": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.0967373755420963,
+        "min_margin_index": 5105,
+        "got": 1.9831626244579037,
+        "ref": 1.9799
+      },
+      "sp": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.09725818340508621,
+        "min_margin_index": 3858,
+        "got": 1.9986418165949138,
+        "ref": 1.9959
+      }
+    },
+    "8": {
+      "n": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.09683343031581795,
+        "min_margin_index": 1436,
+        "got": 1.989966569684182,
+        "ref": 1.9868
+      },
+      "sp": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.0972632321875885,
+        "min_margin_index": 3287,
+        "got": 1.9981367678124116,
+        "ref": 1.9954
+      }
+    },
+    "9": {
+      "n": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.0952355131822539,
+        "min_margin_index": 1457,
+        "got": 1.9958644868177462,
+        "ref": 1.9911
+      },
+      "sp": {
+        "points": 5300,
+        "failed": 0,
+        "min_margin": 0.09734431930704748,
+        "min_margin_index": 5034,
+        "got": 1.9294556806929526,
+        "ref": 1.9268
+      }
+    },
+    "10": {
+      "n": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.09705425924160274,
+        "min_margin_index": 20,
+        "got": 1.8756457407583973,
+        "ref": 1.8727
+      },
+      "sp": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.09733815162116413,
+        "min_margin_index": 14,
+        "got": 1.999861848378836,
+        "ref": 1.9972
+      }
+    },
+    "11": {
+      "n": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.09728078722851233,
+        "min_margin_index": 53,
+        "got": 1.9313192127714878,
+        "ref": 1.9286
+      },
+      "sp": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.09790370900293686,
+        "min_margin_index": 34,
+        "got": 2.0154312909970633,
+        "ref": 2.0127
+      }
+    },
+    "12": {
+      "n": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.09714360087990417,
+        "min_margin_index": 294,
+        "got": 1.9903563991200959,
+        "ref": 1.9875
+      },
+      "sp": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.0975564422366614,
+        "min_margin_index": 260,
+        "got": 1.7762435577633386,
+        "ref": 1.7738
+      }
+    },
+    "13": {
+      "n": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.09690536064637048,
+        "min_margin_index": 94,
+        "got": 1.9436946393536296,
+        "ref": 1.9406
+      },
+      "sp": {
+        "points": 500,
+        "failed": 0,
+        "min_margin": 0.09764859036802834,
+        "min_margin_index": 70,
+        "got": 1.7755514096319718,
+        "ref": 1.7732
+      }
+    },
+    "14": {
+      "n": {
+        "points": 6577,
+        "failed": 0,
+        "min_margin": 0.09626525454419013,
+        "min_margin_index": 6369,
+        "got": 1.9837347454558099,
+        "ref": 1.98
+      }
+    },
+    "15": {
+      "n": {
+        "points": 5768,
+        "failed": 0,
+        "min_margin": 0.09611805002755905,
+        "min_margin_index": 5590,
+        "got": 1.983281949972441,
+        "ref": 1.9794
+      }
+    },
+    "16": {
+      "n": {
+        "points": 2054,
+        "failed": 0,
+        "min_margin": 0.09714308332474322,
+        "min_margin_index": 1891,
+        "got": 1.9712569166752567,
+        "ref": 1.9684
+      }
+    },
+    "17": {
+      "n": {
+        "points": 1454,
+        "failed": 0,
+        "min_margin": 0.09538065854891001,
+        "min_margin_index": 443,
+        "got": 1.96011934145109,
+        "ref": 1.9555
+      }
+    },
+    "18": {
+      "n": {
+        "points": 1083,
+        "failed": 0,
+        "min_margin": 0.09556174521068175,
+        "min_margin_index": 214,
+        "got": 1.9915382547893183,
+        "ref": 1.9871
+      }
+    },
+    "19": {
+      "n": {
+        "points": 1300,
+        "failed": 0,
+        "min_margin": 0.09636634481927722,
+        "min_margin_index": 1081,
+        "got": 1.988533655180723,
+        "ref": 1.9849
+      }
+    },
+    "20": {
+      "n": {
+        "points": 1300,
+        "failed": 0,
+        "min_margin": 0.09635603762350456,
+        "min_margin_index": 64,
+        "got": 1.9782439623764954,
+        "ref": 1.9746
+      }
+    },
+    "21": {
+      "n": {
+        "points": 1300,
+        "failed": 0,
+        "min_margin": 0.09642114976470886,
+        "min_margin_index": 60,
+        "got": 1.905478850235291,
+        "ref": 1.9019
+      }
+    },
+    "22": {
+      "n": {
+        "points": 925,
+        "failed": 0,
+        "min_margin": 0.09626062805824667,
+        "min_margin_index": 292,
+        "got": 1.9961393719417533,
+        "ref": 1.9924
+      }
+    },
+    "23": {
+      "n": {
+        "points": 1275,
+        "failed": 0,
+        "min_margin": 0.09677631692318825,
+        "min_margin_index": 68,
+        "got": 1.6102236830768117,
+        "ref": 1.607
+      }
+    },
+    "24": {
+      "n": {
+        "points": 1200,
+        "failed": 0,
+        "min_margin": 0.0955783459087022,
+        "min_margin_index": 946,
+        "got": 2.001921654091298,
+        "ref": 1.9975
+      }
+    },
+    "25": {
+      "n": {
+        "points": 1275,
+        "failed": 0,
+        "min_margin": 0.09583497166217395,
+        "min_margin_index": 353,
+        "got": 1.9810650283378262,
+        "ref": 1.9769
+      }
+    }
+  },
+  "summary_values": {
+    "6": {
+      "nmax_ref": 14.3592,
+      "nmax_cell": "B5",
+      "nmax_got": 14.380687749687219,
+      "n5_ref_cached": 11.857560000000003,
+      "n5_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.02148774968721945,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        5060
+      ],
+      "n5_workbook_rows_with_data": 5000,
+      "n5_ref_recomputed": 11.857560000000003,
+      "n5_got_workbook_def": 11.878457882697496,
+      "n5_diff_workbook_def": 0.020897882697493486,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 11.82719618724839,
+      "n5_diff_cli_def": -0.03036381275161304
+    },
+    "7": {
+      "nmax_ref": 15.9534,
+      "nmax_cell": "B5",
+      "nmax_got": 15.979941361503627,
+      "n5_ref_cached": 13.378865000000001,
+      "n5_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.02654136150362696,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        5060
+      ],
+      "n5_workbook_rows_with_data": 5000,
+      "n5_ref_recomputed": 13.378865000000001,
+      "n5_got_workbook_def": 13.39997456550646,
+      "n5_diff_workbook_def": 0.021109565506458594,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 13.28333095881103,
+      "n5_diff_cli_def": -0.09553404118897113
+    },
+    "8": {
+      "nmax_ref": 23.9501,
+      "nmax_cell": "B5",
+      "nmax_got": 23.988081954224825,
+      "n5_ref_cached": 20.261875,
+      "n5_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.03798195422482564,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        5060
+      ],
+      "n5_workbook_rows_with_data": 5000,
+      "n5_ref_recomputed": 20.261875,
+      "n5_got_workbook_def": 20.292369150995732,
+      "n5_diff_workbook_def": 0.030494150995732383,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 20.09727665996487,
+      "n5_diff_cli_def": -0.16459834003513052
+    },
+    "9": {
+      "nmax_ref": 29.3141,
+      "nmax_cell": "B5",
+      "nmax_got": 29.35530224684706,
+      "n5_ref_cached": 24.221580000000007,
+      "n5_formula": "=PERCENTILE(B61:B5060,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.04120224684706031,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        5060
+      ],
+      "n5_workbook_rows_with_data": 5000,
+      "n5_ref_recomputed": 24.221580000000007,
+      "n5_got_workbook_def": 24.2562702289008,
+      "n5_diff_workbook_def": 0.034690228900792874,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 24.12500067469611,
+      "n5_diff_cli_def": -0.09657932530389601
+    },
+    "10": {
+      "nmax_ref": 4.2998,
+      "nmax_cell": "B5",
+      "nmax_got": 4.3063446904572125,
+      "n5_ref_cached": 0.7448749999999985,
+      "n5_formula": "=PERCENTILE(B11:B510,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.006544690457212177,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        11,
+        510
+      ],
+      "n5_workbook_rows_with_data": 500,
+      "n5_ref_recomputed": 0.7448749999999985,
+      "n5_got_workbook_def": 0.7460319407315172,
+      "n5_diff_workbook_def": 0.0011569407315187297,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 0.7602493561179009,
+      "n5_diff_cli_def": 0.015374356117902388
+    },
+    "11": {
+      "nmax_ref": 5.9746,
+      "nmax_cell": "B5",
+      "nmax_got": 5.983608346215304,
+      "n5_ref_cached": 4.160264999999992,
+      "n5_formula": "=PERCENTILE(B11:B510,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.009008346215304108,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        11,
+        510
+      ],
+      "n5_workbook_rows_with_data": 500,
+      "n5_ref_recomputed": 4.160264999999992,
+      "n5_got_workbook_def": 4.166530992391812,
+      "n5_diff_workbook_def": 0.006265992391820241,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 4.25180301027774,
+      "n5_diff_cli_def": 0.09153801027774833
+    },
+    "12": {
+      "nmax_ref": 8.0772,
+      "nmax_cell": "B5",
+      "nmax_got": 8.089114374732654,
+      "n5_ref_cached": 7.6700245,
+      "n5_formula": "=PERCENTILE(E11:E510,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.011914374732654665,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "E",
+      "n5_workbook_rows": [
+        11,
+        510
+      ],
+      "n5_workbook_rows_with_data": 500,
+      "n5_ref_recomputed": 7.6700245,
+      "n5_got_workbook_def": 7.681383644681493,
+      "n5_diff_workbook_def": 0.011359144681493127,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 8.08575524221589,
+      "n5_diff_cli_def": 0.41573074221589046
+    },
+    "13": {
+      "nmax_ref": 9.9756,
+      "nmax_cell": "B5",
+      "nmax_got": 9.991946525871128,
+      "n5_ref_cached": 3.2393669999999988,
+      "n5_formula": "=PERCENTILE(E11:E510,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.016346525871128392,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "E",
+      "n5_workbook_rows": [
+        11,
+        510
+      ],
+      "n5_workbook_rows_with_data": 500,
+      "n5_ref_recomputed": 3.2393669999999988,
+      "n5_got_workbook_def": 3.2446421524442153,
+      "n5_diff_workbook_def": 0.005275152444216502,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 3.423144841549801,
+      "n5_diff_cli_def": 0.18377784154980237
+    },
+    "14": {
+      "nmax_ref": 22.6399,
+      "nmax_cell": "B5",
+      "nmax_got": 22.67834123946978,
+      "n5_ref_cached": 18.08146,
+      "n5_formula": "=PERCENTILE(B61:B6337,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.03844123946977973,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        6337
+      ],
+      "n5_workbook_rows_with_data": 6277,
+      "n5_ref_recomputed": 18.08146,
+      "n5_got_workbook_def": 18.110164922251123,
+      "n5_diff_workbook_def": 0.028704922251122866,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 17.906417168475212,
+      "n5_diff_cli_def": -0.17504283152478806
+    },
+    "15": {
+      "nmax_ref": 9.6059,
+      "nmax_cell": "B5",
+      "nmax_got": 9.621230008486933,
+      "n5_ref_cached": 8.755009999999999,
+      "n5_formula": "=PERCENTILE(B61:B5528,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.015330008486932556,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        5528
+      ],
+      "n5_workbook_rows_with_data": 5468,
+      "n5_ref_recomputed": 8.755009999999999,
+      "n5_got_workbook_def": 8.76928536715653,
+      "n5_diff_workbook_def": 0.01427536715653055,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 8.763476544879786,
+      "n5_diff_cli_def": 0.008466544879787818
+    },
+    "16": {
+      "nmax_ref": 38.5363,
+      "nmax_cell": "B5",
+      "nmax_got": 38.59024815567126,
+      "n5_ref_cached": 36.887570000000004,
+      "n5_formula": "=PERCENTILE(B61:B1814,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.05394815567126443,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1814
+      ],
+      "n5_workbook_rows_with_data": 1754,
+      "n5_ref_recomputed": 36.887570000000004,
+      "n5_got_workbook_def": 36.938900878429266,
+      "n5_diff_workbook_def": 0.05133087842926187,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 36.85780213980236,
+      "n5_diff_cli_def": -0.029767860197644325
+    },
+    "17": {
+      "nmax_ref": 11.2105,
+      "nmax_cell": "B5",
+      "nmax_got": 11.22748729697541,
+      "n5_ref_cached": 9.722019999999995,
+      "n5_formula": "=PERCENTILE(B61:B1214,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.016987296975409905,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1214
+      ],
+      "n5_workbook_rows_with_data": 1154,
+      "n5_ref_recomputed": 9.722019999999995,
+      "n5_got_workbook_def": 9.737232386196938,
+      "n5_diff_workbook_def": 0.015212386196942873,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 9.362891675913467,
+      "n5_diff_cli_def": -0.3591283240865284
+    },
+    "18": {
+      "nmax_ref": 12.6468,
+      "nmax_cell": "B5",
+      "nmax_got": 12.665643009218503,
+      "n5_ref_cached": 10.3915,
+      "n5_formula": "=PERCENTILE(B61:B1093,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.018843009218501905,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1093
+      ],
+      "n5_workbook_rows_with_data": 1033,
+      "n5_ref_recomputed": 10.3915,
+      "n5_got_workbook_def": 10.406519309952312,
+      "n5_diff_workbook_def": 0.015019309952311488,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 10.24313243362019,
+      "n5_diff_cli_def": -0.14836756637981097
+    },
+    "19": {
+      "nmax_ref": 10.8817,
+      "nmax_cell": "B5",
+      "nmax_got": 10.898231343028662,
+      "n5_ref_cached": 10.009345,
+      "n5_formula": "=PERCENTILE(B61:B1060,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.016531343028661993,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1060
+      ],
+      "n5_workbook_rows_with_data": 1000,
+      "n5_ref_recomputed": 10.009345,
+      "n5_got_workbook_def": 10.02458262721778,
+      "n5_diff_workbook_def": 0.01523762721778077,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 9.805222228234493,
+      "n5_diff_cli_def": -0.20412277176550653
+    },
+    "20": {
+      "nmax_ref": 14.8802,
+      "nmax_cell": "B5",
+      "nmax_got": 14.90219876240609,
+      "n5_ref_cached": 13.092595,
+      "n5_formula": "=PERCENTILE(B61:B1060,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.021998762406090222,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1060
+      ],
+      "n5_workbook_rows_with_data": 1000,
+      "n5_ref_recomputed": 13.092595,
+      "n5_got_workbook_def": 13.112244432272044,
+      "n5_diff_workbook_def": 0.019649432272045075,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 12.797172434619728,
+      "n5_diff_cli_def": -0.2954225653802709
+    },
+    "21": {
+      "nmax_ref": 9.7188,
+      "nmax_cell": "B5",
+      "nmax_got": 9.733883615966974,
+      "n5_ref_cached": 8.999804999999999,
+      "n5_formula": "=PERCENTILE(B61:B1060,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.015083615966974051,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1060
+      ],
+      "n5_workbook_rows_with_data": 1000,
+      "n5_ref_recomputed": 8.999804999999999,
+      "n5_got_workbook_def": 9.013968124049098,
+      "n5_diff_workbook_def": 0.014163124049099807,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 8.908316926756402,
+      "n5_diff_cli_def": -0.09148807324359609
+    },
+    "22": {
+      "nmax_ref": 8.9063,
+      "nmax_cell": "B5",
+      "nmax_got": 8.9196118701517,
+      "n5_ref_cached": 8.15808,
+      "n5_formula": "=PERCENTILE(B61:B1494,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.013311870151699878,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1494
+      ],
+      "n5_workbook_rows_with_data": 875,
+      "n5_ref_recomputed": 8.15808,
+      "n5_got_workbook_def": 8.170349495348862,
+      "n5_diff_workbook_def": 0.012269495348862236,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 8.136093427757281,
+      "n5_diff_cli_def": -0.02198657224271905
+    },
+    "23": {
+      "nmax_ref": 11.1858,
+      "nmax_cell": "B5",
+      "nmax_got": 11.202755719332078,
+      "n5_ref_cached": 10.42144,
+      "n5_formula": "=PERCENTILE(B61:B1035,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.016955719332077734,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1035
+      ],
+      "n5_workbook_rows_with_data": 975,
+      "n5_ref_recomputed": 10.42144,
+      "n5_got_workbook_def": 10.437394067656266,
+      "n5_diff_workbook_def": 0.01595406765626528,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 10.314442928093797,
+      "n5_diff_cli_def": -0.10699707190620344
+    },
+    "24": {
+      "nmax_ref": 9.2751,
+      "nmax_cell": "B5",
+      "nmax_got": 9.28908988574754,
+      "n5_ref_cached": 8.518889999999999,
+      "n5_formula": "=PERCENTILE(B61:B4492,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.013989885747539788,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        4492
+      ],
+      "n5_workbook_rows_with_data": 1150,
+      "n5_ref_recomputed": 8.518889999999999,
+      "n5_got_workbook_def": 8.531874719624232,
+      "n5_diff_workbook_def": 0.01298471962423342,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 8.510970074752926,
+      "n5_diff_cli_def": -0.007919925247072968
+    },
+    "25": {
+      "nmax_ref": 7.2593,
+      "nmax_cell": "B5",
+      "nmax_got": 7.270623362726894,
+      "n5_ref_cached": 5.761419999999999,
+      "n5_formula": "=PERCENTILE(B61:B1035,0.95)",
+      "n5_cell": "B6",
+      "nmax_diff": 0.011323362726894715,
+      "nmax_within_max_rule": true,
+      "nmax_ref_equals_ref_column_max": true,
+      "n5_formula_column": "B",
+      "n5_workbook_rows": [
+        61,
+        1035
+      ],
+      "n5_workbook_rows_with_data": 975,
+      "n5_ref_recomputed": 5.761419999999999,
+      "n5_got_workbook_def": 5.77067853143544,
+      "n5_diff_workbook_def": 0.009258531435440531,
+      "n5_within_max_rule_workbook_def": true,
+      "n5_got_cli_def_full_output": 5.612443565473143,
+      "n5_diff_cli_def": -0.1489764345268565
+    }
+  },
+  "workbooks": {
+    "Results and test (stationary loudness based on third octave levels).xlsx": "cc4d303534882e2821f0e4b2d56bb48bfeb852b5050b66570436df0821b86174",
+    "Results and tests for synthetic signals (stationary loudness).xlsx": "6b7326c410cec05bbcff84dd5cc90a028566a4be747f95e5c617e1c1dd678804",
+    "Results and tests for synthetic signals (time varying loudness).xlsx": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e",
+    "Results and tests for technical signals (time varying loudness).xlsx": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6"
+  },
+  "points_total": {
+    "points": 73116,
+    "failed": 0,
+    "min_margin": 0.059702781183555126,
+    "min_margin_at": "signal 2 sp index 9"
+  }
+}

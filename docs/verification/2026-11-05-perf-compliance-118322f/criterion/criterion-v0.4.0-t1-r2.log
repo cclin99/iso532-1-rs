@@ -1,0 +1,44 @@
+Gnuplot not found, using plotters backend
+Benchmarking zwtv_10s_t1/scalar/480000
+Benchmarking zwtv_10s_t1/scalar/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t1/scalar/480000: Collecting 10 samples in estimated 7.1018 s (20 iterations)
+Benchmarking zwtv_10s_t1/scalar/480000: Analyzing
+zwtv_10s_t1/scalar/480000
+                        time:   [354.39 ms 361.75 ms 370.76 ms]
+                        thrpt:  [1.2946 Melem/s 1.3269 Melem/s 1.3545 Melem/s]
+                 change:
+                        time:   [-3.5382% +0.7691% +4.5316%] (p = 0.75 > 0.05)
+                        thrpt:  [-4.3351% -0.7632% +3.6680%]
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking zwtv_10s_t1/avx2/480000
+Benchmarking zwtv_10s_t1/avx2/480000: Warming up for 3.0000 s
+Benchmarking zwtv_10s_t1/avx2/480000: Collecting 10 samples in estimated 7.9013 s (30 iterations)
+Benchmarking zwtv_10s_t1/avx2/480000: Analyzing
+zwtv_10s_t1/avx2/480000 time:   [259.98 ms 266.68 ms 274.43 ms]
+                        thrpt:  [1.7491 Melem/s 1.7999 Melem/s 1.8463 Melem/s]
+                 change:
+                        time:   [+2.4155% +5.0441% +8.1881%] (p = 0.00 < 0.05)
+                        thrpt:  [-7.5684% -4.8019% -2.3585%]
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+
+Benchmarking stream_push_10s_480chunk/scalar
+Benchmarking stream_push_10s_480chunk/scalar: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/scalar: Collecting 10 samples in estimated 6.6415 s (20 iterations)
+Benchmarking stream_push_10s_480chunk/scalar: Analyzing
+stream_push_10s_480chunk/scalar
+                        time:   [327.45 ms 331.26 ms 335.40 ms]
+                        change: [-5.9578% -3.7657% -1.8333%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking stream_push_10s_480chunk/avx2
+Benchmarking stream_push_10s_480chunk/avx2: Warming up for 3.0000 s
+Benchmarking stream_push_10s_480chunk/avx2: Collecting 10 samples in estimated 6.8648 s (30 iterations)
+Benchmarking stream_push_10s_480chunk/avx2: Analyzing
+stream_push_10s_480chunk/avx2
+                        time:   [229.23 ms 231.03 ms 232.86 ms]
+                        change: [-4.4603% -3.2435% -1.9763%] (p = 0.00 < 0.05)
+                        Performance has improved.
+

@@ -1,0 +1,68 @@
+// Stage micro-benchmark for calc_slopes: times core::calc_slopes (full
+// specific output, used by batch) and core::calc_slopes_n_only (used by the
+// stream) on 21-band main-loudness vectors from calibrated Annex B signals.
+// Usage: slopes_harness <inputs-dir> <repeats>
+use iso532::core::calc_slopes::{calc_slopes, calc_slopes_n_only};
+use iso532::core::main_loudness::main_loudness;
+use iso532::zwtv::third_octave_levels::third_octave_levels;
+use iso532::FieldType;
+use std::hint::black_box;
+use std::time::Instant;
+
+fn read_f64(path: &std::path::Path) -> Vec<f64> {
+    let b = std::fs::read(path).unwrap();
+    b.chunks_exact(8).map(|c| f64::from_le_bytes(c.try_into().unwrap())).collect()
+}
+
+fn main() {
+    let args: Vec<String> = std::env::args().collect();
+    let dir = std::path::Path::new(&args[1]);
+    let repeats: usize = args[2].parse().unwrap();
+    let mut frames: Vec<[f64; 21]> = Vec::new();
+    for s in 2..=25 {
+        let sig = read_f64(&dir.join(format!("sig{s}.bin")));
+        let (levels, n_time) = third_octave_levels(&sig);
+        let field = if s == 15 { FieldType::Diffuse } else { FieldType::Free };
+        for t in 0..n_time {
+            let mut f = [0.0; 28];
+            for b in 0..28 {
+                f[b] = levels[b * n_time + t];
+            }
+            frames.push(main_loudness(&f, field).unwrap());
+        }
+    }
+    // checksum so the work cannot be optimised away and versions can be told apart
+    let mut ck_full = 0.0;
+    let mut ck_n = 0.0;
+    for nm in &frames {
+        let (n, sp) = calc_slopes(nm);
+        ck_full += n + sp.iter().sum::<f64>();
+        ck_n += calc_slopes_n_only(nm);
+    }
+    let mut full = Vec::with_capacity(repeats);
+    let mut nonly = Vec::with_capacity(repeats);
+    for _ in 0..repeats {
+        let t0 = Instant::now();
+        for nm in &frames {
+            black_box(calc_slopes(black_box(nm)));
+        }
+        full.push(t0.elapsed().as_secs_f64());
+        let t0 = Instant::now();
+        for nm in &frames {
+            black_box(calc_slopes_n_only(black_box(nm)));
+        }
+        nonly.push(t0.elapsed().as_secs_f64());
+    }
+    let stat = |v: &mut Vec<f64>| {
+        v.sort_by(|a, b| a.partial_cmp(b).unwrap());
+        (v[0], v[v.len() / 2])
+    };
+    let (fmin, fmed) = stat(&mut full);
+    let (nmin, nmed) = stat(&mut nonly);
+    let per = |x: f64| x / frames.len() as f64 * 1e9;
+    println!(
+        "{{\"frames\":{},\"repeats\":{},\"full_min_ns\":{:.3},\"full_median_ns\":{:.3},\"n_only_min_ns\":{:.3},\"n_only_median_ns\":{:.3},\"checksum_full\":\"{:016x}\",\"checksum_n\":\"{:016x}\"}}",
+        frames.len(), repeats, per(fmin), per(fmed), per(nmin), per(nmed),
+        f64::to_bits(ck_full), f64::to_bits(ck_n)
+    );
+}
