@@ -47,7 +47,7 @@ const residual_flags(&self) -> FrameFlags                          // flush 前�
 ### Task 0 開始前
 
 ```bash
-cd /d/ISO532 && git status --short   # 乾淨(除 bash.exe.stackdump)
+cd <REPO> && git status --short   # 乾淨(除 bash.exe.stackdump)
 ls Cargo.toml                        # root workspace 已存在(P1 前置)
 ```
 

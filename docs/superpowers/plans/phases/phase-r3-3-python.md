@@ -29,7 +29,7 @@
 ### Task 0 開始前
 
 ```bash
-cd /d/ISO532 && ls tools/requirements.lock iso532-ffi/tests/ffi.rs && .venv/Scripts/python.exe -c "import mosqito; print('ok')"
+cd <REPO> && ls tools/requirements.lock iso532-ffi/tests/ffi.rs && .venv/Scripts/python.exe -c "import mosqito; print('ok')"
 ```
 
 ---
@@ -559,7 +559,7 @@ git push
 - [x] **Step 1: 總驗收清單(spec §12)逐條核對**
 
 ```bash
-cd /d/ISO532
+cd <REPO>
 git diff --stat e96dffa..HEAD -- iso532/src/        # 應為空(準則 6)
 grep -c "v0" iso532-ffi/include/iso532.h            # ≥1(準則 5)
 source .venv/Scripts/activate && pytest iso532-py/tests -v   # 全綠(準則 2、3 的 py 面)

@@ -24,7 +24,7 @@
 ### Task 0 開始前
 
 ```bash
-cd /d/ISO532 && git status --short   # 應只有 bash.exe.stackdump(未追蹤,勿動)
+cd <REPO> && git status --short   # 應只有 bash.exe.stackdump(未追蹤,勿動)
 grep -c "\[profile" iso532/Cargo.toml iso532-ffi/Cargo.toml iso532-py/Cargo.toml  # 應全為 0
 ```
 

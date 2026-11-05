@@ -26,7 +26,7 @@
 ### Task 0 開始前
 
 ```bash
-cd /d/ISO532 && ls iso532/Cargo.toml && cargo --version
+cd <REPO> && ls iso532/Cargo.toml && cargo --version
 ```
 
 ---
@@ -315,7 +315,7 @@ Expected: FAIL,`cannot find function iso532_zwtv_out_frames`(等)。
 - [ ] **Step 5: Commit**
 
 ```bash
-cd /d/ISO532
+cd <REPO>
 git add iso532-ffi/Cargo.toml iso532-ffi/src/lib.rs iso532-ffi/tests/ffi.rs
 git commit -m "test: add failing FFI contract tests for iso532-ffi (R3-P2)"
 ```
@@ -508,7 +508,7 @@ Expected: 無警告。
 - [ ] **Step 5: Commit**
 
 ```bash
-cd /d/ISO532
+cd <REPO>
 git add iso532-ffi/src/lib.rs
 git commit -m "feat: implement iso532-ffi C ABI v0 with panic guard (R3-P2)"
 ```
@@ -540,7 +540,7 @@ exclude = ["iso532__test_panic", "iso532__test_panic_rayon"]
 
 ```bash
 cargo install cbindgen --locked
-cd /d/ISO532/iso532-ffi
+cd <REPO>/iso532-ffi
 cbindgen --config cbindgen.toml --crate iso532-ffi --output include/iso532.h
 ```
 
@@ -557,7 +557,7 @@ Expected: 三個函式宣告都在(型別 `size_t`/`int32_t`/`double*`);錯誤�
 - [ ] **Step 4: Commit**
 
 ```bash
-cd /d/ISO532
+cd <REPO>
 git add iso532-ffi/cbindgen.toml iso532-ffi/include/iso532.h
 git commit -m "feat: commit cbindgen-generated iso532.h (C ABI v0, R-17 marked)"
 ```
@@ -652,7 +652,7 @@ int main(void) {
 - [ ] **Step 2: 本機驗證(Windows/MSVC——需要 VS Build Tools;若本機無 cl,跳過本步,CI 驗)**
 
 ```bash
-cd /d/ISO532/iso532-ffi && cargo build --release
+cd <REPO>/iso532-ffi && cargo build --release
 # 於「x64 Native Tools Command Prompt」或已載入 vcvars 的 shell:
 #   cl /nologo /Iinclude tests\smoke.c /link /LIBPATH:target\release iso532_ffi.dll.lib
 #   copy target\release\iso532_ffi.dll . && smoke.exe
@@ -704,7 +704,7 @@ Expected: `smoke ok: frames=500 zwtv_n0=...`。
 - [ ] **Step 4: Commit + push**
 
 ```bash
-cd /d/ISO532
+cd <REPO>
 git add iso532-ffi/tests/smoke.c .github/workflows/ci.yml
 git commit -m "ci: add ffi job with dual-platform C smoke test (R3-P2)"
 git push
@@ -721,7 +721,7 @@ git push
 - [ ] **Step 1: 主 crate 零 diff 確認**
 
 ```bash
-cd /d/ISO532 && git diff --stat HEAD -- iso532/src/ && git log --oneline -5 -- iso532/src/
+cd <REPO> && git diff --stat HEAD -- iso532/src/ && git log --oneline -5 -- iso532/src/
 ```
 
 Expected: 本 phase 期間 `iso532/src/` 無任何變更。

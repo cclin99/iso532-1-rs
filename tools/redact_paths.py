@@ -41,6 +41,10 @@ RULES: list[tuple[str, str]] = [
     (rf"(?i)[A-Za-z]:{SEP}iso532-rs-panel", "<PANEL_REPO>"),
     (rf"(?i)[A-Za-z]:{SEP}iso532-panel", "<PANEL_REPO>"),
     (rf"(?i)[A-Za-z]:{SEP}ISO532(?![\w-])", "<REPO>"),
+    # Git Bash / MSYS drive spelling (`/d/ISO532`), as printed by shell scripts
+    (r"(?i)(?<![\w.-])/[a-z]/iso532-rs-panel(?![\w-])", "<PANEL_REPO>"),
+    (r"(?i)(?<![\w.-])/[a-z]/iso532-panel(?![\w-])", "<PANEL_REPO>"),
+    (r"(?i)(?<![\w.-])/[a-z]/ISO532(?![\w-])", "<REPO>"),
 ]
 COMPILED = [(re.compile(p), r) for p, r in RULES]
 TEXT_SUFFIXES = {".md", ".json", ".txt", ".log", ".ps1", ".py", ".csv", ".yml", ".yaml", ".toml", ".sh"}
