@@ -1,0 +1,9 @@
+# Delivery check
+
+Own delivery of the main agent (Claude Opus 5.5), same rules as the auditor's deliveries.
+
+- Redaction: `python tools/redact_paths.py <folder>` changed 0 files, then `--check` on the folder and on `docs` print `clean`; no skipped files or warnings. A manual search for user names, user-profile paths, `AppData` and repository paths in any spelling found nothing.
+- Formats: `.csv`, `.json`, `.md`, `.py`, `.txt` only, all handled by the tool; every file decodes as UTF-8 without NUL bytes. Problems: none.
+- Line endings: 20 files written on Windows had CRLF and were converted to LF before the manifest was computed: `bias-vs-level.json`, `level-check.json`, `official-cli/sig2-Stationary-Loudness.csv`, `official-cli/sig2-Stationary-stdout.txt`, `official-cli/sig2-Time_varying-Loudness.csv`, `official-cli/sig2-Time_varying-stdout.txt`, `official-cli/sig3-Stationary-Loudness.csv`, `official-cli/sig3-Stationary-stdout.txt`, `official-cli/sig3-Time_varying-Loudness.csv`, `official-cli/sig3-Time_varying-stdout.txt`, `official-cli/sig4-Stationary-Loudness.csv`, `official-cli/sig4-Stationary-stdout.txt`, `official-cli/sig4-Time_varying-Loudness.csv`, `official-cli/sig4-Time_varying-stdout.txt`, `official-cli/sig5-Stationary-Loudness.csv`, `official-cli/sig5-Stationary-stdout.txt`, `official-cli/sig5-Time_varying-Loudness.csv`, `official-cli/sig5-Time_varying-stdout.txt`, `rescale-test.json`, `stationary-compare.json`. The official CLI CSV outputs are copied with that conversion only; their original-byte hashes are not used anywhere.
+- Not delivered: the time-varying `SpecLoudness.csv` outputs (8 MB each; SHA-256 in `official-cli/run-meta.json`), the CLI binary, WAVs and workbooks (hashes in `official-cli/run-meta.json`).
+- `delivery-integrity.json` lists the SHA-256 of every other file after redaction and line-ending conversion.

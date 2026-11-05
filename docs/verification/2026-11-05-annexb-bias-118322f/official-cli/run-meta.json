@@ -1,0 +1,28 @@
+{
+  "cli": {
+    "file": "tmp/c01-zero-pad-aa379db-run1/c/reference_cli.exe",
+    "sha256": "598b224790d6c7c28ed16e95ce4e2d8f01973f2380f67451d2df5bf226f6d854",
+    "provenance": "built from the unmodified official ISO 532-1 Annex A.4 sources in the 2026-11-03 C-01 zero-pad round; same hash as recorded in docs/verification/2026-11-03-C01-zero-pad-aa379db/report.md"
+  },
+  "commands": {
+    "stationary": "reference_cli.exe Stationary F <Annex B.3 test signal s>.wav <Annex C calibration signal sine 1kHz 60dB.wav> 60 0.2",
+    "time_varying": "reference_cli.exe Time_varying F <Annex B.3 test signal s>.wav <Annex C calibration signal sine 1kHz 60dB.wav> 60"
+  },
+  "inputs": {
+    "Annex B.3/Test signal 2 (250 Hz 80 dB).wav": "a1173d0a5334276340302d6944672c9a26feb4437f5e09c2afa7a60656b2602d",
+    "Annex B.3/Test signal 3 (1 kHz 60 dB).wav": "4a1fd96e5235294a73471a8fb18f75b1ac67c2c3a3c5f7f31da96b04d815f69a",
+    "Annex B.3/Test signal 4 (4 kHz 40 dB).wav": "f66dc745cfd899307731134afafa8b536dc8cb79a28b2d301013529d7c9dbeb9",
+    "Annex B.3/Test signal 5 (pinknoise 60 dB).wav": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e",
+    "Annex C/calibration signal sine 1kHz 60dB.wav": "a65e5d0a0e6dd1cb6e021331005b2ea4f05bd412ff637d419bc72dbde134f698"
+  },
+  "not_delivered_SpecLoudness_sha256": {
+    "sig2-Stationary": "af9742c09fb6442ddcb0c3e7f69992e712a70c87bda2cf8768fa25bebb7167a4",
+    "sig2-Time_varying": "ce422aa54132b1669c3871e1c8f83a04aad28e6ae7daabb92c54b3b3c4e337ab",
+    "sig3-Stationary": "95e77c6da796457cb4614aec5d19bd6c293d588ac10307544510db8db271090a",
+    "sig3-Time_varying": "07686563b690e53b3a040ac6b8c911f10f3b97992e0458aceff5b1da0d6b25d8",
+    "sig4-Stationary": "25026dafe030d4e0481b8712875cd1d3f4359197accc247f9e98bcf637ffd3d5",
+    "sig4-Time_varying": "a8eae42437be184d37d2228dcc738c1f0857feaa52b2aea146a4cbe84335edc0",
+    "sig5-Stationary": "cca9a88628fad33da1565c6683a8434846de78f17745607bf55524e09e24a09d",
+    "sig5-Time_varying": "6932b763a2827dae90b9d58c7fb51f05f0d6499a70f61d5aaf88706980845696"
+  }
+}

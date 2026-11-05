@@ -1,0 +1,149 @@
+{
+  "scope": "post-redaction UTF-8 delivery files (LF)",
+  "excluded": [
+    "delivery-integrity.json"
+  ],
+  "file_count": 28,
+  "files": [
+    {
+      "path": "bias-vs-level.json",
+      "bytes": 13488,
+      "sha256": "3f0715fb4d9580f3feacccc80db49164b66ed489cb54e6356995fa8215bcc9be"
+    },
+    {
+      "path": "bias_vs_level.py",
+      "bytes": 1409,
+      "sha256": "9a39c0c3ff5ce5285d26fee646c4eb4eadaa9edaad2364696204caa415e1ed9e"
+    },
+    {
+      "path": "delivery-check.md",
+      "bytes": 1865,
+      "sha256": "3c252017a8b286d83040c42ada65694889aa5d72c752bb147cbf32eff00b8da1"
+    },
+    {
+      "path": "level-check.json",
+      "bytes": 990,
+      "sha256": "5fabf1c94108892d00c4f644c94a37181e63108efe6105fd0055ed500c5df4a3"
+    },
+    {
+      "path": "level_check.py",
+      "bytes": 1673,
+      "sha256": "2d5ddf61976d1758125f7214a45168f63af0174ca35f18a636d3d34663f3562a"
+    },
+    {
+      "path": "official-cli/run-meta.json",
+      "bytes": 2060,
+      "sha256": "0d1dbafaf03764c66d85c973daa5dd3a22d8269d74e2339cb2f08ad9c615ada2"
+    },
+    {
+      "path": "official-cli/sig2-Stationary-Loudness.csv",
+      "bytes": 132,
+      "sha256": "ef4e5df15b62c7ea1b7a860150237973b277e3f57de66a0e118826406a837be4"
+    },
+    {
+      "path": "official-cli/sig2-Stationary-stdout.txt",
+      "bytes": 90,
+      "sha256": "0e402605c5d2a1375a749c40496855aec2e906b3a2c527423e0f65f62a6482c9"
+    },
+    {
+      "path": "official-cli/sig2-Time_varying-Loudness.csv",
+      "bytes": 75149,
+      "sha256": "c866708a283ce922c26b240fc0c571abce10482169d0ba597c16e02aa3c2bbf2"
+    },
+    {
+      "path": "official-cli/sig2-Time_varying-stdout.txt",
+      "bytes": 87,
+      "sha256": "045dca4ea5e75f616720dba199e1520841b1de3264f9804b44685b3f73e6f932"
+    },
+    {
+      "path": "official-cli/sig3-Stationary-Loudness.csv",
+      "bytes": 131,
+      "sha256": "feb4317d26ede9894763c50f91c8337f11285ebb4e68be14e671fbcdaec0e53c"
+    },
+    {
+      "path": "official-cli/sig3-Stationary-stdout.txt",
+      "bytes": 90,
+      "sha256": "1b90215715823359e49bd8f7f09935fc6cc1ef5cb7a8fec078af3f996b0932e7"
+    },
+    {
+      "path": "official-cli/sig3-Time_varying-Loudness.csv",
+      "bytes": 70166,
+      "sha256": "d04dc33745ac3687900b49b352d265c9d27f8dbf4697aabd9666e39aef4c972f"
+    },
+    {
+      "path": "official-cli/sig3-Time_varying-stdout.txt",
+      "bytes": 87,
+      "sha256": "b03b4d94da6539ba1bb0c8d82043e14ef4f2f726d04ad3ae1b6b83760645d2d8"
+    },
+    {
+      "path": "official-cli/sig4-Stationary-Loudness.csv",
+      "bytes": 131,
+      "sha256": "b36169d4ee3e0a6f412cdcd41d924df901b0485b0d6ca43c1aa4620be73aff91"
+    },
+    {
+      "path": "official-cli/sig4-Stationary-stdout.txt",
+      "bytes": 90,
+      "sha256": "1f49237fa2144c6ca71a6b8d45d2a0b93ec734b36dabe4057e2166ab4027b24c"
+    },
+    {
+      "path": "official-cli/sig4-Time_varying-Loudness.csv",
+      "bytes": 70166,
+      "sha256": "536645cc35d48056ca93ab4682facc75e21e4413543761c74338817de4ccf5fb"
+    },
+    {
+      "path": "official-cli/sig4-Time_varying-stdout.txt",
+      "bytes": 87,
+      "sha256": "695f96fb32d9fb60be91744972d222533c990c765c6f82800ea95a407f6dc2c7"
+    },
+    {
+      "path": "official-cli/sig5-Stationary-Loudness.csv",
+      "bytes": 132,
+      "sha256": "67cf3ba6736634bbc708186d103d7184dd910bad78585e8e732176ccc2ae261a"
+    },
+    {
+      "path": "official-cli/sig5-Stationary-stdout.txt",
+      "bytes": 90,
+      "sha256": "b76403eb5f4d9d2e451591ef1ed1694c35cdf8fa89de2da7f869e64d27acb0fe"
+    },
+    {
+      "path": "official-cli/sig5-Time_varying-Loudness.csv",
+      "bytes": 74582,
+      "sha256": "0a0cb92736c56c447a639dba851e72bbafa4996d7a3012621e0d5c9b10f380b2"
+    },
+    {
+      "path": "official-cli/sig5-Time_varying-stdout.txt",
+      "bytes": 87,
+      "sha256": "c88998eaaeb243a2be938b69a464af9f0f512be1e3b4135c24946e171f2f9d8d"
+    },
+    {
+      "path": "report.en.md",
+      "bytes": 7416,
+      "sha256": "f03889b6384197d0e6a18e43fd86e2b8a43f8714bd72315c5bc66dc416d1536f"
+    },
+    {
+      "path": "report.md",
+      "bytes": 6785,
+      "sha256": "d6d7671ca7a86668a5bbfaa39092565dd2ae5cd9102e4aa93deeec1b5028e042"
+    },
+    {
+      "path": "rescale-test.json",
+      "bytes": 7242,
+      "sha256": "f30a655cbc3346218df14ff4501e838983c068b01c8605cc7e5edea12861e7ca"
+    },
+    {
+      "path": "rescale_test.py",
+      "bytes": 3109,
+      "sha256": "d78617b1b58926e56e8f1eeb820b894697cee62119830b1488a51a0e5ed0a181"
+    },
+    {
+      "path": "stationary-compare.json",
+      "bytes": 1241,
+      "sha256": "e3a2f9baa98a5b2c6b65331d4a824accef73d7c876d349c705f0a6d70a86e61b"
+    },
+    {
+      "path": "stationary_compare.py",
+      "bytes": 1867,
+      "sha256": "c1c2e62fd9b6caed39541c38ceaff107928bb38c8b3cd95a478d47a2359fc38d"
+    }
+  ]
+}

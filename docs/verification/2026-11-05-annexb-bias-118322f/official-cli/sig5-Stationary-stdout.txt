@@ -1,0 +1,4 @@
+
+Loudness (N) / sone (free field):  10.51
+
+Loudness level (LN) / phon (free field):  73.9

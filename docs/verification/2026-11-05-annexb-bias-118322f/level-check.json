@@ -1,0 +1,42 @@
+{
+ "calibration": {
+  "samples": 48000,
+  "seconds": 1.0,
+  "first_nonzero": 1,
+  "last_nonzero": 47999,
+  "peak": 0.009979248046875,
+  "factor": 2.835797716391444,
+  "level_whole_after_cal_dB": 60.0,
+  "level_middle_80pct_after_cal_dB": 60.0,
+  "level_first_100ms_dB": 60.0,
+  "level_last_100ms_dB": 60.0
+ },
+ "sig2": {
+  "nominal": "250 Hz 80 dB",
+  "level_whole_dB": 80.02289995884959,
+  "level_middle_80pct_dB": 80.02289995884959,
+  "first_nonzero": 1,
+  "seconds": 10.0
+ },
+ "sig3": {
+  "nominal": "1 kHz 60 dB",
+  "level_whole_dB": 60.02763044269947,
+  "level_middle_80pct_dB": 60.02763044269947,
+  "first_nonzero": 1,
+  "seconds": 10.0
+ },
+ "sig4": {
+  "nominal": "4 kHz 40 dB",
+  "level_whole_dB": 39.951616244542436,
+  "level_middle_80pct_dB": 39.951616244542436,
+  "first_nonzero": 1,
+  "seconds": 10.0
+ },
+ "sig5": {
+  "nominal": "pinknoise 60 dB",
+  "level_whole_dB": 60.022606078349064,
+  "level_middle_80pct_dB": 60.05678372921791,
+  "first_nonzero": 0,
+  "seconds": 10.0
+ }
+}

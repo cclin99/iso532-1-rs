@@ -85,7 +85,7 @@
 報告：[`verification/2026-11-05-perf-compliance-118322f/report.md`](verification/2026-11-05-perf-compliance-118322f/report.md)（主代理執行，非 Astra）。
 
 - 效能：與 `v0.3.1` 同一 session 交錯 A/B，`calc_slopes` 階段本身慢 6%～12%（含比響度）／0%～4%（只算總響度）；端對端只有單核 batch 一致慢約 2%，其餘在約 ±4% 的輪間雜訊內；Python binding 3 秒處理時間兩版相同。README 效能表已改用本次量測。
-- 標準對照：Annex B 25 個訊號、73,116 個工作簿參考點，0.4.0 與 0.3.1 都 0 個超出逐點判準，最小餘裕 0.0597 sone/Bark；20 個時變訊號的 Nmax 與 N5 在 max(0.1, 5%) 內（診斷，工作簿未訂容差），一致偏高約 0.15%，兩版差 ≤ 7e-4 sone。N5 定義、恰好 1% 規則仍 UNRESOLVED，F-03 仍 PENDING。
+- 標準對照：Annex B 25 個訊號、73,116 個工作簿參考點，0.4.0 與 0.3.1 都 0 個超出逐點判準，最小餘裕 0.0597 sone/Bark；20 個時變訊號的 Nmax 與 N5 在 max(0.1, 5%) 內（診斷，工作簿未訂容差），一致偏高約 0.15%，兩版差 ≤ 7e-4 sone。偏差已追查到聲壓換算：工作簿與固定的「滿刻度 1.0 = 2√2 Pa」吻合，而 Annex C 校準檔低 0.0226 dB；改用 2√2 後降到 ≤ 0.007%（[`verification/2026-11-05-annexb-bias-118322f/`](verification/2026-11-05-annexb-bias-118322f/report.md)）。N5 定義、恰好 1% 規則仍 UNRESOLVED，F-03 仍 PENDING。
 - `CITATION.cff` 於 tag 之後補登為 0.4.0、`date-released: "2026-11-05"`（tag 本身仍是 0.3.1）；`message` 仍寫引用 MoSQITo 參考實作，是否改措辭待決。
 
 ## Annex A C golden（D4 修訂／D-D、D-G）

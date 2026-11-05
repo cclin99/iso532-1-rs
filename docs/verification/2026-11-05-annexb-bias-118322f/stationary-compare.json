@@ -1,0 +1,38 @@
+{
+ "2": {
+  "workbook_N": 14.6545,
+  "official_c_stationary": 14.6761,
+  "official_c_time_varying_steady_median": 14.6759,
+  "c_stationary_vs_wb_pct": 0.14739499812344015,
+  "c_tv_vs_wb_pct": 0.14603022962229595,
+  "rust_zwst_mosqito_front_end": 14.710487647583562,
+  "rust_zwst_vs_wb_pct": 0.38205088937570686
+ },
+ "3": {
+  "workbook_N": 4.0192,
+  "official_c_stationary": 4.0257,
+  "official_c_time_varying_steady_median": 4.0268,
+  "c_stationary_vs_wb_pct": 0.1617237261146487,
+  "c_tv_vs_wb_pct": 0.18909235668789215,
+  "rust_zwst_mosqito_front_end": 4.05887644540526,
+  "rust_zwst_vs_wb_pct": 0.9871727061420144
+ },
+ "4": {
+  "workbook_N": 1.5494,
+  "official_c_stationary": 1.5516,
+  "official_c_time_varying_steady_median": 1.5516,
+  "c_stationary_vs_wb_pct": 0.1419904479153189,
+  "c_tv_vs_wb_pct": 0.1419904479153189,
+  "rust_zwst_mosqito_front_end": 1.5582161316954908,
+  "rust_zwst_vs_wb_pct": 0.5690029492378068
+ },
+ "5": {
+  "workbook_N": 10.4978,
+  "official_c_stationary": 10.5143,
+  "official_c_time_varying_steady_median": 10.2518,
+  "c_stationary_vs_wb_pct": 0.15717578921299324,
+  "c_tv_vs_wb_pct": -2.3433481300843995,
+  "rust_zwst_mosqito_front_end": 10.433634252711057,
+  "rust_zwst_vs_wb_pct": -0.6112304224593967
+ }
+}
