@@ -1,0 +1,272 @@
+{
+ "wheel": "0.4.0",
+ "signals": {
+  "2": {
+   "kind": "stationary",
+   "ref_N": 14.6545,
+   "C_N": 14.6545,
+   "C_equal_ref": true,
+   "C_specific_exact_points": 240,
+   "C_specific_max_abs": 0.0
+  },
+  "3": {
+   "kind": "stationary",
+   "ref_N": 4.0192,
+   "C_N": 4.0192,
+   "C_equal_ref": true,
+   "C_specific_exact_points": 240,
+   "C_specific_max_abs": 0.0
+  },
+  "4": {
+   "kind": "stationary",
+   "ref_N": 1.5494,
+   "C_N": 1.5494,
+   "C_equal_ref": true,
+   "C_specific_exact_points": 240,
+   "C_specific_max_abs": 0.0
+  },
+  "5": {
+   "kind": "stationary",
+   "ref_N": 10.4978,
+   "C_N": 10.4979,
+   "C_equal_ref": false,
+   "C_specific_exact_points": 240,
+   "C_specific_max_abs": 0.0
+  },
+  "6": {
+   "kind": "time_varying",
+   "points": 5300,
+   "C_exact": 5108,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 3794,
+   "Rust_max_abs": 0.01690000000000058,
+   "points_where_rust_and_C_differ_ge_2e-4": 1271,
+   "at_those_points_ref_closer_to_C": 1271,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 1222,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.01688736521282852
+  },
+  "7": {
+   "kind": "time_varying",
+   "points": 5300,
+   "C_exact": 5093,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 5091,
+   "Rust_max_abs": 0.0001000000000015433,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "8": {
+   "kind": "time_varying",
+   "points": 5300,
+   "C_exact": 4967,
+   "C_max_abs": 0.00010000000000331966,
+   "Rust_exact": 4964,
+   "Rust_max_abs": 0.00010000000000331966,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "9": {
+   "kind": "time_varying",
+   "points": 5300,
+   "C_exact": 4894,
+   "C_max_abs": 0.00010000000000331966,
+   "Rust_exact": 3359,
+   "Rust_max_abs": 0.0035000000000007248,
+   "points_where_rust_and_C_differ_ge_2e-4": 870,
+   "at_those_points_ref_closer_to_C": 870,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 774,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.00353394617471281
+  },
+  "10": {
+   "kind": "time_varying",
+   "points": 500,
+   "C_exact": 498,
+   "C_max_abs": 0.00010000000000021103,
+   "Rust_exact": 498,
+   "Rust_max_abs": 0.00010000000000021103,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "11": {
+   "kind": "time_varying",
+   "points": 500,
+   "C_exact": 499,
+   "C_max_abs": 0.00010000000000021103,
+   "Rust_exact": 499,
+   "Rust_max_abs": 0.00010000000000021103,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "12": {
+   "kind": "time_varying",
+   "points": 500,
+   "C_exact": 487,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 486,
+   "Rust_max_abs": 0.0001000000000015433,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "13": {
+   "kind": "time_varying",
+   "points": 500,
+   "C_exact": 495,
+   "C_max_abs": 0.00010000000000021103,
+   "Rust_exact": 495,
+   "Rust_max_abs": 0.00010000000000021103,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "14": {
+   "kind": "time_varying",
+   "points": 6577,
+   "C_exact": 5917,
+   "C_max_abs": 0.00010000000000331966,
+   "Rust_exact": 884,
+   "Rust_max_abs": 0.007200000000000983,
+   "points_where_rust_and_C_differ_ge_2e-4": 3623,
+   "at_those_points_ref_closer_to_C": 3623,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 3254,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.007208160991881485
+  },
+  "15": {
+   "kind": "time_varying",
+   "points": 5768,
+   "C_exact": 5311,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 177,
+   "Rust_max_abs": 0.004300000000000637,
+   "points_where_rust_and_C_differ_ge_2e-4": 5151,
+   "at_those_points_ref_closer_to_C": 5151,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 4696,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.004341450203367181
+  },
+  "16": {
+   "kind": "time_varying",
+   "points": 2054,
+   "C_exact": 1520,
+   "C_max_abs": 0.00010000000000331966,
+   "Rust_exact": 1710,
+   "Rust_max_abs": 0.00019999999999953388,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "17": {
+   "kind": "time_varying",
+   "points": 1454,
+   "C_exact": 1402,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 1107,
+   "Rust_max_abs": 0.0017999999999993577,
+   "points_where_rust_and_C_differ_ge_2e-4": 65,
+   "at_those_points_ref_closer_to_C": 65,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 62,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.0017601895403638324
+  },
+  "18": {
+   "kind": "time_varying",
+   "points": 1083,
+   "C_exact": 1013,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 567,
+   "Rust_max_abs": 0.0030000000000001137,
+   "points_where_rust_and_C_differ_ge_2e-4": 248,
+   "at_those_points_ref_closer_to_C": 248,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 220,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.002990421644033958
+  },
+  "19": {
+   "kind": "time_varying",
+   "points": 1300,
+   "C_exact": 1226,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 273,
+   "Rust_max_abs": 0.0026000000000001577,
+   "points_where_rust_and_C_differ_ge_2e-4": 768,
+   "at_those_points_ref_closer_to_C": 768,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 704,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.002612571272781139
+  },
+  "20": {
+   "kind": "time_varying",
+   "points": 1300,
+   "C_exact": 1201,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 932,
+   "Rust_max_abs": 0.0015000000000000568,
+   "points_where_rust_and_C_differ_ge_2e-4": 90,
+   "at_those_points_ref_closer_to_C": 90,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 78,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.0015459676988491822
+  },
+  "21": {
+   "kind": "time_varying",
+   "points": 1300,
+   "C_exact": 1238,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 1232,
+   "Rust_max_abs": 0.00039999999999995595,
+   "points_where_rust_and_C_differ_ge_2e-4": 4,
+   "at_those_points_ref_closer_to_C": 4,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 4,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.00040976229723632684
+  },
+  "22": {
+   "kind": "time_varying",
+   "points": 925,
+   "C_exact": 904,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 904,
+   "Rust_max_abs": 0.0001000000000015433,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  },
+  "23": {
+   "kind": "time_varying",
+   "points": 1275,
+   "C_exact": 1212,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 882,
+   "Rust_max_abs": 0.0015000000000000568,
+   "points_where_rust_and_C_differ_ge_2e-4": 99,
+   "at_those_points_ref_closer_to_C": 99,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 87,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.0014990477651686263
+  },
+  "24": {
+   "kind": "time_varying",
+   "points": 1200,
+   "C_exact": 1146,
+   "C_max_abs": 0.0001000000000015433,
+   "Rust_exact": 444,
+   "Rust_max_abs": 0.0035000000000007248,
+   "points_where_rust_and_C_differ_ge_2e-4": 681,
+   "at_those_points_ref_closer_to_C": 681,
+   "at_those_points_ref_closer_to_Rust": 0,
+   "at_those_points_C_exact": 636,
+   "at_those_points_Rust_exact": 0,
+   "max_abs_rust_minus_C": 0.00357715308124007
+  },
+  "25": {
+   "kind": "time_varying",
+   "points": 1275,
+   "C_exact": 1241,
+   "C_max_abs": 0.00010000000000065512,
+   "Rust_exact": 1241,
+   "Rust_max_abs": 0.00010000000000065512,
+   "points_where_rust_and_C_differ_ge_2e-4": 0
+  }
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "2": {
+  "source": "Test signal 2 (250 Hz 80 dB).wav",
+  "source_sha256": "a1173d0a5334276340302d6944672c9a26feb4437f5e09c2afa7a60656b2602d",
+  "float_wav_sha256": "4dc2cd7bfae63da29aea172aba5da800930b2920c4721828a4ea87caddb50de7",
+  "samples": 480000
+ },
+ "3": {
+  "source": "Test signal 3 (1 kHz 60 dB).wav",
+  "source_sha256": "4a1fd96e5235294a73471a8fb18f75b1ac67c2c3a3c5f7f31da96b04d815f69a",
+  "float_wav_sha256": "17171144977966379cf613c6a8b041f62986a08c204d19bc1df891b0022ae77a",
+  "samples": 480000
+ },
+ "4": {
+  "source": "Test signal 4 (4 kHz 40 dB).wav",
+  "source_sha256": "f66dc745cfd899307731134afafa8b536dc8cb79a28b2d301013529d7c9dbeb9",
+  "float_wav_sha256": "c5ce4d9e3104ee32da9bf6e96f6b5573e8f21fee14b812948988c0ad5408068e",
+  "samples": 480000
+ },
+ "5": {
+  "source": "Test signal 5 (pinknoise 60 dB).wav",
+  "source_sha256": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e",
+  "float_wav_sha256": "88336740d7e9439c38794dd85c076d381677a72224da76e26e0d342c27f62456",
+  "samples": 480000
+ },
+ "6": {
+  "source": "Test signal 6 (tone 250 Hz 30 dB - 80 dB).wav",
+  "source_sha256": "160061507221a59dab0e5ccca64fa6d09ca1796bd3eece6d3f77d710eb16d3e5",
+  "float_wav_sha256": "3dbde688228811b65bc7eacda070dc828b73a56776c27e142090f55abaaaa17d",
+  "samples": 508800
+ },
+ "7": {
+  "source": "Test signal 7 (tone 1 kHz 30 dB - 80 dB).wav",
+  "source_sha256": "fc6a727dc55cc518224a6495ee88d3c52606988b2be5fb5ac7f0670b8c0c9ec2",
+  "float_wav_sha256": "5aea3cca36bce08f41dd4bb94c4dc7b501b9fce1472b0d549c3e1f1854d4dd4b",
+  "samples": 508800
+ },
+ "8": {
+  "source": "Test signal 8 (tone 4 kHz 30 dB - 80 dB).wav",
+  "source_sha256": "3bf8f362c5a40a5413758e2d32d4f9b0b6cae21f9d030e59ddeb1b735ed4eea0",
+  "float_wav_sha256": "e9b53c98f9c8fb35989d8ecfa802a8d951a840cd38568b876a1c2bb12bdc3140",
+  "samples": 508800
+ },
+ "9": {
+  "source": "Test signal 9 (pink noise 0 dB - 50 dB).wav",
+  "source_sha256": "0397a8463ee89b9620bb0dcbf490489384df10aa6e2820bb230b9cadd14fd1d9",
+  "float_wav_sha256": "bc70ac1b1ba91f43e605af29da65bee2b0659b765d3da9fddbca8b167c7fcdbe",
+  "samples": 508800
+ },
+ "10": {
+  "source": "Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav",
+  "source_sha256": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907",
+  "float_wav_sha256": "6e81739616bbbc06ec015704f6a521c7117870e3ef9967ee379c8a0723ac8464",
+  "samples": 48000
+ },
+ "11": {
+  "source": "Test signal 11 (tone pulse 1 kHz 50 ms 70 dB).wav",
+  "source_sha256": "2093bf1ca4b4f40cd9b3bc1ca37cb7e73292c4c8c660c6a3afebf9106abd5d6b",
+  "float_wav_sha256": "6dd50a9e7693fd8d6e10998346b731ea4c6bc1b9f27220bed1da104a3143a007",
+  "samples": 48000
+ },
+ "12": {
+  "source": "Test signal 12 (tone pulse 1 kHz 500 ms 70 dB).wav",
+  "source_sha256": "718bfe5246023c2b4ea6978183e638d2f76ac0d30d1bd402bf0d769dd400e571",
+  "float_wav_sha256": "97d553874387a7b2324d3b55ee7123f977cd27ef47aac6438d2c4d6197bf4490",
+  "samples": 48000
+ },
+ "13": {
+  "source": "Test signal 13 (combined tone pulses 1 kHz).wav",
+  "source_sha256": "37f33a68080c4c66baa7a15476432b537761ca70ee49a739d722ca6da054d2f6",
+  "float_wav_sha256": "5b146e4b872c2ce4df80505317e0788130a2754d33b4a2d9cbad8ea868bd97da",
+  "samples": 48000
+ },
+ "14": {
+  "source": "Test signal 14 (propeller-driven airplane).wav",
+  "source_sha256": "03ef3d50d608d74d1f7d0ffdf31a863d410d7871849c5abd920eaa30e5e09e5f",
+  "float_wav_sha256": "acccf2a5023f0b14a607464c2bb35631a2e04f6a6794045d9e533a13fa45164b",
+  "samples": 631417
+ },
+ "15": {
+  "source": "Test signal 15 (vehicle interior 40 kmh).wav",
+  "source_sha256": "5fdc83c79d961b7405c1f568b62f911f227daee248eaa8848fb3630891ce7eab",
+  "float_wav_sha256": "851d309d47c29a7a8c75e2ecadf754ceeba146876ba3fe41f2d267b5f09154c7",
+  "samples": 553800
+ },
+ "16": {
+  "source": "Test signal 16 (hairdryer).wav",
+  "source_sha256": "fc934315b9654ba9dd4fce053ffca06fe773ed286c4fa627267346287504c2ea",
+  "float_wav_sha256": "1021f85f71d026a47f2ab301c2aa788dbd4d46e9756f649e3b868ef08be0323b",
+  "samples": 197270
+ },
+ "17": {
+  "source": "Test signal 17 (machine gun).wav",
+  "source_sha256": "6ed3b58faf76b28a94c1c4205f1154913aeadac589ac777ba645a56c7fb23e8d",
+  "float_wav_sha256": "c01ec9c6135475af0d4a6dd203543660ee7e7ce079a8161f4602c75faa26ef1b",
+  "samples": 139639
+ },
+ "18": {
+  "source": "Test signal 18 (hammer).wav",
+  "source_sha256": "7cfca7001bff2a0746cdc7d39e0ebfaa631b60d3d99726847db2d6914da13904",
+  "float_wav_sha256": "77e9e52a4c54835c89bd4c81ddb20d1cc41f672a37f4b797fd1bdff2f9f7f54c",
+  "samples": 103969
+ },
+ "19": {
+  "source": "Test signal 19 (door creak).wav",
+  "source_sha256": "56fffe81fd0bcebc8db7cee42ecf89b3c22e37154914058ceaa3da1e47bf8c24",
+  "float_wav_sha256": "d2c06b4bb8f552781328f2c26880922a892ca31e5446123dad8e574fc2771eca",
+  "samples": 124800
+ },
+ "20": {
+  "source": "Test signal 20 (shaking coins).wav",
+  "source_sha256": "07bd62f41934bcfdc6a18667c3bb0bb46f57d2a63975562d3a88d239bd70c066",
+  "float_wav_sha256": "1eb91bc40d0f11deff7ce2f6f802e42966904998997672fedc8df743d5985305",
+  "samples": 124800
+ },
+ "21": {
+  "source": "Test signal 21 (jackhammer).wav",
+  "source_sha256": "ecd777b7aa0d4b6b4eae1d7ca957357c45f3f5afccf4da811a28cfe8bb54310c",
+  "float_wav_sha256": "7364c3ca0d83181c9826c86b285a6647962467d41c27a425031195408e03f034",
+  "samples": 124800
+ },
+ "22": {
+  "source": "Test signal 22 (ratchet wheel (large)).wav",
+  "source_sha256": "82ce49e18d0eedff3a7cade98bc75fde41faa772aeb676a0f3d4051166f577d8",
+  "float_wav_sha256": "6860567826fe71f3398421528bad661930a060fec1c1551c9da470651d8edec2",
+  "samples": 88800
+ },
+ "23": {
+  "source": "Test signal 23 (typewriter).wav",
+  "source_sha256": "51d9daea3810c4e32efbe43abcfec74960be74e58f5403bdf20ff9c9a7d26f26",
+  "float_wav_sha256": "30f580e22c91a644abe4c88be35125ed974c1a2af065a3431bbcbbf61448e78f",
+  "samples": 122401
+ },
+ "24": {
+  "source": "Test signal 24 (woodpecker).wav",
+  "source_sha256": "85e566d2ba104b1b5f8b380720b37083448abca8d8913d159710e94a7c184fd4",
+  "float_wav_sha256": "48a1a4bafdbe249afdca77a623d57a5dc235699a7d0d6de0a11a717775a724b2",
+  "samples": 115202
+ },
+ "25": {
+  "source": "Test signal 25 (full can rattle).wav",
+  "source_sha256": "972e87bbecb4531ab5b53255dbb9c13c11f59a769a726e37002875bc424c75a8",
+  "float_wav_sha256": "b855e4b2a78a37eb76ba4c8f17c96c305d5695eaf9b42f0d2984ac2fbde2855b",
+  "samples": 122401
+ }
+}

@@ -29,7 +29,7 @@
 |---|---|---|---|---|
 | F-01 | [`F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md`](F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.md) | 已於 0.2.0 修正 | yes | [yes](F01-LOW-FREQ-DLL-ROW-FIX-2026-10-31.zh-TW.md) |
 | F-02 | [`F02-NL-ZERO-INIT-2026-10-31.md`](F02-NL-ZERO-INIT-2026-10-31.md) | 已於 0.3.0 修正 | yes | [yes](F02-NL-ZERO-INIT-2026-10-31.zh-TW.md) |
-| F-03 | [`F03-USL12-4-STATUS-2026-10-31.md`](F03-USL12-4-STATUS-2026-10-31.md) | 未結：`USL[12][4]` 0.24 vs 0.22，待 Table A.9；選項 B（血緣追溯）已於 2026-11-01 交辦 | yes | [yes](F03-USL12-4-STATUS-2026-10-31.zh-TW.md) |
+| F-03 | [`F03-USL12-4-STATUS-2026-10-31.md`](F03-USL12-4-STATUS-2026-10-31.md) | 未結：`USL[12][4]` 0.24 vs 0.22，待 Table A.9；選項 B（血緣追溯）已於 2026-11-01 交辦；2026-11-05：Annex B 工作簿是用 0.22 產生的（12,287 個決定性點符合 0.24 的為 0），待決定 | yes | [yes](F03-USL12-4-STATUS-2026-10-31.zh-TW.md) |
 | V-01 | [`V01-ANNEXB-VALIDATOR-2026-10-31.md`](V01-ANNEXB-VALIDATOR-2026-10-31.md) | 完成（僅測試），含浮點邊界根因 | yes | [yes](V01-ANNEXB-VALIDATOR-2026-10-31.zh-TW.md) |
 | C-01 | [`C01-OUTPUT-LENGTH-DECISION-2026-10-31.md`](C01-OUTPUT-LENGTH-DECISION-2026-10-31.md) | 2026-11-01 已決：保留 ceil；契約凍結於文件與 `tests/output_grid.rs`；Astra 補零參考值輪已交辦 | yes | [yes](C01-OUTPUT-LENGTH-DECISION-2026-10-31.zh-TW.md) |
 | C-02 | [`C02-NONFINITE-INPUT-2026-11-01.md`](C02-NONFINITE-INPUT-2026-11-01.md) | 完成：批次拒絕 NaN／Inf（錯誤碼 4），串流以 flag 回報 | yes | [yes](C02-NONFINITE-INPUT-2026-11-01.zh-TW.md) |
@@ -67,6 +67,7 @@
 | [`verification/2026-11-05-perf-compliance-118322f/report.md`](verification/2026-11-05-perf-compliance-118322f/report.md) | 0.4.0 發布後在 `118322f` 對 `v0.3.1` 的確認：效能 A/B（單核 batch +2%，其餘在雜訊內）、Annex B 73,116／73,116 點、Nmax／N5 診斷、產出物 hash | en + zh |
 | [`verification/2026-11-05-annexb-bias-118322f/report.md`](verification/2026-11-05-annexb-bias-118322f/report.md) | Annex B 對照一致偏高 0.15% 的原因：聲壓換算慣例（滿刻度 2√2 Pa 對比低 0.0226 dB 的校準檔），不是引擎 | en + zh |
 | [`verification/2026-11-05-zwst-root-cause-118322f/report.md`](verification/2026-11-05-zwst-root-cause-118322f/report.md) | ZWST 誤差根因：MoSQITo 相容的 Butterworth 前端對比 Annex A 參考濾波器；Annex A 穩態方法在 0.001% 內重現工作簿；列出 0.5.0 的選項 | en + zh |
+| [`verification/2026-11-05-F03-workbook-provenance-118322f/report.md`](verification/2026-11-05-F03-workbook-provenance-118322f/report.md) | F-03：Annex B 工作簿由官方 C 程式以 `USL[12][4]` = 0.22 產生；0.24 在 12,287 個決定性點上符合 0 點；SQAT v2.0 不是標準來源 | en + zh |
 
 ## 歷史審查紀錄（已結輪次；翻譯待辦 P3）
 

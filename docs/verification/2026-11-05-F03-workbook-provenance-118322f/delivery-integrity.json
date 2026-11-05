@@ -1,0 +1,79 @@
+{
+  "scope": "post-redaction UTF-8 delivery files (LF)",
+  "excluded": [
+    "delivery-integrity.json"
+  ],
+  "file_count": 14,
+  "files": [
+    {
+      "path": "build-v022.cmd.txt",
+      "bytes": 292,
+      "sha256": "cd1d134161d8b01a4c2f52f850312ed354b7f5cc46c78ec790bd1cfc7ee00d2c"
+    },
+    {
+      "path": "build-v024.cmd.txt",
+      "bytes": 292,
+      "sha256": "cd1d134161d8b01a4c2f52f850312ed354b7f5cc46c78ec790bd1cfc7ee00d2c"
+    },
+    {
+      "path": "compare.json",
+      "bytes": 7623,
+      "sha256": "af7408273e0fa5b5a8a123f576a50ead69d57d42c7801649cf1edb69cb6f6217"
+    },
+    {
+      "path": "compare.py",
+      "bytes": 4429,
+      "sha256": "483f4cb658550785f01d3316b5493c36c7f1b2b1203bcea23b42dd07462f9018"
+    },
+    {
+      "path": "decisive-points.json",
+      "bytes": 1329,
+      "sha256": "618a7e7f4cd1670f6b0b664ad75fd64ba90fdd870721ae3046e4a7654c87113c"
+    },
+    {
+      "path": "decisive_points.py",
+      "bytes": 1680,
+      "sha256": "bafbe7b90c49d5407e806f9d2ba85899be57a6fc3d7355910d860fd716644626"
+    },
+    {
+      "path": "delivery-check.md",
+      "bytes": 1257,
+      "sha256": "4a2298e2b9ccb3ee3a005dbb08a67e87299cab45d4b1e4d4c206d165875ada23"
+    },
+    {
+      "path": "float-wavs.json",
+      "bytes": 6328,
+      "sha256": "851b0fbe80f0c74691177b112dbafd6d42cd35d3a19743c83b6f1301aa07cf1d"
+    },
+    {
+      "path": "make_float_wavs.py",
+      "bytes": 1169,
+      "sha256": "bed30c085ab6101bd329fa1e029a0eef4ee0edae9830c1f8e6646608ae436450"
+    },
+    {
+      "path": "report.en.md",
+      "bytes": 9509,
+      "sha256": "7de15cce485f27159e5489996fe7d1b08d65e8fa4b508dd6f80d93076321a762"
+    },
+    {
+      "path": "report.md",
+      "bytes": 8901,
+      "sha256": "ce671f341ec4702abff8d862e4ec9e4831453fa3e813c9769109459d3e9d4751"
+    },
+    {
+      "path": "run_two_cli.py",
+      "bytes": 4878,
+      "sha256": "184604815cbaa99be0adc37c92fc621cea45414e83caca8c131b005d09f373e8"
+    },
+    {
+      "path": "sources-and-hashes.json",
+      "bytes": 11833,
+      "sha256": "0d81f70ace148ae759d724c5e6843a30822944d62996d69bba5588aeb4e786a3"
+    },
+    {
+      "path": "two-cli-compare.json",
+      "bytes": 10477,
+      "sha256": "c61e53ea41d7cec52de67cebefe5e4263980f6532f4ae01421270595b70d3901"
+    }
+  ]
+}
