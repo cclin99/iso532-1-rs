@@ -1,0 +1,590 @@
+{
+ "0": {
+  "fc": 25.118864315095795,
+  "decim_q": 10,
+  "gain_at_fc_dB": {
+   "iso": -0.0015701891200095984,
+   "noct": -1.3452368158418563e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0211170062712032,
+   "noct": 0.999997801498447
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09076464041225651,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.9985153895021,
+   "noct": -19.395643052486015
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000345423946257,
+   "noct": -19.397354563778663
+  }
+ },
+ "1": {
+  "fc": 31.622776601683793,
+  "decim_q": 8,
+  "gain_at_fc_dB": {
+   "iso": 0.000214359701750555,
+   "noct": 9.585415017538615e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0214052350310545,
+   "noct": 0.9999977699365015
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09199047929781054,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.999770133531925,
+   "noct": -19.395633558112127
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.0002058855701,
+   "noct": -19.397369613518354
+  }
+ },
+ "2": {
+  "fc": 39.810717055349734,
+  "decim_q": 7,
+  "gain_at_fc_dB": {
+   "iso": 0.0010003836095246997,
+   "noct": 5.082005748735526e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0215326091274217,
+   "noct": 0.9999972931660671
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09253410202269789,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.998551103936364,
+   "noct": -19.395490135488124
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.00126148649513,
+   "noct": -19.397596959828807
+  }
+ },
+ "3": {
+  "fc": 50.11872336272722,
+  "decim_q": 5,
+  "gain_at_fc_dB": {
+   "iso": 0.00013910175884216636,
+   "noct": -4.557893770666503e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0213935330482755,
+   "noct": 0.9999978119194892
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09194054065653473,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.998834979426,
+   "noct": -19.395646187361017
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000756187493174,
+   "noct": -19.397349594610787
+  }
+ },
+ "4": {
+  "fc": 63.09573444801933,
+  "decim_q": 4,
+  "gain_at_fc_dB": {
+   "iso": 7.838111376527028e-05,
+   "noct": 5.338516854835716e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0213845948437343,
+   "noct": 0.9999977805075521
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09190267184439463,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.00056719945971,
+   "noct": -19.395636737927976
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999649482339223,
+   "noct": -19.397364573119198
+  }
+ },
+ "5": {
+  "fc": 79.43282347242814,
+  "decim_q": 4,
+  "gain_at_fc_dB": {
+   "iso": 0.0003611714366414731,
+   "noct": -1.9325122429732173e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0214317222534712,
+   "noct": 0.9999964801726482
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09210870107515598,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.998570519205234,
+   "noct": -19.395245556634585
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000978331716603,
+   "noct": -19.397984670279254
+  }
+ },
+ "6": {
+  "fc": 100.0,
+  "decim_q": 3,
+  "gain_at_fc_dB": {
+   "iso": -0.0011130407746143074,
+   "noct": -2.2112028808072503e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.021196240858084,
+   "noct": 0.9999968624599892
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09110570065199915,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.00043505046749,
+   "noct": -19.39536056507651
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.99930199112495,
+   "noct": -19.39780235441996
+  }
+ },
+ "7": {
+  "fc": 125.89254117941672,
+  "decim_q": 2,
+  "gain_at_fc_dB": {
+   "iso": -0.0007408987973310979,
+   "noct": -3.105134442301696e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0212583674442124,
+   "noct": 0.9999977910276782
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.0913658719198196,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.000231560919882,
+   "noct": -19.395639902693237
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999594864893485,
+   "noct": -19.397359556573747
+  }
+ },
+ "8": {
+  "fc": 158.48931924611134,
+  "decim_q": 2,
+  "gain_at_fc_dB": {
+   "iso": 0.00029284921978731007,
+   "noct": -1.1306739545338762e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.021432660054298,
+   "noct": 0.9999964968459346
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09211261602313177,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.00047149083589,
+   "noct": -19.395250572717227
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999792772508705,
+   "noct": -19.397976718501603
+  }
+ },
+ "9": {
+  "fc": 199.526231496888,
+  "decim_q": 2,
+  "gain_at_fc_dB": {
+   "iso": -0.00012660257036317747,
+   "noct": 4.3105437754929796e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0213616272473396,
+   "noct": 0.9999944458522179
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09181949441288689,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.00021710822888,
+   "noct": -19.394633484066528
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999977464247593,
+   "noct": -19.398955028482085
+  }
+ },
+ "10": {
+  "fc": 251.188643150958,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.0002692721827608373,
+   "noct": -1.350058453174623e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0213544616159431,
+   "noct": 0.9999978014984305
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09177445179040637,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.000082249900245,
+   "noct": -19.395643052486108
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999943166725686,
+   "noct": -19.397354563778684
+  }
+ },
+ "11": {
+  "fc": 316.22776601683796,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 0.0001541615577824088,
+   "noct": 1.7020379784662183e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0196442060861899,
+   "noct": 0.9999965134402615
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.08450169988349931,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.000341025065126,
+   "noct": -19.395255565054605
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999909470254902,
+   "noct": -19.39796880436141
+  }
+ },
+ "12": {
+  "fc": 398.1071705534972,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 2.1521028250219963e-05,
+   "noct": -1.1234414985347248e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0202532376544524,
+   "noct": 0.999994472149879
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.0871038235173427,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.99971507595019,
+   "noct": -19.39464139705458
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000318398639564,
+   "noct": -19.398942482685754
+  }
+ },
+ "13": {
+  "fc": 501.18723362727224,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 0.0003386485987005953,
+   "noct": 5.785964799319684e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0207033409338213,
+   "noct": 0.999991237286105
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.08903341907162873,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.999565698903986,
+   "noct": -19.393667901301924
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.00041691114381,
+   "noct": -19.40048609258607
+  }
+ },
+ "14": {
+  "fc": 630.9573444801932,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.0001593974953551172,
+   "noct": -2.1649151624121834e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0215330620124514,
+   "noct": 0.9999861112827322
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09258459012342576,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.00305049721736,
+   "noct": -19.39212475050282
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000067177320233,
+   "noct": -19.402933639727227
+  }
+ },
+ "15": {
+  "fc": 794.3282347242815,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 0.0003328838716287301,
+   "noct": 3.7608771195578034e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0218969949373788,
+   "noct": 0.9999779893959935
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09416681225722406,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.000147480330025,
+   "noct": -19.389678357803735
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000032184496384,
+   "noct": -19.4068154823772
+  }
+ },
+ "16": {
+  "fc": 1000.0,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.00017774936772121827,
+   "noct": 4.4359063461450975e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.021483435038496,
+   "noct": 0.9999651227795976
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09246475505569707,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.99991679379847,
+   "noct": -19.385799418636644
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999986320097364,
+   "noct": -19.412974687921594
+  }
+ },
+ "17": {
+  "fc": 1258.9254117941673,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 9.34687152028967e-05,
+   "noct": 8.196783465702862e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.02233197449665,
+   "noct": 0.9999447448097377
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.09615941706169509,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.0000220394911,
+   "noct": -19.379647518926618
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000003165626914,
+   "noct": -19.422753751057723
+  }
+ },
+ "18": {
+  "fc": 1584.8931924611136,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 7.098890901513219e-05,
+   "noct": -4.7252045861111323e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0246743173124224,
+   "noct": 0.9999124833274223
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.10623860751117063,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.999935504266343,
+   "noct": -19.369886854466273
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.0085047057463,
+   "noct": -19.438296376061352
+  }
+ },
+ "19": {
+  "fc": 1995.2623149688795,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 6.379813809629366e-07,
+   "noct": -7.184239625822049e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0249232840890445,
+   "noct": 0.9998614399583031
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.10751539526393823,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.03632653206156,
+   "noct": -19.354390628951396
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -19.999955447061804,
+   "noct": -19.46304072617862
+  }
+ },
+ "20": {
+  "fc": 2511.8864315095802,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -3.821204081271704e-05,
+   "noct": -6.991374132511388e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0244693693813767,
+   "noct": 0.9997807568555038
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.10594204483934021,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.99996602206639,
+   "noct": -19.329763560168487
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000191003495434,
+   "noct": -19.50253976778022
+  }
+ },
+ "21": {
+  "fc": 3162.2776601683795,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -5.01334302353129e-05,
+   "noct": -6.268128532596412e-14
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0243232494719892,
+   "noct": 0.9996534059914294
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.10587580140165298,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.99997251884176,
+   "noct": -19.290566944151657
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.00008977055397,
+   "noct": -19.56586845708786
+  }
+ },
+ "22": {
+  "fc": 3981.0717055349724,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": 1.3995039954639236e-05,
+   "noct": -1.1089765865362943e-13
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0255758118445828,
+   "noct": 0.9994528291904491
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.11205467781354703,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.0112485247124,
+   "noct": -19.22799760090731
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.000020358232486,
+   "noct": -19.66810048977408
+  }
+ },
+ "23": {
+  "fc": 5011.872336272722,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.00019085306180112552,
+   "noct": -1.4797604974262712e-12
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0245085003251098,
+   "noct": 0.9991379425585386
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.10890114338358096,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.999991747423934,
+   "noct": -19.127729727507038
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.090043641612674,
+   "noct": -19.835019112986107
+  }
+ },
+ "24": {
+  "fc": 6309.573444801933,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.0004547701744431313,
+   "noct": -2.3988610058045824e-11
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0287650798037775,
+   "noct": 0.9986459523393465
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.1290466813980245,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.9999810714378,
+   "noct": -18.965928027649014
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.001294930182908,
+   "noct": -20.112895839774186
+  }
+ },
+ "25": {
+  "fc": 7943.282347242815,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.0011682659062346994,
+   "noct": -4.4016871862175386e-10
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0365425026614798,
+   "noct": 0.9978825699325451
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.16507677872654736,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.99994603444382,
+   "noct": -18.701813811529387
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.006283707145553,
+   "noct": -20.591266458472006
+  }
+ },
+ "26": {
+  "fc": 10000.0,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.0025114840540716617,
+   "noct": -9.404828798207647e-09
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.041681137150035,
+   "noct": 0.9967098423162462
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.19166053135726643,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -20.004186008550697,
+   "noct": -18.262119632727412
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -20.0002616751779,
+   "noct": -21.468036172395635
+  }
+ },
+ "27": {
+  "fc": 12589.254117941675,
+  "decim_q": 1,
+  "gain_at_fc_dB": {
+   "iso": -0.008663770821774365,
+   "noct": -2.580060334921966e-07
+  },
+  "enbw_over_exact_third_octave": {
+   "iso": 1.0297899551511143,
+   "noct": 0.9949335020496494
+  },
+  "enbw_ratio_noct_over_iso_dB": -0.1495459632759344,
+  "atten_at_lower_neighbour_centre_dB": {
+   "iso": -19.999585195092816,
+   "noct": -17.50360265297695
+  },
+  "atten_at_upper_neighbour_centre_dB": {
+   "iso": -22.484924523178545,
+   "noct": -23.300335969656736
+  }
+ }
+}

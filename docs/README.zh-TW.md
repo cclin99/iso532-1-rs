@@ -66,6 +66,7 @@
 | [`verification/2026-11-04-release-0.4.0-fca4ccd/report.md`](verification/2026-11-04-release-0.4.0-fca4ccd/report.md) | 0.4.0 在 `fca4ccd` 的推送前驗收：PARTIAL，7／9 項通過，無數值或 API 阻擋（串流沒有比響度可驗；commit 表漏列已補） | en + zh |
 | [`verification/2026-11-05-perf-compliance-118322f/report.md`](verification/2026-11-05-perf-compliance-118322f/report.md) | 0.4.0 發布後在 `118322f` 對 `v0.3.1` 的確認：效能 A/B（單核 batch +2%，其餘在雜訊內）、Annex B 73,116／73,116 點、Nmax／N5 診斷、產出物 hash | en + zh |
 | [`verification/2026-11-05-annexb-bias-118322f/report.md`](verification/2026-11-05-annexb-bias-118322f/report.md) | Annex B 對照一致偏高 0.15% 的原因：聲壓換算慣例（滿刻度 2√2 Pa 對比低 0.0226 dB 的校準檔），不是引擎 | en + zh |
+| [`verification/2026-11-05-zwst-root-cause-118322f/report.md`](verification/2026-11-05-zwst-root-cause-118322f/report.md) | ZWST 誤差根因：MoSQITo 相容的 Butterworth 前端對比 Annex A 參考濾波器；Annex A 穩態方法在 0.001% 內重現工作簿；列出 0.5.0 的選項 | en + zh |
 
 ## 歷史審查紀錄（已結輪次；翻譯待辦 P3）
 

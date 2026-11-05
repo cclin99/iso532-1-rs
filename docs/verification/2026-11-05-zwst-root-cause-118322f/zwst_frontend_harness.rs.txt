@@ -1,0 +1,75 @@
+// ZWST root cause: compare the MoSQITo-compatible front end (zwst::noct_spectrum_rms)
+// with an Annex A style stationary front end (ISO third-octave filter bank, mean
+// square after a 0.2 s skip, as ISO_532-1.c f_square_and_smooth), band by band.
+// Usage: harness <inputs-dir> <scale> ; prints one JSON object per signal 2..5.
+use iso532::core::calc_slopes::calc_slopes;
+use iso532::core::main_loudness::main_loudness;
+use iso532::tables::{TOB_DELTA, TOB_GAIN};
+use iso532::zwst::{noct_spectrum_rms, spec_to_db};
+use iso532::zwtv::third_octave_levels::TOB_B;
+use iso532::FieldType;
+
+fn read(p: &std::path::Path) -> Vec<f64> {
+    std::fs::read(p).unwrap().chunks_exact(8).map(|c| f64::from_le_bytes(c.try_into().unwrap())).collect()
+}
+
+fn iso_levels(sig: &[f64], skip: usize) -> Vec<f64> {
+    (0..28)
+        .map(|band| {
+            let mut z = [[0.0f64; 2]; 3];
+            let (mut sum, mut cnt) = (0.0f64, 0usize);
+            for (i, &x) in sig.iter().enumerate() {
+                let mut v = x * TOB_GAIN[band];
+                for s in 0..3 {
+                    let a = [-2.0 - TOB_DELTA[band][s][0], 1.0 - TOB_DELTA[band][s][1]];
+                    let b = TOB_B[s];
+                    let y = b[0] * v + z[s][0];
+                    z[s][0] = b[1] * v - a[0] * y + z[s][1];
+                    z[s][1] = b[2] * v - a[1] * y;
+                    v = y;
+                }
+                if i >= skip {
+                    sum += v * v;
+                    cnt += 1;
+                }
+            }
+            10.0 * ((sum / cnt as f64 + 1e-12) / 4e-10).log10()
+        })
+        .collect()
+}
+
+fn n_of(levels: &[f64]) -> f64 {
+    calc_slopes(&main_loudness(levels, FieldType::Free).unwrap()).0
+}
+
+fn arr(v: &[f64]) -> String {
+    format!("[{}]", v.iter().map(|x| format!("{x:.6}")).collect::<Vec<_>>().join(","))
+}
+
+fn main() {
+    let a: Vec<String> = std::env::args().collect();
+    let dir = std::path::Path::new(&a[1]);
+    let scale: f64 = a[2].parse().unwrap();
+    for s in 2..=5 {
+        let sig: Vec<f64> = read(&dir.join(format!("sig{s}.bin"))).iter().map(|x| x * scale).collect();
+        let l_noct = spec_to_db(&noct_spectrum_rms(&sig));
+        let l_noct_skip = spec_to_db(&noct_spectrum_rms(&sig[9600..]));
+        let l_iso = iso_levels(&sig, 9600);
+        let n_noct = n_of(&l_noct);
+        let n_noct_skip = n_of(&l_noct_skip);
+        let n_iso = n_of(&l_iso);
+        // swap one band at a time: start from the ISO levels, put in the noct level of band b
+        let swap: Vec<f64> = (0..28)
+            .map(|b| {
+                let mut l = l_iso.clone();
+                l[b] = l_noct[b];
+                n_of(&l) - n_iso
+            })
+            .collect();
+        let diff: Vec<f64> = (0..28).map(|b| l_noct[b] - l_iso[b]).collect();
+        println!(
+            "{{\"signal\":{s},\"scale\":{scale},\"n_noct\":{n_noct:.6},\"n_noct_skip0p2\":{n_noct_skip:.6},\"n_iso\":{n_iso:.6},\"levels_noct\":{},\"levels_iso\":{},\"level_diff_noct_minus_iso\":{},\"dn_swap_band_into_iso\":{}}}",
+            arr(&l_noct), arr(&l_iso), arr(&diff), arr(&swap)
+        );
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "post-redaction UTF-8 delivery files (LF)",
+  "excluded": [
+    "delivery-integrity.json"
+  ],
+  "file_count": 9,
+  "files": [
+    {
+      "path": "delivery-check.md",
+      "bytes": 1044,
+      "sha256": "312f8ed0e4e74c42b93b05283948b71506983504924d836fb34264dd9abd3cc2"
+    },
+    {
+      "path": "filter-response.json",
+      "bytes": 14552,
+      "sha256": "05599ccf19ba7eab66d1367cb67498b817b71a431d46ef221e42e6cabf99fee3"
+    },
+    {
+      "path": "filter_response.py",
+      "bytes": 3084,
+      "sha256": "25fbf469aa9ce3d4e72e8c9033d36c47ccb73bd7d81438277c8c725b1ba004ac"
+    },
+    {
+      "path": "levels-2sqrt2.jsonl.txt",
+      "bytes": 5178,
+      "sha256": "2ae57f7428ae6829ddeba4335db9563a339daa9614742a019ea70d78ca91a61b"
+    },
+    {
+      "path": "levels-calfile.jsonl.txt",
+      "bytes": 5110,
+      "sha256": "289c8068863d7505e84ca53cceb996de752fa394b6a938fee35ccf091bf637b9"
+    },
+    {
+      "path": "report.en.md",
+      "bytes": 9209,
+      "sha256": "13fc5efd69c5667468792dd5476eaeffaa2c1254c9d5f2baa7d1bb42a3c88b5c"
+    },
+    {
+      "path": "report.md",
+      "bytes": 8521,
+      "sha256": "36afb1188709b3781cacc82b1b3ed159d56b2d45cce7478b32e062a032dfd60a"
+    },
+    {
+      "path": "zwst_frontend_harness.Cargo.toml.txt",
+      "bytes": 129,
+      "sha256": "f0d7d781403307b2f6055630454edee5d2c3b927f0ac2bf5508318e75d1c18e3"
+    },
+    {
+      "path": "zwst_frontend_harness.rs.txt",
+      "bytes": 3117,
+      "sha256": "43d057285bcba228a206291fef223fa10ba8fb84bb98ac280da0e54868c17228"
+    }
+  ]
+}

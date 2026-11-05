@@ -287,7 +287,7 @@ Rust 實作為了保留 parity 的診斷價值，刻意復刻 MoSQITo 1.2.1 的�
 
 | 繼承或比對的選擇 | 原因 | 本專案的結果 |
 |---|---|---|
-| ZWST 使用 MoSQITo 通用 `noct_spectrum` 前端：三階 Butterworth bands、低頻 `decimate`／zero-phase filtering，再取全段 RMS | ISO 532-1 允許穩態法使用符合 IEC 61260-1 class 1 的頻譜分析器；SciPy vectorized C routines 也較符合 Python 效能現實 | Annex B signals 3/5 的 ZWST 實測偏差約 +0.82%／-0.76%，仍在 ISO 容差內，但與標準自身 reference-filter 數值不同 |
+| ZWST 使用 MoSQITo 通用 `noct_spectrum` 前端：三階 Butterworth bands、低頻 `decimate`／zero-phase filtering，再取全段 RMS | ISO 532-1 允許穩態法使用符合 IEC 61260-1 class 1 的頻譜分析器；SciPy vectorized C routines 也較符合 Python 效能現實 | Annex B signals 3/5 的 ZWST 實測偏差約 +0.82%／-0.76%，仍在 ISO 容差內，但與標準自身 reference-filter 數值不同。根因（2026-11-05）：Butterworth 頻帶把噪音頻寬對齊精確 1/3 倍頻程，但相鄰頻帶中心只衰減 −19.4 dB；Annex A 濾波器是 −20.00 dB，噪音頻寬寬 2～4%。純音因下方頻帶漏入而偏高，噪音則偏低。Annex A 穩態方法可在 0.001% 內重現工作簿（[`docs/verification/2026-11-05-zwst-root-cause-118322f/`](docs/verification/2026-11-05-zwst-root-cause-118322f/report.md)） |
 | 全段 RMS 包含 filter startup，沒有另丟棄 settling window | 通用 spectrum tool 的簡化與可重用語意 | ZWST 結果包含較小、會受訊號長度影響的暫態成分 |
 | Signal 3 參照鏈包含 MoSQITo 的 44.1-to-48 kHz FFT resampling | Python toolbox 的便利性選擇 | 該 Annex B 比對保留小幅 residual；ISO532 公開 API 則要求呼叫端先提供 48 kHz |
 | ZWTV 保留 reference-style 逐 sample 遞迴濾波 | ISO 532-1 對時變前端的規定較明確 | Python/NumPy 無法同樣有效地整段向量化，所以 MoSQITo ZWTV 較慢；這不是數值缺陷 |
