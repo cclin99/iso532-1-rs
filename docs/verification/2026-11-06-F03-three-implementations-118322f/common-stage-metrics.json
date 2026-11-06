@@ -1,0 +1,116 @@
+{
+  "c": {
+    "synthetic-band5-0p35": {
+      "N022": 0.810818895244731,
+      "N024": 0.8046635946822402,
+      "N_delta": -0.006155300562490806,
+      "Nprime_max_abs_delta": 0.003997998629561017,
+      "Nprime_max_abs_bark": 4.6,
+      "specific_4p6_022": 0.30602200613860336,
+      "specific_4p6_024": 0.30202400750904235
+    },
+    "zero-control": {
+      "N022": 0.0,
+      "N024": 0.0,
+      "N_delta": 0.0,
+      "Nprime_max_abs_delta": 0.0,
+      "Nprime_max_abs_bark": 0.1,
+      "specific_4p6_022": 0.0,
+      "specific_4p6_024": 0.0
+    },
+    "signal6-sensitive": {
+      "N022": 4.392622221925652,
+      "N024": 4.375756199112879,
+      "N_delta": -0.016866022812773274,
+      "Nprime_max_abs_delta": 0.009990406665616625,
+      "Nprime_max_abs_bark": 5.4,
+      "specific_4p6_022": 0.5459194762342848,
+      "specific_4p6_024": 0.5459194762342848
+    },
+    "signal2-control": {
+      "N022": 14.65451241255858,
+      "N024": 14.65451241255858,
+      "N_delta": 0.0,
+      "Nprime_max_abs_delta": 0.0,
+      "Nprime_max_abs_bark": 0.1,
+      "specific_4p6_022": 2.169661035733785,
+      "specific_4p6_024": 2.169661035733785
+    }
+  },
+  "mos": {
+    "synthetic-band5-0p35": {
+      "N022": 0.811,
+      "N024": 0.805,
+      "N_delta": -0.006000000000000005,
+      "Nprime_max_abs_delta": 0.0040000000000000036,
+      "Nprime_max_abs_bark": 4.6,
+      "specific_4p6_022": 0.30600000000000016,
+      "specific_4p6_024": 0.30200000000000016
+    },
+    "zero-control": {
+      "N022": 0.0,
+      "N024": 0.0,
+      "N_delta": 0.0,
+      "Nprime_max_abs_delta": 0.0,
+      "Nprime_max_abs_bark": 0.1,
+      "specific_4p6_022": 0.0,
+      "specific_4p6_024": 0.0
+    },
+    "signal6-sensitive": {
+      "N022": 4.393,
+      "N024": 4.376,
+      "N_delta": -0.01699999999999946,
+      "Nprime_max_abs_delta": 0.009985419749262925,
+      "Nprime_max_abs_bark": 5.4,
+      "specific_4p6_022": 0.5458775258938079,
+      "specific_4p6_024": 0.5458775258938079
+    },
+    "signal2-control": {
+      "N022": 14.655,
+      "N024": 14.655,
+      "N_delta": 0.0,
+      "Nprime_max_abs_delta": 0.0,
+      "Nprime_max_abs_bark": 0.1,
+      "specific_4p6_022": 2.1695511584525358,
+      "specific_4p6_024": 2.1695511584525358
+    }
+  },
+  "sqat": {
+    "synthetic-band5-0p35": {
+      "N022": 0.8108188502673797,
+      "N024": 0.8046635472370766,
+      "N_delta": -0.006155303030303094,
+      "Nprime_max_abs_delta": 0.0039980000000000016,
+      "Nprime_max_abs_bark": 4.6,
+      "specific_4p6_022": 0.30602200000000007,
+      "specific_4p6_024": 0.30202400000000007
+    },
+    "zero-control": {
+      "N022": 0.0,
+      "N024": 0.0,
+      "N_delta": 0.0,
+      "Nprime_max_abs_delta": 0.0,
+      "Nprime_max_abs_bark": 0.1,
+      "specific_4p6_022": 0.0,
+      "specific_4p6_024": 0.0
+    },
+    "signal6-sensitive": {
+      "N022": 4.392622210028277,
+      "N024": 4.375756180461347,
+      "N_delta": -0.01686602956692962,
+      "Nprime_max_abs_delta": 0.009990419749263013,
+      "Nprime_max_abs_bark": 5.4,
+      "specific_4p6_022": 0.545919525893808,
+      "specific_4p6_024": 0.545919525893808
+    },
+    "signal2-control": {
+      "N022": 14.654512275227923,
+      "N024": 14.654512275227923,
+      "N_delta": 0.0,
+      "Nprime_max_abs_delta": 0.0,
+      "Nprime_max_abs_bark": 0.1,
+      "specific_4p6_022": 2.169661158452536,
+      "specific_4p6_024": 2.169661158452536
+    }
+  }
+}

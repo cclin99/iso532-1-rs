@@ -1,0 +1,3 @@
+error: load: unable to find file /work/inputs/sig15.mat/work/inputs/sig23.mat/work/inputs/sig25.mat/work/inputs/sig8.mat/work/inputs/sig11.mat/work/inputs/sig13.mat/work/inputs/sig17.mat/work/inputs/sig20.mat/work/inputs/sig22.mat
+error: called from
+    /work/run_sqat_shard.m at line 23 column 4

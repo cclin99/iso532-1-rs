@@ -1,0 +1,82 @@
+{
+  "6": {
+    "one_frame_shift_max_abs": 0.5381999999999998,
+    "one_frame_shift_over_1e4": 5241
+  },
+  "7": {
+    "one_frame_shift_max_abs": 0.7902000000000005,
+    "one_frame_shift_over_1e4": 5246
+  },
+  "8": {
+    "one_frame_shift_max_abs": 1.2022999999999975,
+    "one_frame_shift_over_1e4": 5243
+  },
+  "9": {
+    "one_frame_shift_max_abs": 1.0112000000000023,
+    "one_frame_shift_over_1e4": 5224
+  },
+  "10": {
+    "one_frame_shift_max_abs": 1.0255,
+    "one_frame_shift_over_1e4": 198
+  },
+  "11": {
+    "one_frame_shift_max_abs": 1.0255,
+    "one_frame_shift_over_1e4": 251
+  },
+  "12": {
+    "one_frame_shift_max_abs": 1.0255,
+    "one_frame_shift_over_1e4": 479
+  },
+  "13": {
+    "one_frame_shift_max_abs": 1.7413999999999996,
+    "one_frame_shift_over_1e4": 294
+  },
+  "14": {
+    "one_frame_shift_max_abs": 0.5135000000000005,
+    "one_frame_shift_over_1e4": 6513
+  },
+  "15": {
+    "one_frame_shift_max_abs": 0.33609999999999995,
+    "one_frame_shift_over_1e4": 5707
+  },
+  "16": {
+    "one_frame_shift_max_abs": 3.0559000000000003,
+    "one_frame_shift_over_1e4": 2002
+  },
+  "17": {
+    "one_frame_shift_max_abs": 1.7544000000000004,
+    "one_frame_shift_over_1e4": 1289
+  },
+  "18": {
+    "one_frame_shift_max_abs": 2.226800000000001,
+    "one_frame_shift_over_1e4": 971
+  },
+  "19": {
+    "one_frame_shift_max_abs": 1.7687999999999997,
+    "one_frame_shift_over_1e4": 1232
+  },
+  "20": {
+    "one_frame_shift_max_abs": 1.6873000000000005,
+    "one_frame_shift_over_1e4": 1245
+  },
+  "21": {
+    "one_frame_shift_max_abs": 1.7873999999999999,
+    "one_frame_shift_over_1e4": 1235
+  },
+  "22": {
+    "one_frame_shift_max_abs": 2.0555999999999996,
+    "one_frame_shift_over_1e4": 760
+  },
+  "23": {
+    "one_frame_shift_max_abs": 2.0613,
+    "one_frame_shift_over_1e4": 1208
+  },
+  "24": {
+    "one_frame_shift_max_abs": 1.5598,
+    "one_frame_shift_over_1e4": 1092
+  },
+  "25": {
+    "one_frame_shift_max_abs": 2.1208000000000005,
+    "one_frame_shift_over_1e4": 1171
+  }
+}

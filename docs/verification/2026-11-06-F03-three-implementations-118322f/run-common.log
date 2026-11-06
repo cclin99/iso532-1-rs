@@ -1,0 +1,22 @@
+{
+  "selection": "maximum absolute unweighted N delta on all native C signal6 core frames",
+  "signal6_internal_frame": 13677,
+  "signal6_time_s": 6.8385,
+  "signal6_max_unweighted_n_cell_effect": 0.016866022812773274,
+  "names": [
+    "synthetic-band5-0p35",
+    "zero-control",
+    "signal6-sensitive",
+    "signal2-control"
+  ],
+  "common_core_npy_sha256": "fbf3ccfa43242e7779e1d2113357827ee09d78f81bdc8a927667d60afc593f99",
+  "analytic_local_segment": {
+    "N0": 0.35,
+    "delta_z": 0.2,
+    "specific_022": 0.306,
+    "specific_024": 0.302,
+    "specific_difference": 0.004,
+    "segment_area_difference": 0.0004,
+    "meaning": "local 0.2 Bark segment only, not full N"
+  }
+}

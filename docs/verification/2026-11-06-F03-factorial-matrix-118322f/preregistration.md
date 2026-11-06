@@ -1,0 +1,32 @@
+# F03 factorial matrix — preregistration (2026-11-06 Asia/Taipei)
+
+Product snapshot: `118322f8300dc752f1d38a79db230a2db5ff2870`; actual repository HEAD: `62e8559e8fe01350b9e07148784a6635d4522691`. Independent numerical diagnosis, no product/DSP/formal-test/golden edits, commit or push. Prior evidence remains immutable. GNU Octave is explicitly authorized.
+
+## A. Stationary primary matrix: 256 new cells
+
+Signals 2–5 × frontend {official Annex IIR, native MoSQITo noct time filter} × calibration {sqrt=2sqrt(2), cal=.02/RMS(original calibration PCM)} × post-filter RMS skip {0,.2 s} × USL {0.22,0.24} × downstream mode {official C, SQAT, MoSQITo original rounding, MoSQITo rounding disabled diagnosis}. This is 32 shared 28-band level vectors × 8 downstream evaluations = 256 cells. The fourth mode is a diagnostic variant of MoSQITo, not a fourth implementation.
+
+The Mo frontend is **time-domain** decimate → Butterworth bandpass SOS → RMS, not FFT. Mechanically extract its original `_n_oct_time_filter` and change only the final RMS window to start at ceil(skip × the post-decimation sample rate). For skip=0 require exact equality with native `noct_spectrum`; record every band. Official-C frontend uses its original post-filter skip API. Both filter the full record before skipping; no reset is hidden in the primary window factor. All inputs are the same binary64 Pa samples. Calibration `cal` is computed from the original calibration signal, expected 2.835797716391444, not rounded to a shorter decimal.
+
+Shared levels are passed to original official-C `f_loudness_from_levels`, original SQAT method 0, and native Mo `_main_loudness`→`_calc_slopes`. These swaps are explicitly **hybrid** diagnoses. The categorical engine comparison contains multiple algorithm choices and is not interpreted as one pure causal factor. For Mo diagnostic no-round, remove only the two final N rounding statements; preserve negative clamp, all slopes, and N-prime. All isolation diffs and hashes are frozen before execution.
+
+Eight extra crop/reset negative-control cells: signals 2–5 × two frontends, sqrt calibration, input cropped .2 s before filter reset, no post-filter skip, common C022 downstream. Compare to the matched full-input/post-filter-skip .2 primary cell; do not pool crop and window as equivalent operations.
+
+## B. Time-varying representative matrix: 64 cells
+
+Signals {6,15,16,25}. Reasons fixed before new runs: 6 strongest measured N cell response; 15 prior maximum-Mo-error cancellation and strongest measured N-prime cell effect; 16 large non-cell residual; 25 insensitive negative control. Factors: calibration {sqrt,cal}, USL {.22,.24}, downstream implementation {native official C, native SQAT, native Mo original rounding, native Mo no-round diagnosis}. There is **no stationary skip factor** for time-varying processing. Field: signal15 diffuse, others free.
+
+64 total cells = 24 immutable prior native sqrt-calibration outputs reused with verified hashes (three engines × two USL × four signals) + 40 newly executed cells (24 cal-calibration native cells + 16 Mo no-round cells across both calibrations). No old outputs are overwritten. These numbers are separate from the stationary 264 new cells.
+
+## C. Prior all-signal reanalysis, not new executions
+
+Reanalyze all 20 time-varying signals 6–25, three native engines, both USL values: 120 immutable output files. They overlap the 24 reused B cells and must not be added as new execution counts. At each fixed physical time and Bark coordinate calculate baseline signed error e022, cell delta d=N024−N022, e024=e022+d, and |e024|−|e022|. Separate cancellation (e022×d<0), reinforcement, and overshoot. Never subtract different-signal or different-time maximum errors as a causal effect. Specifically audit signal15 frame4803=9.606 s and record all values freshly from the raw arrays/reference.
+
+## Metrics, contrasts, gates and alignment
+
+- Two separate references: supplied four-decimal official workbooks and freshly evaluated/verified C022 at sqrt calibration, stationary post-filter skip .2. The fixed reference does not change with factors. For TV C022 full-precision raw output is reused only after hash verification.
+- Record every design cell, source/input/output hashes, signed N, max absolute/RMS N/N-prime, locations, and relative percentages only where |reference|≥1e−4 (count exclusions). All stationary output profiles have 240 Bark points. Workbook TV N-prime exists only for a selected trajectory in signals6–13; full-grid N-prime comparisons use common native-C outputs, and signal15's workbook provides no full N-prime reference.
+- Within each signal and engine mode, paired signed main effects average high−low at identical other-factor settings. Pairwise difference-in-differences averages f11−f10−f01+f00 at matched settings. For Mo, rounding on/off is an additional explicit binary factor. These are deterministic finite-design effects, no p-values or random-sample inference. Rank best/worst cells only within the same signal/reference and state the error metric. Aggregating across signals is descriptive, not independent random replication.
+- Time grid is fixed by input sample indices (2 ms output; 0.1 Bark), with original Mo returned labels retained and label drift separately recorded, following the previously observed endpoint-linspace discrepancy. No output-fitted shifts, interpolation, arbitrary zero-padding, or calibration fitting. Extra tails and common-coordinate counts remain explicit.
+- Controls: immutable previous delivery manifests; baseline source hash equality; coefficient-only and no-round diffs; exact native Mo frontend parity at skip0; deterministic repeat of one stationary cell per engine/mode; Mo no-round must leave N-prime identical at matched factors; cell-insensitive signal25; error decomposition residual tolerance 1e−12; factorial contrast arithmetic tolerance 1e−12. Thresholds are diagnostic checks, not ISO conformity thresholds.
+- Deliver bilingual report/preregistration, machine-readable design/results/contrasts, SVG or PNG effect visualization with units/domain/reference, replay, environment and integrity evidence. Raw sources/WAV/workbooks/large arrays stay in a new tmp directory. SVG receives explicit privacy inspection because the generic redactor may skip it. Post-redaction delivery hashes stay distinct from original hashes. Authority of Table A.9 remains unresolved; no product coefficient change is inferred.

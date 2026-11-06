@@ -1,0 +1,8 @@
+8.4.0
+Package Name  | Version | Installation directory
+--------------+---------+-----------------------
+     control  |   4.0.1 | /usr/share/octave/packages/control-4.0.1
+      signal  |   1.4.5 | /usr/share/octave/packages/signal-1.4.5
+  statistics  |   1.6.3 | /usr/share/octave/packages/statistics-1.6.3
+/work/sqat-v2.0/psychoacoustic_metrics/Loudness_ISO532_1/Loudness_ISO532_1.m
+3.4996e-03

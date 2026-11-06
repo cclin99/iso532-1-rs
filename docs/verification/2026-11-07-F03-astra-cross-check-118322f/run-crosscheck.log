@@ -1,0 +1,275 @@
+{
+ "per_signal_max_agreement": {
+  "astra_sqat_vs_claude_cell_0.22_eps": 2.2301330115936935e-08,
+  "astra_sqat_vs_claude_sqat_0.22": 4.884056270526571e-09,
+  "astra_sqat_0.24_vs_claude_cell_0.24_eps": 2.2301330115936935e-08,
+  "astra_mos_vs_claude_mosqito_0.22": 0.0,
+  "astra_mos_vs_claude_mosqito_0.24": 0.0,
+  "astra_c_vs_claude_cell_0.22_eps": 1.3066779054327071e-06
+ },
+ "max_over_signals": {
+  "astra_c_0.22": 8.050726233932437e-05,
+  "astra_c_0.24": 0.016883709751785325,
+  "astra_sqat_0.22": 7.927685209807578e-05,
+  "astra_sqat_0.24": 0.01688389087335107,
+  "astra_mos_0.22": 0.023284092011360613,
+  "astra_mos_0.24": 0.02288935124312097,
+  "claude_cell_0.22_eps": 7.92768520270215e-05,
+  "claude_cell_0.24_eps": 0.016883890873494956,
+  "claude_sqat_0.22": 7.927685205544321e-05,
+  "claude_mosqito_0.22": 0.023284092011360613,
+  "claude_mosqito_0.24": 0.02288935124312097,
+  "claude_iso532_0.22": 0.0002188115478602981
+ },
+ "usl_024_improves_vs_022": {
+  "counts": {
+   "c": {
+    "points": 48711,
+    "improves": 6029,
+    "worsens": 19730,
+    "unchanged": 22952
+   },
+   "sqat": {
+    "points": 48711,
+    "improves": 5973,
+    "worsens": 19787,
+    "unchanged": 22951
+   },
+   "mos": {
+    "points": 48711,
+    "improves": 4772,
+    "worsens": 19843,
+    "unchanged": 24096
+   },
+   "claude_cell_eps": {
+    "points": 48711,
+    "improves": 5974,
+    "worsens": 19787,
+    "unchanged": 22950
+   }
+  },
+  "claude_cell_eps_magnitudes": {
+   "improvement_max": 5.749074568051071e-05,
+   "improvements_above_1e-4": 0,
+   "worsening_max": 0.01685124361048196,
+   "worsenings_above_1e-4": 12730
+  },
+  "signal15": {
+   "c": {
+    "points": 5768,
+    "024_improves": 220,
+    "024_worsens": 5487,
+    "unchanged": 61
+   },
+   "sqat": {
+    "points": 5768,
+    "024_improves": 217,
+    "024_worsens": 5490,
+    "unchanged": 61
+   },
+   "mos": {
+    "points": 5768,
+    "024_improves": 596,
+    "024_worsens": 5110,
+    "unchanged": 62
+   }
+  }
+ },
+ "three_implementations_baselines": {
+  "astra_sqat_baseline_max": 0.0168838908734,
+  "claude_sqat_0.24_max": 0.01688389087341413,
+  "astra_mosqito_tv_max_0.24": 0.0228893512431,
+  "claude_mosqito_0.24_max": 0.02288935124312097,
+  "astra_mosqito_tv_max_0.22": 0.0232840920114,
+  "claude_mosqito_0.22_max": 0.023284092011360613,
+  "note": "Astra values copied from the three-implementations report tables (time-varying 6-25)"
+ },
+ "astra_2026_11_05_downstream_residual": {
+  "cases": 8,
+  "iso532_reproduces_astra_candidate_max_N": 0.0,
+  "iso532_reproduces_astra_candidate_max_Nprime": 0.0,
+  "Nprime_at_bark_iso532_minus_C_max": 0.00015000398020426076,
+  "Nprime_at_bark_port_eps_minus_C_max": 1.6548397940852055e-07,
+  "Nprime_at_bark_port_eps_f32_minus_C_max": 1.0693396923500131e-07,
+  "N_iso532_minus_C_max": 1.5853379867536432e-05,
+  "N_port_eps_minus_C_max": 6.606019820054598e-07,
+  "signal5_N_iso532_minus_C": [
+   -1.5804230260485497e-05,
+   -1.5853379867536432e-05
+  ],
+  "signal5_1e-4_x_nm0": [
+   1.5409446608894653e-05,
+   1.545793520943488e-05
+  ]
+ }
+}
+{
+"6": {
+"astra_c_USL": [
+0.016850868659362472,
+6.836
+],
+"astra_c_calibration_x_USL": [
+0.00014443593010504685,
+7.44
+],
+"astra_sqat_USL": [
+0.016850875218731964,
+6.836
+],
+"astra_sqat_calibration_x_USL": [
+0.00014443595862267955,
+7.44
+],
+"astra_mos-round_USL": [
+0.0169136002766459,
+6.722
+],
+"astra_mos-round_calibration_x_USL": [
+0.0002964474401458972,
+7.5040000000000004
+],
+"astra_mos-noround_USL": [
+0.01685087521872619,
+6.836
+],
+"astra_mos-noround_calibration_x_USL": [
+0.00014443595862800862,
+7.44
+],
+"claude_USL_workbook_points": [
+0.016851472603172546,
+6.84
+],
+"claude_calibration_x_USL_workbook_points": [
+0.00014443595863422587,
+7.44
+]
+},
+"15": {
+"astra_c_USL": [
+0.00423410654966494,
+7.788
+],
+"astra_c_calibration_x_USL": [
+2.4823965281584037e-05,
+3.176
+],
+"astra_sqat_USL": [
+0.004234108397095593,
+7.788
+],
+"astra_sqat_calibration_x_USL": [
+2.482397300873629e-05,
+3.176
+],
+"astra_mos-round_USL": [
+0.004221714229847073,
+1.6420000000000001
+],
+"astra_mos-round_calibration_x_USL": [
+0.0002878185087418217,
+3.902
+],
+"astra_mos-noround_USL": [
+0.004216703346487716,
+7.788
+],
+"astra_mos-noround_calibration_x_USL": [
+0.0002392405466267178,
+4.926
+],
+"claude_USL_workbook_points": [
+0.004238805998939554,
+7.788
+],
+"claude_calibration_x_USL_workbook_points": [
+2.4823972983867293e-05,
+3.176
+]
+},
+"16": {
+"astra_c_USL": [
+0.00020264715837114977,
+0.116
+],
+"astra_c_calibration_x_USL": [
+1.4656217484088074e-06,
+0.114
+],
+"astra_sqat_USL": [
+0.0002026471852820677,
+0.116
+],
+"astra_sqat_calibration_x_USL": [
+1.465621830121222e-06,
+0.114
+],
+"astra_mos-round_USL": [
+0.00020773469351453855,
+0.116
+],
+"astra_mos-round_calibration_x_USL": [
+0.0004154693870290771,
+0.116
+],
+"astra_mos-noround_USL": [
+0.00020264718528739678,
+0.116
+],
+"astra_mos-noround_calibration_x_USL": [
+1.4656218283448652e-06,
+0.114
+],
+"claude_USL_workbook_points": [
+0.0002020123247952199,
+0.116
+],
+"claude_calibration_x_USL_workbook_points": [
+1.4656218336739357e-06,
+0.114
+]
+},
+"25": {
+"astra_c_USL": [
+0.0,
+0.0
+],
+"astra_c_calibration_x_USL": [
+0.0,
+0.0
+],
+"astra_sqat_USL": [
+0.0,
+0.0
+],
+"astra_sqat_calibration_x_USL": [
+0.0,
+0.0
+],
+"astra_mos-round_USL": [
+0.0,
+0.0
+],
+"astra_mos-round_calibration_x_USL": [
+0.0,
+0.0
+],
+"astra_mos-noround_USL": [
+0.0,
+0.0
+],
+"astra_mos-noround_calibration_x_USL": [
+0.0,
+0.0
+],
+"claude_USL_workbook_points": [
+0.0,
+0.0
+],
+"claude_calibration_x_USL_workbook_points": [
+0.0,
+0.0
+]
+}
+}

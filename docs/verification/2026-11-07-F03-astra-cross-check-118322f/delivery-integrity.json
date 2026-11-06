@@ -1,0 +1,99 @@
+{
+ "scope": "post-redaction UTF-8 delivery files (LF)",
+ "excluded": [
+  "delivery-integrity.json"
+ ],
+ "file_count": 18,
+ "files": [
+  {
+   "path": "astra_residual.json",
+   "bytes": 5401,
+   "sha256": "a42e9d44ef614d50ff37001689c250f98b19032b55ee70db3c3505a8aa046a0d"
+  },
+  {
+   "path": "astra_residual.py",
+   "bytes": 2243,
+   "sha256": "42a9f32bfff0621ddcc3b5fbd4c38192011a28d971d8ad356d060e18be43948e"
+  },
+  {
+   "path": "crosscheck.json",
+   "bytes": 17401,
+   "sha256": "76b360a18388cafb4104336dc2039ec0a6e093866d946b22a6409eb02f05c9d3"
+  },
+  {
+   "path": "crosscheck.py",
+   "bytes": 6875,
+   "sha256": "ede651a11845d74a402ddad52cb3b954c6864c448e2b3d8ab7ec5da2f65f8371"
+  },
+  {
+   "path": "delivery-check.md",
+   "bytes": 1062,
+   "sha256": "79aa6365ba1666328fc60fda22ab9399beb209b2544d5aae8e868987fa720cf4"
+  },
+  {
+   "path": "finalize_delivery.py",
+   "bytes": 5009,
+   "sha256": "404007a03db466fb64c41280be58dc22c14a02bacace912fe9919682dd14d781"
+  },
+  {
+   "path": "levels2core.Cargo.lock.txt",
+   "bytes": 3045,
+   "sha256": "a86688818132d0ae42e8899ce597fb65929b512c0417a8dc6ab9dd7e39ce10ed"
+  },
+  {
+   "path": "levels2core.Cargo.toml.txt",
+   "bytes": 131,
+   "sha256": "5ab9383a7e86c13e2ddef093c5c04c635212dc2978652cce8dd100380105bb2b"
+  },
+  {
+   "path": "levels2core.main.rs.txt",
+   "bytes": 888,
+   "sha256": "b7babb79ab35c06eb4381ba2b439556e669ef03518438ce3cc2ae08d4a4719b9"
+  },
+  {
+   "path": "redaction.log",
+   "bytes": 383,
+   "sha256": "145b2ed3e55541062da304bd83380634d9e494b494d872764f7eecfad66c8e4d"
+  },
+  {
+   "path": "replay.md",
+   "bytes": 1467,
+   "sha256": "f8dd5c8904a13d29116d223f4bb47397dec328e9048b3a43f92fcd6729a6b2b5"
+  },
+  {
+   "path": "report.en.md",
+   "bytes": 11130,
+   "sha256": "cf448852bf4ae5d1c02c369c1866f66155937363e476ab7b5bf73c46e08c0db0"
+  },
+  {
+   "path": "report.md",
+   "bytes": 9817,
+   "sha256": "886145dcafada9d3e30e7146a45dde172dd45a52f042c8c6da8dd240693748ed"
+  },
+  {
+   "path": "run-astra_residual.log",
+   "bytes": 4588,
+   "sha256": "0452b4e0a852d90909b1158117481874726d1b8a5292be78e3bdc7de4260253a"
+  },
+  {
+   "path": "run-crosscheck.log",
+   "bytes": 5410,
+   "sha256": "e752865dcb65372886d263e676a182305883a55b3b8044843bf16c3a655695ef"
+  },
+  {
+   "path": "run-usl_main_effect_definition.log",
+   "bytes": 426,
+   "sha256": "8b43aadf4f11a24af9ca3090c1569cdd7b23db369326f11f95771387a53fa628"
+  },
+  {
+   "path": "usl_main_effect_definition.json",
+   "bytes": 556,
+   "sha256": "4a51bf00525dfd9a6a5b5b6e7df30c194a456349bb8bb3ead99cd648bf85a2a6"
+  },
+  {
+   "path": "usl_main_effect_definition.py",
+   "bytes": 1113,
+   "sha256": "a5d6ac5177bde59ccc96f76f0e9cf5688fe278a0bb80cb7b2dec41e8c736028f"
+  }
+ ]
+}

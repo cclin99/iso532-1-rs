@@ -1,0 +1,31 @@
+{
+  "unsupported_formats": [],
+  "non_UTF8_files": [],
+  "privacy_residual_files": [],
+  "generic_redactor_skipped_warnings": [],
+  "generic_unsupported_but_manually_checked": [
+    "factorial-effects.svg",
+    "factorial-effects.png"
+  ],
+  "SVG_XML_and_text_privacy": "PASS",
+  "PNG_decode_metadata_and_visual_review": "PASS",
+  "png": {
+    "size": [
+      2240,
+      768
+    ],
+    "mode": "RGBA",
+    "metadata": {
+      "Software": "ISO532 independent numerical verification",
+      "dpi": [
+        159.9946,
+        159.9946
+      ]
+    }
+  },
+  "bilingual_tables": 9,
+  "bilingual_numeric_tables_match": true,
+  "markdown_table_columns_valid": true,
+  "JSON_files_parsed_before_audit": 26,
+  "report_and_delivery_diff_reviewed": true
+}

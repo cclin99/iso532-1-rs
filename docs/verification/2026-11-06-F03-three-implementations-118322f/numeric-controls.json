@@ -1,0 +1,66 @@
+{
+  "raw_inputs_unchanged": 38,
+  "generated_inputs_unchanged": 50,
+  "baseline_sources_unchanged": true,
+  "source_isolation": {
+    "mos": {
+      "only_changed_source": "sq_metrics/loudness/loudness_zwst/_calc_slopes.py",
+      "changed_byte_offset": 2339,
+      "baseline_byte": "4",
+      "counterfactual_byte": "2"
+    },
+    "sqat": {
+      "only_changed_source": "psychoacoustic_metrics/Loudness_ISO532_1/Loudness_ISO532_1.m",
+      "changed_byte_offset": 20523,
+      "baseline_byte": "4",
+      "counterfactual_byte": "2"
+    },
+    "c": {
+      "only_changed_source": "ISO_532-1.c",
+      "changed_byte_offset": 24633,
+      "baseline_byte": "2",
+      "counterfactual_byte": "4"
+    }
+  },
+  "finite_shape_checked_outputs": {
+    "c022": 25,
+    "c024": 25,
+    "mos022": 25,
+    "mos024": 25,
+    "sqat022": 25,
+    "sqat024": 25
+  },
+  "c_wrapper_vs_prior_original_dll_fresh_evaluations": {
+    "signals": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "bitwise_equal": true,
+    "prior_dll_sha256": "3f7575ad5dc5dbd71ab953c339106403012587387051d9e0cb10887c4d588bfa",
+    "prior_numeric_outputs_reused": false
+  },
+  "common_controls_exact_zero": true
+}

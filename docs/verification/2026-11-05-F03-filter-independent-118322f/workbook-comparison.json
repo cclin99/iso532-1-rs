@@ -1,0 +1,2582 @@
+{
+  "2": {
+    "N": {
+      "points": 1,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 1,
+      "exact_024": 1,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 2,
+        "quantity": "N",
+        "reference": 14.6545,
+        "observed": 14.6545
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 2,
+        "quantity": "N",
+        "reference": 14.6545,
+        "observed": 14.6545
+      }
+    },
+    "Nprime": {
+      "points": 240,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 240,
+      "exact_024": 240,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 2,
+        "bark": 0.1,
+        "reference": 0.0,
+        "observed": 0.0
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 2,
+        "bark": 0.1,
+        "reference": 0.0,
+        "observed": 0.0
+      }
+    }
+  },
+  "3": {
+    "N": {
+      "points": 1,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 1,
+      "exact_024": 1,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 3,
+        "quantity": "N",
+        "reference": 4.0192,
+        "observed": 4.0192
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 3,
+        "quantity": "N",
+        "reference": 4.0192,
+        "observed": 4.0192
+      }
+    },
+    "Nprime": {
+      "points": 240,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 240,
+      "exact_024": 240,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 3,
+        "bark": 0.1,
+        "reference": 0.0,
+        "observed": 0.0
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 3,
+        "bark": 0.1,
+        "reference": 0.0,
+        "observed": 0.0
+      }
+    }
+  },
+  "4": {
+    "N": {
+      "points": 1,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 1,
+      "exact_024": 1,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 4,
+        "quantity": "N",
+        "reference": 1.5494,
+        "observed": 1.5494
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 4,
+        "quantity": "N",
+        "reference": 1.5494,
+        "observed": 1.5494
+      }
+    },
+    "Nprime": {
+      "points": 240,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 240,
+      "exact_024": 240,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 4,
+        "bark": 0.1,
+        "reference": 0.0,
+        "observed": 0.0
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 4,
+        "bark": 0.1,
+        "reference": 0.0,
+        "observed": 0.0
+      }
+    }
+  },
+  "5": {
+    "N": {
+      "points": 1,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 0,
+      "exact_024": 0,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 5,
+        "quantity": "N",
+        "reference": 10.4978,
+        "observed": 10.4979
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 5,
+        "quantity": "N",
+        "reference": 10.4978,
+        "observed": 10.4979
+      }
+    },
+    "Nprime": {
+      "points": 240,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 240,
+      "exact_024": 240,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 5,
+        "bark": 0.1,
+        "reference": 0.1541,
+        "observed": 0.1541
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 5,
+        "bark": 0.1,
+        "reference": 0.1541,
+        "observed": 0.1541
+      }
+    }
+  },
+  "6": {
+    "N": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0169,
+      "exact_022": 5108,
+      "exact_024": 3785,
+      "differ": 1385,
+      "022_over_1e4": 0,
+      "024_over_1e4": 1291,
+      "thresholds": {
+        "1": {
+          "points": 1385,
+          "equal022": 1329,
+          "equal024": 6,
+          "closer022": 1378,
+          "ties": 1,
+          "closer024": 6
+        },
+        "2": {
+          "points": 1292,
+          "equal022": 1242,
+          "equal024": 0,
+          "closer022": 1291,
+          "ties": 1,
+          "closer024": 0
+        },
+        "3": {
+          "points": 1255,
+          "equal022": 1206,
+          "equal024": 0,
+          "closer022": 1255,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 1200,
+          "equal022": 1152,
+          "equal024": 0,
+          "closer022": 1200,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 1127,
+          "equal022": 1083,
+          "equal024": 0,
+          "closer022": 1127,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 6,
+        "time_s": 8.56,
+        "reference": 8.056,
+        "observed": 8.0561
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 6,
+        "time_s": 5.222,
+        "reference": 2.3769,
+        "observed": 2.3767
+      },
+      "max_error_coordinate_024": {
+        "signal": 6,
+        "time_s": 6.726,
+        "reference": 4.158,
+        "observed": 4.1411
+      }
+    },
+    "Nprime": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 5232,
+      "exact_024": 5232,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 2.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 6,
+        "time_s": 9.852,
+        "bark": 2.5,
+        "reference": 4.2353,
+        "observed": 4.2354
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 6,
+        "time_s": 9.852,
+        "bark": 2.5,
+        "reference": 4.2353,
+        "observed": 4.2354
+      }
+    }
+  },
+  "7": {
+    "N": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 5093,
+      "exact_024": 5093,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 7,
+        "time_s": 8.314,
+        "reference": 8.556,
+        "observed": 8.5561
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 7,
+        "time_s": 8.314,
+        "reference": 8.556,
+        "observed": 8.5561
+      }
+    },
+    "Nprime": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 5250,
+      "exact_024": 5250,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 8.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 7,
+        "time_s": 6.422,
+        "bark": 8.5,
+        "reference": 1.3518,
+        "observed": 1.3519
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 7,
+        "time_s": 6.422,
+        "bark": 8.5,
+        "reference": 1.3518,
+        "observed": 1.3519
+      }
+    }
+  },
+  "8": {
+    "N": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 4967,
+      "exact_024": 4967,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 8,
+        "time_s": 9.002,
+        "reference": 16.4809,
+        "observed": 16.481
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 8,
+        "time_s": 9.002,
+        "reference": 16.4809,
+        "observed": 16.481
+      }
+    },
+    "Nprime": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 5221,
+      "exact_024": 5221,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 17.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 8,
+        "time_s": 8.954,
+        "bark": 17.5,
+        "reference": 4.0329,
+        "observed": 4.033
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 8,
+        "time_s": 8.954,
+        "bark": 17.5,
+        "reference": 4.0329,
+        "observed": 4.033
+      }
+    }
+  },
+  "9": {
+    "N": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0035,
+      "exact_022": 4894,
+      "exact_024": 3691,
+      "differ": 1470,
+      "022_over_1e4": 0,
+      "024_over_1e4": 963,
+      "thresholds": {
+        "1": {
+          "points": 1470,
+          "equal022": 1283,
+          "equal024": 80,
+          "closer022": 1355,
+          "ties": 35,
+          "closer024": 80
+        },
+        "2": {
+          "points": 998,
+          "equal022": 891,
+          "equal024": 0,
+          "closer022": 963,
+          "ties": 35,
+          "closer024": 0
+        },
+        "3": {
+          "points": 712,
+          "equal022": 640,
+          "equal024": 0,
+          "closer022": 712,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 396,
+          "equal022": 360,
+          "equal024": 0,
+          "closer022": 396,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 168,
+          "equal022": 152,
+          "equal024": 0,
+          "closer022": 168,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 9,
+        "time_s": 8.408,
+        "reference": 16.3452,
+        "observed": 16.3453
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 9,
+        "time_s": 4.984,
+        "reference": 4.9455,
+        "observed": 4.9453
+      },
+      "max_error_coordinate_024": {
+        "signal": 9,
+        "time_s": 5.722,
+        "reference": 6.5532,
+        "observed": 6.5497
+      }
+    },
+    "Nprime": {
+      "points": 5300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 5280,
+      "exact_024": 5280,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 17.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 9,
+        "time_s": 7.252,
+        "bark": 17.5,
+        "reference": 0.7263,
+        "observed": 0.7264
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 9,
+        "time_s": 7.252,
+        "bark": 17.5,
+        "reference": 0.7263,
+        "observed": 0.7264
+      }
+    }
+  },
+  "10": {
+    "N": {
+      "points": 500,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 498,
+      "exact_024": 498,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 10,
+        "time_s": 0.036,
+        "reference": 2.6512,
+        "observed": 2.6513
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 10,
+        "time_s": 0.036,
+        "reference": 2.6512,
+        "observed": 2.6513
+      }
+    },
+    "Nprime": {
+      "points": 500,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 500,
+      "exact_024": 500,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 8.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 10,
+        "time_s": 0.0,
+        "bark": 8.5,
+        "reference": 0.0,
+        "observed": 0.0
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 10,
+        "time_s": 0.0,
+        "bark": 8.5,
+        "reference": 0.0,
+        "observed": 0.0
+      }
+    }
+  },
+  "11": {
+    "N": {
+      "points": 500,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 499,
+      "exact_024": 499,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 11,
+        "time_s": 0.08,
+        "reference": 3.6866,
+        "observed": 3.6867
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 11,
+        "time_s": 0.08,
+        "reference": 3.6866,
+        "observed": 3.6867
+      }
+    },
+    "Nprime": {
+      "points": 500,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 500,
+      "exact_024": 500,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 8.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 11,
+        "time_s": 0.0,
+        "bark": 8.5,
+        "reference": 0.0,
+        "observed": 0.0
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 11,
+        "time_s": 0.0,
+        "bark": 8.5,
+        "reference": 0.0,
+        "observed": 0.0
+      }
+    }
+  },
+  "12": {
+    "N": {
+      "points": 500,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 487,
+      "exact_024": 487,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 12,
+        "time_s": 0.362,
+        "reference": 8.0499,
+        "observed": 8.05
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 12,
+        "time_s": 0.362,
+        "reference": 8.0499,
+        "observed": 8.05
+      }
+    },
+    "Nprime": {
+      "points": 500,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 498,
+      "exact_024": 498,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 8.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 12,
+        "time_s": 0.52,
+        "bark": 8.5,
+        "reference": 1.7738,
+        "observed": 1.7739
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 12,
+        "time_s": 0.52,
+        "bark": 8.5,
+        "reference": 1.7738,
+        "observed": 1.7739
+      }
+    }
+  },
+  "13": {
+    "N": {
+      "points": 500,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 495,
+      "exact_024": 495,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 13,
+        "time_s": 0.066,
+        "reference": 2.9699,
+        "observed": 2.97
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 13,
+        "time_s": 0.066,
+        "reference": 2.9699,
+        "observed": 2.97
+      }
+    },
+    "Nprime": {
+      "points": 500,
+      "max_abs_022": 0.0,
+      "max_abs_024": 0.0,
+      "exact_022": 500,
+      "exact_024": 500,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "bark": 8.5,
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 13,
+        "time_s": 0.0,
+        "bark": 8.5,
+        "reference": 0.0,
+        "observed": 0.0
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 13,
+        "time_s": 0.0,
+        "bark": 8.5,
+        "reference": 0.0,
+        "observed": 0.0
+      }
+    }
+  },
+  "14": {
+    "N": {
+      "points": 6577,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0072,
+      "exact_022": 5917,
+      "exact_024": 2379,
+      "differ": 4033,
+      "022_over_1e4": 0,
+      "024_over_1e4": 3420,
+      "thresholds": {
+        "1": {
+          "points": 4033,
+          "equal022": 3608,
+          "equal024": 70,
+          "closer022": 3930,
+          "ties": 33,
+          "closer024": 70
+        },
+        "2": {
+          "points": 3453,
+          "equal022": 3098,
+          "equal024": 0,
+          "closer022": 3420,
+          "ties": 33,
+          "closer024": 0
+        },
+        "3": {
+          "points": 3084,
+          "equal022": 2762,
+          "equal024": 0,
+          "closer022": 3084,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 2567,
+          "equal022": 2294,
+          "equal024": 0,
+          "closer022": 2567,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 1878,
+          "equal022": 1678,
+          "equal024": 0,
+          "closer022": 1878,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 14,
+        "time_s": 4.482,
+        "reference": 17.0693,
+        "observed": 17.0694
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 14,
+        "time_s": 0.268,
+        "reference": 5.8645,
+        "observed": 5.8642
+      },
+      "max_error_coordinate_024": {
+        "signal": 14,
+        "time_s": 3.0,
+        "reference": 12.1592,
+        "observed": 12.152
+      }
+    }
+  },
+  "15": {
+    "N": {
+      "points": 5768,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0042,
+      "exact_022": 5311,
+      "exact_024": 438,
+      "differ": 5378,
+      "022_over_1e4": 0,
+      "024_over_1e4": 4260,
+      "thresholds": {
+        "1": {
+          "points": 5378,
+          "equal022": 4921,
+          "equal024": 48,
+          "closer022": 5231,
+          "ties": 99,
+          "closer024": 48
+        },
+        "2": {
+          "points": 4359,
+          "equal022": 3950,
+          "equal024": 0,
+          "closer022": 4260,
+          "ties": 99,
+          "closer024": 0
+        },
+        "3": {
+          "points": 3194,
+          "equal022": 2884,
+          "equal024": 0,
+          "closer022": 3194,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 1806,
+          "equal022": 1641,
+          "equal024": 0,
+          "closer022": 1806,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 681,
+          "equal022": 623,
+          "equal024": 0,
+          "closer022": 681,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 15,
+        "time_s": 0.434,
+        "reference": 8.5011,
+        "observed": 8.5012
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 15,
+        "time_s": 0.126,
+        "reference": 2.3856,
+        "observed": 2.3852
+      },
+      "max_error_coordinate_024": {
+        "signal": 15,
+        "time_s": 1.642,
+        "reference": 7.5057,
+        "observed": 7.5015
+      }
+    }
+  },
+  "16": {
+    "N": {
+      "points": 2054,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0002,
+      "exact_022": 1520,
+      "exact_024": 1524,
+      "differ": 20,
+      "022_over_1e4": 0,
+      "024_over_1e4": 1,
+      "thresholds": {
+        "1": {
+          "points": 20,
+          "equal022": 8,
+          "equal024": 12,
+          "closer022": 8,
+          "ties": 0,
+          "closer024": 12
+        },
+        "2": {
+          "points": 1,
+          "equal022": 1,
+          "equal024": 0,
+          "closer022": 1,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 16,
+        "time_s": 0.252,
+        "reference": 33.4584,
+        "observed": 33.4585
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 16,
+        "time_s": 0.116,
+        "reference": 15.3075,
+        "observed": 15.3073
+      },
+      "max_error_coordinate_024": {
+        "signal": 16,
+        "time_s": 0.116,
+        "reference": 15.3075,
+        "observed": 15.3073
+      }
+    }
+  },
+  "17": {
+    "N": {
+      "points": 1454,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0017,
+      "exact_022": 1402,
+      "exact_024": 1166,
+      "differ": 318,
+      "022_over_1e4": 0,
+      "024_over_1e4": 84,
+      "thresholds": {
+        "1": {
+          "points": 318,
+          "equal022": 274,
+          "equal024": 38,
+          "closer022": 275,
+          "ties": 5,
+          "closer024": 38
+        },
+        "2": {
+          "points": 89,
+          "equal022": 83,
+          "equal024": 0,
+          "closer022": 84,
+          "ties": 5,
+          "closer024": 0
+        },
+        "3": {
+          "points": 44,
+          "equal022": 43,
+          "equal024": 0,
+          "closer022": 44,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 26,
+          "equal022": 26,
+          "equal024": 0,
+          "closer022": 26,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 12,
+          "equal022": 12,
+          "equal024": 0,
+          "closer022": 12,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 17,
+        "time_s": 0.664,
+        "reference": 8.6749,
+        "observed": 8.675
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 17,
+        "time_s": 0.242,
+        "reference": 4.8864,
+        "observed": 4.8861
+      },
+      "max_error_coordinate_024": {
+        "signal": 17,
+        "time_s": 2.262,
+        "reference": 5.3115,
+        "observed": 5.3098
+      }
+    }
+  },
+  "18": {
+    "N": {
+      "points": 1083,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.003,
+      "exact_022": 1013,
+      "exact_024": 570,
+      "differ": 545,
+      "022_over_1e4": 0,
+      "024_over_1e4": 285,
+      "thresholds": {
+        "1": {
+          "points": 545,
+          "equal022": 477,
+          "equal024": 34,
+          "closer022": 497,
+          "ties": 14,
+          "closer024": 34
+        },
+        "2": {
+          "points": 299,
+          "equal022": 265,
+          "equal024": 0,
+          "closer022": 285,
+          "ties": 14,
+          "closer024": 0
+        },
+        "3": {
+          "points": 199,
+          "equal022": 179,
+          "equal024": 0,
+          "closer022": 199,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 108,
+          "equal022": 95,
+          "equal024": 0,
+          "closer022": 108,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 48,
+          "equal022": 42,
+          "equal024": 0,
+          "closer022": 48,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 18,
+        "time_s": 0.77,
+        "reference": 8.806,
+        "observed": 8.8061
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 18,
+        "time_s": 0.17,
+        "reference": 7.3512,
+        "observed": 7.3506
+      },
+      "max_error_coordinate_024": {
+        "signal": 18,
+        "time_s": 1.37,
+        "reference": 8.3129,
+        "observed": 8.3099
+      }
+    }
+  },
+  "19": {
+    "N": {
+      "points": 1300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0026,
+      "exact_022": 1226,
+      "exact_024": 281,
+      "differ": 1024,
+      "022_over_1e4": 0,
+      "024_over_1e4": 814,
+      "thresholds": {
+        "1": {
+          "points": 1024,
+          "equal022": 951,
+          "equal024": 6,
+          "closer022": 1007,
+          "ties": 11,
+          "closer024": 6
+        },
+        "2": {
+          "points": 825,
+          "equal022": 758,
+          "equal024": 0,
+          "closer022": 814,
+          "ties": 11,
+          "closer024": 0
+        },
+        "3": {
+          "points": 650,
+          "equal022": 594,
+          "equal024": 0,
+          "closer022": 650,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 291,
+          "equal022": 268,
+          "equal024": 0,
+          "closer022": 291,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 151,
+          "equal022": 144,
+          "equal024": 0,
+          "closer022": 151,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 19,
+        "time_s": 0.722,
+        "reference": 8.62,
+        "observed": 8.6201
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 19,
+        "time_s": 0.15,
+        "reference": 4.6302,
+        "observed": 4.6299
+      },
+      "max_error_coordinate_024": {
+        "signal": 19,
+        "time_s": 1.278,
+        "reference": 5.7207,
+        "observed": 5.7181
+      }
+    }
+  },
+  "20": {
+    "N": {
+      "points": 1300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0015,
+      "exact_022": 1201,
+      "exact_024": 935,
+      "differ": 425,
+      "022_over_1e4": 0,
+      "024_over_1e4": 109,
+      "thresholds": {
+        "1": {
+          "points": 425,
+          "equal022": 337,
+          "equal024": 71,
+          "closer022": 342,
+          "ties": 12,
+          "closer024": 71
+        },
+        "2": {
+          "points": 121,
+          "equal022": 104,
+          "equal024": 0,
+          "closer022": 109,
+          "ties": 12,
+          "closer024": 0
+        },
+        "3": {
+          "points": 60,
+          "equal022": 55,
+          "equal024": 0,
+          "closer022": 60,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 28,
+          "equal022": 26,
+          "equal024": 0,
+          "closer022": 28,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 7,
+          "equal022": 7,
+          "equal024": 0,
+          "closer022": 7,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 20,
+        "time_s": 0.26,
+        "reference": 10.9256,
+        "observed": 10.9257
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 20,
+        "time_s": 0.25,
+        "reference": 9.4008,
+        "observed": 9.4003
+      },
+      "max_error_coordinate_024": {
+        "signal": 20,
+        "time_s": 0.728,
+        "reference": 9.7182,
+        "observed": 9.7167
+      }
+    }
+  },
+  "21": {
+    "N": {
+      "points": 1300,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0004,
+      "exact_022": 1238,
+      "exact_024": 1227,
+      "differ": 27,
+      "022_over_1e4": 0,
+      "024_over_1e4": 5,
+      "thresholds": {
+        "1": {
+          "points": 27,
+          "equal022": 19,
+          "equal024": 8,
+          "closer022": 19,
+          "ties": 0,
+          "closer024": 8
+        },
+        "2": {
+          "points": 5,
+          "equal022": 5,
+          "equal024": 0,
+          "closer022": 5,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 2,
+          "equal022": 2,
+          "equal024": 0,
+          "closer022": 2,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 21,
+        "time_s": 0.712,
+        "reference": 9.1802,
+        "observed": 9.1803
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 21,
+        "time_s": 0.356,
+        "reference": 7.2781,
+        "observed": 7.2779
+      },
+      "max_error_coordinate_024": {
+        "signal": 21,
+        "time_s": 0.358,
+        "reference": 7.0484,
+        "observed": 7.048
+      }
+    }
+  },
+  "22": {
+    "N": {
+      "points": 925,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 904,
+      "exact_024": 904,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 22,
+        "time_s": 0.264,
+        "reference": 8.4081,
+        "observed": 8.4082
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 22,
+        "time_s": 0.264,
+        "reference": 8.4081,
+        "observed": 8.4082
+      }
+    }
+  },
+  "23": {
+    "N": {
+      "points": 1275,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0015,
+      "exact_022": 1212,
+      "exact_024": 882,
+      "differ": 420,
+      "022_over_1e4": 0,
+      "024_over_1e4": 133,
+      "thresholds": {
+        "1": {
+          "points": 420,
+          "equal022": 365,
+          "equal024": 35,
+          "closer022": 374,
+          "ties": 11,
+          "closer024": 35
+        },
+        "2": {
+          "points": 144,
+          "equal022": 124,
+          "equal024": 0,
+          "closer022": 133,
+          "ties": 11,
+          "closer024": 0
+        },
+        "3": {
+          "points": 78,
+          "equal022": 69,
+          "equal024": 0,
+          "closer022": 78,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 43,
+          "equal022": 39,
+          "equal024": 0,
+          "closer022": 43,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 12,
+          "equal022": 11,
+          "equal024": 0,
+          "closer022": 12,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 23,
+        "time_s": 1.362,
+        "reference": 8.4531,
+        "observed": 8.4532
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 23,
+        "time_s": 0.19,
+        "reference": 6.3282,
+        "observed": 6.3279
+      },
+      "max_error_coordinate_024": {
+        "signal": 23,
+        "time_s": 1.596,
+        "reference": 6.2021,
+        "observed": 6.2006
+      }
+    }
+  },
+  "24": {
+    "N": {
+      "points": 1200,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0035,
+      "exact_022": 1146,
+      "exact_024": 444,
+      "differ": 756,
+      "022_over_1e4": 0,
+      "024_over_1e4": 697,
+      "thresholds": {
+        "1": {
+          "points": 756,
+          "equal022": 705,
+          "equal024": 3,
+          "closer022": 749,
+          "ties": 4,
+          "closer024": 3
+        },
+        "2": {
+          "points": 701,
+          "equal022": 653,
+          "equal024": 0,
+          "closer022": 697,
+          "ties": 4,
+          "closer024": 0
+        },
+        "3": {
+          "points": 662,
+          "equal022": 618,
+          "equal024": 0,
+          "closer022": 662,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 465,
+          "equal022": 434,
+          "equal024": 0,
+          "closer022": 465,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 194,
+          "equal022": 186,
+          "equal024": 0,
+          "closer022": 194,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 24,
+        "time_s": 0.47,
+        "reference": 8.2229,
+        "observed": 8.223
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": {
+        "signal": 24,
+        "time_s": 0.316,
+        "reference": 5.1229,
+        "observed": 5.1222
+      },
+      "max_error_coordinate_024": {
+        "signal": 24,
+        "time_s": 0.724,
+        "reference": 7.2098,
+        "observed": 7.2063
+      }
+    }
+  },
+  "25": {
+    "N": {
+      "points": 1275,
+      "max_abs_022": 0.0001,
+      "max_abs_024": 0.0001,
+      "exact_022": 1241,
+      "exact_024": 1241,
+      "differ": 0,
+      "022_over_1e4": 0,
+      "024_over_1e4": 0,
+      "thresholds": {
+        "1": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "2": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "3": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "5": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        },
+        "10": {
+          "points": 0,
+          "equal022": 0,
+          "equal024": 0,
+          "closer022": 0,
+          "ties": 0,
+          "closer024": 0
+        }
+      },
+      "exploratory_shared_threshold_exceptions_022": 0,
+      "first_over_1e4_022": null,
+      "max_error_coordinate_022": {
+        "signal": 25,
+        "time_s": 0.28,
+        "reference": 4.1034,
+        "observed": 4.1035
+      },
+      "exploratory_shared_threshold_exceptions_024": 0,
+      "first_over_1e4_024": null,
+      "max_error_coordinate_024": {
+        "signal": 25,
+        "time_s": 0.28,
+        "reference": 4.1034,
+        "observed": 4.1035
+      }
+    }
+  }
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "id": "A-s2-annex-sqrt-w0-022-mos-round",
+    "N_rounding_effect": -0.0003212521820543657,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0-024-mos-round",
+    "N_rounding_effect": -0.0003212521820543657,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": 0.0004882467777846955,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": 0.0004882467777846955,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-annex-cal-w0-022-mos-round",
+    "N_rounding_effect": 4.123992632365514e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-annex-cal-w0-024-mos-round",
+    "N_rounding_effect": 4.123992632365514e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-022-mos-round",
+    "N_rounding_effect": -0.00011039718434169288,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-024-mos-round",
+    "N_rounding_effect": -0.00011039718434169288,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-022-mos-round",
+    "N_rounding_effect": 0.00015586215237206602,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-024-mos-round",
+    "N_rounding_effect": 0.00015586215237206602,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": 0.0002654967133626229,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": 0.0002654967133626229,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-cal-w0-022-mos-round",
+    "N_rounding_effect": -0.0004876475794706181,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-cal-w0-024-mos-round",
+    "N_rounding_effect": -0.0004876475794706181,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-022-mos-round",
+    "N_rounding_effect": -0.0003692470808527304,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-024-mos-round",
+    "N_rounding_effect": -0.0003692470808527304,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-022-mos-round",
+    "N_rounding_effect": 2.440624038424488e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-024-mos-round",
+    "N_rounding_effect": 2.440624038424488e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": -0.00016218965204206626,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": -0.00016218965204206626,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-cal-w0-022-mos-round",
+    "N_rounding_effect": 0.0004681093854221885,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-cal-w0-024-mos-round",
+    "N_rounding_effect": 0.0004681093854221885,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-022-mos-round",
+    "N_rounding_effect": 0.0002919600575843617,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-024-mos-round",
+    "N_rounding_effect": 0.0002919600575843617,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-022-mos-round",
+    "N_rounding_effect": -0.0002756793575118266,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-024-mos-round",
+    "N_rounding_effect": -0.0002756793575118266,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": 9.542674402318596e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": 9.542674402318596e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-cal-w0-022-mos-round",
+    "N_rounding_effect": 0.00012355459612134467,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-cal-w0-024-mos-round",
+    "N_rounding_effect": 0.00012355459612134467,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-022-mos-round",
+    "N_rounding_effect": -0.0004964361849877363,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-024-mos-round",
+    "N_rounding_effect": -0.0004964361849877363,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-022-mos-round",
+    "N_rounding_effect": -0.00038139690324912046,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-024-mos-round",
+    "N_rounding_effect": -0.00038139690324912046,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": -0.00037927454861330645,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": -0.00037927454861330645,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-cal-w0-022-mos-round",
+    "N_rounding_effect": 0.00038215670973840155,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-cal-w0-024-mos-round",
+    "N_rounding_effect": 0.00038215670973840155,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-022-mos-round",
+    "N_rounding_effect": 0.0003842642911036087,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-024-mos-round",
+    "N_rounding_effect": 0.0003842642911036087,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-022-mos-round",
+    "N_rounding_effect": 2.958733943825287e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-024-mos-round",
+    "N_rounding_effect": 2.958733943825287e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": 2.8002979720387344e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": 2.8002979720387344e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-cal-w0-022-mos-round",
+    "N_rounding_effect": -0.00021613169524981046,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-cal-w0-024-mos-round",
+    "N_rounding_effect": -0.00021613169524981046,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-022-mos-round",
+    "N_rounding_effect": -0.00021773633434518658,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-024-mos-round",
+    "N_rounding_effect": -0.00021773633434518658,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-022-mos-round",
+    "N_rounding_effect": 9.423011431408668e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-024-mos-round",
+    "N_rounding_effect": 9.423011431408668e-05,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": 0.00016141526917934357,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": 0.00016141526917934357,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-cal-w0-022-mos-round",
+    "N_rounding_effect": -0.00032352132869917227,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-cal-w0-024-mos-round",
+    "N_rounding_effect": -0.00032352132869917227,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-022-mos-round",
+    "N_rounding_effect": -0.0002583917565743832,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-024-mos-round",
+    "N_rounding_effect": -0.0002583917565743832,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-022-mos-round",
+    "N_rounding_effect": -0.00033365624916648073,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-024-mos-round",
+    "N_rounding_effect": -0.00033365624916648073,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-022-mos-round",
+    "N_rounding_effect": -0.0001380605596423834,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-024-mos-round",
+    "N_rounding_effect": -0.0001380605596423834,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-cal-w0-022-mos-round",
+    "N_rounding_effect": 0.0003657472889724289,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-cal-w0-024-mos-round",
+    "N_rounding_effect": 0.0003657472889724289,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-022-mos-round",
+    "N_rounding_effect": -0.00044054386553682434,
+    "Nprime_bitwise_identical": true
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-024-mos-round",
+    "N_rounding_effect": -0.00044054386553682434,
+    "Nprime_bitwise_identical": true
+  }
+]

@@ -1,0 +1,10 @@
+SQAT variant=024 signal=1 frames=1 seconds=0.032667 Nmax=83.295661159
+SQAT variant=024 signal=2 frames=1 seconds=0.575015 Nmax=14.6545117532
+SQAT variant=024 signal=3 frames=1 seconds=0.530705 Nmax=4.01916218965
+SQAT variant=024 signal=4 frames=1 seconds=0.547483 Nmax=1.54937927455
+SQAT variant=024 signal=5 frames=1 seconds=0.547063 Nmax=10.4978539942
+SQAT variant=024 signal=6 frames=5300 seconds=148.322314 Nmax=14.3592163738
+SQAT variant=024 signal=9 frames=5300 seconds=159.715118 Nmax=29.31408211
+fatal: caught signal Terminated -- stopping myself...
+attempting to save variables to 'octave-workspace'...
+save to 'octave-workspace' complete

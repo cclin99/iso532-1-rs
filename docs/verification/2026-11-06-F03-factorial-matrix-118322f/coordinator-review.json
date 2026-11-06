@@ -1,0 +1,163 @@
+{
+  "status": "PASS",
+  "kind": "coordinator evidence cross-check, not a second numerical engine run",
+  "design_cells": 328,
+  "new_cells": 304,
+  "reused_cells": 24,
+  "stationary_cartesian_complete": 256,
+  "prior_delivery_integrity": {
+    "2026-11-05-F03-filter-independent-118322f": {
+      "verified_files": 39,
+      "manifest_sha256": "1d213035e6e6ec778d8409bebfb1d1a1774b2a4be2fc7d2c5d1ccb7399efa193"
+    },
+    "2026-11-06-F03-three-implementations-118322f": {
+      "verified_files": 62,
+      "manifest_sha256": "d70a7fa205d0b4d8b9124442f186422664eebd273e95e2ea57a12e6ad62f6919"
+    }
+  },
+  "sqrt_inputs_bitwise_identical_signals": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "rounding_source_isolation": [
+    {
+      "usl": "022",
+      "only_two_rounding_lines_removed": true
+    },
+    {
+      "usl": "024",
+      "only_two_rounding_lines_removed": true
+    }
+  ],
+  "shared_level_hashes_verified": 40,
+  "direct_C_main_effect_checks": [
+    {
+      "signal": 2,
+      "factor": "frontend_annex_minus_noct",
+      "direct_pair_mean_sone": -0.022883343606131312,
+      "table_residual": 4.440892098500626e-16
+    },
+    {
+      "signal": 2,
+      "factor": "calibration_cal_minus_sqrt",
+      "direct_pair_mean_sone": 0.021628602611104775,
+      "table_residual": 4.440892098500626e-16
+    },
+    {
+      "signal": 2,
+      "factor": "skip_0p2_minus_0",
+      "direct_pair_mean_sone": -0.011471474070084753,
+      "table_residual": 0.0
+    },
+    {
+      "signal": 2,
+      "factor": "usl_024_minus_022",
+      "direct_pair_mean_sone": 0.0,
+      "table_residual": 0.0
+    },
+    {
+      "signal": 3,
+      "factor": "frontend_annex_minus_noct",
+      "direct_pair_mean_sone": -0.02954385743344634,
+      "table_residual": 3.3306690738754696e-16
+    },
+    {
+      "signal": 3,
+      "factor": "calibration_cal_minus_sqrt",
+      "direct_pair_mean_sone": 0.0065736939060703214,
+      "table_residual": 6.661338147750939e-16
+    },
+    {
+      "signal": 3,
+      "factor": "skip_0p2_minus_0",
+      "direct_pair_mean_sone": -0.003597092489340703,
+      "table_residual": 0.0
+    },
+    {
+      "signal": 3,
+      "factor": "usl_024_minus_022",
+      "direct_pair_mean_sone": 0.0,
+      "table_residual": 0.0
+    },
+    {
+      "signal": 4,
+      "factor": "frontend_annex_minus_noct",
+      "direct_pair_mean_sone": -0.006595511250059027,
+      "table_residual": 5.551115123125783e-17
+    },
+    {
+      "signal": 4,
+      "factor": "calibration_cal_minus_sqrt",
+      "direct_pair_mean_sone": 0.002241091517392768,
+      "table_residual": 1.6653345369377348e-16
+    },
+    {
+      "signal": 4,
+      "factor": "skip_0p2_minus_0",
+      "direct_pair_mean_sone": -2.6025803007145853e-07,
+      "table_residual": 0.0
+    },
+    {
+      "signal": 4,
+      "factor": "usl_024_minus_022",
+      "direct_pair_mean_sone": 0.0,
+      "table_residual": 0.0
+    },
+    {
+      "signal": 5,
+      "factor": "frontend_annex_minus_noct",
+      "direct_pair_mean_sone": 0.07869534236578213,
+      "table_residual": 1.3322676295501878e-15
+    },
+    {
+      "signal": 5,
+      "factor": "calibration_cal_minus_sqrt",
+      "direct_pair_mean_sone": 0.01636020822087536,
+      "table_residual": 4.440892098500626e-16
+    },
+    {
+      "signal": 5,
+      "factor": "skip_0p2_minus_0",
+      "direct_pair_mean_sone": 0.001869697250479252,
+      "table_residual": 0.0
+    },
+    {
+      "signal": 5,
+      "factor": "usl_024_minus_022",
+      "direct_pair_mean_sone": 0.0,
+      "table_residual": 0.0
+    }
+  ],
+  "stationary_result_cells": 264,
+  "tv_result_cells": 64,
+  "independent_cancellation_point": {
+    "signal": 15,
+    "frame": 4803,
+    "time_s": 9.606,
+    "e022": 0.023284092011360613,
+    "delta024_minus022": -0.0003947407682396431,
+    "e024": 0.02288935124312097
+  }
+}

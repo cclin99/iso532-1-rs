@@ -1,0 +1,61 @@
+{
+  "mo_skip0_parity": [
+    {
+      "signal": 2,
+      "calibration": "sqrt",
+      "all_28_levels_bitwise_equal_native_api": true
+    },
+    {
+      "signal": 2,
+      "calibration": "cal",
+      "all_28_levels_bitwise_equal_native_api": true
+    },
+    {
+      "signal": 3,
+      "calibration": "sqrt",
+      "all_28_levels_bitwise_equal_native_api": true
+    },
+    {
+      "signal": 3,
+      "calibration": "cal",
+      "all_28_levels_bitwise_equal_native_api": true
+    },
+    {
+      "signal": 4,
+      "calibration": "sqrt",
+      "all_28_levels_bitwise_equal_native_api": true
+    },
+    {
+      "signal": 4,
+      "calibration": "cal",
+      "all_28_levels_bitwise_equal_native_api": true
+    },
+    {
+      "signal": 5,
+      "calibration": "sqrt",
+      "all_28_levels_bitwise_equal_native_api": true
+    },
+    {
+      "signal": 5,
+      "calibration": "cal",
+      "all_28_levels_bitwise_equal_native_api": true
+    }
+  ],
+  "repeats": [
+    {
+      "backend": "c",
+      "exact_repeat": true
+    },
+    {
+      "backend": "mos-round",
+      "exact_repeat": true
+    },
+    {
+      "backend": "mos-noround",
+      "exact_repeat": true
+    }
+  ],
+  "original_frontend_sha256": "1897b8a047e1cf0552322ca454228878f327bb487fad7c6a44728e0b079eb0be",
+  "mechanical_postskip_sha256": "4ba61e0d7dcd95ed91e9cc1657663cf4036d3038be0f5b5041d6a1002af96847",
+  "only_adaptation": "Slice sig_filt at ceil(skip_s * fs_after_decimation) immediately before original RMS statement"
+}

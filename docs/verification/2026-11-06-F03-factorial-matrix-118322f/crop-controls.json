@@ -1,0 +1,90 @@
+[
+  {
+    "signal": 2,
+    "frontend": "annex",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": 0.013149967885315306,
+      "Nprime_max_abs": 0.020412284042884477,
+      "Nprime_signed_at_max": 0.020412284042884477,
+      "Nprime_max_bark": 1.0,
+      "Nprime_rms": 0.003980217572658769
+    }
+  },
+  {
+    "signal": 2,
+    "frontend": "noct",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": 0.010312427050049422,
+      "Nprime_max_abs": 0.017359089195164157,
+      "Nprime_signed_at_max": 0.017359089195164157,
+      "Nprime_max_bark": 1.0,
+      "Nprime_rms": 0.0033936013644998014
+    }
+  },
+  {
+    "signal": 3,
+    "frontend": "annex",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": 0.003888963230594733,
+      "Nprime_max_abs": 0.0025129669472787894,
+      "Nprime_signed_at_max": 0.0025129669472787894,
+      "Nprime_max_bark": 4.5,
+      "Nprime_rms": 0.0005848065384000202
+    }
+  },
+  {
+    "signal": 3,
+    "frontend": "noct",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": 0.0034380737824779573,
+      "Nprime_max_abs": 0.0023085729303263507,
+      "Nprime_signed_at_max": 0.0023085729303263507,
+      "Nprime_max_bark": 4.5,
+      "Nprime_rms": 0.0005293075494643545
+    }
+  },
+  {
+    "signal": 4,
+    "frontend": "annex",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": 2.1655455935132295e-06,
+      "Nprime_max_abs": 2.237359162503283e-05,
+      "Nprime_signed_at_max": 2.237359162503283e-05,
+      "Nprime_max_bark": 15.3,
+      "Nprime_rms": 6.5240215353459024e-06
+    }
+  },
+  {
+    "signal": 4,
+    "frontend": "noct",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": -1.616787544733711e-06,
+      "Nprime_max_abs": 1.9810301662370744e-05,
+      "Nprime_signed_at_max": 1.9810301662370744e-05,
+      "Nprime_max_bark": 15.3,
+      "Nprime_rms": 5.979954268006705e-06
+    }
+  },
+  {
+    "signal": 5,
+    "frontend": "annex",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": -0.0018063302139363913,
+      "Nprime_max_abs": 0.0006090536466901719,
+      "Nprime_signed_at_max": -0.0006090536466901719,
+      "Nprime_max_bark": 1.0,
+      "Nprime_rms": 0.00014615649536189518
+    }
+  },
+  {
+    "signal": 5,
+    "frontend": "noct",
+    "crop_reset_minus_postfilter_skip": {
+      "N_signed": -0.0017606772132019444,
+      "Nprime_max_abs": 0.0006097939541281905,
+      "Nprime_signed_at_max": -0.0006097939541281905,
+      "Nprime_max_bark": 1.0,
+      "Nprime_rms": 0.00014588013791477122
+    }
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "delivery_role": "Astra numerical execution and reports; coordinating agent delivery QA",
+  "redact": {
+    "exit_code": 0,
+    "stdout": "docs\\verification\\2026-11-05-F03-filter-independent-118322f\\rust-build-initial-environment-failure.log: 3 replaced\ndocs\\verification\\2026-11-05-F03-filter-independent-118322f\\rust-build.log: 2 replaced\n2 file(s) changed\n",
+    "stderr": ""
+  },
+  "redact_check": {
+    "exit_code": 0,
+    "stdout": "clean\n",
+    "stderr": ""
+  },
+  "doc_pairs": {
+    "exit_code": 0,
+    "stdout": "warning: ARCHITECTURE-PERFORMANCE-RISK-REPORT-2026-07-10.md: unpaired (backlog)\nwarning: R3-FIXES-REVIEW-2026-07-11.md: unpaired (backlog)\nwarning: R3-REVIEW-2026-07-11.md: unpaired (backlog)\nwarning: R3-REVIEW-FIXES-IMPLEMENTATION-2026-07-11.md: unpaired (backlog)\nwarning: R4-REVIEW-CLOSEOUT-2026-07-10.md: unpaired (backlog)\nwarning: R5-REVIEW-2-FIXES-2026-07-17.md: unpaired (backlog)\nwarning: R5-REVIEW-3-FIXES-2026-07-18.md: unpaired (backlog)\nwarning: R5-REVIEW-FIXES-2026-07-17.md: unpaired (backlog)\nwarning: R5-REVIEW-FIXES-IMPLEMENTATION-2026-07-17.md: unpaired (backlog)\nwarning: iso532-1-rs-code-review-remediation.md: unpaired (backlog)\nok\n",
+    "stderr": ""
+  },
+  "tracked_diff_check": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "product_diff_from_tag": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "inventory": {
+    "files_inspected_before_audit_and_manifest": 38,
+    "unsupported": [],
+    "non_utf8": [],
+    "personal_path_matches": [],
+    "python_syntax_errors": [],
+    "broken_local_markdown_links": [],
+    "source_or_markdown_trailing_whitespace": []
+  },
+  "original_hash_checks": {
+    "raw_material_files": 39,
+    "raw_mismatches": [],
+    "extracted_product_files": 44,
+    "product_mismatches": [],
+    "preregistration_hash_matches_preexecution_manifest": true
+  }
+}

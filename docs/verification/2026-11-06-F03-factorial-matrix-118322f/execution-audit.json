@@ -1,0 +1,248 @@
+{
+  "2026-11-05-F03-filter-independent-118322f": {
+    "manifest_sha256": "1d213035e6e6ec778d8409bebfb1d1a1774b2a4be2fc7d2c5d1ccb7399efa193",
+    "verified_files": 39
+  },
+  "2026-11-06-F03-three-implementations-118322f": {
+    "manifest_sha256": "d70a7fa205d0b4d8b9124442f186422664eebd273e95e2ea57a12e6ad62f6919",
+    "verified_files": 62
+  },
+  "new_tv_outputs": {
+    "B-s15-cal-022-c.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "dac7e6f071654e850e4099765fd24200faed984a2f416fa19d382a3292d71605"
+    },
+    "B-s15-cal-022-mos-noround.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "4bf961051b27c6bcabf48e0f6dfdff437fbd65bd26f6cdcb27b83d8df2fcac20"
+    },
+    "B-s15-cal-022-mos-round.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "4d3e61010355dd6ca19ea22c7756fe9ad2e165ca5f8c0a58cfb381da6fb86648"
+    },
+    "B-s15-cal-022-sqat.mat": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "abb3fae2c96f8a332c32b58110dd3ff0b32ee75fc88c867cdeb4320a0c684545"
+    },
+    "B-s15-cal-024-c.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "b634676cf6dec0c4c1b0a90fa6fe02bd90582243e80d5cc73b75dafe61501a6a"
+    },
+    "B-s15-cal-024-mos-noround.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "b2a6f153dd21b89c6f853e92a753fad488cf26644c414ed164be401d51f98510"
+    },
+    "B-s15-cal-024-mos-round.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "00a8a03609eabf046660998185a3ef461814e3b14350a2b2b46286d11647b98f"
+    },
+    "B-s15-cal-024-sqat.mat": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "25ede131a77d13ef09fc38d2068bca9c2c37bccc51fd1497e27586a9c7a31ef1"
+    },
+    "B-s15-sqrt-022-mos-noround.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "cd1f782cb042ae2442f111050161418742686415680588fe0e2c3c567c8b862a"
+    },
+    "B-s15-sqrt-024-mos-noround.npz": {
+      "N": 5769,
+      "Nprime": 1384560,
+      "sha256": "800d382e3263b645ed513a8b32c8f3fa1df1ae93305fe35687818b42a83ee5fb"
+    },
+    "B-s16-cal-022-c.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "65037a8b800c15a8a42ac9c0610bf7844726634e7666c8336790c84200a10c04"
+    },
+    "B-s16-cal-022-mos-noround.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "85baf43695f3b46e3b86fb44110828a63af1a85df75d55e422e9f532982517e7"
+    },
+    "B-s16-cal-022-mos-round.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "0ca74184eafd032fd8c62ec21afc5f1aeb934c27d58de679d900ddd770f36c65"
+    },
+    "B-s16-cal-022-sqat.mat": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "862974cc8eae2c07b1a54b5c13725b05df88fd5b1b0677be45f132adbc9d9d48"
+    },
+    "B-s16-cal-024-c.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "4365f86badd5595a224ccac2305dd9678335ff97815ed47b0f89f72604193cc8"
+    },
+    "B-s16-cal-024-mos-noround.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "0f0cb0dbd1176e4e725f731d0ecf2bed406e89944cada965676b25347007bd64"
+    },
+    "B-s16-cal-024-mos-round.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "076c7ffb755ccd40a0e7de705a093b80c3778b5cfd683db8fe2dd803dd5581a5"
+    },
+    "B-s16-cal-024-sqat.mat": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "a0a83d6b7400bf479488260c3f13aeb34d0f19a71b431e6229d511feb94ee6fb"
+    },
+    "B-s16-sqrt-022-mos-noround.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "75da12471a0335ae0cba046cf8558c3e5175df4e24f1e9dd3045df4a032ff070"
+    },
+    "B-s16-sqrt-024-mos-noround.npz": {
+      "N": 2055,
+      "Nprime": 493200,
+      "sha256": "eaa767a4267e9e6b56f570f7d30e042a2b53a38e9a03477dd2a73f72dcff4ad8"
+    },
+    "B-s25-cal-022-c.npz": {
+      "N": 1275,
+      "Nprime": 306000,
+      "sha256": "22289f6170c450a2e678cd4b32c6b579302ea775141688a3bdcdb0e98fff767f"
+    },
+    "B-s25-cal-022-mos-noround.npz": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "20b5e9e232d6a775f4fb55691aa49db0b58170652e52389cd707eebed55e6850"
+    },
+    "B-s25-cal-022-mos-round.npz": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "e38c3730f05f6a287e4e4db80d3309ea64678d7dd4bcc23634defa57fc9f799f"
+    },
+    "B-s25-cal-022-sqat.mat": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "877f2563efe46391419b251a8430b56132d6f8c481bdbbdc6b82e5147bba9bcc"
+    },
+    "B-s25-cal-024-c.npz": {
+      "N": 1275,
+      "Nprime": 306000,
+      "sha256": "22289f6170c450a2e678cd4b32c6b579302ea775141688a3bdcdb0e98fff767f"
+    },
+    "B-s25-cal-024-mos-noround.npz": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "20b5e9e232d6a775f4fb55691aa49db0b58170652e52389cd707eebed55e6850"
+    },
+    "B-s25-cal-024-mos-round.npz": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "e38c3730f05f6a287e4e4db80d3309ea64678d7dd4bcc23634defa57fc9f799f"
+    },
+    "B-s25-cal-024-sqat.mat": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "d3fc786e7c14f4ac062f8c817d7e1508a2540f5be7111b1fe877cd1365622a90"
+    },
+    "B-s25-sqrt-022-mos-noround.npz": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "4726356722b0ed6f1f5a973398b327d942210f2af36d780eb22e2443c6b9d744"
+    },
+    "B-s25-sqrt-024-mos-noround.npz": {
+      "N": 1276,
+      "Nprime": 306240,
+      "sha256": "4726356722b0ed6f1f5a973398b327d942210f2af36d780eb22e2443c6b9d744"
+    },
+    "B-s6-cal-022-c.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "ea9d950ea3e75d30e71ce28b9886aef3540176055d6337cc44d0b573a96c9aa6"
+    },
+    "B-s6-cal-022-mos-noround.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "f4fda9191ed62da14ce0beb4f0e83bbff55419dfb788b797fef7bfd8be57db40"
+    },
+    "B-s6-cal-022-mos-round.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "d4642b0e398884720862b338f069f97c98414a270e5650d2199523c562926e20"
+    },
+    "B-s6-cal-022-sqat.mat": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "43b97a9230619f5256249dcf29b4aed20185ab952b00fef5be62659e4408c0d4"
+    },
+    "B-s6-cal-024-c.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "7a9a28469c8a5d38e8e635b39c4e3e1f4110335630bbcc9bfcfb7ca3e5052a55"
+    },
+    "B-s6-cal-024-mos-noround.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "7e1e5939481de3d54dca30945efa2926d0ee2f7edbae3d59fb54ee556d3e2e45"
+    },
+    "B-s6-cal-024-mos-round.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "1f6def110cd91956ff2e9d7d99e3d6d28e867f0e51484c054ca5151958e55112"
+    },
+    "B-s6-cal-024-sqat.mat": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "9111a676096be9ddaefe8da9e271f0c8691213e8175f2d49d35622e80c322947"
+    },
+    "B-s6-sqrt-022-mos-noround.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "764c295955df440cecff8f3bdaf3cb28fd78f600ccc95502dc208468d264f93a"
+    },
+    "B-s6-sqrt-024-mos-noround.npz": {
+      "N": 5300,
+      "Nprime": 1272000,
+      "sha256": "a75b01d13f2a55b5c7e7cc05336b4ca07eb4c85eca96356450ef834e0283b60a"
+    }
+  },
+  "stationary_evaluations": 264,
+  "new_evaluations_total": 304,
+  "reused_B_cells": 24,
+  "prior_TV_reanalysis_files": 120,
+  "prior_TV_overlap_with_B_reuse": 24,
+  "all_24_sqrt_inputs_bitwise_match_previous": true,
+  "frozen_generated_inputs_and_source_hashes_match": true,
+  "worker_exit_codes": {
+    "stationary_final": 0,
+    "C_TV_022": 0,
+    "C_TV_024": 0,
+    "Mo_round_TV_022": 0,
+    "Mo_round_TV_024": 0,
+    "Mo_noround_TV_022": 0,
+    "Mo_noround_TV_024": 0,
+    "SQAT_stationary_both_variants_and_repeat": 0,
+    "SQAT_TV_022_a": 0,
+    "SQAT_TV_022_b": 0,
+    "SQAT_TV_024_a": 0,
+    "SQAT_TV_024_b": 0
+  },
+  "repaired_harness_event": {
+    "initial_attempt": "Exact-repeat assertion rejected C caller-level mutation",
+    "fix": "Independent copy supplied to each C call; shared input bytes checked after every call; all A rerun",
+    "algorithm_or_tolerance_changed": false,
+    "rejected_log": "run-stationary-initial-rejected.log"
+  },
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "analysis_packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.10.9",
+    "Pillow": "12.2.0"
+  },
+  "no_product_or_old_delivery_write": true
+}

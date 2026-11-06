@@ -1,0 +1,212 @@
+{
+  "created_at": "2026-11-05T22:55:08.693392+08:00",
+  "product_commit": "118322f8300dc752f1d38a79db230a2db5ff2870",
+  "orchestration_head": "493fd595ef62aaded72ed57af1a75327ba14a5b0",
+  "working_crate_equals_tag_after_crlf_normalization": true,
+  "tested_crate": "git-show extracted byte-exact snapshot",
+  "raw_inputs": {
+    "tmp/c01-material/official/Annex A.4/ISO_532-1/Source/ISO_532-1_helper.c": {
+      "bytes": 27680,
+      "sha256": "aaf69545e954679c1332f9eab774c3fe8a11852d75fec1f95f785d5d85c46b25"
+    },
+    "tmp/c01-material/official/Annex A.4/ISO_532-1/Source/ISO_532-1_helper.h": {
+      "bytes": 2512,
+      "sha256": "ac544ff0e6d85dbc2fb4b508be459588801d6fa4d8d7bb3befa9a5d213e5462b"
+    },
+    "tmp/c01-material/official/Annex A.4/ISO_532-1/Source/ISO_532-1_main.c": {
+      "bytes": 15122,
+      "sha256": "aad7f98c372295e0188948a3628518932e4e7de53c3565e41ea3ab2dd13955cf"
+    },
+    "tmp/c01-material/official/Annex A.4/ISO_532-1_LIB/include/ISO_532-1.h": {
+      "bytes": 4318,
+      "sha256": "b067a0e16ebfbbf47044edc030f2f792f6968e60150b35edd8bb7641f5c56605"
+    },
+    "tmp/c01-material/official/Annex A.4/ISO_532-1_LIB/src/ISO_532-1.c": {
+      "bytes": 37682,
+      "sha256": "a74b45ed297cd09ac60701a923120341137d227e536f3109ae4ece810d834491"
+    },
+    "tmp/c01-material/official/Annex B.2/Results and test (stationary loudness based on third octave levels).xlsx": {
+      "bytes": 93089,
+      "sha256": "cc4d303534882e2821f0e4b2d56bb48bfeb852b5050b66570436df0821b86174"
+    },
+    "tmp/c01-material/official/Annex B.2/Test signal 1.txt": {
+      "bytes": 619,
+      "sha256": "a5751ae3b9f85a84708b96399081cb6685aa827592bb7d91312a08e950ed8b74"
+    },
+    "tmp/c01-material/official/Annex B.3/Results and tests for synthetic signals (stationary loudness).xlsx": {
+      "bytes": 327678,
+      "sha256": "6b7326c410cec05bbcff84dd5cc90a028566a4be747f95e5c617e1c1dd678804"
+    },
+    "tmp/c01-material/official/Annex B.3/Test signal 2 (250 Hz 80 dB).wav": {
+      "bytes": 960044,
+      "sha256": "a1173d0a5334276340302d6944672c9a26feb4437f5e09c2afa7a60656b2602d"
+    },
+    "tmp/c01-material/official/Annex B.3/Test signal 3 (1 kHz 60 dB).wav": {
+      "bytes": 960044,
+      "sha256": "4a1fd96e5235294a73471a8fb18f75b1ac67c2c3a3c5f7f31da96b04d815f69a"
+    },
+    "tmp/c01-material/official/Annex B.3/Test signal 4 (4 kHz 40 dB).wav": {
+      "bytes": 960044,
+      "sha256": "f66dc745cfd899307731134afafa8b536dc8cb79a28b2d301013529d7c9dbeb9"
+    },
+    "tmp/c01-material/official/Annex B.3/Test signal 5 (pinknoise 60 dB).wav": {
+      "bytes": 960044,
+      "sha256": "438be1d14ad9e9c150aa6d91ba449039b4e3bf361c9faee311e4f9b5bd9dd24e"
+    },
+    "tmp/c01-material/official/Annex B.4/Results and tests for synthetic signals (time varying loudness).xlsx": {
+      "bytes": 10113781,
+      "sha256": "0a6365c914a58de3e2c91b60d01122eb78067b87c9a7faae91fc619bf282768e"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 10 (tone pulse 1 kHz 10 ms 70 dB).wav": {
+      "bytes": 96044,
+      "sha256": "06c92f24a6991785a75a53153f39f8271f3265c29d411921e3309243a9c4f907"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 11 (tone pulse 1 kHz 50 ms 70 dB).wav": {
+      "bytes": 96044,
+      "sha256": "2093bf1ca4b4f40cd9b3bc1ca37cb7e73292c4c8c660c6a3afebf9106abd5d6b"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 12 (tone pulse 1 kHz 500 ms 70 dB).wav": {
+      "bytes": 96044,
+      "sha256": "718bfe5246023c2b4ea6978183e638d2f76ac0d30d1bd402bf0d769dd400e571"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 13 (combined tone pulses 1 kHz).wav": {
+      "bytes": 96044,
+      "sha256": "37f33a68080c4c66baa7a15476432b537761ca70ee49a739d722ca6da054d2f6"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 6 (tone 250 Hz 30 dB - 80 dB).wav": {
+      "bytes": 1017644,
+      "sha256": "160061507221a59dab0e5ccca64fa6d09ca1796bd3eece6d3f77d710eb16d3e5"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 7 (tone 1 kHz 30 dB - 80 dB).wav": {
+      "bytes": 1017644,
+      "sha256": "fc6a727dc55cc518224a6495ee88d3c52606988b2be5fb5ac7f0670b8c0c9ec2"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 8 (tone 4 kHz 30 dB - 80 dB).wav": {
+      "bytes": 1017644,
+      "sha256": "3bf8f362c5a40a5413758e2d32d4f9b0b6cae21f9d030e59ddeb1b735ed4eea0"
+    },
+    "tmp/c01-material/official/Annex B.4/Test signal 9 (pink noise 0 dB - 50 dB).wav": {
+      "bytes": 1017644,
+      "sha256": "0397a8463ee89b9620bb0dcbf490489384df10aa6e2820bb230b9cadd14fd1d9"
+    },
+    "tmp/c01-material/official/Annex B.5/Results and tests for technical signals (time varying loudness).xlsx": {
+      "bytes": 6157107,
+      "sha256": "9f456541830ad5b97f6ce2cb301357abd6a886572fb3e118eefa71b5f8e690a6"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 14 (propeller-driven airplane).wav": {
+      "bytes": 1262878,
+      "sha256": "03ef3d50d608d74d1f7d0ffdf31a863d410d7871849c5abd920eaa30e5e09e5f"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 15 (vehicle interior 40 kmh).wav": {
+      "bytes": 1107644,
+      "sha256": "5fdc83c79d961b7405c1f568b62f911f227daee248eaa8848fb3630891ce7eab"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 16 (hairdryer).wav": {
+      "bytes": 394584,
+      "sha256": "fc934315b9654ba9dd4fce053ffca06fe773ed286c4fa627267346287504c2ea"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 17 (machine gun).wav": {
+      "bytes": 279322,
+      "sha256": "6ed3b58faf76b28a94c1c4205f1154913aeadac589ac777ba645a56c7fb23e8d"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 18 (hammer).wav": {
+      "bytes": 207982,
+      "sha256": "7cfca7001bff2a0746cdc7d39e0ebfaa631b60d3d99726847db2d6914da13904"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 19 (door creak).wav": {
+      "bytes": 249644,
+      "sha256": "56fffe81fd0bcebc8db7cee42ecf89b3c22e37154914058ceaa3da1e47bf8c24"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 20 (shaking coins).wav": {
+      "bytes": 249644,
+      "sha256": "07bd62f41934bcfdc6a18667c3bb0bb46f57d2a63975562d3a88d239bd70c066"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 21 (jackhammer).wav": {
+      "bytes": 249644,
+      "sha256": "ecd777b7aa0d4b6b4eae1d7ca957357c45f3f5afccf4da811a28cfe8bb54310c"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 22 (ratchet wheel (large)).wav": {
+      "bytes": 177644,
+      "sha256": "82ce49e18d0eedff3a7cade98bc75fde41faa772aeb676a0f3d4051166f577d8"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 23 (typewriter).wav": {
+      "bytes": 244846,
+      "sha256": "51d9daea3810c4e32efbe43abcfec74960be74e58f5403bdf20ff9c9a7d26f26"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 24 (woodpecker).wav": {
+      "bytes": 230448,
+      "sha256": "85e566d2ba104b1b5f8b380720b37083448abca8d8913d159710e94a7c184fd4"
+    },
+    "tmp/c01-material/official/Annex B.5/Test signal 25 (full can rattle).wav": {
+      "bytes": 244846,
+      "sha256": "972e87bbecb4531ab5b53255dbb9c13c11f59a769a726e37002875bc424c75a8"
+    },
+    "tmp/c01-material/official/Annex C/calibration signal sine 1kHz 60dB.wav": {
+      "bytes": 96044,
+      "sha256": "a65e5d0a0e6dd1cb6e021331005b2ea4f05bd412ff637d419bc72dbde134f698"
+    },
+    "tmp/c01-material/official/Annex C/sine 1kHz 40dB 16bit.wav": {
+      "bytes": 96044,
+      "sha256": "131808589c51b942608243843c02134ed82d6991f825962a9d69205b8b529b1f"
+    },
+    "tmp/c01-material/official/Annex C/Sweep 20Hz-20kHz 80dB.wav": {
+      "bytes": 5760044,
+      "sha256": "571e13ab4bcf49e903c2bf1e8dfc2f1966004eb5758868eb0d0b476793550aaa"
+    },
+    "tmp/c01-material/official/Annex C/TestLevels.txt": {
+      "bytes": 619,
+      "sha256": "a5751ae3b9f85a84708b96399081cb6685aa827592bb7d91312a08e950ed8b74"
+    },
+    "tmp/c01-material/official/Readme_(ISO_DIS_532-1)_[2016-01-26].pdf": {
+      "bytes": 69421,
+      "sha256": "d1b890ce2d8f713e7644785d27077a81cb675911aca4873a2e1bcd316d46000f"
+    }
+  },
+  "product_files": {
+    "iso532/Cargo.toml": "fd5e98456d9840144dead6cec689e7eb9e4c0073eccbb4c1370547b32cbc5b9f",
+    "iso532/README.md": "67f87b4836193d6ef4288b765b5fd1896bb02008881deac57b7f7f1ce1b176ff",
+    "iso532/benches/loudness.rs": "5f4d5fd5ea8a790c759f267955675ead6832520d3764020d5be6cae66c490e60",
+    "iso532/examples/cli.rs": "1fc17e059cf575626a57075e73b48e7b928b225cb6fa4b1ef02182eece004178",
+    "iso532/src/core/calc_slopes.rs": "3a1bdf3148e6fe7076c8ff0c0721645dabea0eb79a5f470367dbbec75b9aff69",
+    "iso532/src/core/main_loudness.rs": "3a728dbf2f96b09def6ce8536372bb09ba25364efe630b40f3511b47c94b915e",
+    "iso532/src/core/mod.rs": "bb6ba53563a85077ccc31e9d2bbe82d2fa457f2a181084dc7dae4ff2f0839a28",
+    "iso532/src/dsp/filtfilt.rs": "41d17e1752f30239aab72ffc7af0b8f6d02e063a4658f781cb61c16cc8a0e123",
+    "iso532/src/dsp/mod.rs": "83cf73aae7d1c577e0af8b340358bd1306b62a6d60c74364c26125fcfd72e725",
+    "iso532/src/dsp/sos.rs": "5c169624305172bda3046fc4e700b54025031cab26c91baf67ca0722cb9d34a0",
+    "iso532/src/error.rs": "e3a670640090ea4e375ca8958881af442ae368884b81faa756de40bca77964a6",
+    "iso532/src/lib.rs": "8a36ba93c891dc20b8ac7264156f9547deb54f2067e06aa65573ee6c47be06df",
+    "iso532/src/simd/mod.rs": "3c7b7dbe2af7345c1559d2193ec3654dd3bfe2365da597fdd76469c0e9d0fc62",
+    "iso532/src/sone2phon.rs": "cdc2627408e7eb5cad81bc2b73a6de34142febde46d8647f5654c2dc1070372c",
+    "iso532/src/tables.rs": "f2f788faed945e7389cdc7ea86b908c68af7935aa382748585e86ddb27e8cd9f",
+    "iso532/src/tables_noct.rs": "d36f3e2f3fd40e50d3ea1ad61208b3b29d351e15470c0ec6d5eca78d99a15530",
+    "iso532/src/zwst/mod.rs": "3b841222131c9322581d81b58edc8fff73da4d594eb9b8e177b7d30ad4d03974",
+    "iso532/src/zwtv/mod.rs": "994edd30b2f6c05de41e79422d619907a688d965264040fe4a8f3854c99de130",
+    "iso532/src/zwtv/nonlinear_decay.rs": "cbe95b072b833d4729ee23151919fb76d9c42b5fd9f28167d933d4b5b7186236",
+    "iso532/src/zwtv/stream.rs": "22304a4c3dfa78dd771cb7d21f0793048b8bc6f2bced7e5beb1c8ba3d67146d1",
+    "iso532/src/zwtv/temporal_weighting.rs": "e64f6f32aa5c28b0665ec729ced2e6d13a326169457a6e8e8194bccbf4d6cb27",
+    "iso532/src/zwtv/third_octave_levels.rs": "d8f8ca94bca14c6964448fe6bcb77ea5db77187ee464bf223254b1a1891275e1",
+    "iso532/tests/annexb.rs": "a7eb0ba940c5914a6ed90579d3489159fe3e1b339903e2a2435a93a1c1e29fc7",
+    "iso532/tests/annexb_validator.rs": "bdf42e0077e687d524ea07dcd8051dcbf5a207e1ce3ea9b284b9ead73173d966",
+    "iso532/tests/api_errors.rs": "761434da472677cfbb34137dceef67859b399bb94c4fbf8b2a16e53c6eb7635b",
+    "iso532/tests/common/annexb_check.rs": "22cfb8aba9e2c07c40fbcb6d17645846ec3249cdc605c665df3c5fc87a245d2c",
+    "iso532/tests/common/mod.rs": "6373c7ec5ba4a4c468f108948e0b476f221aea52063ca7dced706543201d5093",
+    "iso532/tests/determinism.rs": "02ecc693ef9447018d394383caa11ae8c37ae5f4a8726c0e1a90cc72cf8ea45e",
+    "iso532/tests/golden_c.rs": "9a6a8618e50f99d7e6a246718440170188f7e18fb0ef84ce761198ed4a143e7e",
+    "iso532/tests/golden_core.rs": "4f13d83a0a415533133bfe7d50f7c075ccd3460baf4017fad976934755fe85c6",
+    "iso532/tests/golden_dsp.rs": "dfb726e6ee78e6cb445974c376244dd7e0dd6c6509f617de30f1f22033281c89",
+    "iso532/tests/golden_zwst.rs": "e95864b1999b7e559f31dba07b6c34aaf8d189f616efa9b2aac667b42a5915b1",
+    "iso532/tests/golden_zwtv.rs": "7aba9241bdf942afd2a4d57aae32ce67c6b05207d3d95c97242c3043f61fd078",
+    "iso532/tests/hash_gate.rs": "6a5ee1798ef78e92974b9591269c92630d856e8c76fc34bcb8ee70ed40343aea",
+    "iso532/tests/low_freq_correction.rs": "ef8979e07b156ee929a829cfe2f609faaa364d5b68163803c37718d3a632dd60",
+    "iso532/tests/nl_zero_init.rs": "2a26461d2930e7f4b1c752c2fd5f92bc1a6f6a3568f3fb28595e515211a4a41b",
+    "iso532/tests/output_grid.rs": "8a0b0991bcd468d6968389741c586713de5fc1d75295377de349bf5bdeb36e03",
+    "iso532/tests/py_contract_dump.rs": "68c2a5da1105083280a14b1b889108ce25c6c23fdc60c75e2d68db5bd3f14631",
+    "iso532/tests/simd_dispatch.rs": "bcf1efc0e96cb86d600e3eea2dbf505a3d70ba7b59c8c9466b3c7a4c99d5868c",
+    "iso532/tests/simd_parity.rs": "acf80a3d9b5c5027760240afcee88786ac13f1f4be64ff7841bcbc2b5e9c663a",
+    "iso532/tests/stream.rs": "7f72552613e9ec71a40d8730671a27bb2740c1b2e0f39a2523806b15f6944370",
+    "iso532/tests/stream_alloc.rs": "1b10f564e0814b85943f69957f3c3b6662216db0b9c2079c34388fd02360e969",
+    "iso532/tests/stream_no_rayon.rs": "237d25c2ad620d56cb4fe4f1e56f9745a3cd1188d8c24594238c83c9bf5f109c",
+    "iso532/tests/stream_scalar.rs": "ea3af151231a6f9ea95fead8bae63613e6c18e913b7b09f74155a4d4b4d6a38e"
+  },
+  "preregistration_sha256": "ef77055a17bc0ae17d2386de7b8a582cd0e0787230f857739b453bfa7b3cfa1d"
+}

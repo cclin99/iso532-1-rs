@@ -1,0 +1,514 @@
+[
+  {
+    "id022": "A-s2-annex-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-annex-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s2-noct-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-annex-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s3-noct-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-annex-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s4-noct-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-annex-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-sqrt-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0.2-022-c",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0.2-022-sqat",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0.2-022-mos-round",
+    "N_and_Nprime_bitwise_unchanged": true
+  },
+  {
+    "id022": "A-s5-noct-cal-w0.2-022-mos-noround",
+    "N_and_Nprime_bitwise_unchanged": true
+  }
+]

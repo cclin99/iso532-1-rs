@@ -1,0 +1,14 @@
+License checkout failed.
+License Manager Error -10
+Your license for MATLAB has expired. 
+If you are not using a trial license contact your License Administrator to obtain an updated
+license. 
+Otherwise, contact your Sales Representative for a trial extension.
+
+Troubleshoot this issue by visiting: 
+https://www.mathworks.com/support/lme/R2021a/10
+
+Diagnostic Information:
+Feature: MATLAB 
+License path: <MATLAB_LICENSE_SEARCH_PATH>
+Licensing error: -10,32.

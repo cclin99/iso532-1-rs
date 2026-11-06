@@ -1,0 +1,842 @@
+{
+  "count_order": [
+    "decisive",
+    "equal022",
+    "equal024",
+    "closer022"
+  ],
+  "legacy_totals": [
+    12287,
+    11174,
+    0,
+    12109
+  ],
+  "integer_totals": [
+    12287,
+    11174,
+    0,
+    12062
+  ],
+  "all_disagreements_are_decimal_ties": true,
+  "disagreements": [
+    {
+      "signal": 9,
+      "time_s": 5.308,
+      "workbook": 5.5525,
+      "v022": 5.5526,
+      "v024": 5.5524,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 9,
+      "time_s": 6.534,
+      "workbook": 8.877,
+      "v022": 8.8771,
+      "v024": 8.8769,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 9,
+      "time_s": 7.5,
+      "workbook": 12.3686,
+      "v022": 12.3687,
+      "v024": 12.3685,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 9,
+      "time_s": 7.634,
+      "workbook": 12.601,
+      "v022": 12.6011,
+      "v024": 12.6009,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 9,
+      "time_s": 7.948,
+      "workbook": 14.3213,
+      "v022": 14.3214,
+      "v024": 14.3212,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 14,
+      "time_s": 1.676,
+      "workbook": 7.0025,
+      "v022": 7.0026,
+      "v024": 7.0024,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 14,
+      "time_s": 2.33,
+      "workbook": 8.0812,
+      "v022": 8.0813,
+      "v024": 8.0811,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 14,
+      "time_s": 9.058,
+      "workbook": 7.8516,
+      "v022": 7.8517,
+      "v024": 7.8515,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 14,
+      "time_s": 9.116,
+      "workbook": 7.7483,
+      "v022": 7.7484,
+      "v024": 7.7482,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 14,
+      "time_s": 10.308,
+      "workbook": 9.8023,
+      "v022": 9.8024,
+      "v024": 9.8022,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 14,
+      "time_s": 10.374,
+      "workbook": 9.9143,
+      "v022": 9.9144,
+      "v024": 9.9142,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 14,
+      "time_s": 12.684,
+      "workbook": 3.6819,
+      "v022": 3.682,
+      "v024": 3.6818,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000021103,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 0.328,
+      "workbook": 7.498,
+      "v022": 7.4981,
+      "v024": 7.4979,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 0.852,
+      "workbook": 7.9724,
+      "v022": 7.9725,
+      "v024": 7.9723,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 0.942,
+      "workbook": 9.5858,
+      "v022": 9.5859,
+      "v024": 9.5857,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 1.3,
+      "workbook": 8.3045,
+      "v022": 8.3046,
+      "v024": 8.3044,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 1.888,
+      "workbook": 7.9751,
+      "v022": 7.9752,
+      "v024": 7.975,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 2.21,
+      "workbook": 7.9187,
+      "v022": 7.9188,
+      "v024": 7.9186,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 2.272,
+      "workbook": 8.6468,
+      "v022": 8.6469,
+      "v024": 8.6467,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 2.81,
+      "workbook": 8.2169,
+      "v022": 8.217,
+      "v024": 8.2168,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 3.038,
+      "workbook": 7.7891,
+      "v022": 7.7892,
+      "v024": 7.789,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 3.274,
+      "workbook": 8.4989,
+      "v022": 8.499,
+      "v024": 8.4988,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 3.316,
+      "workbook": 7.5281,
+      "v022": 7.5282,
+      "v024": 7.528,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 4.42,
+      "workbook": 7.9606,
+      "v022": 7.9607,
+      "v024": 7.9605,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 4.68,
+      "workbook": 8.3053,
+      "v022": 8.3054,
+      "v024": 8.3052,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 4.836,
+      "workbook": 8.8221,
+      "v022": 8.8222,
+      "v024": 8.822,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 4.894,
+      "workbook": 7.9248,
+      "v022": 7.9249,
+      "v024": 7.9247,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 5.14,
+      "workbook": 8.191,
+      "v022": 8.1911,
+      "v024": 8.1909,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 6.91,
+      "workbook": 8.5195,
+      "v022": 8.5196,
+      "v024": 8.5194,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 7.704,
+      "workbook": 8.4097,
+      "v022": 8.4098,
+      "v024": 8.4096,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 7.71,
+      "workbook": 8.284,
+      "v022": 8.2841,
+      "v024": 8.2839,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 15,
+      "time_s": 8.972,
+      "workbook": 8.05,
+      "v022": 8.0501,
+      "v024": 8.0499,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 17,
+      "time_s": 0.502,
+      "workbook": 5.0566,
+      "v022": 5.0567,
+      "v024": 5.0565,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 18,
+      "time_s": 0.196,
+      "workbook": 6.9858,
+      "v022": 6.9859,
+      "v024": 6.9857,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 18,
+      "time_s": 0.272,
+      "workbook": 7.4564,
+      "v022": 7.4565,
+      "v024": 7.4563,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 18,
+      "time_s": 0.894,
+      "workbook": 7.5841,
+      "v022": 7.5842,
+      "v024": 7.584,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 19,
+      "time_s": 0.806,
+      "workbook": 7.2906,
+      "v022": 7.2907,
+      "v024": 7.2905,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 19,
+      "time_s": 1.254,
+      "workbook": 7.4031,
+      "v022": 7.4032,
+      "v024": 7.403,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 19,
+      "time_s": 1.75,
+      "workbook": 5.2853,
+      "v022": 5.2854,
+      "v024": 5.2852,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 19,
+      "time_s": 1.922,
+      "workbook": 8.4097,
+      "v022": 8.4098,
+      "v024": 8.4096,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 20,
+      "time_s": 2.07,
+      "workbook": 12.0988,
+      "v022": 12.0989,
+      "v024": 12.0987,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.0001000000000015433,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 23,
+      "time_s": 1.414,
+      "workbook": 5.6275,
+      "v022": 5.6276,
+      "v024": 5.6274,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 23,
+      "time_s": 1.5,
+      "workbook": 5.9358,
+      "v022": 5.9359,
+      "v024": 5.9357,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 23,
+      "time_s": 1.626,
+      "workbook": 5.4103,
+      "v022": 5.4104,
+      "v024": 5.4102,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 23,
+      "time_s": 1.716,
+      "workbook": 6.5963,
+      "v022": 6.5964,
+      "v024": 6.5962,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 24,
+      "time_s": 1.704,
+      "workbook": 4.5433,
+      "v022": 4.5434,
+      "v024": 4.5432,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000065512,
+      "integer_error022": 1,
+      "integer_error024": 1
+    },
+    {
+      "signal": 24,
+      "time_s": 1.744,
+      "workbook": 3.2345,
+      "v022": 3.2346,
+      "v024": 3.2344,
+      "float_error022": 9.999999999976694e-05,
+      "float_error024": 0.00010000000000021103,
+      "integer_error022": 1,
+      "integer_error024": 1
+    }
+  ],
+  "per_signal": {
+    "6": {
+      "legacy_counts": [
+        1292,
+        1242,
+        0,
+        1291
+      ],
+      "integer_counts": [
+        1292,
+        1242,
+        0,
+        1291
+      ],
+      "predicate_disagreements": 0
+    },
+    "7": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    },
+    "8": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    },
+    "9": {
+      "legacy_counts": [
+        998,
+        891,
+        0,
+        968
+      ],
+      "integer_counts": [
+        998,
+        891,
+        0,
+        963
+      ],
+      "predicate_disagreements": 5
+    },
+    "10": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    },
+    "11": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    },
+    "12": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    },
+    "13": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    },
+    "14": {
+      "legacy_counts": [
+        3453,
+        3098,
+        0,
+        3427
+      ],
+      "integer_counts": [
+        3453,
+        3098,
+        0,
+        3420
+      ],
+      "predicate_disagreements": 7
+    },
+    "15": {
+      "legacy_counts": [
+        4359,
+        3950,
+        0,
+        4280
+      ],
+      "integer_counts": [
+        4359,
+        3950,
+        0,
+        4260
+      ],
+      "predicate_disagreements": 20
+    },
+    "16": {
+      "legacy_counts": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "integer_counts": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "predicate_disagreements": 0
+    },
+    "17": {
+      "legacy_counts": [
+        89,
+        83,
+        0,
+        85
+      ],
+      "integer_counts": [
+        89,
+        83,
+        0,
+        84
+      ],
+      "predicate_disagreements": 1
+    },
+    "18": {
+      "legacy_counts": [
+        299,
+        265,
+        0,
+        288
+      ],
+      "integer_counts": [
+        299,
+        265,
+        0,
+        285
+      ],
+      "predicate_disagreements": 3
+    },
+    "19": {
+      "legacy_counts": [
+        825,
+        758,
+        0,
+        818
+      ],
+      "integer_counts": [
+        825,
+        758,
+        0,
+        814
+      ],
+      "predicate_disagreements": 4
+    },
+    "20": {
+      "legacy_counts": [
+        121,
+        104,
+        0,
+        110
+      ],
+      "integer_counts": [
+        121,
+        104,
+        0,
+        109
+      ],
+      "predicate_disagreements": 1
+    },
+    "21": {
+      "legacy_counts": [
+        5,
+        5,
+        0,
+        5
+      ],
+      "integer_counts": [
+        5,
+        5,
+        0,
+        5
+      ],
+      "predicate_disagreements": 0
+    },
+    "22": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    },
+    "23": {
+      "legacy_counts": [
+        144,
+        124,
+        0,
+        137
+      ],
+      "integer_counts": [
+        144,
+        124,
+        0,
+        133
+      ],
+      "predicate_disagreements": 4
+    },
+    "24": {
+      "legacy_counts": [
+        701,
+        653,
+        0,
+        699
+      ],
+      "integer_counts": [
+        701,
+        653,
+        0,
+        697
+      ],
+      "predicate_disagreements": 2
+    },
+    "25": {
+      "legacy_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "predicate_disagreements": 0
+    }
+  }
+}

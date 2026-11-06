@@ -1,0 +1,119 @@
+{
+  "started_date_asia_taipei": "2026-11-05",
+  "completed_date_asia_taipei": "2026-11-06",
+  "all_native_output_routes": 150,
+  "signals_per_variant": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "native_worker_exit_codes": {
+    "c022": 0,
+    "c024": 0,
+    "mos022": 0,
+    "mos024": 0,
+    "sqat022_shard_a": 0,
+    "sqat022_shard_b": 0,
+    "sqat024_shard_a": 0,
+    "sqat024_shard_b": 0
+  },
+  "intentional_scheduling_restart": {
+    "initial_sqat_worker_exit_codes": [
+      1,
+      1
+    ],
+    "completed_and_preserved_signals": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+    ],
+    "terminated_container_pids": [
+      3325,
+      3332
+    ],
+    "reason": "Partition remaining inputs into four disjoint jobs on four available CPUs; no algorithm change",
+    "new_threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    }
+  },
+  "environment_and_harness_events": [
+    {
+      "event": "MATLAB R2021a readiness",
+      "status": "BLOCKED",
+      "reason": "License Manager Error -10, license expired",
+      "resolution": "Native unchanged SQAT .m run in GNU Octave 8.4.0; MATLAB acceptance not claimed"
+    },
+    {
+      "event": "Initial signal 1 preparation",
+      "status": "REPAIRED BEFORE RUN",
+      "reason": "Generic regex incorrectly included header/frequency numbers; assertion rejected input",
+      "resolution": "Read only noncomment text after colon, as official format specifies"
+    },
+    {
+      "event": "Initial shard argument shape",
+      "status": "REPAIRED BEFORE SHARD NUMERICS",
+      "reason": "Column argv vector made one vector loop iteration; nonexistent concatenated input filename rejected",
+      "resolution": "reshape signals to row vector; four initial logs preserved"
+    },
+    {
+      "event": "Exact returned-time matching",
+      "status": "PROTOCOL DEVIATION DOCUMENTED",
+      "reason": "MoSQITo endpoint-inclusive linspace labels differ from physical decimation grid",
+      "resolution": "Preserve reported labels, fixed source-defined sample indices, report drift; no fitting/interpolation"
+    },
+    {
+      "event": "openpyxl conditional formatting warning",
+      "status": "INSPECTED",
+      "reason": "Unsupported formatting extension, no data-value read failure",
+      "resolution": "Read original cell values only; no workbook saved or modified"
+    }
+  ],
+  "original_raw_log_sha256": {
+    "sqat-acquisition.json": "2dd545e31a6d588e8fcb8452c009d10932c8d70e7a1313439489f0e4a91da00c",
+    "octave-package-versions.txt": "3045b014b0e44014b7e35f29473c8ac88f5feebdbad780d0bd51bd9b321ab25a",
+    "octave-readiness.log": "4110e57790969ff346544e69d02ec451b09a87665bf8edb643f7d5ee5f430e38",
+    "matlab-readiness.log": "6a855ddc83f1df44fa861d26f61e44ca04887313c96a208df6f06827814eb4c0"
+  },
+  "raw_hash_semantics": "Hashes above refer to original tmp files, not sanitized delivery copies. Final delivery hashes appear only in delivery-integrity.json.",
+  "third_party_full_sources_in_delivery": false,
+  "raw_wav_workbooks_in_delivery": false,
+  "product_changes": false,
+  "commit_or_push": false,
+  "reported_time_grid": "Original MoSQITo returned time arrays retained; analysis maps source sample indices to physical 2ms grid per alignment-deviation.md",
+  "table_a9_authority": "PENDING",
+  "coordinator_cleanup": {
+    "dedicated_container": "iso532-f03-octave-20261105",
+    "docker_stop_exit_code": 0,
+    "confirmed_state": "exited",
+    "container_and_tmp_preserved": true,
+    "numerical_workers_completed_before_stop": true,
+    "recorded_at": "2026-11-06T07:43:38.164434+08:00"
+  }
+}

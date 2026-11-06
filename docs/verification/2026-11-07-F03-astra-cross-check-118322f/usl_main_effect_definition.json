@@ -1,0 +1,42 @@
+{
+ "6": {
+  "claude_mean_over_calibration": [
+   0.01685087521872708,
+   6.836
+  ],
+  "astra_sqat_USL": [
+   0.016850875218731964,
+   6.836
+  ]
+ },
+ "15": {
+  "claude_mean_over_calibration": [
+   0.00423410839711158,
+   7.788
+  ],
+  "astra_sqat_USL": [
+   0.004234108397095593,
+   7.788
+  ]
+ },
+ "16": {
+  "claude_mean_over_calibration": [
+   0.00020264718528029135,
+   0.116
+  ],
+  "astra_sqat_USL": [
+   0.0002026471852820677,
+   0.116
+  ]
+ },
+ "25": {
+  "claude_mean_over_calibration": [
+   0.0,
+   0.0
+  ],
+  "astra_sqat_USL": [
+   0.0,
+   0.0
+  ]
+ }
+}

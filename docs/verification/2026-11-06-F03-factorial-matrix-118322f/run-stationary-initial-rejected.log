@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<REPO>\docs\verification\2026-11-06-F03-factorial-matrix-118322f\run_stationary.py", line 49, in <module>
+    n2,ns2=backend(levelmap[key],cell['usl'],cell['backend']);assert n==n2 and np.array_equal(ns,ns2);repeats.append({'backend':cell['backend'],'exact_repeat':True})
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

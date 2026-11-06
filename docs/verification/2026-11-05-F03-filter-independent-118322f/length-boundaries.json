@@ -1,0 +1,104 @@
+[
+  {
+    "boundary_length": 4800,
+    "skip_samples": 0,
+    "n": 4.3839739741973895,
+    "official_c_return": 1,
+    "official_c_n": 4.383973855447503,
+    "harness_rejects_empty_rms": false,
+    "candidate_minus_c": 1.1874988636861872e-07
+  },
+  {
+    "boundary_length": 4800,
+    "skip_samples": 4800,
+    "n": null,
+    "official_c_return": -4,
+    "official_c_n": null,
+    "harness_rejects_empty_rms": true
+  },
+  {
+    "boundary_length": 4800,
+    "skip_samples": 9600,
+    "n": null,
+    "official_c_return": -4,
+    "official_c_n": null,
+    "harness_rejects_empty_rms": true
+  },
+  {
+    "boundary_length": 4800,
+    "skip_samples": 19200,
+    "n": null,
+    "official_c_return": -4,
+    "official_c_n": null,
+    "harness_rejects_empty_rms": true
+  },
+  {
+    "boundary_length": 9600,
+    "skip_samples": 0,
+    "n": 4.235363231743587,
+    "official_c_return": 1,
+    "official_c_n": 4.235363104339889,
+    "harness_rejects_empty_rms": false,
+    "candidate_minus_c": 1.2740369825792186e-07
+  },
+  {
+    "boundary_length": 9600,
+    "skip_samples": 4800,
+    "n": 4.019162189079947,
+    "official_c_return": 1,
+    "official_c_n": 4.019162041967022,
+    "harness_rejects_empty_rms": false,
+    "candidate_minus_c": 1.4711292450897417e-07
+  },
+  {
+    "boundary_length": 9600,
+    "skip_samples": 9600,
+    "n": null,
+    "official_c_return": -4,
+    "official_c_n": null,
+    "harness_rejects_empty_rms": true
+  },
+  {
+    "boundary_length": 9600,
+    "skip_samples": 19200,
+    "n": null,
+    "official_c_return": -4,
+    "official_c_n": null,
+    "harness_rejects_empty_rms": true
+  },
+  {
+    "boundary_length": 19200,
+    "skip_samples": 0,
+    "n": 4.138055979374167,
+    "official_c_return": 1,
+    "official_c_n": 4.138055843765763,
+    "harness_rejects_empty_rms": false,
+    "candidate_minus_c": 1.3560840450566047e-07
+  },
+  {
+    "boundary_length": 19200,
+    "skip_samples": 4800,
+    "n": 4.01916218946077,
+    "official_c_return": 1,
+    "official_c_n": 4.019162042347813,
+    "harness_rejects_empty_rms": false,
+    "candidate_minus_c": 1.471129573715757e-07
+  },
+  {
+    "boundary_length": 19200,
+    "skip_samples": 9600,
+    "n": 4.019162189651277,
+    "official_c_return": 1,
+    "official_c_n": 4.019162042538329,
+    "harness_rejects_empty_rms": false,
+    "candidate_minus_c": 1.4711294760161309e-07
+  },
+  {
+    "boundary_length": 19200,
+    "skip_samples": 19200,
+    "n": null,
+    "official_c_return": -4,
+    "official_c_n": null,
+    "harness_rejects_empty_rms": true
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "retrieved_at": "2026-11-05T23:47:32.236024+08:00",
+  "release": "v2.0",
+  "commit": "94f489c053d1366da05d5e62838c3f54ac7715c3",
+  "release_url": "https://github.com/ggrecow/SQAT/releases/tag/v2.0",
+  "published_at": "2026-10-15T07:17:37Z",
+  "latest_release_api": "https://api.github.com/repos/ggrecow/SQAT/releases/latest",
+  "all_git_blob_sha1_verified": true,
+  "files": [
+    {
+      "path": "psychoacoustic_metrics/Loudness_ISO532_1/Loudness_ISO532_1.m",
+      "bytes": 36227,
+      "git_blob_sha1": "e295a766aa50d366c7cdf20fa22c4756b9432340",
+      "sha256": "1113ab411f8a6792bd0f7c972bc45124187324222ee8f7d43d9e0765fd57bd5b",
+      "url": "https://raw.githubusercontent.com/ggrecow/SQAT/94f489c053d1366da05d5e62838c3f54ac7715c3/psychoacoustic_metrics/Loudness_ISO532_1/Loudness_ISO532_1.m"
+    },
+    {
+      "path": "sound_level_meter/Do_OB13_ISO532_1.m",
+      "bytes": 12222,
+      "git_blob_sha1": "ca6a121d0b2e8fb8a8e6ca9ccfe100db4a372831",
+      "sha256": "108121ce75d1cef6254b9f4ec92b3da54d3e2e844ca6843acb0c63a5135925ed",
+      "url": "https://raw.githubusercontent.com/ggrecow/SQAT/94f489c053d1366da05d5e62838c3f54ac7715c3/sound_level_meter/Do_OB13_ISO532_1.m"
+    },
+    {
+      "path": "utilities/get_statistics.m",
+      "bytes": 4623,
+      "git_blob_sha1": "20fb5bdfd4b3b534bd8c806d72b050da3768a634",
+      "sha256": "506054994d92375427055e621fb62e98fa64864f6b0ab7b39ebe17f5a921e504",
+      "url": "https://raw.githubusercontent.com/ggrecow/SQAT/94f489c053d1366da05d5e62838c3f54ac7715c3/utilities/get_statistics.m"
+    },
+    {
+      "path": "utilities/get_exceeded_value.m",
+      "bytes": 3500,
+      "git_blob_sha1": "cab653076f640eec1f91b4af27d8ea97bf770ea0",
+      "sha256": "a655e7d8e3d6cc6623440c2dd9541c56b7da83842b3e31eb6937c91f9bf97fb5",
+      "url": "https://raw.githubusercontent.com/ggrecow/SQAT/94f489c053d1366da05d5e62838c3f54ac7715c3/utilities/get_exceeded_value.m"
+    }
+  ],
+  "mosqito_pypi_observation": {
+    "url": "https://pypi.org/project/mosqito/",
+    "latest_release": "1.2.1",
+    "published": "2024-04-22"
+  }
+}

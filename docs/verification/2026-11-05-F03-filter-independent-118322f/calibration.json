@@ -1,0 +1,10 @@
+{
+  "factors": {
+    "sqrt": 2.8284271247461903,
+    "cal": 2.835797716391444
+  },
+  "ratio": 1.002605897666858,
+  "db_delta": 0.022605099030410136,
+  "calibration_pcm_peak_lsb": 327.0,
+  "calibration_pcm_rms_lsb": 231.1025205401274
+}

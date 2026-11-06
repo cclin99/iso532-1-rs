@@ -1,0 +1,33 @@
+{
+  "frozen_at": "2026-11-05T23:50:53.988958+08:00",
+  "commit": "94f489c053d1366da05d5e62838c3f54ac7715c3",
+  "baseline": {
+    "psychoacoustic_metrics/Loudness_ISO532_1/Loudness_ISO532_1.m": "1113ab411f8a6792bd0f7c972bc45124187324222ee8f7d43d9e0765fd57bd5b",
+    "sound_level_meter/Do_OB13_ISO532_1.m": "108121ce75d1cef6254b9f4ec92b3da54d3e2e844ca6843acb0c63a5135925ed",
+    "utilities/get_exceeded_value.m": "a655e7d8e3d6cc6623440c2dd9541c56b7da83842b3e31eb6937c91f9bf97fb5",
+    "utilities/get_statistics.m": "506054994d92375427055e621fb62e98fa64864f6b0ab7b39ebe17f5a921e504"
+  },
+  "counterfactual": {
+    "psychoacoustic_metrics/Loudness_ISO532_1/Loudness_ISO532_1.m": "cdab7d2556d7bdf2d8490da132faadb51a14da5794addc439958546650dc4cda",
+    "sound_level_meter/Do_OB13_ISO532_1.m": "108121ce75d1cef6254b9f4ec92b3da54d3e2e844ca6843acb0c63a5135925ed",
+    "utilities/get_exceeded_value.m": "a655e7d8e3d6cc6623440c2dd9541c56b7da83842b3e31eb6937c91f9bf97fb5",
+    "utilities/get_statistics.m": "506054994d92375427055e621fb62e98fa64864f6b0ab7b39ebe17f5a921e504"
+  },
+  "extraction": {
+    "024": {
+      "body_sha256": "de8f7b2165c19b3074c1fb243e076266456f8053a59ed2d760007ab1bae289bb",
+      "source_first_line": 497,
+      "source_end_exclusive_line": 642,
+      "wrapper_sha256": "dfe4154b52f0750f72d7464cb6d680d7ceaba5df1be2a249575bf985344e1400",
+      "algorithm_body_unchanged": true
+    },
+    "022": {
+      "body_sha256": "b9a9b86e9374db5ef7e4eca1072b3ad364b35cc10628c774479dd108bd4a3e61",
+      "source_first_line": 497,
+      "source_end_exclusive_line": 642,
+      "wrapper_sha256": "5b00adedf65972521ddabc3291a2cd37aba56cfa0511f32618e2de531faae575",
+      "algorithm_body_unchanged": true
+    }
+  },
+  "coefficient_change_only": true
+}

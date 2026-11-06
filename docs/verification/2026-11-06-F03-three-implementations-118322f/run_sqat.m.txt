@@ -1,0 +1,45 @@
+% Native unchanged SQAT .m baseline and isolated one-cell counterfactual.
+% Run inside the dedicated Octave container with /work mapped to this round's tmp.
+pkg load signal;
+cd('/work');
+arg=argv();
+if isempty(arg), variants={'024','022'}; else, variants=arg(1); end
+for iv=1:numel(variants)
+ v=variants{iv};
+ if strcmp(v,'024'), source='/work/sqat-v2.0'; else, source='/work/sqat022'; end
+ addpath(genpath(source));
+ clear Loudness_ISO532_1;
+ dest=['/work/sqat' v '-outputs'];
+ if ~exist(dest,'dir'), mkdir(dest); end
+ % Optional disjoint signal shards; do not overwrite already completed output.
+ if numel(arg)>1
+  signals=reshape(cellfun(@str2double,arg(2:end)),1,[]);
+ else
+  signals=[1 2 3 4 5 6 9 14 15 18 23 24 25 7 8 10 11 12 13 16 17 19 20 21 22];
+ end
+ for s=signals
+  if exist(sprintf('%s/sig%d.mat',dest,s),'file'), continue; end
+  tic;
+  a=load(sprintf('/work/inputs/sig%d.mat',s));
+  field=(s==15);
+  if s==1, method=0; elseif s<=5, method=1; else, method=2; end
+  if method==1, skip=.2; else, skip=0; end
+  o=Loudness_ISO532_1(a.x,48000,field,method,skip,false);
+  if method<2
+   n=o.Loudness(:);ns=o.SpecificLoudness(:);t=0;
+  else
+   n=o.InstantaneousLoudness(:);ns=o.InstantaneousSpecificLoudness';t=o.time(:);
+  end
+  elapsed=toc;
+  save('-mat7-binary',sprintf('%s/sig%d.mat',dest,s),'n','ns','t','elapsed');
+  fprintf('SQAT variant=%s signal=%d frames=%d seconds=%.6f Nmax=%.12g\n',v,s,numel(n),elapsed,max(n));fflush(stdout);
+ end
+ rmpath(genpath(source));
+end
+if numel(arg)<2 && exist('/work/common-core.mat','file')
+ a=load('/work/common-core.mat');
+ [n024,ns024]=sqat_slope_024(a.core');
+ [n022,ns022]=sqat_slope_022(a.core');
+ save('-mat7-binary','/work/sqat-common-slope.mat','n024','ns024','n022','ns022');
+end
+fprintf('SQAT DONE\n');

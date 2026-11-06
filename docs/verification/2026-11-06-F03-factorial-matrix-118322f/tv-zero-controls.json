@@ -1,0 +1,50 @@
+[
+  {
+    "signal": 25,
+    "backend": "c",
+    "calibration": "sqrt",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  },
+  {
+    "signal": 25,
+    "backend": "c",
+    "calibration": "cal",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  },
+  {
+    "signal": 25,
+    "backend": "sqat",
+    "calibration": "sqrt",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  },
+  {
+    "signal": 25,
+    "backend": "sqat",
+    "calibration": "cal",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  },
+  {
+    "signal": 25,
+    "backend": "mos-round",
+    "calibration": "sqrt",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  },
+  {
+    "signal": 25,
+    "backend": "mos-round",
+    "calibration": "cal",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  },
+  {
+    "signal": 25,
+    "backend": "mos-noround",
+    "calibration": "sqrt",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  },
+  {
+    "signal": 25,
+    "backend": "mos-noround",
+    "calibration": "cal",
+    "N_and_Nprime_bitwise_USL_unchanged": true
+  }
+]

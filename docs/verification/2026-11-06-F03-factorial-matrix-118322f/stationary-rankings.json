@@ -1,0 +1,898 @@
+[
+  {
+    "signal": 2,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-c",
+      "error": 0.05597589578888673
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-c",
+      "error": 0.04029139016538891
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-c",
+      "error": 1.2412558579200095e-05
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-c",
+      "error": 0.05598830834746593
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-c",
+      "error": 4.9544660958078524e-05
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-c",
+      "error": 0.040297231334968875
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-sqat",
+      "error": 6.593363686135945e-07
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-sqat",
+      "error": 0.05597523502088997
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-sqat",
+      "error": 1.4950793669754603e-07
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-sqat",
+      "error": 0.04029137764679935
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-sqat",
+      "error": 1.17532222105865e-05
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-sqat",
+      "error": 0.05598764757946917
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-sqat",
+      "error": 4.954180477012571e-05
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-sqat",
+      "error": 0.04029721881637932
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.0004875874414196346
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-round",
+      "error": 0.05548758744142113
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.00015000363868011846
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-round",
+      "error": 0.04029137764679935
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.0004999999999988347
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-round",
+      "error": 0.05550000000000033
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.00014893251790182305
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-round",
+      "error": 0.04029721881637932
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-noround",
+      "error": 6.593363650608808e-07
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-noround",
+      "error": 0.055975235020891745
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-noround",
+      "error": 0.00015000363868011846
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-noround",
+      "error": 0.04029137764679935
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-noround",
+      "error": 1.1753222214139214e-05
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-noround",
+      "error": 0.055987647579470945
+    }
+  },
+  {
+    "signal": 2,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s2-annex-sqrt-w0.2-022-mos-noround",
+      "error": 0.00014893251790182305
+    },
+    "worst": {
+      "id": "A-s2-noct-cal-w0-024-mos-noround",
+      "error": 0.04029721881637932
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-c",
+      "error": 0.039714257967050415
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-c",
+      "error": 0.01538157544203389
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-c",
+      "error": 3.7957460924609165e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-c",
+      "error": 0.039676300506125806
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-c",
+      "error": 4.916635430310401e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-c",
+      "error": 0.015424966670446627
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-sqat",
+      "error": 1.4711296714153832e-07
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-sqat",
+      "error": 0.039714402864804654
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-sqat",
+      "error": 1.7248753392262728e-07
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-sqat",
+      "error": 0.015381564643989265
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-sqat",
+      "error": 3.781034795746763e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-sqat",
+      "error": 0.039676445403880045
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-sqat",
+      "error": 4.914329173413834e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-sqat",
+      "error": 0.015424955872402002
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.00016204253907492472
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-round",
+      "error": 0.03983795746092511
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-round",
+      "error": 6.183451602281842e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-round",
+      "error": 0.015381564643989265
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.00019999999999953388
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-round",
+      "error": 0.0398000000000005
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-round",
+      "error": 6.102959677267705e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-round",
+      "error": 0.015424955872402002
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-noround",
+      "error": 1.4711296714153832e-07
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-noround",
+      "error": 0.039714402864803766
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-noround",
+      "error": 6.183451602281842e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-noround",
+      "error": 0.015381564643989265
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-noround",
+      "error": 3.781034795746763e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-noround",
+      "error": 0.03967644540387916
+    }
+  },
+  {
+    "signal": 3,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s3-annex-sqrt-w0.2-022-mos-noround",
+      "error": 6.102959677267705e-05
+    },
+    "worst": {
+      "id": "A-s3-noct-cal-w0-024-mos-noround",
+      "error": 0.015424955872402002
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-c",
+      "error": 0.008838466265572942
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-c",
+      "error": 0.004639821606388664
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0-022-c",
+      "error": 1.8659222736694403e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-c",
+      "error": 0.008817684663213088
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0-022-c",
+      "error": 3.7919363162552955e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-c",
+      "error": 0.004594751357544599
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-sqat",
+      "error": 5.6150973648527724e-08
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-sqat",
+      "error": 0.008838517936704537
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-sqat",
+      "error": 6.104414090879473e-08
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-sqat",
+      "error": 0.004639817682145747
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0-022-sqat",
+      "error": 1.8603096750169357e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-sqat",
+      "error": 0.008817736334344684
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0-022-sqat",
+      "error": 3.7931179481032196e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-sqat",
+      "error": 0.0045947474333016824
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0-022-mos-round",
+      "error": 0.00037921839764032406
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-mos-round",
+      "error": 0.008620781602359795
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-mos-round",
+      "error": 4.206104414677947e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-mos-round",
+      "error": 0.004639817682145747
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0-022-mos-round",
+      "error": 0.000400000000000178
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-mos-round",
+      "error": 0.008599999999999941
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-mos-round",
+      "error": 6.739899310026498e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-mos-round",
+      "error": 0.0045947474333016824
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-mos-noround",
+      "error": 5.615097298239391e-08
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-mos-noround",
+      "error": 0.008838517936704982
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-mos-noround",
+      "error": 4.206104414677947e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-mos-noround",
+      "error": 0.004639817682145747
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0-022-mos-noround",
+      "error": 1.8603096751057535e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0.2-024-mos-noround",
+      "error": 0.008817736334345128
+    }
+  },
+  {
+    "signal": 4,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s4-annex-sqrt-w0.2-022-mos-noround",
+      "error": 6.739899310026498e-05
+    },
+    "worst": {
+      "id": "A-s4-noct-cal-w0-024-mos-noround",
+      "error": 0.0045947474333016824
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-c",
+      "error": 0.08050543384732123
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "c",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-c",
+      "error": 0.0
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-c",
+      "error": 0.007738404512430519
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-c",
+      "error": 5.4388961078899456e-05
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-c",
+      "error": 0.08045104488624233
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "c",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-c",
+      "error": 4.7887201076401986e-05
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-c",
+      "error": 0.007746539725703272
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-sqat",
+      "error": 3.94783645774055e-07
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-sqat",
+      "error": 0.0805058247367274
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "sqat",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-sqat",
+      "error": 4.2480760720220445e-07
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-sqat",
+      "error": 0.0077384194948116325
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-sqat",
+      "error": 5.39941774331254e-05
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-sqat",
+      "error": 0.0804514357756485
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "sqat",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-sqat",
+      "error": 4.789050268816375e-05
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-sqat",
+      "error": 0.0077465547080843855
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.00014561103892063443
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-round",
+      "error": 0.08085438896107888
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-round",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-cal-w0.2-022-mos-round",
+      "error": 0.007912023494872022
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-round",
+      "error": 0.009912664191196519
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-mos-round",
+      "error": 0.00019999999999953388
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-round",
+      "error": 0.08079999999999998
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-round",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-cal-w0.2-022-mos-round",
+      "error": 0.007958691713994548
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-round",
+      "error": 0.009959332410319044
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-mos-noround",
+      "error": 1.580423025870914e-05
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-noround",
+      "error": 0.0805207327119124
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-noround",
+    "reference": "official_c",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-cal-w0.2-022-mos-noround",
+      "error": 0.007912023494872022
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-noround",
+      "error": 0.009912664191196519
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "N_max_abs",
+    "best": {
+      "id": "A-s5-annex-sqrt-w0.2-022-mos-noround",
+      "error": 3.8584730820190316e-05
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-noround",
+      "error": 0.0804663437508335
+    }
+  },
+  {
+    "signal": 5,
+    "backend": "mos-noround",
+    "reference": "workbook",
+    "criterion": "Nprime_max_abs",
+    "best": {
+      "id": "A-s5-annex-cal-w0.2-022-mos-noround",
+      "error": 0.007958691713994548
+    },
+    "worst": {
+      "id": "A-s5-noct-sqrt-w0-024-mos-noround",
+      "error": 0.009959332410319044
+    }
+  }
+]

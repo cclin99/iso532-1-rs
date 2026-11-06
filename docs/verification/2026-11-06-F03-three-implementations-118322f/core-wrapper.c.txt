@@ -1,0 +1,21 @@
+/* Original wrapper only. The included original official source stays in tmp. */
+#include "ISO_532-1.c"
+__declspec(dllexport) int audit_core(struct InputData *in, int field, int tv, double skip, double **core) {
+    int k=tv ? in->NumSamples/24 : 1;
+    double *levels[28], *intens[11], *lcb[3];
+    int r=callocRaggedArray(levels,28,k); if(r<0) return r;
+    r=callocRaggedArray(intens,11,k); if(r<0) return r;
+    r=callocRaggedArray(lcb,3,k); if(r<0) return r;
+    r=f_calc_third_octave_levels(in,levels,tv?24:in->NumSamples,tv,skip);
+    if(r>=0) {
+        for(int j=0;j<k;j++) {
+            f_corr_third_octave_intensities(levels,intens,j);
+            f_calc_lcbs(intens,lcb,j);
+            f_calc_core_loudness(levels,lcb,core,field,j);
+        }
+        for(int j=0;j<k;j++) f_corr_loudness(core,j);
+        if(tv) f_nl(core,SR_LEVEL,k);
+    }
+    freeRaggedArray(levels,28);freeRaggedArray(intens,11);freeRaggedArray(lcb,3);
+    return r<0?r:k;
+}

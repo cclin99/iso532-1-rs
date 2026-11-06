@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "A-s2-annex-sqrt-w0-022-c",
+    "level_key": "s2-annex-sqrt-w0-crop0",
+    "n": 14.667321911412285
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0-022-mos-round",
+    "level_key": "s2-annex-sqrt-w0-crop0",
+    "n": 14.667
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0-022-mos-noround",
+    "level_key": "s2-annex-sqrt-w0-crop0",
+    "n": 14.667321252182054
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0-024-c",
+    "level_key": "s2-annex-sqrt-w0-crop0",
+    "n": 14.667321911412285
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0-024-mos-round",
+    "level_key": "s2-annex-sqrt-w0-crop0",
+    "n": 14.667
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0-024-mos-noround",
+    "level_key": "s2-annex-sqrt-w0-crop0",
+    "n": 14.667321252182054
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-022-c",
+    "level_key": "s2-annex-sqrt-w0.2-crop0",
+    "n": 14.65451241255858
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-022-mos-round",
+    "level_key": "s2-annex-sqrt-w0.2-crop0",
+    "n": 14.655
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-022-mos-noround",
+    "level_key": "s2-annex-sqrt-w0.2-crop0",
+    "n": 14.654511753222215
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-024-c",
+    "level_key": "s2-annex-sqrt-w0.2-crop0",
+    "n": 14.65451241255858
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-024-mos-round",
+    "level_key": "s2-annex-sqrt-w0.2-crop0",
+    "n": 14.655
+  },
+  {
+    "id": "A-s2-annex-sqrt-w0.2-024-mos-noround",
+    "level_key": "s2-annex-sqrt-w0.2-crop0",
+    "n": 14.654511753222215
+  },
+  {
+    "id": "A-s2-annex-cal-w0-022-c",
+    "level_key": "s2-annex-cal-w0-crop0",
+    "n": 14.688959420570772
+  },
+  {
+    "id": "A-s2-annex-cal-w0-022-mos-round",
+    "level_key": "s2-annex-cal-w0-crop0",
+    "n": 14.689
+  },
+  {
+    "id": "A-s2-annex-cal-w0-022-mos-noround",
+    "level_key": "s2-annex-cal-w0-crop0",
+    "n": 14.688958760073676
+  },
+  {
+    "id": "A-s2-annex-cal-w0-024-c",
+    "level_key": "s2-annex-cal-w0-crop0",
+    "n": 14.688959420570772
+  },
+  {
+    "id": "A-s2-annex-cal-w0-024-mos-round",
+    "level_key": "s2-annex-cal-w0-crop0",
+    "n": 14.689
+  },
+  {
+    "id": "A-s2-annex-cal-w0-024-mos-noround",
+    "level_key": "s2-annex-cal-w0-crop0",
+    "n": 14.688958760073676
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-022-c",
+    "level_key": "s2-annex-cal-w0.2-crop0",
+    "n": 14.676111057786327
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-022-mos-round",
+    "level_key": "s2-annex-cal-w0.2-crop0",
+    "n": 14.676
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-022-mos-noround",
+    "level_key": "s2-annex-cal-w0.2-crop0",
+    "n": 14.676110397184342
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-024-c",
+    "level_key": "s2-annex-cal-w0.2-crop0",
+    "n": 14.676111057786327
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-024-mos-round",
+    "level_key": "s2-annex-cal-w0.2-crop0",
+    "n": 14.676
+  },
+  {
+    "id": "A-s2-annex-cal-w0.2-024-mos-noround",
+    "level_key": "s2-annex-cal-w0.2-crop0",
+    "n": 14.676110397184342
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-022-c",
+    "level_key": "s2-noct-sqrt-w0-crop0",
+    "n": 14.688844797349873
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-022-mos-round",
+    "level_key": "s2-noct-sqrt-w0-crop0",
+    "n": 14.689
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-022-mos-noround",
+    "level_key": "s2-noct-sqrt-w0-crop0",
+    "n": 14.688844137847628
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-024-c",
+    "level_key": "s2-noct-sqrt-w0-crop0",
+    "n": 14.688844797349873
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-024-mos-round",
+    "level_key": "s2-noct-sqrt-w0-crop0",
+    "n": 14.689
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0-024-mos-noround",
+    "level_key": "s2-noct-sqrt-w0-crop0",
+    "n": 14.688844137847628
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-022-c",
+    "level_key": "s2-noct-sqrt-w0.2-crop0",
+    "n": 14.67873516299728
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-022-mos-round",
+    "level_key": "s2-noct-sqrt-w0.2-crop0",
+    "n": 14.679
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-022-mos-noround",
+    "level_key": "s2-noct-sqrt-w0.2-crop0",
+    "n": 14.678734503286638
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-024-c",
+    "level_key": "s2-noct-sqrt-w0.2-crop0",
+    "n": 14.67873516299728
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-024-mos-round",
+    "level_key": "s2-noct-sqrt-w0.2-crop0",
+    "n": 14.679
+  },
+  {
+    "id": "A-s2-noct-sqrt-w0.2-024-mos-noround",
+    "level_key": "s2-noct-sqrt-w0.2-crop0",
+    "n": 14.678734503286638
+  },
+  {
+    "id": "A-s2-noct-cal-w0-022-c",
+    "level_key": "s2-noct-cal-w0-crop0",
+    "n": 14.710488308347466
+  },
+  {
+    "id": "A-s2-noct-cal-w0-022-mos-round",
+    "level_key": "s2-noct-cal-w0-crop0",
+    "n": 14.71
+  },
+  {
+    "id": "A-s2-noct-cal-w0-022-mos-noround",
+    "level_key": "s2-noct-cal-w0-crop0",
+    "n": 14.710487647579471
+  },
+  {
+    "id": "A-s2-noct-cal-w0-024-c",
+    "level_key": "s2-noct-cal-w0-crop0",
+    "n": 14.710488308347466
+  },
+  {
+    "id": "A-s2-noct-cal-w0-024-mos-round",
+    "level_key": "s2-noct-cal-w0-crop0",
+    "n": 14.71
+  },
+  {
+    "id": "A-s2-noct-cal-w0-024-mos-noround",
+    "level_key": "s2-noct-cal-w0-crop0",
+    "n": 14.710487647579471
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-022-c",
+    "level_key": "s2-noct-cal-w0.2-crop0",
+    "n": 14.700369908057871
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-022-mos-round",
+    "level_key": "s2-noct-cal-w0.2-crop0",
+    "n": 14.7
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-022-mos-noround",
+    "level_key": "s2-noct-cal-w0.2-crop0",
+    "n": 14.700369247080852
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-024-c",
+    "level_key": "s2-noct-cal-w0.2-crop0",
+    "n": 14.700369908057871
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-024-mos-round",
+    "level_key": "s2-noct-cal-w0.2-crop0",
+    "n": 14.7
+  },
+  {
+    "id": "A-s2-noct-cal-w0.2-024-mos-noround",
+    "level_key": "s2-noct-cal-w0.2-crop0",
+    "n": 14.700369247080852
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-022-c",
+    "level_key": "s3-annex-sqrt-w0-crop0",
+    "n": 4.0229754466038905
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-022-mos-round",
+    "level_key": "s3-annex-sqrt-w0-crop0",
+    "n": 4.023
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-022-mos-noround",
+    "level_key": "s3-annex-sqrt-w0-crop0",
+    "n": 4.022975593759615
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-024-c",
+    "level_key": "s3-annex-sqrt-w0-crop0",
+    "n": 4.0229754466038905
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-024-mos-round",
+    "level_key": "s3-annex-sqrt-w0-crop0",
+    "n": 4.023
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0-024-mos-noround",
+    "level_key": "s3-annex-sqrt-w0-crop0",
+    "n": 4.022975593759615
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-022-c",
+    "level_key": "s3-annex-sqrt-w0.2-crop0",
+    "n": 4.019162042539075
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-022-mos-round",
+    "level_key": "s3-annex-sqrt-w0.2-crop0",
+    "n": 4.019
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-022-mos-noround",
+    "level_key": "s3-annex-sqrt-w0.2-crop0",
+    "n": 4.019162189652042
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-024-c",
+    "level_key": "s3-annex-sqrt-w0.2-crop0",
+    "n": 4.019162042539075
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-024-mos-round",
+    "level_key": "s3-annex-sqrt-w0.2-crop0",
+    "n": 4.019
+  },
+  {
+    "id": "A-s3-annex-sqrt-w0.2-024-mos-noround",
+    "level_key": "s3-annex-sqrt-w0.2-crop0",
+    "n": 4.019162189652042
+  },
+  {
+    "id": "A-s3-annex-cal-w0-022-c",
+    "level_key": "s3-annex-cal-w0-crop0",
+    "n": 4.0295317433332904
+  },
+  {
+    "id": "A-s3-annex-cal-w0-022-mos-round",
+    "level_key": "s3-annex-cal-w0-crop0",
+    "n": 4.03
+  },
+  {
+    "id": "A-s3-annex-cal-w0-022-mos-noround",
+    "level_key": "s3-annex-cal-w0-crop0",
+    "n": 4.029531890614578
+  },
+  {
+    "id": "A-s3-annex-cal-w0-024-c",
+    "level_key": "s3-annex-cal-w0-crop0",
+    "n": 4.0295317433332904
+  },
+  {
+    "id": "A-s3-annex-cal-w0-024-mos-round",
+    "level_key": "s3-annex-cal-w0-crop0",
+    "n": 4.03
+  },
+  {
+    "id": "A-s3-annex-cal-w0-024-mos-noround",
+    "level_key": "s3-annex-cal-w0-crop0",
+    "n": 4.029531890614578
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-022-c",
+    "level_key": "s3-annex-cal-w0.2-crop0",
+    "n": 4.0257078927038386
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-022-mos-round",
+    "level_key": "s3-annex-cal-w0.2-crop0",
+    "n": 4.026
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-022-mos-noround",
+    "level_key": "s3-annex-cal-w0.2-crop0",
+    "n": 4.025708039942415
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-024-c",
+    "level_key": "s3-annex-cal-w0.2-crop0",
+    "n": 4.0257078927038386
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-024-mos-round",
+    "level_key": "s3-annex-cal-w0.2-crop0",
+    "n": 4.026
+  },
+  {
+    "id": "A-s3-annex-cal-w0.2-024-mos-noround",
+    "level_key": "s3-annex-cal-w0.2-crop0",
+    "n": 4.025708039942415
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-022-c",
+    "level_key": "s3-noct-sqrt-w0-crop0",
+    "n": 4.052275534582362
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-022-mos-round",
+    "level_key": "s3-noct-sqrt-w0-crop0",
+    "n": 4.052
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-022-mos-noround",
+    "level_key": "s3-noct-sqrt-w0-crop0",
+    "n": 4.052275679357511
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-024-c",
+    "level_key": "s3-noct-sqrt-w0-crop0",
+    "n": 4.052275534582362
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-024-mos-round",
+    "level_key": "s3-noct-sqrt-w0-crop0",
+    "n": 4.052
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0-024-mos-noround",
+    "level_key": "s3-noct-sqrt-w0-crop0",
+    "n": 4.052275679357511
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-022-c",
+    "level_key": "s3-noct-sqrt-w0.2-crop0",
+    "n": 4.048904428509519
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-022-mos-round",
+    "level_key": "s3-noct-sqrt-w0.2-crop0",
+    "n": 4.049
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-022-mos-noround",
+    "level_key": "s3-noct-sqrt-w0.2-crop0",
+    "n": 4.048904573255977
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-024-c",
+    "level_key": "s3-noct-sqrt-w0.2-crop0",
+    "n": 4.048904428509519
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-024-mos-round",
+    "level_key": "s3-noct-sqrt-w0.2-crop0",
+    "n": 4.049
+  },
+  {
+    "id": "A-s3-noct-sqrt-w0.2-024-mos-noround",
+    "level_key": "s3-noct-sqrt-w0.2-crop0",
+    "n": 4.048904573255977
+  },
+  {
+    "id": "A-s3-noct-cal-w0-022-c",
+    "level_key": "s3-noct-cal-w0-crop0",
+    "n": 4.0588763005061255
+  },
+  {
+    "id": "A-s3-noct-cal-w0-022-mos-round",
+    "level_key": "s3-noct-cal-w0-crop0",
+    "n": 4.059
+  },
+  {
+    "id": "A-s3-noct-cal-w0-022-mos-noround",
+    "level_key": "s3-noct-cal-w0-crop0",
+    "n": 4.058876445403879
+  },
+  {
+    "id": "A-s3-noct-cal-w0-024-c",
+    "level_key": "s3-noct-cal-w0-crop0",
+    "n": 4.0588763005061255
+  },
+  {
+    "id": "A-s3-noct-cal-w0-024-mos-round",
+    "level_key": "s3-noct-cal-w0-crop0",
+    "n": 4.059
+  },
+  {
+    "id": "A-s3-noct-cal-w0-024-mos-noround",
+    "level_key": "s3-noct-cal-w0-crop0",
+    "n": 4.058876445403879
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-022-c",
+    "level_key": "s3-noct-cal-w0.2-crop0",
+    "n": 4.055496291315873
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-022-mos-round",
+    "level_key": "s3-noct-cal-w0.2-crop0",
+    "n": 4.055
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-022-mos-noround",
+    "level_key": "s3-noct-cal-w0.2-crop0",
+    "n": 4.0554964361849875
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-024-c",
+    "level_key": "s3-noct-cal-w0.2-crop0",
+    "n": 4.055496291315873
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-024-mos-round",
+    "level_key": "s3-noct-cal-w0.2-crop0",
+    "n": 4.055
+  },
+  {
+    "id": "A-s3-noct-cal-w0.2-024-mos-noround",
+    "level_key": "s3-noct-cal-w0.2-crop0",
+    "n": 4.0554964361849875
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-022-c",
+    "level_key": "s4-annex-sqrt-w0-crop0",
+    "n": 1.5493813407772634
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-022-mos-round",
+    "level_key": "s4-annex-sqrt-w0-crop0",
+    "n": 1.549
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-022-mos-noround",
+    "level_key": "s4-annex-sqrt-w0-crop0",
+    "n": 1.549381396903249
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-024-c",
+    "level_key": "s4-annex-sqrt-w0-crop0",
+    "n": 1.5493813407772634
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-024-mos-round",
+    "level_key": "s4-annex-sqrt-w0-crop0",
+    "n": 1.549
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0-024-mos-noround",
+    "level_key": "s4-annex-sqrt-w0-crop0",
+    "n": 1.549381396903249
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-022-c",
+    "level_key": "s4-annex-sqrt-w0.2-crop0",
+    "n": 1.5493792183976403
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-022-mos-round",
+    "level_key": "s4-annex-sqrt-w0.2-crop0",
+    "n": 1.549
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-022-mos-noround",
+    "level_key": "s4-annex-sqrt-w0.2-crop0",
+    "n": 1.5493792745486132
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-024-c",
+    "level_key": "s4-annex-sqrt-w0.2-crop0",
+    "n": 1.5493792183976403
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-024-mos-round",
+    "level_key": "s4-annex-sqrt-w0.2-crop0",
+    "n": 1.549
+  },
+  {
+    "id": "A-s4-annex-sqrt-w0.2-024-mos-noround",
+    "level_key": "s4-annex-sqrt-w0.2-crop0",
+    "n": 1.5493792745486132
+  },
+  {
+    "id": "A-s4-annex-cal-w0-022-c",
+    "level_key": "s4-annex-cal-w0-crop0",
+    "n": 1.5516177872045582
+  },
+  {
+    "id": "A-s4-annex-cal-w0-022-mos-round",
+    "level_key": "s4-annex-cal-w0-crop0",
+    "n": 1.552
+  },
+  {
+    "id": "A-s4-annex-cal-w0-022-mos-noround",
+    "level_key": "s4-annex-cal-w0-crop0",
+    "n": 1.5516178432902616
+  },
+  {
+    "id": "A-s4-annex-cal-w0-024-c",
+    "level_key": "s4-annex-cal-w0-crop0",
+    "n": 1.5516177872045582
+  },
+  {
+    "id": "A-s4-annex-cal-w0-024-mos-round",
+    "level_key": "s4-annex-cal-w0-crop0",
+    "n": 1.552
+  },
+  {
+    "id": "A-s4-annex-cal-w0-024-mos-noround",
+    "level_key": "s4-annex-cal-w0-crop0",
+    "n": 1.5516178432902616
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-022-c",
+    "level_key": "s4-annex-cal-w0.2-crop0",
+    "n": 1.5516156795981737
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-022-mos-round",
+    "level_key": "s4-annex-cal-w0.2-crop0",
+    "n": 1.552
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-022-mos-noround",
+    "level_key": "s4-annex-cal-w0.2-crop0",
+    "n": 1.5516157357088964
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-024-c",
+    "level_key": "s4-annex-cal-w0.2-crop0",
+    "n": 1.5516156795981737
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-024-mos-round",
+    "level_key": "s4-annex-cal-w0.2-crop0",
+    "n": 1.552
+  },
+  {
+    "id": "A-s4-annex-cal-w0.2-024-mos-noround",
+    "level_key": "s4-annex-cal-w0.2-crop0",
+    "n": 1.5516157357088964
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-022-c",
+    "level_key": "s4-noct-sqrt-w0-crop0",
+    "n": 1.555970360965398
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-022-mos-round",
+    "level_key": "s4-noct-sqrt-w0-crop0",
+    "n": 1.556
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-022-mos-noround",
+    "level_key": "s4-noct-sqrt-w0-crop0",
+    "n": 1.5559704126605618
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-024-c",
+    "level_key": "s4-noct-sqrt-w0-crop0",
+    "n": 1.555970360965398
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-024-mos-round",
+    "level_key": "s4-noct-sqrt-w0-crop0",
+    "n": 1.556
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0-024-mos-noround",
+    "level_key": "s4-noct-sqrt-w0-crop0",
+    "n": 1.5559704126605618
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-022-c",
+    "level_key": "s4-noct-sqrt-w0.2-crop0",
+    "n": 1.5559719453026664
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-022-mos-round",
+    "level_key": "s4-noct-sqrt-w0.2-crop0",
+    "n": 1.556
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-022-mos-noround",
+    "level_key": "s4-noct-sqrt-w0.2-crop0",
+    "n": 1.5559719970202797
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-024-c",
+    "level_key": "s4-noct-sqrt-w0.2-crop0",
+    "n": 1.5559719453026664
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-024-mos-round",
+    "level_key": "s4-noct-sqrt-w0.2-crop0",
+    "n": 1.556
+  },
+  {
+    "id": "A-s4-noct-sqrt-w0.2-024-mos-noround",
+    "level_key": "s4-noct-sqrt-w0.2-crop0",
+    "n": 1.5559719970202797
+  },
+  {
+    "id": "A-s4-noct-cal-w0-022-c",
+    "level_key": "s4-noct-cal-w0-crop0",
+    "n": 1.558216080046594
+  },
+  {
+    "id": "A-s4-noct-cal-w0-022-mos-round",
+    "level_key": "s4-noct-cal-w0-crop0",
+    "n": 1.558
+  },
+  {
+    "id": "A-s4-noct-cal-w0-022-mos-noround",
+    "level_key": "s4-noct-cal-w0-crop0",
+    "n": 1.5582161316952499
+  },
+  {
+    "id": "A-s4-noct-cal-w0-024-c",
+    "level_key": "s4-noct-cal-w0-crop0",
+    "n": 1.558216080046594
+  },
+  {
+    "id": "A-s4-noct-cal-w0-024-mos-round",
+    "level_key": "s4-noct-cal-w0-crop0",
+    "n": 1.558
+  },
+  {
+    "id": "A-s4-noct-cal-w0-024-mos-noround",
+    "level_key": "s4-noct-cal-w0-crop0",
+    "n": 1.5582161316952499
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-022-c",
+    "level_key": "s4-noct-cal-w0.2-crop0",
+    "n": 1.5582176846632132
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-022-mos-round",
+    "level_key": "s4-noct-cal-w0.2-crop0",
+    "n": 1.558
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-022-mos-noround",
+    "level_key": "s4-noct-cal-w0.2-crop0",
+    "n": 1.5582177363343452
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-024-c",
+    "level_key": "s4-noct-cal-w0.2-crop0",
+    "n": 1.5582176846632132
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-024-mos-round",
+    "level_key": "s4-noct-cal-w0.2-crop0",
+    "n": 1.558
+  },
+  {
+    "id": "A-s4-noct-cal-w0.2-024-mos-noround",
+    "level_key": "s4-noct-cal-w0.2-crop0",
+    "n": 1.5582177363343452
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-022-c",
+    "level_key": "s5-annex-sqrt-w0-crop0",
+    "n": 10.495921470801793
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-022-mos-round",
+    "level_key": "s5-annex-sqrt-w0-crop0",
+    "n": 10.496
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-022-mos-noround",
+    "level_key": "s5-annex-sqrt-w0-crop0",
+    "n": 10.495905769885686
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-024-c",
+    "level_key": "s5-annex-sqrt-w0-crop0",
+    "n": 10.495921470801793
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-024-mos-round",
+    "level_key": "s5-annex-sqrt-w0-crop0",
+    "n": 10.496
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0-024-mos-noround",
+    "level_key": "s5-annex-sqrt-w0-crop0",
+    "n": 10.495905769885686
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-022-c",
+    "level_key": "s5-annex-sqrt-w0.2-crop0",
+    "n": 10.497854388961079
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-022-mos-round",
+    "level_key": "s5-annex-sqrt-w0.2-crop0",
+    "n": 10.498
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-022-mos-noround",
+    "level_key": "s5-annex-sqrt-w0.2-crop0",
+    "n": 10.49783858473082
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-024-c",
+    "level_key": "s5-annex-sqrt-w0.2-crop0",
+    "n": 10.497854388961079
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-024-mos-round",
+    "level_key": "s5-annex-sqrt-w0.2-crop0",
+    "n": 10.498
+  },
+  {
+    "id": "A-s5-annex-sqrt-w0.2-024-mos-noround",
+    "level_key": "s5-annex-sqrt-w0.2-crop0",
+    "n": 10.49783858473082
+  },
+  {
+    "id": "A-s5-annex-cal-w0-022-c",
+    "level_key": "s5-annex-cal-w0-crop0",
+    "n": 10.512339271196034
+  },
+  {
+    "id": "A-s5-annex-cal-w0-022-mos-round",
+    "level_key": "s5-annex-cal-w0-crop0",
+    "n": 10.512
+  },
+  {
+    "id": "A-s5-annex-cal-w0-022-mos-noround",
+    "level_key": "s5-annex-cal-w0-crop0",
+    "n": 10.5123235213287
+  },
+  {
+    "id": "A-s5-annex-cal-w0-024-c",
+    "level_key": "s5-annex-cal-w0-crop0",
+    "n": 10.512339271196034
+  },
+  {
+    "id": "A-s5-annex-cal-w0-024-mos-round",
+    "level_key": "s5-annex-cal-w0-crop0",
+    "n": 10.512
+  },
+  {
+    "id": "A-s5-annex-cal-w0-024-mos-noround",
+    "level_key": "s5-annex-cal-w0-crop0",
+    "n": 10.5123235213287
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-022-c",
+    "level_key": "s5-annex-cal-w0.2-crop0",
+    "n": 10.514274245136443
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-022-mos-round",
+    "level_key": "s5-annex-cal-w0.2-crop0",
+    "n": 10.514
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-022-mos-noround",
+    "level_key": "s5-annex-cal-w0.2-crop0",
+    "n": 10.514258391756574
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-024-c",
+    "level_key": "s5-annex-cal-w0.2-crop0",
+    "n": 10.514274245136443
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-024-mos-round",
+    "level_key": "s5-annex-cal-w0.2-crop0",
+    "n": 10.514
+  },
+  {
+    "id": "A-s5-annex-cal-w0.2-024-mos-noround",
+    "level_key": "s5-annex-cal-w0.2-crop0",
+    "n": 10.514258391756574
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-022-c",
+    "level_key": "s5-noct-sqrt-w0-crop0",
+    "n": 10.417348955113757
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-022-mos-round",
+    "level_key": "s5-noct-sqrt-w0-crop0",
+    "n": 10.417
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-022-mos-noround",
+    "level_key": "s5-noct-sqrt-w0-crop0",
+    "n": 10.417333656249166
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-024-c",
+    "level_key": "s5-noct-sqrt-w0-crop0",
+    "n": 10.417348955113757
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-024-mos-round",
+    "level_key": "s5-noct-sqrt-w0-crop0",
+    "n": 10.417
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0-024-mos-noround",
+    "level_key": "s5-noct-sqrt-w0-crop0",
+    "n": 10.417333656249166
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-022-c",
+    "level_key": "s5-noct-sqrt-w0.2-crop0",
+    "n": 10.419153460045404
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-022-mos-round",
+    "level_key": "s5-noct-sqrt-w0.2-crop0",
+    "n": 10.419
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-022-mos-noround",
+    "level_key": "s5-noct-sqrt-w0.2-crop0",
+    "n": 10.419138060559643
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-024-c",
+    "level_key": "s5-noct-sqrt-w0.2-crop0",
+    "n": 10.419153460045404
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-024-mos-round",
+    "level_key": "s5-noct-sqrt-w0.2-crop0",
+    "n": 10.419
+  },
+  {
+    "id": "A-s5-noct-sqrt-w0.2-024-mos-noround",
+    "level_key": "s5-noct-sqrt-w0.2-crop0",
+    "n": 10.419138060559643
+  },
+  {
+    "id": "A-s5-noct-cal-w0-022-c",
+    "level_key": "s5-noct-cal-w0-crop0",
+    "n": 10.433649599751242
+  },
+  {
+    "id": "A-s5-noct-cal-w0-022-mos-round",
+    "level_key": "s5-noct-cal-w0-crop0",
+    "n": 10.434
+  },
+  {
+    "id": "A-s5-noct-cal-w0-022-mos-noround",
+    "level_key": "s5-noct-cal-w0-crop0",
+    "n": 10.433634252711027
+  },
+  {
+    "id": "A-s5-noct-cal-w0-024-c",
+    "level_key": "s5-noct-cal-w0-crop0",
+    "n": 10.433649599751242
+  },
+  {
+    "id": "A-s5-noct-cal-w0-024-mos-round",
+    "level_key": "s5-noct-cal-w0-crop0",
+    "n": 10.434
+  },
+  {
+    "id": "A-s5-noct-cal-w0-024-mos-noround",
+    "level_key": "s5-noct-cal-w0-crop0",
+    "n": 10.433634252711027
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-022-c",
+    "level_key": "s5-noct-cal-w0.2-crop0",
+    "n": 10.435455991721817
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-022-mos-round",
+    "level_key": "s5-noct-cal-w0.2-crop0",
+    "n": 10.435
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-022-mos-noround",
+    "level_key": "s5-noct-cal-w0.2-crop0",
+    "n": 10.435440543865537
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-024-c",
+    "level_key": "s5-noct-cal-w0.2-crop0",
+    "n": 10.435455991721817
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-024-mos-round",
+    "level_key": "s5-noct-cal-w0.2-crop0",
+    "n": 10.435
+  },
+  {
+    "id": "A-s5-noct-cal-w0.2-024-mos-noround",
+    "level_key": "s5-noct-cal-w0.2-crop0",
+    "n": 10.435440543865537
+  },
+  {
+    "id": "crop-s2-annex",
+    "level_key": "s2-annex-sqrt-w0-crop9600",
+    "n": 14.667662380443895
+  },
+  {
+    "id": "crop-s2-noct",
+    "level_key": "s2-noct-sqrt-w0-crop9600",
+    "n": 14.689047590047329
+  },
+  {
+    "id": "crop-s3-annex",
+    "level_key": "s3-annex-sqrt-w0-crop9600",
+    "n": 4.02305100576967
+  },
+  {
+    "id": "crop-s3-noct",
+    "level_key": "s3-noct-sqrt-w0-crop9600",
+    "n": 4.052342502291997
+  },
+  {
+    "id": "crop-s4-annex",
+    "level_key": "s4-annex-sqrt-w0-crop9600",
+    "n": 1.5493813839432338
+  },
+  {
+    "id": "crop-s4-noct",
+    "level_key": "s4-noct-sqrt-w0-crop9600",
+    "n": 1.5559703285151216
+  },
+  {
+    "id": "crop-s5-annex",
+    "level_key": "s5-annex-sqrt-w0-crop9600",
+    "n": 10.496048058747142
+  },
+  {
+    "id": "crop-s5-noct",
+    "level_key": "s5-noct-sqrt-w0-crop9600",
+    "n": 10.417392782832202
+  }
+]

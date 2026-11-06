@@ -1,0 +1,8 @@
+$ redact_paths.py <folder>
+<REPO>\docs\verification\2026-11-07-F03-astra-cross-check-118322f\crosscheck.py: 1 replaced
+<REPO>\docs\verification\2026-11-07-F03-astra-cross-check-118322f\finalize_delivery.py: 3 replaced
+<REPO>\docs\verification\2026-11-07-F03-astra-cross-check-118322f\levels2core.Cargo.toml.txt: 1 replaced
+3 file(s) changed
+
+$ redact_paths.py --check <folder>
+clean

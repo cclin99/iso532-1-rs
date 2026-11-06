@@ -1,0 +1,122 @@
+[
+  {
+    "signal": 2,
+    "backend": "c",
+    "terms": 16,
+    "max_reconstruction_error": 1.7763568394002505e-15
+  },
+  {
+    "signal": 2,
+    "backend": "sqat",
+    "terms": 16,
+    "max_reconstruction_error": 3.552713678800501e-15
+  },
+  {
+    "signal": 2,
+    "backend": "mos-round",
+    "terms": 16,
+    "max_reconstruction_error": 3.552713678800501e-15
+  },
+  {
+    "signal": 2,
+    "backend": "mos-noround",
+    "terms": 16,
+    "max_reconstruction_error": 5.329070518200751e-15
+  },
+  {
+    "signal": 3,
+    "backend": "c",
+    "terms": 16,
+    "max_reconstruction_error": 2.6645352591003757e-15
+  },
+  {
+    "signal": 3,
+    "backend": "sqat",
+    "terms": 16,
+    "max_reconstruction_error": 1.7763568394002505e-15
+  },
+  {
+    "signal": 3,
+    "backend": "mos-round",
+    "terms": 16,
+    "max_reconstruction_error": 1.7763568394002505e-15
+  },
+  {
+    "signal": 3,
+    "backend": "mos-noround",
+    "terms": 16,
+    "max_reconstruction_error": 8.881784197001252e-16
+  },
+  {
+    "signal": 4,
+    "backend": "c",
+    "terms": 16,
+    "max_reconstruction_error": 4.440892098500626e-16
+  },
+  {
+    "signal": 4,
+    "backend": "sqat",
+    "terms": 16,
+    "max_reconstruction_error": 4.440892098500626e-16
+  },
+  {
+    "signal": 4,
+    "backend": "mos-round",
+    "terms": 16,
+    "max_reconstruction_error": 2.220446049250313e-16
+  },
+  {
+    "signal": 4,
+    "backend": "mos-noround",
+    "terms": 16,
+    "max_reconstruction_error": 4.440892098500626e-16
+  },
+  {
+    "signal": 5,
+    "backend": "c",
+    "terms": 16,
+    "max_reconstruction_error": 5.329070518200751e-15
+  },
+  {
+    "signal": 5,
+    "backend": "sqat",
+    "terms": 16,
+    "max_reconstruction_error": 5.329070518200751e-15
+  },
+  {
+    "signal": 5,
+    "backend": "mos-round",
+    "terms": 16,
+    "max_reconstruction_error": 3.552713678800501e-15
+  },
+  {
+    "signal": 5,
+    "backend": "mos-noround",
+    "terms": 16,
+    "max_reconstruction_error": 5.329070518200751e-15
+  },
+  {
+    "signal": 2,
+    "backend": "mos-five-factor",
+    "terms": 32,
+    "max_reconstruction_error": 5.329070518200751e-15
+  },
+  {
+    "signal": 3,
+    "backend": "mos-five-factor",
+    "terms": 32,
+    "max_reconstruction_error": 2.6645352591003757e-15
+  },
+  {
+    "signal": 4,
+    "backend": "mos-five-factor",
+    "terms": 32,
+    "max_reconstruction_error": 8.881784197001252e-16
+  },
+  {
+    "signal": 5,
+    "backend": "mos-five-factor",
+    "terms": 32,
+    "max_reconstruction_error": 7.105427357601002e-15
+  }
+]

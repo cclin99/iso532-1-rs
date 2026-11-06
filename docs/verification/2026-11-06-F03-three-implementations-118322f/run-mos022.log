@@ -1,0 +1,26 @@
+{"engine": "mos", "variant": "022", "signal": 1, "input_length": 28, "output_frames": 1, "seconds": 0.01217000000178814, "n_max": 83.3}
+{"engine": "mos", "variant": "022", "signal": 2, "input_length": 480000, "output_frames": 1, "seconds": 0.3428952999965986, "n_max": 14.689}
+{"engine": "mos", "variant": "022", "signal": 3, "input_length": 480000, "output_frames": 1, "seconds": 0.33131289999437286, "n_max": 4.052}
+{"engine": "mos", "variant": "022", "signal": 4, "input_length": 480000, "output_frames": 1, "seconds": 0.3182278000022052, "n_max": 1.556}
+{"engine": "mos", "variant": "022", "signal": 5, "input_length": 480000, "output_frames": 1, "seconds": 0.36692320000292966, "n_max": 10.417}
+{"engine": "mos", "variant": "022", "signal": 6, "input_length": 508800, "output_frames": 5300, "seconds": 28.814753700004076, "n_max": 14.359219428046515}
+{"engine": "mos", "variant": "022", "signal": 7, "input_length": 508800, "output_frames": 5300, "seconds": 32.050510699998995, "n_max": 15.953190946056662}
+{"engine": "mos", "variant": "022", "signal": 8, "input_length": 508800, "output_frames": 5300, "seconds": 30.189887599997746, "n_max": 23.950114561688423}
+{"engine": "mos", "variant": "022", "signal": 9, "input_length": 508800, "output_frames": 5300, "seconds": 29.904139499994926, "n_max": 29.31435166843133}
+{"engine": "mos", "variant": "022", "signal": 10, "input_length": 48000, "output_frames": 500, "seconds": 2.608864599998924, "n_max": 4.299699390986519}
+{"engine": "mos", "variant": "022", "signal": 11, "input_length": 48000, "output_frames": 500, "seconds": 2.459182199992938, "n_max": 5.974667967721576}
+{"engine": "mos", "variant": "022", "signal": 12, "input_length": 48000, "output_frames": 500, "seconds": 2.6178593000004184, "n_max": 8.07749781639994}
+{"engine": "mos", "variant": "022", "signal": 13, "input_length": 48000, "output_frames": 500, "seconds": 2.552181600003678, "n_max": 9.975560466566677}
+{"engine": "mos", "variant": "022", "signal": 14, "input_length": 631417, "output_frames": 6578, "seconds": 39.33686409999791, "n_max": 22.640148181325767}
+{"engine": "mos", "variant": "022", "signal": 15, "input_length": 553800, "output_frames": 5769, "seconds": 33.191273999997065, "n_max": 9.605756148371901}
+{"engine": "mos", "variant": "022", "signal": 16, "input_length": 197270, "output_frames": 2055, "seconds": 11.451071800001955, "n_max": 38.53697095134922}
+{"engine": "mos", "variant": "022", "signal": 17, "input_length": 139639, "output_frames": 1455, "seconds": 7.971392600004037, "n_max": 11.210746290369665}
+{"engine": "mos", "variant": "022", "signal": 18, "input_length": 103969, "output_frames": 1084, "seconds": 5.914842999998655, "n_max": 12.646853092517059}
+{"engine": "mos", "variant": "022", "signal": 19, "input_length": 124800, "output_frames": 1300, "seconds": 6.896320900006685, "n_max": 10.881653155001558}
+{"engine": "mos", "variant": "022", "signal": 20, "input_length": 124800, "output_frames": 1300, "seconds": 7.231422499993641, "n_max": 14.879942899225743}
+{"engine": "mos", "variant": "022", "signal": 21, "input_length": 124800, "output_frames": 1300, "seconds": 6.963820400000259, "n_max": 9.718878909956164}
+{"engine": "mos", "variant": "022", "signal": 22, "input_length": 88800, "output_frames": 925, "seconds": 4.915035899997747, "n_max": 8.906350265315455}
+{"engine": "mos", "variant": "022", "signal": 23, "input_length": 122401, "output_frames": 1276, "seconds": 6.952475899997808, "n_max": 11.185972437223882}
+{"engine": "mos", "variant": "022", "signal": 24, "input_length": 115202, "output_frames": 1201, "seconds": 6.710429099999601, "n_max": 9.275170182552596}
+{"engine": "mos", "variant": "022", "signal": 25, "input_length": 122401, "output_frames": 1276, "seconds": 6.666009900000063, "n_max": 7.259307311773916}
+DONE mos 022

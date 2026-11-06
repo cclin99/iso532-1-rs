@@ -1,0 +1,4 @@
+ 3325 octave-cli      octave-cli --no-gui --quiet /work/run_sqat.m 024
+ 3332 octave-cli      octave-cli --no-gui --quiet /work/run_sqat.m 022
+ 3358 sh              sh -c kill -TERM 3325 3332; ps -eo pid,comm,args | grep octave
+ 3364 grep            grep octave

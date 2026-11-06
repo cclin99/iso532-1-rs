@@ -1,0 +1,25 @@
+{
+  "unsupported_formats": [],
+  "non_utf8_files": [],
+  "identifying_path_residuals": [],
+  "host_license_identifier_residuals": [],
+  "json_files_parsed": 15,
+  "bilingual_table_count": 9,
+  "bilingual_table_numbers_equal": true,
+  "markdown_table_column_counts_valid": true,
+  "redaction_commands": [
+    "python tools/redact_paths.py <delivery>",
+    "python tools/redact_paths.py --check <delivery>"
+  ],
+  "redactor_skipped_warnings": [],
+  "manual_license_search_path_sanitized": true,
+  "delivery_diff_reviewed": true,
+  "tracked_product_diff_empty": true,
+  "integrity_semantics": "Post-redaction bytes only; manifest excludes itself. Other provenance hashes retain original-file meaning.",
+  "coordinator_review": {
+    "initial_manifest_verified": 62,
+    "prior_round_manifest_verified": 39,
+    "clarification": "Report introduction explicitly labels within-implementation coefficient delta rather than baseline error against official C; numeric tables unchanged.",
+    "dedicated_octave_container_stopped": true
+  }
+}

@@ -1,0 +1,5 @@
+@echo off
+call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat" >nul
+if errorlevel 1 exit /b %errorlevel%
+cl /nologo /O2 /fp:precise /LD /I. core-wrapper.c /link /OUT:reference.dll /EXPORT:f_loudness_from_signal /EXPORT:f_loudness_from_levels /EXPORT:f_calc_slopes
+exit /b %errorlevel%

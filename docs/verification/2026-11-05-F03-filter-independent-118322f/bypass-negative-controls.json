@@ -1,0 +1,24 @@
+{
+  "annex_b_signal1": {
+    "n022": 83.29566042436218,
+    "n024": 83.29566042436218,
+    "delta_n": 0.0,
+    "specific_delta_max": 0.0,
+    "workbook_n": 83.2957,
+    "n_error": -3.957563781398221e-05,
+    "specific_workbook_max_abs": 4.757940504962477e-05,
+    "rounded4_all_241_equal_workbook": true
+  },
+  "all_zero_db": {
+    "n022": 0.0034995889378719473,
+    "n024": 0.0034995889378719473,
+    "delta_n": 0.0,
+    "specific_delta_max": 0.0
+  },
+  "one_khz_sixty_db": {
+    "n022": 3.4903189152764083,
+    "n024": 3.4903189152764083,
+    "delta_n": 0.0,
+    "specific_delta_max": 0.0
+  }
+}

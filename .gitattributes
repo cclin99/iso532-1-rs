@@ -1,3 +1,6 @@
 # Keep verification deliveries byte-exact so that their delivery-integrity.json
 # hashes hold on every checkout (the 0.4.0 round was produced with CRLF files).
 docs/verification/2026-11-04-release-0.4.0-fca4ccd/** -text
+docs/verification/2026-11-05-F03-filter-independent-118322f/** -text
+docs/verification/2026-11-06-F03-three-implementations-118322f/** -text
+docs/verification/2026-11-06-F03-factorial-matrix-118322f/** -text

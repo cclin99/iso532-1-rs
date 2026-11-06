@@ -1,0 +1,70 @@
+// Independent experiment harness, not a proposed public API.
+use iso532::{FieldType, loudness_zwst};
+use iso532::core::{main_loudness::main_loudness, calc_slopes::calc_slopes};
+use iso532::dsp::{filtfilt::decimate,sos::{sosfilt,Sos}};
+use iso532::tables::{TOB_DELTA,TOB_GAIN};
+use iso532::tables_noct::{NOCT_DECIM_Q,NOCT_SOS};
+use iso532::zwtv::third_octave_levels::TOB_B;
+use iso532::zwst::{noct_spectrum_rms,spec_to_db};
+fn arr(x:&[f64])->String {format!("[{}]",x.iter().map(|x|format!("{x:.17e}")).collect::<Vec<_>>().join(","))}
+fn backend(x:&[f64])->(f64,[f64;240]) {calc_slopes(&main_loudness(x,FieldType::Free).unwrap())}
+fn filtered(x:&[f64],iso:bool)->Vec<Vec<f64>> {
+    (0..28).map(|b| {
+        if iso {
+            let mut y=x.iter().map(|v|v*TOB_GAIN[b]).collect::<Vec<_>>();
+            let sos=(0..3).map(|s|Sos{b:TOB_B[s],a:[-2.0-TOB_DELTA[b][s][0],1.0-TOB_DELTA[b][s][1]]}).collect::<Vec<_>>();
+            sosfilt(&sos,&mut y); y
+        } else {
+            let mut y=if NOCT_DECIM_Q[b]>1 {decimate(x,NOCT_DECIM_Q[b])} else {x.to_vec()};
+            sosfilt(&NOCT_SOS[b],&mut y); y
+        }
+    }).collect()
+}
+fn levels(y:&[Vec<f64>],skip:usize,iso:bool)->Option<Vec<f64>> {
+    let mut out=Vec::new();
+    for b in 0..28 {
+        let k=if iso {skip} else {skip.div_ceil(NOCT_DECIM_Q[b])};
+        if k>=y[b].len() {return None;}
+        let ms=y[b][k..].iter().map(|v|v*v).sum::<f64>()/(y[b].len()-k) as f64;
+        out.push(if iso {10.0*((ms+1e-12)/4e-10).log10()} else {spec_to_db(&[ms.sqrt()])[0]});
+    } Some(out)
+}
+fn main(){
+    let a=std::env::args().collect::<Vec<_>>();
+    let d=std::path::Path::new(&a[1]);
+    for s in 2..=5 {
+        for cal in ["sqrt","cal"] {
+            let raw=std::fs::read(d.join(format!("sig{s}-{cal}.bin"))).unwrap();
+            let x=raw.chunks_exact(8).map(|c|f64::from_le_bytes(c.try_into().unwrap())).collect::<Vec<_>>();
+            let n0=spec_to_db(&noct_spectrum_rms(&x));
+            let (actual,_)=backend(&n0);
+            assert_eq!(actual.to_bits(),loudness_zwst(&x,48000.0,FieldType::Free).unwrap().n.to_bits());
+            for iso in [false,true] {
+                let ys=filtered(&x,iso);
+                let name=if iso {"annex"} else {"noct"};
+                for skip in [0,4800,9600,19200] {
+                    let l=levels(&ys,skip,iso).unwrap();
+                    let (n,ns)=backend(&l);
+                    if !iso && skip==0 {assert!((n-actual).abs()<1e-12);}
+                    println!("{{\"signal\":{s},\"calibration\":\"{cal}\",\"frontend\":\"{name}\",\"skip_samples\":{skip},\"n\":{n:.17e},\"specific\":{},\"levels\":{}}}",arr(&ns),arr(&l));
+                    if iso && skip==9600 {
+                        let delta=(0..28).map(|b|{let mut z=l.clone();z[b]=n0[b];backend(&z).0-n}).collect::<Vec<_>>();
+                        println!("{{\"signal\":{s},\"calibration\":\"{cal}\",\"band_swap_dn\":{}}}",arr(&delta));
+                    }
+                }
+            }
+            let cropped=backend(&spec_to_db(&noct_spectrum_rms(&x[9600..]))).0;
+            println!("{{\"signal\":{s},\"calibration\":\"{cal}\",\"noct_crop_reset_0p2\":{cropped:.17e}}}");
+            if s==3 && cal=="sqrt" {
+                for len in [4800,9600,19200] {
+                    let ys=filtered(&x[..len],true);
+                    for skip in [0,4800,9600,19200] {
+                        let result=levels(&ys,skip,true).map(|v|backend(&v).0);
+                        let val=result.map_or("null".to_string(),|n|format!("{n:.17e}"));
+                        println!("{{\"boundary_length\":{len},\"skip_samples\":{skip},\"n\":{val}}}");
+                    }
+                }
+            }
+        }
+    }
+}

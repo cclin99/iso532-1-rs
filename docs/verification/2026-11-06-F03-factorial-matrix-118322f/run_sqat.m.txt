@@ -1,0 +1,22 @@
+% Original orchestration; original SQAT sources stay in the previous read-only-evidence tree.
+pkg load signal;
+cd('/matrix');args=argv();v=args{1};
+if strcmp(v,'024'),src='/work/sqat-v2.0';else,src='/work/sqat022';end
+addpath(genpath(src));clear Loudness_ISO532_1;
+if numel(args)==1
+ a=load('stationary-levels.mat');n=zeros(1,size(a.levels,2));ns=zeros(240,size(a.levels,2));
+ for i=1:size(a.levels,2)
+  o=Loudness_ISO532_1(a.levels(:,i),48000,0,0,0,false);n(i)=o.Loudness;ns(:,i)=o.SpecificLoudness(:);
+ end
+ o=Loudness_ISO532_1(a.levels(:,1),48000,0,0,0,false);assert(isequal(o.Loudness,n(1)));assert(isequal(o.SpecificLoudness(:),ns(:,1)));
+ save('-mat7-binary',['stationary-sqat' v '.mat'],'n','ns');fprintf('STATIONARY %s 32 cells and exact repeat PASS\n',v);
+else
+ signals=reshape(cellfun(@str2double,args(2:end)),1,[]);
+ if ~exist('tv-outputs','dir'),mkdir('tv-outputs');end
+ for s=signals
+  tic;a=load(sprintf('inputs/sig%d-cal.mat',s));o=Loudness_ISO532_1(a.x,48000,s==15,2,0,false);
+  n=o.InstantaneousLoudness(:);ns=o.InstantaneousSpecificLoudness';t=o.time(:);elapsed=toc;
+  save('-mat7-binary',sprintf('tv-outputs/B-s%d-cal-%s-sqat.mat',s,v),'n','ns','t','elapsed');
+  fprintf('TV signal=%d usl=%s cal frames=%d seconds=%f\n',s,v,numel(n),elapsed);fflush(stdout);
+ end
+end

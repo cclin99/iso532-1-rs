@@ -1,0 +1,18 @@
+// stdin: one line per case, 28 whitespace-separated band levels (dB).
+// stdout: one line per case: 21 core values, then iso532 N, then 240 N' (iso532 calc_slopes).
+use std::io::{self, BufRead, Write};
+fn main() {
+    let stdin = io::stdin();
+    let mut out = io::stdout().lock();
+    for line in stdin.lock().lines() {
+        let line = line.unwrap();
+        let v: Vec<f64> = line.split_whitespace().map(|s| s.parse().unwrap()).collect();
+        assert_eq!(v.len(), 28);
+        let core = iso532::core::main_loudness::main_loudness(&v, iso532::FieldType::Free).unwrap();
+        let (n, spec) = iso532::core::calc_slopes::calc_slopes(&core);
+        let mut s: Vec<String> = core.iter().map(|x| format!("{:e}", x)).collect();
+        s.push(format!("{:e}", n));
+        s.extend(spec.iter().map(|x| format!("{:e}", x)));
+        writeln!(out, "{}", s.join(" ")).unwrap();
+    }
+}

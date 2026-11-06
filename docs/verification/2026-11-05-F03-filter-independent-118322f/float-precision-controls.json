@@ -1,0 +1,90 @@
+{
+  "6": {
+    "f64": {
+      "max_abs_vs_workbook": 6.350109750385968e-05,
+      "rounded4_exact_workbook": 5108,
+      "points": 5300
+    },
+    "f32": {
+      "max_abs_vs_workbook": 6.349969509500397e-05,
+      "rounded4_exact_workbook": 5108,
+      "points": 5300
+    },
+    "f64_minus_f32_max_abs": 1.7541732511006103e-08,
+    "max_input_quantization_error_pa": 1.4879073473306192e-08,
+    "max_output_delta_coordinate": {
+      "time_s": 5.174,
+      "f64_n": 2.335979257140382,
+      "f32_n": 2.3359792746821144,
+      "reference_n": 2.336
+    },
+    "round4_changes": 0,
+    "direct_f32_round4_equals_cli": true
+  },
+  "9": {
+    "f64": {
+      "max_abs_vs_workbook": 7.254654586219544e-05,
+      "rounded4_exact_workbook": 4895,
+      "points": 5300
+    },
+    "f32": {
+      "max_abs_vs_workbook": 7.258584817648739e-05,
+      "rounded4_exact_workbook": 4894,
+      "points": 5300
+    },
+    "f64_minus_f32_max_abs": 5.946738212969649e-08,
+    "max_input_quantization_error_pa": 1.4886131605162944e-08,
+    "max_output_delta_coordinate": {
+      "time_s": 9.824,
+      "f64_n": 26.201825297256825,
+      "f32_n": 26.201825356724207,
+      "reference_n": 26.2018
+    },
+    "round4_changes": 1,
+    "direct_f32_round4_equals_cli": true
+  },
+  "14": {
+    "f64": {
+      "max_abs_vs_workbook": 7.200506694005071e-05,
+      "rounded4_exact_workbook": 5912,
+      "points": 6577
+    },
+    "f32": {
+      "max_abs_vs_workbook": 8.120465045635683e-05,
+      "rounded4_exact_workbook": 5917,
+      "points": 6577
+    },
+    "f64_minus_f32_max_abs": 8.421794388269177e-05,
+    "max_input_quantization_error_pa": 2.9800495737752897e-08,
+    "max_output_delta_coordinate": {
+      "time_s": 6.708,
+      "f64_n": 16.443303013293427,
+      "f32_n": 16.443218795349544,
+      "reference_n": 16.4433
+    },
+    "round4_changes": 9,
+    "direct_f32_round4_equals_cli": true
+  },
+  "15": {
+    "f64": {
+      "max_abs_vs_workbook": 5.856876433441016e-05,
+      "rounded4_exact_workbook": 5310,
+      "points": 5768
+    },
+    "f32": {
+      "max_abs_vs_workbook": 5.837547566400758e-05,
+      "rounded4_exact_workbook": 5311,
+      "points": 5768
+    },
+    "f64_minus_f32_max_abs": 2.9174129460685094e-05,
+    "max_input_quantization_error_pa": 2.9800495737752897e-08,
+    "max_output_delta_coordinate": {
+      "time_s": 5.086,
+      "f64_n": 7.4733223859151074,
+      "f32_n": 7.473293211785647,
+      "reference_n": 7.4733
+    },
+    "round4_changes": 11,
+    "direct_f32_round4_equals_cli": true
+  }
+}

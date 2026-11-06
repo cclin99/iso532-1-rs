@@ -1,0 +1,5 @@
+# Design supplement before factorial contrasts
+
+For each stationary signal and engine mode, fit the complete 16-term ±1 Walsh expansion over frontend/calibration/post-filter window/USL, including third- and fourth-order interactions. Coefficient is mean(response × product of factor signs); reconstruction must match every cell within 1e−12 sone. A paired main-effect contrast equals 2×its Walsh coefficient; a paired second-order difference-in-differences equals 4×its coefficient. Keep those names and units distinct. For Mo round/no-round, also compute the full 32-term five-factor expansion, preserving matched frontend/calibration/window/USL for rounding checks. N and N-prime best/worst rankings are separate. This is a finite deterministic decomposition, not a probabilistic ANOVA.
+
+各穩態訊號/模式作完整16項±1 Walsh展開，包含三/四階，不假設高階為0；重建各格誤差須≤1e−12 sone。coefficient=mean(response×因子符號乘積)；paired主效應=2倍一階coefficient，paired二階DID=4倍二階coefficient。Mo另作含rounding的32項五因子展開，round/no-round必須匹配前端/校準/window/USL。N及N-prime分別排名。這是確定性分解，不是機率ANOVA。
