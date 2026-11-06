@@ -1,0 +1,12 @@
+{
+ "calibration_wav": "calibration signal sine 1kHz 60dB.wav",
+ "sha256": "a65e5d0a0e6dd1cb6e021331005b2ea4f05bd412ff637d419bc72dbde134f698",
+ "fs": 48000,
+ "samples": 48000,
+ "rms_fullscale_units": 0.007052689225467755,
+ "pa_per_unit_calibration": 2.835797716391444,
+ "pa_per_unit_2sqrt2": 2.8284271247461903,
+ "scale_cal_over_2sqrt2": 1.002605897666858,
+ "dB": 0.022605099030410136,
+ "method": "official ISO_532-1_main.c style: full-file mean square of int16/32768, 60 dB SPL -> Pa per full-scale unit"
+}

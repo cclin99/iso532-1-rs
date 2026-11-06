@@ -1,0 +1,14 @@
+$ redact_paths.py <folder>
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\analyze.log: 1 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\analyze.py: 2 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\finalize_delivery.py: 3 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\harness.Cargo.toml.txt: 1 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\refs.py: 1 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\run-factorial.log: 1 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\run-sqat-e0-022.log: 1 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\run-sqat-e0-024.log: 1 replaced
+<REPO>\docs\verification\2026-11-06-F03-factor-attribution-118322f\validate.py: 1 replaced
+9 file(s) changed
+
+$ redact_paths.py --check <folder>
+clean

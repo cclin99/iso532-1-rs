@@ -1,0 +1,70 @@
+// Stage dump of iso532 0.4.0 (shipped tables, USL[12][4] = 0.24) for the factor experiment.
+// Args: <in_dir> <out_dir> <scale_label> <scale>
+// Input: <in_dir>/sig{s}.f64 (int16/32768 * 2*sqrt(2) Pa, LE f64) and sig1-levels.f64; every sample is
+// multiplied by <scale> (1.0 = 2*sqrt(2) convention; calibration-file convention = 1.0026058976668580).
+// Output (LE f64): sig 1: <label>-sig1-nm.bin (21 core loudness values).
+//   sig 2..5 (zwst, MoSQITo front end): -specdb.bin (28), -nm.bin (21), -n.bin (1), -sp.bin (240).
+//   sig 6..25: -core.bin (21 x n_time band-major, before nonlinear decay); per init in {zero, tail}:
+//   -{init}-nl.bin (21 x n_time band-major), -{init}-n.bin, -{init}-sp.bin (240 x n_out band-major), -{init}-time.bin
+//   from the library pipeline (ZwtvProcessor::process_with), for validation of the Python port.
+use iso532::core::calc_slopes::calc_slopes;
+use iso532::core::main_loudness::{main_loudness, main_loudness_frames_into};
+use iso532::zwst::{noct_spectrum_rms, spec_to_db};
+use iso532::zwtv::nonlinear_decay::nl_loudness_with;
+use iso532::zwtv::third_octave_levels::third_octave_levels;
+use iso532::zwtv::{NlInit, ParMode, ZwtvProcessor};
+use iso532::FieldType;
+use std::path::Path;
+
+fn read(p: &Path) -> Vec<f64> {
+    std::fs::read(p).unwrap().chunks_exact(8).map(|c| f64::from_le_bytes(c.try_into().unwrap())).collect()
+}
+fn write(p: &Path, a: &[f64]) {
+    std::fs::write(p, a.iter().flat_map(|v| v.to_le_bytes()).collect::<Vec<u8>>()).unwrap()
+}
+
+fn main() {
+    let a: Vec<String> = std::env::args().collect();
+    let (inp, out, label) = (Path::new(&a[1]), Path::new(&a[2]), &a[3]);
+    let scale: f64 = a[4].parse().unwrap();
+    std::fs::create_dir_all(out).unwrap();
+    let f = |name: &str| out.join(format!("{label}-{name}.bin"));
+
+    let lv = read(&inp.join("sig1-levels.f64"));
+    let nm = main_loudness(&lv, FieldType::Free).unwrap();
+    write(&f("sig1-nm"), &nm);
+
+    for s in 2..=25 {
+        let x: Vec<f64> = read(&inp.join(format!("sig{s}.f64"))).iter().map(|v| v * scale).collect();
+        let field = if s == 15 { FieldType::Diffuse } else { FieldType::Free };
+        if s <= 5 {
+            let spec_db = spec_to_db(&noct_spectrum_rms(&x));
+            let nm = main_loudness(&spec_db, field).unwrap();
+            let (n, sp) = calc_slopes(&nm);
+            write(&f(&format!("sig{s}-specdb")), &spec_db);
+            write(&f(&format!("sig{s}-nm")), &nm);
+            write(&f(&format!("sig{s}-n")), &[n]);
+            write(&f(&format!("sig{s}-sp")), &sp);
+            continue;
+        }
+        let (tol, n_time) = third_octave_levels(&x);
+        let mut frames = vec![0.0; 28 * n_time];
+        for t in 0..n_time {
+            for b in 0..28 {
+                frames[t * 28 + b] = tol[b * n_time + t];
+            }
+        }
+        let mut core = vec![0.0; 21 * n_time];
+        main_loudness_frames_into(&frames, n_time, field, &mut core).unwrap();
+        write(&f(&format!("sig{s}-core")), &core);
+        for (init, iname) in [(NlInit::Zero, "zero"), (NlInit::MosqitoTail, "tail")] {
+            let nl = nl_loudness_with(&core, n_time, ParMode::Rayon, init);
+            write(&f(&format!("sig{s}-{iname}-nl")), &nl);
+            let r = ZwtvProcessor::new().process_with(&x, 48000.0, field, init).unwrap();
+            write(&f(&format!("sig{s}-{iname}-n")), &r.n);
+            write(&f(&format!("sig{s}-{iname}-sp")), &r.n_specific);
+            write(&f(&format!("sig{s}-{iname}-time")), &r.time_axis);
+        }
+        println!("{label} sig{s} n_time={n_time}");
+    }
+}

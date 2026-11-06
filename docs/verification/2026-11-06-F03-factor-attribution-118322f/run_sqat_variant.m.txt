@@ -1,0 +1,41 @@
+function run_sqat_variant(sqat_root, var_dir, label, in_dir, out_dir, sigs)
+% Run SQAT v2.0 Loudness_ISO532_1 (as resolved from var_dir, which shadows the
+% original) on the Annex B inputs sig{N}.f64 (int16/32768 * 2*sqrt(2) Pa, LE f64)
+% and write <out_dir>/<label>-sig{N}-{n,sp}.bin as little-endian float64.
+% sig 1: method 0 (28 third-octave levels); sig 2..5: method 1 with time_skip 0.2 s
+% and a second run with time_skip 0 (suffix -skip0); sig 6..25: method 2.
+% Specific loudness is written band-major (240 x frames) like the 2026-11-05 runs.
+  addpath(genpath(sqat_root));
+  addpath(var_dir);
+  printf('%s uses %s\n', label, which('Loudness_ISO532_1'));
+  printf('octave %s\n', version());
+  if ~exist(out_dir, 'dir'); mkdir(out_dir); end
+  for s = sigs
+    t0 = tic;
+    field = 0; if s == 15; field = 1; end
+    if s == 1
+      fid = fopen(fullfile(in_dir, 'sig1-levels.f64'), 'rb'); lv = fread(fid, Inf, 'float64'); fclose(fid);
+      OUT = Loudness_ISO532_1(lv(:)', 48000, field, 0, 0, false);
+      write_pair(out_dir, label, s, '', OUT.Loudness, OUT.SpecificLoudness(:)');
+    else
+      fid = fopen(fullfile(in_dir, sprintf('sig%d.f64', s)), 'rb'); x = fread(fid, Inf, 'float64'); fclose(fid);
+      if s <= 5
+        OUT = Loudness_ISO532_1(x(:), 48000, field, 1, 0.2, false);
+        write_pair(out_dir, label, s, '', OUT.Loudness, OUT.SpecificLoudness(:)');
+        OUT = Loudness_ISO532_1(x(:), 48000, field, 1, 0, false);
+        write_pair(out_dir, label, s, '-skip0', OUT.Loudness, OUT.SpecificLoudness(:)');
+      else
+        OUT = Loudness_ISO532_1(x(:), 48000, field, 2, 0, false);
+        write_pair(out_dir, label, s, '', OUT.InstantaneousLoudness(:), OUT.InstantaneousSpecificLoudness);
+        fid = fopen(fullfile(out_dir, sprintf('%s-sig%d-time.bin', label, s)), 'wb'); fwrite(fid, OUT.time(:), 'float64', 0, 'ieee-le'); fclose(fid);
+      end
+    end
+    printf('%s sig%d %.1f s\n', label, s, toc(t0)); fflush(stdout);
+  end
+end
+
+function write_pair(out_dir, label, s, suffix, n, sp)
+  % sp: for time varying a (frames x 240) matrix -> fwrite column-major = band-major (240, frames)
+  fid = fopen(fullfile(out_dir, sprintf('%s%s-sig%d-n.bin', label, suffix, s)), 'wb'); fwrite(fid, n(:), 'float64', 0, 'ieee-le'); fclose(fid);
+  fid = fopen(fullfile(out_dir, sprintf('%s%s-sig%d-sp.bin', label, suffix, s)), 'wb'); fwrite(fid, sp, 'float64', 0, 'ieee-le'); fclose(fid);
+end

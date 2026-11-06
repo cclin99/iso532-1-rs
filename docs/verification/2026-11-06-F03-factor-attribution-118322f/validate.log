@@ -1,0 +1,27 @@
+sig1 usl=0.24 eps=0 f32=False: N=83.2951284360 grid_samples=239
+sig1 usl=0.24 eps=0.0001 f32=False: N=83.2956611590 grid_samples=240
+sig1 usl=0.22 eps=0.0001 f32=False: N=83.2956611590 grid_samples=240
+sig1 usl=0.22 eps=0.0001 f32=True: N=83.2956576074 grid_samples=240
+sig1 usl=0.24 eps=0 f32=True: N=83.2951248845 grid_samples=239
+sig1 refs: iso532 83.29512843604674 SQAT 83.29566115895236 official C CLI 83.2957, workbook 83.2957
+sig1 N': port eps=1e-4 vs SQAT max 0.0 | port eps=0 vs iso532 max 0.7077425224290241 (C-style sampler without the constant skips grid samples; iso532 rounds to 1e-8 instead)
+sig 6 n_time= 21200 | eps=0 vs iso532: N max 5.33e-15 | eps=1e-4 vs SQAT 0.24: N max 4.23e-13 N' max 2.12e-13 (frames port 5300 SQAT 5300)
+sig 7 n_time= 21200 | eps=0 vs iso532: N max 5.33e-15 | eps=1e-4 vs SQAT 0.24: N max 5.33e-14 N' max 3.64e-14 (frames port 5300 SQAT 5300)
+sig 8 n_time= 21200 | eps=0 vs iso532: N max 1.42e-14 | eps=1e-4 vs SQAT 0.24: N max 1.78e-14 N' max 7.99e-15 (frames port 5300 SQAT 5300)
+sig 9 n_time= 21200 | eps=0 vs iso532: N max 1.07e-14 | eps=1e-4 vs SQAT 0.24: N max 2.34e-13 N' max 3.13e-13 (frames port 5300 SQAT 5300)
+sig10 n_time=  2000 | eps=0 vs iso532: N max 4.68e-16 | eps=1e-4 vs SQAT 0.24: N max 1.82e-14 N' max 1.67e-14 (frames port 500 SQAT 500)
+sig11 n_time=  2000 | eps=0 vs iso532: N max 8.88e-16 | eps=1e-4 vs SQAT 0.24: N max 1.74e-08 N' max 3.95e-08 (frames port 500 SQAT 500)
+sig12 n_time=  2000 | eps=0 vs iso532: N max 1.07e-14 | eps=1e-4 vs SQAT 0.24: N max 1.02e-08 N' max 2.97e-08 (frames port 500 SQAT 500)
+sig13 n_time=  2000 | eps=0 vs iso532: N max 1.78e-15 | eps=1e-4 vs SQAT 0.24: N max 6.53e-08 N' max 1.04e-07 (frames port 500 SQAT 500)
+sig14 n_time= 26310 | eps=0 vs iso532: N max 1.07e-14 | eps=1e-4 vs SQAT 0.24: N max 1.87e-12 N' max 1.02e-12 (frames port 6578 SQAT 6578)
+sig15 n_time= 23075 | eps=0 vs iso532: N max 7.11e-15 | eps=1e-4 vs SQAT 0.24: N max 9.73e-13 N' max 7.73e-13 (frames port 5769 SQAT 5769)
+sig16 n_time=  8220 | eps=0 vs iso532: N max 2.13e-14 | eps=1e-4 vs SQAT 0.24: N max 1.42e-13 N' max 9.82e-14 (frames port 2055 SQAT 2055)
+sig17 n_time=  5819 | eps=0 vs iso532: N max 3.55e-15 | eps=1e-4 vs SQAT 0.24: N max 7.37e-14 N' max 1.02e-13 (frames port 1455 SQAT 1455)
+sig18 n_time=  4333 | eps=0 vs iso532: N max 3.55e-15 | eps=1e-4 vs SQAT 0.24: N max 7.11e-14 N' max 6.88e-14 (frames port 1084 SQAT 1084)
+sig19 n_time=  5200 | eps=0 vs iso532: N max 3.55e-15 | eps=1e-4 vs SQAT 0.24: N max 1.58e-13 N' max 1.41e-13 (frames port 1300 SQAT 1300)
+sig20 n_time=  5200 | eps=0 vs iso532: N max 5.33e-15 | eps=1e-4 vs SQAT 0.24: N max 3.20e-14 N' max 4.19e-14 (frames port 1300 SQAT 1300)
+sig21 n_time=  5200 | eps=0 vs iso532: N max 3.55e-15 | eps=1e-4 vs SQAT 0.24: N max 3.02e-14 N' max 2.31e-14 (frames port 1300 SQAT 1300)
+sig22 n_time=  3700 | eps=0 vs iso532: N max 1.78e-15 | eps=1e-4 vs SQAT 0.24: N max 5.33e-15 N' max 5.33e-15 (frames port 925 SQAT 925)
+sig23 n_time=  5101 | eps=0 vs iso532: N max 3.55e-15 | eps=1e-4 vs SQAT 0.24: N max 1.95e-14 N' max 2.02e-14 (frames port 1276 SQAT 1276)
+sig24 n_time=  4801 | eps=0 vs iso532: N max 3.55e-15 | eps=1e-4 vs SQAT 0.24: N max 2.49e-14 N' max 2.11e-14 (frames port 1201 SQAT 1201)
+sig25 n_time=  5101 | eps=0 vs iso532: N max 2.66e-15 | eps=1e-4 vs SQAT 0.24: N max 9.77e-15 N' max 1.04e-14 (frames port 1276 SQAT 1276)
